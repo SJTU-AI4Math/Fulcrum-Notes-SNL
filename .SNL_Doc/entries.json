@@ -1,93 +1,40 @@
 [
   {
-    "id": "set.ch.setTheory",
-    "kind": "chapter",
-    "title": "Set Theory",
-    "content": {"snl":"Set.statement(%Set theory is the mathematical study of sets, which are abstract collections of objects. It serves as a foundational framework for nearly all of modern mathematics.%)"},
-    "contribution_info":null,"pointer":null
+    "id": "Set.def.union",
+    "kind": "definition",
+    "title": "Union of sets",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@A,@B),Set(T))),Set.union(A,B),Set.sep-typed(@x,T,Logic.or(Set.mem(x,A),Set.mem(x,B))))"
+    },
+    "contribution_info": null,
+    "pointer": null
   },
   {
-    "id": "set.sec.basicConcepts",
-    "kind": "section",
-    "title": "Basic Concepts",
-    "content": {"snl":"Set.statement(%We introduce the fundamental notions of set theory: sets, elements, equality, subsets, and the power set.%)"},
-    "contribution_info":null,"pointer":null
-  },
-  {
-    "id": "set.def.set",
+    "id": "Set.def.set",
     "kind": "definition",
     "title": "Set",
-    "content": {"snl":"Set.statement(%A set is a collection of distinct objects, considered as an object in its own right. The objects in a set are called its elements or members. We typically denote sets by capital letters %, $A, B, C, \\ldots$, % and elements by lowercase letters %, $x, y, z, \\ldots$, %.%)"},
-    "contribution_info":null,"pointer":null
+    "content": {
+      "snl": "def-hyp(Type.judge(@T,Type),Set(T),Type.to(T, Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
   },
   {
-    "id": "set.def.element",
+    "id": "Set.def.symmetric_difference",
     "kind": "definition",
-    "title": "Element Relation",
-    "content": {"snl":"Set.statement(%Let %, $A$, % be a set and %, $x$, % an object. We write %, Set.in($x$, $A$), % if %, $x$, % is an element of %, $A$, %, and %, Set.notin($x$, $A$), % otherwise.%)"},
-    "contribution_info":null,"pointer":null
+    "title": "Symmetric Difference of sets",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type), Type.judge[paren](hyp-list(@A,@B), Set(T))),Set.SymmDiff(A,B),Set.diff(parentheses(Set.union(A,B)),parentheses(Set.inter(A,B))))"
+    },
+    "contribution_info": null,
+    "pointer": null
   },
   {
-    "id": "set.def.emptyset",
-    "kind": "definition",
-    "title": "Empty Set",
-    "content": {"snl":"Set.statement(%There exists a unique set containing no elements, called the empty set and denoted %, Set.emptyset, %. For any object %, $x$, %, we have %, Set.notin($x$, Set.emptyset), %.%)"},
-    "contribution_info":null,"pointer":null
-  },
-  {
-    "id": "set.axiom.extensionality",
-    "kind": "axiom",
-    "title": "Axiom of Extensionality",
-    "content": {"snl":"Set.statement(%Two sets %, $A$, % and %, $B$, % are equal, denoted %, $A = B$, %, if and only if they have exactly the same elements. Formally, %, $A = B \\iff (\\forall x)($, Set.in($x$, $A$), $\\iff$, Set.in($x$, $B$), $)$, %. This axiom captures the principle that a set is completely determined by its elements.%)"},
-    "contribution_info":null,"pointer":null
-  },
-  {
-    "id": "set.def.subset",
-    "kind": "definition",
-    "title": "Subset",
-    "content": {"snl":"Set.statement(%Let %, $A$, % and %, $B$, % be sets. We say %, $A$, % is a subset of %, $B$, %, denoted %, Set.subset($A$, $B$), %, if every element of %, $A$, % is also an element of %, $B$, %. Formally, %, Set.subset($A$, $B$), % means %, $(\\forall x)($, Set.in($x$, $A$), $\\implies$, Set.in($x$, $B$), $)$, %. We also say %, $B$, % is a superset of %, $A$, %, denoted %, Set.supset($B$, $A$), %.%)"},
-    "contribution_info":null,"pointer":null
-  },
-  {
-    "id": "set.def.properSubset",
-    "kind": "definition",
-    "title": "Proper Subset",
-    "content": {"snl":"Set.statement(%Let %, $A$, % and %, $B$, % be sets. We say %, $A$, % is a proper subset of %, $B$, %, denoted %, Set.subsetneq($A$, $B$), %, if %, Set.subset($A$, $B$), % and %, $A \\neq B$, %. That is, every element of %, $A$, % is in %, $B$, %, but there exists at least one element of %, $B$, % that is not in %, $A$, %.%)"},
-    "contribution_info":null,"pointer":null
-  },
-  {
-    "id": "set.def.powerset",
-    "kind": "definition",
-    "title": "Power Set",
-    "content": {"snl":"Set.statement(%The power set of a set %, $A$, %, denoted %, Set.powerset($A$), %, is the set of all subsets of %, $A$, %. Formally, %, Set.powerset($A$), $= \\{\\, B \\mid$, Set.subset($B$, $A$), $\\,\\}$, %. Note that %, Set.in(Set.emptyset, Set.powerset($A$)), % and %, Set.in($A$, Set.powerset($A$)), % for any set %, $A$, %.%)"},
-    "contribution_info":null,"pointer":null
-  },
-  {
-    "id": "set.sec.setOperations",
+    "id": "Set.sec.set",
     "kind": "section",
-    "title": "Set Operations",
-    "content": {"snl":"Set.statement(%We define the basic operations on sets: union, intersection, and set difference.%)"},
-    "contribution_info":null,"pointer":null
-  },
-  {
-    "id": "set.def.union",
-    "kind": "definition",
-    "title": "Union",
-    "content": {"snl":"Set.statement(%Let %, $A$, % and %, $B$, % be sets. Their union, denoted %, Set.cup($A$, $B$), %, is the set of all elements that belong to %, $A$, %, to %, $B$, %, or to both. Formally, %, Set.cup($A$, $B$), $= \\{\\, x \\mid$, Set.in($x$, $A$), $\\text{ or }$, Set.in($x$, $B$), $\\,\\}$, %.%)"},
-    "contribution_info":null,"pointer":null
-  },
-  {
-    "id": "set.def.intersection",
-    "kind": "definition",
-    "title": "Intersection",
-    "content": {"snl":"Set.statement(%Let %, $A$, % and %, $B$, % be sets. Their intersection, denoted %, Set.cap($A$, $B$), %, is the set of all elements that belong to both %, $A$, % and %, $B$, %. Formally, %, Set.cap($A$, $B$), $= \\{\\, x \\mid$, Set.in($x$, $A$), $\\text{ and }$, Set.in($x$, $B$), $\\,\\}$, %. Two sets are called disjoint if %, Set.cap($A$, $B$), $=$, Set.emptyset, %.%)"},
-    "contribution_info":null,"pointer":null
-  },
-  {
-    "id": "set.def.setminus",
-    "kind": "definition",
-    "title": "Set Difference",
-    "content": {"snl":"Set.statement(%Let %, $A$, % and %, $B$, % be sets. The set difference %, Set.setminus($A$, $B$), % is the set of all elements of %, $A$, % that are not elements of %, $B$, %. Formally, %, Set.setminus($A$, $B$), $= \\{\\, x \\in$, $A$, $\\mid$, Set.notin($x$, $B$), $\\,\\}$, %. Note that %, Set.setminus($A$, $B$), % is generally different from %, Set.setminus($B$, $A$), %.%)"},
-    "contribution_info":null,"pointer":null
+    "title": "Set",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
   }
 ]

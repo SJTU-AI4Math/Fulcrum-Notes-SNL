@@ -1,156 +1,48 @@
 {
   "nodes": [
     {
-      "id": "node-ch",
+      "id": "n_1",
       "label": "Entry",
       "props": {
-        "entryId": "set.ch.setTheory"
+        "entryId": "Set.sec.set"
       }
     },
     {
-      "id": "node-sec-basics",
+      "id": "n_2",
       "label": "Entry",
       "props": {
-        "entryId": "set.sec.basicConcepts"
+        "entryId": "Set.def.set"
       }
     },
     {
-      "id": "node-def-set",
+      "id": "n_3",
       "label": "Entry",
       "props": {
-        "entryId": "set.def.set"
+        "entryId": "Set.def.union"
       }
     },
     {
-      "id": "node-def-element",
+      "id": "n_4",
       "label": "Entry",
       "props": {
-        "entryId": "set.def.element"
-      }
-    },
-    {
-      "id": "node-def-empty",
-      "label": "Entry",
-      "props": {
-        "entryId": "set.def.emptyset"
-      }
-    },
-    {
-      "id": "node-axiom-ext",
-      "label": "Entry",
-      "props": {
-        "entryId": "set.axiom.extensionality"
-      }
-    },
-    {
-      "id": "node-def-subset",
-      "label": "Entry",
-      "props": {
-        "entryId": "set.def.subset"
-      }
-    },
-    {
-      "id": "node-def-proper",
-      "label": "Entry",
-      "props": {
-        "entryId": "set.def.properSubset"
-      }
-    },
-    {
-      "id": "node-def-powerset",
-      "label": "Entry",
-      "props": {
-        "entryId": "set.def.powerset"
-      }
-    },
-    {
-      "id": "node-sec-ops",
-      "label": "Entry",
-      "props": {
-        "entryId": "set.sec.setOperations"
-      }
-    },
-    {
-      "id": "node-def-union",
-      "label": "Entry",
-      "props": {
-        "entryId": "set.def.union"
-      }
-    },
-    {
-      "id": "node-def-intersection",
-      "label": "Entry",
-      "props": {
-        "entryId": "set.def.intersection"
-      }
-    },
-    {
-      "id": "node-def-setminus",
-      "label": "Entry",
-      "props": {
-        "entryId": "set.def.setminus"
+        "entryId": "Set.def.symmetric_difference"
       }
     }
   ],
   "relationships": [
     {
-      "from": "node-ch",
-      "to": "node-sec-basics",
+      "from": "n_1",
+      "to": "n_2",
       "label": "branch"
     },
     {
-      "from": "node-sec-basics",
-      "to": "node-def-set",
+      "from": "n_1",
+      "to": "n_3",
       "label": "branch"
     },
     {
-      "from": "node-sec-basics",
-      "to": "node-def-element",
-      "label": "branch"
-    },
-    {
-      "from": "node-sec-basics",
-      "to": "node-def-empty",
-      "label": "branch"
-    },
-    {
-      "from": "node-sec-basics",
-      "to": "node-axiom-ext",
-      "label": "branch"
-    },
-    {
-      "from": "node-sec-basics",
-      "to": "node-def-subset",
-      "label": "branch"
-    },
-    {
-      "from": "node-sec-basics",
-      "to": "node-def-proper",
-      "label": "branch"
-    },
-    {
-      "from": "node-sec-basics",
-      "to": "node-def-powerset",
-      "label": "branch"
-    },
-    {
-      "from": "node-ch",
-      "to": "node-sec-ops",
-      "label": "branch"
-    },
-    {
-      "from": "node-sec-ops",
-      "to": "node-def-union",
-      "label": "branch"
-    },
-    {
-      "from": "node-sec-ops",
-      "to": "node-def-intersection",
-      "label": "branch"
-    },
-    {
-      "from": "node-sec-ops",
-      "to": "node-def-setminus",
+      "from": "n_1",
+      "to": "n_4",
       "label": "branch"
     }
   ]

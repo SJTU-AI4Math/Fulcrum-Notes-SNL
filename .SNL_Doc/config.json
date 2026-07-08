@@ -2,23 +2,13 @@
   "version": "0.0.3",
   "entry_kinds": [
     {
-      "id": "chapter",
-      "name": "Chapter",
-      "coloring": {
-        "stroke": "#787878",
-        "background": "#F0F0F0"
-      },
-      "numbering": "1",
-      "style": "section"
-    },
-    {
       "id": "section",
       "name": "Section",
       "coloring": {
         "stroke": "#787878",
         "background": "#F0F0F0"
       },
-      "numbering": ".1",
+      "numbering": "1",
       "style": "section"
     },
     {
