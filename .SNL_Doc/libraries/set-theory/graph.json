@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    { "id": "node-ch",         "label": "Entry", "props": { "entryId": "set-ch-01" } },
+    { "id": "node-sec-basics", "label": "Entry", "props": { "entryId": "set-sec-01-basics" } },
+    { "id": "node-def-set",    "label": "Entry", "props": { "entryId": "set-def-set" } },
+    { "id": "node-def-element","label": "Entry", "props": { "entryId": "set-def-element" } },
+    { "id": "node-def-empty",  "label": "Entry", "props": { "entryId": "set-def-emptyset" } },
+    { "id": "node-axiom-ext",  "label": "Entry", "props": { "entryId": "set-axiom-extensionality" } },
+    { "id": "node-def-subset", "label": "Entry", "props": { "entryId": "set-def-subset" } },
+    { "id": "node-def-proper", "label": "Entry", "props": { "entryId": "set-def-proper-subset" } },
+    { "id": "node-def-powerset","label": "Entry","props": { "entryId": "set-def-powerset" } },
+    { "id": "node-sec-ops",    "label": "Entry", "props": { "entryId": "set-sec-02-operations" } },
+    { "id": "node-def-union",  "label": "Entry", "props": { "entryId": "set-def-union" } },
+    { "id": "node-def-intersection","label": "Entry","props": { "entryId": "set-def-intersection" } },
+    { "id": "node-def-setminus","label": "Entry","props": { "entryId": "set-def-setminus" } }
+  ],
+  "relationships": [
+    { "from": "node-ch",         "to": "node-sec-basics",       "label": "branch" },
+    { "from": "node-sec-basics", "to": "node-def-set",          "label": "branch" },
+    { "from": "node-sec-basics", "to": "node-def-element",      "label": "branch" },
+    { "from": "node-sec-basics", "to": "node-def-empty",        "label": "branch" },
+    { "from": "node-sec-basics", "to": "node-axiom-ext",        "label": "branch" },
+    { "from": "node-sec-basics", "to": "node-def-subset",       "label": "branch" },
+    { "from": "node-sec-basics", "to": "node-def-proper",       "label": "branch" },
+    { "from": "node-sec-basics", "to": "node-def-powerset",     "label": "branch" },
+    { "from": "node-ch",         "to": "node-sec-ops",          "label": "branch" },
+    { "from": "node-sec-ops",    "to": "node-def-union",        "label": "branch" },
+    { "from": "node-sec-ops",    "to": "node-def-intersection", "label": "branch" },
+    { "from": "node-sec-ops",    "to": "node-def-setminus",     "label": "branch" }
+  ]
+}
