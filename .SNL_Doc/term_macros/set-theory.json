@@ -3,6 +3,13 @@
   "name": "set-theory",
   "description": "Set theory symbols: element relation, subset, union, intersection, power set, number sets. All macros namespaced under Set.*.",
   "macros": {
+    "Set.statement": {
+      "description": "Container for mixed prose and macro content. Renders children inline with no visual frame.",
+      "source": { "entries": [], "urls": [] },
+      "kind": "partial",
+      "dynamic_arity": true,
+      "styles": [{ "tag": "default", "mode": "block", "template": "#*" }]
+    },
     "Set.emptyset": {
       "description": "The empty set ∅",
       "source": {
