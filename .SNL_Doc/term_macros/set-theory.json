@@ -5,122 +5,309 @@
   "macros": {
     "Set.emptyset": {
       "description": "The empty set ∅",
-      "source": { "entries": ["set-def-emptyset"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.emptyset"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\emptyset" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\emptyset"
+        }
+      ]
     },
     "Set.N": {
       "description": "Natural numbers ℕ",
-      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Natural_number"] },
+      "source": {
+        "entries": [],
+        "urls": [
+          "https://en.wikipedia.org/wiki/Natural_number"
+        ]
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{N}" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\mathbb{N}"
+        }
+      ]
     },
     "Set.Z": {
       "description": "Integers ℤ",
-      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Integer"] },
+      "source": {
+        "entries": [],
+        "urls": [
+          "https://en.wikipedia.org/wiki/Integer"
+        ]
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{Z}" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\mathbb{Z}"
+        }
+      ]
     },
     "Set.Q": {
       "description": "Rational numbers ℚ",
-      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Rational_number"] },
+      "source": {
+        "entries": [],
+        "urls": [
+          "https://en.wikipedia.org/wiki/Rational_number"
+        ]
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{Q}" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\mathbb{Q}"
+        }
+      ]
     },
     "Set.R": {
       "description": "Real numbers ℝ",
-      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Real_number"] },
+      "source": {
+        "entries": [],
+        "urls": [
+          "https://en.wikipedia.org/wiki/Real_number"
+        ]
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{R}" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\mathbb{R}"
+        }
+      ]
     },
     "Set.C": {
       "description": "Complex numbers ℂ",
-      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Complex_number"] },
+      "source": {
+        "entries": [],
+        "urls": [
+          "https://en.wikipedia.org/wiki/Complex_number"
+        ]
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{C}" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\mathbb{C}"
+        }
+      ]
     },
     "Set.in": {
       "description": "Element relation: x ∈ A",
-      "source": { "entries": ["set-def-element"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.element"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\in #1" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\in #1"
+        }
+      ]
     },
     "Set.notin": {
       "description": "Not an element: x ∉ A",
-      "source": { "entries": ["set-def-element"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.element"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\notin #1" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\notin #1"
+        }
+      ]
     },
     "Set.subset": {
       "description": "Subset: A ⊆ B",
-      "source": { "entries": ["set-def-subset"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.subset"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\subseteq #1" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\subseteq #1"
+        }
+      ]
     },
     "Set.subsetneq": {
       "description": "Proper subset: A ⊂ B",
-      "source": { "entries": ["set-def-proper-subset"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.properSubset"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\subsetneq #1" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\subsetneq #1"
+        }
+      ]
     },
     "Set.supset": {
       "description": "Superset: A ⊇ B",
-      "source": { "entries": ["set-def-subset"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.subset"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\supseteq #1" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\supseteq #1"
+        }
+      ]
     },
     "Set.supsetneq": {
       "description": "Proper superset: A ⊃ B",
-      "source": { "entries": ["set-def-proper-subset"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.properSubset"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\supsetneq #1" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\supsetneq #1"
+        }
+      ]
     },
     "Set.cup": {
       "description": "Set union: A ∪ B",
-      "source": { "entries": ["set-def-union"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.union"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\cup #1" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\cup #1"
+        }
+      ]
     },
     "Set.cap": {
       "description": "Set intersection: A ∩ B",
-      "source": { "entries": ["set-def-intersection"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.intersection"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\cap #1" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\cap #1"
+        }
+      ]
     },
     "Set.setminus": {
       "description": "Set difference: A \\ B",
-      "source": { "entries": ["set-def-setminus"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.setminus"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\setminus #1" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\setminus #1"
+        }
+      ]
     },
     "Set.powerset": {
       "description": "Power set: 𝒫(A)",
-      "source": { "entries": ["set-def-powerset"], "urls": [] },
+      "source": {
+        "entries": [
+          "set.def.powerset"
+        ],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathcal{P}(#0)" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\mathcal{P}(#0)"
+        }
+      ]
     },
     "Set.card": {
       "description": "Cardinality: |A|",
-      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Cardinality"] },
+      "source": {
+        "entries": [],
+        "urls": [
+          "https://en.wikipedia.org/wiki/Cardinality"
+        ]
+      },
       "kind": "const",
       "dynamic_arity": false,
-      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "|#0|" }]
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "|#0|"
+        }
+      ]
     }
   }
 }
