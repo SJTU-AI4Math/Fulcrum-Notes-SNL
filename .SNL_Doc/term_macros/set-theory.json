@@ -1,0 +1,126 @@
+{
+  "version": "0.4.0",
+  "name": "set-theory",
+  "description": "Set theory symbols: element relation, subset, union, intersection, power set, number sets",
+  "macros": {
+    "emptyset": {
+      "description": "The empty set ∅",
+      "source": { "entries": ["set-def-emptyset"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\emptyset" }]
+    },
+    "N": {
+      "description": "Natural numbers ℕ",
+      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Natural_number"] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{N}" }]
+    },
+    "Z": {
+      "description": "Integers ℤ",
+      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Integer"] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{Z}" }]
+    },
+    "Q": {
+      "description": "Rational numbers ℚ",
+      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Rational_number"] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{Q}" }]
+    },
+    "R": {
+      "description": "Real numbers ℝ",
+      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Real_number"] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{R}" }]
+    },
+    "C": {
+      "description": "Complex numbers ℂ",
+      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Complex_number"] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{C}" }]
+    },
+    "in": {
+      "description": "Element relation: x ∈ A",
+      "source": { "entries": ["set-def-element"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\in #1" }]
+    },
+    "notin": {
+      "description": "Not an element: x ∉ A",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\notin #1" }]
+    },
+    "subset": {
+      "description": "Subset: A ⊆ B",
+      "source": { "entries": ["set-def-subset"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\subseteq #1" }]
+    },
+    "subsetneq": {
+      "description": "Proper subset: A ⊂ B",
+      "source": { "entries": ["set-def-proper-subset"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\subsetneq #1" }]
+    },
+    "supset": {
+      "description": "Superset: A ⊇ B",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\supseteq #1" }]
+    },
+    "supsetneq": {
+      "description": "Proper superset: A ⊃ B",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\supsetneq #1" }]
+    },
+    "cup": {
+      "description": "Set union: A ∪ B",
+      "source": { "entries": ["set-def-union"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\cup #1" }]
+    },
+    "cap": {
+      "description": "Set intersection: A ∩ B",
+      "source": { "entries": ["set-def-intersection"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\cap #1" }]
+    },
+    "setminus": {
+      "description": "Set difference: A \\ B",
+      "source": { "entries": ["set-def-setminus"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "#0 \\setminus #1" }]
+    },
+    "powerset": {
+      "description": "Power set: 𝒫(A)",
+      "source": { "entries": ["set-def-powerset"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathcal{P}(#0)" }]
+    },
+    "card": {
+      "description": "Cardinality: |A|",
+      "source": { "entries": [], "urls": ["https://en.wikipedia.org/wiki/Cardinality"] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "|#0|" }]
+    }
+  }
+}

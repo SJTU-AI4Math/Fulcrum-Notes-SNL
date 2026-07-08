@@ -1,1 +1,132 @@
-[]
+[
+  {
+    "id": "set-ch-01",
+    "kind": "chapter",
+    "title": "Set Theory",
+    "content": {
+      "snl": "%Set theory is the mathematical study of sets, which are abstract collections of objects. It serves as a foundational framework for nearly all of modern mathematics.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-sec-01-basics",
+    "kind": "section",
+    "title": "Basic Concepts",
+    "content": {
+      "snl": "%We introduce the fundamental notions of set theory: sets, elements, equality, subsets, and the power set.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-def-set",
+    "kind": "definition",
+    "title": "Set",
+    "content": {
+      "snl": "%A set is a collection of distinct objects, considered as an object in its own right. The objects in a set are called its elements or members. We typically denote sets by capital letters $A, B, C, \\ldots$ and elements by lowercase letters $x, y, z, \\ldots$.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-def-element",
+    "kind": "definition",
+    "title": "Element Relation",
+    "content": {
+      "snl": "%Let $A$ be a set and $x$ an object. We write $x \\in A$ if $x$ is an element of $A$, and $x \\notin A$ otherwise. The symbol $\\in$ is read as \"is an element of\" or \"belongs to\".%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-def-emptyset",
+    "kind": "definition",
+    "title": "Empty Set",
+    "content": {
+      "snl": "%There exists a unique set containing no elements, called the empty set and denoted $\\emptyset$. For any object $x$, we have $x \\notin \\emptyset$.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-axiom-extensionality",
+    "kind": "axiom",
+    "title": "Axiom of Extensionality",
+    "content": {
+      "snl": "%Two sets $A$ and $B$ are equal, denoted $A = B$, if and only if they have exactly the same elements. Formally, $A = B \\iff (\\forall x)(x \\in A \\iff x \\in B)$. This axiom captures the principle that a set is completely determined by its elements.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-def-subset",
+    "kind": "definition",
+    "title": "Subset",
+    "content": {
+      "snl": "%Let $A$ and $B$ be sets. We say $A$ is a subset of $B$, denoted $A \\subseteq B$, if every element of $A$ is also an element of $B$. Formally, $A \\subseteq B$ means $(\\forall x)(x \\in A \\implies x \\in B)$. We also say $B$ is a superset of $A$, denoted $B \\supseteq A$.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-def-proper-subset",
+    "kind": "definition",
+    "title": "Proper Subset",
+    "content": {
+      "snl": "%Let $A$ and $B$ be sets. We say $A$ is a proper subset of $B$, denoted $A \\subsetneq B$, if $A \\subseteq B$ and $A \\neq B$. That is, every element of $A$ is in $B$, but there exists at least one element of $B$ that is not in $A$.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-def-powerset",
+    "kind": "definition",
+    "title": "Power Set",
+    "content": {
+      "snl": "%The power set of a set $A$, denoted $\\mathcal{P}(A)$, is the set of all subsets of $A$. Formally, $\\mathcal{P}(A) = \\{\\, B \\mid B \\subseteq A \\,\\}$. Note that $\\emptyset \\in \\mathcal{P}(A)$ and $A \\in \\mathcal{P}(A)$ for any set $A$.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-sec-02-operations",
+    "kind": "section",
+    "title": "Set Operations",
+    "content": {
+      "snl": "%We define the basic operations on sets: union, intersection, and set difference.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-def-union",
+    "kind": "definition",
+    "title": "Union",
+    "content": {
+      "snl": "%Let $A$ and $B$ be sets. Their union, denoted $A \\cup B$, is the set of all elements that belong to $A$, to $B$, or to both. Formally, $A \\cup B = \\{\\, x \\mid x \\in A \\text{ or } x \\in B \\,\\}$.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-def-intersection",
+    "kind": "definition",
+    "title": "Intersection",
+    "content": {
+      "snl": "%Let $A$ and $B$ be sets. Their intersection, denoted $A \\cap B$, is the set of all elements that belong to both $A$ and $B$. Formally, $A \\cap B = \\{\\, x \\mid x \\in A \\text{ and } x \\in B \\,\\}$. Two sets are called disjoint if $A \\cap B = \\emptyset$.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "set-def-setminus",
+    "kind": "definition",
+    "title": "Set Difference",
+    "content": {
+      "snl": "%Let $A$ and $B$ be sets. The set difference $A \\setminus B$ is the set of all elements of $A$ that are not elements of $B$. Formally, $A \\setminus B = \\{\\, x \\in A \\mid x \\notin B \\,\\}$. Note that $A \\setminus B$ is generally different from $B \\setminus A$.%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+]
