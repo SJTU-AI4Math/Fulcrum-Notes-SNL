@@ -65,18 +65,26 @@ def-hyp(hyp-list(Type.judge(@T,Type), Type.judge[paren](hyp-list(@A,@B), Set(T))
 
 灰风版没有 Logic 和 TypeTheory 包，导致所有逻辑连接词（`∀`、`⟹`、`∧`、`∨`）和类型判断（`:`、`→`、`Type`、`Prop`）全部回退到裸 LaTeX。猫猫版有完整的 `Logic.*`（`and`、`or`、`implies`、`neg`）和 `TypeTheory.*`（`Type.judge`、`Type`、`Proposition`、`Type.to`）。
 
-## 7. Entry 过度拆分
+## 7. Entry 数量差异是进度问题，非设计问题
 
-灰风版 13 个 entry（chapter + 2 sections + 9 definitions + 1 axiom），粒度太细。猫猫版 4 个 entry（1 section + 3 definitions），更紧凑。在 type-theoretic 框架下，subset、emptyset、powerset 等概念是 `Set(T) = T → Prop` 的直接推论，不需要独立定义。
+灰风版写了 13 个 entry，猫猫版只有 4 个。当初反思将此归为「过度拆分」，但实际上猫猫版条目少仅仅是因为**写 SNL 非常累**——每条 content 都是密集的宏组合而非自然语言，手工撰写效率低。条目多本身不是问题；在 type-theoretic 框架下子集、空集、幂集等仍是需要独立定义的概念，只是灰风当时用错了范式（prose 而非 macro-tree）。这也正是需要 AI 辅助的原因。
 
-## 8. content.snl 中的逗号噩梦
+## 8. 不知道元数学内容应拆分为 structural macros（Lean 语法知识缺口）
 
-灰风版 `Set.statement(...)` 的每个 child 需要显式逗号分隔，导致 `$...$, %.%` 这类脆弱写法，极易出现 `$...$%.%` 缺逗号的解析错误。猫猫版 `def-hyp(hyp-list(...), term, body)` 用固定 arity 的结构化宏，逗号只在固定位置出现，大大减少了出错可能。
+SNL 中的 structural macros（`def-hyp`、`def`、`hyp-list`）本质上是 Lean 的 definition/theorem 语法在宏系统中的投射——将「定义体」和「定义上下文（假设 + binder）」分离为宏的不同参数。这是 Lean/类型论的常识但不是通用数学知识，灰风此前不了解。灰风版的 `Set.statement(...)` 把所有内容压平为一串无序 children，正是源于不理解「定义 = binder context + term + body」这种结构化表示。
 
-## 9. 操作符包缺失
+这引出一个更重要的推论：**灰风必须充分学习 Fulcrum 原版宏包中已经建立的结构设计模式**，而不是自行发明容器宏。`def-hyp`、`def`、`hyp-list` 这些宏之所以设计成三层结构，是因为它们直接对应 Extension 中「定义类条目」的渲染管道。
 
-猫猫版有 `BasicOperators.json`（`Add.add`、`Sub.sub`、`Mul.mul`、`Div.div`、`Power`、`parentheses`），这些是跨领域的通用符号。灰风版完全缺失。
+## 9. 操作符包缺失 + 对 Fulcrum 原版宏包结构认识不足
 
-## 10. 版本号不一致
+猫猫版有 `BasicOperators.json`（`Add.add`、`Sub.sub`、`Mul.mul`、`Div.div`、`Power`、`parentheses`），这些是跨领域的通用符号，灰风版完全缺失。
 
-猫猫版用 `"version": "1"`，灰风版用 `"version": "0.4.0"`。应统一。
+更深层的问题是：灰风没有先调查研究 Extension 中已经绑定了哪些基础宏包（FulcrumsMathNotes、BasicOperators、Logic、TypeTheory），而是从零自行发明——命名不一致（`Set.in` vs `Set.mem`）、结构不一致（无 `def-hyp` 式定义结构）、覆盖不完整（无数系符号、无逻辑词）。今后写任何领域内容前，必须先审计已有宏包，确保：
+
+- 命名与已有包风格一致
+- 复用已有的 structural macros（`def-hyp`、`hyp-list` 等）
+- 不重复造轮子（如 `Logic.implies` 已有时不应用 `$\implies$`）
+
+## 10. （撤回）版本号差异
+
+原反思将猫猫版 `"version": "1"` 与灰风版 `"version": "0.4.0"` 的不一致归为灰风的问题，实际上猫猫版的版本号是随手写的，灰风沿用的 Toolkit 模板版本号反而是规范的。非灰风之过。
