@@ -1,10 +1,108 @@
 [
   {
+    "id": "Set.sec.set",
+    "kind": "section",
+    "title": "Set",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.set",
+    "kind": "definition",
+    "title": "Set",
+    "content": {
+      "snl": "def-hyp(Type.judge(@T,Type), Set(T), Type.to(T, Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.union",
+    "kind": "definition",
+    "title": "Union of sets",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@A,@B),Set(T))),Set.union(A,B),Set.sep-typed(@x,T,Logic.or(Set.mem(x,A),Set.mem(x,B))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.symmetric_difference",
+    "kind": "definition",
+    "title": "Symmetric Difference of sets",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@A,@B), Set(T))),Set.SymmDiff(A,B),Set.diff(parentheses(Set.union(A,B)),parentheses(Set.inter(A,B))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.mem",
+    "kind": "definition",
+    "title": "Membership",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@s,@a),Set(T))),Set.mem(a,s),Set.apply[paren](s,a))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.subset",
+    "kind": "definition",
+    "title": "Subset",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@s,@t),Set(T))),Set.subset(s,t),Logic.forall(@x,Logic.implies(Set.mem(x,s),Set.mem(x,t))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.sep",
+    "kind": "definition",
+    "title": "Set Comprehension",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](@P,Type.to(T,Proposition))),Set.sep-typed(@x,T,P(x)),Set.sep-typed(@x,T,P(x)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.ext",
+    "kind": "theorem",
+    "title": "Set Extensionality",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@s,@t),Set(T))),Logic.forall(@x,Logic.iff(Set.mem(x,s),Set.mem(x,t))),Logic.and(Set.subset(s,t),Set.subset(t,s)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.emptyset",
+    "kind": "definition",
+    "title": "Empty Set",
+    "content": {
+      "snl": "def-hyp(Type.judge(@T,Type),Set.emptyset[slim],Set.sep-typed(@x,T,Logic.false))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.univ",
+    "kind": "definition",
+    "title": "Universal Set",
+    "content": {
+      "snl": "def-hyp(Type.judge(@T,Type),Set.univ,Set.sep-typed(@x,T,Logic.neg(Logic.false)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
     "id": "Set.def.inter",
     "kind": "definition",
     "title": "Intersection of sets",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@T,Type), Type.judge[paren](hyp-list(@s,@t), Set(T))), Set.inter(s,t), Set.sep-typed(@x,T,Logic.and(Set.mem(x,s), Set.mem(x,t))))"
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@s,@t),Set(T))),Set.inter(s,t),Set.sep-typed(@x,T,Logic.and(Set.mem(x,s),Set.mem(x,t))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -14,7 +112,7 @@
     "kind": "definition",
     "title": "Set Difference",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@T,Type), Type.judge[paren](hyp-list(@s,@t), Set(T))), Set.diff[backslash](s,t), Set.sep-typed(@x,T,Logic.and(Set.mem(x,s), Logic.neg(Set.mem(x,t)))))"
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@s,@t),Set(T))),Set.diff[backslash](s,t),Set.sep-typed(@x,T,Logic.and(Set.mem(x,s),Logic.neg(Set.mem(x,t)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -24,7 +122,7 @@
     "kind": "definition",
     "title": "Complement",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@T,Type), Type.judge[paren](@s, Set(T))), Set.compl[sup](s), Set.sep-typed(@x,T,Logic.neg(Set.mem(x,s))))"
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](@s,Set(T))),Set.compl[sup](s),Set.sep-typed(@x,T,Logic.neg(Set.mem(x,s))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -34,7 +132,7 @@
     "kind": "definition",
     "title": "Power Set",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@T,Type), Type.judge[paren](@s, Set(T))), Set.powerset(s), Set.sep-typed(@t, Set(T), Set.subset(t,s)))"
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](@s,Set(T))),Set.powerset(s),Set.sep-typed(@t,Set(T),Set.subset(t,s)))"
     },
     "contribution_info": null,
     "pointer": null
