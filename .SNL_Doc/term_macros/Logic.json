@@ -196,7 +196,9 @@
     "Logic.forall": {
       "description": "Universal quantifier ∀ x, P(x)",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.subset"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -260,7 +262,9 @@
     "Logic.iff": {
       "description": "Logical equivalence ↔",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.ext"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -292,7 +296,9 @@
     "Logic.false": {
       "description": "False / ⊥",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.emptyset"
+        ],
         "urls": []
       },
       "kind": "const",

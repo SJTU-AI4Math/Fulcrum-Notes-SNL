@@ -60,7 +60,9 @@
     "Set.emptyset": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.emptyset"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -113,7 +115,9 @@
     "Set.sep-typed": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.sep"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -145,7 +149,9 @@
     "Set.sep": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.sep"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -211,7 +217,9 @@
     "Set.inter": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.inter"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -243,7 +251,9 @@
     "Set.compl": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.compl"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -317,7 +327,9 @@
     "Set.diff": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.diff"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -370,7 +382,9 @@
     "Set.mem": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.mem"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -504,7 +518,9 @@
     "Set.univ": {
       "description": "Universal set on type T",
       "source": {
-        "entries": [],
+        "entries": [
+          "Set.def.univ"
+        ],
         "urls": []
       },
       "kind": "const",
