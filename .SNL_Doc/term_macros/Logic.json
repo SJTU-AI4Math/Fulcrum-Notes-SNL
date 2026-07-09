@@ -173,7 +173,7 @@
         {
           "tag": "prefix",
           "mode": "formula_inline",
-          "template": "\\\\neg #0",
+          "template": "\\neg #0",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -195,55 +195,106 @@
     },
     "Logic.forall": {
       "description": "Universal quantifier ∀ x, P(x)",
-      "source": { "entries": [], "urls": [] },
+      "source": {
+        "entries": [],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
         {
           "tag": "bind",
           "mode": "formula_inline",
-          "template": "\\\\forall #0,\\ #1",
-          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": ""
+          "template": "\\forall #0,\\ #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
     "Logic.exists": {
       "description": "Existential quantifier ∃ x, P(x)",
-      "source": { "entries": [], "urls": [] },
+      "source": {
+        "entries": [],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
         {
           "tag": "bind",
           "mode": "formula_inline",
-          "template": "\\\\exists #0,\\ #1",
-          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": ""
+          "template": "\\exists #0,\\ #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
     "Logic.iff": {
       "description": "Logical equivalence ↔",
-      "source": { "entries": [], "urls": [] },
+      "source": {
+        "entries": [],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
         {
           "tag": "long",
           "mode": "formula_inline",
-          "template": "#0 \\\\iff #1",
-          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": ""
+          "template": "#0 \\iff #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
     "Logic.false": {
       "description": "False / ⊥",
-      "source": { "entries": [], "urls": [] },
+      "source": {
+        "entries": [],
+        "urls": []
+      },
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
@@ -251,9 +302,22 @@
           "tag": "default",
           "mode": "text",
           "template": "False",
-          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": ""
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     }
