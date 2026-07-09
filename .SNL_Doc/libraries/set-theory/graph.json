@@ -1,49 +1,25 @@
 {
   "nodes": [
-    {
-      "id": "n_1",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.sec.set"
-      }
-    },
-    {
-      "id": "n_2",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.set"
-      }
-    },
-    {
-      "id": "n_3",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.union"
-      }
-    },
-    {
-      "id": "n_4",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.symmetric_difference"
-      }
-    }
+    { "id": "n_1",  "label": "Entry", "props": { "entryId": "Set.sec.set" } },
+    { "id": "n_2",  "label": "Entry", "props": { "entryId": "Set.def.set" } },
+    { "id": "n_3",  "label": "Entry", "props": { "entryId": "Set.def.mem" } },
+    { "id": "n_4",  "label": "Entry", "props": { "entryId": "Set.def.subset" } },
+    { "id": "n_5",  "label": "Entry", "props": { "entryId": "Set.def.sep" } },
+    { "id": "n_6",  "label": "Entry", "props": { "entryId": "Set.def.ext" } },
+    { "id": "n_7",  "label": "Entry", "props": { "entryId": "Set.def.emptyset" } },
+    { "id": "n_8",  "label": "Entry", "props": { "entryId": "Set.def.univ" } },
+    { "id": "n_9",  "label": "Entry", "props": { "entryId": "Set.def.union" } },
+    { "id": "n_10", "label": "Entry", "props": { "entryId": "Set.def.symmetric_difference" } }
   ],
   "relationships": [
-    {
-      "from": "n_1",
-      "to": "n_2",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_3",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_4",
-      "label": "branch"
-    }
+    { "from": "n_1", "to": "n_2",  "label": "branch" },
+    { "from": "n_1", "to": "n_3",  "label": "branch" },
+    { "from": "n_1", "to": "n_4",  "label": "branch" },
+    { "from": "n_1", "to": "n_5",  "label": "branch" },
+    { "from": "n_1", "to": "n_6",  "label": "branch" },
+    { "from": "n_1", "to": "n_7",  "label": "branch" },
+    { "from": "n_1", "to": "n_8",  "label": "branch" },
+    { "from": "n_1", "to": "n_9",  "label": "branch" },
+    { "from": "n_1", "to": "n_10", "label": "branch" }
   ]
 }

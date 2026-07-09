@@ -413,7 +413,7 @@
         {
           "tag": "infix",
           "mode": "formula_inline",
-          "template": "#0 \\triangle #1",
+          "template": "#0 \\\\triangle #1",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -430,6 +430,78 @@
           },
           "markdown": "",
           "text": ""
+        }
+      ]
+    },
+    "Set.subset": {
+      "description": "s ⊆ t",
+      "source": { "entries": ["Set.def.subset"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "infix",
+          "mode": "formula_inline",
+          "template": "#0 \\\\subseteq #1",
+          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "markdown": "", "text": ""
+        }
+      ]
+    },
+    "Set.powerset": {
+      "description": "𝒫(s)",
+      "source": { "entries": ["Set.def.powerset"], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "script",
+          "mode": "formula_inline",
+          "template": "\\\\mathcal{P}(#0)",
+          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "markdown": "", "text": ""
+        }
+      ]
+    },
+    "Set.univ": {
+      "description": "Universal set on type T",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "text",
+          "mode": "text",
+          "template": "univ",
+          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "markdown": "", "text": ""
+        }
+      ]
+    },
+    "Set.apply": {
+      "description": "Function application f(x)",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "juxt",
+          "mode": "formula_inline",
+          "template": "#0\\ #1",
+          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "markdown": "", "text": ""
+        },
+        {
+          "tag": "paren",
+          "mode": "formula_inline",
+          "template": "#0(#1)",
+          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+          "markdown": "", "text": ""
         }
       ]
     }
