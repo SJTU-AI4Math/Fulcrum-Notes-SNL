@@ -140,6 +140,16 @@
       },
       "numbering": ".1",
       "style": "problem"
+    },
+    {
+      "id": "context",
+      "name": "Context",
+      "coloring": {
+        "stroke": "#00AAAA",
+        "background": "#DFFFFF"
+      },
+      "numbering": ".1",
+      "style": ""
     }
   ],
   "macro_kinds": [
@@ -175,8 +185,8 @@
       "name": "Binder",
       "description": "Binding sites (∀-`x`, λ parameter, informal `dx`…).",
       "coloring": {
-        "stroke": "#E07B00",
-        "background": "#FFEBD2"
+        "stroke": "#00DDDD",
+        "background": "#DFFFFF"
       }
     },
     {

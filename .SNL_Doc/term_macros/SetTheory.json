@@ -601,6 +601,40 @@
           "text": ""
         }
       ]
+    },
+    "Set.nmem": {
+      "description": "",
+      "source": {
+        "entries": [
+          "Set.def.nmem"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\notin #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
     }
   }
 }

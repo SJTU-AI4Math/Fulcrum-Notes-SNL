@@ -42,7 +42,7 @@
     "kind": "definition",
     "title": "Membership",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@s,@a),Set(T))),Set.mem(a,s),Set.apply[paren](s,a))"
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type), Type.judge(@x, T),Type.judge(@S,Set(T))),Set.mem(x,S),Set.apply[paren](S,x))"
     },
     "contribution_info": null,
     "pointer": null
@@ -60,19 +60,19 @@
   {
     "id": "Set.def.sep",
     "kind": "definition",
-    "title": "Set Comprehension",
+    "title": "Set Separated from Type",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](@P,Type.to(T,Proposition))),Set.sep-typed(@x,T,P(x)),Set.sep-typed(@x,T,P(x)))"
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](@P,Type.to(T,Proposition))),Set.sep-typed(@x,T,P(x)),P)"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
     "id": "Set.def.ext",
-    "kind": "theorem",
+    "kind": "property",
     "title": "Set Extensionality",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@s,@t),Set(T))),Logic.forall(@x,Logic.iff(Set.mem(x,s),Set.mem(x,t))),Logic.and(Set.subset(s,t),Set.subset(t,s)))"
+      "snl": "thm-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@A,@B),Set(T))),Logic.iff(Eq(A,B), Logic.forall-typed(@x, T,parentheses(Logic.iff(Set.mem(x,A),Set.mem(x,B)))),Logic.and(Set.subset(s,t),Set.subset(t,s))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -112,7 +112,7 @@
     "kind": "definition",
     "title": "Set Difference",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@s,@t),Set(T))),Set.diff[backslash](s,t),Set.sep-typed(@x,T,Logic.and(Set.mem(x,s),Logic.neg(Set.mem(x,t)))))"
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@s,@t),Set(T))),Set.diff[backslash](s,t),Set.sep-typed(@x,T,Logic.and(Set.mem(x,s),Set.nmem(x,t))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -122,7 +122,7 @@
     "kind": "definition",
     "title": "Complement",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](@s,Set(T))),Set.compl[sup](s),Set.sep-typed(@x,T,Logic.neg(Set.mem(x,s))))"
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge(@S,Set(T))),Set.compl(S),Set.sep-typed(@x,T,Set.nmem(x,S)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -133,6 +133,46 @@
     "title": "Power Set",
     "content": {
       "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](@s,Set(T))),Set.powerset(s),Set.sep-typed(@t,Set(T),Set.subset(t,s)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.nmem",
+    "kind": "definition",
+    "title": "Membership Negation",
+    "content": {
+      "snl": "def-hyp[predicate](hyp-list(Type.judge(@T,Type),Type.judge(@x,T),Type.judge(S,Set(T))),Set.nmem(x,S),Logic.neg(Set.mem(x,S)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.ctxt.1",
+    "kind": "context",
+    "title": "T, A, B",
+    "content": {
+      "snl": "%In this section, we make the following conventions: %"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.ctxt.T",
+    "kind": "context",
+    "title": "$T$",
+    "content": {
+      "snl": "Type.judge(@T,Type)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.ctxt.AB",
+    "kind": "context",
+    "title": "$A, B$",
+    "content": {
+      "snl": "Type.judge(hyp-list(@A,@B),Set(T@Set.ctxt.T))"
     },
     "contribution_info": null,
     "pointer": null

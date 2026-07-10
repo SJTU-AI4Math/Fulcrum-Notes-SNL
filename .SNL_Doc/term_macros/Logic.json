@@ -262,9 +262,7 @@
     "Logic.iff": {
       "description": "Logical equivalence ↔",
       "source": {
-        "entries": [
-          "Set.def.ext"
-        ],
+        "entries": [],
         "urls": []
       },
       "kind": "const",
@@ -308,6 +306,37 @@
           "tag": "default",
           "mode": "text",
           "template": "False",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "Logic.forall-typed": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\forall #0 : #1, #2",
           "typst": {
             "built_in": "",
             "synthesis": {

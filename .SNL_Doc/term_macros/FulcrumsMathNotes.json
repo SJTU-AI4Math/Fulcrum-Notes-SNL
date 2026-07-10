@@ -31,6 +31,27 @@
           },
           "markdown": "",
           "text": ""
+        },
+        {
+          "tag": "predicate",
+          "mode": "text",
+          "template": "Let #0, define ``#1'' if and only if #2. ",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
@@ -101,6 +122,38 @@
           "mode": "text",
           "template": "#*",
           "variadic_join": ", ",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "thm-hyp": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "text",
+          "template": "Let #0, then #1. ",
           "typst": {
             "built_in": "",
             "synthesis": {
