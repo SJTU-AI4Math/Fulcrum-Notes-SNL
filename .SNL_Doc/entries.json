@@ -1,1 +1,368 @@
-[]
+[
+  {
+    "id": "Set.sec.set",
+    "kind": "section",
+    "title": "Set",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.ctxt.1",
+    "kind": "context",
+    "title": "T, A, B",
+    "content": {
+      "snl": "%In this section, we make the following conventions: %"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.ctxt.T",
+    "kind": "context",
+    "title": "$T$",
+    "content": {
+      "snl": "Type.judge(@T,Type)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.ctxt.AB",
+    "kind": "context",
+    "title": "$A, B$",
+    "content": {
+      "snl": "Type.judge(hyp-list(@A,@B),Set(T))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.subsec.basic",
+    "kind": "subsection",
+    "title": "Basic Concepts",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.subsec.relations",
+    "kind": "subsection",
+    "title": "Relations",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.subsec.operations",
+    "kind": "subsection",
+    "title": "Operations",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.set",
+    "kind": "definition",
+    "title": "Set",
+    "content": {
+      "snl": "def(Set(T), Type.to(T, Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.mem",
+    "kind": "definition",
+    "title": "Membership",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@x,T),Type.judge(@S,Set(T))),Set.mem(x,S),Type.apply[paren](S,x))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.sep",
+    "kind": "definition",
+    "title": "Set Comprehension",
+    "content": {
+      "snl": "def-hyp(Type.judge[paren](@P,Type.to(T,Proposition)),Set.sep-typed(@x,T,P(x)),P)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.emptyset",
+    "kind": "definition",
+    "title": "Empty Set",
+    "content": {
+      "snl": "def(Set.emptyset[slim],Set.sep-typed(@x,T,Logic.false))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.univ",
+    "kind": "definition",
+    "title": "Universal Set",
+    "content": {
+      "snl": "def(Set.univ,Set.sep-typed(@x,T,Logic.neg(Logic.false)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.subset",
+    "kind": "definition",
+    "title": "Subset",
+    "content": {
+      "snl": "def-hyp(Type.judge[paren](hyp-list(@s,@t),Set(T)),Set.subset(s,t),Logic.forall(@x,Logic.implies(Set.mem(x,s),Set.mem(x,t))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.ext",
+    "kind": "property",
+    "title": "Set Extensionality",
+    "content": {
+      "snl": "thm-hyp(Type.judge[paren](hyp-list(A,B),Set(T)),Logic.iff(Eq(A,B), Logic.forall-typed(@x, T,parentheses(Logic.iff(Set.mem(x,A),Set.mem(x,B)))),Logic.and(Set.subset(A,B),Set.subset(B,A))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.nmem",
+    "kind": "definition",
+    "title": "Membership Negation",
+    "content": {
+      "snl": "def-hyp[predicate](hyp-list(Type.judge(@x,T),Type.judge(S,Set(T))),Set.nmem(x,S),Logic.neg(Set.mem(x,S)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.union",
+    "kind": "definition",
+    "title": "Union of sets",
+    "content": {
+      "snl": "def-hyp(Type.judge[paren](hyp-list(A,B),Set(T)),Set.union(A,B),Set.sep-typed(@x,T,Logic.or(Set.mem(x,A),Set.mem(x,B))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.inter",
+    "kind": "definition",
+    "title": "Intersection of sets",
+    "content": {
+      "snl": "def-hyp(Type.judge[paren](hyp-list(@s,@t),Set(T)),Set.inter(s,t),Set.sep-typed(@x,T,Logic.and(Set.mem(x,s),Set.mem(x,t))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.diff",
+    "kind": "definition",
+    "title": "Set Difference",
+    "content": {
+      "snl": "def-hyp(Type.judge[paren](hyp-list(@s,@t),Set(T)),Set.diff[backslash](s,t),Set.sep-typed(@x,T,Logic.and(Set.mem(x,s),Set.nmem(x,t))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.compl",
+    "kind": "definition",
+    "title": "Complement",
+    "content": {
+      "snl": "def-hyp(Type.judge(@S,Set(T)),Set.compl(S),Set.sep-typed(@x,T,Set.nmem(x,S)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.powerset",
+    "kind": "definition",
+    "title": "Power Set",
+    "content": {
+      "snl": "def-hyp(Type.judge[paren](@s,Set(T)),Set.powerset(s),Set.sep-typed(@t,Set(T),Set.subset(t,s)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Set.def.symmetric_difference",
+    "kind": "definition",
+    "title": "Symmetric Difference",
+    "content": {
+      "snl": "def-hyp(Type.judge[paren](hyp-list(A,B),Set(T)),Set.SymmDiff(A,B),Set.diff(parentheses(Set.union(A,B)),parentheses(Set.inter(A,B))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.sec.logic",
+    "kind": "section",
+    "title": "Logic",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.ctxt.1",
+    "kind": "context",
+    "title": "T, P, Q",
+    "content": {
+      "snl": "%In this chapter, we make the following conventions: %"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.ctxt.T",
+    "kind": "context",
+    "title": "$T$",
+    "content": {
+      "snl": "Type.judge(@T,Type)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.ctxt.PQ",
+    "kind": "context",
+    "title": "$P, Q$",
+    "content": {
+      "snl": "Type.judge(hyp-list(@P,@Q),Type.to(T,Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.subsec.propositional",
+    "kind": "subsection",
+    "title": "Propositional Logic",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.subsec.predicate",
+    "kind": "subsection",
+    "title": "Predicate Logic",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.true",
+    "kind": "definition",
+    "title": "True",
+    "content": {
+      "snl": "def-hyp(Type.judge(@P,Proposition), Logic.true, Type.judge(Logic.true, Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.and",
+    "kind": "definition",
+    "title": "Conjunction",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@P,Proposition),Type.judge(@Q,Proposition)), Logic.and(P,Q), Type.judge(Logic.and(P,Q), Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.or",
+    "kind": "definition",
+    "title": "Disjunction",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@P,Proposition),Type.judge(@Q,Proposition)), Logic.or(P,Q), Type.judge(Logic.or(P,Q), Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.implies",
+    "kind": "definition",
+    "title": "Implication",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@P,Proposition),Type.judge(@Q,Proposition)), Logic.implies(P,Q), Type.judge(Logic.implies(P,Q), Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.neg",
+    "kind": "definition",
+    "title": "Negation",
+    "content": {
+      "snl": "def-hyp(Type.judge(@P,Proposition), Logic.neg(P), Type.judge(Logic.neg(P), Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.iff",
+    "kind": "definition",
+    "title": "Equivalence",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@P,Proposition),Type.judge(@Q,Proposition)), Logic.iff(P,Q), Type.judge(Logic.iff(P,Q), Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.forall",
+    "kind": "definition",
+    "title": "Universal Quantifier",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](@P,Type.to(T,Proposition))), Logic.forall-typed(@x,T,P(x)), Type.judge(Logic.forall-typed(x,T,P(x)), Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.exists",
+    "kind": "definition",
+    "title": "Existential Quantifier",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](@P,Type.to(T,Proposition))), Logic.exists-typed(@x,T,P(x)), Type.judge(Logic.exists-typed(x,T,P(x)), Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.eq",
+    "kind": "definition",
+    "title": "Equality",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@a,@b),T)), Eq(a,b), Type.judge(Eq(a,b), Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.thm.eq_refl",
+    "kind": "theorem",
+    "title": "Reflexivity of =",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@T,Type), Logic.forall-typed(@a,T,Eq(a,a)), Logic.true)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.thm.eq_subst",
+    "kind": "theorem",
+    "title": "Substitution",
+    "content": {
+      "snl": "thm-hyp(hyp-list(Type.judge(@T,Type),Type.judge[paren](hyp-list(@a,@b),T)), Logic.implies(Eq(a,b), Logic.forall-typed(@P,Type.to(T,Proposition),Logic.implies(P(a),P(b)))), Logic.true)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+]

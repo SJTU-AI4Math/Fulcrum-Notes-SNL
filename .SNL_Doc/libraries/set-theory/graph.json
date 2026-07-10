@@ -36,20 +36,6 @@
       }
     },
     {
-      "id": "n_sub_rel",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.subsec.relations"
-      }
-    },
-    {
-      "id": "n_sub_ops",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.subsec.operations"
-      }
-    },
-    {
       "id": "n_set",
       "label": "Entry",
       "props": {
@@ -85,6 +71,13 @@
       }
     },
     {
+      "id": "n_sub_rel",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.subsec.relations"
+      }
+    },
+    {
       "id": "n_subset",
       "label": "Entry",
       "props": {
@@ -103,6 +96,13 @@
       "label": "Entry",
       "props": {
         "entryId": "Set.def.nmem"
+      }
+    },
+    {
+      "id": "n_sub_ops",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.subsec.operations"
       }
     },
     {
@@ -155,12 +155,12 @@
       "label": "branch"
     },
     {
-      "from": "n_ctx1",
+      "from": "n_sec",
       "to": "n_ctxT",
       "label": "branch"
     },
     {
-      "from": "n_ctx1",
+      "from": "n_sec",
       "to": "n_ctxAB",
       "label": "branch"
     },
@@ -210,7 +210,7 @@
       "label": "branch"
     },
     {
-      "from": "n_subset",
+      "from": "n_sub_rel",
       "to": "n_ext",
       "label": "branch"
     },
