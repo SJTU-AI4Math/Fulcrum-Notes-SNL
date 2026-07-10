@@ -1,0 +1,109 @@
+{
+  "nodes": [
+    {
+      "id": "n_sec",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.sec.groupTheory"
+      }
+    },
+    {
+      "id": "n_ctx1",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.ctxt.1"
+      }
+    },
+    {
+      "id": "n_ctxG",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.ctxt.G"
+      }
+    },
+    {
+      "id": "n_ctxMul",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.ctxt.mul"
+      }
+    },
+    {
+      "id": "n_sub_def",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.subsec.definitions"
+      }
+    },
+    {
+      "id": "n_semigrp",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.semigroup"
+      }
+    },
+    {
+      "id": "n_monoid",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.monoid"
+      }
+    },
+    {
+      "id": "n_idUnique",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.prop.identityUnique"
+      }
+    },
+    {
+      "id": "n_group",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.group"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n_sec",
+      "to": "n_ctx1",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx1",
+      "to": "n_ctxG",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx1",
+      "to": "n_ctxMul",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_sub_def",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_def",
+      "to": "n_semigrp",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_def",
+      "to": "n_monoid",
+      "label": "branch"
+    },
+    {
+      "from": "n_monoid",
+      "to": "n_idUnique",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_def",
+      "to": "n_group",
+      "label": "branch"
+    }
+  ]
+}

@@ -360,5 +360,89 @@
     },
     "contribution_info": null,
     "pointer": null
+  },
+  {
+    "id": "Algebra.sec.groupTheory",
+    "kind": "section",
+    "title": "Group Theory",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.ctxt.1",
+    "kind": "context",
+    "title": "G, dot",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.ctxt.G",
+    "kind": "context",
+    "title": "$G$",
+    "content": {
+      "snl": "Type.judge(@G,Type)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.ctxt.mul",
+    "kind": "context",
+    "title": "$\\cdot$",
+    "content": {
+      "snl": "Type.judge(@dot,Type.to(G@Algebra.ctxt.G,Type.to(G@Algebra.ctxt.G,G@Algebra.ctxt.G)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.subsec.definitions",
+    "kind": "subsection",
+    "title": "Basic Definitions",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.semigroup",
+    "kind": "definition",
+    "title": "Semigroup",
+    "content": {
+      "snl": "def(Algebra.Semigroup, Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.forall-typed(@c,G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](a,b),c),Algebra.mul[dot](a,Algebra.mul[dot](b,c)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.monoid",
+    "kind": "definition",
+    "title": "Monoid",
+    "content": {
+      "snl": "def-hyp(Type.judge(@e,G@Algebra.ctxt.G), Algebra.Monoid, Logic.and(Algebra.Semigroup, Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.prop.identityUnique",
+    "kind": "property",
+    "title": "Identity Uniqueness",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@ep,G@Algebra.ctxt.G),Logic.and(Logic.forall-typed(@a,G@Algebra.ctxt.G,Eq(Algebra.mul[dot](ep,a),a)),Logic.forall-typed(@a,G@Algebra.ctxt.G,Eq(Algebra.mul[dot](a,ep),a)))), Eq(ep,e@Algebra.def.monoid), Logic.true)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.group",
+    "kind": "definition",
+    "title": "Group",
+    "content": {
+      "snl": "def-hyp(Type.judge(@inv,Type.to(G@Algebra.ctxt.G,G@Algebra.ctxt.G)), Algebra.Group, Logic.and(Algebra.Monoid, Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](Algebra.inv(a),e@Algebra.def.monoid),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,Algebra.inv(a)),e@Algebra.def.monoid)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
   }
 ]
