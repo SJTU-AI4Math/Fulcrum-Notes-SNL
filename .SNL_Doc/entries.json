@@ -444,5 +444,177 @@
     },
     "contribution_info": null,
     "pointer": null
+  },
+  {
+    "id": "Algebra.subsec.homomorphism",
+    "kind": "subsection",
+    "title": "Homomorphisms",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.groupHom",
+    "kind": "definition",
+    "title": "Group Homomorphism",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GHom, Logic.and(Eq(Type.apply[paren](f,Algebra.e),Algebra.e),Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,Algebra.mul[dot](a,b)),Algebra.mul[dotH](Type.apply[paren](f,a),Type.apply[paren](f,b)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.groupMono",
+    "kind": "definition",
+    "title": "Group Monomorphism",
+    "content": {
+      "snl": "def-hyp(hyp_list(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GMono, Logic.and(Algebra.GHom,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.implies(Eq(Type.apply[paren](f,a),Type.apply[paren](f,b)),Eq(a,b))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.groupEpi",
+    "kind": "definition",
+    "title": "Group Epimorphism",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GEpi, Logic.and(Algebra.GHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.groupIso",
+    "kind": "definition",
+    "title": "Group Isomorphism",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GIso, Logic.and(Algebra.GMono,Algebra.GEpi))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.kernel",
+    "kind": "definition",
+    "title": "Kernel",
+    "content": {
+      "snl": "def(Algebra.Ker,Set.sep-typed(@a,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,a),Algebra.e@Algebra.ctxt.G)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.image",
+    "kind": "definition",
+    "title": "Image",
+    "content": {
+      "snl": "def(Algebra.Im,Set.sep-typed(@y,H@Algebra.def.groupHom,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,x),y))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.subsec.subgroup",
+    "kind": "subsection",
+    "title": "Subgroups",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.subgroup",
+    "kind": "definition",
+    "title": "Subgroup",
+    "content": {
+      "snl": "def-hyp(Type.judge(@H,Set(G@Algebra.ctxt.G)), Algebra.Subgroup, Algebra.Group)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.subsec.permutation",
+    "kind": "subsection",
+    "title": "Permutation Groups",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.permutation",
+    "kind": "definition",
+    "title": "Permutation",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@X,Type),Type.judge(@sigma,Type.to(X,X))), Algebra.Perm, Logic.and(Logic.forall-typed(@y,X,Logic.exists-typed(@x,X,Eq(Type.apply[paren](sigma,x),y))),Logic.forall-typed(@a,X,Logic.forall-typed(@b,X,Logic.implies(Eq(Type.apply[paren](sigma,a),Type.apply[paren](sigma,b)),Eq(a,b))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.symmetricGroup",
+    "kind": "definition",
+    "title": "Symmetric Group",
+    "content": {
+      "snl": "def-hyp(Type.judge(@X,Type), Algebra.Sym, Algebra.Group)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.cycle",
+    "kind": "definition",
+    "title": "Cycle",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@X,Type),Type.judge(@r,Algebra.Nat),Type.judge[paren](hyp-list(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.transposition",
+    "kind": "definition",
+    "title": "Transposition",
+    "content": {
+      "snl": "def(Algebra.Trans, Logic.true)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.subsec.action",
+    "kind": "subsection",
+    "title": "Group Actions",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.groupAction",
+    "kind": "definition",
+    "title": "Group Action",
+    "content": {
+      "snl": "def-hyp(hyp-list(Type.judge(@X,Type),Type.judge(@alpha,Type.to(G@Algebra.ctxt.G,Type.to(X,X)))), Algebra.Action, Logic.and(Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.e),x),x)),Logic.forall-typed(@g,G@Algebra.ctxt.G,Logic.forall-typed(@h,G@Algebra.ctxt.G,Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.mul[dot](g,h)),x),Type.apply[paren](Type.apply[paren](alpha,g),Type.apply[paren](Type.apply[paren](alpha,h),x))))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.orbit",
+    "kind": "definition",
+    "title": "Orbit",
+    "content": {
+      "snl": "def(Algebra.Orb,Set.sep-typed(@y,X@Algebra.def.groupAction,Logic.exists-typed(@g,G@Algebra.ctxt.G,Eq(Type.apply[paren](Type.apply[paren](alpha@Algebra.def.groupAction,g),x@Algebra.def.groupAction),y))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Algebra.def.stabilizer",
+    "kind": "definition",
+    "title": "Stabilizer",
+    "content": {
+      "snl": "def(Algebra.Stab,Set.sep-typed(@g,G@Algebra.ctxt.G,Eq(Type.apply[paren](Type.apply[paren](alpha@Algebra.def.groupAction,g),x@Algebra.def.groupAction),x@Algebra.def.groupAction)))"
+    },
+    "contribution_info": null,
+    "pointer": null
   }
 ]

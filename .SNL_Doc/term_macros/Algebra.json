@@ -77,6 +77,141 @@
           "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
           "markdown": "", "text": "" }
       ]
+    },
+    "Algebra.GHom": {
+      "description": "Group homomorphism predicate",
+      "source": { "entries": ["Algebra.def.groupHom"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "text", "template": "Hom",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.GMono": {
+      "description": "Group monomorphism",
+      "source": { "entries": ["Algebra.def.groupMono"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "text", "template": "Mono",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.GEpi": {
+      "description": "Group epimorphism",
+      "source": { "entries": ["Algebra.def.groupEpi"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "text", "template": "Epi",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.GIso": {
+      "description": "Group isomorphism",
+      "source": { "entries": ["Algebra.def.groupIso"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "text", "template": "Iso",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Ker": {
+      "description": "Kernel of group homomorphism",
+      "source": { "entries": ["Algebra.def.kernel"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\operatorname{Ker}",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Im": {
+      "description": "Image of group homomorphism",
+      "source": { "entries": ["Algebra.def.image"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\operatorname{Im}",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Subgroup": {
+      "description": "Subgroup predicate",
+      "source": { "entries": ["Algebra.def.subgroup"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "text", "template": "Subgroup",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Perm": {
+      "description": "Permutation predicate",
+      "source": { "entries": ["Algebra.def.permutation"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "text", "template": "Perm",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Sym": {
+      "description": "Symmetric group",
+      "source": { "entries": ["Algebra.def.symmetricGroup"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\operatorname{Sym}",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Cycle": {
+      "description": "Cycle",
+      "source": { "entries": ["Algebra.def.cycle"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "text", "template": "Cycle",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Trans": {
+      "description": "Transposition",
+      "source": { "entries": ["Algebra.def.transposition"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "text", "template": "Trans",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Action": {
+      "description": "Group action predicate",
+      "source": { "entries": ["Algebra.def.groupAction"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "text", "template": "Action",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Orb": {
+      "description": "Orbit",
+      "source": { "entries": ["Algebra.def.orbit"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\operatorname{Orb}",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Stab": {
+      "description": "Stabilizer",
+      "source": { "entries": ["Algebra.def.stabilizer"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\operatorname{Stab}",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
+    },
+    "Algebra.Nat": {
+      "description": "Natural numbers",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [{ "tag": "default", "mode": "formula_inline", "template": "\\mathbb{N}",
+        "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
+        "markdown": "", "text": "" }]
     }
   }
 }
