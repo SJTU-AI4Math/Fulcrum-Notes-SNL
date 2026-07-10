@@ -2,6 +2,383 @@
   "version": 1,
   "relationships": [
     {
+      "id": "ctx.Logic.def.and.Logic.ctxt.PQ",
+      "from": "Logic.def.and",
+      "to": "Logic.ctxt.PQ",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.PQ"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.def.eq.Logic.ctxt.T",
+      "from": "Logic.def.eq",
+      "to": "Logic.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.def.exists.Logic.ctxt.T",
+      "from": "Logic.def.exists",
+      "to": "Logic.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.def.forall.Logic.ctxt.T",
+      "from": "Logic.def.forall",
+      "to": "Logic.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.def.iff.Logic.ctxt.PQ",
+      "from": "Logic.def.iff",
+      "to": "Logic.ctxt.PQ",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.PQ"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.def.implies.Logic.ctxt.PQ",
+      "from": "Logic.def.implies",
+      "to": "Logic.ctxt.PQ",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.PQ"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.def.neg.Logic.ctxt.PQ",
+      "from": "Logic.def.neg",
+      "to": "Logic.ctxt.PQ",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.PQ"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.def.or.Logic.ctxt.PQ",
+      "from": "Logic.def.or",
+      "to": "Logic.ctxt.PQ",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.PQ"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.def.true.Logic.ctxt.PQ",
+      "from": "Logic.def.true",
+      "to": "Logic.ctxt.PQ",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.PQ"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.thm.eq_refl.Logic.ctxt.T",
+      "from": "Logic.thm.eq_refl",
+      "to": "Logic.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Logic.thm.eq_subst.Logic.ctxt.T",
+      "from": "Logic.thm.eq_subst",
+      "to": "Logic.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Logic.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.ctxt.AB.Set.ctxt.T",
+      "from": "Set.ctxt.AB",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.compl.Set.ctxt.T",
+      "from": "Set.def.compl",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.diff.Set.ctxt.T",
+      "from": "Set.def.diff",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.emptyset.Set.ctxt.T",
+      "from": "Set.def.emptyset",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.ext.Set.ctxt.AB",
+      "from": "Set.def.ext",
+      "to": "Set.ctxt.AB",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.AB"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.ext.Set.ctxt.T",
+      "from": "Set.def.ext",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "ctx.Set.def.inter.Set.ctxt.T",
+      "from": "Set.def.inter",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.mem.Set.ctxt.T",
+      "from": "Set.def.mem",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.nmem.Set.ctxt.T",
+      "from": "Set.def.nmem",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.powerset.Set.ctxt.T",
+      "from": "Set.def.powerset",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.sep.Set.ctxt.T",
+      "from": "Set.def.sep",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.set.Set.ctxt.T",
+      "from": "Set.def.set",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.subset.Set.ctxt.T",
+      "from": "Set.def.subset",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.symmetric_difference.Set.ctxt.AB",
+      "from": "Set.def.symmetric_difference",
+      "to": "Set.ctxt.AB",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.AB"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.symmetric_difference.Set.ctxt.T",
+      "from": "Set.def.symmetric_difference",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "ctx.Set.def.union.Set.ctxt.AB",
+      "from": "Set.def.union",
+      "to": "Set.ctxt.AB",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.AB"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "ctx.Set.def.union.Set.ctxt.T",
+      "from": "Set.def.union",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "ctx.Set.def.univ.Set.ctxt.T",
+      "from": "Set.def.univ",
+      "to": "Set.ctxt.T",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Set.ctxt.T"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Logic.thm.eq_refl.Logic.def.forall",
       "from": "Logic.thm.eq_refl",
       "to": "Logic.def.forall",
