@@ -2,6 +2,71 @@
   "version": 1,
   "relationships": [
     {
+      "id": "dep.Logic.thm.eq_refl.Logic.def.forall",
+      "from": "Logic.thm.eq_refl",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Logic.thm.eq_refl.Logic.def.true",
+      "from": "Logic.thm.eq_refl",
+      "to": "Logic.def.true",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.true"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Logic.thm.eq_subst.Logic.def.forall",
+      "from": "Logic.thm.eq_subst",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Logic.thm.eq_subst.Logic.def.implies",
+      "from": "Logic.thm.eq_subst",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Logic.thm.eq_subst.Logic.def.true",
+      "from": "Logic.thm.eq_subst",
+      "to": "Logic.def.true",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.true"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.ctxt.AB.Set.def.set",
       "from": "Set.ctxt.AB",
       "to": "Set.def.set",
@@ -51,6 +116,19 @@
           "Set"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.diff.Logic.def.and",
+      "from": "Set.def.diff",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
       }
     },
     {
@@ -119,6 +197,45 @@
       }
     },
     {
+      "id": "dep.Set.def.ext.Logic.def.and",
+      "from": "Set.def.ext",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.ext.Logic.def.forall",
+      "from": "Set.def.ext",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.ext.Logic.def.iff",
+      "from": "Set.def.ext",
+      "to": "Logic.def.iff",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.iff"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.def.ext.Set.def.mem",
       "from": "Set.def.ext",
       "to": "Set.def.mem",
@@ -152,8 +269,20 @@
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Logic.forall",
           "Set.subset"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.inter.Logic.def.and",
+      "from": "Set.def.inter",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
         ],
         "isAtomic": true
       }
@@ -206,6 +335,19 @@
         "generator": "macro-source-scan",
         "macros": [
           "Set"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.nmem.Logic.def.neg",
+      "from": "Set.def.nmem",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
         ],
         "isAtomic": true
       }
@@ -271,6 +413,32 @@
         "generator": "macro-source-scan",
         "macros": [
           "Set.subset"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.subset.Logic.def.forall",
+      "from": "Set.def.subset",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.subset.Logic.def.implies",
+      "from": "Set.def.subset",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
         ],
         "isAtomic": true
       }
@@ -354,6 +522,19 @@
       }
     },
     {
+      "id": "dep.Set.def.union.Logic.def.or",
+      "from": "Set.def.union",
+      "to": "Logic.def.or",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.or"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.def.union.Set.def.mem",
       "from": "Set.def.union",
       "to": "Set.def.mem",
@@ -390,6 +571,19 @@
           "Set"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.univ.Logic.def.neg",
+      "from": "Set.def.univ",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
+        ],
+        "isAtomic": true
       }
     },
     {
