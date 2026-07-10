@@ -1,0 +1,325 @@
+{
+  "nodes": [
+    {
+      "id": "n_sec",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.sec.groupTheory"
+      }
+    },
+    {
+      "id": "n_ctx1",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.ctxt.1"
+      }
+    },
+    {
+      "id": "n_ctxG",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.ctxt.G"
+      }
+    },
+    {
+      "id": "n_ctxMul",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.ctxt.mul"
+      }
+    },
+    {
+      "id": "n_sub_def",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.subsec.definitions"
+      }
+    },
+    {
+      "id": "n_semigrp",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.semigroup"
+      }
+    },
+    {
+      "id": "n_monoid",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.monoid"
+      }
+    },
+    {
+      "id": "n_idUnique",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.prop.identityUnique"
+      }
+    },
+    {
+      "id": "n_group",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.group"
+      }
+    },
+    {
+      "id": "n_sub_hom",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.subsec.homomorphism"
+      }
+    },
+    {
+      "id": "n_hom",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.groupHom"
+      }
+    },
+    {
+      "id": "n_mono",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.groupMono"
+      }
+    },
+    {
+      "id": "n_epi",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.groupEpi"
+      }
+    },
+    {
+      "id": "n_iso",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.groupIso"
+      }
+    },
+    {
+      "id": "n_ker",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.kernel"
+      }
+    },
+    {
+      "id": "n_im",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.image"
+      }
+    },
+    {
+      "id": "n_sub_subg",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.subsec.subgroup"
+      }
+    },
+    {
+      "id": "n_subg",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.subgroup"
+      }
+    },
+    {
+      "id": "n_sub_perm",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.subsec.permutation"
+      }
+    },
+    {
+      "id": "n_perm",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.permutation"
+      }
+    },
+    {
+      "id": "n_sym",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.symmetricGroup"
+      }
+    },
+    {
+      "id": "n_cycle",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.cycle"
+      }
+    },
+    {
+      "id": "n_trans",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.transposition"
+      }
+    },
+    {
+      "id": "n_sub_act",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.subsec.action"
+      }
+    },
+    {
+      "id": "n_action",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.groupAction"
+      }
+    },
+    {
+      "id": "n_orbit",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.orbit"
+      }
+    },
+    {
+      "id": "n_stab",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.stabilizer"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n_sec",
+      "to": "n_ctx1",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx1",
+      "to": "n_ctxG",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx1",
+      "to": "n_ctxMul",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_sub_def",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_def",
+      "to": "n_semigrp",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_def",
+      "to": "n_monoid",
+      "label": "branch"
+    },
+    {
+      "from": "n_monoid",
+      "to": "n_idUnique",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_def",
+      "to": "n_group",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_sub_hom",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_hom",
+      "to": "n_hom",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_hom",
+      "to": "n_mono",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_hom",
+      "to": "n_epi",
+      "label": "branch"
+    },
+    {
+      "from": "n_hom",
+      "to": "n_iso",
+      "label": "branch"
+    },
+    {
+      "from": "n_hom",
+      "to": "n_ker",
+      "label": "branch"
+    },
+    {
+      "from": "n_hom",
+      "to": "n_im",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_sub_subg",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_subg",
+      "to": "n_subg",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_sub_perm",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_perm",
+      "to": "n_perm",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_perm",
+      "to": "n_sym",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_perm",
+      "to": "n_cycle",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_perm",
+      "to": "n_trans",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_sub_act",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_act",
+      "to": "n_action",
+      "label": "branch"
+    },
+    {
+      "from": "n_action",
+      "to": "n_orbit",
+      "label": "branch"
+    },
+    {
+      "from": "n_action",
+      "to": "n_stab",
+      "label": "branch"
+    }
+  ]
+}
