@@ -549,59 +549,6 @@
         }
       ]
     },
-    "Set.apply": {
-      "description": "Function application f(x)",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
-      "styles": [
-        {
-          "tag": "juxt",
-          "mode": "formula_inline",
-          "template": "#0\\ #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        },
-        {
-          "tag": "paren",
-          "mode": "formula_inline",
-          "template": "#0(#1)",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
-      ]
-    },
     "Set.nmem": {
       "description": "",
       "source": {

@@ -172,6 +172,104 @@
           "text": ""
         }
       ]
+    },
+    "inductive": {
+      "description": "Inductive type definition header",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "block",
+          "template": "Inductive #0 :=\n#*",
+          "variadic_join": "\n",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "structure": {
+      "description": "Structure type definition header",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "block",
+          "template": "Structure #0 :=\n#*",
+          "variadic_join": "\n",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "constructor": {
+      "description": "Constructor declaration",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "text",
+          "template": "| #0 : #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
     }
   }
 }

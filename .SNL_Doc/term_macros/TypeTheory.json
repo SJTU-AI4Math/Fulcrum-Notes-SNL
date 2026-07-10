@@ -153,7 +153,10 @@
     },
     "Pi": {
       "description": "Π-type (dependent function)",
-      "source": { "entries": [], "urls": [] },
+      "source": {
+        "entries": [],
+        "urls": []
+      },
       "kind": "rule",
       "dynamic_arity": false,
       "styles": [
@@ -161,15 +164,31 @@
           "tag": "bind",
           "mode": "formula_inline",
           "template": "\\prod_{#0 : #1} #2",
-          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": ""
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
     "Sigma": {
       "description": "Σ-type (dependent pair)",
-      "source": { "entries": [], "urls": [] },
+      "source": {
+        "entries": [],
+        "urls": []
+      },
       "kind": "rule",
       "dynamic_arity": false,
       "styles": [
@@ -177,9 +196,107 @@
           "tag": "bind",
           "mode": "formula_inline",
           "template": "\\sum_{#0 : #1} #2",
-          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": ""
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "Type.apply": {
+      "description": "Function application",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "paren",
+          "mode": "formula_inline",
+          "template": "#0(#1)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        },
+        {
+          "tag": "juxt",
+          "mode": "formula_inline",
+          "template": "#0\\ #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "Type.lambda": {
+      "description": "Lambda abstraction",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\lambda #0 : #1,\\ #2",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     }
