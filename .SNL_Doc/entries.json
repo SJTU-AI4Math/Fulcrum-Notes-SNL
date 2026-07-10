@@ -114,7 +114,7 @@
     "kind": "definition",
     "title": "Subset",
     "content": {
-      "snl": "def(Type.judge[paren](hyp-list(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB),Logic.forall(@x,Logic.implies(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
+      "snl": "def(Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB),Logic.forall(@x,Logic.implies(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -144,7 +144,7 @@
     "kind": "definition",
     "title": "Union of sets",
     "content": {
-      "snl": "def(Type.judge[paren](hyp-list(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Set.union(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.or(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
+      "snl": "def(Set.union(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.or(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -154,7 +154,7 @@
     "kind": "definition",
     "title": "Intersection of sets",
     "content": {
-      "snl": "def(Type.judge[paren](hyp-list(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Set.inter(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.and(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
+      "snl": "def(Set.inter(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.and(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -164,7 +164,7 @@
     "kind": "definition",
     "title": "Set Difference",
     "content": {
-      "snl": "def(Type.judge[paren](hyp-list(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Set.diff[backslash](A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.and(Set.mem(x,A@Set.ctxt.AB),Set.nmem(x,B@Set.ctxt.AB))))"
+      "snl": "def(Set.diff[backslash](A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.and(Set.mem(x,A@Set.ctxt.AB),Set.nmem(x,B@Set.ctxt.AB))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -174,7 +174,7 @@
     "kind": "definition",
     "title": "Complement",
     "content": {
-      "snl": "def(Type.judge(A@Set.ctxt.AB,Set(T@Set.ctxt.T)),Set.compl(A@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Set.nmem(x,A@Set.ctxt.AB)))"
+      "snl": "def(Set.compl(A@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Set.nmem(x,A@Set.ctxt.AB)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -184,7 +184,7 @@
     "kind": "definition",
     "title": "Power Set",
     "content": {
-      "snl": "def(Type.judge[paren](A@Set.ctxt.AB,Set(T@Set.ctxt.T)),Set.powerset(A@Set.ctxt.AB),Set.sep-typed(@t,Set(T@Set.ctxt.T),Set.subset(t,A@Set.ctxt.AB)))"
+      "snl": "def(Set.powerset(A@Set.ctxt.AB),Set.sep-typed(@t,Set(T@Set.ctxt.T),Set.subset(t,A@Set.ctxt.AB)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -194,7 +194,7 @@
     "kind": "definition",
     "title": "Symmetric Difference",
     "content": {
-      "snl": "def(Type.judge[paren](hyp-list(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Set.SymmDiff(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.diff(parentheses(Set.union(A@Set.ctxt.AB,B@Set.ctxt.AB)),parentheses(Set.inter(A@Set.ctxt.AB,B@Set.ctxt.AB))))"
+      "snl": "def(Set.SymmDiff(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.diff(parentheses(Set.union(A@Set.ctxt.AB,B@Set.ctxt.AB)),parentheses(Set.inter(A@Set.ctxt.AB,B@Set.ctxt.AB))))"
     },
     "contribution_info": null,
     "pointer": null
