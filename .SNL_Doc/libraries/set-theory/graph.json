@@ -1,216 +1,252 @@
 {
   "nodes": [
     {
-      "id": "n_1",
+      "id": "n_sec",
       "label": "Entry",
       "props": {
         "entryId": "Set.sec.set"
       }
     },
     {
-      "id": "n_2",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.set"
-      }
-    },
-    {
-      "id": "n_3",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.mem"
-      }
-    },
-    {
-      "id": "n_4",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.subset"
-      }
-    },
-    {
-      "id": "n_5",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.sep"
-      }
-    },
-    {
-      "id": "n_7",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.emptyset"
-      }
-    },
-    {
-      "id": "n_8",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.univ"
-      }
-    },
-    {
-      "id": "n_9",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.union"
-      }
-    },
-    {
-      "id": "n_10",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.inter"
-      }
-    },
-    {
-      "id": "n_11",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.diff"
-      }
-    },
-    {
-      "id": "n_12",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.compl"
-      }
-    },
-    {
-      "id": "n_13",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.powerset"
-      }
-    },
-    {
-      "id": "n_14",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.symmetric_difference"
-      }
-    },
-    {
-      "id": "n_15",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.ext"
-      }
-    },
-    {
-      "id": "n_16",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.def.nmem"
-      }
-    },
-    {
-      "id": "n_6",
+      "id": "n_ctx1",
       "label": "Entry",
       "props": {
         "entryId": "Set.ctxt.1"
       }
     },
     {
-      "id": "n_17",
+      "id": "n_ctxT",
       "label": "Entry",
       "props": {
         "entryId": "Set.ctxt.T"
       }
     },
     {
-      "id": "n_18",
+      "id": "n_ctxAB",
       "label": "Entry",
       "props": {
         "entryId": "Set.ctxt.AB"
+      }
+    },
+    {
+      "id": "n_sub_basic",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.subsec.basic"
+      }
+    },
+    {
+      "id": "n_set",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.set"
+      }
+    },
+    {
+      "id": "n_mem",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.mem"
+      }
+    },
+    {
+      "id": "n_sep",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.sep"
+      }
+    },
+    {
+      "id": "n_empty",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.emptyset"
+      }
+    },
+    {
+      "id": "n_univ",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.univ"
+      }
+    },
+    {
+      "id": "n_sub_rel",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.subsec.relations"
+      }
+    },
+    {
+      "id": "n_subset",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.subset"
+      }
+    },
+    {
+      "id": "n_ext",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.ext"
+      }
+    },
+    {
+      "id": "n_nmem",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.nmem"
+      }
+    },
+    {
+      "id": "n_sub_ops",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.subsec.operations"
+      }
+    },
+    {
+      "id": "n_union",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.union"
+      }
+    },
+    {
+      "id": "n_inter",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.inter"
+      }
+    },
+    {
+      "id": "n_diff",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.diff"
+      }
+    },
+    {
+      "id": "n_compl",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.compl"
+      }
+    },
+    {
+      "id": "n_power",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.powerset"
+      }
+    },
+    {
+      "id": "n_symdiff",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.symmetric_difference"
       }
     }
   ],
   "relationships": [
     {
-      "from": "n_1",
-      "to": "n_6",
+      "from": "n_sec",
+      "to": "n_ctx1",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_2",
+      "from": "n_sec",
+      "to": "n_ctxT",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_5",
+      "from": "n_sec",
+      "to": "n_ctxAB",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_3",
+      "from": "n_sec",
+      "to": "n_sub_basic",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_4",
+      "from": "n_sec",
+      "to": "n_sub_rel",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_7",
+      "from": "n_sec",
+      "to": "n_sub_ops",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_8",
+      "from": "n_sub_basic",
+      "to": "n_set",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_9",
+      "from": "n_sub_basic",
+      "to": "n_mem",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_10",
+      "from": "n_sub_basic",
+      "to": "n_sep",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_11",
+      "from": "n_sub_basic",
+      "to": "n_empty",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_12",
+      "from": "n_sub_basic",
+      "to": "n_univ",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_13",
+      "from": "n_sub_rel",
+      "to": "n_subset",
       "label": "branch"
     },
     {
-      "from": "n_3",
-      "to": "n_16",
+      "from": "n_sub_rel",
+      "to": "n_ext",
       "label": "branch"
     },
     {
-      "from": "n_3",
-      "to": "n_15",
+      "from": "n_sub_rel",
+      "to": "n_nmem",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_14",
+      "from": "n_sub_ops",
+      "to": "n_union",
       "label": "branch"
     },
     {
-      "from": "n_6",
-      "to": "n_17",
+      "from": "n_sub_ops",
+      "to": "n_inter",
       "label": "branch"
     },
     {
-      "from": "n_6",
-      "to": "n_18",
+      "from": "n_sub_ops",
+      "to": "n_diff",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_ops",
+      "to": "n_compl",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_ops",
+      "to": "n_power",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_ops",
+      "to": "n_symdiff",
       "label": "branch"
     }
   ]

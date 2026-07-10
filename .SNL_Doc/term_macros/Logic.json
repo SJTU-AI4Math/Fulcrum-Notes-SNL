@@ -4,356 +4,93 @@
   "macros": {
     "Logic.and": {
       "description": "",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
       "styles": [
-        {
-          "tag": "infix",
-          "mode": "formula_inline",
-          "template": "#0 \\land #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        },
-        {
-          "tag": "cases",
-          "mode": "formula_display",
-          "template": "\\begin{cases}\n#0 \\\\\n#1\n\\end{cases}",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
+        { "tag": "infix", "mode": "formula_inline", "template": "#0 \\land #1", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" },
+        { "tag": "cases", "mode": "formula_display", "template": "\\begin{cases}\n#0 \\\\\n#1\n\\end{cases}", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
       ]
     },
     "Logic.or": {
       "description": "",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
       "styles": [
-        {
-          "tag": "infix",
-          "mode": "formula_inline",
-          "template": "#0 \\lor #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
+        { "tag": "infix", "mode": "formula_inline", "template": "#0 \\lor #1", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
       ]
     },
     "Logic.implies": {
       "description": "",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
       "styles": [
-        {
-          "tag": "longdouble",
-          "mode": "formula_inline",
-          "template": "#0 \\Longrightarrow #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        },
-        {
-          "tag": "double",
-          "mode": "formula_inline",
-          "template": "#0 \\Rightarrow #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        },
-        {
-          "tag": "single",
-          "mode": "formula_inline",
-          "template": "#0 \\rightarrow #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
+        { "tag": "longdouble", "mode": "formula_inline", "template": "#0 \\Longrightarrow #1", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" },
+        { "tag": "double", "mode": "formula_inline", "template": "#0 \\Rightarrow #1", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" },
+        { "tag": "single", "mode": "formula_inline", "template": "#0 \\rightarrow #1", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
       ]
     },
     "Logic.neg": {
       "description": "",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
       "styles": [
-        {
-          "tag": "prefix",
-          "mode": "formula_inline",
-          "template": "\\neg #0",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
+        { "tag": "prefix", "mode": "formula_inline", "template": "\\neg #0", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
       ]
     },
     "Logic.forall": {
-      "description": "Universal quantifier ∀ x, P(x)",
-      "source": {
-        "entries": [
-          "Set.def.subset"
-        ],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
+      "description": "Universal quantifier",
+      "source": { "entries": ["Set.def.subset"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
       "styles": [
-        {
-          "tag": "bind",
-          "mode": "formula_inline",
-          "template": "\\forall #0,\\ #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
+        { "tag": "bind", "mode": "formula_inline", "template": "\\forall #0,\\ #1", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
       ]
     },
     "Logic.exists": {
-      "description": "Existential quantifier ∃ x, P(x)",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
+      "description": "Existential quantifier",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
       "styles": [
-        {
-          "tag": "bind",
-          "mode": "formula_inline",
-          "template": "\\exists #0,\\ #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
+        { "tag": "bind", "mode": "formula_inline", "template": "\\exists #0,\\ #1", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
       ]
     },
     "Logic.iff": {
-      "description": "Logical equivalence ↔",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
+      "description": "Logical equivalence",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
       "styles": [
-        {
-          "tag": "long",
-          "mode": "formula_inline",
-          "template": "#0 \\iff #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
+        { "tag": "long", "mode": "formula_inline", "template": "#0 \\iff #1", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
+      ]
+    },
+    "Logic.true": {
+      "description": "True / ⊤",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "text", "template": "True", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
       ]
     },
     "Logic.false": {
       "description": "False / ⊥",
-      "source": {
-        "entries": [
-          "Set.def.emptyset"
-        ],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
+      "source": { "entries": ["Set.def.emptyset"], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
       "styles": [
-        {
-          "tag": "default",
-          "mode": "text",
-          "template": "False",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
+        { "tag": "default", "mode": "text", "template": "False", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
       ]
     },
     "Logic.forall-typed": {
-      "description": "",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "dynamic_arity": false,
+      "description": "Typed universal ∀ x : T, P(x)",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
       "styles": [
-        {
-          "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\forall #0 : #1, #2",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
+        { "tag": "default", "mode": "formula_inline", "template": "\\forall #0 : #1, #2", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
+      ]
+    },
+    "Logic.exists-typed": {
+      "description": "Typed existential ∃ x : T, P(x)",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const", "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "\\exists #0 : #1, #2", "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } }, "markdown": "", "text": "" }
       ]
     }
   }

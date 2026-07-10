@@ -1,0 +1,205 @@
+{
+  "nodes": [
+    {
+      "id": "n_sec",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.sec.logic"
+      }
+    },
+    {
+      "id": "n_ctx1",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.ctxt.1"
+      }
+    },
+    {
+      "id": "n_ctxT",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.ctxt.T"
+      }
+    },
+    {
+      "id": "n_ctxPQ",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.ctxt.PQ"
+      }
+    },
+    {
+      "id": "n_sub_prop",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.subsec.propositional"
+      }
+    },
+    {
+      "id": "n_true",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.true"
+      }
+    },
+    {
+      "id": "n_and",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.and"
+      }
+    },
+    {
+      "id": "n_or",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.or"
+      }
+    },
+    {
+      "id": "n_implies",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.implies"
+      }
+    },
+    {
+      "id": "n_neg",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.neg"
+      }
+    },
+    {
+      "id": "n_iff",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.iff"
+      }
+    },
+    {
+      "id": "n_sub_pred",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.subsec.predicate"
+      }
+    },
+    {
+      "id": "n_forall",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.forall"
+      }
+    },
+    {
+      "id": "n_exists",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.exists"
+      }
+    },
+    {
+      "id": "n_eq",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.eq"
+      }
+    },
+    {
+      "id": "n_eq_refl",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.thm.eq_refl"
+      }
+    },
+    {
+      "id": "n_eq_subst",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.thm.eq_subst"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n_sec",
+      "to": "n_ctx1",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_ctxT",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_ctxPQ",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_sub_prop",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_sub_pred",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_prop",
+      "to": "n_true",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_prop",
+      "to": "n_and",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_prop",
+      "to": "n_or",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_prop",
+      "to": "n_implies",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_prop",
+      "to": "n_neg",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_prop",
+      "to": "n_iff",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_pred",
+      "to": "n_forall",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_pred",
+      "to": "n_exists",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_pred",
+      "to": "n_eq",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_pred",
+      "to": "n_eq_refl",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_pred",
+      "to": "n_eq_subst",
+      "label": "branch"
+    }
+  ]
+}
