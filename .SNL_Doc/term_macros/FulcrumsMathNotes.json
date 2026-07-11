@@ -105,23 +105,53 @@
           },
           "markdown": "",
           "text": ""
-        }
-      ]
-    },
-    "hyp-list": {
-      "description": "",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "partial",
-      "dynamic_arity": true,
-      "styles": [
+        },
         {
-          "tag": "inline",
+          "tag": "predicate-display",
           "mode": "text",
-          "template": "#*",
-          "variadic_join": ", ",
+          "template": "Define ``#0'' if and only if:\n#1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        },
+        {
+          "tag": "predicate-display",
+          "mode": "text",
+          "template": "Define ``#0'' if and only if:\n#1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        },
+        {
+          "tag": "predicate-display",
+          "mode": "text",
+          "template": "Define ``#0'' if and only if:\n#1",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -252,6 +282,213 @@
           "tag": "default",
           "mode": "text",
           "template": "| #0 : #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "list-partial": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "partial",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "tag": "inline",
+          "mode": "text",
+          "template": "#*",
+          "variadic_join": ", ",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "def-struct-hyp": {
+      "description": "Structure definition with hypotheses",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "text",
+          "template": "Let #0, define structure ``#1'' consisting of the following data:\n#2",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "def-struct": {
+      "description": "Structure definition without hypotheses",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "text",
+          "template": "Define structure ``#0'' consisting of the following data:\n#1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "struct": {
+      "description": "Structure body (enumerate or cases)",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "partial",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "tag": "enumerate",
+          "mode": "block",
+          "template": "#*",
+          "variadic_join": "\n",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        },
+        {
+          "tag": "cases",
+          "mode": "formula_display",
+          "template": "#*",
+          "variadic_left": "\\begin{cases}\n",
+          "variadic_join": "\\\\\n",
+          "variadic_right": "\n\\end{cases}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "member": {
+      "description": "Structure member",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "partial",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "paren",
+          "mode": "formula_inline",
+          "template": "#0\\left(#1\\right)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        },
+        {
+          "tag": "colon",
+          "mode": "formula_inline",
+          "template": "#0 : #1",
           "typst": {
             "built_in": "",
             "synthesis": {

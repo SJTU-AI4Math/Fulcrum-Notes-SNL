@@ -30,7 +30,7 @@
     "kind": "context",
     "title": "$A, B$",
     "content": {
-      "snl": "Type.judge(hyp-list(@A,@B),Set(T@Set.ctxt.T))"
+      "snl": "Type.judge(list-partial(@A,@B),Set(T@Set.ctxt.T))"
     },
     "contribution_info": null,
     "pointer": null
@@ -74,7 +74,7 @@
     "kind": "definition",
     "title": "Membership",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@x,T@Set.ctxt.T),Type.judge(@S,Set(T@Set.ctxt.T))),Set.mem(x,S),Type.apply[paren](S,x))"
+      "snl": "def-hyp(list-partial(Type.judge(@x,T@Set.ctxt.T),Type.judge(@S,Set(T@Set.ctxt.T))),Set.mem(x,S),Type.apply[paren](S,x))"
     },
     "contribution_info": null,
     "pointer": null
@@ -124,7 +124,7 @@
     "kind": "property",
     "title": "Set Extensionality",
     "content": {
-      "snl": "thm-hyp(Type.judge[paren](hyp-list(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Logic.iff(Eq(A@Set.ctxt.AB,B@Set.ctxt.AB), Logic.forall-typed(@x, T@Set.ctxt.T,parentheses(Logic.iff(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB)))),Logic.and(Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.subset(B@Set.ctxt.AB,A@Set.ctxt.AB))))"
+      "snl": "thm-hyp(Type.judge[paren](list-partial(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Logic.iff(Eq(A@Set.ctxt.AB,B@Set.ctxt.AB), Logic.forall-typed(@x, T@Set.ctxt.T,parentheses(Logic.iff(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB)))),Logic.and(Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.subset(B@Set.ctxt.AB,A@Set.ctxt.AB))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -134,7 +134,7 @@
     "kind": "definition",
     "title": "Membership Negation",
     "content": {
-      "snl": "def-hyp[predicate](hyp-list(Type.judge(@x,T@Set.ctxt.T),Type.judge(A@Set.ctxt.AB,Set(T@Set.ctxt.T))),Set.nmem(x,A@Set.ctxt.AB),Logic.neg(Set.mem(x,A@Set.ctxt.AB)))"
+      "snl": "def-hyp[predicate](list-partial(Type.judge(@x,T@Set.ctxt.T),Type.judge(A@Set.ctxt.AB,Set(T@Set.ctxt.T))),Set.nmem(x,A@Set.ctxt.AB),Logic.neg(Set.mem(x,A@Set.ctxt.AB)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -230,7 +230,7 @@
     "kind": "context",
     "title": "$P, Q$",
     "content": {
-      "snl": "Type.judge(hyp-list(@P,@Q),Proposition)"
+      "snl": "Type.judge(list-partial(@P,@Q),Proposition)"
     },
     "contribution_info": null,
     "pointer": null
@@ -336,7 +336,7 @@
     "kind": "definition",
     "title": "Equality",
     "content": {
-      "snl": "def-hyp(Type.judge[paren](hyp-list(@a,@b),T@Logic.ctxt.T), Eq(a,b), Type.judge(Eq(a,b), Proposition))"
+      "snl": "def-hyp(Type.judge[paren](list-partial(@a,@b),T@Logic.ctxt.T), Eq(a,b), Type.judge(Eq(a,b), Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -356,7 +356,7 @@
     "kind": "theorem",
     "title": "Substitution",
     "content": {
-      "snl": "def-hyp(Type.judge[paren](hyp-list(@a,@b),T@Logic.ctxt.T), Logic.implies(Eq(a,b), Logic.forall-typed(@P,Type.to(T@Logic.ctxt.T,Proposition),Logic.implies(P(a),P(b)))), Logic.true)"
+      "snl": "def-hyp(Type.judge[paren](list-partial(@a,@b),T@Logic.ctxt.T), Logic.implies(Eq(a,b), Logic.forall-typed(@P,Type.to(T@Logic.ctxt.T,Proposition),Logic.implies(P(a),P(b)))), Logic.true)"
     },
     "contribution_info": null,
     "pointer": null
@@ -392,7 +392,7 @@
     "kind": "context",
     "title": "$\\cdot$",
     "content": {
-      "snl": "Type.judge(@dot,Type.to(G@Algebra.ctxt.G,Type.to(G@Algebra.ctxt.G,G@Algebra.ctxt.G)))"
+      "snl": "Type.judge(@$\\cdot$,Type.to(G@Algebra.ctxt.G,Type.to(G@Algebra.ctxt.G,G@Algebra.ctxt.G)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -410,7 +410,7 @@
     "kind": "definition",
     "title": "Semigroup",
     "content": {
-      "snl": "def(Algebra.Semigroup, Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.forall-typed(@c,G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](a,b),c),Algebra.mul[dot](a,Algebra.mul[dot](b,c)))))))"
+      "snl": "def[predicate-display](%(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul) is a semigroup%, struct[enumerate](member[colon](Associativity, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -420,7 +420,7 @@
     "kind": "definition",
     "title": "Monoid",
     "content": {
-      "snl": "def-hyp(Type.judge(@e,G@Algebra.ctxt.G), Algebra.Monoid, Logic.and(Algebra.Semigroup, Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))"
+      "snl": "def[predicate-display](%(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul) is a monoid%, struct[enumerate](member[colon](Associativity, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](Identity, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -430,7 +430,7 @@
     "kind": "property",
     "title": "Identity Uniqueness",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@ep,G@Algebra.ctxt.G),Logic.and(Logic.forall-typed(@a,G@Algebra.ctxt.G,Eq(Algebra.mul[dot](ep,a),a)),Logic.forall-typed(@a,G@Algebra.ctxt.G,Eq(Algebra.mul[dot](a,ep),a)))), Eq(ep,e@Algebra.def.monoid), Logic.true)"
+      "snl": "def-hyp(list-partial(Type.judge(@e1,G@Algebra.ctxt.G),Type.judge(@e2,G@Algebra.ctxt.G)), Eq(e1,e2), Logic.implies(Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e1,a),a),Eq(Algebra.mul[dot](a,e1),a))), Logic.implies(Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e2,a),a),Eq(Algebra.mul[dot](a,e2),a))), Eq(e1,e2))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -440,7 +440,7 @@
     "kind": "definition",
     "title": "Group",
     "content": {
-      "snl": "def-hyp(Type.judge(@inv,Type.to(G@Algebra.ctxt.G,G@Algebra.ctxt.G)), Algebra.Group, Logic.and(Algebra.Monoid, Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](Algebra.inv(a),e@Algebra.def.monoid),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,Algebra.inv(a)),e@Algebra.def.monoid)))))"
+      "snl": "def[predicate-display](%(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul) is a group%, struct[enumerate](member[colon](Associativity, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](Identity, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a))))), member[colon](Inverse, Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.exists-typed(@b,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](b,a),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,b),e@Algebra.def.monoid)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -458,7 +458,7 @@
     "kind": "definition",
     "title": "Group Homomorphism",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GHom, Logic.and(Eq(Type.apply[paren](f,Algebra.e),Algebra.e),Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,Algebra.mul[dot](a,b)),Algebra.mul[dotH](Type.apply[paren](f,a),Type.apply[paren](f,b)))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GHom, Logic.and(Eq(Type.apply[paren](f,Algebra.e),Algebra.e),Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,Algebra.mul[dot](a,b)),Algebra.mul[dotH](Type.apply[paren](f,a),Type.apply[paren](f,b)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -478,7 +478,7 @@
     "kind": "definition",
     "title": "Group Epimorphism",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GEpi, Logic.and(Algebra.GHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
+      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GEpi, Logic.and(Algebra.GHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -488,7 +488,7 @@
     "kind": "definition",
     "title": "Group Isomorphism",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GIso, Logic.and(Algebra.GMono,Algebra.GEpi))"
+      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GIso, Logic.and(Algebra.GMono,Algebra.GEpi))"
     },
     "contribution_info": null,
     "pointer": null
@@ -544,7 +544,7 @@
     "kind": "definition",
     "title": "Permutation",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@X,Type),Type.judge(@sigma,Type.to(X,X))), Algebra.Perm, Logic.and(Logic.forall-typed(@y,X,Logic.exists-typed(@x,X,Eq(Type.apply[paren](sigma,x),y))),Logic.forall-typed(@a,X,Logic.forall-typed(@b,X,Logic.implies(Eq(Type.apply[paren](sigma,a),Type.apply[paren](sigma,b)),Eq(a,b))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@sigma,Type.to(X,X))), Algebra.Perm, Logic.and(Logic.forall-typed(@y,X,Logic.exists-typed(@x,X,Eq(Type.apply[paren](sigma,x),y))),Logic.forall-typed(@a,X,Logic.forall-typed(@b,X,Logic.implies(Eq(Type.apply[paren](sigma,a),Type.apply[paren](sigma,b)),Eq(a,b))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -564,7 +564,7 @@
     "kind": "definition",
     "title": "Cycle",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@X,Type),Type.judge(@r,Algebra.Nat),Type.judge[paren](hyp-list(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
+      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@r,Algebra.Nat),Type.judge[paren](list-partial(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
     },
     "contribution_info": null,
     "pointer": null
@@ -592,7 +592,7 @@
     "kind": "definition",
     "title": "Group Action",
     "content": {
-      "snl": "def-hyp(hyp-list(Type.judge(@X,Type),Type.judge(@alpha,Type.to(G@Algebra.ctxt.G,Type.to(X,X)))), Algebra.Action, Logic.and(Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.e),x),x)),Logic.forall-typed(@g,G@Algebra.ctxt.G,Logic.forall-typed(@h,G@Algebra.ctxt.G,Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.mul[dot](g,h)),x),Type.apply[paren](Type.apply[paren](alpha,g),Type.apply[paren](Type.apply[paren](alpha,h),x))))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@alpha,Type.to(G@Algebra.ctxt.G,Type.to(X,X)))), Algebra.Action, Logic.and(Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.e),x),x)),Logic.forall-typed(@g,G@Algebra.ctxt.G,Logic.forall-typed(@h,G@Algebra.ctxt.G,Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.mul[dot](g,h)),x),Type.apply[paren](Type.apply[paren](alpha,g),Type.apply[paren](Type.apply[paren](alpha,h),x))))))))"
     },
     "contribution_info": null,
     "pointer": null
