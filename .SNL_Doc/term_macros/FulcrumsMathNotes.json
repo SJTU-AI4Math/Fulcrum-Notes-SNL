@@ -168,6 +168,27 @@
           },
           "markdown": "",
           "text": ""
+        },
+        {
+          "tag": "predicate-display",
+          "mode": "text",
+          "template": "Define ``#0'' if and only if:\n#1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },

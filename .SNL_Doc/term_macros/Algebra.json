@@ -48,10 +48,10 @@
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
-        { "tag": "default", "mode": "text", "template": "Semigroup",
+        { "tag": "default", "mode": "text", "template": "(#0, #1) is a semigroup",
           "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
           "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": "" }
+          "markdown": "", "text": "(#0, #1) is a semigroup" }
       ]
     },
     "Algebra.Monoid": {
@@ -60,10 +60,10 @@
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
-        { "tag": "default", "mode": "text", "template": "Monoid",
+        { "tag": "default", "mode": "text", "template": "(#0, #1) is a monoid",
           "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
           "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": "" }
+          "markdown": "", "text": "(#0, #1) is a monoid" }
       ]
     },
     "Algebra.Group": {
@@ -72,10 +72,10 @@
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
-        { "tag": "default", "mode": "text", "template": "Group",
+        { "tag": "default", "mode": "text", "template": "(#0, #1) is a group",
           "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
           "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": "" }
+          "markdown": "", "text": "(#0, #1) is a group" }
       ]
     },
     "Algebra.GHom": {
