@@ -14,7 +14,7 @@
         {
           "tag": "inline",
           "mode": "text",
-          "template": "Let #0, define ``#1'' to be #2. ",
+          "template": "Let #0, define “#1” to be #2. ",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -35,7 +35,7 @@
         {
           "tag": "predicate",
           "mode": "text",
-          "template": "Let #0, define ``#1'' if and only if #2. ",
+          "template": "Let #0, define “#1” if and only if #2. ",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -67,7 +67,7 @@
         {
           "tag": "inline",
           "mode": "text",
-          "template": "Define ``#0'' to be #1. ",
+          "template": "Define “#0” to be #1. ",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -88,7 +88,7 @@
         {
           "tag": "display",
           "mode": "text",
-          "template": "Define ``#0'' to be: #1",
+          "template": "Define “#0” to be: #1",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -109,70 +109,7 @@
         {
           "tag": "predicate-display",
           "mode": "text",
-          "template": "Define ``#0'' if and only if:\n#1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        },
-        {
-          "tag": "predicate-display",
-          "mode": "text",
-          "template": "Define ``#0'' if and only if:\n#1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        },
-        {
-          "tag": "predicate-display",
-          "mode": "text",
-          "template": "Define ``#0'' if and only if:\n#1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        },
-        {
-          "tag": "predicate-display",
-          "mode": "text",
-          "template": "Define ``#0'' if and only if:\n#1",
+          "template": "Define “#0” if and only if:\n#1",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -301,7 +238,7 @@
         {
           "tag": "default",
           "mode": "text",
-          "template": "Let #0, define structure ``#1'' consisting of the following data:\n#2",
+          "template": "Let #0, define structure “#1” consisting of the following data:\n#2",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -333,7 +270,7 @@
         {
           "tag": "default",
           "mode": "text",
-          "template": "Define structure ``#0'' consisting of the following data:\n#1",
+          "template": "Define structure “#0” consisting of the following data:\n#1",
           "typst": {
             "built_in": "",
             "synthesis": {

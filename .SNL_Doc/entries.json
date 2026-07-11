@@ -410,7 +410,7 @@
     "kind": "definition",
     "title": "Semigroup",
     "content": {
-      "snl": "def[predicate-display](Algebra.Semigroup(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul), struct[enumerate](member[colon](Associativity, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z)))))))"
+      "snl": "def[predicate-display](Algebra.Semigroup(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z))))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -420,7 +420,7 @@
     "kind": "definition",
     "title": "Monoid",
     "content": {
-      "snl": "def[predicate-display](Algebra.Monoid(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul), struct[enumerate](member[colon](Associativity, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](Identity, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))))"
+      "snl": "def[predicate-display](Algebra.Monoid(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z)))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -440,7 +440,7 @@
     "kind": "definition",
     "title": "Group",
     "content": {
-      "snl": "def[predicate-display](Algebra.Group(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul), struct[enumerate](member[colon](Associativity, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](Identity, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a))))), member[colon](Inverse, Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.exists-typed(@b,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](b,a),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,b),e@Algebra.def.monoid)))))))"
+      "snl": "def[predicate-display](Algebra.Group(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a))))), member[colon](%Inverse%, Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.exists-typed(@b,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](b,a),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,b),e@Algebra.def.monoid)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -468,7 +468,7 @@
     "kind": "definition",
     "title": "Group Monomorphism",
     "content": {
-      "snl": "def-hyp(hyp_list(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GMono, Logic.and(Algebra.GHom,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.implies(Eq(Type.apply[paren](f,a),Type.apply[paren](f,b)),Eq(a,b))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GMono, Logic.and(Algebra.GHom,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.implies(Eq(Type.apply[paren](f,a),Type.apply[paren](f,b)),Eq(a,b))))))"
     },
     "contribution_info": null,
     "pointer": null
