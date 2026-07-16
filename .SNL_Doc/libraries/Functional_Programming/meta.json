@@ -1,3 +1,4 @@
 {
-  "title": "Functional Programming"
+  "title": "Functional Programming",
+  "description": "Monads, bind, monad transformers, ordered/lattice monads, and standard Identity/Option/List/Set instances."
 }

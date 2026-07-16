@@ -1,72 +1,420 @@
 {
   "nodes": [
     {
-      "id": "n_1",
+      "id": "n_sec_monad",
       "label": "Entry",
       "props": {
         "entryId": "FP.sec.monad"
       }
     },
     {
-      "id": "n_2",
+      "id": "n_ctxt_1",
       "label": "Entry",
       "props": {
-        "entryId": "FP.subsec.basics"
+        "entryId": "FP.ctxt.1"
       }
     },
     {
-      "id": "n_3",
+      "id": "n_ctxt_types",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.ctxt.types"
+      }
+    },
+    {
+      "id": "n_ctxt_M",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.ctxt.M"
+      }
+    },
+    {
+      "id": "n_ctxt_T",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.ctxt.T"
+      }
+    },
+    {
+      "id": "n_subsec_intro",
       "label": "Entry",
       "props": {
         "entryId": "FP.subsec.intro"
       }
     },
     {
-      "id": "n_4",
+      "id": "n_subsec_basics",
       "label": "Entry",
       "props": {
-        "entryId": "FP.xmp.option"
+        "entryId": "FP.subsec.basics"
       }
     },
     {
-      "id": "n_5",
+      "id": "n_subsec_transformers",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.subsec.transformers"
+      }
+    },
+    {
+      "id": "n_subsec_order",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.subsec.order"
+      }
+    },
+    {
+      "id": "n_subsec_instances",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.subsec.instances"
+      }
+    },
+    {
+      "id": "n_def_monad",
       "label": "Entry",
       "props": {
         "entryId": "FP.def.monad"
       }
     },
     {
-      "id": "n_6",
+      "id": "n_def_bind",
       "label": "Entry",
       "props": {
-        "entryId": "FP.ctxt.M"
+        "entryId": "FP.def.bind"
+      }
+    },
+    {
+      "id": "n_prop_leftIdentity",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.leftIdentity"
+      }
+    },
+    {
+      "id": "n_prop_rightIdentity",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.rightIdentity"
+      }
+    },
+    {
+      "id": "n_prop_associativity",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.associativity"
+      }
+    },
+    {
+      "id": "n_def_map",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.map"
+      }
+    },
+    {
+      "id": "n_def_flatten",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.flatten"
+      }
+    },
+    {
+      "id": "n_def_monadTransformer",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.monadTransformer"
+      }
+    },
+    {
+      "id": "n_def_lift",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.lift"
+      }
+    },
+    {
+      "id": "n_prop_transformerLiftPure",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.transformerLiftPure"
+      }
+    },
+    {
+      "id": "n_prop_transformerLiftBind",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.transformerLiftBind"
+      }
+    },
+    {
+      "id": "n_def_monadOrder",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.monadOrder"
+      }
+    },
+    {
+      "id": "n_def_monadLattice",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.monadLattice"
+      }
+    },
+    {
+      "id": "n_prop_pureMonotone",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.pureMonotone"
+      }
+    },
+    {
+      "id": "n_prop_bindMonotone",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.bindMonotone"
+      }
+    },
+    {
+      "id": "n_prop_bindBottom",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.bindBottom"
+      }
+    },
+    {
+      "id": "n_prop_bindSup",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.bindSup"
+      }
+    },
+    {
+      "id": "n_def_identity",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.identity"
+      }
+    },
+    {
+      "id": "n_prop_identityMonad",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.identityMonad"
+      }
+    },
+    {
+      "id": "n_def_option",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.option"
+      }
+    },
+    {
+      "id": "n_xmp_option",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.xmp.option"
+      }
+    },
+    {
+      "id": "n_def_list",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.list"
+      }
+    },
+    {
+      "id": "n_prop_listMonad",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.listMonad"
+      }
+    },
+    {
+      "id": "n_def_set",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.set"
+      }
+    },
+    {
+      "id": "n_prop_setMonad",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.setMonad"
       }
     }
   ],
   "relationships": [
     {
-      "from": "n_1",
-      "to": "n_3",
+      "from": "n_sec_monad",
+      "to": "n_ctxt_1",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_2",
+      "from": "n_ctxt_1",
+      "to": "n_ctxt_types",
       "label": "branch"
     },
     {
-      "from": "n_3",
-      "to": "n_4",
+      "from": "n_ctxt_1",
+      "to": "n_ctxt_M",
       "label": "branch"
     },
     {
-      "from": "n_2",
-      "to": "n_6",
+      "from": "n_ctxt_1",
+      "to": "n_ctxt_T",
       "label": "branch"
     },
     {
-      "from": "n_2",
-      "to": "n_5",
+      "from": "n_sec_monad",
+      "to": "n_subsec_intro",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec_monad",
+      "to": "n_subsec_basics",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec_monad",
+      "to": "n_subsec_transformers",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec_monad",
+      "to": "n_subsec_order",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec_monad",
+      "to": "n_subsec_instances",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_basics",
+      "to": "n_def_monad",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monad",
+      "to": "n_def_bind",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monad",
+      "to": "n_prop_leftIdentity",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monad",
+      "to": "n_prop_rightIdentity",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monad",
+      "to": "n_prop_associativity",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_bind",
+      "to": "n_def_map",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_bind",
+      "to": "n_def_flatten",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_transformers",
+      "to": "n_def_monadTransformer",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monadTransformer",
+      "to": "n_def_lift",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_lift",
+      "to": "n_prop_transformerLiftPure",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_lift",
+      "to": "n_prop_transformerLiftBind",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_order",
+      "to": "n_def_monadOrder",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monadOrder",
+      "to": "n_def_monadLattice",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monadOrder",
+      "to": "n_prop_pureMonotone",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monadOrder",
+      "to": "n_prop_bindMonotone",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monadLattice",
+      "to": "n_prop_bindBottom",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monadLattice",
+      "to": "n_prop_bindSup",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_instances",
+      "to": "n_def_identity",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_identity",
+      "to": "n_prop_identityMonad",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_instances",
+      "to": "n_def_option",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_option",
+      "to": "n_xmp_option",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_instances",
+      "to": "n_def_list",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_list",
+      "to": "n_prop_listMonad",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_instances",
+      "to": "n_def_set",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_set",
+      "to": "n_prop_setMonad",
       "label": "branch"
     }
   ]

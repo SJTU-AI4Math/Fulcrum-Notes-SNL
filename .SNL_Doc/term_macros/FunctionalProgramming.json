@@ -1,9 +1,10 @@
 {
   "version": "1",
   "name": "FunctionalProgramming",
+  "description": "Functional-programming foundations: Monad, bind, transformers, ordered/lattice monads, and standard instances.",
   "macros": {
-    "Monad": {
-      "description": "",
+    "FP.Monad": {
+      "description": "Monad structure on a unary type constructor",
       "source": {
         "entries": [
           "FP.def.monad"
@@ -15,24 +16,529 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "text",
-          "template": "#0 is a monad",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
+          "mode": "formula_inline",
+          "template": "\\operatorname{Monad}(#0)"
+        }
+      ]
+    },
+    "Monad": {
+      "description": "Legacy alias for FP.Monad",
+      "source": {
+        "entries": [
+          "FP.def.monad"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{Monad}(#0)"
+        }
+      ]
+    },
+    "FP.pure": {
+      "description": "Inject a pure value into a monadic computation",
+      "source": {
+        "entries": [
+          "FP.def.monad"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{pure}_{#0}(#1)"
+        }
+      ]
+    },
+    "FP.bind": {
+      "description": "Monadic bind / sequencing operation",
+      "source": {
+        "entries": [
+          "FP.def.bind"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#1 \\mathbin{\\gg=}_{#0} #2"
+        }
+      ]
+    },
+    "FP.map": {
+      "description": "Functorial map derived from pure and bind",
+      "source": {
+        "entries": [
+          "FP.def.map"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{map}_{#0}(#1,#2)"
+        }
+      ]
+    },
+    "FP.flatten": {
+      "description": "Join a nested monadic computation",
+      "source": {
+        "entries": [
+          "FP.def.flatten"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{flatten}_{#0}(#1)"
+        }
+      ]
+    },
+    "FP.MonadTransformer": {
+      "description": "Monad transformer",
+      "source": {
+        "entries": [
+          "FP.def.monadTransformer"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{MonadTransformer}(#0)"
+        }
+      ]
+    },
+    "FP.lift": {
+      "description": "Lift a computation through a monad transformer",
+      "source": {
+        "entries": [
+          "FP.def.lift"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{lift}_{#0,#1}(#2)"
+        }
+      ]
+    },
+    "FP.OrderedMonad": {
+      "description": "Monad equipped with a compatible pointwise partial order",
+      "source": {
+        "entries": [
+          "FP.def.monadOrder"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{OrderedMonad}(#0)"
+        }
+      ]
+    },
+    "FP.MonadLattice": {
+      "description": "Ordered monad whose computation types form lattices",
+      "source": {
+        "entries": [
+          "FP.def.monadLattice"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{MonadLattice}(#0)"
+        }
+      ]
+    },
+    "FP.PartialOrder": {
+      "description": "Partial-order structure on a type",
+      "source": {
+        "entries": [
+          "FP.def.monadOrder"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{PartialOrder}(#0)"
+        }
+      ]
+    },
+    "FP.Lattice": {
+      "description": "Lattice structure on a type",
+      "source": {
+        "entries": [
+          "FP.def.monadLattice"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{Lattice}(#0)"
+        }
+      ]
+    },
+    "FP.le": {
+      "description": "Order relation between computations",
+      "source": {
+        "entries": [
+          "FP.def.monadOrder"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\le #1"
+        }
+      ]
+    },
+    "FP.bottom": {
+      "description": "Bottom computation",
+      "source": {
+        "entries": [
+          "FP.def.monadLattice"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\bot_{#0,#1}"
+        }
+      ]
+    },
+    "FP.top": {
+      "description": "Top computation",
+      "source": {
+        "entries": [
+          "FP.def.monadLattice"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\top_{#0,#1}"
+        }
+      ]
+    },
+    "FP.sup": {
+      "description": "Join of computations",
+      "source": {
+        "entries": [
+          "FP.def.monadLattice"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\sqcup #1"
+        }
+      ]
+    },
+    "FP.inf": {
+      "description": "Meet of computations",
+      "source": {
+        "entries": [
+          "FP.def.monadLattice"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\sqcap #1"
+        }
+      ]
+    },
+    "FP.monotone": {
+      "description": "Monotonicity predicate",
+      "source": {
+        "entries": [
+          "FP.def.monadOrder"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{Monotone}(#0)"
+        }
+      ]
+    },
+    "FP.Identity": {
+      "description": "Identity type constructor",
+      "source": {
+        "entries": [
+          "FP.def.identity"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{Identity}(#0)"
+        }
+      ]
+    },
+    "FP.Option": {
+      "description": "Option / Maybe type constructor",
+      "source": {
+        "entries": [
+          "FP.def.option"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{Option}(#0)"
+        }
+      ]
+    },
+    "FP.none": {
+      "description": "Empty Option value",
+      "source": {
+        "entries": [
+          "FP.def.option"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{none}"
+        }
+      ]
+    },
+    "FP.some": {
+      "description": "Present Option value",
+      "source": {
+        "entries": [
+          "FP.def.option"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{some}(#0)"
+        }
+      ]
+    },
+    "FP.List": {
+      "description": "Finite list type constructor",
+      "source": {
+        "entries": [
+          "FP.def.list"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{List}(#0)"
+        }
+      ]
+    },
+    "FP.nil": {
+      "description": "Empty list",
+      "source": {
+        "entries": [
+          "FP.def.list"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "[\\,]"
+        }
+      ]
+    },
+    "FP.cons": {
+      "description": "List cons constructor",
+      "source": {
+        "entries": [
+          "FP.def.list"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 :: #1"
+        }
+      ]
+    },
+    "FP.concat": {
+      "description": "Concatenate a list of lists",
+      "source": {
+        "entries": [
+          "FP.def.list"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{concat}(#0)"
+        }
+      ]
+    },
+    "FP.Set": {
+      "description": "Powerset / nondeterminism type constructor",
+      "source": {
+        "entries": [
+          "FP.def.set"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\operatorname{SetM}(#0)"
+        }
+      ]
+    },
+    "FP.singleton": {
+      "description": "Singleton computation of the Set monad",
+      "source": {
+        "entries": [
+          "FP.def.set"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\{#0\\}"
+        }
+      ]
+    },
+    "FP.bigUnion": {
+      "description": "Union of a set-indexed family",
+      "source": {
+        "entries": [
+          "FP.def.set"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\bigcup #0"
+        }
+      ]
+    },
+    "FP.statement": {
+      "description": "Dynamic block container for functional-programming statements",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "partial",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "block",
+          "template": "",
+          "variadic_join": ""
         }
       ]
     }
