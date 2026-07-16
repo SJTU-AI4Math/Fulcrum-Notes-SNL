@@ -1,10 +1,10 @@
 {
   "version": "1",
   "name": "FunctionalProgramming",
-  "description": "Functional-programming foundations: Monad, bind, transformers, ordered/lattice monads, and standard instances.",
+  "description": "Functional programming: the three-operation Monad structure, instance-specific bind, transformers, ordered/lattice monads, and standard instances.",
   "macros": {
     "FP.Monad": {
-      "description": "Monad structure on a unary type constructor",
+      "description": "A type constructor is a monad",
       "source": {
         "entries": [
           "FP.def.monad"
@@ -16,13 +16,13 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\operatorname{Monad}(#0)"
+          "mode": "text",
+          "template": "#0 is a monad"
         }
       ]
     },
     "Monad": {
-      "description": "Legacy alias for FP.Monad",
+      "description": "Legacy natural-language Monad predicate",
       "source": {
         "entries": [
           "FP.def.monad"
@@ -34,13 +34,13 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\operatorname{Monad}(#0)"
+          "mode": "text",
+          "template": "#0 is a monad"
         }
       ]
     },
     "FP.pure": {
-      "description": "Inject a pure value into a monadic computation",
+      "description": "The pure operation of a Monad",
       "source": {
         "entries": [
           "FP.def.monad"
@@ -53,15 +53,54 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{pure}_{#0}(#1)"
+          "template": "pure_{#0} : #1 \\mapsto #2"
+        }
+      ]
+    },
+    "FP.map": {
+      "description": "The map operation in the Monad structure",
+      "source": {
+        "entries": [
+          "FP.def.monad"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "map_{#0} : #1 \\mapsto #2"
+        }
+      ]
+    },
+    "FP.flatten": {
+      "description": "The flatten operation in the Monad structure",
+      "source": {
+        "entries": [
+          "FP.def.monad"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "flatten_{#0} : #1 \\mapsto #2"
         }
       ]
     },
     "FP.bind": {
-      "description": "Monadic bind / sequencing operation",
+      "description": "The bind operation of a particular Monad instance",
       "source": {
         "entries": [
-          "FP.def.bind"
+          "FP.def.identityBind",
+          "FP.def.optionBind",
+          "FP.def.listBind",
+          "FP.def.setBind"
         ],
         "urls": []
       },
@@ -75,11 +114,11 @@
         }
       ]
     },
-    "FP.map": {
-      "description": "Functorial map derived from pure and bind",
+    "FP.bindFromMapFlatten": {
+      "description": "Bind recovered from map and flatten",
       "source": {
         "entries": [
-          "FP.def.map"
+          "FP.prop.bind-equivalence"
         ],
         "urls": []
       },
@@ -89,25 +128,7 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{map}_{#0}(#1,#2)"
-        }
-      ]
-    },
-    "FP.flatten": {
-      "description": "Join a nested monadic computation",
-      "source": {
-        "entries": [
-          "FP.def.flatten"
-        ],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
-      "styles": [
-        {
-          "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\operatorname{flatten}_{#0}(#1)"
+          "template": "bind(x,f) = flatten(map(x,f))"
         }
       ]
     },
@@ -124,13 +145,13 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\operatorname{MonadTransformer}(#0)"
+          "mode": "text",
+          "template": "#0 is a monad transformer"
         }
       ]
     },
     "FP.lift": {
-      "description": "Lift a computation through a monad transformer",
+      "description": "The lift operation of a Monad transformer",
       "source": {
         "entries": [
           "FP.def.lift"
@@ -143,12 +164,12 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{lift}_{#0,#1}(#2)"
+          "template": "lift_{#0,#1}(#2)"
         }
       ]
     },
     "FP.OrderedMonad": {
-      "description": "Monad equipped with a compatible pointwise partial order",
+      "description": "A Monad with compatible order",
       "source": {
         "entries": [
           "FP.def.monadOrder"
@@ -160,13 +181,13 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\operatorname{OrderedMonad}(#0)"
+          "mode": "text",
+          "template": "#0 is an ordered monad"
         }
       ]
     },
     "FP.MonadLattice": {
-      "description": "Ordered monad whose computation types form lattices",
+      "description": "A Monad whose computations form lattices",
       "source": {
         "entries": [
           "FP.def.monadLattice"
@@ -178,13 +199,13 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\operatorname{MonadLattice}(#0)"
+          "mode": "text",
+          "template": "#0 is a monad lattice"
         }
       ]
     },
     "FP.PartialOrder": {
-      "description": "Partial-order structure on a type",
+      "description": "Partial-order structure",
       "source": {
         "entries": [
           "FP.def.monadOrder"
@@ -196,13 +217,13 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\operatorname{PartialOrder}(#0)"
+          "mode": "text",
+          "template": "#0 is a partial order"
         }
       ]
     },
     "FP.Lattice": {
-      "description": "Lattice structure on a type",
+      "description": "Lattice structure",
       "source": {
         "entries": [
           "FP.def.monadLattice"
@@ -214,8 +235,8 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\operatorname{Lattice}(#0)"
+          "mode": "text",
+          "template": "#0 is a lattice"
         }
       ]
     },
@@ -323,7 +344,7 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{Monotone}(#0)"
+          "template": "Monotone(#0)"
         }
       ]
     },
@@ -341,7 +362,7 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{Identity}(#0)"
+          "template": "Identity(#0)"
         }
       ]
     },
@@ -359,12 +380,12 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{Option}(#0)"
+          "template": "Option(#0)"
         }
       ]
     },
     "FP.none": {
-      "description": "Empty Option value",
+      "description": "Empty Option constructor",
       "source": {
         "entries": [
           "FP.def.option"
@@ -377,12 +398,12 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{none}"
+          "template": "none"
         }
       ]
     },
     "FP.some": {
-      "description": "Present Option value",
+      "description": "Present Option constructor",
       "source": {
         "entries": [
           "FP.def.option"
@@ -395,12 +416,12 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{some}(#0)"
+          "template": "some(#0)"
         }
       ]
     },
     "FP.List": {
-      "description": "Finite list type constructor",
+      "description": "List type constructor",
       "source": {
         "entries": [
           "FP.def.list"
@@ -413,12 +434,12 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{List}(#0)"
+          "template": "List(#0)"
         }
       ]
     },
     "FP.nil": {
-      "description": "Empty list",
+      "description": "Empty list constructor",
       "source": {
         "entries": [
           "FP.def.list"
@@ -431,7 +452,7 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "[\\,]"
+          "template": "nil"
         }
       ]
     },
@@ -454,7 +475,7 @@
       ]
     },
     "FP.concat": {
-      "description": "Concatenate a list of lists",
+      "description": "List concatenation",
       "source": {
         "entries": [
           "FP.def.list"
@@ -467,12 +488,12 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{concat}(#0)"
+          "template": "concat(#0)"
         }
       ]
     },
     "FP.Set": {
-      "description": "Powerset / nondeterminism type constructor",
+      "description": "Set-valued computation type constructor",
       "source": {
         "entries": [
           "FP.def.set"
@@ -485,12 +506,12 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\operatorname{SetM}(#0)"
+          "template": "Set(#0)"
         }
       ]
     },
     "FP.singleton": {
-      "description": "Singleton computation of the Set monad",
+      "description": "Set singleton constructor",
       "source": {
         "entries": [
           "FP.def.set"
@@ -503,12 +524,12 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "\\{#0\\}"
+          "template": "{#0}"
         }
       ]
     },
     "FP.bigUnion": {
-      "description": "Union of a set-indexed family",
+      "description": "Union of a family of sets",
       "source": {
         "entries": [
           "FP.def.set"
@@ -526,7 +547,7 @@
       ]
     },
     "FP.statement": {
-      "description": "Dynamic block container for functional-programming statements",
+      "description": "Natural-language statement container",
       "source": {
         "entries": [],
         "urls": []

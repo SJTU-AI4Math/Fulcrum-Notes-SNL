@@ -36,13 +36,6 @@
       }
     },
     {
-      "id": "n_subsec_intro",
-      "label": "Entry",
-      "props": {
-        "entryId": "FP.subsec.intro"
-      }
-    },
-    {
       "id": "n_subsec_basics",
       "label": "Entry",
       "props": {
@@ -82,6 +75,13 @@
       "label": "Entry",
       "props": {
         "entryId": "FP.def.bind"
+      }
+    },
+    {
+      "id": "n_prop_bind-equivalence",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.prop.bind-equivalence"
       }
     },
     {
@@ -197,6 +197,13 @@
       }
     },
     {
+      "id": "n_def_identityBind",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.identityBind"
+      }
+    },
+    {
       "id": "n_prop_identityMonad",
       "label": "Entry",
       "props": {
@@ -208,6 +215,13 @@
       "label": "Entry",
       "props": {
         "entryId": "FP.def.option"
+      }
+    },
+    {
+      "id": "n_def_optionBind",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.optionBind"
       }
     },
     {
@@ -225,6 +239,13 @@
       }
     },
     {
+      "id": "n_def_listBind",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.listBind"
+      }
+    },
+    {
       "id": "n_prop_listMonad",
       "label": "Entry",
       "props": {
@@ -236,6 +257,13 @@
       "label": "Entry",
       "props": {
         "entryId": "FP.def.set"
+      }
+    },
+    {
+      "id": "n_def_setBind",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.setBind"
       }
     },
     {
@@ -269,11 +297,6 @@
     },
     {
       "from": "n_sec_monad",
-      "to": "n_subsec_intro",
-      "label": "branch"
-    },
-    {
-      "from": "n_sec_monad",
       "to": "n_subsec_basics",
       "label": "branch"
     },
@@ -298,8 +321,13 @@
       "label": "branch"
     },
     {
-      "from": "n_def_monad",
+      "from": "n_subsec_basics",
       "to": "n_def_bind",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_monad",
+      "to": "n_prop_bind-equivalence",
       "label": "branch"
     },
     {
@@ -318,12 +346,12 @@
       "label": "branch"
     },
     {
-      "from": "n_def_bind",
+      "from": "n_def_monad",
       "to": "n_def_map",
       "label": "branch"
     },
     {
-      "from": "n_def_bind",
+      "from": "n_def_monad",
       "to": "n_def_flatten",
       "label": "branch"
     },
@@ -333,17 +361,17 @@
       "label": "branch"
     },
     {
-      "from": "n_def_monadTransformer",
+      "from": "n_subsec_transformers",
       "to": "n_def_lift",
       "label": "branch"
     },
     {
-      "from": "n_def_lift",
+      "from": "n_def_monadTransformer",
       "to": "n_prop_transformerLiftPure",
       "label": "branch"
     },
     {
-      "from": "n_def_lift",
+      "from": "n_def_monadTransformer",
       "to": "n_prop_transformerLiftBind",
       "label": "branch"
     },
@@ -353,7 +381,7 @@
       "label": "branch"
     },
     {
-      "from": "n_def_monadOrder",
+      "from": "n_subsec_order",
       "to": "n_def_monadLattice",
       "label": "branch"
     },
@@ -383,6 +411,11 @@
       "label": "branch"
     },
     {
+      "from": "n_subsec_instances",
+      "to": "n_def_identityBind",
+      "label": "branch"
+    },
+    {
       "from": "n_def_identity",
       "to": "n_prop_identityMonad",
       "label": "branch"
@@ -393,13 +426,23 @@
       "label": "branch"
     },
     {
-      "from": "n_def_option",
+      "from": "n_subsec_instances",
+      "to": "n_def_optionBind",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_instances",
       "to": "n_xmp_option",
       "label": "branch"
     },
     {
       "from": "n_subsec_instances",
       "to": "n_def_list",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_instances",
+      "to": "n_def_listBind",
       "label": "branch"
     },
     {
@@ -410,6 +453,11 @@
     {
       "from": "n_subsec_instances",
       "to": "n_def_set",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec_instances",
+      "to": "n_def_setBind",
       "label": "branch"
     },
     {

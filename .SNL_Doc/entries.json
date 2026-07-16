@@ -758,17 +758,9 @@
     "pointer": null
   },
   {
-    "id": "FP.subsec.intro",
-    "kind": "subsection",
-    "title": "Standard Monad Instances",
-    "content": {},
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
     "id": "FP.subsec.basics",
     "kind": "subsection",
-    "title": "Monad and Bind",
+    "title": "Monad Structure and Bind",
     "content": {},
     "contribution_info": null,
     "pointer": null
@@ -784,7 +776,7 @@
   {
     "id": "FP.subsec.order",
     "kind": "subsection",
-    "title": "Ordered and Lattice Monads",
+    "title": "Monad Order and Lattice Structure",
     "content": {},
     "contribution_info": null,
     "pointer": null
@@ -792,7 +784,7 @@
   {
     "id": "FP.subsec.instances",
     "kind": "subsection",
-    "title": "Identity, Option, List, and Set",
+    "title": "Standard Monad Instances",
     "content": {},
     "contribution_info": null,
     "pointer": null
@@ -802,17 +794,27 @@
     "kind": "definition",
     "title": "Monad",
     "content": {
-      "snl": "def-struct(FP.Monad(M@FP.ctxt.M),struct[enumerate](member[colon](%pure%,Type.Pi(@A,Type,Type.to(A,Type.apply(M@FP.ctxt.M,A)))),member[colon](%bind%,Type.Pi(@A,Type,Type.Pi(@B,Type,Type.to(Type.apply(M@FP.ctxt.M,A),Type.to(Type.to(A,Type.apply(M@FP.ctxt.M,B)),Type.apply(M@FP.ctxt.M,B))))))))"
+      "snl": "def-struct(FP.Monad(M),struct[enumerate](member[colon](%pure%,Type.Pi(@A,Type,Type.to(A,Type.apply(M,A)))),member[colon](%map%,Type.Pi(list-partial[formula](A,B),Type,parentheses(Type.to(parentheses(Type.to(A,B)),Type.to(A,Type.apply(M,B)))))),member[colon](%flatten%,Type.Pi(A,Type,parentheses(Type.to(Type.apply(M,Type.apply(M,A)),Type.apply(M,A)))))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
     "id": "FP.def.bind",
-    "kind": "definition",
-    "title": "Bind Operation",
+    "kind": "property",
+    "title": "Bind as an Equivalent Monad Presentation",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@x,Type.apply(M@FP.ctxt.M,A@FP.ctxt.types)),Type.judge(@f,Type.to(A@FP.ctxt.types,Type.apply(M@FP.ctxt.M,B@FP.ctxt.types)))),FP.bind(M@FP.ctxt.M,x,f),%the sequencing operation supplied by the Monad structure%)"
+      "snl": "thm-hyp(Type.judge(@x,Type.apply(M,A)),Eq(FP.bindFromMapFlatten(M,x,@f),FP.flatten(M,FP.map(M,x,f))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.prop.bind-equivalence",
+    "kind": "property",
+    "title": "Bind is Equivalent to Map Followed by Flatten",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@x,Type.apply(M,A)),Eq(FP.bindFromMapFlatten(M,x,@f),FP.flatten(M,FP.map(M,x,f))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -822,7 +824,7 @@
     "kind": "property",
     "title": "Monad Law: Left Identity",
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@a,A@FP.ctxt.types),Type.judge(@f,Type.to(A@FP.ctxt.types,Type.apply(M@FP.ctxt.M,B@FP.ctxt.types)))),Eq(FP.bind(M@FP.ctxt.M,FP.pure(M@FP.ctxt.M,a),f),Type.apply(f,a)))"
+      "snl": "thm-hyp(list-partial(Type.judge(@a,A),Type.judge(@f,Type.to(A,Type.apply(M,B)))),Eq(FP.bind(M,FP.pure(M,a),f),Type.apply(f,a)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -832,7 +834,7 @@
     "kind": "property",
     "title": "Monad Law: Right Identity",
     "content": {
-      "snl": "thm-hyp(Type.judge(@x,Type.apply(M@FP.ctxt.M,A@FP.ctxt.types)),Eq(FP.bind(M@FP.ctxt.M,x,Type.lambda(@a,FP.pure(M@FP.ctxt.M,a))),x))"
+      "snl": "thm-hyp(Type.judge(@x,Type.apply(M,A)),Eq(FP.bind(M,x,Type.lambda(@a,FP.pure(M,a))),x))"
     },
     "contribution_info": null,
     "pointer": null
@@ -842,27 +844,27 @@
     "kind": "property",
     "title": "Monad Law: Associativity",
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@x,Type.apply(M@FP.ctxt.M,A@FP.ctxt.types)),Type.judge(@f,Type.to(A@FP.ctxt.types,Type.apply(M@FP.ctxt.M,B@FP.ctxt.types))),Type.judge(@g,Type.to(B@FP.ctxt.types,Type.apply(M@FP.ctxt.M,C@FP.ctxt.types)))),Eq(FP.bind(M@FP.ctxt.M,FP.bind(M@FP.ctxt.M,x,f),g),FP.bind(M@FP.ctxt.M,x,Type.lambda(@a,FP.bind(M@FP.ctxt.M,Type.apply(f,a),g)))))"
+      "snl": "thm-hyp(list-partial(Type.judge(@x,Type.apply(M,A)),Type.judge(@f,Type.to(A,Type.apply(M,B))),Type.judge(@g,Type.to(B,Type.apply(M,C)))),Eq(FP.bind(M,FP.bind(M,x,f),g),FP.bind(M,x,Type.lambda(@a,FP.bind(M,Type.apply(f,a),g)))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
     "id": "FP.def.map",
-    "kind": "definition",
-    "title": "Map Derived from Bind",
+    "kind": "property",
+    "title": "Map is the Monad Map Operation",
     "content": {
-      "snl": "def(FP.map(M@FP.ctxt.M,@f,@x),FP.bind(M@FP.ctxt.M,x,Type.lambda(@a,FP.pure(M@FP.ctxt.M,Type.apply(f,a)))))"
+      "snl": "thm-hyp(Type.judge(@f,Type.to(A,B)),Eq(FP.map(M,x,f),FP.bind(M,x,Type.lambda(@a,FP.pure(M,Type.apply(f,a))))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
     "id": "FP.def.flatten",
-    "kind": "definition",
-    "title": "Flatten Derived from Bind",
+    "kind": "property",
+    "title": "Flatten is the Monad Flatten Operation",
     "content": {
-      "snl": "def(FP.flatten(M@FP.ctxt.M,@x),FP.bind(M@FP.ctxt.M,x,Type.lambda(@y,y)))"
+      "snl": "thm-hyp(Type.judge(@x,Type.apply(M,Type.apply(M,A))),Eq(FP.flatten(M,x),FP.bind(M,x,Type.lambda(@a,a))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -872,7 +874,7 @@
     "kind": "definition",
     "title": "Monad Transformer",
     "content": {
-      "snl": "def-struct(FP.MonadTransformer(T@FP.ctxt.T),struct[enumerate](member[colon](%transformed monad%,FP.Monad(Type.apply(T@FP.ctxt.T,M@FP.ctxt.M))),member[colon](%lift%,Type.Pi(@A,Type,Type.to(Type.apply(M@FP.ctxt.M,A),Type.apply(Type.apply(T@FP.ctxt.T,M@FP.ctxt.M),A))))))"
+      "snl": "def-struct(FP.MonadTransformer(T),struct[enumerate](member[colon](%transformed monad%,FP.Monad(Type.apply(T,M))),member[colon](%lift%,Type.Pi(@A,Type,Type.to(Type.apply(M,A),Type.apply(Type.apply(T,M),A))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -882,7 +884,7 @@
     "kind": "definition",
     "title": "Lift Operation",
     "content": {
-      "snl": "def-hyp(Type.judge(@x,Type.apply(M@FP.ctxt.M,A@FP.ctxt.types)),FP.lift(T@FP.ctxt.T,M@FP.ctxt.M,x),%the canonical embedding into the transformed monad%)"
+      "snl": "def-hyp(Type.judge(@x,Type.apply(M,A)),FP.lift(T,M,x),%the canonical embedding into the transformed monad%)"
     },
     "contribution_info": null,
     "pointer": null
@@ -892,7 +894,7 @@
     "kind": "property",
     "title": "Lift Preserves Pure",
     "content": {
-      "snl": "thm-hyp(Type.judge(@a,A@FP.ctxt.types),Eq(FP.lift(T@FP.ctxt.T,M@FP.ctxt.M,FP.pure(M@FP.ctxt.M,a)),FP.pure(Type.apply(T@FP.ctxt.T,M@FP.ctxt.M),a)))"
+      "snl": "thm-hyp(Type.judge(@a,A),Eq(FP.lift(T,M,FP.pure(M,a)),FP.pure(Type.apply(T,M),a)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -902,7 +904,7 @@
     "kind": "property",
     "title": "Lift Preserves Bind",
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@x,Type.apply(M@FP.ctxt.M,A@FP.ctxt.types)),Type.judge(@f,Type.to(A@FP.ctxt.types,Type.apply(M@FP.ctxt.M,B@FP.ctxt.types)))),Eq(FP.lift(T@FP.ctxt.T,M@FP.ctxt.M,FP.bind(M@FP.ctxt.M,x,f)),FP.bind(Type.apply(T@FP.ctxt.T,M@FP.ctxt.M),FP.lift(T@FP.ctxt.T,M@FP.ctxt.M,x),Type.lambda(@a,FP.lift(T@FP.ctxt.T,M@FP.ctxt.M,Type.apply(f,a))))))"
+      "snl": "thm-hyp(list-partial(Type.judge(@x,Type.apply(M,A)),Type.judge(@f,Type.to(A,Type.apply(M,B)))),Eq(FP.lift(T,M,FP.bind(M,x,f)),FP.bind(Type.apply(T,M),FP.lift(T,M,x),Type.lambda(@a,FP.lift(T,M,Type.apply(f,a))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -912,7 +914,7 @@
     "kind": "definition",
     "title": "Ordered Monad",
     "content": {
-      "snl": "def-struct(FP.OrderedMonad(M@FP.ctxt.M),struct[enumerate](member[colon](%order%,Type.Pi(@A,Type,FP.PartialOrder(Type.apply(M@FP.ctxt.M,A)))),member[colon](%pure monotone%,FP.monotone(FP.pure(M@FP.ctxt.M,@a))),member[colon](%bind monotone%,FP.monotone(FP.bind(M@FP.ctxt.M,@x,@f)))))"
+      "snl": "def-struct(FP.OrderedMonad(M),struct[enumerate](member[colon](%order%,Type.Pi(@A,Type,FP.PartialOrder(Type.apply(M,A)))),member[colon](%pure monotone%,FP.monotone(FP.pure(M,@a))),member[colon](%bind monotone%,FP.monotone(FP.bind(M,@x,@f)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -922,7 +924,7 @@
     "kind": "definition",
     "title": "Monad Lattice",
     "content": {
-      "snl": "def-struct(FP.MonadLattice(M@FP.ctxt.M),struct[enumerate](member[colon](%ordered monad%,FP.OrderedMonad(M@FP.ctxt.M)),member[colon](%lattice%,Type.Pi(@A,Type,FP.Lattice(Type.apply(M@FP.ctxt.M,A))))))"
+      "snl": "def-struct(FP.MonadLattice(M),struct[enumerate](member[colon](%ordered monad%,FP.OrderedMonad(M)),member[colon](%lattice%,Type.Pi(@A,Type,FP.Lattice(Type.apply(M,A))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -932,7 +934,7 @@
     "kind": "property",
     "title": "Pure is Monotone",
     "content": {
-      "snl": "thm-hyp(FP.le(@a,@b),FP.le(FP.pure(M@FP.ctxt.M,a),FP.pure(M@FP.ctxt.M,b)))"
+      "snl": "thm-hyp(FP.le(@a,@b),FP.le(FP.pure(M,a),FP.pure(M,b)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -942,7 +944,7 @@
     "kind": "property",
     "title": "Bind is Monotone",
     "content": {
-      "snl": "thm-hyp(list-partial(FP.le(@x,@y),Logic.forall-typed(@a,A@FP.ctxt.types,FP.le(Type.apply(@f,a),Type.apply(@g,a)))),FP.le(FP.bind(M@FP.ctxt.M,x,f),FP.bind(M@FP.ctxt.M,y,g)))"
+      "snl": "thm-hyp(list-partial(FP.le(@x,@y),Logic.forall-typed(@a,A,FP.le(Type.apply(@f,a),Type.apply(@g,a)))),FP.le(FP.bind(M,x,f),FP.bind(M,y,g)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -952,7 +954,7 @@
     "kind": "property",
     "title": "Bottom is a Left Zero for Bind",
     "content": {
-      "snl": "thm-hyp(Type.judge(@f,Type.to(A@FP.ctxt.types,Type.apply(M@FP.ctxt.M,B@FP.ctxt.types))),Eq(FP.bind(M@FP.ctxt.M,FP.bottom(M@FP.ctxt.M,A@FP.ctxt.types),f),FP.bottom(M@FP.ctxt.M,B@FP.ctxt.types)))"
+      "snl": "thm-hyp(Type.judge(@f,Type.to(A,Type.apply(M,B))),Eq(FP.bind(M,FP.bottom(M,A),f),FP.bottom(M,B)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -962,7 +964,7 @@
     "kind": "property",
     "title": "Bind Distributes over Binary Join",
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@x,Type.apply(M@FP.ctxt.M,A@FP.ctxt.types)),Type.judge(@y,Type.apply(M@FP.ctxt.M,A@FP.ctxt.types)),Type.judge(@f,Type.to(A@FP.ctxt.types,Type.apply(M@FP.ctxt.M,B@FP.ctxt.types)))),Eq(FP.bind(M@FP.ctxt.M,FP.sup(x,y),f),FP.sup(FP.bind(M@FP.ctxt.M,x,f),FP.bind(M@FP.ctxt.M,y,f))))"
+      "snl": "thm-hyp(list-partial(Type.judge(@x,Type.apply(M,A)),Type.judge(@y,Type.apply(M,A)),Type.judge(@f,Type.to(A,Type.apply(M,B)))),Eq(FP.bind(M,FP.sup(x,y),f),FP.sup(FP.bind(M,x,f),FP.bind(M,y,f))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -972,7 +974,17 @@
     "kind": "definition",
     "title": "Identity",
     "content": {
-      "snl": "def(FP.Identity(A@FP.ctxt.types),A@FP.ctxt.types)"
+      "snl": "def(FP.Identity(A),A)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.def.identityBind",
+    "kind": "property",
+    "title": "Identity Bind",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@x,FP.Identity(A)),Eq(FP.bind(FP.Identity,x,@f),Type.apply(f,x)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -982,7 +994,7 @@
     "kind": "property",
     "title": "Identity is a Monad",
     "content": {
-      "snl": "thm-hyp(Type.judge(@x,A@FP.ctxt.types),FP.statement(Eq(FP.pure(FP.Identity,x),x),%, and %,Eq(FP.bind(FP.Identity,x,@f),Type.apply(f,x))))"
+      "snl": "thm-hyp(Type.judge(@x,A),FP.statement(Eq(FP.pure(FP.Identity,x),x),%, and %,Eq(FP.map(FP.Identity,x,@f),Type.apply(f,x)),%, and %,Eq(FP.flatten(FP.Identity,x),x)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -992,7 +1004,17 @@
     "kind": "definition",
     "title": "Option / Maybe",
     "content": {
-      "snl": "def[display](FP.Option(A@FP.ctxt.types),struct[cases](constructor(FP.none,FP.Option(A@FP.ctxt.types)),constructor(FP.some,Type.to(A@FP.ctxt.types,FP.Option(A@FP.ctxt.types)))))"
+      "snl": "def-inductive(FP.Option(A),struct[enumerate](member[colon](FP.none,Type.to(Type,FP.Option(A))),member[colon](FP.some,Type.to(A,FP.Option(A)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.def.optionBind",
+    "kind": "property",
+    "title": "Option / Maybe Bind",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@x,FP.Option(A)),Eq(FP.bind(FP.Option,x,@f),FP.bind(FP.Option,x,f)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1002,7 +1024,7 @@
     "kind": "example",
     "title": "Option / Maybe Monad",
     "content": {
-      "snl": "thm-hyp(Type.judge(@f,Type.to(A@FP.ctxt.types,FP.Option(B@FP.ctxt.types))),FP.statement(Eq(FP.bind(FP.Option,FP.none,f),FP.none),%, and %,Eq(FP.bind(FP.Option,FP.some(@a),f),Type.apply(f,a))))"
+      "snl": "thm-hyp(Type.judge(@x,FP.Option(A)),Eq(FP.map(FP.Option,x,@f),FP.bind(FP.Option,x,Type.lambda(@a,FP.pure(FP.Option,Type.apply(f,a))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1012,7 +1034,17 @@
     "kind": "definition",
     "title": "List",
     "content": {
-      "snl": "def[display](FP.List(A@FP.ctxt.types),struct[cases](constructor(FP.nil,FP.List(A@FP.ctxt.types)),constructor(FP.cons,Type.to(A@FP.ctxt.types,Type.to(FP.List(A@FP.ctxt.types),FP.List(A@FP.ctxt.types))))))"
+      "snl": "def-inductive(FP.List(A),struct[enumerate](member[colon](FP.nil,FP.List(A)),member[colon](FP.cons,Type.to(A,Type.to(FP.List(A),FP.List(A))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.def.listBind",
+    "kind": "property",
+    "title": "List Bind",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@xs,FP.List(A)),Eq(FP.bind(FP.List,xs,@f),FP.concat(FP.map(FP.List,xs,f))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1022,7 +1054,7 @@
     "kind": "property",
     "title": "List is a Monad",
     "content": {
-      "snl": "thm-hyp(Type.judge(@xs,FP.List(A@FP.ctxt.types)),Eq(FP.bind(FP.List,xs,@f),FP.concat(FP.map(FP.List,f,xs))))"
+      "snl": "thm-hyp(Type.judge(@xs,FP.List(A)),Eq(FP.flatten(FP.List,xs),FP.bind(FP.List,xs,Type.lambda(@a,a))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1030,9 +1062,19 @@
   {
     "id": "FP.def.set",
     "kind": "definition",
-    "title": "Set Monad",
+    "title": "Set",
     "content": {
-      "snl": "def(FP.Set(A@FP.ctxt.types),Set(A@FP.ctxt.types))"
+      "snl": "def(FP.Set(A),Set(A))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.def.setBind",
+    "kind": "property",
+    "title": "Set Bind",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@S,FP.Set(A)),Eq(FP.bind(FP.Set,S,@f),FP.bigUnion(FP.map(FP.Set,S,f))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1042,7 +1084,7 @@
     "kind": "property",
     "title": "Set is a Monad",
     "content": {
-      "snl": "thm-hyp(Type.judge(@S,FP.Set(A@FP.ctxt.types)),FP.statement(Eq(FP.pure(FP.Set,@a),FP.singleton(a)),%, and %,Eq(FP.bind(FP.Set,S,@f),FP.bigUnion(FP.map(FP.Set,f,S)))))"
+      "snl": "thm-hyp(Type.judge(@S,FP.Set(A)),Eq(FP.bind(FP.Set,S,@f),FP.bigUnion(FP.map(FP.Set,S,f))))"
     },
     "contribution_info": null,
     "pointer": null
