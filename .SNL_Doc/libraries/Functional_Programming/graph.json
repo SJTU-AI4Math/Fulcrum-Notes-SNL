@@ -1,0 +1,73 @@
+{
+  "nodes": [
+    {
+      "id": "n_1",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.sec.monad"
+      }
+    },
+    {
+      "id": "n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.subsec.basics"
+      }
+    },
+    {
+      "id": "n_3",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.subsec.intro"
+      }
+    },
+    {
+      "id": "n_4",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.xmp.option"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.monad"
+      }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.ctxt.M"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n_1",
+      "to": "n_3",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_3",
+      "to": "n_4",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_6",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_5",
+      "label": "branch"
+    }
+  ]
+}

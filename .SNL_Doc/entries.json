@@ -616,5 +616,57 @@
     },
     "contribution_info": null,
     "pointer": null
+  },
+  {
+    "id": "FP.sec.monad",
+    "kind": "section",
+    "title": "Monad",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.subsec.basics",
+    "kind": "subsection",
+    "title": "Basics",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.subsec.intro",
+    "kind": "subsection",
+    "title": "Introduction",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.xmp.option",
+    "kind": "example",
+    "title": "Option Monad",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.def.monad",
+    "kind": "definition",
+    "title": "Monad",
+    "content": {
+      "snl": "def-struct(Monad(M),struct(member[colon](%pure%,Type.Pi(A,Type,parentheses(Type.to(A,Type.apply(M,A))))),member[colon](%map%,Type.Pi(list-partial[formula](A,B),Type,parentheses(Type.to(parentheses(Type.to(A,B)),Type.to(A,Type.apply(M,B)))))),member[colon](%flatten%,Type.Pi(A,Type,parentheses(Type.to(Type.apply(M,Type.apply(M,A)),Type.apply(M,A)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.ctxt.M",
+    "kind": "context",
+    "title": "M",
+    "content": {
+      "snl": "Type.judge(M,Type.to(Type,Type))"
+    },
+    "contribution_info": null,
+    "pointer": null
   }
 ]

@@ -270,7 +270,10 @@
     },
     "Type.lambda": {
       "description": "Untyped lambda abstraction",
-      "source": { "entries": [], "urls": [] },
+      "source": {
+        "entries": [],
+        "urls": []
+      },
       "kind": "rule",
       "dynamic_arity": false,
       "styles": [
@@ -278,15 +281,31 @@
           "tag": "default",
           "mode": "formula_inline",
           "template": "\\lambda #0.\\ #1",
-          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": ""
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
     "Type.lambda-typed": {
       "description": "Typed lambda abstraction (mapsto)",
-      "source": { "entries": [], "urls": [] },
+      "source": {
+        "entries": [],
+        "urls": []
+      },
       "kind": "rule",
       "dynamic_arity": false,
       "styles": [
@@ -294,17 +313,75 @@
           "tag": "mapsto",
           "mode": "formula_inline",
           "template": "#0 : #1 \\mapsto #2",
-          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": ""
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         },
         {
           "tag": "lambda",
           "mode": "formula_inline",
           "template": "\\lambda #0 : #1.\\ #2",
-          "typst": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "latex": { "built_in": "", "synthesis": { "mode": "formula", "macro": "" } },
-          "markdown": "", "text": ""
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "Type.Pi": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\Pi_{(#0:#1)}#2",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     }

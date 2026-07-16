@@ -207,5 +207,14 @@
         "background": "transparent"
       }
     }
+  ],
+  "active_macro_packages": [
+    "Algebra",
+    "BasicOperators",
+    "FulcrumsMathNotes",
+    "FunctionalProgramming",
+    "Logic",
+    "SetTheory",
+    "TypeTheory"
   ]
 }

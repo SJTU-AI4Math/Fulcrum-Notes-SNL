@@ -582,6 +582,70 @@
           "text": ""
         }
       ]
+    },
+    "Set.Prod": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "#0 \\times #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
+    },
+    "Type.pair": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "tag": "default",
+          "mode": "formula_inline",
+          "template": "\\left(#0, #1\\right)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      ]
     }
   }
 }

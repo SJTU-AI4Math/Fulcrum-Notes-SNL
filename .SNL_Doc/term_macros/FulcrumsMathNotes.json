@@ -223,6 +223,28 @@
           },
           "markdown": "",
           "text": ""
+        },
+        {
+          "tag": "formula",
+          "mode": "formula_inline",
+          "template": "#*",
+          "variadic_join": ",",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
