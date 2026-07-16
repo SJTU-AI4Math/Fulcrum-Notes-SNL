@@ -1,0 +1,232 @@
+{
+  "version": "0.4.0",
+  "name": "RealAnalysis",
+  "description": "Real Analysis (实分析) macros: Lebesgue measurable functions, convergence modes, Lebesgue integral, differentiation, product measure, L^p spaces.",
+  "macros": {
+    "RealAnalysis.measurable": {
+      "description": "f is Lebesgue measurable",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\text{ 可测}" }
+      ]
+    },
+    "RealAnalysis.simple": {
+      "description": "Simple function",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\text{ 是简单函数}" }
+      ]
+    },
+    "RealAnalysis.almostEverywhere": {
+      "description": "Almost everywhere quantifier",
+      "source": { "entries": [], "urls": [] },
+      "kind": "binder",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "text", "template": "#0 a.e." }
+      ]
+    },
+    "RealAnalysis.aeConvergence": {
+      "description": "Almost everywhere convergence",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\xrightarrow{\\text{a.e.}}#1" }
+      ]
+    },
+    "RealAnalysis.auConvergence": {
+      "description": "Almost uniform convergence",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\xrightarrow{\\text{a.u.}}#1" }
+      ]
+    },
+    "RealAnalysis.measureConvergence": {
+      "description": "Convergence in measure",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\xrightarrow{m}#1" }
+      ]
+    },
+    "RealAnalysis.simpleIntegral": {
+      "description": "Integral of a simple function",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_display", "template": "\\int_{#0}#1" }
+      ]
+    },
+    "RealAnalysis.nonnegativeIntegral": {
+      "description": "Integral of nonnegative measurable function",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_display", "template": "\\int_{#0}#1" }
+      ]
+    },
+    "RealAnalysis.lebesgueIntegral": {
+      "description": "Lebesgue integral",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_display", "template": "\\int_{#0}#1\\,d#2" }
+      ]
+    },
+    "RealAnalysis.lebesgueIntegrable": {
+      "description": "Lebesgue integrable predicate",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\in L^1(#1)" }
+      ]
+    },
+    "RealAnalysis.vitaliCover": {
+      "description": "Vitali cover predicate",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\text{ 是 Vitali 覆盖}" }
+      ]
+    },
+    "RealAnalysis.totalVariation": {
+      "description": "Total variation V_a^b(f)",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "V_{#0}^{#1}(#2)" }
+      ]
+    },
+    "RealAnalysis.boundedVariation": {
+      "description": "Bounded variation predicate",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\in BV([#1,#2])" }
+      ]
+    },
+    "RealAnalysis.absolutelyContinuous": {
+      "description": "Absolutely continuous predicate",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\in AC([#1,#2])" }
+      ]
+    },
+    "RealAnalysis.indefiniteIntegral": {
+      "description": "Indefinite integral F(x) = ∫_a^x f",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_display", "template": "F(#0)=\\int_{#1}^{#0}#2" }
+      ]
+    },
+    "RealAnalysis.productSigmaAlgebra": {
+      "description": "Product sigma-algebra",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\otimes#1" }
+      ]
+    },
+    "RealAnalysis.crossSection": {
+      "description": "Cross-section E_x or E^y",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0_{#1}" }
+      ]
+    },
+    "RealAnalysis.productMeasure": {
+      "description": "Product measure μ × ν",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\times#1" }
+      ]
+    },
+    "RealAnalysis.essentiallyBounded": {
+      "description": "Essentially bounded predicate",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "#0\\in L^\\infty(#1)" }
+      ]
+    },
+    "RealAnalysis.essentialSupremum": {
+      "description": "Essential supremum of |f|",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "\\operatorname{ess\\,sup}|#0|" }
+      ]
+    },
+    "RealAnalysis.Lp": {
+      "description": "L^p space",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "L^{#0}(#1)" }
+      ]
+    },
+    "RealAnalysis.hoelder": {
+      "description": "Hölder inequality statement",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_display", "template": "\\int_X|#0#1|d\\mu\\le\\|#0\\|_{#2}\\|#1\\|_{#3}" }
+      ]
+    },
+    "RealAnalysis.minkowski": {
+      "description": "Minkowski inequality",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_display", "template": "\\|#0+#1\\|_{#2}\\le\\|#0\\|_{#2}+\\|#1\\|_{#2}" }
+      ]
+    },
+    "RealAnalysis.characteristic": {
+      "description": "Characteristic function χ_E",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "\\chi_{#0}" }
+      ]
+    },
+    "RealAnalysis.EReal": {
+      "description": "Extended real numbers",
+      "source": { "entries": [], "urls": [] },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        { "tag": "default", "mode": "formula_inline", "template": "\\overline{\\mathbb{R}}" }
+      ]
+    }
+  }
+}

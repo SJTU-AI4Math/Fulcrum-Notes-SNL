@@ -668,5 +668,99 @@
     },
     "contribution_info": null,
     "pointer": null
+  },
+  {
+    "id": "real-analysis.sec.measurable-fns",
+    "kind": "section",
+    "title": "Lebesgue Measurable Functions",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "real-analysis.ctxt.1",
+    "kind": "context",
+    "title": "D, f, g",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "real-analysis.ctxt.D",
+    "kind": "context",
+    "title": "D",
+    "content": {
+      "snl": "Type.judge(@D, Set($\\mathbb{R}$))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "real-analysis.ctxt.fg",
+    "kind": "context",
+    "title": "f, g",
+    "content": {
+      "snl": "Type.judge(list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "real-analysis.subsec.basic-defs",
+    "kind": "subsection",
+    "title": "Basic Definitions",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "real-analysis.def.measurable",
+    "kind": "definition",
+    "title": "Lebesgue Measurable Function",
+    "content": {
+      "snl": "def-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), RealAnalysis.measurable(f), Logic.forall-typed(@c, RealAnalysis.EReal, RealAnalysis.measurable(Set.sep-typed(@x, D@real-analysis.ctxt.D, Eq(Add.add(f(x), Logic.neg(c)), $0$)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "real-analysis.prop.measurable-iff",
+    "kind": "property",
+    "title": "Equivalent Definitions of Lebesgue Measurable",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), Logic.iff(RealAnalysis.measurable(f), Logic.neg(RealAnalysis.measurable(Set.compl(Set.sep-typed(@x, D@real-analysis.ctxt.D, RealAnalysis.measurable($f(x)$)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "real-analysis.def.simple-function",
+    "kind": "definition",
+    "title": "Simple Function",
+    "content": {
+      "snl": "def-hyp(Type.judge(@phi, Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), RealAnalysis.simple(phi), Logic.and(RealAnalysis.measurable(phi), Logic.neg(Logic.iff($|\\phi(D)|$, $\\infty$))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "real-analysis.def.ae-equal",
+    "kind": "definition",
+    "title": "Almost Everywhere Equal",
+    "content": {
+      "snl": "def-hyp(Type.judge[paren](list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), $f \\stackrel{\\text{a.e.}}{=} g$, Logic.iff(RealAnalysis.almostEverywhere($x \\in D$, Eq(f(x), g(x))), $\\mu(\\{x \\in D \\mid f(x) \\neq g(x)\\}) = 0$))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "real-analysis.ex.continuous-measurable",
+    "kind": "example",
+    "title": "Continuous Functions are Lebesgue Measurable",
+    "content": {
+      "snl": "thm-hyp(Logic.and(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, $\\mathbb{R}$)), $f \\text{ is continuous}$), RealAnalysis.measurable(f))"
+    },
+    "contribution_info": null,
+    "pointer": null
   }
 ]
