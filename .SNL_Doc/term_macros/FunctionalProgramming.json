@@ -1,7 +1,6 @@
 {
   "version": "1",
   "name": "FunctionalProgramming",
-  "description": "Functional-programming foundations: Monad, bind, transformers, ordered/lattice monads, and standard instances.",
   "macros": {
     "FP.Monad": {
       "description": "Monad structure on a unary type constructor",
@@ -16,8 +15,24 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\operatorname{Monad}(#0)"
+          "mode": "text",
+          "template": "#0 is a monad",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
@@ -542,5 +557,6 @@
         }
       ]
     }
-  }
+  },
+  "description": "Functional-programming foundations: Monad, bind, transformers, ordered/lattice monads, and standard instances."
 }
