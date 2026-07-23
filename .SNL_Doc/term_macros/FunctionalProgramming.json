@@ -1,7 +1,6 @@
 {
   "version": "1",
   "name": "FunctionalProgramming",
-  "description": "Functional programming: the three-operation Monad structure, instance-specific bind, transformers, ordered/lattice monads, and standard instances.",
   "macros": {
     "FP.Monad": {
       "description": "A type constructor is a monad",
@@ -16,8 +15,6 @@
       "styles": [
         {
           "tag": "default",
-          "mode": "text",
-          "template": "#0 is a monad"
           "mode": "text",
           "template": "#0 is a monad",
           "typst": {
@@ -71,7 +68,23 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "pure_{#0} : #1 \\mapsto #2"
+          "template": "\\texttt{pure}_{#0}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
@@ -89,7 +102,23 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "map_{#0} : #1 \\mapsto #2"
+          "template": "\\texttt{map}_{#0}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
@@ -107,7 +136,23 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "flatten_{#0} : #1 \\mapsto #2"
+          "template": "\\texttt{flatten}_{#0}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
@@ -115,10 +160,7 @@
       "description": "The bind operation of a particular Monad instance",
       "source": {
         "entries": [
-          "FP.def.identityBind",
-          "FP.def.optionBind",
-          "FP.def.listBind",
-          "FP.def.setBind"
+          "FP.def.bind"
         ],
         "urls": []
       },
@@ -128,7 +170,23 @@
         {
           "tag": "default",
           "mode": "formula_inline",
-          "template": "#1 \\mathbin{\\gg=}_{#0} #2"
+          "template": "#0 \\mathbin{\\gg=}_{#2} #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       ]
     },
@@ -582,5 +640,5 @@
       ]
     }
   },
-  "description": "Functional-programming foundations: Monad, bind, transformers, ordered/lattice monads, and standard instances."
+  "description": "Functional programming: the three-operation Monad structure, instance-specific bind, transformers, ordered/lattice monads, and standard instances."
 }

@@ -300,6 +300,11 @@
     },
     {
       "from": "n_sec_monad",
+      "to": "n_subsec_intro",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec_monad",
       "to": "n_subsec_basics",
       "label": "branch"
     },
@@ -314,11 +319,6 @@
       "label": "branch"
     },
     {
-      "from": "n_sec_monad",
-      "to": "n_subsec_instances",
-      "label": "branch"
-    },
-    {
       "from": "n_subsec_basics",
       "to": "n_def_monad",
       "label": "branch"
@@ -326,11 +326,6 @@
     {
       "from": "n_subsec_basics",
       "to": "n_def_bind",
-      "label": "branch"
-    },
-    {
-      "from": "n_def_monad",
-      "to": "n_prop_bind-equivalence",
       "label": "branch"
     },
     {
@@ -385,7 +380,6 @@
     },
     {
       "from": "n_subsec_order",
-      "from": "n_subsec_order",
       "to": "n_def_monadLattice",
       "label": "branch"
     },
@@ -415,11 +409,6 @@
       "label": "branch"
     },
     {
-      "from": "n_subsec_instances",
-      "to": "n_def_identityBind",
-      "label": "branch"
-    },
-    {
       "from": "n_def_identity",
       "to": "n_prop_identityMonad",
       "label": "branch"
@@ -427,11 +416,6 @@
     {
       "from": "n_subsec_instances",
       "to": "n_def_option",
-      "label": "branch"
-    },
-    {
-      "from": "n_subsec_instances",
-      "to": "n_def_optionBind",
       "label": "branch"
     },
     {
@@ -445,11 +429,6 @@
       "label": "branch"
     },
     {
-      "from": "n_subsec_instances",
-      "to": "n_def_listBind",
-      "label": "branch"
-    },
-    {
       "from": "n_def_list",
       "to": "n_prop_listMonad",
       "label": "branch"
@@ -460,13 +439,13 @@
       "label": "branch"
     },
     {
-      "from": "n_subsec_instances",
-      "to": "n_def_setBind",
+      "from": "n_def_set",
+      "to": "n_prop_setMonad",
       "label": "branch"
     },
     {
-      "from": "n_def_set",
-      "to": "n_prop_setMonad",
+      "from": "n_sec_monad",
+      "to": "n_subsec_instances",
       "label": "branch"
     }
   ]

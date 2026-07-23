@@ -801,10 +801,10 @@
   },
   {
     "id": "FP.def.bind",
-    "kind": "property",
+    "kind": "definition",
     "title": "Bind as an Equivalent Monad Presentation",
     "content": {
-      "snl": "thm-hyp(Type.judge(@x,Type.apply(M,A)),Eq(FP.bindFromMapFlatten(M,x,@f),FP.flatten(M,FP.map(M,x,f))))"
+      "snl": "def-hyp(FP.Monad(M),a,b)"
     },
     "contribution_info": null,
     "pointer": null
@@ -1086,6 +1086,14 @@
     "content": {
       "snl": "thm-hyp(Type.judge(@S,FP.Set(A)),Eq(FP.bind(FP.Set,S,@f),FP.bigUnion(FP.map(FP.Set,S,f))))"
     },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.subsec.intro",
+    "kind": "subsection",
+    "title": "Introduction",
+    "content": {},
     "contribution_info": null,
     "pointer": null
   }
