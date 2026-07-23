@@ -1,0 +1,433 @@
+{
+  "nodes": [
+    {
+      "id": "n00",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.sec.foundations"
+      }
+    },
+    {
+      "id": "n01",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.ctxt.1"
+      }
+    },
+    {
+      "id": "n02",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.ctxt.X"
+      }
+    },
+    {
+      "id": "n03",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.ctxt.Sigma"
+      }
+    },
+    {
+      "id": "n04",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.ctxt.mu"
+      }
+    },
+    {
+      "id": "n05",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.ctxt.AB"
+      }
+    },
+    {
+      "id": "n06",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.subsec.setSystems"
+      }
+    },
+    {
+      "id": "n07",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.setSemiring"
+      }
+    },
+    {
+      "id": "n08",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.sigmaAlgebra"
+      }
+    },
+    {
+      "id": "n09",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.sigmaIntersection"
+      }
+    },
+    {
+      "id": "n10",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.generatedSigma"
+      }
+    },
+    {
+      "id": "n11",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.borel"
+      }
+    },
+    {
+      "id": "n12",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.subsec.measures"
+      }
+    },
+    {
+      "id": "n13",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.measure"
+      }
+    },
+    {
+      "id": "n14",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.measureSpace"
+      }
+    },
+    {
+      "id": "n15",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.emptyZero"
+      }
+    },
+    {
+      "id": "n16",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.monotone"
+      }
+    },
+    {
+      "id": "n17",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.finiteAdditivity"
+      }
+    },
+    {
+      "id": "n18",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.continuityBelow"
+      }
+    },
+    {
+      "id": "n19",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.regularity"
+      }
+    },
+    {
+      "id": "n20",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.subsec.borelLebesgue"
+      }
+    },
+    {
+      "id": "n21",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.borelMeasure"
+      }
+    },
+    {
+      "id": "n22",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.borelUnique"
+      }
+    },
+    {
+      "id": "n23",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.singletonZero"
+      }
+    },
+    {
+      "id": "n24",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.complete"
+      }
+    },
+    {
+      "id": "n25",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.outerMeasure"
+      }
+    },
+    {
+      "id": "n26",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.lebesgueMeasurable"
+      }
+    },
+    {
+      "id": "n27",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.thm.lebesgueSigmaAlgebra"
+      }
+    },
+    {
+      "id": "n28",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.lebesgueMeasure"
+      }
+    },
+    {
+      "id": "n29",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.lebesgueComplete"
+      }
+    },
+    {
+      "id": "n30",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.lebesgueTranslationInvariant"
+      }
+    },
+    {
+      "id": "n31",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.subsec.almostEverywhere"
+      }
+    },
+    {
+      "id": "n32",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.almostEverywhere"
+      }
+    },
+    {
+      "id": "n33",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.aeImplication"
+      }
+    },
+    {
+      "id": "n34",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.aeConjunction"
+      }
+    },
+    {
+      "id": "n35",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.prop.aeCountable"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n00",
+      "to": "n01",
+      "label": "branch"
+    },
+    {
+      "from": "n01",
+      "to": "n02",
+      "label": "branch"
+    },
+    {
+      "from": "n01",
+      "to": "n03",
+      "label": "branch"
+    },
+    {
+      "from": "n01",
+      "to": "n04",
+      "label": "branch"
+    },
+    {
+      "from": "n01",
+      "to": "n05",
+      "label": "branch"
+    },
+    {
+      "from": "n00",
+      "to": "n06",
+      "label": "branch"
+    },
+    {
+      "from": "n00",
+      "to": "n12",
+      "label": "branch"
+    },
+    {
+      "from": "n00",
+      "to": "n20",
+      "label": "branch"
+    },
+    {
+      "from": "n00",
+      "to": "n31",
+      "label": "branch"
+    },
+    {
+      "from": "n06",
+      "to": "n07",
+      "label": "branch"
+    },
+    {
+      "from": "n06",
+      "to": "n08",
+      "label": "branch"
+    },
+    {
+      "from": "n06",
+      "to": "n10",
+      "label": "branch"
+    },
+    {
+      "from": "n06",
+      "to": "n11",
+      "label": "branch"
+    },
+    {
+      "from": "n08",
+      "to": "n09",
+      "label": "branch"
+    },
+    {
+      "from": "n12",
+      "to": "n13",
+      "label": "branch"
+    },
+    {
+      "from": "n12",
+      "to": "n14",
+      "label": "branch"
+    },
+    {
+      "from": "n12",
+      "to": "n19",
+      "label": "branch"
+    },
+    {
+      "from": "n13",
+      "to": "n15",
+      "label": "branch"
+    },
+    {
+      "from": "n13",
+      "to": "n16",
+      "label": "branch"
+    },
+    {
+      "from": "n13",
+      "to": "n17",
+      "label": "branch"
+    },
+    {
+      "from": "n13",
+      "to": "n18",
+      "label": "branch"
+    },
+    {
+      "from": "n20",
+      "to": "n21",
+      "label": "branch"
+    },
+    {
+      "from": "n20",
+      "to": "n24",
+      "label": "branch"
+    },
+    {
+      "from": "n20",
+      "to": "n25",
+      "label": "branch"
+    },
+    {
+      "from": "n20",
+      "to": "n26",
+      "label": "branch"
+    },
+    {
+      "from": "n20",
+      "to": "n28",
+      "label": "branch"
+    },
+    {
+      "from": "n21",
+      "to": "n22",
+      "label": "branch"
+    },
+    {
+      "from": "n21",
+      "to": "n23",
+      "label": "branch"
+    },
+    {
+      "from": "n26",
+      "to": "n27",
+      "label": "branch"
+    },
+    {
+      "from": "n28",
+      "to": "n29",
+      "label": "branch"
+    },
+    {
+      "from": "n28",
+      "to": "n30",
+      "label": "branch"
+    },
+    {
+      "from": "n31",
+      "to": "n32",
+      "label": "branch"
+    },
+    {
+      "from": "n32",
+      "to": "n33",
+      "label": "branch"
+    },
+    {
+      "from": "n32",
+      "to": "n34",
+      "label": "branch"
+    },
+    {
+      "from": "n32",
+      "to": "n35",
+      "label": "branch"
+    }
+  ]
+}

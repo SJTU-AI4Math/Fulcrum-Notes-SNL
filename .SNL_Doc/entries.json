@@ -1090,10 +1090,350 @@
     "pointer": null
   },
   {
-    "id": "FP.subsec.intro",
-    "kind": "subsection",
-    "title": "Introduction",
+    "id": "Measure.sec.foundations",
+    "kind": "section",
+    "title": "Measure Theory Foundations",
     "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.ctxt.1",
+    "kind": "context",
+    "title": "Shared Measure-Theory Context",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.ctxt.X",
+    "kind": "context",
+    "title": "$X$",
+    "content": {
+      "snl": "Type.judge(@X,Type)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.ctxt.Sigma",
+    "kind": "context",
+    "title": "$\\Sigma$",
+    "content": {
+      "snl": "Type.judge(@Sigma,Set(Set(X@Measure.ctxt.X)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.ctxt.mu",
+    "kind": "context",
+    "title": "$\\mu$",
+    "content": {
+      "snl": "Type.judge(@mu,Type.to(Sigma@Measure.ctxt.Sigma,Measure.ENNReal))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.ctxt.AB",
+    "kind": "context",
+    "title": "$A, B$",
+    "content": {
+      "snl": "Type.judge(list-partial(@A,@B),Sigma@Measure.ctxt.Sigma)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.subsec.setSystems",
+    "kind": "subsection",
+    "title": "Set Systems and Sigma-Algebras",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.setSemiring",
+    "kind": "definition",
+    "title": "Set Semiring",
+    "content": {
+      "snl": "def-hyp(Type.judge(@R,Set(Set(X@Measure.ctxt.X))),Measure.SetSemiring(R),struct[enumerate](member[colon](%Empty set%,Measure.containsEmpty(R)),member[colon](%Intersection closure%,Measure.interClosed(R)),member[colon](%Finite disjoint difference decomposition%,Measure.diffFiniteUnion(R))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.sigmaAlgebra",
+    "kind": "definition",
+    "title": "Sigma-Algebra",
+    "content": {
+      "snl": "def[predicate-display](Measure.SigmaAlgebra(Sigma@Measure.ctxt.Sigma),struct[enumerate](member[colon](%Whole space%,Measure.containsUniv(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma)),member[colon](%Complement closure%,Measure.complClosed(Sigma@Measure.ctxt.Sigma,X@Measure.ctxt.X)),member[colon](%Countable-union closure%,Measure.countableUnionClosed(Sigma@Measure.ctxt.Sigma))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.sigmaIntersection",
+    "kind": "property",
+    "title": "Intersection of Sigma-Algebras",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@Sigma1,Set(Set(X@Measure.ctxt.X))),Type.judge(@Sigma2,Set(Set(X@Measure.ctxt.X))),Measure.SigmaAlgebra(Sigma1),Measure.SigmaAlgebra(Sigma2)),Measure.SigmaAlgebra(Measure.sigmaIntersection(Sigma1,Sigma2)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.generatedSigma",
+    "kind": "definition",
+    "title": "Generated Sigma-Algebra",
+    "content": {
+      "snl": "def-hyp(Type.judge(@C,Set(Set(X@Measure.ctxt.X))),Measure.generatedSigma(C),%the intersection of all sigma-algebras on X containing C%)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.borel",
+    "kind": "definition",
+    "title": "Borel Sigma-Algebra",
+    "content": {
+      "snl": "def-hyp(Type.judge(@T,Set(Set(X@Measure.ctxt.X))),Measure.Borel(X@Measure.ctxt.X),Measure.generatedSigma(T))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.subsec.measures",
+    "kind": "subsection",
+    "title": "Measures and Measure Spaces",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.measure",
+    "kind": "definition",
+    "title": "Measure",
+    "content": {
+      "snl": "def[predicate-display](Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Nonnegativity%,Measure.nonnegative(mu@Measure.ctxt.mu)),member[colon](%Countable additivity%,Measure.countablyAdditive(mu@Measure.ctxt.mu))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.measureSpace",
+    "kind": "definition",
+    "title": "Measure Space",
+    "content": {
+      "snl": "def(Measure.MeasureSpace(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.and(Measure.SigmaAlgebra(Sigma@Measure.ctxt.Sigma),Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.emptyZero",
+    "kind": "property",
+    "title": "Empty Set Has Measure Zero",
+    "content": {
+      "snl": "thm-hyp(Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Eq(Measure.apply(mu@Measure.ctxt.mu,Set.emptyset[slim]),Measure.zero))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.monotone",
+    "kind": "property",
+    "title": "Monotonicity of Measures",
+    "content": {
+      "snl": "thm-hyp(Set.subset(A@Measure.ctxt.AB,B@Measure.ctxt.AB),Measure.leq(Measure.apply(mu@Measure.ctxt.mu,A@Measure.ctxt.AB),Measure.apply(mu@Measure.ctxt.mu,B@Measure.ctxt.AB)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.finiteAdditivity",
+    "kind": "property",
+    "title": "Finite Additivity",
+    "content": {
+      "snl": "thm-hyp(Eq(Set.inter(A@Measure.ctxt.AB,B@Measure.ctxt.AB),Set.emptyset[slim]),Measure.additive(mu@Measure.ctxt.mu,A@Measure.ctxt.AB,B@Measure.ctxt.AB))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.continuityBelow",
+    "kind": "property",
+    "title": "Continuity from Below",
+    "content": {
+      "snl": "thm-hyp(Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Measure.continuousBelow(mu@Measure.ctxt.mu))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.regularity",
+    "kind": "definition",
+    "title": "Regular Measure",
+    "content": {
+      "snl": "def[predicate-display](Measure.regular(mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Outer regularity%,Measure.outerRegular(mu@Measure.ctxt.mu)),member[colon](%Inner regularity%,Measure.innerRegular(mu@Measure.ctxt.mu))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.subsec.borelLebesgue",
+    "kind": "subsection",
+    "title": "Borel and Lebesgue Measure",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.borelMeasure",
+    "kind": "definition",
+    "title": "Borel Measure on the Real Line",
+    "content": {
+      "snl": "def-hyp(Type.judge(@nu,Type.to(Measure.Borel($\\mathbb{R}$),Measure.ENNReal)),Measure.BorelMeasure(nu),Logic.forall-typed[paren](list-partial(@a,@b),$\\mathbb{R}$,Eq(Measure.apply(nu,Measure.interval(a,b)),Measure.length(a,b))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.borelUnique",
+    "kind": "property",
+    "title": "Uniqueness of Borel Measure",
+    "content": {
+      "snl": "thm-hyp(Logic.and(Measure.BorelMeasure(@nu),Measure.BorelMeasure(@rho)),Eq(nu,rho))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.singletonZero",
+    "kind": "property",
+    "title": "Singletons Have Measure Zero",
+    "content": {
+      "snl": "thm-hyp(Measure.BorelMeasure(@nu),Logic.forall-typed(@x,$\\mathbb{R}$,Eq(Measure.apply(nu,Set.sep-typed(@y,$\\mathbb{R}$,Eq(y,x))),Measure.zero)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.complete",
+    "kind": "definition",
+    "title": "Complete Measure Space",
+    "content": {
+      "snl": "def[predicate-display](Measure.Complete(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.forall-typed(@N,Sigma@Measure.ctxt.Sigma,Logic.implies(Eq(Measure.apply(mu@Measure.ctxt.mu,N),Measure.zero),Set.subset(Set.powerset(N),Sigma@Measure.ctxt.Sigma))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.outerMeasure",
+    "kind": "definition",
+    "title": "Outer Measure",
+    "content": {
+      "snl": "def-hyp(Type.judge(@muStar,Type.to(Set(X@Measure.ctxt.X),Measure.ENNReal)),Measure.OuterMeasure(muStar),struct[enumerate](member[colon](%Empty set%,Eq(Measure.outer(muStar,Set.emptyset[slim]),Measure.zero)),member[colon](%Monotonicity%,%monotone under subset inclusion%),member[colon](%Countable subadditivity%,%subadditive over countable unions%)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.lebesgueMeasurable",
+    "kind": "definition",
+    "title": "Lebesgue-Measurable Set",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@E,Set($\\mathbb{R}$)),Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),Measure.ENNReal))),Measure.lebesgueMeasurable(E),Measure.caratheodory(muStar,E))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.thm.lebesgueSigmaAlgebra",
+    "kind": "theorem",
+    "title": "Lebesgue-Measurable Sets Form a Sigma-Algebra",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),Measure.ENNReal)),Measure.SigmaAlgebra(Measure.LebesgueSets($\\mathbb{R}$)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.lebesgueMeasure",
+    "kind": "definition",
+    "title": "Lebesgue Measure",
+    "content": {
+      "snl": "def(Measure.LebesgueMeasure($\\mathbb{R}$),%the restriction of Lebesgue outer measure to the Lebesgue-measurable sets%)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.lebesgueComplete",
+    "kind": "property",
+    "title": "Lebesgue Measure is Complete",
+    "content": {
+      "snl": "thm-hyp(Logic.true,Measure.Complete($\\mathbb{R}$,Measure.LebesgueSets($\\mathbb{R}$),Measure.LebesgueMeasure($\\mathbb{R}$)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.lebesgueTranslationInvariant",
+    "kind": "property",
+    "title": "Translation Invariance of Lebesgue Measure",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@E,Measure.LebesgueSets($\\mathbb{R}$)),%Lebesgue measure is invariant under translations of E%)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.subsec.almostEverywhere",
+    "kind": "subsection",
+    "title": "Almost Everywhere",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.def.almostEverywhere",
+    "kind": "definition",
+    "title": "Almost Everywhere",
+    "content": {
+      "snl": "def-hyp(Type.judge(@P,Type.to(X@Measure.ctxt.X,Proposition)),Measure.almostEverywhere(@x,P(x),mu@Measure.ctxt.mu),Logic.exists-typed(@N,Sigma@Measure.ctxt.Sigma,Logic.and(Measure.nullSet(mu@Measure.ctxt.mu,N),Logic.forall-typed(@x,X@Measure.ctxt.X,Logic.implies(Set.nmem(x,N),P(x))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.aeImplication",
+    "kind": "property",
+    "title": "Pointwise Implication Preserves Almost-Everywhere Truth",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(list-partial(@P,@Q),Type.to(X@Measure.ctxt.X,Proposition)),Logic.forall-typed(@x,X@Measure.ctxt.X,Logic.implies(P(x),Q(x))),Measure.almostEverywhere(@x,P(x),mu@Measure.ctxt.mu)),Measure.almostEverywhere(@x,Q(x),mu@Measure.ctxt.mu))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.aeConjunction",
+    "kind": "property",
+    "title": "Almost-Everywhere Conjunction",
+    "content": {
+      "snl": "thm-hyp(Type.judge(list-partial(@P,@Q),Type.to(X@Measure.ctxt.X,Proposition)),Logic.iff(Measure.almostEverywhere(@x,Logic.and(P(x),Q(x)),mu@Measure.ctxt.mu),Logic.and(Measure.almostEverywhere(@x,P(x),mu@Measure.ctxt.mu),Measure.almostEverywhere(@x,Q(x),mu@Measure.ctxt.mu))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Measure.prop.aeCountable",
+    "kind": "property",
+    "title": "Countable Families of Almost-Everywhere Properties",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@P,Type.to(Measure.Nat,Type.to(X@Measure.ctxt.X,Proposition))),Logic.forall-typed(@n,Measure.Nat,Measure.almostEverywhere(@x,P(n,x),mu@Measure.ctxt.mu))),Measure.almostEverywhere(@x,Logic.forall-typed(@n,Measure.Nat,P(n,x)),mu@Measure.ctxt.mu))"
+    },
     "contribution_info": null,
     "pointer": null
   }
