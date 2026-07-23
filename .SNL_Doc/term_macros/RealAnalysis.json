@@ -144,7 +144,7 @@
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
-        { "tag": "default", "mode": "formula_inline", "template": "#0\\otimes#1" }
+        { "tag": "default", "mode": "formula_inline", "template": "#0 \\otimes #1" }
       ]
     },
     "RealAnalysis.crossSection": {
@@ -162,7 +162,7 @@
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
-        { "tag": "default", "mode": "formula_inline", "template": "#0\\times#1" }
+        { "tag": "default", "mode": "formula_inline", "template": "#0 \\times #1" }
       ]
     },
     "RealAnalysis.essentiallyBounded": {

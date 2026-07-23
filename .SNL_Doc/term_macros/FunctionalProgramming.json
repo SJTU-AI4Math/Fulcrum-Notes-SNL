@@ -17,8 +17,6 @@
         {
           "tag": "default",
           "mode": "text",
-          "template": "#0 is a monad"
-          "mode": "text",
           "template": "#0 is a monad",
           "typst": {
             "built_in": "",
