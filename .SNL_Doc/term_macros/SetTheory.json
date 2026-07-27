@@ -12,9 +12,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "text",
           "mode": "formula_inline",
           "template": "\\operatorname{Set}#0",
           "typst": {
@@ -32,10 +32,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "text",
+          "tags": []
         },
         {
-          "tag": "paren",
           "mode": "formula_inline",
           "template": "\\operatorname{Set}\\left(#0\\right)",
           "typst": {
@@ -53,7 +54,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "paren",
+          "tags": []
         }
       ]
     },
@@ -67,9 +70,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "round",
           "mode": "formula_inline",
           "template": "\\varnothing",
           "typst": {
@@ -87,10 +90,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "round",
+          "tags": []
         },
         {
-          "tag": "slim",
           "mode": "formula_inline",
           "template": "\\emptyset",
           "typst": {
@@ -108,7 +112,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "slim",
+          "tags": []
         }
       ]
     },
@@ -122,9 +128,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "\\left\\{#0 : #1\\mid #2\\right\\}",
           "typst": {
@@ -142,7 +148,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -156,9 +164,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "\\left\\{#0\\mid #1\\right\\}",
           "typst": {
@@ -176,7 +184,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -190,9 +200,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "#0 \\cup #1",
           "typst": {
@@ -210,7 +220,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -224,9 +236,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "#0 \\cap #1",
           "typst": {
@@ -244,7 +256,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -258,9 +272,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "sup",
           "mode": "formula_inline",
           "template": "#0^{\\mathrm{C}}",
           "typst": {
@@ -278,10 +292,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "sup",
+          "tags": []
         },
         {
-          "tag": "prefix",
           "mode": "formula_inline",
           "template": "\\complement #0",
           "typst": {
@@ -299,10 +314,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "prefix",
+          "tags": []
         },
         {
-          "tag": "overline",
           "mode": "formula_inline",
           "template": "\\overline{#0}",
           "typst": {
@@ -320,7 +336,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "overline",
+          "tags": []
         }
       ]
     },
@@ -334,9 +352,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "backslash",
           "mode": "formula_inline",
           "template": "#0 \\setminus #1",
           "typst": {
@@ -354,10 +372,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "backslash",
+          "tags": []
         },
         {
-          "tag": "sub",
           "mode": "formula_inline",
           "template": "#0 - #1",
           "typst": {
@@ -375,7 +394,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "sub",
+          "tags": []
         }
       ]
     },
@@ -389,9 +410,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "#0 \\in #1",
           "typst": {
@@ -409,7 +430,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -423,9 +446,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "infix",
           "mode": "formula_inline",
           "template": "#0 \\triangle #1",
           "typst": {
@@ -443,7 +466,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "infix",
+          "tags": []
         }
       ]
     },
@@ -457,9 +482,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "infix",
           "mode": "formula_inline",
           "template": "#0 \\subseteq #1",
           "typst": {
@@ -477,7 +502,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "infix",
+          "tags": []
         }
       ]
     },
@@ -491,9 +518,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "script",
           "mode": "formula_inline",
           "template": "\\mathcal{P}(#0)",
           "typst": {
@@ -511,7 +538,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "script",
+          "tags": []
         }
       ]
     },
@@ -525,9 +554,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "text",
           "mode": "text",
           "template": "univ",
           "typst": {
@@ -545,7 +574,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "text",
+          "tags": []
         }
       ]
     },
@@ -559,9 +590,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "#0 \\notin #1",
           "typst": {
@@ -579,7 +610,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -591,9 +624,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "#0 \\times #1",
           "typst": {
@@ -611,7 +644,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -623,9 +658,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "\\left(#0, #1\\right)",
           "typst": {
@@ -643,7 +678,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     }

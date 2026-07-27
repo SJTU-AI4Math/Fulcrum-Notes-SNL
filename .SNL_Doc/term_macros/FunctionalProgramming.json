@@ -12,9 +12,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "text",
           "template": "#0 is a monad",
           "typst": {
@@ -32,7 +32,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -46,11 +48,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "text",
-          "template": "#0 is a monad"
+          "template": "#0 is a monad",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -64,9 +68,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "\\texttt{pure}_{#0}",
           "typst": {
@@ -84,7 +88,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -98,9 +104,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "\\texttt{map}_{#0}",
           "typst": {
@@ -118,7 +124,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -132,9 +140,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "\\texttt{flatten}_{#0}",
           "typst": {
@@ -152,7 +160,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -166,9 +176,9 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "#0 \\mathbin{\\gg=}_{#2} #1",
           "typst": {
@@ -186,7 +196,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -200,11 +212,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "bind(x,f) = flatten(map(x,f))"
+          "template": "bind(x,f) = flatten(map(x,f))",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -218,11 +232,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "text",
-          "template": "#0 is a monad transformer"
+          "template": "#0 is a monad transformer",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -236,11 +252,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "lift_{#0,#1}(#2)"
+          "template": "lift_{#0,#1}(#2)",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -254,11 +272,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "text",
-          "template": "#0 is an ordered monad"
+          "template": "#0 is an ordered monad",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -272,11 +292,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "text",
-          "template": "#0 is a monad lattice"
+          "template": "#0 is a monad lattice",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -290,11 +312,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "text",
-          "template": "#0 is a partial order"
+          "template": "#0 is a partial order",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -308,11 +332,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "text",
-          "template": "#0 is a lattice"
+          "template": "#0 is a lattice",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -326,11 +352,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "#0 \\le #1"
+          "template": "#0 \\le #1",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -344,11 +372,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "\\bot_{#0,#1}"
+          "template": "\\bot_{#0,#1}",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -362,11 +392,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "\\top_{#0,#1}"
+          "template": "\\top_{#0,#1}",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -380,11 +412,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "#0 \\sqcup #1"
+          "template": "#0 \\sqcup #1",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -398,11 +432,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "#0 \\sqcap #1"
+          "template": "#0 \\sqcap #1",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -416,11 +452,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "Monotone(#0)"
+          "template": "Monotone(#0)",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -434,11 +472,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "Identity(#0)"
+          "template": "Identity(#0)",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -452,11 +492,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "Option(#0)"
+          "template": "Option(#0)",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -470,11 +512,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "none"
+          "template": "none",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -488,11 +532,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "some(#0)"
+          "template": "some(#0)",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -506,11 +552,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "List(#0)"
+          "template": "List(#0)",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -524,11 +572,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "nil"
+          "template": "nil",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -542,11 +592,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "#0 :: #1"
+          "template": "#0 :: #1",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -560,11 +612,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "concat(#0)"
+          "template": "concat(#0)",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -578,11 +632,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "Set(#0)"
+          "template": "Set(#0)",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -596,11 +652,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "{#0}"
+          "template": "{#0}",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -614,11 +672,13 @@
       },
       "kind": "const",
       "dynamic_arity": false,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
-          "template": "\\bigcup #0"
+          "template": "\\bigcup #0",
+          "style_name": "default",
+          "tags": []
         }
       ]
     },
@@ -630,12 +690,14 @@
       },
       "kind": "partial",
       "dynamic_arity": true,
+      "tags": [],
       "styles": [
         {
-          "tag": "default",
           "mode": "block",
-          "template": "",
-          "variadic_join": ""
+          "template": "#*",
+          "style_name": "default",
+          "separator": "",
+          "tags": []
         }
       ]
     }
