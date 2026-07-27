@@ -1,5 +1,5 @@
 {
-  "version": "1",
+  "version": "7",
   "name": "Logic",
   "macros": {
     "Logic.and": {
@@ -14,7 +14,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "infix",
           "mode": "formula_inline",
           "template": "#0 \\land #1",
           "typst": {
@@ -32,10 +31,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "infix",
+          "tags": []
         },
         {
-          "tag": "cases",
           "mode": "formula_display",
           "template": "\\begin{cases}\n#0 \\\\\n#1\n\\end{cases}",
           "typst": {
@@ -53,9 +53,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "cases",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.or": {
       "description": "",
@@ -69,7 +72,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "infix",
           "mode": "formula_inline",
           "template": "#0 \\lor #1",
           "typst": {
@@ -87,9 +89,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "infix",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.implies": {
       "description": "",
@@ -103,7 +108,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "longdouble",
           "mode": "formula_inline",
           "template": "#0 \\Longrightarrow #1",
           "typst": {
@@ -121,10 +125,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "longdouble",
+          "tags": []
         },
         {
-          "tag": "double",
           "mode": "formula_inline",
           "template": "#0 \\Rightarrow #1",
           "typst": {
@@ -142,10 +147,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "double",
+          "tags": []
         },
         {
-          "tag": "single",
           "mode": "formula_inline",
           "template": "#0 \\rightarrow #1",
           "typst": {
@@ -163,9 +169,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "single",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.neg": {
       "description": "",
@@ -179,7 +188,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "prefix",
           "mode": "formula_inline",
           "template": "\\neg #0",
           "typst": {
@@ -197,9 +205,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "prefix",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.forall": {
       "description": "Universal quantifier",
@@ -213,7 +224,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "bind",
           "mode": "formula_inline",
           "template": "\\forall #0,\\ #1",
           "typst": {
@@ -231,10 +241,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "bind",
+          "tags": []
         },
         {
-          "tag": "paren",
           "mode": "formula_inline",
           "template": "\\forall (#0),\\ #1",
           "typst": {
@@ -252,9 +263,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "paren",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.exists": {
       "description": "Existential quantifier",
@@ -268,7 +282,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "bind",
           "mode": "formula_inline",
           "template": "\\exists #0,\\ #1",
           "typst": {
@@ -286,9 +299,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "bind",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.iff": {
       "description": "Logical equivalence",
@@ -302,7 +318,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "long",
           "mode": "formula_inline",
           "template": "#0 \\iff #1",
           "typst": {
@@ -320,9 +335,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "long",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.true": {
       "description": "True / ⊤",
@@ -336,9 +354,8 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
-          "mode": "text",
-          "template": "True",
+          "style_name": "top",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -354,15 +371,40 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\top"
+        },
+        {
+          "style_name": "text",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "True"
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.false": {
       "description": "False / ⊥",
       "source": {
         "entries": [
-          "Set.def.emptyset"
+          "Logic.def.false"
         ],
         "urls": []
       },
@@ -370,9 +412,8 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
-          "mode": "text",
-          "template": "False",
+          "style_name": "bot",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -388,9 +429,34 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\bot"
+        },
+        {
+          "style_name": "text",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "False"
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.forall-typed": {
       "description": "Typed universal ∀ x : T, P(x)",
@@ -404,9 +470,8 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
-          "mode": "formula_inline",
-          "template": "\\forall #0 : #1, #2",
+          "style_name": "default",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -422,12 +487,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\forall #0 : #1, #2"
         },
         {
-          "tag": "paren",
-          "mode": "formula_inline",
-          "template": "\\forall (#0 : #1), #2",
+          "style_name": "paren",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -443,9 +509,34 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\forall (#0 : #1), #2"
+        },
+        {
+          "style_name": "to",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "(#0 : #1) \\to #2"
         }
-      ]
+      ],
+      "tags": []
     },
     "Logic.exists-typed": {
       "description": "Typed existential ∃ x : T, P(x)",
@@ -459,7 +550,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "\\exists #0 : #1, #2",
           "typst": {
@@ -477,9 +567,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     }
   }
 }

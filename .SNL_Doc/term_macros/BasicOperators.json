@@ -1,5 +1,5 @@
 {
-  "version": "1",
+  "version": "7",
   "name": "Basic Operators",
   "macros": {
     "Add.add": {
@@ -11,7 +11,6 @@
       "kind": "const",
       "styles": [
         {
-          "tag": "infix",
           "mode": "formula_inline",
           "template": "#0 + #1",
           "typst": {
@@ -29,10 +28,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "infix",
+          "tags": []
         }
       ],
-      "dynamic_arity": false
+      "dynamic_arity": false,
+      "tags": []
     },
     "Sub.sub": {
       "description": "",
@@ -43,7 +45,6 @@
       "kind": "const",
       "styles": [
         {
-          "tag": "infix",
           "mode": "formula_inline",
           "template": "#0 - #1",
           "typst": {
@@ -61,10 +62,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "infix",
+          "tags": []
         }
       ],
-      "dynamic_arity": false
+      "dynamic_arity": false,
+      "tags": []
     },
     "Mul.mul": {
       "description": "",
@@ -75,7 +79,6 @@
       "kind": "const",
       "styles": [
         {
-          "tag": "implicit",
           "mode": "formula_inline",
           "template": "#0#1",
           "typst": {
@@ -93,10 +96,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "implicit",
+          "tags": []
         },
         {
-          "tag": "dot",
           "mode": "formula_inline",
           "template": "#0 \\cdot #1",
           "typst": {
@@ -114,10 +118,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "dot",
+          "tags": []
         },
         {
-          "tag": "star",
           "mode": "formula_inline",
           "template": "#0 * #1",
           "typst": {
@@ -135,10 +140,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "star",
+          "tags": []
         },
         {
-          "tag": "cross",
           "mode": "formula_inline",
           "template": "#0 \\times #1",
           "typst": {
@@ -156,10 +162,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "cross",
+          "tags": []
         }
       ],
-      "dynamic_arity": false
+      "dynamic_arity": false,
+      "tags": []
     },
     "Div.div": {
       "description": "",
@@ -170,7 +179,6 @@
       "kind": "const",
       "styles": [
         {
-          "tag": "frac(inline)",
           "mode": "formula_inline",
           "template": "\\frac{#0}{#1}",
           "typst": {
@@ -188,10 +196,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "frac(inline)",
+          "tags": []
         },
         {
-          "tag": "frac(display)",
           "mode": "formula_display",
           "template": "\\frac{#0}{#1}",
           "typst": {
@@ -209,10 +218,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "frac(display)",
+          "tags": []
         },
         {
-          "tag": "slash",
           "mode": "formula_inline",
           "template": "#0/#1",
           "typst": {
@@ -230,10 +240,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "slash",
+          "tags": []
         },
         {
-          "tag": "div",
           "mode": "formula_inline",
           "template": "#0 \\div #1",
           "typst": {
@@ -251,10 +262,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "div",
+          "tags": []
         }
       ],
-      "dynamic_arity": false
+      "dynamic_arity": false,
+      "tags": []
     },
     "Power": {
       "description": "",
@@ -265,7 +279,6 @@
       "kind": "const",
       "styles": [
         {
-          "tag": "sup",
           "mode": "formula_inline",
           "template": "{#0}^{#1}",
           "typst": {
@@ -283,10 +296,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "sup",
+          "tags": []
         },
         {
-          "tag": "caret",
           "mode": "formula_inline",
           "template": "#0\\text{\\textasciicircum} #1",
           "typst": {
@@ -304,10 +318,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "caret",
+          "tags": []
         }
       ],
-      "dynamic_arity": false
+      "dynamic_arity": false,
+      "tags": []
     },
     "parentheses": {
       "description": "",
@@ -319,7 +336,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "round",
           "mode": "formula_inline",
           "template": "\\left(#0\\right)",
           "typst": {
@@ -337,23 +353,27 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "round",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Eq": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Logic.def.eq"
+        ],
         "urls": []
       },
       "kind": "const",
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
-          "mode": "formula_inline",
-          "template": "#0 = #1",
+          "style_name": "default",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -369,9 +389,148 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 = #1"
         }
-      ]
+      ],
+      "tags": []
+    },
+    "Real": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\mathbb{R}"
+        }
+      ],
+      "tags": []
+    },
+    "Icc": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\left[#0,#1\\right]"
+        }
+      ],
+      "tags": []
+    },
+    "let": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "#0 : #1 be #2"
+        }
+      ],
+      "tags": []
+    },
+    "quotient": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 / #1"
+        }
+      ],
+      "tags": []
     }
   }
 }

@@ -230,7 +230,7 @@
     "kind": "context",
     "title": "$P, Q$",
     "content": {
-      "snl": "Type.judge(list-partial(@P,@Q),Proposition)"
+      "snl": "Type.judge(list-partial(@p,@q),Proposition)"
     },
     "contribution_info": null,
     "pointer": null
@@ -256,7 +256,7 @@
     "kind": "definition",
     "title": "True",
     "content": {
-      "snl": "def(Logic.true, Type.judge(Logic.true, Proposition))"
+      "snl": "def-inductive[prop](Logic.true,constructor(%true%,Logic.true))"
     },
     "contribution_info": null,
     "pointer": null
@@ -266,7 +266,7 @@
     "kind": "definition",
     "title": "Conjunction",
     "content": {
-      "snl": "def(Logic.and(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Type.judge(Logic.and(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Proposition))"
+      "snl": "def-struct[prop](Logic.and(P,Q),struct(Type.judge(%left%,P),Type.judge(%right%,Q)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -276,7 +276,7 @@
     "kind": "definition",
     "title": "Disjunction",
     "content": {
-      "snl": "def(Logic.or(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Type.judge(Logic.or(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Proposition))"
+      "snl": "def-inductive[prop](Logic.or(P,Q),ctors(Type.judge(%left%,P),Type.judge(%right%,Q)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -286,7 +286,7 @@
     "kind": "definition",
     "title": "Implication",
     "content": {
-      "snl": "def(Logic.implies(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Type.judge(Logic.implies(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Proposition))"
+      "snl": "def(Logic.implies(P,Q),Type.to(P,Q))"
     },
     "contribution_info": null,
     "pointer": null
@@ -296,7 +296,7 @@
     "kind": "definition",
     "title": "Negation",
     "content": {
-      "snl": "def(Logic.neg(P@Logic.ctxt.PQ), Type.judge(Logic.neg(P@Logic.ctxt.PQ), Proposition))"
+      "snl": "def(Logic.neg(P),Type.to(P,Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -306,7 +306,7 @@
     "kind": "definition",
     "title": "Equivalence",
     "content": {
-      "snl": "def(Logic.iff(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Type.judge(Logic.iff(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Proposition))"
+      "snl": "def-struct[prop](Logic.iff(P,Q),struct(Type.judge(%right%,Logic.implies(P,Q)),Type.judge(%left%,Logic.implies(Q,P))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -316,7 +316,7 @@
     "kind": "definition",
     "title": "Universal Quantifier",
     "content": {
-      "snl": "def-hyp(Type.judge[paren](@P,Type.to(T@Logic.ctxt.T,Proposition)), Logic.forall-typed(@x,T@Logic.ctxt.T,P(x)), Type.judge(Logic.forall-typed(x,T@Logic.ctxt.T,P(x)), Proposition))"
+      "snl": "def(Logic.forall-typed(x,T,P(x)),Type.Pi(@x,T,P(x)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -326,7 +326,7 @@
     "kind": "definition",
     "title": "Existential Quantifier",
     "content": {
-      "snl": "def-hyp(Type.judge[paren](@P,Type.to(T@Logic.ctxt.T,Proposition)), Logic.exists-typed(@x,T@Logic.ctxt.T,P(x)), Type.judge(Logic.exists-typed(x,T@Logic.ctxt.T,P(x)), Proposition))"
+      "snl": "def-struct[prop](Logic.exists-typed(x,T,P(x)),struct(member(%Instance%,Type.judge(x,T)),Type.judge(%Property%,Type.apply(P,x))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -336,7 +336,7 @@
     "kind": "definition",
     "title": "Equality",
     "content": {
-      "snl": "def-hyp(Type.judge[paren](list-partial(@a,@b),T@Logic.ctxt.T), Eq(a,b), Type.judge(Eq(a,b), Proposition))"
+      "snl": "def-inductive[prop](Eq(a,b),ctors(Type.judge(%Reflexivity%,Logic.forall(a,Eq(a,a)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1120,7 +1120,7 @@
     "kind": "context",
     "title": "$\\Sigma$",
     "content": {
-      "snl": "Type.judge(@Sigma,Set(Set(X@Measure.ctxt.X)))"
+      "snl": "Type.judge(@$\\Sigma$,Set(Set(X)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1158,7 +1158,7 @@
     "kind": "definition",
     "title": "Set Semiring",
     "content": {
-      "snl": "def-hyp(Type.judge(@R,Set(Set(X@Measure.ctxt.X))),Measure.SetSemiring(R),struct[enumerate](member[colon](%Empty set%,Measure.containsEmpty(R)),member[colon](%Intersection closure%,Measure.interClosed(R)),member[colon](%Finite disjoint difference decomposition%,Measure.diffFiniteUnion(R))))"
+      "snl": "def-struct-hyp(Type.judge(@R,Set(Set(X))),Measure.SetSemiring(R),struct[enumerate](member[colon](%Empty set%,Measure.containsEmpty(R)),member[colon](%Intersection closure%,Measure.interClosed(R)),member[colon](%Finite disjoint difference decomposition%,Measure.diffFiniteUnion(R))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1168,7 +1168,7 @@
     "kind": "definition",
     "title": "Sigma-Algebra",
     "content": {
-      "snl": "def[predicate-display](Measure.SigmaAlgebra(Sigma@Measure.ctxt.Sigma),struct[enumerate](member[colon](%Whole space%,Measure.containsUniv(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma)),member[colon](%Complement closure%,Measure.complClosed(Sigma@Measure.ctxt.Sigma,X@Measure.ctxt.X)),member[colon](%Countable-union closure%,Measure.countableUnionClosed(Sigma@Measure.ctxt.Sigma))))"
+      "snl": "def-struct(Measure.SigmaAlgebra($\\Sigma$),struct[enumerate](member[colon](%Whole space%,Measure.containsUniv(X,$\\Sigma$)),member[colon](%Complement closure%,Measure.complClosed($\\Sigma$,X)),member[colon](%Countable-union closure%,Measure.countableUnionClosed($\\Sigma$))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1226,7 +1226,7 @@
     "kind": "definition",
     "title": "Measure Space",
     "content": {
-      "snl": "def(Measure.MeasureSpace(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.and(Measure.SigmaAlgebra(Sigma@Measure.ctxt.Sigma),Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu)))"
+      "snl": "def(Measure.MeasureSpace(X,$\\Sigma$,$\\mu$),Logic.and(Measure.SigmaAlgebra($\\Sigma$),Measure.Measure($\\Sigma$,$\\mu$)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1256,7 +1256,7 @@
     "kind": "property",
     "title": "Finite Additivity",
     "content": {
-      "snl": "thm-hyp(Eq(Set.inter(A@Measure.ctxt.AB,B@Measure.ctxt.AB),Set.emptyset[slim]),Measure.additive(mu@Measure.ctxt.mu,A@Measure.ctxt.AB,B@Measure.ctxt.AB))"
+      "snl": "thm-hyp(Eq(Set.inter(A,B),Set.emptyset[slim]),Measure.additive($\\mu$,A,B))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1294,7 +1294,7 @@
     "kind": "definition",
     "title": "Borel Measure on the Real Line",
     "content": {
-      "snl": "def-hyp(Type.judge(@nu,Type.to(Measure.Borel($\\mathbb{R}$),Measure.ENNReal)),Measure.BorelMeasure(nu),Logic.forall-typed[paren](list-partial(@a,@b),$\\mathbb{R}$,Eq(Measure.apply(nu,Measure.interval(a,b)),Measure.length(a,b))))"
+      "snl": "def-hyp(Type.judge(@$\\nu$,Type.to(Measure.Borel(Real),Measure.ENNReal)),Measure.BorelMeasure($\\nu$),Logic.forall-typed[paren](list-partial(@a,@b),Real,Eq(Measure.apply($\\nu$,Measure.interval(a,b)),Measure.length(a,b))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1433,6 +1433,82 @@
     "title": "Countable Families of Almost-Everywhere Properties",
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@P,Type.to(Measure.Nat,Type.to(X@Measure.ctxt.X,Proposition))),Logic.forall-typed(@n,Measure.Nat,Measure.almostEverywhere(@x,P(n,x),mu@Measure.ctxt.mu))),Measure.almostEverywhere(@x,Logic.forall-typed(@n,Measure.Nat,P(n,x)),mu@Measure.ctxt.mu))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.NewtonLeibniz",
+    "kind": "theorem",
+    "title": "Newton-Leibniz Formula",
+    "content": {
+      "snl": "thm-hyp[display](list-partial(Type.judge(list-partial(@a,@b),Real),$#0 > #1$(b,a),Type.judge[paren](@f,Type.to(Icc(a,b),Real)),let(@F,quotient(parentheses(Type.to(Icc(a,b),Real)),RealFun.equiv),IndefInt[inline](@x,Type.apply(f,x)))),$$#0$$(Eq(RIntIcc(a,b,@x,Type.apply(f,x)),RealFun.diff(F,a,b))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.sec.integral",
+    "kind": "section",
+    "title": "Riemannian Integral",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.compute",
+    "kind": "section",
+    "title": "Computation",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.false",
+    "kind": "definition",
+    "title": "False",
+    "content": {
+      "snl": "def-inductive[prop](Logic.false,struct)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.rmk.false",
+    "kind": "remark",
+    "title": "False",
+    "content": {
+      "snl": "%Inductive Type #0 does not have any constructors, and it's impossible to construct any inhabitant within #0.%(Logic.false)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.ppt.false-rec",
+    "kind": "property",
+    "title": "Explosion",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@p,Proposition),Logic.implies(Logic.false,p))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.def.proposition",
+    "kind": "definition",
+    "title": "Proposition",
+    "content": {
+      "snl": "def(Proposition,Type[univ](0))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.rmk.true",
+    "kind": "remark",
+    "title": "True",
+    "content": {
+      "snl": "%Inductive type #0 has an enumerative constructor, so there is always a proof for #0, and #0 proves nothing.%(Logic.true)"
     },
     "contribution_info": null,
     "pointer": null

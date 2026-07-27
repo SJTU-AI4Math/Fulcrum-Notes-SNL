@@ -1,5 +1,5 @@
 {
-  "version": "1",
+  "version": "7",
   "name": "TypeTheory",
   "macros": {
     "Type.judge": {
@@ -12,7 +12,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "colon",
           "mode": "formula_inline",
           "template": "#0 : #1",
           "typst": {
@@ -30,10 +29,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "colon",
+          "tags": []
         },
         {
-          "tag": "paren",
           "mode": "formula_inline",
           "template": "\\left(#0 : #1\\right)",
           "typst": {
@@ -51,9 +51,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "paren",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Type": {
       "description": "",
@@ -65,9 +68,8 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "text",
-          "mode": "text",
-          "template": "Type",
+          "style_name": "text",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -83,23 +85,49 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "text",
+          "template": "Type"
+        },
+        {
+          "style_name": "univ",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\mathrm{Type}_{#0}"
         }
-      ]
+      ],
+      "tags": []
     },
     "Proposition": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Logic.def.proposition"
+        ],
         "urls": []
       },
-      "kind": "rule",
+      "kind": "const",
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "text",
-          "mode": "text",
-          "template": "Prop",
+          "style_name": "text",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -115,9 +143,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "text",
+          "template": "Prop"
         }
-      ]
+      ],
+      "tags": []
     },
     "Type.to": {
       "description": "",
@@ -129,7 +160,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "#0 \\to #1",
           "typst": {
@@ -147,9 +177,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Pi": {
       "description": "Π-type (dependent function)",
@@ -161,7 +194,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "bind",
           "mode": "formula_inline",
           "template": "\\prod_{#0 : #1} #2",
           "typst": {
@@ -179,11 +211,14 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "bind",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
-    "Sigma": {
+    "Type.Sigma": {
       "description": "Σ-type (dependent pair)",
       "source": {
         "entries": [],
@@ -193,7 +228,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "bind",
           "mode": "formula_inline",
           "template": "\\sum_{#0 : #1} #2",
           "typst": {
@@ -211,9 +245,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "bind",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Type.apply": {
       "description": "Function application",
@@ -225,7 +262,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "paren",
           "mode": "formula_inline",
           "template": "#0(#1)",
           "typst": {
@@ -243,10 +279,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "paren",
+          "tags": []
         },
         {
-          "tag": "juxt",
           "mode": "formula_inline",
           "template": "#0\\ #1",
           "typst": {
@@ -264,9 +301,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "juxt",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Type.lambda": {
       "description": "Untyped lambda abstraction",
@@ -278,7 +318,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "\\lambda #0.\\ #1",
           "typst": {
@@ -296,9 +335,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Type.lambda-typed": {
       "description": "Typed lambda abstraction (mapsto)",
@@ -310,7 +352,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "mapsto",
           "mode": "formula_inline",
           "template": "#0 : #1 \\mapsto #2",
           "typst": {
@@ -328,10 +369,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "mapsto",
+          "tags": []
         },
         {
-          "tag": "lambda",
           "mode": "formula_inline",
           "template": "\\lambda #0 : #1.\\ #2",
           "typst": {
@@ -349,9 +391,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "lambda",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "Type.Pi": {
       "description": "",
@@ -363,7 +408,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
           "mode": "formula_inline",
           "template": "\\Pi_{(#0:#1)}#2",
           "typst": {
@@ -381,9 +425,47 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
+    },
+    "ctors": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "separator": "\\\\\\quad|\\,",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\quad|\\,#*"
+        }
+      ],
+      "tags": []
     }
   }
 }

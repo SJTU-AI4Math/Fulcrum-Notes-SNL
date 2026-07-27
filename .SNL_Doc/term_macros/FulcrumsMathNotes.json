@@ -1,5 +1,5 @@
 {
-  "version": "1",
+  "version": "7",
   "name": "Fulcrum's Math Notes",
   "macros": {
     "def-hyp": {
@@ -12,7 +12,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "inline",
           "mode": "text",
           "template": "Let #0, define “#1” to be #2. ",
           "typst": {
@@ -30,10 +29,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "inline",
+          "tags": []
         },
         {
-          "tag": "predicate",
           "mode": "text",
           "template": "Let #0, define “#1” if and only if #2. ",
           "typst": {
@@ -51,9 +51,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "predicate",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "def": {
       "description": "",
@@ -65,9 +68,8 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "inline",
-          "mode": "text",
-          "template": "Define “#0” to be #1. ",
+          "style_name": "inline",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -83,12 +85,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "text",
+          "template": "Define “#0” to be #1. "
         },
         {
-          "tag": "display",
-          "mode": "text",
-          "template": "Define “#0” to be: #1",
+          "style_name": "display",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -104,12 +107,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "text",
+          "template": "Define “#0” to be: #1"
         },
         {
-          "tag": "predicate-display",
-          "mode": "text",
-          "template": "Define “#0” if and only if:\n#1",
+          "style_name": "predicate-display",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -125,9 +129,34 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "text",
+          "template": "Define “#0” if and only if:\n#1"
+        },
+        {
+          "style_name": "predicate",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "Define “#0” if and only if #1."
         }
-      ]
+      ],
+      "tags": []
     },
     "thm-hyp": {
       "description": "",
@@ -139,9 +168,8 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
-          "mode": "text",
-          "template": "Let #0, then #1. ",
+          "style_name": "default",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -157,9 +185,34 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "text",
+          "template": "Let #0, then #1. "
+        },
+        {
+          "style_name": "display",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "Let #0, then #1"
         }
-      ]
+      ],
+      "tags": []
     },
     "constructor": {
       "description": "Constructor declaration",
@@ -171,7 +224,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
           "mode": "text",
           "template": "| #0 : #1",
           "typst": {
@@ -189,9 +241,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "list-partial": {
       "description": "",
@@ -203,10 +258,8 @@
       "dynamic_arity": true,
       "styles": [
         {
-          "tag": "inline",
           "mode": "text",
-          "template": "",
-          "variadic_join": ", ",
+          "template": "#*",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -222,13 +275,14 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "inline",
+          "tags": [],
+          "separator": ", "
         },
         {
-          "tag": "formula",
           "mode": "formula_inline",
-          "template": "",
-          "variadic_join": ",",
+          "template": "#*",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -244,9 +298,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "formula",
+          "tags": [],
+          "separator": ","
         }
-      ]
+      ],
+      "tags": []
     },
     "def-struct-hyp": {
       "description": "Structure definition with hypotheses",
@@ -258,7 +316,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
           "mode": "text",
           "template": "Let #0, define structure “#1” consisting of the following data:\n#2",
           "typst": {
@@ -276,9 +333,12 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "default",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "def-struct": {
       "description": "Structure definition without hypotheses",
@@ -290,9 +350,8 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
-          "mode": "text",
-          "template": "Define structure “#0” consisting of the following data:\n#1",
+          "style_name": "default",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -308,9 +367,34 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "mode": "text",
+          "template": "Define structure “#0” consisting of the following data:\n#1"
+        },
+        {
+          "style_name": "prop",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "Define “#0” if and only if all following data are provided:\n#1"
         }
-      ]
+      ],
+      "tags": []
     },
     "struct": {
       "description": "Structure body (enumerate or cases)",
@@ -322,11 +406,8 @@
       "dynamic_arity": true,
       "styles": [
         {
-          "tag": "enumerate",
           "mode": "block",
-          "template": "",
-          "variadic_join": "\n",
-          "react_renderer_key": "enumerate",
+          "template": "#*",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -342,15 +423,15 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "enumerate",
+          "tags": [],
+          "separator": "\n",
+          "block_template_name": "enumerate"
         },
         {
-          "tag": "cases",
           "mode": "formula_display",
-          "template": "",
-          "variadic_left": "\\begin{cases}\n",
-          "variadic_join": "\\\\\n",
-          "variadic_right": "\n\\end{cases}",
+          "template": "\\begin{cases}\n#*\n\\end{cases}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -366,9 +447,13 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "cases",
+          "tags": [],
+          "separator": "\\\\\n"
         }
-      ]
+      ],
+      "tags": []
     },
     "member": {
       "description": "Structure member",
@@ -380,7 +465,6 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "paren",
           "mode": "formula_inline",
           "template": "#0\\left(#1\\right)",
           "typst": {
@@ -398,10 +482,11 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "paren",
+          "tags": []
         },
         {
-          "tag": "colon",
           "mode": "formula_inline",
           "template": "#0 : #1",
           "typst": {
@@ -419,28 +504,68 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "style_name": "colon",
+          "tags": []
         }
-      ]
+      ],
+      "tags": []
     },
     "def-inductive": {
       "description": "Inductive type definition by constructors",
       "source": {
-        "entries": [
-          "FP.def.option",
-          "FP.def.list"
-        ],
+        "entries": [],
         "urls": []
       },
       "kind": "rule",
       "dynamic_arity": false,
       "styles": [
         {
-          "tag": "default",
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
           "mode": "text",
-          "template": "Define type “#0” to consist inhabitants provided by the following constructors:\n#1"
+          "template": "Define type “#0” to consist inhabitants provided by any of the following constructors:\n#1"
+        },
+        {
+          "style_name": "prop",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "Define “#0” to admit proofs provided by any of the following constructors:\n#1"
         }
-      ]
+      ],
+      "tags": []
     }
   }
 }

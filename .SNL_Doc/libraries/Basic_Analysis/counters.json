@@ -1,0 +1,37 @@
+{
+  "counters": [
+    {
+      "id": "516fead4-18ee-4e4e-91b1-bc4d01974a8b",
+      "name": "section",
+      "numbering": "1",
+      "children": [
+        {
+          "id": "f7d49cd9-9821-4e21-b7dc-8cf8e4bba81c",
+          "name": "subsection",
+          "numbering": "1",
+          "children": [
+            {
+              "id": "a884183f-7a54-4545-ae42-3354947866b4",
+              "name": "entry",
+              "numbering": "1",
+              "children": [
+                {
+                  "id": "a857c7b1-808e-4590-8343-52927e403fe1",
+                  "name": "subentry",
+                  "numbering": "1",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "a0393e7b-4576-44f7-897e-7e727086735a",
+              "name": "example",
+              "numbering": "1",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
