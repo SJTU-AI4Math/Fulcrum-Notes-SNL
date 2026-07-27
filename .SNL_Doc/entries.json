@@ -410,7 +410,7 @@
     "kind": "definition",
     "title": "Semigroup",
     "content": {
-      "snl": "def[predicate-display](Algebra.Semigroup(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z))))))))"
+      "snl": "def[predicateDisplay](Algebra.Semigroup(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z))))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -420,7 +420,7 @@
     "kind": "definition",
     "title": "Monoid",
     "content": {
-      "snl": "def[predicate-display](Algebra.Monoid(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z)))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))))"
+      "snl": "def[predicateDisplay](Algebra.Monoid(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z)))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -440,7 +440,7 @@
     "kind": "definition",
     "title": "Group",
     "content": {
-      "snl": "def[predicate-display](Algebra.Group(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a))))), member[colon](%Inverse%, Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.exists-typed(@b,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](b,a),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,b),e@Algebra.def.monoid)))))))"
+      "snl": "def[predicateDisplay](Algebra.Group(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a))))), member[colon](%Inverse%, Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.exists-typed(@b,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](b,a),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,b),e@Algebra.def.monoid)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1216,7 +1216,7 @@
     "kind": "definition",
     "title": "Measure",
     "content": {
-      "snl": "def[predicate-display](Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Nonnegativity%,Measure.nonnegative(mu@Measure.ctxt.mu)),member[colon](%Countable additivity%,Measure.countablyAdditive(mu@Measure.ctxt.mu))))"
+      "snl": "def[predicateDisplay](Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Nonnegativity%,Measure.nonnegative(mu@Measure.ctxt.mu)),member[colon](%Countable additivity%,Measure.countablyAdditive(mu@Measure.ctxt.mu))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1276,7 +1276,7 @@
     "kind": "definition",
     "title": "Regular Measure",
     "content": {
-      "snl": "def[predicate-display](Measure.regular(mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Outer regularity%,Measure.outerRegular(mu@Measure.ctxt.mu)),member[colon](%Inner regularity%,Measure.innerRegular(mu@Measure.ctxt.mu))))"
+      "snl": "def[predicateDisplay](Measure.regular(mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Outer regularity%,Measure.outerRegular(mu@Measure.ctxt.mu)),member[colon](%Inner regularity%,Measure.innerRegular(mu@Measure.ctxt.mu))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1324,7 +1324,7 @@
     "kind": "definition",
     "title": "Complete Measure Space",
     "content": {
-      "snl": "def[predicate-display](Measure.Complete(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.forall-typed(@N,Sigma@Measure.ctxt.Sigma,Logic.implies(Eq(Measure.apply(mu@Measure.ctxt.mu,N),Measure.zero),Set.subset(Set.powerset(N),Sigma@Measure.ctxt.Sigma))))"
+      "snl": "def[predicateDisplay](Measure.Complete(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.forall-typed(@N,Sigma@Measure.ctxt.Sigma,Logic.implies(Eq(Measure.apply(mu@Measure.ctxt.mu,N),Measure.zero),Set.subset(Set.powerset(N),Sigma@Measure.ctxt.Sigma))))"
     },
     "contribution_info": null,
     "pointer": null

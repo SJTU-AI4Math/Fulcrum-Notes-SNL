@@ -197,7 +197,7 @@
           },
           "markdown": "",
           "text": "",
-          "style_name": "frac(inline)",
+          "style_name": "fracInline",
           "tags": []
         },
         {
@@ -219,7 +219,7 @@
           },
           "markdown": "",
           "text": "",
-          "style_name": "frac(display)",
+          "style_name": "fracDisplay",
           "tags": []
         },
         {
