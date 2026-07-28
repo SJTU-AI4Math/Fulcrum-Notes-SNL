@@ -2,58 +2,6 @@
   "version": "7",
   "name": "MeasureTheory",
   "macros": {
-    "Measure.Nat": {
-      "description": "Natural numbers",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
-      "styles": [
-        {
-          "mode": "formula_inline",
-          "template": "\\mathbb{N}",
-          "style_name": "default",
-          "tags": []
-        }
-      ],
-      "tags": []
-    },
-    "Measure.ENNReal": {
-      "description": "Nonnegative extended real numbers",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
-      "styles": [
-        {
-          "style_name": "default",
-          "tags": [],
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": "",
-          "mode": "formula_inline",
-          "template": "\\bar{\\mathbb{R}}^{\\geq 0}"
-        }
-      ],
-      "tags": []
-    },
     "Measure.zero": {
       "description": "Zero measure value",
       "source": {

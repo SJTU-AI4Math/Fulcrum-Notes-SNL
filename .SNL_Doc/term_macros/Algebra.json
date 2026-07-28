@@ -737,40 +737,6 @@
           "tags": []
         }
       ]
-    },
-    "Algebra.Nat": {
-      "description": "Natural numbers",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "const",
-      "dynamic_arity": false,
-      "tags": [],
-      "styles": [
-        {
-          "mode": "formula_inline",
-          "template": "\\mathbb{N}",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": "",
-          "style_name": "default",
-          "tags": []
-        }
-      ]
     }
   }
 }

@@ -564,7 +564,7 @@
     "kind": "definition",
     "title": "Cycle",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@r,Algebra.Nat),Type.judge[paren](list-partial(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
+      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@r,Nat),Type.judge[paren](list-partial(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
     },
     "contribution_info": null,
     "pointer": null
@@ -648,7 +648,7 @@
     "kind": "context",
     "title": "f, g",
     "content": {
-      "snl": "Type.judge(list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal))"
+      "snl": "Type.judge(list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, EReal))"
     },
     "contribution_info": null,
     "pointer": null
@@ -666,7 +666,7 @@
     "kind": "definition",
     "title": "Lebesgue Measurable Function",
     "content": {
-      "snl": "def-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), RealAnalysis.measurable(f), Logic.forall-typed(@c, RealAnalysis.EReal, RealAnalysis.measurable(Set.sep-typed(@x, D@real-analysis.ctxt.D, Eq(Add.add(f(x), Logic.neg(c)), $0$)))))"
+      "snl": "def-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.measurable(f), Logic.forall-typed(@c, EReal, RealAnalysis.measurable(Set.sep-typed(@x, D@real-analysis.ctxt.D, Eq(Add.add(f(x), Logic.neg(c)), $0$)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -676,7 +676,7 @@
     "kind": "property",
     "title": "Equivalent Definitions of Lebesgue Measurable",
     "content": {
-      "snl": "thm-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), Logic.iff(RealAnalysis.measurable(f), Logic.neg(RealAnalysis.measurable(Set.compl(Set.sep-typed(@x, D@real-analysis.ctxt.D, RealAnalysis.measurable($f(x)$)))))))"
+      "snl": "thm-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, EReal)), Logic.iff(RealAnalysis.measurable(f), Logic.neg(RealAnalysis.measurable(Set.compl(Set.sep-typed(@x, D@real-analysis.ctxt.D, RealAnalysis.measurable($f(x)$)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -686,7 +686,7 @@
     "kind": "definition",
     "title": "Simple Function",
     "content": {
-      "snl": "def-hyp(Type.judge(@phi, Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), RealAnalysis.simple(phi), Logic.and(RealAnalysis.measurable(phi), Logic.neg(Logic.iff($|\\phi(D)|$, $\\infty$))))"
+      "snl": "def-hyp(Type.judge(@phi, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.simple(phi), Logic.and(RealAnalysis.measurable(phi), Logic.neg(Logic.iff($|\\phi(D)|$, $\\infty$))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -696,7 +696,7 @@
     "kind": "definition",
     "title": "Almost Everywhere Equal",
     "content": {
-      "snl": "def-hyp(Type.judge[paren](list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), $f \\stackrel{\\text{a.e.}}{=} g$, Logic.iff(RealAnalysis.almostEverywhere($x \\in D$, Eq(f(x), g(x))), $\\mu(\\{x \\in D \\mid f(x) \\neq g(x)\\}) = 0$))"
+      "snl": "def-hyp(Type.judge[paren](list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, EReal)), $f \\stackrel{\\text{a.e.}}{=} g$, Logic.iff(RealAnalysis.almostEverywhere($x \\in D$, Eq(f(x), g(x))), $\\mu(\\{x \\in D \\mid f(x) \\neq g(x)\\}) = 0$))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1130,7 +1130,7 @@
     "kind": "context",
     "title": "$\\mu$",
     "content": {
-      "snl": "Type.judge(@mu,Type.to(Sigma@Measure.ctxt.Sigma,Measure.ENNReal))"
+      "snl": "Type.judge(@mu,Type.to(Sigma@Measure.ctxt.Sigma,ENNReal))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1294,7 +1294,7 @@
     "kind": "definition",
     "title": "Borel Measure on the Real Line",
     "content": {
-      "snl": "def-hyp(Type.judge(@$\\nu$,Type.to(Measure.Borel(Real),Measure.ENNReal)),Measure.BorelMeasure($\\nu$),Logic.forall-typed[paren](list-partial(@a,@b),Real,Eq(Measure.apply($\\nu$,Measure.interval(a,b)),Measure.length(a,b))))"
+      "snl": "def-hyp(Type.judge(@$\\nu$,Type.to(Measure.Borel(Real),ENNReal)),Measure.BorelMeasure($\\nu$),Logic.forall-typed[paren](list-partial(@a,@b),Real,Eq(Measure.apply($\\nu$,Measure.interval(a,b)),Measure.length(a,b))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1334,7 +1334,7 @@
     "kind": "definition",
     "title": "Outer Measure",
     "content": {
-      "snl": "def-hyp(Type.judge(@muStar,Type.to(Set(X@Measure.ctxt.X),Measure.ENNReal)),Measure.OuterMeasure(muStar),struct[enumerate](member[colon](%Empty set%,Eq(Measure.outer(muStar,Set.emptyset[slim]),Measure.zero)),member[colon](%Monotonicity%,%monotone under subset inclusion%),member[colon](%Countable subadditivity%,%subadditive over countable unions%)))"
+      "snl": "def-hyp(Type.judge(@muStar,Type.to(Set(X@Measure.ctxt.X),ENNReal)),Measure.OuterMeasure(muStar),struct[enumerate](member[colon](%Empty set%,Eq(Measure.outer(muStar,Set.emptyset[slim]),Measure.zero)),member[colon](%Monotonicity%,%monotone under subset inclusion%),member[colon](%Countable subadditivity%,%subadditive over countable unions%)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1344,7 +1344,7 @@
     "kind": "definition",
     "title": "Lebesgue-Measurable Set",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@E,Set($\\mathbb{R}$)),Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),Measure.ENNReal))),Measure.lebesgueMeasurable(E),Measure.caratheodory(muStar,E))"
+      "snl": "def-hyp(list-partial(Type.judge(@E,Set($\\mathbb{R}$)),Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal))),Measure.lebesgueMeasurable(E),Measure.caratheodory(muStar,E))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1354,7 +1354,7 @@
     "kind": "theorem",
     "title": "Lebesgue-Measurable Sets Form a Sigma-Algebra",
     "content": {
-      "snl": "thm-hyp(Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),Measure.ENNReal)),Measure.SigmaAlgebra(Measure.LebesgueSets($\\mathbb{R}$)))"
+      "snl": "thm-hyp(Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal)),Measure.SigmaAlgebra(Measure.LebesgueSets($\\mathbb{R}$)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1432,7 +1432,7 @@
     "kind": "property",
     "title": "Countable Families of Almost-Everywhere Properties",
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@P,Type.to(Measure.Nat,Type.to(X@Measure.ctxt.X,Proposition))),Logic.forall-typed(@n,Measure.Nat,Measure.almostEverywhere(@x,P(n,x),mu@Measure.ctxt.mu))),Measure.almostEverywhere(@x,Logic.forall-typed(@n,Measure.Nat,P(n,x)),mu@Measure.ctxt.mu))"
+      "snl": "thm-hyp(list-partial(Type.judge(@P,Type.to(Nat,Type.to(X@Measure.ctxt.X,Proposition))),Logic.forall-typed(@n,Nat,Measure.almostEverywhere(@x,P(n,x),mu@Measure.ctxt.mu))),Measure.almostEverywhere(@x,Logic.forall-typed(@n,Nat,P(n,x)),mu@Measure.ctxt.mu))"
     },
     "contribution_info": null,
     "pointer": null

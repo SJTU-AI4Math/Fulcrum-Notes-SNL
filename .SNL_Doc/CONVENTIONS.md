@@ -75,9 +75,20 @@ Exactly two categories may carry a bare name:
    by design. Their names are kebab-case, which is why the hyphen rule above
    does not apply to them.
 2. **Cross-domain elementary notation** owned by `BasicOperators`: `Eq`,
-   `Power`, `parentheses`, `Real`, `Icc`, `let`, `quotient`. These are symbols
-   every theory reaches for, and namespacing them would make every formula
-   noisier without disambiguating anything.
+   `Power`, `parentheses`, `Icc`, `let`, `quotient`, and the number systems
+   `Nat`, `Real`, `ENNReal`, `EReal`. These are symbols every theory reaches
+   for, and namespacing them would make every formula noisier without
+   disambiguating anything.
+
+   **Number systems and other primitive objects are global by construction.**
+   `\mathbb{N}` means the same thing in group theory and in measure theory, so
+   there is exactly one `Nat` and it lives here. Do not define a namespaced copy
+   in your own package because it happens to be the first place you need it —
+   the "two unrelated theories first" rule below is about *deciding to
+   generalise a domain concept*, and does not apply to elementary notation that
+   was never domain-specific to begin with. If you catch yourself writing
+   `Foo.Nat`, `Foo.Int`, `Foo.Real`, `Foo.Complex` or similar, the macro belongs
+   in `BasicOperators` under its bare name.
 
 Anything else gets a namespace. New bare names are not accepted.
 
