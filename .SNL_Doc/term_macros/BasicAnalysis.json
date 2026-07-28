@@ -2,7 +2,7 @@
   "version": "7",
   "name": "Basic Analysis",
   "macros": {
-    "RIntIcc": {
+    "Analysis.rIntIcc": {
       "description": "",
       "source": {
         "entries": [],
@@ -36,7 +36,7 @@
       ],
       "tags": []
     },
-    "RealFun.diff": {
+    "Analysis.evalDiff": {
       "description": "",
       "source": {
         "entries": [],
@@ -70,7 +70,7 @@
       ],
       "tags": []
     },
-    "IndefInt": {
+    "Analysis.rIndefInt": {
       "description": "",
       "source": {
         "entries": [],
@@ -126,7 +126,7 @@
       ],
       "tags": []
     },
-    "RealFun.equiv": {
+    "Analysis.equiv": {
       "description": "",
       "source": {
         "entries": [],

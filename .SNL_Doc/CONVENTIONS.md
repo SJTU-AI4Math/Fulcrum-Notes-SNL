@@ -25,6 +25,27 @@ macroName := Namespace "." slug ("." qualifier)?
   (`Measure.countablyAdditive`, `Set.subset`, `Logic.forall`).
 - `slug` is `UpperCamelCase` when it names a type, structure, or class of
   objects (`Algebra.Group`, `Measure.SigmaAlgebra`, `FP.Monad`).
+- **Specialisation prefix (mandatory).** If a concept obviously has a strictly
+  more general form that this document will eventually carry, the *narrow* form
+  must say so in its name, and the general name is reserved for the general
+  form. This is a naming obligation, not a style preference: the narrow concept
+  never gets to squat on the general name.
+  - Riemann integral is subsumed by the Lebesgue integral, so it is
+    `Analysis.rIntIcc` / `Analysis.rIndefInt` (`r` = Riemann), leaving
+    `Analysis.int` / `RealAnalysis.lebesgueIntegral` free.
+  - Group homomorphism is subsumed by the categorical morphism, so it is
+    `Algebra.GrpHom`, not `Algebra.Hom`. Same for `Algebra.GrpMono`,
+    `Algebra.GrpEpi`, `Algebra.GrpIso`, `Algebra.GrpKer`, `Algebra.GrpIm`,
+    `Algebra.GrpAction`.
+  - Prefix style follows the slug's case: `UpperCamelCase` slugs take a capital
+    structural prefix (`GrpHom`), `lowerCamelCase` slugs take a lowercase
+    letter prefix (`rIntIcc`).
+  - Choose the prefix from the theory that *owns the specialisation*
+    (`Grp`, `Ring`, `Top`, `r` for Riemann, `l` for Lebesgue when both coexist),
+    not from the file it lives in.
+  - Do **not** apply this to concepts whose general form is not foreseeable.
+    Over-prefixing is as bad as squatting: it makes every name unreadable for a
+    generality that never arrives.
 - A trailing `-typed` qualifier marks the type-annotated variant of a
   meta-mathematical binder: `Logic.forall` vs `Logic.forall-typed`.
 - Hyphens are legal but reserved for such qualifier suffixes. Do not use a

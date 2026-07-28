@@ -458,7 +458,7 @@
     "kind": "definition",
     "title": "Group Homomorphism",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GHom, Logic.and(Eq(Type.apply[paren](f,Algebra.e),Algebra.e),Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,Algebra.mul[dot](a,b)),dotH(Type.apply[paren](f,a),Type.apply[paren](f,b)))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpHom, Logic.and(Eq(Type.apply[paren](f,Algebra.e),Algebra.e),Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,Algebra.mul[dot](a,b)),dotH(Type.apply[paren](f,a),Type.apply[paren](f,b)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -468,7 +468,7 @@
     "kind": "definition",
     "title": "Group Monomorphism",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GMono, Logic.and(Algebra.GHom,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.implies(Eq(Type.apply[paren](f,a),Type.apply[paren](f,b)),Eq(a,b))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpMono, Logic.and(Algebra.GrpHom,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.implies(Eq(Type.apply[paren](f,a),Type.apply[paren](f,b)),Eq(a,b))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -478,7 +478,7 @@
     "kind": "definition",
     "title": "Group Epimorphism",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GEpi, Logic.and(Algebra.GHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
+      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpEpi, Logic.and(Algebra.GrpHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -488,7 +488,7 @@
     "kind": "definition",
     "title": "Group Isomorphism",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GIso, Logic.and(Algebra.GMono,Algebra.GEpi))"
+      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpIso, Logic.and(Algebra.GrpMono,Algebra.GrpEpi))"
     },
     "contribution_info": null,
     "pointer": null
@@ -498,7 +498,7 @@
     "kind": "definition",
     "title": "Kernel",
     "content": {
-      "snl": "def(Algebra.Ker,Set.sep-typed(@a,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,a),Algebra.e@Algebra.ctxt.G)))"
+      "snl": "def(Algebra.GrpKer,Set.sep-typed(@a,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,a),Algebra.e@Algebra.ctxt.G)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -508,7 +508,7 @@
     "kind": "definition",
     "title": "Image",
     "content": {
-      "snl": "def(Algebra.Im,Set.sep-typed(@y,H@Algebra.def.groupHom,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,x),y))))"
+      "snl": "def(Algebra.GrpIm,Set.sep-typed(@y,H@Algebra.def.groupHom,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,x),y))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -592,7 +592,7 @@
     "kind": "definition",
     "title": "Group Action",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@alpha,Type.to(G@Algebra.ctxt.G,Type.to(X,X)))), Algebra.Action, Logic.and(Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.e),x),x)),Logic.forall-typed(@g,G@Algebra.ctxt.G,Logic.forall-typed(@h,G@Algebra.ctxt.G,Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.mul[dot](g,h)),x),Type.apply[paren](Type.apply[paren](alpha,g),Type.apply[paren](Type.apply[paren](alpha,h),x))))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@alpha,Type.to(G@Algebra.ctxt.G,Type.to(X,X)))), Algebra.GrpAction, Logic.and(Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.e),x),x)),Logic.forall-typed(@g,G@Algebra.ctxt.G,Logic.forall-typed(@h,G@Algebra.ctxt.G,Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.mul[dot](g,h)),x),Type.apply[paren](Type.apply[paren](alpha,g),Type.apply[paren](Type.apply[paren](alpha,h),x))))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1442,7 +1442,7 @@
     "kind": "theorem",
     "title": "Newton-Leibniz Formula",
     "content": {
-      "snl": "thm-hyp[display](list-partial(Type.judge(list-partial(@a,@b),Real),$#0 > #1$(b,a),Type.judge[paren](@f,Type.to(Icc(a,b),Real)),let(@F,quotient(parentheses(Type.to(Icc(a,b),Real)),RealFun.equiv),IndefInt[inline](@x,Type.apply(f,x)))),$$#0$$(Eq(RIntIcc(a,b,@x,Type.apply(f,x)),RealFun.diff(F,a,b))))"
+      "snl": "thm-hyp[display](list-partial(Type.judge(list-partial(@a,@b),Real),$#0 > #1$(b,a),Type.judge[paren](@f,Type.to(Icc(a,b),Real)),let(@F,quotient(parentheses(Type.to(Icc(a,b),Real)),Analysis.equiv),Analysis.rIndefInt[inline](@x,Type.apply(f,x)))),$$#0$$(Eq(Analysis.rIntIcc(a,b,@x,Type.apply(f,x)),Analysis.evalDiff(F,a,b))))"
     },
     "contribution_info": null,
     "pointer": null

@@ -234,7 +234,7 @@
         }
       ]
     },
-    "Algebra.GHom": {
+    "Algebra.GrpHom": {
       "description": "Group homomorphism predicate",
       "source": {
         "entries": [
@@ -270,7 +270,7 @@
         }
       ]
     },
-    "Algebra.GMono": {
+    "Algebra.GrpMono": {
       "description": "Group monomorphism",
       "source": {
         "entries": [
@@ -306,7 +306,7 @@
         }
       ]
     },
-    "Algebra.GEpi": {
+    "Algebra.GrpEpi": {
       "description": "Group epimorphism",
       "source": {
         "entries": [
@@ -342,7 +342,7 @@
         }
       ]
     },
-    "Algebra.GIso": {
+    "Algebra.GrpIso": {
       "description": "Group isomorphism",
       "source": {
         "entries": [
@@ -378,7 +378,7 @@
         }
       ]
     },
-    "Algebra.Ker": {
+    "Algebra.GrpKer": {
       "description": "Kernel of group homomorphism",
       "source": {
         "entries": [
@@ -414,7 +414,7 @@
         }
       ]
     },
-    "Algebra.Im": {
+    "Algebra.GrpIm": {
       "description": "Image of group homomorphism",
       "source": {
         "entries": [
@@ -630,7 +630,7 @@
         }
       ]
     },
-    "Algebra.Action": {
+    "Algebra.GrpAction": {
       "description": "Group action predicate",
       "source": {
         "entries": [
