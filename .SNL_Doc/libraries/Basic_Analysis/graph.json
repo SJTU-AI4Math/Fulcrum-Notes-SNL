@@ -398,6 +398,13 @@
       "props": {
         "entryId": "BasicAnalysis.def.extremePoint"
       }
+    },
+    {
+      "id": "n_58",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.proof.rolle"
+      }
     }
   ],
   "relationships": [
@@ -654,6 +661,11 @@
     {
       "from": "n_54",
       "to": "n_57",
+      "label": "branch"
+    },
+    {
+      "from": "n_47",
+      "to": "n_58",
       "label": "branch"
     }
   ]
