@@ -1512,5 +1512,583 @@
     },
     "contribution_info": null,
     "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.sec.structures",
+    "kind": "section",
+    "title": "Functions and Sequences with Carriers",
+    "content": {
+      "markdown": "Calculus_21 does not model a real function as a bare `ℝ → ℝ`, nor a sequence as a bare `ℕ → ℝ`. Both carry their region of definition alongside the map: a function bundles a total map with a domain set, and a sequence bundles a map with an index window. Every limit, continuity and differentiability notion downstream is stated against these carriers, which is what makes side conditions such as \"the punctured neighbourhood lies inside the domain\" expressible rather than tacitly assumed."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.ctxt.pfun",
+    "kind": "context",
+    "title": "Context: Domain-Carrying Functions",
+    "content": {
+      "markdown": "Shared binders for `BasicAnalysis.sec.structures` and everything downstream. Declares `F G : PFun` (domain-carrying real functions), `A B : Seq` (index-windowed real sequences), `x x₀ L : ℝ` (points and candidate limits), `epsilon delta : ℝ` constrained positive (tolerance and threshold binders), `n N : ℕ` (index binders), and `I : Set ℝ` (an ambient interval or region)."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.carriers",
+    "kind": "subsection",
+    "title": "Carriers",
+    "content": {
+      "markdown": "The two bundled structures, their accessors, and the neighbourhood vocabulary in which every limit notion below is phrased."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.pfun",
+    "kind": "definition",
+    "title": "Domain-Carrying Function",
+    "content": {
+      "snl": "def(Type.judge(@F, Analysis.PFun), Analysis.mkPFun(Analysis.map(F), Analysis.domain(F)))",
+      "markdown": "A domain-carrying function `F : PFun` consists of a total map `F.map : ℝ → ℝ` together with a domain `F.domain : Set ℝ`. The total map is defined everywhere as a Lean function, but only its restriction to `F.domain` carries mathematical content. Two PFuns are equal exactly when both components agree.\n\nThe point of the bundling is that domains compose. The arithmetic operations intersect domains, so `(F+G).domain = F.domain ∩ G.domain`; division additionally removes the zero set of the denominator; the power operation additionally restricts to where the base is positive. A bare `ℝ → ℝ` cannot express any of this, so those side conditions would have to be re-supplied by hand at every use site."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.seqWindow",
+    "kind": "definition",
+    "title": "Sequence with an Index Window",
+    "content": {
+      "snl": "def(Type.judge(@A, Analysis.Seq), Analysis.mkSeq(Analysis.map(A), Analysis.init(A), Analysis.final(A)))",
+      "markdown": "A sequence `A : Seq` consists of a total map `A.map : ℕ → ℝ`, a first index `A.init : ℕ`, and an end marker `A.final : WithTop ℕ` holding one past the last index. `A.final = none` marks an infinite sequence; a finite sequence occupies the index range `[A.init, A.final)`.\n\nThe window is what lets a single type carry both finite and infinite sequences, and it is why the limit definition must explicitly require `A.final = none`: asking for the limit of a finite sequence is a category error rather than a false statement."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.pfunComp",
+    "kind": "definition",
+    "title": "Composition of Domain-Carrying Functions",
+    "content": {
+      "snl": "def-hyp(Type.judge(list-partial(@F, @G), Analysis.PFun), Analysis.comp(F, G), Analysis.mkPFun($F.\\mathrm{map} \\circ G.\\mathrm{map}$, Set.inter(Analysis.domain(G), Set.sep-typed(@x, Analysis.domain(G), Set.mem(Type.apply(Analysis.map(G), x), Analysis.domain(F))))))",
+      "markdown": "The composite `F ⊙ G` has map `F.map ∘ G.map` and domain `G.domain ∩ { x | G.map x ∈ F.domain }`. Note the asymmetry: the domain condition is a pullback along `G`, not an intersection of the two domains, so composition is where the carrier discipline pays off most visibly."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.neighbourhood",
+    "kind": "definition",
+    "title": "Neighbourhood and Punctured Neighbourhood",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(list-partial(@x, @delta), Real), $#0 > 0$(delta)), list-partial(Analysis.nbh(x, delta), Analysis.nbhDel(x, delta)), Logic.and(Eq(Analysis.nbh(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1$(x, delta, y))), Eq(Analysis.nbhDel(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1 \\land #2 \\ne #0$(x, delta, y)))))",
+      "markdown": "For `x₀ : ℝ` and `delta > 0`, the neighbourhood is `U(x₀, delta) = { x | x₀ − delta < x < x₀ + delta }`; the punctured neighbourhood removes the centre, `U°(x₀, delta) = { x | x₀ − delta < x < x₀ + delta ∧ x ≠ x₀ }`. Equivalently `x ∈ U(x₀, delta) ↔ |x − x₀| < delta`, and `U°(x₀, delta) ⊆ U(x₀, delta)`.\n\nEvery epsilon-N and epsilon-delta statement below is phrased as membership in a neighbourhood. That formulation survives the move to metric and topological spaces, whereas the inequality `|a − L| < epsilon` is bookkeeping specific to ℝ."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.sec.limits",
+    "kind": "section",
+    "title": "Limits",
+    "content": {
+      "markdown": "The eight limit notions Calculus_21 carries: sequence limits, function limits at a finite point, the two one-sided limits, and the three limits at infinity. Each appears in two forms — a *predicate* relating a carrier to a candidate value, and a partial *value* form usable inside expressions. The bridge results connecting the two forms are what let an ordinary calculation stand in for an epsilon-delta argument."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.limitDefs",
+    "kind": "subsection",
+    "title": "Definitions of Limit",
+    "content": {
+      "markdown": "Each definition has two clauses: a well-posedness clause requiring the relevant region to sit inside the domain, and the epsilon clause proper. The first clause is exactly what the carrier discipline of `BasicAnalysis.def.pfun` buys."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.seqLimit",
+    "kind": "definition",
+    "title": "Limit of a Sequence",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A, Analysis.Seq), Type.judge(@L, Real)), Analysis.seqLim(A, L), Logic.and(Eq(Analysis.final(A), FP.none), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@N, Nat, Logic.forall-typed(@n, Nat, Logic.implies($#0 > #1$(n, N), Set.mem(Type.apply(Analysis.map(A), n), Analysis.nbh(L, epsilon)))))))))",
+      "markdown": "`A` tends to `L` iff `A` is infinite (`A.final = none`) and for every `epsilon > 0` there is `N : ℕ` such that `A.map n ∈ U(L, epsilon)` for all `n > N`.\n\nThe infiniteness clause is not decoration. Without it the statement would be vacuously satisfiable by a finite window, since the epsilon clause only constrains indices beyond `N`. `A` is convergent iff some `L` works, and the limit is then unique."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.seqLimitValue",
+    "kind": "definition",
+    "title": "The Limit of a Sequence as a Value",
+    "content": {
+      "snl": "def-hyp(Type.judge(@A, Analysis.Seq), Analysis.seqLimVal(A), Analysis.seqLimVal(A))",
+      "markdown": "The predicate `BasicAnalysis.def.seqLimit` relates a sequence to a candidate value; the *value* form is a partial element of ℝ, present exactly when the sequence converges and absent otherwise. Writing the limit as a value is what allows it to appear inside an arithmetic expression and be manipulated by ordinary equational reasoning.\n\nPartiality is essential and cannot be papered over with a junk value: `limit(A) + limit(B) = limit(A + B)` must fail to be an unconditional equation when either side diverges. The two forms are connected in both directions — a proof of the predicate yields the value, and knowing the value is present recovers the predicate."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.funLimit",
+    "kind": "definition",
+    "title": "Limit of a Function at a Point",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @L), Real)), Analysis.funLim(F, @y, x, L), Logic.and(Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Set.subset(Analysis.nbhDel(x, delta), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Analysis.nbhDel(x, delta)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
+      "markdown": "`F` tends to `L` as `x → x₀` iff two things hold. First, well-posedness: some punctured neighbourhood `U°(x₀, delta)` lies inside `F.domain`, so the limit is asked at a point the function actually approaches. Second, the epsilon-delta clause: for every `epsilon > 0` there is `delta > 0` with `F.map x ∈ U(L, epsilon)` for all `x ∈ U°(x₀, delta)`.\n\nThe value at `x₀` itself is irrelevant — indeed `x₀` need not lie in the domain at all. That is precisely what the *punctured* neighbourhood encodes, and it is what separates this notion from continuity at `x₀`."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.funLimitValue",
+    "kind": "definition",
+    "title": "The Limit of a Function as a Value",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.funLimVal(F, @y, x), Analysis.funLimVal(F, @y, x))",
+      "markdown": "The value counterpart of `BasicAnalysis.def.funLimit`, and likewise partial. The same value form is reused for the one-sided limits and the limits at infinity, each with its own notation.\n\nThis is the layer on which the derivative is defined: the derivative value at a point is the value of the limit of the difference quotient, so differentiability becomes \"that value is present\" rather than a fresh quantifier block."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.oneSidedLimit",
+    "kind": "definition",
+    "title": "One-Sided Limits",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @L), Real)), list-partial(Analysis.limLeft(F, @y, x, L), Analysis.limRight(F, @y, x, L)), Logic.and(Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Set.subset(Ioo(Sub.sub(x, delta), x), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Ioo(Sub.sub(x, delta), x)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
+      "markdown": "The left limit replaces the punctured neighbourhood by the left half-interval `(x₀ − delta, x₀)`; the right limit uses `(x₀, x₀ + delta)`. Both keep the two-clause shape of `BasicAnalysis.def.funLimit`, including the well-posedness requirement that the relevant half-interval lie inside the domain.\n\nA function has a limit at `x₀` iff both one-sided limits exist and agree, which is the standard route to detecting a jump discontinuity."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.oneSidedLimitValue",
+    "kind": "definition",
+    "title": "One-Sided Limits as Values",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), list-partial(Analysis.limLeftVal(F, @y, x), Analysis.limRightVal(F, @y, x)), list-partial(Analysis.limLeftVal(F, @y, x), Analysis.limRightVal(F, @y, x)))",
+      "markdown": "The partial value forms of the two one-sided limits. They are the basis for the one-sided derivatives, and comparing the two values is how the classification of discontinuities is stated."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.limitAtInfinity",
+    "kind": "definition",
+    "title": "Limits at Infinity",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@L, Real)), list-partial(Analysis.limNegInf(F, @y, L), Analysis.limPosInf(F, @y, L), Analysis.limInf(F, @y, L)), Logic.and(Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Set.subset($\\left(#0,\\ +\\infty\\right)$(M), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, $\\left(#0,\\ +\\infty\\right)$(M)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
+      "markdown": "Three variants sharing the two-clause shape. At `+∞` the region is a ray `(M, +∞)`; at `−∞` it is `(−∞, −M)`; the two-sided `∞` limit requires both rays to lie in the domain and the epsilon condition to hold on both simultaneously with a *common* `M`.\n\nRequiring one threshold for both rays, rather than one per ray, is the same uniformity move that makes the sequence definition non-vacuous."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.limitAtInfinityValue",
+    "kind": "definition",
+    "title": "Limits at Infinity as Values",
+    "content": {
+      "snl": "def-hyp(Type.judge(@F, Analysis.PFun), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)))",
+      "markdown": "The partial value forms of the three limits at infinity."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.limitProps",
+    "kind": "subsection",
+    "title": "Properties of Limits",
+    "content": {
+      "markdown": "The two structural facts every limit notion satisfies, plus the congruence principle that makes limits a local notion."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.limitUnique",
+    "kind": "theorem",
+    "title": "Uniqueness of the Limit",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A, Analysis.Seq), Type.judge(list-partial(@L, @M), Real), Analysis.seqLim(A, L), Analysis.seqLim(A, M)), Eq(L, M))",
+      "markdown": "If a sequence tends to both `L` and `M` then `L = M`, and the same holds for each of the seven function-limit notions. Uniqueness is what licenses the value forms of the previous subsection: without it there would be no well-defined element to name."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.convergentBounded",
+    "kind": "theorem",
+    "title": "Convergence Implies Boundedness",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A, Analysis.Seq), Analysis.seqConv(A)), Analysis.bounded(A))",
+      "markdown": "A convergent sequence is bounded. The function analogue is weaker and necessarily local: a function with a limit at `x₀` is bounded on some punctured neighbourhood of `x₀`, not globally, and correspondingly a function converging at `+∞` is bounded only on some ray.\n\nThe direction does not reverse: `((−1)ⁿ)` is bounded and divergent."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.limitCongr",
+    "kind": "theorem",
+    "title": "Limits are Local",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(list-partial(@x, @L), Real), Analysis.funLim(F, @y, x, L), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.and(Set.subset(Analysis.nbhDel(x, delta), Analysis.domain(G)), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Analysis.nbhDel(x, delta)), Eq(Type.apply(Analysis.map(F), y), Type.apply(Analysis.map(G), y)))))))), Analysis.funLim(G, @y, x, L))",
+      "markdown": "If `F` tends to `L` at `x₀` and `G` agrees with `F` on some punctured neighbourhood of `x₀` (and that neighbourhood lies in `G`'s domain), then `G` tends to `L` at `x₀` as well. For sequences the corresponding statement is agreement beyond some index.\n\nThis is the precise sense in which a limit sees only germ-level data. It is also the workhorse lemma for rewriting under a limit, since it lets an algebraic simplification valid near `x₀` — but not at `x₀` — be applied."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.sec.asymptotics",
+    "kind": "section",
+    "title": "Infinitesimals",
+    "content": {
+      "markdown": "Comparison of vanishing quantities, stated as relations between domain-carrying functions at a point rather than as informal orders of magnitude. This is the vocabulary Taylor's theorem with Peano remainder is phrased in."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.infinitesimal",
+    "kind": "subsection",
+    "title": "Infinitesimals and Their Comparison",
+    "content": {
+      "markdown": "One base notion and two comparison relations built on it."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.infinitesimal",
+    "kind": "definition",
+    "title": "Infinitesimal",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.infinitesimal(F, x), Analysis.funLim(F, @y, x, $0$))",
+      "markdown": "`F` is an infinitesimal at `x₀` iff it tends to `0` there. The one-sided variants are defined by the corresponding one-sided limits.\n\nBeing an infinitesimal is a statement about a function at a point, not a kind of number: ℝ is Archimedean and contains no nonzero element smaller than every `1/n`. The two closure facts used constantly downstream are that a sum or product of infinitesimals is an infinitesimal, and that a locally bounded function times an infinitesimal is an infinitesimal."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.equivInfinitesimal",
+    "kind": "definition",
+    "title": "Equivalent Infinitesimals",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(@x, Real)), Analysis.equivInfinitesimal(F, G, x), Logic.and(Analysis.infinitesimal(F, x), Logic.and(Analysis.infinitesimal(G, x), Analysis.funLim(Div.div(F, G), @y, x, $1$))))",
+      "markdown": "`F ∼ G` at `x₀` iff both are infinitesimals there and their quotient tends to `1`. Note that the quotient is formed in the PFun algebra, so its domain already excludes the zero set of `G` — the usual side condition \"`G` is nonzero near `x₀`\" is discharged by the carrier rather than stated.\n\nThis is an equivalence relation on infinitesimals at a fixed point, and it is the justification for the standard substitution table (`sin u ∼ u`, `√(1+u) − 1 ∼ u/2`, `(1+u)^a − 1 ∼ a·u`). Substitution is valid in factors of a product or quotient, and is *not* valid inside a sum — replacing a summand by an equivalent can destroy the cancellation that determines the answer."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.higherInfinitesimal",
+    "kind": "definition",
+    "title": "Higher-Order Infinitesimal",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(@x, Real)), Analysis.higherInfinitesimal(F, G, x), Logic.and(Analysis.infinitesimal(F, x), Logic.and(Analysis.infinitesimal(G, x), Analysis.funLim(Div.div(F, G), @y, x, $0$))))",
+      "markdown": "`F = o(G)` at `x₀` iff both are infinitesimals there and `F/G` tends to `0`; `F` vanishes strictly faster than `G`. This is the relation in which the Peano form of Taylor's remainder is stated: the remainder is `o((x − x₀)ᴺ)`."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.sec.continuity",
+    "kind": "section",
+    "title": "Continuity",
+    "content": {
+      "markdown": "Continuity as the coincidence of the limit with the value, its one-sided refinements, and the closed-interval theorems that make continuity a global tool rather than a pointwise annotation."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.contDefs",
+    "kind": "subsection",
+    "title": "Definitions of Continuity",
+    "content": {
+      "markdown": "Pointwise, one-sided, and the closed-interval convention."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.continuousAt",
+    "kind": "definition",
+    "title": "Continuity at a Point",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.contAt(F, x), Logic.and(Set.mem(x, Analysis.domain(F)), Analysis.funLim(F, @y, x, Type.apply(Analysis.map(F), x))))",
+      "markdown": "`F` is continuous at `x₀` iff `x₀` lies in `F.domain` *and* the limit of `F` at `x₀` equals `F.map x₀`. Both clauses are needed and neither follows from the other: `BasicAnalysis.def.funLimit` deliberately says nothing about `x₀` itself.\n\n`F` is continuous (unqualified) iff it is continuous at every point of its domain. Since the domain is carried by the function, this is a statement about `F` alone rather than about `F` together with a separately supplied region."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.continuousOn",
+    "kind": "definition",
+    "title": "Continuity on a Region",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@I, Set(Real))), Analysis.contOn(F, I), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, I), Analysis.contAt(F, x))))",
+      "markdown": "Continuity at every point of a given region `I`. This is pointwise continuity quantified over `I`, and is strictly weaker than uniform continuity on `I` — the `delta` is allowed to depend on the point."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.oneSidedContinuity",
+    "kind": "definition",
+    "title": "One-Sided Continuity",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), list-partial(Analysis.contLeftAt(F, x), Analysis.contRightAt(F, x)), Logic.and(Set.mem(x, Analysis.domain(F)), Analysis.limLeft(F, @y, x, Type.apply(Analysis.map(F), x))))",
+      "markdown": "Left-continuity at `x₀` asks that the left limit exist and equal `F.map x₀`; right-continuity uses the right limit. `F` is continuous at `x₀` iff it is both left- and right-continuous there."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.continuousOnIcc",
+    "kind": "definition",
+    "title": "Continuity on a Closed Interval",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b)), Analysis.contOnIcc(F, a, b), Logic.and(Analysis.contOn(F, Ioo(a, b)), Logic.and(Analysis.contRightAt(F, a), Analysis.contLeftAt(F, b))))",
+      "markdown": "Continuity on `[a, b]` means continuity on the open interior together with right-continuity at `a` and left-continuity at `b`. Demanding two-sided continuity at the endpoints would be wrong: it would force `F` to be defined outside `[a, b]`, so no function with domain exactly `[a, b]` could ever satisfy it.\n\nThe convention presupposes `a < b`; it is the hypothesis under which the closed-interval theorems below are stated."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.closedInterval",
+    "kind": "subsection",
+    "title": "Closed-Interval Theorems",
+    "content": {
+      "markdown": "The three classical consequences of continuity on a compact interval. Each fails on an open or unbounded interval, so each genuinely consumes compactness."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.extremeValue",
+    "kind": "theorem",
+    "title": "Attainment of Extrema",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b)), Logic.exists-typed(@m, Real, Logic.and(Set.mem(m, Icc(a, b)), Analysis.minPoint(F, m))))",
+      "markdown": "A function continuous on `[a, b]` attains a minimum and a maximum at points of `[a, b]`. Attainment, not merely boundedness, is the content: `x ↦ x` on `(0, 1)` is bounded and attains neither bound, and `x ↦ 1/x` on `(0, 1]` is not even bounded. Boundedness follows as a corollary."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.intermediateValue",
+    "kind": "theorem",
+    "title": "Intermediate Value Theorem",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b, @C), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), $#0 < #1 \\land #1 < #2$(Type.apply(Analysis.map(F), a), C, Type.apply(Analysis.map(F), b))), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Icc(a, b)), Eq(Type.apply(Analysis.map(F), c), C))))",
+      "markdown": "A function continuous on `[a, b]` takes every value between `F a` and `F b`. Combined with the previous theorem this says the continuous image of a closed bounded interval is again a closed bounded interval.\n\nThe standard corollary is a root existence principle: a sign change over `[a, b]` forces a zero inside. The theorem is genuinely about the completeness of ℝ — the same statement over ℚ is false, as `x ↦ x² − 2` witnesses."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.sec.differentiation",
+    "kind": "section",
+    "title": "Differentiation",
+    "content": {
+      "markdown": "The derivative as a limit of difference quotients, the differential operator as a map from functions to functions, higher orders by iteration, the mean value theorems, and Taylor expansion."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.derivDefs",
+    "kind": "subsection",
+    "title": "Definitions of Derivative",
+    "content": {
+      "markdown": "The derivative is defined by reusing the limit layer verbatim: it is the limit at `x₀` of the difference quotient, itself formed in the PFun algebra, so the domain bookkeeping is inherited rather than repeated."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.derivative",
+    "kind": "definition",
+    "title": "Derivative at a Point",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @D), Real)), Analysis.deriv(F, x, D), Analysis.funLim(Div.div(Sub.sub(F, Type.apply(Analysis.map(F), x)), Sub.sub(@y, x)), @y, x, D))",
+      "markdown": "`F` has derivative `D` at `x₀` iff the difference quotient `(F − F(x₀)) / (id − x₀)` tends to `D` at `x₀`. The quotient is built in the PFun algebra, so the removal of `x₀` from its domain — where the denominator vanishes — happens automatically, and the punctured neighbourhood of `BasicAnalysis.def.funLimit` is exactly what makes the expression meaningful there.\n\n`F` is differentiable at `x₀` iff some `D` works; uniqueness of `D` is inherited from uniqueness of limits."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.oneSidedDerivative",
+    "kind": "definition",
+    "title": "One-Sided Derivatives",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @D), Real)), list-partial(Analysis.derivLeft(F, x, D), Analysis.derivRight(F, x, D)), Analysis.limLeft(Div.div(Sub.sub(F, Type.apply(Analysis.map(F), x)), Sub.sub(@y, x)), @y, x, D))",
+      "markdown": "The same difference quotient with the one-sided limits substituted. `F` is differentiable at `x₀` iff both one-sided derivatives exist and agree; `x ↦ |x|` at `0` is the standard example where they exist and differ."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.diffOperator",
+    "kind": "definition",
+    "title": "The Differential Operator",
+    "content": {
+      "snl": "def-hyp(Type.judge(@F, Analysis.PFun), Analysis.diff(F), Analysis.mkPFun(Analysis.map(Analysis.diff(F)), Set.sep-typed(@x, Real, Analysis.derivable(F, x))))",
+      "markdown": "`F'` is again a domain-carrying function: its domain is the set of points at which `F` is differentiable, and its map sends each such point to the derivative there.\n\nThe derivative's domain may be strictly smaller than `F`'s, and may even be empty — a nowhere-differentiable continuous function is a perfectly good `PFun` whose derivative has empty domain. Making the operator total-on-`PFun` rather than partially defined is what allows it to be iterated without a fresh side condition at each step."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.nthDerivative",
+    "kind": "definition",
+    "title": "Higher-Order Derivatives",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@n, Nat)), Analysis.nthDiff(n, F), Analysis.diff(Analysis.nthDiff($#0 - 1$(n), F)))",
+      "markdown": "Defined by iterating the differential operator: the zeroth derivative is `F` itself and the `(n+1)`-st is the derivative of the `n`-th. Because the operator is total on `PFun`, the iteration needs no hypothesis; domains simply shrink as the order rises.\n\n`F` is `n`-times differentiable at `x₀` exactly when `x₀` survives into the domain of the `n`-th iterate."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.meanValue",
+    "kind": "subsection",
+    "title": "Mean Value Theorems",
+    "content": {
+      "markdown": "The chain from Fermat's interior-extremum lemma to the Cauchy form, each step a strict generalisation of the previous one."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.fermat",
+    "kind": "theorem",
+    "title": "Fermat's Interior Extremum Lemma",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real), Analysis.derivable(F, x), Analysis.maxPoint(F, x)), Analysis.deriv(F, x, $0$))",
+      "markdown": "At an interior local extremum where the derivative exists, the derivative vanishes. Both hypotheses are load-bearing: `x ↦ x` on `[0, 1]` has extrema only at the endpoints, and `x ↦ |x|` has an interior minimum where the derivative fails to exist.\n\nThe converse is false — `x ↦ x³` has vanishing derivative at `0` and no extremum there — so this is a necessary condition only."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.rolle",
+    "kind": "theorem",
+    "title": "Rolle's Theorem",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), Eq(Type.apply(Analysis.map(F), a), Type.apply(Analysis.map(F), b))), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Ioo(a, b)), Analysis.deriv(F, c, $0$))))",
+      "markdown": "A function continuous on `[a, b]`, differentiable on `(a, b)`, and taking equal values at the endpoints has a stationary point strictly inside.\n\nThe proof is the previous two theorems in sequence: extrema are attained by `BasicAnalysis.thm.extremeValue`, and either one is interior — whence `BasicAnalysis.thm.fermat` applies — or both are attained at the endpoints, in which case the function is constant and every interior point works. Note the asymmetry between the closed interval for continuity and the open one for differentiability: it is what lets the theorem apply to `x ↦ √(1 − x²)` on `[−1, 1]`."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.lagrangeMVT",
+    "kind": "theorem",
+    "title": "Lagrange's Mean Value Theorem",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b)), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Ioo(a, b)), Analysis.deriv(F, c, Div.div(Sub.sub(Type.apply(Analysis.map(F), b), Type.apply(Analysis.map(F), a)), Sub.sub(b, a))))))",
+      "markdown": "Some interior point has derivative equal to the average rate of change `(F b − F a)/(b − a)`. It follows from Rolle applied to `F` minus the secant line.\n\nThis is the bridge from local to global information and the engine behind most of one-variable calculus: vanishing derivative on an interval forces constancy, a sign condition on the derivative forces monotonicity, and a bound on the derivative gives a Lipschitz estimate. Each of these is false without connectedness of the interval."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.cauchyMVT",
+    "kind": "theorem",
+    "title": "Cauchy's Mean Value Theorem",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), Analysis.contOnIcc(G, a, b)), Logic.exists-typed(@c, Real, Set.mem(c, Ioo(a, b))))",
+      "markdown": "The parametric form: for a suitable interior `c`, `(F b − F a) · G'(c) = (G b − G a) · F'(c)`. Taking `G = id` recovers Lagrange's theorem.\n\nStating it in the product form rather than as a ratio avoids a non-vanishing hypothesis on `G'`. This is the theorem L'Hôpital's rule is proved from, which is why the rule needs no differentiability at the limit point itself."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.taylor",
+    "kind": "subsection",
+    "title": "Taylor Expansion",
+    "content": {
+      "markdown": "The polynomial approximation and its two remainder forms."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.taylorPolynomial",
+    "kind": "definition",
+    "title": "Taylor Polynomial",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real), Type.judge(@N, Nat)), Analysis.taylorPoly(F, x, N), Analysis.taylorPoly(F, x, N))",
+      "markdown": "The polynomial of degree at most `N` whose derivatives at `x₀` up to order `N` agree with those of `F`, namely `Σ_{k=0}^{N} F⁽ᵏ⁾(x₀)/k! · (x − x₀)ᵏ`. It is the unique such polynomial, which is the cleanest characterisation and explains why the coefficients must be what they are."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.taylorPeano",
+    "kind": "theorem",
+    "title": "Taylor's Theorem with Peano Remainder",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real), Type.judge(@N, Nat), $#0 > 0$(N)), Logic.exists-typed(@R, Analysis.PFun, Logic.and(Eq(F, Add.add(Analysis.taylorPoly(F, x, N), R)), Analysis.higherInfinitesimal(R, Power(Sub.sub(@y, x), N), x))))",
+      "markdown": "If `F` is `N`-times differentiable at `x₀` then `F` splits as its Taylor polynomial plus a remainder that is `o((x − x₀)ᴺ)` at `x₀`.\n\nThis is a purely local statement: it says the polynomial is the best degree-`N` approximation *near* `x₀` and says nothing at any fixed distance. It requires only differentiability at the single point `x₀`, which is the weakest hypothesis of any Taylor result here, and it is the form used for computing limits."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.thm.taylorLagrange",
+    "kind": "theorem",
+    "title": "Taylor's Theorem with Lagrange Remainder",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @y), Real), Type.judge(@N, Nat), $#0 < #1$(y, x)), Logic.exists-typed(@z, Real, Logic.and(Set.mem(z, Ioo(y, x)), Eq(Type.apply(Analysis.map(F), y), Add.add(Type.apply(Analysis.map(Analysis.taylorPoly(F, x, N)), y), Div.div(Mul.mul(Type.apply(Analysis.map(Analysis.nthDiff($#0 + 1$(N), F)), z), Power(Sub.sub(y, x), $#0 + 1$(N))), $\\left(#0 + 1\\right)!$(N)))))))",
+      "markdown": "Under `(N+1)`-fold differentiability on the interval between the base point and the evaluation point, the remainder has the closed form `F⁽ᴺ⁺¹⁾(ξ)/(N+1)! · (x − x₀)ᴺ⁺¹` for some intermediate `ξ`.\n\nUnlike the Peano form this is a statement at a fixed distance, and it is what yields concrete error bounds once `F⁽ᴺ⁺¹⁾` is bounded. It generalises `BasicAnalysis.thm.lagrangeMVT`, which is the case `N = 0`. The interval hypothesis is directional, so the left and right cases are stated separately."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.subsec.boundedness",
+    "kind": "subsection",
+    "title": "Boundedness",
+    "content": {
+      "markdown": "Boundedness for both carriers. For a sequence the quantifier ranges over the index window, so the finite and infinite cases are stated separately; for a function it ranges over the domain."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.bounded",
+    "kind": "definition",
+    "title": "Bounded Sequence and Bounded Function",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@A, Analysis.Seq)), list-partial(Analysis.bounded(F), Analysis.boundedAbove(F), Analysis.boundedBelow(F)), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, Analysis.domain(F)), $\\left|#0\\right| < #1$(Type.apply(Analysis.map(F), x), M))))))",
+      "markdown": "`F` is bounded iff some `M > 0` dominates `|F.map x|` for every `x` in `F.domain`; bounded above and bounded below drop the absolute value and keep one inequality.\n\nFor a sequence the same definition is relative to the index window: on a finite window the quantifier ranges over `[A.init, A.final)`, on an infinite one over `[A.init, ∞)`. Because the bound is only required on the carrier's own region, a function that blows up outside its domain is still bounded."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.locallyBounded",
+    "kind": "definition",
+    "title": "Local Boundedness",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.locallyBounded(F, x), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Set.inter(Analysis.domain(F), Analysis.nbh(x, delta))), $\\left|#0\\right| < #1$(Type.apply(Analysis.map(F), y), M))))))))",
+      "markdown": "`F` is bounded near `x₀` iff it is bounded on the intersection of its domain with some neighbourhood of `x₀`. This is the conclusion available from convergence at a point: a function with a limit at `x₀` is locally bounded there, never globally.\n\nThe variants at `±∞` replace the neighbourhood by a ray."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.def.extremePoint",
+    "kind": "definition",
+    "title": "Minimum and Maximum Points",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@m, Real)), list-partial(Analysis.minPoint(F, m), Analysis.maxPoint(F, m)), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, Analysis.domain(F)), $#0 \\geqslant #1$(Type.apply(Analysis.map(F), x), Type.apply(Analysis.map(F), m)))))",
+      "markdown": "`m` is a minimum point of `F` iff `F.map x ≥ F.map m` for every `x` in the domain; maximum points reverse the inequality. These are the points whose existence `BasicAnalysis.thm.extremeValue` asserts, and whose interior instances `BasicAnalysis.thm.fermat` constrains."
+    },
+    "contribution_info": null,
+    "pointer": null
   }
 ]

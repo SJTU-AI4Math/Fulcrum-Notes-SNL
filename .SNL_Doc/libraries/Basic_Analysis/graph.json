@@ -20,6 +20,384 @@
       "props": {
         "entryId": "BasicAnalysis.subsec.compute"
       }
+    },
+    {
+      "id": "n_4",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.sec.structures"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.ctxt.pfun"
+      }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.carriers"
+      }
+    },
+    {
+      "id": "n_7",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.pfun"
+      }
+    },
+    {
+      "id": "n_8",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.seqWindow"
+      }
+    },
+    {
+      "id": "n_9",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.pfunComp"
+      }
+    },
+    {
+      "id": "n_10",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.neighbourhood"
+      }
+    },
+    {
+      "id": "n_11",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.sec.limits"
+      }
+    },
+    {
+      "id": "n_12",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.limitDefs"
+      }
+    },
+    {
+      "id": "n_13",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.seqLimit"
+      }
+    },
+    {
+      "id": "n_14",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.seqLimitValue"
+      }
+    },
+    {
+      "id": "n_15",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.funLimit"
+      }
+    },
+    {
+      "id": "n_16",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.funLimitValue"
+      }
+    },
+    {
+      "id": "n_17",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.oneSidedLimit"
+      }
+    },
+    {
+      "id": "n_18",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.oneSidedLimitValue"
+      }
+    },
+    {
+      "id": "n_19",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.limitAtInfinity"
+      }
+    },
+    {
+      "id": "n_20",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.limitAtInfinityValue"
+      }
+    },
+    {
+      "id": "n_21",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.limitProps"
+      }
+    },
+    {
+      "id": "n_22",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.limitUnique"
+      }
+    },
+    {
+      "id": "n_23",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.convergentBounded"
+      }
+    },
+    {
+      "id": "n_24",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.limitCongr"
+      }
+    },
+    {
+      "id": "n_25",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.sec.asymptotics"
+      }
+    },
+    {
+      "id": "n_26",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.infinitesimal"
+      }
+    },
+    {
+      "id": "n_27",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.infinitesimal"
+      }
+    },
+    {
+      "id": "n_28",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.equivInfinitesimal"
+      }
+    },
+    {
+      "id": "n_29",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.higherInfinitesimal"
+      }
+    },
+    {
+      "id": "n_30",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.sec.continuity"
+      }
+    },
+    {
+      "id": "n_31",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.contDefs"
+      }
+    },
+    {
+      "id": "n_32",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.continuousAt"
+      }
+    },
+    {
+      "id": "n_33",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.continuousOn"
+      }
+    },
+    {
+      "id": "n_34",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.oneSidedContinuity"
+      }
+    },
+    {
+      "id": "n_35",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.continuousOnIcc"
+      }
+    },
+    {
+      "id": "n_36",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.closedInterval"
+      }
+    },
+    {
+      "id": "n_37",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.extremeValue"
+      }
+    },
+    {
+      "id": "n_38",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.intermediateValue"
+      }
+    },
+    {
+      "id": "n_39",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.sec.differentiation"
+      }
+    },
+    {
+      "id": "n_40",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.derivDefs"
+      }
+    },
+    {
+      "id": "n_41",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.derivative"
+      }
+    },
+    {
+      "id": "n_42",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.oneSidedDerivative"
+      }
+    },
+    {
+      "id": "n_43",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.diffOperator"
+      }
+    },
+    {
+      "id": "n_44",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.nthDerivative"
+      }
+    },
+    {
+      "id": "n_45",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.meanValue"
+      }
+    },
+    {
+      "id": "n_46",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.fermat"
+      }
+    },
+    {
+      "id": "n_47",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.rolle"
+      }
+    },
+    {
+      "id": "n_48",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.lagrangeMVT"
+      }
+    },
+    {
+      "id": "n_49",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.cauchyMVT"
+      }
+    },
+    {
+      "id": "n_50",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.taylor"
+      }
+    },
+    {
+      "id": "n_51",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.taylorPolynomial"
+      }
+    },
+    {
+      "id": "n_52",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.taylorPeano"
+      }
+    },
+    {
+      "id": "n_53",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.thm.taylorLagrange"
+      }
+    },
+    {
+      "id": "n_54",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.boundedness"
+      }
+    },
+    {
+      "id": "n_55",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.bounded"
+      }
+    },
+    {
+      "id": "n_56",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.locallyBounded"
+      }
+    },
+    {
+      "id": "n_57",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.def.extremePoint"
+      }
     }
   ],
   "relationships": [
@@ -31,6 +409,251 @@
     {
       "from": "n_3",
       "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_6",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "n_7",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "n_8",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "n_9",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "n_10",
+      "label": "branch"
+    },
+    {
+      "from": "n_11",
+      "to": "n_12",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_13",
+      "label": "branch"
+    },
+    {
+      "from": "n_13",
+      "to": "n_14",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_15",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_16",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_17",
+      "label": "branch"
+    },
+    {
+      "from": "n_17",
+      "to": "n_18",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_19",
+      "label": "branch"
+    },
+    {
+      "from": "n_19",
+      "to": "n_20",
+      "label": "branch"
+    },
+    {
+      "from": "n_11",
+      "to": "n_21",
+      "label": "branch"
+    },
+    {
+      "from": "n_21",
+      "to": "n_22",
+      "label": "branch"
+    },
+    {
+      "from": "n_21",
+      "to": "n_23",
+      "label": "branch"
+    },
+    {
+      "from": "n_21",
+      "to": "n_24",
+      "label": "branch"
+    },
+    {
+      "from": "n_25",
+      "to": "n_26",
+      "label": "branch"
+    },
+    {
+      "from": "n_26",
+      "to": "n_27",
+      "label": "branch"
+    },
+    {
+      "from": "n_26",
+      "to": "n_28",
+      "label": "branch"
+    },
+    {
+      "from": "n_26",
+      "to": "n_29",
+      "label": "branch"
+    },
+    {
+      "from": "n_30",
+      "to": "n_31",
+      "label": "branch"
+    },
+    {
+      "from": "n_31",
+      "to": "n_32",
+      "label": "branch"
+    },
+    {
+      "from": "n_31",
+      "to": "n_33",
+      "label": "branch"
+    },
+    {
+      "from": "n_31",
+      "to": "n_34",
+      "label": "branch"
+    },
+    {
+      "from": "n_31",
+      "to": "n_35",
+      "label": "branch"
+    },
+    {
+      "from": "n_30",
+      "to": "n_36",
+      "label": "branch"
+    },
+    {
+      "from": "n_36",
+      "to": "n_37",
+      "label": "branch"
+    },
+    {
+      "from": "n_36",
+      "to": "n_38",
+      "label": "branch"
+    },
+    {
+      "from": "n_39",
+      "to": "n_40",
+      "label": "branch"
+    },
+    {
+      "from": "n_40",
+      "to": "n_41",
+      "label": "branch"
+    },
+    {
+      "from": "n_40",
+      "to": "n_42",
+      "label": "branch"
+    },
+    {
+      "from": "n_40",
+      "to": "n_43",
+      "label": "branch"
+    },
+    {
+      "from": "n_43",
+      "to": "n_44",
+      "label": "branch"
+    },
+    {
+      "from": "n_39",
+      "to": "n_45",
+      "label": "branch"
+    },
+    {
+      "from": "n_45",
+      "to": "n_46",
+      "label": "branch"
+    },
+    {
+      "from": "n_45",
+      "to": "n_47",
+      "label": "branch"
+    },
+    {
+      "from": "n_45",
+      "to": "n_48",
+      "label": "branch"
+    },
+    {
+      "from": "n_45",
+      "to": "n_49",
+      "label": "branch"
+    },
+    {
+      "from": "n_39",
+      "to": "n_50",
+      "label": "branch"
+    },
+    {
+      "from": "n_50",
+      "to": "n_51",
+      "label": "branch"
+    },
+    {
+      "from": "n_50",
+      "to": "n_52",
+      "label": "branch"
+    },
+    {
+      "from": "n_50",
+      "to": "n_53",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_54",
+      "label": "branch"
+    },
+    {
+      "from": "n_54",
+      "to": "n_55",
+      "label": "branch"
+    },
+    {
+      "from": "n_54",
+      "to": "n_56",
+      "label": "branch"
+    },
+    {
+      "from": "n_54",
+      "to": "n_57",
       "label": "branch"
     }
   ]
