@@ -159,6 +159,1840 @@
         }
       ],
       "tags": []
+    },
+    "Analysis.PFun": {
+      "description": "The type of domain-carrying real functions: a total map paired with its domain.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.pfun"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\mathrm{PFun}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.mkPFun": {
+      "description": "Bundle a total map with a domain into a PFun.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.pfun"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\left\\langle #0,\\ #1\\right\\rangle"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.map": {
+      "description": "The underlying total map of a PFun or Seq.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.pfun"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0.\\mathrm{map}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.domain": {
+      "description": "The domain of a PFun.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.pfun"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\operatorname{dom}#0"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.Seq": {
+      "description": "The type of real sequences carrying an index window.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.seqWindow"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\mathrm{Seq}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.mkSeq": {
+      "description": "Bundle a map with its initial and final index.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.seqWindow"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\left\\langle #0,\\ #1,\\ #2\\right\\rangle"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.init": {
+      "description": "First index of a sequence's window.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.seqWindow"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0.\\mathrm{init}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.final": {
+      "description": "One past the last index of a sequence's window; absent for an infinite sequence.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.seqWindow"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0.\\mathrm{final}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.comp": {
+      "description": "Composition of domain-carrying functions.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.pfunComp"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\odot #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.nbh": {
+      "description": "Full epsilon-neighbourhood of a point.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.neighbourhood"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "U\\left(#0,\\ #1\\right)"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.nbhDel": {
+      "description": "Punctured epsilon-neighbourhood of a point.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.neighbourhood"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "U^{\\circ}\\left(#0,\\ #1\\right)"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.seqLim": {
+      "description": "Sequence limit predicate (epsilon-N).",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.seqLimit"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{n\\to\\infty}#0_{n} = #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.seqConv": {
+      "description": "The sequence admits some limit.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.seqLimit"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ converges}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.funLim": {
+      "description": "Function limit predicate (epsilon-delta) at a finite point.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.funLimit"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to #2}#0 = #3"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.funConv": {
+      "description": "The function admits some limit at the given point.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.funLimit"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ converges at } #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limLeft": {
+      "description": "Left-hand limit.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.oneSidedLimit"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to #2^{-}}#0 = #3"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limRight": {
+      "description": "Right-hand limit.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.oneSidedLimit"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to #2^{+}}#0 = #3"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limNegInf": {
+      "description": "Limit at negative infinity.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.limitAtInfinity"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to -\\infty}#0 = #2"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limPosInf": {
+      "description": "Limit at positive infinity.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.limitAtInfinity"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to +\\infty}#0 = #2"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limInf": {
+      "description": "Two-sided limit at infinity.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.limitAtInfinity"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to \\infty}#0 = #2"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.bounded": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.bounded"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is bounded}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.boundedAbove": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.bounded"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is bounded above}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.boundedBelow": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.bounded"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is bounded below}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.locallyBounded": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.locallyBounded"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is bounded near } #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.minPoint": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.extremePoint"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#1 \\text{ is a minimum point of } #0"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.maxPoint": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.extremePoint"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#1 \\text{ is a maximum point of } #0"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.infinitesimal": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.infinitesimal"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 = o(1) \\text{ at } #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.equivInfinitesimal": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.equivInfinitesimal"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\sim #1 \\text{ at } #2"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.higherInfinitesimal": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.higherInfinitesimal"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 = o\\left(#1\\right) \\text{ at } #2"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.contAt": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.continuousAt"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is continuous at } #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.cont": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.continuousAt"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is continuous}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.contOn": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.continuousOn"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is continuous on } #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.contLeftAt": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.oneSidedContinuity"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is left-continuous at } #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.contRightAt": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.oneSidedContinuity"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is right-continuous at } #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.contOnIcc": {
+      "description": "Continuity on a closed interval: interior continuity plus one-sided continuity at the endpoints.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.continuousOnIcc"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is continuous on } \\left[#1, #2\\right]"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.deriv": {
+      "description": "Derivative predicate: the value is the limit of the difference quotient.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.derivative"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0'\\left(#1\\right) = #2"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.derivable": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.derivative"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\text{ is differentiable at } #1"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.derivLeft": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.oneSidedDerivative"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0'_{-}\\left(#1\\right) = #2"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.derivRight": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.oneSidedDerivative"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0'_{+}\\left(#1\\right) = #2"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.diff": {
+      "description": "Differential operator sending a function to its derivative function.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.diffOperator"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0'"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.nthDiff": {
+      "description": "n-th order differential operator.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.nthDerivative"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#1^{\\left(#0\\right)}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.nthDeriv": {
+      "description": "",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.nthDerivative"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#1^{\\left(#0\\right)}\\left(#2\\right) = #3"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.taylorPoly": {
+      "description": "Taylor polynomial of order n at a base point.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.taylorPolynomial"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "T_{#2}\\left(#0; #1\\right)"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.rIntegrable": {
+      "description": "Riemann integrability on a closed interval.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#0 \\in \\mathcal{R}\\left[#1, #2\\right]"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.seqLimVal": {
+      "description": "Value form: the limit as a partial value (absent when the limit does not exist). Companion to the predicate macro of the same family.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.seqLimitValue"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{n\\to\\infty}#0_{n}"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.funLimVal": {
+      "description": "Value form: the limit as a partial value (absent when the limit does not exist). Companion to the predicate macro of the same family.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.funLimitValue"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to #2}#0"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limLeftVal": {
+      "description": "Value form: the limit as a partial value (absent when the limit does not exist). Companion to the predicate macro of the same family.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.oneSidedLimitValue"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to #2^{-}}#0"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limRightVal": {
+      "description": "Value form: the limit as a partial value (absent when the limit does not exist). Companion to the predicate macro of the same family.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.oneSidedLimitValue"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to #2^{+}}#0"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limNegInfVal": {
+      "description": "Value form: the limit as a partial value (absent when the limit does not exist). Companion to the predicate macro of the same family.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.limitAtInfinityValue"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to -\\infty}#0"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limPosInfVal": {
+      "description": "Value form: the limit as a partial value (absent when the limit does not exist). Companion to the predicate macro of the same family.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.limitAtInfinityValue"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to +\\infty}#0"
+        }
+      ],
+      "tags": []
+    },
+    "Analysis.limInfVal": {
+      "description": "Value form: the limit as a partial value (absent when the limit does not exist). Companion to the predicate macro of the same family.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.def.limitAtInfinityValue"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\lim_{#1 \\to \\infty}#0"
+        }
+      ],
+      "tags": []
     }
   }
 }

@@ -431,7 +431,7 @@
       "tags": []
     },
     "Icc": {
-      "description": "",
+      "description": "Closed interval.",
       "source": {
         "entries": [],
         "urls": []
@@ -630,6 +630,108 @@
           "text": "",
           "mode": "formula_inline",
           "template": "\\bar{\\mathbb{R}}"
+        }
+      ],
+      "tags": []
+    },
+    "Ioo": {
+      "description": "Open interval.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\left(#0,#1\\right)"
+        }
+      ],
+      "tags": []
+    },
+    "Ico": {
+      "description": "Half-open interval, left endpoint included.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\left[#0,#1\\right)"
+        }
+      ],
+      "tags": []
+    },
+    "Ioc": {
+      "description": "Half-open interval, right endpoint included.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\left(#0,#1\\right]"
         }
       ],
       "tags": []
