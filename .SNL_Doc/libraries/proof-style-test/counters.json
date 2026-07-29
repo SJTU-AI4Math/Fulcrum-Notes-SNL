@@ -1,0 +1,24 @@
+{
+  "counters": [
+    {
+      "id": "42e8ecec-407c-4ec8-b9f4-4f7bc3dff4d5",
+      "name": "section",
+      "numbering": "1",
+      "children": [
+        {
+          "id": "379a8701-f831-433c-bd59-b4ce313cceae",
+          "name": "entry",
+          "numbering": "1",
+          "children": [
+            {
+              "id": "073bcb0e-cf22-406d-b808-2f09e235861b",
+              "name": "subentry",
+              "numbering": "1",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

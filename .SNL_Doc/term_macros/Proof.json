@@ -1,0 +1,1148 @@
+{
+  "version": "7",
+  "name": "Proof",
+  "macros": {
+    "Proof.goal": {
+      "description": "Collapsible goal block labelled 「子目标」. First child is the statement (the always-visible summary); the remaining children justify it.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.have": {
+      "description": "Collapsible goal block labelled 「我们有」. First child is the statement (the always-visible summary); the remaining children justify it.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.observe": {
+      "description": "Collapsible goal block labelled 「注意到」. First child is the statement (the always-visible summary); the remaining children justify it.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.proofOf": {
+      "description": "Collapsible goal block labelled 「证明」. First child is the statement (the always-visible summary); the remaining children justify it.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.lemma": {
+      "description": "Collapsible goal block labelled 「引理」. First child is the statement (the always-visible summary); the remaining children justify it.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.case": {
+      "description": "Collapsible goal block labelled 「情形」. First child is the statement (the always-visible summary); the remaining children justify it.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.split": {
+      "description": "目标分解 — decompose a goal into independent subgoals; children are the subgoals.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.byCases": {
+      "description": "分类讨论 — case analysis. First child states the basis of the split; the rest are the cases.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.byContra": {
+      "description": "反证法 — proof by contradiction. First child is the assumption; the rest derives the absurdity.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.byInduction": {
+      "description": "数学归纳法 — induction: induction variable, then base case and inductive step.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.observe": {
+      "description": "Tactic step 「注意到」. Read off an immediate consequence of what is already known. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.destruct": {
+      "description": "Tactic step 「解构」. Apply a theorem that yields a witness, and name it. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.rewrite": {
+      "description": "Tactic step 「变形」. Rewrite a hypothesis or goal into an equivalent form. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.construct": {
+      "description": "Tactic step 「构造」. Exhibit the object the goal asks for and announce what remains. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.derive": {
+      "description": "Tactic step 「推导」. A derivation step with no more specific tactic. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.unfold": {
+      "description": "Tactic step 「应用定义」. Unfold a definition. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.notation": {
+      "description": "Tactic step 「记号」. Introduce notation or an abbreviation. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.transpose": {
+      "description": "Tactic step 「移项」. Move terms across a relation. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.trans": {
+      "description": "Tactic step 「传递性」. Chain relations by transitivity. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.antisymm": {
+      "description": "Tactic step 「反对称性」. Conclude equality from two opposite inequalities. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.trivial": {
+      "description": "Tactic step 「显然」. The claim is immediate. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.assume": {
+      "description": "Tactic step 「假设」. Introduce the assumption of a contradiction or a case. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.basis": {
+      "description": "Tactic step 「分类依据」. State what a case analysis splits on. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.linarith": {
+      "description": "Tactic step 「linarith」. Closed by linear arithmetic over ordered fields. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.nlinarith": {
+      "description": "Tactic step 「nlinarith」. Closed by nonlinear arithmetic. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.tac.omega": {
+      "description": "Tactic step 「omega」. Closed by linear integer arithmetic. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "step"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.calc": {
+      "description": "计算 — a calculation chain. First child is the opening term; each later child is a Proof.calc.rel carrying one relation and the term it reaches.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "calc"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.calc.rel": {
+      "description": "One link of a calculation chain: a relation symbol plus its right-hand side. Keeping them separate is what lets a renderer align relations in a column.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "#0 #1"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.qed": {
+      "description": "Marks a completed proof.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "∎"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.done": {
+      "description": "Marks a discharged goal.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "→ 完成"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.absurd": {
+      "description": "Marks the contradiction reached.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "→ 矛盾"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.ref": {
+      "description": "A citation of a named result; its child carries an `@entryId` postfix so the reference resolves to a real entry.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "#0"
+        }
+      ],
+      "tags": []
+    }
+  }
+}

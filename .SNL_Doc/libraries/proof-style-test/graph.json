@@ -1,0 +1,37 @@
+{
+  "nodes": [
+    {
+      "id": "n_1",
+      "label": "Entry",
+      "props": {
+        "entryId": "ProofStyle.sec.ecnu"
+      }
+    },
+    {
+      "id": "n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "ProofStyle.thm.ecnu1"
+      }
+    },
+    {
+      "id": "n_3",
+      "label": "Entry",
+      "props": {
+        "entryId": "ProofStyle.proof.ecnu1"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n_1",
+      "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_3",
+      "label": "branch"
+    }
+  ]
+}

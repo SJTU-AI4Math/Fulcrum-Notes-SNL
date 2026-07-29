@@ -2101,5 +2101,37 @@
     },
     "contribution_info": null,
     "pointer": null
+  },
+  {
+    "id": "ProofStyle.sec.ecnu",
+    "kind": "section",
+    "title": "ECNU 20260523 Problem 22",
+    "content": {
+      "markdown": "A transcription target, not new mathematics. The point of this library is to exercise the `Proof.*` macro package against a proof whose structure is already known — the rendering at https://mitar.top/ — so that the SNL tree can be compared against a reference rather than judged by taste.\n\nWhat the Mitar rendering makes explicit, and what a prose paragraph loses: every leaf step carries a tactic label, so the reader sees *why* a line is there (是解构出一个见证, 还是改写条件, 还是传递性收尾); subgoals are independent units that fold on their own; and a calculation is a chain of relations rather than a sentence containing equals signs."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "ProofStyle.thm.ecnu1",
+    "kind": "theorem",
+    "title": "ECNU 20260523 Problem 22 (1)",
+    "content": {
+      "snl": "thm-hyp(list-partial(%$f : \\mathbb{R} \\to \\mathbb{R}$%, %$f''$ 在 $[-a,a]$ 上连续%, %$f(0) = 0$%), %存在 $\\xi \\in (-a,a)$ 使得 $$f''(\\xi) = \\frac{f(a) + f(-a)}{a^{2}}$$%)",
+      "markdown": "Given `f'' ` continuous on `[-a, a]` and `f(0) = 0`, there is `ξ ∈ (-a, a)` with `f''(ξ) = (f(a) + f(-a)) / a²`.\n\nThe shape of the argument: two Taylor expansions with Lagrange remainder, one on each side of `0`, produce witnesses `η₁` and `η₂`; the intermediate value theorem applied to the continuous `f''` produces a point `ξ` between them carrying the average of the two second derivatives; and `f(0) = 0` is what makes the two first-order terms cancel when the expansions are added."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "ProofStyle.proof.ecnu1",
+    "kind": "proof",
+    "title": "Proof of ECNU 20260523 Problem 22 (1)",
+    "content": {
+      "snl": "Proof.proofOf(%ECNU 20260523 Problem 22 (1)%, Proof.tac.observe(%$a > 0$ $\\implies$ $-a < 0$%), Proof.tac.destruct(list-partial(%对区间 $[0,a]$ 应用%, Proof.ref(%带 Lagrange 余项的 Taylor 公式%@BasicAnalysis.thm.taylorLagrange), %可知存在 $\\eta_{1} \\in (\\min\\{0,a\\}, \\max\\{0,a\\})$ 使得 $$f(a) = f(0) + f'(0)(a-0) + \\frac{f''(\\eta_{1})}{2}(a-0)^{2}$$%)), Proof.tac.destruct(list-partial(%对区间 $[-a,0]$ 应用%, Proof.ref(%带 Lagrange 余项的 Taylor 公式%@BasicAnalysis.thm.taylorLagrange), %可知存在 $\\eta_{2} \\in (\\min\\{0,-a\\}, \\max\\{0,-a\\})$ 使得 $$f(-a) = f(0) + f'(0)(-a-0) + \\frac{f''(\\eta_{2})}{2}(-a-0)^{2}$$%)), Proof.tac.destruct(list-partial(%由于 $f''$ 连续, 应用%, Proof.ref(%介值定理%@BasicAnalysis.thm.intermediateValue), %可知存在 $\\xi \\in (\\min\\{\\eta_{1},\\eta_{2}\\}, \\max\\{\\eta_{1},\\eta_{2}\\})$ 使得 $$f''(\\xi) = \\frac{f''(\\eta_{1}) + f''(\\eta_{2})}{2}$$%)), Proof.tac.construct(%我们断言 $\\xi$ 就是所要找的对象, 下面证明 $$\\xi \\in (-a,a) \\quad\\text{且}\\quad f''(\\xi) = \\frac{f(a)+f(-a)}{a^{2}}$$%), Proof.split(%目标分解%, Proof.goal(%$\\xi \\in (-a,a)$%, Proof.tac.rewrite(%条件 $\\eta_{1} \\in (\\min\\{0,a\\}, \\max\\{0,a\\})$ 可化简为 $\\eta_{1} \\in (0,a)$%), Proof.tac.rewrite(%条件 $\\eta_{2} \\in (\\min\\{0,-a\\}, \\max\\{0,-a\\})$ 可化简为 $\\eta_{2} \\in (-a,0)$%), Proof.tac.observe(%$\\eta_{2} < 0$ 且 $\\eta_{1} > 0$ $\\implies$ $\\eta_{2} < \\eta_{1}$%), Proof.tac.rewrite(%条件 $\\xi \\in (\\min\\{\\eta_{1},\\eta_{2}\\}, \\max\\{\\eta_{1},\\eta_{2}\\})$ 可化简为 $\\xi \\in (\\eta_{2}, \\eta_{1})$%), Proof.tac.trans(%由 $\\eta_{2} > -a$, $\\xi > \\eta_{2}$, $\\xi < \\eta_{1}$, $\\eta_{1} < a$ 可推出所需结论%), Proof.done), Proof.goal(%$f''(\\xi) = \\frac{f(a)+f(-a)}{a^{2}}$%, Proof.have(%$f(a) = f'(0)a + \\frac{f''(\\eta_{1})}{2}a^{2}$%, Proof.calc($f(a)$, Proof.calc.rel($=$, $f(0) + f'(0)(a-0) + \\frac{f''(\\eta_{1})}{2}(a-0)^{2}$), Proof.calc.rel($=$, $0 + f'(0)(a-0) + \\frac{f''(\\eta_{1})}{2}(a-0)^{2}$), Proof.calc.rel($=$, $f'(0)a + \\frac{f''(\\eta_{1})}{2}a^{2}$))), Proof.have(%$f(-a) = f'(0)(-a) + \\frac{f''(\\eta_{2})}{2}a^{2}$%, Proof.calc($f(-a)$, Proof.calc.rel($=$, $f(0) + f'(0)(-a-0) + \\frac{f''(\\eta_{2})}{2}(-a-0)^{2}$), Proof.calc.rel($=$, $0 + f'(0)(-a-0) + \\frac{f''(\\eta_{2})}{2}(-a-0)^{2}$), Proof.calc.rel($=$, $f'(0)(-a) + \\frac{f''(\\eta_{2})}{2}a^{2}$))), Proof.calc($f(a) + f(-a)$, Proof.calc.rel($=$, $\\left(f'(0)a + \\frac{f''(\\eta_{1})}{2}a^{2}\\right) + \\left(f'(0)(-a) + \\frac{f''(\\eta_{2})}{2}a^{2}\\right)$), Proof.calc.rel($=$, $\\frac{f''(\\eta_{1}) + f''(\\eta_{2})}{2}\\,a^{2}$), Proof.calc.rel($=$, $f''(\\xi)\\,a^{2}$)), Proof.tac.transpose(%两边同除以 $a^{2} > 0$ 即得 $f''(\\xi) = \\frac{f(a)+f(-a)}{a^{2}}$%), Proof.done)), Proof.qed)",
+      "markdown": "Transcribed from the Mitar rendering, preserving its step structure.\n\nNote what the tactic labels buy. The three 解构 steps are the only places where a witness enters the proof, and each names the theorem it comes from; the 构造 step is where the proof commits to a candidate; the 变形 steps in the first subgoal do nothing but simplify interval conditions, and marking them as such tells the reader they carry no mathematical content. A prose rendering flattens all of these into indistinguishable sentences."
+    },
+    "contribution_info": null,
+    "pointer": null
   }
 ]
