@@ -1143,6 +1143,313 @@
         }
       ],
       "tags": []
+    },
+    "Proof.implies": {
+      "description": "「A ⟹ B」as a step body: premise and conclusion are separate children, so each is addressable instead of buried in one string. The arrow is a literal character: a text-mode template is not a math environment, so `$…$` in it would be text and the linter's KaTeX check rejects it.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "#0 ⟹ #1"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.applyOn": {
+      "description": "「对 X 应用 THM 可知 C」— the object, the cited theorem, and the consequence as three children. This is the atomic form of a 解构 step.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "对 #0 应用 #1 可知 #2"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.obtain": {
+      "description": "「存在 x 使得 P」— the witness introduced by a 解构 step and the property it satisfies.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "存在 #0 使得 #1"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.simplifies": {
+      "description": "「条件 A 可化简为 B」— the atomic form of a 变形 step.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "条件 #0 可化简为 #1"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.fromPremises": {
+      "description": "「由 p, q, … 可推出所需结论」— each premise is its own child, so a transitivity chain is a list rather than a sentence. The separator is explicit: `#*` concatenates its children with nothing in between unless one is set, which ran the premises together as `\\eta_2>-a\\xi>\\eta_2…`.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "由 #* 可推出所需结论",
+          "separator": " , "
+        }
+      ],
+      "tags": []
+    },
+    "Proof.claim": {
+      "description": "「我们断言 x 就是所要找的对象, 下面我们证明 P」— the atomic form of a 构造 step.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "我们断言 #0 就是所要找的对象, 下面我们证明 #1"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.and": {
+      "description": "Conjunction of two goals, as used when a 构造 step announces what remains.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "#0 且 #1"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.divideBoth": {
+      "description": "「两边同除以 d 即得 C」— the atomic form of a 移项 step.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "两边同除以 #0 即得 #1"
+        }
+      ],
+      "tags": []
+    },
+    "Proof.because": {
+      "description": "「由于 X P,」— the ground an inference rests on, as a subject node plus the property asserted of it, so the subject stays addressable.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "由于 #0 #1,"
+        }
+      ],
+      "tags": []
     }
   }
 }
