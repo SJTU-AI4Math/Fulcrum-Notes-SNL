@@ -5,7 +5,9 @@
     "neg_lt_zero": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "BasicTheorems.lem.negLtZero"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -39,7 +41,9 @@
     "taylor_lagrange": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "BasicAnalysis.ax.taylorLagrange"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -66,6 +70,42 @@
           "text": "",
           "mode": "text",
           "template": "Taylor's formula with the Lagrange remainder"
+        }
+      ],
+      "tags": []
+    },
+    "ivt_average": {
+      "description": "Endpoint-average form of the intermediate value theorem.",
+      "source": {
+        "entries": [
+          "BasicAnalysis.lem.ivtAverage"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "the intermediate value theorem for the endpoint average"
         }
       ],
       "tags": []

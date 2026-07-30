@@ -2167,7 +2167,7 @@
     "kind": "problem",
     "title": "ECNU 20260523 Problem 22 (1)",
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@a,Real),$#0 > #1$(a,0),Type.judge(@f,Type.to(Real,Real)),Analysis.isContinuousOn(Analysis.deriv2(f),Icc(neg(a),a)),Eq(Type.apply(f,0),0)),Logic.exists-typed(@$\\xi$,Real,Logic.and(Set.mem($\\xi$,Ioo(neg(a),a)),Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Pow.pow(a,2))))))"
+      "snl": "thm-hyp(list-partial(Type.judge(@a,Real),Gt(a,0),Type.judge(@f,Type.to(Real,Real)),Analysis.isContinuousOn(Analysis.deriv2(f),Icc(neg(a),a)),Eq(Type.apply(f,0),0)),Logic.exists-typed(@$\\xi$,Real,Logic.and(Set.mem($\\xi$,Ioo(neg(a),a)),Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Power(a,2))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -2177,7 +2177,41 @@
     "kind": "proof",
     "title": "ECNU(1)",
     "content": {
-      "snl": "Lean4-tactic($\\textit{Proof.}$,Lean4-tactic(have($#0 < #1$(neg(a),0)),Type.apply[term-proof](neg_lt_zero,$#0 > #1$(a,0))),Lean4-tactic(rcases(taylor_lagrange),list-partial[enumerate](Type.judge(@$\\eta_1$,Real),Set.mem($\\eta_1$,Ioo(min-binary(0,a),max-binary(0,a))),Eq(Type.apply(f,a),Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(a,0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Pow.pow(parentheses(Sub.sub(a,0)),2))))),Lean4-tactic),Lean4-tactic(have(Eq($f(a)$,$f'(0)a + \\frac{f''(\\eta_1)}{2}a^2$)),calc(Type.apply(f,a),calc-partial($f(0) + f'(0) (a - 0) + \\frac{f''(\\eta_2)}{2}(a - 0)^2$,$0 + f'(0) (a - 0) + \\frac{f''(\\eta_2)}{2}(a - 0)^2$,$f'(0)a + \\frac{f''(\\eta-2)}{2}a^2$))),Lean4-tactic,Lean4-tactic,Lean4-tactic)"
+      "snl": "Lean4-tactic($\\textit{Proof.}$,Lean4-tactic(have(Lt(neg(a),0)),Type.apply[termProof](neg_lt_zero,Gt(a,0))),Lean4-tactic(rcases(taylor_lagrange),list-partial[enumerate](Type.judge(@$\\eta_1$,Real),Set.mem($\\eta_1$,Ioo(min-binary(0,a),max-binary(0,a))),Eq(Type.apply(f,a),Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(a,0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(parentheses(Sub.sub(a,0)),2)))))),Lean4-tactic(rcases(taylor_lagrange),list-partial[enumerate](Type.judge(@$\\eta_2$,Real),Set.mem($\\eta_2$,Ioo(min-binary(0,neg(a)),max-binary(0,neg(a)))),Eq(Type.apply(f,neg(a)),Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(neg(a),0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(parentheses(Sub.sub(neg(a),0)),2)))))),Lean4-tactic(rcases(ivt_average),list-partial[enumerate](Type.judge(@$\\xi$,Real),Set.mem($\\xi$,Icc(min-binary($\\eta_1$,$\\eta_2$),max-binary($\\eta_1$,$\\eta_2$))),Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(Analysis.deriv2(f),$\\eta_1$),Type.apply(Analysis.deriv2(f),$\\eta_2$)),2)))),Lean4-tactic(Lean4.use($\\xi$),Lean4-tactic(Lean4.constructor,Lean4-tactic(Set.mem($\\xi$,Ioo(neg(a),a)),Lean4-tactic(Lean4.rw(Set.mem($\\eta_1$,Ioo(min-binary(0,a),max-binary(0,a))),Set.mem($\\eta_1$,Ioo(0,a)))),Lean4-tactic(Lean4.rw(Set.mem($\\eta_2$,Ioo(min-binary(0,neg(a)),max-binary(0,neg(a)))),Set.mem($\\eta_2$,Ioo(neg(a),0)))),Lean4-tactic(have(Lt($\\eta_2$,$\\eta_1$)),Lean4.exact(list-partial[formula](Lt($\\eta_2$,0),Lt(0,$\\eta_1$),Lt($\\eta_2$,$\\eta_1$)))),Lean4-tactic(Lean4.rw(Set.mem($\\xi$,Icc(min-binary($\\eta_1$,$\\eta_2$),max-binary($\\eta_1$,$\\eta_2$))),Set.mem($\\xi$,Icc($\\eta_2$,$\\eta_1$)))),Lean4-tactic(Lean4.exact(list-partial[formula](Lt(neg(a),$\\eta_2$),Le($\\eta_2$,$\\xi$),Le($\\xi$,$\\eta_1$),Lt($\\eta_1$,a),Set.mem($\\xi$,Ioo(neg(a),a)))))),Lean4-tactic(Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Power(a,2))),Lean4-tactic(have(Eq(Type.apply(f,a),Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),a),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(a,2))))),calc(Type.apply(f,a),Lean4.calcRel($=$,Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(a,0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(parentheses(Sub.sub(a,0)),2)))),Lean4.calcRel($=$,Add.finite(0,Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(a,0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(parentheses(Sub.sub(a,0)),2)))),Lean4.calcRel($=$,Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),a),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(a,2)))))),Lean4-tactic(have(Eq(Type.apply(f,neg(a)),Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),neg(a)),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(a,2))))),calc(Type.apply(f,neg(a)),Lean4.calcRel($=$,Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(neg(a),0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(parentheses(Sub.sub(neg(a),0)),2)))),Lean4.calcRel($=$,Add.finite(0,Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(neg(a),0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(parentheses(Sub.sub(neg(a),0)),2)))),Lean4.calcRel($=$,Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),neg(a)),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(a,2)))))),Lean4-tactic(Lean4.symm),calc(Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Power(a,2)),Lean4.calcRel($=$,Div.div(Add.add(Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),a),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(a,2))),Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),neg(a)),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(a,2)))),Power(a,2))),Lean4.calcRel($=$,Div.div(Mul.mul(Div.div(Add.add(Type.apply(Analysis.deriv2(f),$\\eta_1$),Type.apply(Analysis.deriv2(f),$\\eta_2$)),2),Power(a,2)),Power(a,2))),Lean4.calcRel($=$,Div.div(Add.add(Type.apply(Analysis.deriv2(f),$\\eta_1$),Type.apply(Analysis.deriv2(f),$\\eta_2$)),2)),Lean4.calcRel($=$,Type.apply(Analysis.deriv2(f),$\\xi$)))))))",
+      "markdown": "A fully structured transcription of the first proof on mitar.top. Every displayed formula is a macro tree; only atomic symbols such as η₁, η₂, ξ and relation glyphs remain formula literals. The two Taylor expansions, interval argument, and final cancellation calculation are represented as nested tactic and calc nodes."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicTheorems.lem.negLtZero",
+    "kind": "lemma",
+    "title": "A Positive Number Has Negative Negation",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@a,Real),Logic.iff(Lt(neg(a),0),Gt(a,0)))",
+      "markdown": "For a real number `a`, the inequality `-a < 0` is equivalent to `a > 0`."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.lem.ivtAverage",
+    "kind": "lemma",
+    "title": "Intermediate Value at the Endpoint Average",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@g,Type.to(Real,Real)),Type.judge(list-partial(@x_1,@x_2),Real),Analysis.isContinuousOn(g,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2)))),Logic.exists-typed(@c,Real,Logic.and(Set.mem(c,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2))),Eq(Type.apply(g,c),Div.div(Add.add(Type.apply(g,x_1),Type.apply(g,x_2)),2)))))",
+      "markdown": "A continuous real function assumes the arithmetic mean of its endpoint values at some point between the endpoints."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.ax.taylorLagrange",
+    "kind": "axiom",
+    "title": "Taylor Formula with Symmetric Lagrange Remainder",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@f,Type.to(Real,Real)),Type.judge(@f_1,Type.to(Real,Real)),Type.judge(@f_2,Type.to(Real,Real)),Type.judge(list-partial(@x_0,@x),Real),Logic.neg(Eq(x_0,x)),Analysis.isDeriv(f,f_1),Analysis.isDeriv(f_1,f_2)),Logic.exists-typed(@xi,Real,Logic.and(Set.mem(xi,Ioo(min-binary(x_0,x),max-binary(x_0,x))),Eq(Type.apply(f,x),Add.finite(Type.apply(f,x_0),Mul.mul(Type.apply(f_1,x_0),parentheses(Sub.sub(x,x_0))),Mul.mul(Div.div(Type.apply(f_2,xi),2),Power(parentheses(Sub.sub(x,x_0)),2)))))))",
+      "markdown": "For distinct real points `x₀` and `x`, if `f′` and `f′′` are derivatives of `f` and `f′`, respectively, then the second-order Taylor formula at `x₀` holds at `x` with a Lagrange remainder evaluated at some `ξ` between the two points. The interval is written with `min` and `max`, so the statement handles either endpoint order."
     },
     "contribution_info": null,
     "pointer": null
