@@ -107,7 +107,77 @@
       "tags": []
     },
     "calc": {
-      "description": "",
+      "description": "Calculation chain: first child is the opening term; later children are relation/term links.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "separator": "\n",
+          "block_template_name": "calc"
+        }
+      ],
+      "tags": []
+    },
+    "Lean4.calcRel": {
+      "description": "One structured relation/right-hand-side link in a calc chain.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "partial",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "#0 #1"
+        }
+      ],
+      "tags": []
+    },
+    "Lean4.use": {
+      "description": "Existential witness construction.",
       "source": {
         "entries": [],
         "urls": []
@@ -134,24 +204,23 @@
           },
           "markdown": "",
           "text": "",
-          "mode": "formula_display",
-          "template": "\\text{Calculating: }\n\\begin{aligned}\n#0#1\n\\end{aligned}"
+          "mode": "text",
+          "template": "Use #0 as the witness. It remains to prove:"
         }
       ],
       "tags": []
     },
-    "calc-partial": {
-      "description": "",
+    "Lean4.constructor": {
+      "description": "Conjunction constructor tactic.",
       "source": {
         "entries": [],
         "urls": []
       },
-      "kind": "partial",
-      "dynamic_arity": true,
+      "kind": "rule",
+      "dynamic_arity": false,
       "styles": [
         {
           "style_name": "default",
-          "separator": "\\\\ & =",
           "tags": [],
           "typst": {
             "built_in": "",
@@ -169,8 +238,110 @@
           },
           "markdown": "",
           "text": "",
-          "mode": "formula_display",
-          "template": "& =#*"
+          "mode": "text",
+          "template": "Split the conjunction into the following goals:"
+        }
+      ],
+      "tags": []
+    },
+    "Lean4.rw": {
+      "description": "A structured rewrite step carrying both source and result.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "Rewrite #0 as #1."
+        }
+      ],
+      "tags": []
+    },
+    "Lean4.exact": {
+      "description": "Close the current goal with the supplied structured derivation.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "The conclusion follows from #0."
+        }
+      ],
+      "tags": []
+    },
+    "Lean4.symm": {
+      "description": "Symmetry tactic for equality.",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "Reverse the equality."
         }
       ],
       "tags": []

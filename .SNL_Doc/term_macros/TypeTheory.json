@@ -306,7 +306,7 @@
           "template": "#0\\ #1"
         },
         {
-          "style_name": "term-proof",
+          "style_name": "termProof",
           "tags": [],
           "typst": {
             "built_in": "",
