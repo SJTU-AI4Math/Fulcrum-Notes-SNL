@@ -107,48 +107,12 @@
       "tags": []
     },
     "calc": {
-      "description": "Calculation chain: first child is the opening term; later children are relation/term links.",
+      "description": "",
       "source": {
         "entries": [],
         "urls": []
       },
       "kind": "rule",
-      "dynamic_arity": true,
-      "styles": [
-        {
-          "style_name": "default",
-          "tags": [],
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": "",
-          "mode": "block",
-          "template": "#*",
-          "separator": "\n",
-          "block_template_name": "calc"
-        }
-      ],
-      "tags": []
-    },
-    "Lean4.calcRel": {
-      "description": "One structured relation/right-hand-side link in a calc chain.",
-      "source": {
-        "entries": [],
-        "urls": []
-      },
-      "kind": "partial",
       "dynamic_arity": false,
       "styles": [
         {
@@ -170,8 +134,8 @@
           },
           "markdown": "",
           "text": "",
-          "mode": "text",
-          "template": "#0 #1"
+          "mode": "formula_display",
+          "template": "\\text{Calculating: }\n\\begin{aligned}\n#0#1\n\\end{aligned}"
         }
       ],
       "tags": []
@@ -342,6 +306,41 @@
           "text": "",
           "mode": "text",
           "template": "Reverse the equality."
+        }
+      ],
+      "tags": []
+    },
+    "calc-partial": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "partial",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_display",
+          "template": "& =#*",
+          "separator": "\\\\ & ="
         }
       ],
       "tags": []
