@@ -2215,5 +2215,59 @@
     },
     "contribution_info": null,
     "pointer": null
+  },
+  {
+    "id": "HS.Sec.Set",
+    "kind": "section",
+    "title": "Sets",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "HS.Subsec.Intervals",
+    "kind": "subsection",
+    "title": "Intervals",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "HS.def.Ioo",
+    "kind": "definition",
+    "title": "Open Interval",
+    "content": {
+      "snl": "def(Ioo(a,b),Set.sep-typed(@x,Real,Logic.and($#0 < #1$(a,x),$#0 < #1$(x,b))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "HS.def.Icc",
+    "kind": "definition",
+    "title": "Closed Interval",
+    "content": {
+      "snl": "def(Icc(a,b),Set.sep-typed(@x,Real,Logic.and($#0 \\leq #1$(a,x),$#0 \\leq #1$(x,b))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "HS.Subsec.Real",
+    "kind": "subsection",
+    "title": "Real Numbers",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Real.real",
+    "kind": "definition",
+    "title": "Real Number Type",
+    "content": {
+      "snl": "def(Real,%Opaque%)"
+    },
+    "contribution_info": null,
+    "pointer": null
   }
 ]

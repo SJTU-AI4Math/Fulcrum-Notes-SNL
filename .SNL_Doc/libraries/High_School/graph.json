@@ -1,0 +1,73 @@
+{
+  "nodes": [
+    {
+      "id": "n_1",
+      "label": "Entry",
+      "props": {
+        "entryId": "HS.Sec.Set"
+      }
+    },
+    {
+      "id": "n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "HS.Subsec.Intervals"
+      }
+    },
+    {
+      "id": "n_3",
+      "label": "Entry",
+      "props": {
+        "entryId": "HS.def.Ioo"
+      }
+    },
+    {
+      "id": "n_4",
+      "label": "Entry",
+      "props": {
+        "entryId": "HS.def.Icc"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "HS.Subsec.Real"
+      }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Real.real"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n_1",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_3",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_4",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_6",
+      "label": "branch"
+    }
+  ]
+}

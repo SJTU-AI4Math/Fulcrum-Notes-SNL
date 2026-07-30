@@ -399,7 +399,9 @@
     "Real": {
       "description": "",
       "source": {
-        "entries": [],
+        "entries": [
+          "Real.real"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -433,7 +435,9 @@
     "Icc": {
       "description": "Closed interval.",
       "source": {
-        "entries": [],
+        "entries": [
+          "HS.def.Icc"
+        ],
         "urls": []
       },
       "kind": "const",
@@ -637,7 +641,9 @@
     "Ioo": {
       "description": "Open interval.",
       "source": {
-        "entries": [],
+        "entries": [
+          "HS.def.Ioo"
+        ],
         "urls": []
       },
       "kind": "const",
