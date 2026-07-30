@@ -1423,9 +1423,7 @@
     "Analysis.deriv": {
       "description": "Derivative predicate: the value is the limit of the difference quotient.",
       "source": {
-        "entries": [
-          "BasicAnalysis.def.derivative"
-        ],
+        "entries": [],
         "urls": []
       },
       "kind": "const",

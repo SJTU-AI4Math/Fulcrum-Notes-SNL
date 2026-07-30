@@ -275,6 +275,13 @@
         "entryId": "FP.subsec.intro",
         "counterId": "80ba12ff-59af-4e5b-b304-777c5960b35e"
       }
+    },
+    {
+      "id": "n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.option"
+      }
     }
   ],
   "relationships": [
@@ -446,6 +453,11 @@
     {
       "from": "n_sec_monad",
       "to": "n_subsec_instances",
+      "label": "branch"
+    },
+    {
+      "from": "n_xmp_option",
+      "to": "n_2",
       "label": "branch"
     }
   ]

@@ -228,7 +228,7 @@
   {
     "id": "Logic.ctxt.PQ",
     "kind": "context",
-    "title": "$P, Q$",
+    "title": "$p, q$",
     "content": {
       "snl": "Type.judge(list-partial(@p,@q),Proposition)"
     },
@@ -266,7 +266,7 @@
     "kind": "definition",
     "title": "Conjunction",
     "content": {
-      "snl": "def-struct[prop](Logic.and(P,Q),struct(Type.judge(%left%,P),Type.judge(%right%,Q)))"
+      "snl": "def-struct[prop](Logic.and(p,q),struct(Type.judge(%left%,p),Type.judge(%right%,q)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -276,7 +276,7 @@
     "kind": "definition",
     "title": "Disjunction",
     "content": {
-      "snl": "def-inductive[prop](Logic.or(P,Q),ctors(Type.judge(%left%,P),Type.judge(%right%,Q)))"
+      "snl": "def-inductive[prop](Logic.or(p,q),ctors(Type.judge(%left%,p),Type.judge(%right%,q)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -286,7 +286,7 @@
     "kind": "definition",
     "title": "Implication",
     "content": {
-      "snl": "def(Logic.implies(P,Q),Type.to(P,Q))"
+      "snl": "def(Logic.implies(p,q),Type.to(p,q))"
     },
     "contribution_info": null,
     "pointer": null
@@ -296,7 +296,7 @@
     "kind": "definition",
     "title": "Negation",
     "content": {
-      "snl": "def(Logic.neg(P),Type.to(P,Proposition))"
+      "snl": "def(Logic.neg(p),Type.to(p,Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -306,7 +306,7 @@
     "kind": "definition",
     "title": "Equivalence",
     "content": {
-      "snl": "def-struct[prop](Logic.iff(P,Q),struct(Type.judge(%right%,Logic.implies(P,Q)),Type.judge(%left%,Logic.implies(Q,P))))"
+      "snl": "def-struct[prop](Logic.iff(p,q),struct(Type.judge(%right%,Logic.implies(p,q)),Type.judge(%left%,Logic.implies(q,p))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -336,7 +336,7 @@
     "kind": "definition",
     "title": "Equality",
     "content": {
-      "snl": "def-inductive[prop](Eq(a,b),ctors(Type.judge(%Reflexivity%,Logic.forall(a,Eq(a,a)))))"
+      "snl": "def-inductive-hyp[prop](Type.judge[paren](list-partial(@a,@b),T),Eq(a,b),ctors(Type.judge(%Reflexivity%,Logic.forall(@a,Eq(a,a)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1004,7 +1004,7 @@
     "kind": "definition",
     "title": "Option / Maybe",
     "content": {
-      "snl": "def-inductive(FP.Option(A),struct[enumerate](member[colon](FP.none,Type.to(Type,FP.Option(A))),member[colon](FP.some,Type.to(A,FP.Option(A)))))"
+      "snl": "def-inductive(FP.Option[ques](A),struct[enumerate](member[colon](Option.none,FP.Option[ques](A)),member[colon](Option.some,Type.to(A,FP.Option[ques](A)))))"
     },
     "contribution_info": null,
     "pointer": null
