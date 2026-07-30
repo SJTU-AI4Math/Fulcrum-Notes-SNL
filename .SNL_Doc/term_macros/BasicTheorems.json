@@ -42,7 +42,7 @@
       "description": "",
       "source": {
         "entries": [
-          "BasicAnalysis.thm.taylorLagrange"
+          "BasicAnalysis.ax.taylorLagrange"
         ],
         "urls": []
       },

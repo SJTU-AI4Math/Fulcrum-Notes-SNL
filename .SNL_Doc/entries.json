@@ -2204,5 +2204,16 @@
     },
     "contribution_info": null,
     "pointer": null
+  },
+  {
+    "id": "BasicAnalysis.ax.taylorLagrange",
+    "kind": "axiom",
+    "title": "Taylor Formula with Symmetric Lagrange Remainder",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@f,Type.to(Real,Real)),Type.judge(@f_1,Type.to(Real,Real)),Type.judge(@f_2,Type.to(Real,Real)),Type.judge(list-partial(@x_0,@x),Real),Logic.neg(Eq(x_0,x)),Analysis.isDeriv(f,f_1),Analysis.isDeriv(f_1,f_2)),Logic.exists-typed(@xi,Real,Logic.and(Set.mem(xi,Ioo(min-binary(x_0,x),max-binary(x_0,x))),Eq(Type.apply(f,x),Add.finite(Type.apply(f,x_0),Mul.mul(Type.apply(f_1,x_0),parentheses(Sub.sub(x,x_0))),Mul.mul(Div.div(Type.apply(f_2,xi),2),Power(parentheses(Sub.sub(x,x_0)),2)))))))",
+      "markdown": "For distinct real points `x₀` and `x`, if `f′` and `f′′` are derivatives of `f` and `f′`, respectively, then the second-order Taylor formula at `x₀` holds at `x` with a Lagrange remainder evaluated at some `ξ` between the two points. The interval is written with `min` and `max`, so the statement handles either endpoint order."
+    },
+    "contribution_info": null,
+    "pointer": null
   }
 ]
