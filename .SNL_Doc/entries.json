@@ -82,9 +82,9 @@
   {
     "id": "Set.def.sep",
     "kind": "definition",
-    "title": "Set Comprehension",
+    "title": "Predicate separated set",
     "content": {
-      "snl": "def-hyp(Type.judge[paren](@P,Type.to(T@Set.ctxt.T,Proposition)),Set.sep-typed(@x,T@Set.ctxt.T,P(x)),P)"
+      "snl": "def-hyp(Type.judge(@P,Type.to(T,Proposition)),Set.sep-typed(@x,T,P(x)),P)"
     },
     "contribution_info": null,
     "pointer": null
@@ -104,7 +104,7 @@
     "kind": "definition",
     "title": "Universal Set",
     "content": {
-      "snl": "def(Set.univ,Set.sep-typed(@x,T@Set.ctxt.T,Logic.neg(Logic.false)))"
+      "snl": "def(Set.univ(T@Set.ctxt.T),Set.sep-typed(@x,T@Set.ctxt.T,Logic.true))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1024,7 +1024,7 @@
     "kind": "example",
     "title": "Option / Maybe Monad",
     "content": {
-      "snl": "thm-hyp(Type.judge(@x,FP.Option(A)),Eq(FP.map(FP.Option,x,@f),FP.bind(FP.Option,x,Type.lambda(@a,FP.pure(FP.Option,Type.apply(f,a))))))"
+      "markdown": "`Option` monad is used as "
     },
     "contribution_info": null,
     "pointer": null
@@ -2130,6 +2130,54 @@
     "content": {
       "snl": "Proof.proofOf(%ECNU 20260523 Problem 22 (1)%, Proof.tac.observe(%$a > 0$ $\\implies$ $-a < 0$%), Proof.tac.destruct(list-partial(%对区间 $[0,a]$ 应用%, Proof.ref(%带 Lagrange 余项的 Taylor 公式%@BasicAnalysis.thm.taylorLagrange), %可知存在 $\\eta_{1} \\in (\\min\\{0,a\\}, \\max\\{0,a\\})$ 使得 $$f(a) = f(0) + f'(0)(a-0) + \\frac{f''(\\eta_{1})}{2}(a-0)^{2}$$%)), Proof.tac.destruct(list-partial(%对区间 $[-a,0]$ 应用%, Proof.ref(%带 Lagrange 余项的 Taylor 公式%@BasicAnalysis.thm.taylorLagrange), %可知存在 $\\eta_{2} \\in (\\min\\{0,-a\\}, \\max\\{0,-a\\})$ 使得 $$f(-a) = f(0) + f'(0)(-a-0) + \\frac{f''(\\eta_{2})}{2}(-a-0)^{2}$$%)), Proof.tac.destruct(list-partial(%由于 $f''$ 连续, 应用%, Proof.ref(%介值定理%@BasicAnalysis.thm.intermediateValue), %可知存在 $\\xi \\in (\\min\\{\\eta_{1},\\eta_{2}\\}, \\max\\{\\eta_{1},\\eta_{2}\\})$ 使得 $$f''(\\xi) = \\frac{f''(\\eta_{1}) + f''(\\eta_{2})}{2}$$%)), Proof.tac.construct(%我们断言 $\\xi$ 就是所要找的对象, 下面证明 $$\\xi \\in (-a,a) \\quad\\text{且}\\quad f''(\\xi) = \\frac{f(a)+f(-a)}{a^{2}}$$%), Proof.split(%目标分解%, Proof.goal(%$\\xi \\in (-a,a)$%, Proof.tac.rewrite(%条件 $\\eta_{1} \\in (\\min\\{0,a\\}, \\max\\{0,a\\})$ 可化简为 $\\eta_{1} \\in (0,a)$%), Proof.tac.rewrite(%条件 $\\eta_{2} \\in (\\min\\{0,-a\\}, \\max\\{0,-a\\})$ 可化简为 $\\eta_{2} \\in (-a,0)$%), Proof.tac.observe(%$\\eta_{2} < 0$ 且 $\\eta_{1} > 0$ $\\implies$ $\\eta_{2} < \\eta_{1}$%), Proof.tac.rewrite(%条件 $\\xi \\in (\\min\\{\\eta_{1},\\eta_{2}\\}, \\max\\{\\eta_{1},\\eta_{2}\\})$ 可化简为 $\\xi \\in (\\eta_{2}, \\eta_{1})$%), Proof.tac.trans(%由 $\\eta_{2} > -a$, $\\xi > \\eta_{2}$, $\\xi < \\eta_{1}$, $\\eta_{1} < a$ 可推出所需结论%), Proof.done), Proof.goal(%$f''(\\xi) = \\frac{f(a)+f(-a)}{a^{2}}$%, Proof.have(%$f(a) = f'(0)a + \\frac{f''(\\eta_{1})}{2}a^{2}$%, Proof.calc($f(a)$, Proof.calc.rel($=$, $f(0) + f'(0)(a-0) + \\frac{f''(\\eta_{1})}{2}(a-0)^{2}$), Proof.calc.rel($=$, $0 + f'(0)(a-0) + \\frac{f''(\\eta_{1})}{2}(a-0)^{2}$), Proof.calc.rel($=$, $f'(0)a + \\frac{f''(\\eta_{1})}{2}a^{2}$))), Proof.have(%$f(-a) = f'(0)(-a) + \\frac{f''(\\eta_{2})}{2}a^{2}$%, Proof.calc($f(-a)$, Proof.calc.rel($=$, $f(0) + f'(0)(-a-0) + \\frac{f''(\\eta_{2})}{2}(-a-0)^{2}$), Proof.calc.rel($=$, $0 + f'(0)(-a-0) + \\frac{f''(\\eta_{2})}{2}(-a-0)^{2}$), Proof.calc.rel($=$, $f'(0)(-a) + \\frac{f''(\\eta_{2})}{2}a^{2}$))), Proof.calc($f(a) + f(-a)$, Proof.calc.rel($=$, $\\left(f'(0)a + \\frac{f''(\\eta_{1})}{2}a^{2}\\right) + \\left(f'(0)(-a) + \\frac{f''(\\eta_{2})}{2}a^{2}\\right)$), Proof.calc.rel($=$, $\\frac{f''(\\eta_{1}) + f''(\\eta_{2})}{2}\\,a^{2}$), Proof.calc.rel($=$, $f''(\\xi)\\,a^{2}$)), Proof.tac.transpose(%两边同除以 $a^{2} > 0$ 即得 $f''(\\xi) = \\frac{f(a)+f(-a)}{a^{2}}$%), Proof.done)), Proof.qed)",
       "markdown": "Transcribed from the Mitar rendering, preserving its step structure.\n\nNote what the tactic labels buy. The three 解构 steps are the only places where a witness enters the proof, and each names the theorem it comes from; the 构造 step is where the proof commits to a candidate; the 变形 steps in the first subgoal do nothing but simplify interval conditions, and marking them as such tells the reader they carry no mathematical content. A prose rendering flattens all of these into indistinguishable sentences."
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Logic.ctxt.P",
+    "kind": "context",
+    "title": "$P$",
+    "content": {
+      "snl": "Type.judge(P,Type.to(T,Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "FP.subsec.intro",
+    "kind": "subsection",
+    "title": "Introduction",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "cgt",
+    "kind": "theorem",
+    "title": "123",
+    "content": {
+      "snl": "cgt(A,B,C,D,h,f,g,$h'$)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "ECNU.test",
+    "kind": "problem",
+    "title": "ECNU 20260523 Problem 22 (1)",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@a,Real),$#0 > #1$(a,0),Type.judge(@f,Type.to(Real,Real)),Analysis.isContinuousOn(Analysis.deriv2(f),Icc(neg(a),a)),Eq(Type.apply(f,0),0)),Logic.exists-typed(@$\\xi$,Real,Logic.and(Set.mem($\\xi$,Ioo(neg(a),a)),Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Pow.pow(a,2))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "ECNU.test.prf1",
+    "kind": "proof",
+    "title": "ECNU(1)",
+    "content": {
+      "snl": "Lean4-tactic($\\textit{Proof.}$,Lean4-tactic(have($#0 < #1$(neg(a),0)),Type.apply[term-proof](neg_lt_zero,$#0 > #1$(a,0))),Lean4-tactic(rcases(taylor_lagrange),list-partial[enumerate](Type.judge(@$\\eta_1$,Real),Set.mem($\\eta_1$,Ioo(min-binary(0,a),max-binary(0,a))),Eq(Type.apply(f,a),Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(a,0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Pow.pow(parentheses(Sub.sub(a,0)),2))))),Lean4-tactic),Lean4-tactic(have(Eq($f(a)$,$f'(0)a + \\frac{f''(\\eta_1)}{2}a^2$)),calc(Type.apply(f,a),calc-partial($f(0) + f'(0) (a - 0) + \\frac{f''(\\eta_2)}{2}(a - 0)^2$,$0 + f'(0) (a - 0) + \\frac{f''(\\eta_2)}{2}(a - 0)^2$,$f'(0)a + \\frac{f''(\\eta-2)}{2}a^2$))),Lean4-tactic,Lean4-tactic,Lean4-tactic)"
     },
     "contribution_info": null,
     "pointer": null

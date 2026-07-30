@@ -1,0 +1,179 @@
+{
+  "version": "7",
+  "name": "Lean 4 Tactics",
+  "macros": {
+    "have": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "We have: #0, proved by:"
+        }
+      ],
+      "tags": []
+    },
+    "Lean4-tactic": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "separator": "",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "block",
+          "template": "#*",
+          "block_template_name": "collapsible"
+        }
+      ],
+      "tags": []
+    },
+    "rcases": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "Decompose #0 so that we obtain:"
+        }
+      ],
+      "tags": []
+    },
+    "calc": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "rule",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_display",
+          "template": "\\text{Calculating: }\n\\begin{aligned}\n#0#1\n\\end{aligned}"
+        }
+      ],
+      "tags": []
+    },
+    "calc-partial": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "partial",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "separator": "\\\\ & =",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_display",
+          "template": "& =#*"
+        }
+      ],
+      "tags": []
+    }
+  }
+}

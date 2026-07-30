@@ -20,6 +20,27 @@
       "props": {
         "entryId": "ProofStyle.proof.ecnu1"
       }
+    },
+    {
+      "id": "n_4",
+      "label": "Entry",
+      "props": {
+        "entryId": "cgt"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "ECNU.test"
+      }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "ECNU.test.prf1"
+      }
     }
   ],
   "relationships": [
@@ -31,6 +52,11 @@
     {
       "from": "n_2",
       "to": "n_3",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_6",
       "label": "branch"
     }
   ]

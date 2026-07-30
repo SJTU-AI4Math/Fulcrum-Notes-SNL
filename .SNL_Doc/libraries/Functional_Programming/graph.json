@@ -37,13 +37,6 @@
       }
     },
     {
-      "id": "n_subsec_intro",
-      "label": "Entry",
-      "props": {
-        "counterId": "80ba12ff-59af-4e5b-b304-777c5960b35e"
-      }
-    },
-    {
       "id": "n_subsec_basics",
       "label": "Entry",
       "props": {
@@ -240,7 +233,7 @@
       "label": "Entry",
       "props": {
         "entryId": "FP.xmp.option",
-        "counterId": "edd30eac-4ec6-4526-9808-4cc9910c6c7a"
+        "counterId": "cff8a46a-fcdc-4ba3-a6df-e2b6464f2f01"
       }
     },
     {
@@ -274,6 +267,14 @@
         "entryId": "FP.prop.setMonad",
         "counterId": "edd30eac-4ec6-4526-9808-4cc9910c6c7a"
       }
+    },
+    {
+      "id": "n_1",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.subsec.intro",
+        "counterId": "80ba12ff-59af-4e5b-b304-777c5960b35e"
+      }
     }
   ],
   "relationships": [
@@ -299,7 +300,12 @@
     },
     {
       "from": "n_sec_monad",
-      "to": "n_subsec_intro",
+      "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_xmp_option",
       "label": "branch"
     },
     {
@@ -310,11 +316,6 @@
     {
       "from": "n_sec_monad",
       "to": "n_subsec_transformers",
-      "label": "branch"
-    },
-    {
-      "from": "n_sec_monad",
-      "to": "n_subsec_order",
       "label": "branch"
     },
     {
@@ -418,8 +419,8 @@
       "label": "branch"
     },
     {
-      "from": "n_subsec_instances",
-      "to": "n_xmp_option",
+      "from": "n_sec_monad",
+      "to": "n_subsec_order",
       "label": "branch"
     },
     {

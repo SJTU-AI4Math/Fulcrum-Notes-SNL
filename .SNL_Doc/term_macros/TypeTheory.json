@@ -262,8 +262,8 @@
       "dynamic_arity": false,
       "styles": [
         {
-          "mode": "formula_inline",
-          "template": "#0(#1)",
+          "style_name": "paren",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -280,12 +280,12 @@
           },
           "markdown": "",
           "text": "",
-          "style_name": "paren",
-          "tags": []
+          "mode": "formula_inline",
+          "template": "#0(#1)"
         },
         {
-          "mode": "formula_inline",
-          "template": "#0\\ #1",
+          "style_name": "juxt",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -302,8 +302,30 @@
           },
           "markdown": "",
           "text": "",
-          "style_name": "juxt",
-          "tags": []
+          "mode": "formula_inline",
+          "template": "#0\\ #1"
+        },
+        {
+          "style_name": "term-proof",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "text",
+          "template": "premise #0 applied to context #1"
         }
       ],
       "tags": []

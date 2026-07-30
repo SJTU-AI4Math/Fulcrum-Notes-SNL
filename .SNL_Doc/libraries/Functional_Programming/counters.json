@@ -4,18 +4,26 @@
       "id": "d44dd0b8-1bb5-4644-a6f9-3d16c5bc295f",
       "name": "Section",
       "numbering": "1",
-      "children": []
+      "children": [
+        {
+          "id": "80ba12ff-59af-4e5b-b304-777c5960b35e",
+          "name": "Subsection",
+          "numbering": ".1",
+          "children": [
+            {
+              "id": "edd30eac-4ec6-4526-9808-4cc9910c6c7a",
+              "name": "Entry",
+              "numbering": ".1",
+              "children": []
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "80ba12ff-59af-4e5b-b304-777c5960b35e",
-      "name": "Subsection",
-      "numbering": ".1",
-      "children": []
-    },
-    {
-      "id": "edd30eac-4ec6-4526-9808-4cc9910c6c7a",
-      "name": "Entry",
-      "numbering": ".1",
+      "id": "cff8a46a-fcdc-4ba3-a6df-e2b6464f2f01",
+      "name": "Example",
+      "numbering": "1",
       "children": []
     }
   ]

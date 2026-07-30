@@ -554,11 +554,10 @@
       },
       "kind": "const",
       "dynamic_arity": false,
-      "tags": [],
       "styles": [
         {
-          "mode": "text",
-          "template": "univ",
+          "style_name": "typed",
+          "tags": [],
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -575,10 +574,33 @@
           },
           "markdown": "",
           "text": "",
-          "style_name": "text",
-          "tags": []
+          "mode": "formula_inline",
+          "template": "\\mathcal{U}_{#0}"
+        },
+        {
+          "style_name": "non-typed",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\mathcal{U}"
         }
-      ]
+      ],
+      "tags": []
     },
     "Set.nmem": {
       "description": "",

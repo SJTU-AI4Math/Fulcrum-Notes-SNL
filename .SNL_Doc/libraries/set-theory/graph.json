@@ -170,23 +170,23 @@
       "label": "branch"
     },
     {
-      "from": "n_sec",
-      "to": "n_sub_rel",
-      "label": "branch"
-    },
-    {
-      "from": "n_sec",
-      "to": "n_sub_ops",
-      "label": "branch"
-    },
-    {
       "from": "n_sub_basic",
       "to": "n_set",
       "label": "branch"
     },
     {
+      "from": "n_sec",
+      "to": "n_sub_rel",
+      "label": "branch"
+    },
+    {
       "from": "n_sub_basic",
       "to": "n_mem",
+      "label": "branch"
+    },
+    {
+      "from": "n_mem",
+      "to": "n_ext",
       "label": "branch"
     },
     {
@@ -205,13 +205,13 @@
       "label": "branch"
     },
     {
-      "from": "n_sub_rel",
-      "to": "n_subset",
+      "from": "n_sec",
+      "to": "n_sub_ops",
       "label": "branch"
     },
     {
-      "from": "n_subset",
-      "to": "n_ext",
+      "from": "n_sub_rel",
+      "to": "n_subset",
       "label": "branch"
     },
     {

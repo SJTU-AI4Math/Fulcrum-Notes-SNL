@@ -735,6 +735,177 @@
         }
       ],
       "tags": []
+    },
+    "cgt": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_display",
+          "template": "\\begin{CD}\n#0 @>{#4}>> #1\\\\\n@V{#5}VV @VV{#6}V\\\\\n#2 @>>{#7}> #3\n\\end{CD}"
+        }
+      ],
+      "tags": []
+    },
+    "neg": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "-#0"
+        }
+      ],
+      "tags": []
+    },
+    "min-binary": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\operatorname{min}\\left(#0, #1\\right)"
+        }
+      ],
+      "tags": []
+    },
+    "max-binary": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "styles": [
+        {
+          "style_name": "default",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "\\operatorname{max}(#0,#1)"
+        }
+      ],
+      "tags": []
+    },
+    "Add.finite": {
+      "description": "",
+      "source": {
+        "entries": [],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": true,
+      "styles": [
+        {
+          "style_name": "default",
+          "separator": "+",
+          "tags": [],
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "mode": "formula_inline",
+          "template": "#*"
+        }
+      ],
+      "tags": []
     }
   }
 }

@@ -212,6 +212,7 @@
     "Algebra",
     "BasicAnalysis",
     "BasicOperators",
+    "BasicTheorems",
     "FulcrumsMathNotes",
     "FunctionalProgramming",
     "Logic",
@@ -219,6 +220,7 @@
     "Proof",
     "RealAnalysis",
     "SetTheory",
+    "Tactics",
     "TypeTheory"
   ]
 }

@@ -154,6 +154,13 @@
       "props": {
         "entryId": "Logic.rmk.true"
       }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.ctxt.P"
+      }
     }
   ],
   "relationships": [
@@ -250,6 +257,11 @@
     {
       "from": "n_true",
       "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx1",
+      "to": "n_6",
       "label": "branch"
     }
   ]
