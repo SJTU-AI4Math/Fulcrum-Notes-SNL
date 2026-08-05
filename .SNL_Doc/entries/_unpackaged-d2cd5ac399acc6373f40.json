@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.def.identity",
+    "kind": "definition",
+    "title": "Identity",
+    "content": {
+      "snl": "def(FP.Identity(A),A)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

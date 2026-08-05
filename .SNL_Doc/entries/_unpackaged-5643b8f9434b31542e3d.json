@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "ProofStyle.sec.ecnu",
+    "kind": "section",
+    "title": "ECNU 20260523 Problem 22",
+    "content": {
+      "markdown": "A transcription target, not new mathematics. This library exists to\nexercise the `Proof.*` package against a proof whose structure is already\nfixed — the rendering at https://mitar.top/ — so the SNL tree can be diffed\nagainst a reference instead of judged by taste.\n\nTwo properties are being tested. First, that the subgoal decomposition can be\nreproduced *identically*: same subgoal statements, same order, same nested\n`我们有` blocks. Second, that a step decomposes into atoms — the sentence frame\nis a macro and every formula is its own node, so nothing is a paragraph of\nChinese with mathematics embedded in it as string content."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "RealAnalysis",
+  "macro": {
+    "description": "Lebesgue integrable predicate",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "#0\\in L^1(#1)",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "RealAnalysis.lebesgueIntegrable"
+  }
+}

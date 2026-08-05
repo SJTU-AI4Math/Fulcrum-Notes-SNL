@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "macro": {
+    "description": "Monad transformer",
+    "source": {
+      "entries": [
+        "FP.def.monadTransformer"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "text",
+        "template": "#0 is a monad transformer",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "FP.MonadTransformer"
+  }
+}

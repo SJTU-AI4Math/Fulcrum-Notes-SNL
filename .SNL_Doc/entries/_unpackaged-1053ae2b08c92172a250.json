@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.subsec.contDefs",
+    "kind": "subsection",
+    "title": "Definitions of Continuity",
+    "content": {
+      "markdown": "Pointwise, one-sided, and the closed-interval convention."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FulcrumsMathNotes",
+  "macro": {
+    "description": "Marks a consequence of the immediately preceding step.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "text",
+        "template": "hence #0"
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "so"
+  }
+}

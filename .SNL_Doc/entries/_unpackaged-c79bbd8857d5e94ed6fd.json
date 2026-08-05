@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.derivative",
+    "kind": "definition",
+    "title": "Derivative at a Point",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @D), Real)), Analysis.deriv(F, x, D), Analysis.funLim(Div.div(Sub.sub(F, Type.apply(Analysis.map(F), x)), Sub.sub(@y, x)), @y, x, D))",
+      "markdown": "`F` has derivative `D` at `x₀` iff the difference quotient `(F − F(x₀)) / (id − x₀)` tends to `D` at `x₀`. The quotient is built in the PFun algebra, so the removal of `x₀` from its domain — where the denominator vanishes — happens automatically, and the punctured neighbourhood of `BasicAnalysis.def.funLimit` is exactly what makes the expression meaningful there.\n\n`F` is differentiable at `x₀` iff some `D` works; uniqueness of `D` is inherited from uniqueness of limits."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

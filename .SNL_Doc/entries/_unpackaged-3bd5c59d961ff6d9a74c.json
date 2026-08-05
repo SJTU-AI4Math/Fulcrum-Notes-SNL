@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Set.def.sep",
+    "kind": "definition",
+    "title": "Predicate separated set",
+    "content": {
+      "snl": "def-hyp(Type.judge(@P,Type.to(T,Proposition)),Set.sep-typed(@x,T,P(x)),P)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

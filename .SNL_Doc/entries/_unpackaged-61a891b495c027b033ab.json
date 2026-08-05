@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.locallyBounded",
+    "kind": "definition",
+    "title": "Local Boundedness",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.locallyBounded(F, x), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Set.inter(Analysis.domain(F), Analysis.nbh(x, delta))), $\\left|#0\\right| < #1$(Type.apply(Analysis.map(F), y), M))))))))",
+      "markdown": "`F` is bounded near `x₀` iff it is bounded on the intersection of its domain with some neighbourhood of `x₀`. This is the conclusion available from convergence at a point: a function with a limit at `x₀` is locally bounded there, never globally.\n\nThe variants at `±∞` replace the neighbourhood by a ray."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

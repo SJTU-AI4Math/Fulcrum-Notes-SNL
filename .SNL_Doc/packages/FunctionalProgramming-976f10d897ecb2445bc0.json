@@ -1,0 +1,7 @@
+{
+  "format": "snl-package",
+  "version": 1,
+  "id": "FunctionalProgramming",
+  "name": "FunctionalProgramming",
+  "description": "Functional programming: the three-operation Monad structure, instance-specific bind, transformers, ordered/lattice monads, and standard instances."
+}

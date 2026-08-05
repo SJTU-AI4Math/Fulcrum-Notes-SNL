@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.subsec.meanValue",
+    "kind": "subsection",
+    "title": "Mean Value Theorems",
+    "content": {
+      "markdown": "The chain from Fermat's interior-extremum lemma to the Cauchy form, each step a strict generalisation of the previous one."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

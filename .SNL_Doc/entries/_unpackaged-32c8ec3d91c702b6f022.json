@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.prop.pureMonotone",
+    "kind": "property",
+    "title": "Pure is Monotone",
+    "content": {
+      "snl": "thm-hyp(FP.le(@a,@b),FP.le(FP.pure(M,a),FP.pure(M,b)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

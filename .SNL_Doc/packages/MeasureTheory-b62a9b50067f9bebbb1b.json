@@ -1,0 +1,7 @@
+{
+  "format": "snl-package",
+  "version": 1,
+  "id": "MeasureTheory",
+  "name": "MeasureTheory",
+  "description": "Foundational measure theory: set systems, sigma-algebras, measures, Borel and Lebesgue measure, and almost-everywhere quantification."
+}

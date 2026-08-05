@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "macro": {
+    "description": "Bundle a map with its initial and final index.",
+    "source": {
+      "entries": [
+        "BasicAnalysis.def.seqWindow"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "\\left\\langle #0,\\ #1,\\ #2\\right\\rangle"
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Analysis.mkSeq"
+  }
+}

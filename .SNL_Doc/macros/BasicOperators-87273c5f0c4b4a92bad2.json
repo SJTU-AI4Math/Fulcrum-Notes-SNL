@@ -1,0 +1,43 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "BasicOperators",
+  "macro": {
+    "description": "Extended real numbers",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "\\bar{\\mathbb{R}}"
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "EReal"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "Proof",
+  "macro": {
+    "description": "Tactic step 「应用定义」. Unfold a definition. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": true,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "block",
+        "template": "#*",
+        "separator": "\n",
+        "block_template_name": "step"
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Proof.tac.unfold"
+  }
+}

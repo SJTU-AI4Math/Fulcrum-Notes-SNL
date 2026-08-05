@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Set.def.nmem",
+    "kind": "definition",
+    "title": "Membership Negation",
+    "content": {
+      "snl": "def-hyp[predicate](list-partial(Type.judge(@x,T@Set.ctxt.T),Type.judge(A@Set.ctxt.AB,Set(T@Set.ctxt.T))),Set.nmem(x,A@Set.ctxt.AB),Logic.neg(Set.mem(x,A@Set.ctxt.AB)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

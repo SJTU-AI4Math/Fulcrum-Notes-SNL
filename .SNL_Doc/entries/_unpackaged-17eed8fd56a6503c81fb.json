@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Set.def.powerset",
+    "kind": "definition",
+    "title": "Power Set",
+    "content": {
+      "snl": "def(Set.powerset(A@Set.ctxt.AB),Set.sep-typed(@t,Set(T@Set.ctxt.T),Set.subset(t,A@Set.ctxt.AB)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "MeasureTheory",
+  "macro": {
+    "description": "Nonnegativity of a set function",
+    "source": {
+      "entries": [
+        "Measure.def.measure"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "#0\\text{ is nonnegative}",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Measure.nonnegative"
+  }
+}

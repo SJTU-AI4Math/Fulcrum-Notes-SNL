@@ -1,5 +1,5 @@
 {
-  "version": "7",
+  "version": "8",
   "name": "Lean 4 Tactics",
   "macros": {
     "have": {
@@ -34,7 +34,10 @@
           "template": "We have: #0, proved by:"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Lean4-tactic": {
       "description": "",
@@ -70,7 +73,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "rcases": {
       "description": "",
@@ -104,7 +110,10 @@
           "template": "Decompose #0 so that we obtain:"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "calc": {
       "description": "",
@@ -138,7 +147,10 @@
           "template": "\\text{Calculating: }\n\\begin{aligned}\n#0#1\n\\end{aligned}"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Lean4.use": {
       "description": "Existential witness construction.",
@@ -172,7 +184,10 @@
           "template": "Use #0 as the witness. It remains to prove:"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Lean4.constructor": {
       "description": "Conjunction constructor tactic.",
@@ -206,7 +221,10 @@
           "template": "Split the conjunction into the following goals:"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Lean4.rw": {
       "description": "A structured rewrite step carrying both source and result.",
@@ -240,7 +258,10 @@
           "template": "Rewrite #0 as #1."
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Lean4.exact": {
       "description": "Close the current goal with the supplied structured derivation.",
@@ -274,7 +295,10 @@
           "template": "The conclusion follows from #0."
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Lean4.symm": {
       "description": "Symmetry tactic for equality.",
@@ -308,7 +332,10 @@
           "template": "Reverse the equality."
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "calc-partial": {
       "description": "",
@@ -343,7 +370,10 @@
           "separator": "\\\\ & ="
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     }
   }
 }

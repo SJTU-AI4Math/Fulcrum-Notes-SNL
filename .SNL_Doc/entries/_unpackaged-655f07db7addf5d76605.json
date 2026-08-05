@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.seqLimit",
+    "kind": "definition",
+    "title": "Limit of a Sequence",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A, Analysis.Seq), Type.judge(@L, Real)), Analysis.seqLim(A, L), Logic.and(Eq(Analysis.final(A), FP.none), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@N, Nat, Logic.forall-typed(@n, Nat, Logic.implies($#0 > #1$(n, N), Set.mem(Type.apply(Analysis.map(A), n), Analysis.nbh(L, epsilon)))))))))",
+      "markdown": "`A` tends to `L` iff `A` is infinite (`A.final = none`) and for every `epsilon > 0` there is `N : ℕ` such that `A.map n ∈ U(L, epsilon)` for all `n > N`.\n\nThe infiniteness clause is not decoration. Without it the statement would be vacuously satisfiable by a finite window, since the epsilon clause only constrains indices beyond `N`. `A` is convergent iff some `L` works, and the limit is then unique."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

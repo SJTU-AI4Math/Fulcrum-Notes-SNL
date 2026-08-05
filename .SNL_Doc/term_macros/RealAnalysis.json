@@ -1,5 +1,5 @@
 {
-  "version": "7",
+  "version": "8",
   "name": "RealAnalysis",
   "macros": {
     "RealAnalysis.measurable": {
@@ -34,7 +34,10 @@
           "template": "#0 is measuable"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.simple": {
       "description": "Simple function",
@@ -68,7 +71,10 @@
           "template": "#0 is simple"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.almostEverywhere": {
       "description": "Almost everywhere quantifier",
@@ -102,7 +108,10 @@
           "template": "#0 a.e."
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.aeConvergence": {
       "description": "Almost everywhere convergence",
@@ -136,7 +145,10 @@
           "template": "#0\\xrightarrow{\\text{a.e.}}#1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.auConvergence": {
       "description": "Almost uniform convergence",
@@ -154,7 +166,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.measureConvergence": {
       "description": "Convergence in measure",
@@ -172,7 +187,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.simpleIntegral": {
       "description": "Integral of a simple function",
@@ -190,7 +208,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.nonnegativeIntegral": {
       "description": "Integral of nonnegative measurable function",
@@ -208,7 +229,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.lebesgueIntegral": {
       "description": "Lebesgue integral",
@@ -226,7 +250,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.lebesgueIntegrable": {
       "description": "Lebesgue integrable predicate",
@@ -244,7 +271,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.vitaliCover": {
       "description": "Vitali cover predicate",
@@ -262,7 +292,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.totalVariation": {
       "description": "Total variation V_a^b(f)",
@@ -280,7 +313,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.boundedVariation": {
       "description": "Bounded variation predicate",
@@ -298,7 +334,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.absolutelyContinuous": {
       "description": "Absolutely continuous predicate",
@@ -316,7 +355,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.indefiniteIntegral": {
       "description": "Indefinite integral F(x) = ∫_a^x f",
@@ -334,7 +376,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.productSigmaAlgebra": {
       "description": "Product sigma-algebra",
@@ -352,7 +397,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.crossSection": {
       "description": "Cross-section E_x or E^y",
@@ -370,7 +418,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.productMeasure": {
       "description": "Product measure μ × ν",
@@ -388,7 +439,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.essentiallyBounded": {
       "description": "Essentially bounded predicate",
@@ -406,7 +460,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.essentialSupremum": {
       "description": "Essential supremum of |f|",
@@ -424,7 +481,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.Lp": {
       "description": "L^p space",
@@ -442,7 +502,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.minkowski": {
       "description": "Minkowski inequality",
@@ -460,7 +523,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "RealAnalysis.characteristic": {
       "description": "Characteristic function χ_E",
@@ -478,7 +544,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     }
   },
   "description": "Real Analysis (实分析) macros: Lebesgue measurable functions, convergence modes, Lebesgue integral, differentiation, product measure, L^p spaces."

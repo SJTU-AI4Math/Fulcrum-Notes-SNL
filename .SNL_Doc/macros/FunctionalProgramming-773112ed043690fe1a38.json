@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "macro": {
+    "description": "Bottom computation",
+    "source": {
+      "entries": [
+        "FP.def.monadLattice"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "\\bot_{#0,#1}",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "FP.bottom"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "Proof",
+  "macro": {
+    "description": "「由 p, q, … 可推出所需结论」— each premise is its own child, so a transitivity chain is a list rather than a sentence. The separator is explicit: `#*` concatenates its children with nothing in between unless one is set, which ran the premises together as `\\eta_2>-a\\xi>\\eta_2…`.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": true,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "text",
+        "template": "由 #* 可推出所需结论",
+        "separator": " , "
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Proof.fromPremises"
+  }
+}

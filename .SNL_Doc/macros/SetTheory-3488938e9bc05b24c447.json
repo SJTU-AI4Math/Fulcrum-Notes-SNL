@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "SetTheory",
+  "macro": {
+    "description": "Universal set on type T",
+    "source": {
+      "entries": [
+        "Set.def.univ"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "typed",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "\\mathcal{U}_{#0}"
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "typed"
+    },
+    "name": "Set.univ"
+  }
+}

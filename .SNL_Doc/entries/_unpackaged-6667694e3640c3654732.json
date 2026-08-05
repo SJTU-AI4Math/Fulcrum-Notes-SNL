@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.thm.extremeValue",
+    "kind": "theorem",
+    "title": "Attainment of Extrema",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b)), Logic.exists-typed(@m, Real, Logic.and(Set.mem(m, Icc(a, b)), Analysis.minPoint(F, m))))",
+      "markdown": "A function continuous on `[a, b]` attains a minimum and a maximum at points of `[a, b]`. Attainment, not merely boundedness, is the content: `x ↦ x` on `(0, 1)` is bounded and attains neither bound, and `x ↦ 1/x` on `(0, 1]` is not even bounded. Boundedness follows as a corollary."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

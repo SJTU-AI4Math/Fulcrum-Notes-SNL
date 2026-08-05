@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.subsec.closedInterval",
+    "kind": "subsection",
+    "title": "Closed-Interval Theorems",
+    "content": {
+      "markdown": "The three classical consequences of continuity on a compact interval. Each fails on an open or unbounded interval, so each genuinely consumes compactness."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

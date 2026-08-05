@@ -1,5 +1,5 @@
 {
-  "version": "7",
+  "version": "8",
   "name": "Algebra",
   "macros": {
     "Algebra.mul": {
@@ -56,7 +56,10 @@
           "style_name": "juxt",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "dot"
+      }
     },
     "Algebra.inv": {
       "description": "Inverse element",
@@ -90,7 +93,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.e": {
       "description": "Identity element",
@@ -124,7 +130,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Semigroup": {
       "description": "Semigroup predicate",
@@ -160,7 +169,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Monoid": {
       "description": "Monoid predicate",
@@ -196,7 +208,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Group": {
       "description": "Group predicate",
@@ -232,7 +247,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.GrpHom": {
       "description": "Group homomorphism predicate",
@@ -268,7 +286,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.GrpMono": {
       "description": "Group monomorphism",
@@ -304,7 +325,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.GrpEpi": {
       "description": "Group epimorphism",
@@ -340,7 +364,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.GrpIso": {
       "description": "Group isomorphism",
@@ -376,7 +403,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.GrpKer": {
       "description": "Kernel of group homomorphism",
@@ -412,7 +442,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.GrpIm": {
       "description": "Image of group homomorphism",
@@ -448,7 +481,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Subgroup": {
       "description": "Subgroup predicate",
@@ -484,7 +520,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Perm": {
       "description": "Permutation predicate",
@@ -520,7 +559,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Sym": {
       "description": "Symmetric group",
@@ -556,7 +598,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Cycle": {
       "description": "Cycle",
@@ -592,7 +637,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Trans": {
       "description": "Transposition",
@@ -628,7 +676,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.GrpAction": {
       "description": "Group action predicate",
@@ -664,7 +715,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Orb": {
       "description": "Orbit",
@@ -700,7 +754,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Algebra.Stab": {
       "description": "Stabilizer",
@@ -736,7 +793,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     }
   }
 }

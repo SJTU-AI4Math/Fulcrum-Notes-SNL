@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.sec.limits",
+    "kind": "section",
+    "title": "Limits",
+    "content": {
+      "markdown": "The eight limit notions Calculus_21 carries: sequence limits, function limits at a finite point, the two one-sided limits, and the three limits at infinity. Each appears in two forms — a *predicate* relating a carrier to a candidate value, and a partial *value* form usable inside expressions. The bridge results connecting the two forms are what let an ordinary calculation stand in for an epsilon-delta argument."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

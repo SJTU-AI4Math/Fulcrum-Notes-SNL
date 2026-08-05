@@ -1,0 +1,67 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "Logic",
+  "macro": {
+    "description": "True / ⊤",
+    "source": {
+      "entries": [
+        "Logic.def.true"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "top",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "\\top"
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "text",
+        "template": "True"
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "top"
+    },
+    "name": "Logic.true"
+  }
+}

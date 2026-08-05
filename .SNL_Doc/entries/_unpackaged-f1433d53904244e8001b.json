@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.sec.asymptotics",
+    "kind": "section",
+    "title": "Infinitesimals",
+    "content": {
+      "markdown": "Comparison of vanishing quantities, stated as relations between domain-carrying functions at a point rather than as informal orders of magnitude. This is the vocabulary Taylor's theorem with Peano remainder is phrased in."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

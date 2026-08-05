@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "macro": {
+    "description": "Identity type constructor",
+    "source": {
+      "entries": [
+        "FP.def.identity"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "Identity(#0)",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "FP.Identity"
+  }
+}

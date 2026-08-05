@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Algebra.def.group",
+    "kind": "definition",
+    "title": "Group",
+    "content": {
+      "snl": "def[predicateDisplay](Algebra.Group(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a))))), member[colon](%Inverse%, Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.exists-typed(@b,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](b,a),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,b),e@Algebra.def.monoid)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

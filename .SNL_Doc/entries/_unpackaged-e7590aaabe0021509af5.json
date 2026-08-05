@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.def.listBind",
+    "kind": "property",
+    "title": "List Bind",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@xs,FP.List(A)),Eq(FP.bind(FP.List,xs,@f),FP.concat(FP.map(FP.List,xs,f))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.limitAtInfinityValue",
+    "kind": "definition",
+    "title": "Limits at Infinity as Values",
+    "content": {
+      "snl": "def-hyp(Type.judge(@F, Analysis.PFun), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)))",
+      "markdown": "The partial value forms of the three limits at infinity."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

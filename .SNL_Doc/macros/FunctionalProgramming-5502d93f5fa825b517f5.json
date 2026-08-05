@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "macro": {
+    "description": "Monotonicity predicate",
+    "source": {
+      "entries": [
+        "FP.def.monadOrder"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "Monotone(#0)",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "FP.monotone"
+  }
+}

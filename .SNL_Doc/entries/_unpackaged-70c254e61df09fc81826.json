@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.subsec.limitProps",
+    "kind": "subsection",
+    "title": "Properties of Limits",
+    "content": {
+      "markdown": "The two structural facts every limit notion satisfies, plus the congruence principle that makes limits a local notion."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

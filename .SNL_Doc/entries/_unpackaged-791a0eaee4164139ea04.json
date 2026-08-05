@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Measure.def.borel",
+    "kind": "definition",
+    "title": "Borel Sigma-Algebra",
+    "content": {
+      "snl": "def-hyp(Type.judge(@T,Set(Set(X@Measure.ctxt.X))),Measure.Borel(X@Measure.ctxt.X),Measure.generatedSigma(T))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

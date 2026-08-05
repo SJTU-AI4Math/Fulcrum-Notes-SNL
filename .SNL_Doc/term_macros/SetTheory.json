@@ -1,5 +1,5 @@
 {
-  "version": "7",
+  "version": "8",
   "name": "SetTheory",
   "macros": {
     "Set": {
@@ -58,7 +58,10 @@
           "style_name": "paren",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "text"
+      }
     },
     "Set.emptyset": {
       "description": "",
@@ -116,7 +119,10 @@
           "style_name": "slim",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "round"
+      }
     },
     "Set.sep-typed": {
       "description": "",
@@ -152,7 +158,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Set.sep": {
       "description": "",
@@ -188,7 +197,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Set.union": {
       "description": "",
@@ -224,7 +236,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Set.inter": {
       "description": "",
@@ -260,7 +275,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Set.compl": {
       "description": "",
@@ -340,7 +358,10 @@
           "style_name": "overline",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "sup"
+      }
     },
     "Set.diff": {
       "description": "",
@@ -398,7 +419,10 @@
           "style_name": "sub",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "backslash"
+      }
     },
     "Set.mem": {
       "description": "",
@@ -434,7 +458,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Set.SymmDiff": {
       "description": "",
@@ -470,7 +497,10 @@
           "style_name": "infix",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "infix"
+      }
     },
     "Set.subset": {
       "description": "s ⊆ t",
@@ -506,7 +536,10 @@
           "style_name": "infix",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "infix"
+      }
     },
     "Set.powerset": {
       "description": "𝒫(s)",
@@ -542,7 +575,10 @@
           "style_name": "script",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "script"
+      }
     },
     "Set.univ": {
       "description": "Universal set on type T",
@@ -578,7 +614,10 @@
           "template": "\\mathcal{U}_{#0}"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "typed"
+      }
     },
     "Set.nmem": {
       "description": "",
@@ -614,7 +653,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Set.Prod": {
       "description": "",
@@ -648,7 +690,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Type.pair": {
       "description": "",
@@ -682,7 +727,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Set.univUntyped": {
       "description": "Untyped universal-set notation migrated from Set.univ[non-typed].",
@@ -718,7 +766,10 @@
           "template": "\\mathcal{U}"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     }
   }
 }

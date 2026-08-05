@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Algebra.def.monoid",
+    "kind": "definition",
+    "title": "Monoid",
+    "content": {
+      "snl": "def[predicateDisplay](Algebra.Monoid(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z)))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.lem.ivtAverage",
+    "kind": "lemma",
+    "title": "Intermediate Value at the Endpoint Average",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@g,Type.to(Real,Real)),Type.judge(list-partial(@x_1,@x_2),Real),Analysis.isContinuousOn(g,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2)))),Logic.exists-typed(@c,Real,Logic.and(Set.mem(c,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2))),Eq(Type.apply(g,c),Div.div(Add.add(Type.apply(g,x_1),Type.apply(g,x_2)),2)))))",
+      "markdown": "A continuous real function assumes the arithmetic mean of its endpoint values at some point between the endpoints."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

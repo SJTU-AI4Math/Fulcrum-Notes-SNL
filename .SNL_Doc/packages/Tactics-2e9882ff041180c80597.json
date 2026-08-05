@@ -1,0 +1,7 @@
+{
+  "format": "snl-package",
+  "version": 1,
+  "id": "Tactics",
+  "name": "Lean 4 Tactics",
+  "description": ""
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.pfun",
+    "kind": "definition",
+    "title": "Domain-Carrying Function",
+    "content": {
+      "snl": "def(Type.judge(@F, Analysis.PFun), Analysis.mkPFun(Analysis.map(F), Analysis.domain(F)))",
+      "markdown": "A domain-carrying function `F : PFun` consists of a total map `F.map : ℝ → ℝ` together with a domain `F.domain : Set ℝ`. The total map is defined everywhere as a Lean function, but only its restriction to `F.domain` carries mathematical content. Two PFuns are equal exactly when both components agree.\n\nThe point of the bundling is that domains compose. The arithmetic operations intersect domains, so `(F+G).domain = F.domain ∩ G.domain`; division additionally removes the zero set of the denominator; the power operation additionally restricts to where the base is positive. A bare `ℝ → ℝ` cannot express any of this, so those side conditions would have to be re-supplied by hand at every use site."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "version": "7",
+  "version": "8",
   "name": "Fulcrum's Math Notes",
   "macros": {
     "def-hyp": {
@@ -56,7 +56,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "inline"
+      }
     },
     "def": {
       "description": "",
@@ -156,7 +159,10 @@
           "template": "Define “#0” if and only if #1."
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "inline"
+      }
     },
     "thm-hyp": {
       "description": "",
@@ -212,7 +218,10 @@
           "template": "Let #0, then #1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "constructor": {
       "description": "Constructor declaration",
@@ -246,7 +255,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "list-partial": {
       "description": "",
@@ -328,7 +340,10 @@
           "block_template_name": "enumerate"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "inline"
+      }
     },
     "def-struct-hyp": {
       "description": "Structure definition with hypotheses",
@@ -362,7 +377,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "def-struct": {
       "description": "Structure definition without hypotheses",
@@ -418,7 +436,10 @@
           "template": "Define “#0” if and only if all following data are provided:\n#1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "struct": {
       "description": "Structure body (enumerate or cases)",
@@ -477,7 +498,10 @@
           "separator": "\\\\\n"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "enumerate"
+      }
     },
     "member": {
       "description": "Structure member",
@@ -533,7 +557,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "paren"
+      }
     },
     "def-inductive": {
       "description": "Inductive type definition by constructors",
@@ -589,7 +616,10 @@
           "template": "Define “#0” to admit proofs provided by any of the following constructors:\n#1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "details": {
       "description": "Collapsible block: the first child is the always-visible summary, the remaining children fold behind a toggle. Renders as a plain block wherever the consumer has not registered a 'collapsible' block renderer.",
@@ -625,7 +655,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "proof": {
       "description": "\"by\"",
@@ -661,7 +694,10 @@
           "block_template_name": "list"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "list"
+      }
     },
     "proof-step": {
       "description": "One step of a proof. Arity 1 by design: a justification is a cross-entry reference node inside the step's own prose, not a second child — all styles of a fixed-arity macro must agree on their placeholders.",
@@ -695,7 +731,10 @@
           "template": "#0"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "by-cases": {
       "description": "A case split. First child states what is being split on; the remaining children are the cases.",
@@ -731,7 +770,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "case": {
       "description": "One branch of a case split. First child is the case hypothesis (summary); the rest is the argument for that branch.",
@@ -767,7 +809,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "qed": {
       "description": "End-of-proof marker.",
@@ -801,7 +846,10 @@
           "template": "∎"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "so": {
       "description": "Marks a consequence of the immediately preceding step.",
@@ -835,7 +883,10 @@
           "template": "hence #0"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "contradiction": {
       "description": "Marks the absurdity reached in a proof by contradiction.",
@@ -869,7 +920,10 @@
           "template": "which is a contradiction"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "by": {
       "description": "",
@@ -904,7 +958,10 @@
           "template": "Proof.#*\\square"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "def-inductive-hyp": {
       "description": "",
@@ -960,7 +1017,10 @@
           "template": "Let #0, define “#1” to admit proofs provided by any of the following constructors:\n#2"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     }
   }
 }

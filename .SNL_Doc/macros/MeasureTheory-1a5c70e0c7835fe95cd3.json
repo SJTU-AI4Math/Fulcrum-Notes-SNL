@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "MeasureTheory",
+  "macro": {
+    "description": "Differences admit finite disjoint decompositions in the set system",
+    "source": {
+      "entries": [
+        "Measure.def.setSemiring"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "#0\\text{ is closed under finite disjoint decompositions of differences}",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Measure.diffFiniteUnion"
+  }
+}

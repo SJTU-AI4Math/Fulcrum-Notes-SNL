@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.def.flatten",
+    "kind": "property",
+    "title": "Flatten is the Monad Flatten Operation",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@x,Type.apply(M,Type.apply(M,A))),Eq(FP.flatten(M,x),FP.bind(M,x,Type.lambda(@a,a))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

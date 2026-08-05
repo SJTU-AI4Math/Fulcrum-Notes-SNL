@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.sec.continuity",
+    "kind": "section",
+    "title": "Continuity",
+    "content": {
+      "markdown": "Continuity as the coincidence of the limit with the value, its one-sided refinements, and the closed-interval theorems that make continuity a global tool rather than a pointwise annotation."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

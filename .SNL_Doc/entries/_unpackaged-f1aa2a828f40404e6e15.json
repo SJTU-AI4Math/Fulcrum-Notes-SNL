@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "HS.def.Ioo",
+    "kind": "definition",
+    "title": "Open Interval",
+    "content": {
+      "snl": "def(Ioo(a,b),Set.sep-typed(@x,Real,Logic.and($#0 < #1$(a,x),$#0 < #1$(x,b))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

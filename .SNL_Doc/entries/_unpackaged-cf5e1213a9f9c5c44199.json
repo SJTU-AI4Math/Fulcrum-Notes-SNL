@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Set.def.emptyset",
+    "kind": "definition",
+    "title": "Empty Set",
+    "content": {
+      "snl": "def(Set.emptyset[slim],Set.sep-typed(@x,T@Set.ctxt.T,Logic.false))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

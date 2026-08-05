@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Measure.def.setSemiring",
+    "kind": "definition",
+    "title": "Set Semiring",
+    "content": {
+      "snl": "def-struct-hyp(Type.judge(@R,Set(Set(X))),Measure.SetSemiring(R),struct[enumerate](member[colon](%Empty set%,Measure.containsEmpty(R)),member[colon](%Intersection closure%,Measure.interClosed(R)),member[colon](%Finite disjoint difference decomposition%,Measure.diffFiniteUnion(R))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

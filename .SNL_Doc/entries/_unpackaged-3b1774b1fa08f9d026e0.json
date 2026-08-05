@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "real-analysis.prop.measurable-iff",
+    "kind": "property",
+    "title": "Equivalent Definitions of Lebesgue Measurable",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, EReal)), Logic.iff(RealAnalysis.measurable(f), Logic.neg(RealAnalysis.measurable(Set.compl(Set.sep-typed(@x, D@real-analysis.ctxt.D, RealAnalysis.measurable($f(x)$)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

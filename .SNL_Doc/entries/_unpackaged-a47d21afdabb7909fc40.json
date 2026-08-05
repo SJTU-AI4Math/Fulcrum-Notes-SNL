@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.neighbourhood",
+    "kind": "definition",
+    "title": "Neighbourhood and Punctured Neighbourhood",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(list-partial(@x, @delta), Real), $#0 > 0$(delta)), list-partial(Analysis.nbh(x, delta), Analysis.nbhDel(x, delta)), Logic.and(Eq(Analysis.nbh(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1$(x, delta, y))), Eq(Analysis.nbhDel(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1 \\land #2 \\ne #0$(x, delta, y)))))",
+      "markdown": "For `x₀ : ℝ` and `delta > 0`, the neighbourhood is `U(x₀, delta) = { x | x₀ − delta < x < x₀ + delta }`; the punctured neighbourhood removes the centre, `U°(x₀, delta) = { x | x₀ − delta < x < x₀ + delta ∧ x ≠ x₀ }`. Equivalently `x ∈ U(x₀, delta) ↔ |x − x₀| < delta`, and `U°(x₀, delta) ⊆ U(x₀, delta)`.\n\nEvery epsilon-N and epsilon-delta statement below is phrased as membership in a neighbourhood. That formulation survives the move to metric and topological spaces, whereas the inequality `|a − L| < epsilon` is bookkeeping specific to ℝ."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

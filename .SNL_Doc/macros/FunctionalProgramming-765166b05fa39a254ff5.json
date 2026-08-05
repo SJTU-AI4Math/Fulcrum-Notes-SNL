@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "macro": {
+    "description": "Order relation between computations",
+    "source": {
+      "entries": [
+        "FP.def.monadOrder"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "#0 \\le #1",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "FP.le"
+  }
+}

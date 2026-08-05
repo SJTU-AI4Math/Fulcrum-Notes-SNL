@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.def.option",
+    "kind": "definition",
+    "title": "Option / Maybe",
+    "content": {
+      "snl": "def-inductive(FP.Option[ques](A),struct[enumerate](member[colon](Option.none,FP.Option[ques](A)),member[colon](Option.some,Type.to(A,FP.Option[ques](A)))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

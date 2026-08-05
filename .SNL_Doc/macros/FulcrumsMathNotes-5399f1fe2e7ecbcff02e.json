@@ -1,0 +1,65 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FulcrumsMathNotes",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "mode": "text",
+        "template": "Let #0, define “#1” to be #2. ",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "inline",
+        "tags": []
+      },
+      {
+        "mode": "text",
+        "template": "Let #0, define “#1” if and only if #2. ",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "predicate",
+        "tags": []
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "inline"
+    },
+    "name": "def-hyp"
+  }
+}

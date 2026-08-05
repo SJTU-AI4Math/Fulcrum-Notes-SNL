@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.thm.rolle",
+    "kind": "theorem",
+    "title": "Rolle's Theorem",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), Eq(Type.apply(Analysis.map(F), a), Type.apply(Analysis.map(F), b))), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Ioo(a, b)), Analysis.deriv(F, c, $0$))))",
+      "markdown": "A function continuous on `[a, b]`, differentiable on `(a, b)`, and taking equal values at the endpoints has a stationary point strictly inside.\n\nThe proof is the previous two theorems in sequence: extrema are attained by `BasicAnalysis.thm.extremeValue`, and either one is interior — whence `BasicAnalysis.thm.fermat` applies — or both are attained at the endpoints, in which case the function is constant and every interior point works. Note the asymmetry between the closed interval for continuity and the open one for differentiability: it is what lets the theorem apply to `x ↦ √(1 − x²)` on `[−1, 1]`."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

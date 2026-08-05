@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.sec.structures",
+    "kind": "section",
+    "title": "Functions and Sequences with Carriers",
+    "content": {
+      "markdown": "Calculus_21 does not model a real function as a bare `ℝ → ℝ`, nor a sequence as a bare `ℕ → ℝ`. Both carry their region of definition alongside the map: a function bundles a total map with a domain set, and a sequence bundles a map with an index window. Every limit, continuity and differentiability notion downstream is stated against these carriers, which is what makes side conditions such as \"the punctured neighbourhood lies inside the domain\" expressible rather than tacitly assumed."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

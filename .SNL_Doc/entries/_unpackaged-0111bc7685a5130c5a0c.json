@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.seqLimitValue",
+    "kind": "definition",
+    "title": "The Limit of a Sequence as a Value",
+    "content": {
+      "snl": "def-hyp(Type.judge(@A, Analysis.Seq), Analysis.seqLimVal(A), Analysis.seqLimVal(A))",
+      "markdown": "The predicate `BasicAnalysis.def.seqLimit` relates a sequence to a candidate value; the *value* form is a partial element of ℝ, present exactly when the sequence converges and absent otherwise. Writing the limit as a value is what allows it to appear inside an arithmetic expression and be manipulated by ordinary equational reasoning.\n\nPartiality is essential and cannot be papered over with a junk value: `limit(A) + limit(B) = limit(A + B)` must fail to be an unconditional equation when either side diverges. The two forms are connected in both directions — a proof of the predicate yields the value, and knowing the value is present recovers the predicate."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

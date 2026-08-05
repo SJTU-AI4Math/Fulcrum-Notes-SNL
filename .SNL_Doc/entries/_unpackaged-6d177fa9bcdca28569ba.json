@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.subsec.limitDefs",
+    "kind": "subsection",
+    "title": "Definitions of Limit",
+    "content": {
+      "markdown": "Each definition has two clauses: a well-posedness clause requiring the relevant region to sit inside the domain, and the epsilon clause proper. The first clause is exactly what the carrier discipline of `BasicAnalysis.def.pfun` buys."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

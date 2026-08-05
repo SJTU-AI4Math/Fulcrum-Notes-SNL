@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.def.forall",
+    "kind": "definition",
+    "title": "Universal Quantifier",
+    "content": {
+      "snl": "def(Logic.forall-typed(x,T,P(x)),Type.Pi(@x,T,P(x)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

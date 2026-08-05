@@ -1,0 +1,43 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "TypeTheory",
+  "macro": {
+    "description": "Π-type (dependent function)",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "\\prod_{#0 : #1} #2",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "bind",
+        "tags": []
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "bind"
+    },
+    "name": "Pi"
+  }
+}

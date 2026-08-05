@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.prop.rightIdentity",
+    "kind": "property",
+    "title": "Monad Law: Right Identity",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@x,Type.apply(M,A)),Eq(FP.bind(M,x,Type.lambda(@a,FP.pure(M,a))),x))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.def.exists",
+    "kind": "definition",
+    "title": "Existential Quantifier",
+    "content": {
+      "snl": "def-struct[prop](Logic.exists-typed(x,T,P(x)),struct(member(%Instance%,Type.judge(x,T)),Type.judge(%Property%,Type.apply(P,x))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Set.def.ext",
+    "kind": "property",
+    "title": "Set Extensionality",
+    "content": {
+      "snl": "thm-hyp(Type.judge[paren](list-partial(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Logic.iff(Eq(A@Set.ctxt.AB,B@Set.ctxt.AB), Logic.forall-typed(@x, T@Set.ctxt.T,parentheses(Logic.iff(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB)))),Logic.and(Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.subset(B@Set.ctxt.AB,A@Set.ctxt.AB))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.diffOperator",
+    "kind": "definition",
+    "title": "The Differential Operator",
+    "content": {
+      "snl": "def-hyp(Type.judge(@F, Analysis.PFun), Analysis.diff(F), Analysis.mkPFun(Analysis.map(Analysis.diff(F)), Set.sep-typed(@x, Real, Analysis.derivable(F, x))))",
+      "markdown": "`F'` is again a domain-carrying function: its domain is the set of points at which `F` is differentiable, and its map sends each such point to the derivative there.\n\nThe derivative's domain may be strictly smaller than `F`'s, and may even be empty — a nowhere-differentiable continuous function is a perfectly good `PFun` whose derivative has empty domain. Making the operator total-on-`PFun` rather than partially defined is what allows it to be iterated without a fresh side condition at each step."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

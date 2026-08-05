@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Measure.thm.lebesgueSigmaAlgebra",
+    "kind": "theorem",
+    "title": "Lebesgue-Measurable Sets Form a Sigma-Algebra",
+    "content": {
+      "snl": "thm-hyp(Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal)),Measure.SigmaAlgebra(Measure.LebesgueSets($\\mathbb{R}$)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

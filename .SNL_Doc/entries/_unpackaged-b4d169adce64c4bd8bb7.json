@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.def.lift",
+    "kind": "definition",
+    "title": "Lift Operation",
+    "content": {
+      "snl": "def-hyp(Type.judge(@x,Type.apply(M,A)),FP.lift(T,M,x),%the canonical embedding into the transformed monad%)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

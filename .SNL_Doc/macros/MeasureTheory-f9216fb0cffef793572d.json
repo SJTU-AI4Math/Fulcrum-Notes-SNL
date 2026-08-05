@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "MeasureTheory",
+  "macro": {
+    "description": "Finite additivity on disjoint measurable sets",
+    "source": {
+      "entries": [
+        "Measure.prop.finiteAdditivity"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "#0(#1\\cup #2)=#0(#1)+#0(#2)",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Measure.additive"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.ctxt.1",
+    "kind": "context",
+    "title": "Types and type constructors",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

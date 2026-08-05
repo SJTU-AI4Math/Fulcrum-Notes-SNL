@@ -1,0 +1,7 @@
+{
+  "format": "snl-package",
+  "version": 1,
+  "id": "RealAnalysis",
+  "name": "RealAnalysis",
+  "description": "Real Analysis (实分析) macros: Lebesgue measurable functions, convergence modes, Lebesgue integral, differentiation, product measure, L^p spaces."
+}

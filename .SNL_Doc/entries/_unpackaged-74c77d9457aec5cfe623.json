@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Set.ctxt.AB",
+    "kind": "context",
+    "title": "$A, B$",
+    "content": {
+      "snl": "Type.judge(list-partial(@A,@B),Set(T@Set.ctxt.T))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

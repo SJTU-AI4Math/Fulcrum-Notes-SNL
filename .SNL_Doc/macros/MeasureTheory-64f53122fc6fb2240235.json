@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "MeasureTheory",
+  "macro": {
+    "description": "Almost-everywhere quantifier relative to a measure",
+    "source": {
+      "entries": [
+        "Measure.def.almostEverywhere"
+      ],
+      "urls": []
+    },
+    "kind": "binder",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "\\text{a.e. }#0,\\ #1\\ [#2]",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Measure.almostEverywhere"
+  }
+}

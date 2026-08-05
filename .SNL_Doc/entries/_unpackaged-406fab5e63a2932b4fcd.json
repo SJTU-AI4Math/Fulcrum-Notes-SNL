@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.subsec.carriers",
+    "kind": "subsection",
+    "title": "Carriers",
+    "content": {
+      "markdown": "The two bundled structures, their accessors, and the neighbourhood vocabulary in which every limit notion below is phrased."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

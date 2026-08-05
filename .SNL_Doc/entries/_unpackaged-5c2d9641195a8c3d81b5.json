@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Set.def.symmetric_difference",
+    "kind": "definition",
+    "title": "Symmetric Difference",
+    "content": {
+      "snl": "def(Set.SymmDiff(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.diff(parentheses(Set.union(A@Set.ctxt.AB,B@Set.ctxt.AB)),parentheses(Set.inter(A@Set.ctxt.AB,B@Set.ctxt.AB))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

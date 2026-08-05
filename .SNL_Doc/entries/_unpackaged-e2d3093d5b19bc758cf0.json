@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.subsec.intro",
+    "kind": "subsection",
+    "title": "Introduction",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "version": "7",
+  "version": "8",
   "name": "Logic",
   "macros": {
     "Logic.and": {
@@ -58,7 +58,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "infix"
+      }
     },
     "Logic.or": {
       "description": "",
@@ -94,7 +97,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "infix"
+      }
     },
     "Logic.implies": {
       "description": "",
@@ -174,7 +180,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "longdouble"
+      }
     },
     "Logic.neg": {
       "description": "",
@@ -210,7 +219,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "prefix"
+      }
     },
     "Logic.forall": {
       "description": "Universal quantifier",
@@ -268,7 +280,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "bind"
+      }
     },
     "Logic.exists": {
       "description": "Existential quantifier",
@@ -304,7 +319,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "bind"
+      }
     },
     "Logic.iff": {
       "description": "Logical equivalence",
@@ -340,7 +358,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "long"
+      }
     },
     "Logic.true": {
       "description": "True / ⊤",
@@ -398,7 +419,10 @@
           "template": "True"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "top"
+      }
     },
     "Logic.false": {
       "description": "False / ⊥",
@@ -456,7 +480,10 @@
           "template": "False"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "bot"
+      }
     },
     "Logic.forall-typed": {
       "description": "Typed universal ∀ x : T, P(x)",
@@ -536,7 +563,10 @@
           "template": "(#0 : #1) \\to #2"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Logic.exists-typed": {
       "description": "Typed existential ∃ x : T, P(x)",
@@ -572,7 +602,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     }
   }
 }

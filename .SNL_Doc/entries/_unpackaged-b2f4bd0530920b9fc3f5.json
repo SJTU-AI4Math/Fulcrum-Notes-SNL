@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.ctxt.pfun",
+    "kind": "context",
+    "title": "Context: Domain-Carrying Functions",
+    "content": {
+      "markdown": "Shared binders for `BasicAnalysis.sec.structures` and everything downstream. Declares `F G : PFun` (domain-carrying real functions), `A B : Seq` (index-windowed real sequences), `x x₀ L : ℝ` (points and candidate limits), `epsilon delta : ℝ` constrained positive (tolerance and threshold binders), `n N : ℕ` (index binders), and `I : Set ℝ` (an ambient interval or region)."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

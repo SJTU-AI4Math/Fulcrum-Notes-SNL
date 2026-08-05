@@ -1,5 +1,5 @@
 {
-  "version": "7",
+  "version": "8",
   "name": "FunctionalProgramming",
   "macros": {
     "FP.Monad": {
@@ -36,7 +36,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Monad": {
       "description": "Legacy natural-language Monad predicate",
@@ -56,7 +59,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.pure": {
       "description": "The pure operation of a Monad",
@@ -92,7 +98,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.map": {
       "description": "The map operation in the Monad structure",
@@ -128,7 +137,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.flatten": {
       "description": "The flatten operation in the Monad structure",
@@ -164,7 +176,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.bind": {
       "description": "The bind operation of a particular Monad instance",
@@ -200,7 +215,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.bindFromMapFlatten": {
       "description": "Bind recovered from map and flatten",
@@ -220,7 +238,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.MonadTransformer": {
       "description": "Monad transformer",
@@ -240,7 +261,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.lift": {
       "description": "The lift operation of a Monad transformer",
@@ -260,7 +284,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.OrderedMonad": {
       "description": "A Monad with compatible order",
@@ -280,7 +307,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.MonadLattice": {
       "description": "A Monad whose computations form lattices",
@@ -300,7 +330,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.PartialOrder": {
       "description": "Partial-order structure",
@@ -320,7 +353,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.Lattice": {
       "description": "Lattice structure",
@@ -340,7 +376,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.le": {
       "description": "Order relation between computations",
@@ -360,7 +399,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.bottom": {
       "description": "Bottom computation",
@@ -380,7 +422,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.top": {
       "description": "Top computation",
@@ -400,7 +445,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.sup": {
       "description": "Join of computations",
@@ -420,7 +468,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.inf": {
       "description": "Meet of computations",
@@ -440,7 +491,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.monotone": {
       "description": "Monotonicity predicate",
@@ -460,7 +514,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.Identity": {
       "description": "Identity type constructor",
@@ -480,7 +537,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.Option": {
       "description": "Option / Maybe type constructor",
@@ -538,7 +598,10 @@
           "mode": "formula_inline",
           "template": "#0?"
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.none": {
       "description": "Empty Option constructor",
@@ -558,7 +621,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.some": {
       "description": "Present Option constructor",
@@ -578,7 +644,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.List": {
       "description": "List type constructor",
@@ -598,7 +667,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.nil": {
       "description": "Empty list constructor",
@@ -618,7 +690,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.cons": {
       "description": "List cons constructor",
@@ -638,7 +713,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.concat": {
       "description": "List concatenation",
@@ -658,7 +736,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.Set": {
       "description": "Set-valued computation type constructor",
@@ -678,7 +759,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.singleton": {
       "description": "Set singleton constructor",
@@ -698,7 +782,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.bigUnion": {
       "description": "Union of a family of sets",
@@ -718,7 +805,10 @@
           "style_name": "default",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "FP.statement": {
       "description": "Natural-language statement container",
@@ -737,7 +827,10 @@
           "separator": "",
           "tags": []
         }
-      ]
+      ],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Option.none": {
       "description": "",
@@ -771,7 +864,10 @@
         }
       ],
       "tags": [],
-      "kind": "const"
+      "kind": "const",
+      "default_style": {
+        "en": "default"
+      }
     },
     "Option.some": {
       "description": "",
@@ -805,7 +901,10 @@
           "template": "\\texttt{some}"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     }
   },
   "description": "Functional programming: the three-operation Monad structure, instance-specific bind, transformers, ordered/lattice monads, and standard instances."

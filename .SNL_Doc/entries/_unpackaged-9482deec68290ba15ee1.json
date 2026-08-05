@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Measure.prop.continuityBelow",
+    "kind": "property",
+    "title": "Continuity from Below",
+    "content": {
+      "snl": "thm-hyp(Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Measure.continuousBelow(mu@Measure.ctxt.mu))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

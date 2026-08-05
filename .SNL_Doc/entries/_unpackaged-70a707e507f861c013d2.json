@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.prop.leftIdentity",
+    "kind": "property",
+    "title": "Monad Law: Left Identity",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@a,A),Type.judge(@f,Type.to(A,Type.apply(M,B)))),Eq(FP.bind(M,FP.pure(M,a),f),Type.apply(f,a)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

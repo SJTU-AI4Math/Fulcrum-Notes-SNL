@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FulcrumsMathNotes",
+  "macro": {
+    "description": "\"by\"",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": true,
+    "styles": [
+      {
+        "style_name": "list",
+        "separator": "\n",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "block",
+        "template": "#*",
+        "block_template_name": "list"
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "list"
+    },
+    "name": "proof"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.def.bind",
+    "kind": "definition",
+    "title": "Bind as an Equivalent Monad Presentation",
+    "content": {
+      "snl": "def-hyp(FP.Monad(M),a,b)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

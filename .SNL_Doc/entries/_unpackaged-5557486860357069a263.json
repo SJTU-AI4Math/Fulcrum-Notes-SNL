@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Measure.prop.borelUnique",
+    "kind": "property",
+    "title": "Uniqueness of Borel Measure",
+    "content": {
+      "snl": "thm-hyp(Logic.and(Measure.BorelMeasure(@nu),Measure.BorelMeasure(@rho)),Eq(nu,rho))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

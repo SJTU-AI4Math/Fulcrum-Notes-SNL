@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "FP.ctxt.M",
+    "kind": "context",
+    "title": "$M$",
+    "content": {
+      "snl": "Type.judge(@M,Type.to(Type,Type))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

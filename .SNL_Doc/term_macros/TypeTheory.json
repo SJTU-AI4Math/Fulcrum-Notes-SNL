@@ -1,5 +1,5 @@
 {
-  "version": "7",
+  "version": "8",
   "name": "TypeTheory",
   "macros": {
     "Type.judge": {
@@ -56,7 +56,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "colon"
+      }
     },
     "Type": {
       "description": "",
@@ -112,7 +115,10 @@
           "template": "\\mathrm{Type}_{#0}"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "text"
+      }
     },
     "Proposition": {
       "description": "",
@@ -148,7 +154,10 @@
           "template": "Prop"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "text"
+      }
     },
     "Type.to": {
       "description": "",
@@ -182,7 +191,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Pi": {
       "description": "Π-type (dependent function)",
@@ -216,7 +228,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "bind"
+      }
     },
     "Type.Sigma": {
       "description": "Σ-type (dependent pair)",
@@ -250,7 +265,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "bind"
+      }
     },
     "Type.apply": {
       "description": "Function application",
@@ -328,7 +346,10 @@
           "template": "premise #0 applied to context #1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "paren"
+      }
     },
     "Type.lambda": {
       "description": "Untyped lambda abstraction",
@@ -362,7 +383,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Type.lambda-typed": {
       "description": "Typed lambda abstraction (mapsto)",
@@ -418,7 +442,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "mapsto"
+      }
     },
     "Type.Pi": {
       "description": "",
@@ -452,7 +479,10 @@
           "tags": []
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "ctors": {
       "description": "",
@@ -487,7 +517,10 @@
           "template": "\\quad|\\,#*"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     }
   }
 }

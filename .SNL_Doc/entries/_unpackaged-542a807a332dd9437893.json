@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.thm.fermat",
+    "kind": "theorem",
+    "title": "Fermat's Interior Extremum Lemma",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real), Analysis.derivable(F, x), Analysis.maxPoint(F, x)), Analysis.deriv(F, x, $0$))",
+      "markdown": "At an interior local extremum where the derivative exists, the derivative vanishes. Both hypotheses are load-bearing: `x ↦ x` on `[0, 1]` has extrema only at the endpoints, and `x ↦ |x|` has an interior minimum where the derivative fails to exist.\n\nThe converse is false — `x ↦ x³` has vanishing derivative at `0` and no extremum there — so this is a necessary condition only."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

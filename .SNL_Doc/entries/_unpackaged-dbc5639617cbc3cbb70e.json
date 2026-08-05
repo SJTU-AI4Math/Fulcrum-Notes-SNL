@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.oneSidedContinuity",
+    "kind": "definition",
+    "title": "One-Sided Continuity",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), list-partial(Analysis.contLeftAt(F, x), Analysis.contRightAt(F, x)), Logic.and(Set.mem(x, Analysis.domain(F)), Analysis.limLeft(F, @y, x, Type.apply(Analysis.map(F), x))))",
+      "markdown": "Left-continuity at `x₀` asks that the left limit exist and equal `F.map x₀`; right-continuity uses the right limit. `F` is continuous at `x₀` iff it is both left- and right-continuous there."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

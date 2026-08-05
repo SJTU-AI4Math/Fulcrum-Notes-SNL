@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Set.def.union",
+    "kind": "definition",
+    "title": "Union of sets",
+    "content": {
+      "snl": "def(Set.union(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.or(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

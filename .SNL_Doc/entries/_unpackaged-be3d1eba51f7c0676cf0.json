@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.thm.intermediateValue",
+    "kind": "theorem",
+    "title": "Intermediate Value Theorem",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b, @C), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), $#0 < #1 \\land #1 < #2$(Type.apply(Analysis.map(F), a), C, Type.apply(Analysis.map(F), b))), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Icc(a, b)), Eq(Type.apply(Analysis.map(F), c), C))))",
+      "markdown": "A function continuous on `[a, b]` takes every value between `F a` and `F b`. Combined with the previous theorem this says the continuous image of a closed bounded interval is again a closed bounded interval.\n\nThe standard corollary is a root existence principle: a sign change over `[a, b]` forces a zero inside. The theorem is genuinely about the completeness of ℝ — the same statement over ℚ is false, as `x ↦ x² − 2` witnesses."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

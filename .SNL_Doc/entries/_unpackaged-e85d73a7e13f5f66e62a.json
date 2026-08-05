@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Measure.def.generatedSigma",
+    "kind": "definition",
+    "title": "Generated Sigma-Algebra",
+    "content": {
+      "snl": "def-hyp(Type.judge(@C,Set(Set(X@Measure.ctxt.X))),Measure.generatedSigma(C),%the intersection of all sigma-algebras on X containing C%)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

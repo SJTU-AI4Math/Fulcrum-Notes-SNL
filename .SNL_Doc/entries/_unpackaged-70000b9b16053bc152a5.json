@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.rmk.false",
+    "kind": "remark",
+    "title": "False",
+    "content": {
+      "snl": "%Inductive Type #0 does not have any constructors, and it's impossible to construct any inhabitant within #0.%(Logic.false)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

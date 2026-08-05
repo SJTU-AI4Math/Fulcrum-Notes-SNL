@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.pfunComp",
+    "kind": "definition",
+    "title": "Composition of Domain-Carrying Functions",
+    "content": {
+      "snl": "def-hyp(Type.judge(list-partial(@F, @G), Analysis.PFun), Analysis.comp(F, G), Analysis.mkPFun($F.\\mathrm{map} \\circ G.\\mathrm{map}$, Set.inter(Analysis.domain(G), Set.sep-typed(@x, Analysis.domain(G), Set.mem(Type.apply(Analysis.map(G), x), Analysis.domain(F))))))",
+      "markdown": "The composite `F ⊙ G` has map `F.map ∘ G.map` and domain `G.domain ∩ { x | G.map x ∈ F.domain }`. Note the asymmetry: the domain condition is a pullback along `G`, not an intersection of the two domains, so composition is where the carrier discipline pays off most visibly."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.thm.eq_refl",
+    "kind": "theorem",
+    "title": "Reflexivity of =",
+    "content": {
+      "snl": "def-hyp(Type.judge(@a,T@Logic.ctxt.T), Logic.forall-typed(@a,T@Logic.ctxt.T,Eq(a,a)), Logic.true)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

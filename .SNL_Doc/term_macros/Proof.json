@@ -1,5 +1,5 @@
 {
-  "version": "7",
+  "version": "8",
   "name": "Proof",
   "macros": {
     "Proof.goal": {
@@ -36,7 +36,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.have": {
       "description": "Collapsible goal block labelled 「我们有」. First child is the statement (the always-visible summary); the remaining children justify it.",
@@ -72,7 +75,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.observe": {
       "description": "Collapsible goal block labelled 「注意到」. First child is the statement (the always-visible summary); the remaining children justify it.",
@@ -108,7 +114,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.proofOf": {
       "description": "Collapsible goal block labelled 「证明」. First child is the statement (the always-visible summary); the remaining children justify it.",
@@ -144,7 +153,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.lemma": {
       "description": "Collapsible goal block labelled 「引理」. First child is the statement (the always-visible summary); the remaining children justify it.",
@@ -180,7 +192,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.case": {
       "description": "Collapsible goal block labelled 「情形」. First child is the statement (the always-visible summary); the remaining children justify it.",
@@ -216,7 +231,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.split": {
       "description": "目标分解 — decompose a goal into independent subgoals; children are the subgoals.",
@@ -252,7 +270,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.byCases": {
       "description": "分类讨论 — case analysis. First child states the basis of the split; the rest are the cases.",
@@ -288,7 +309,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.byContra": {
       "description": "反证法 — proof by contradiction. First child is the assumption; the rest derives the absurdity.",
@@ -324,7 +348,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.byInduction": {
       "description": "数学归纳法 — induction: induction variable, then base case and inductive step.",
@@ -360,7 +387,10 @@
           "block_template_name": "collapsible"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.observe": {
       "description": "Tactic step 「注意到」. Read off an immediate consequence of what is already known. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -396,7 +426,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.destruct": {
       "description": "Tactic step 「解构」. Apply a theorem that yields a witness, and name it. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -432,7 +465,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.rewrite": {
       "description": "Tactic step 「变形」. Rewrite a hypothesis or goal into an equivalent form. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -468,7 +504,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.construct": {
       "description": "Tactic step 「构造」. Exhibit the object the goal asks for and announce what remains. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -504,7 +543,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.derive": {
       "description": "Tactic step 「推导」. A derivation step with no more specific tactic. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -540,7 +582,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.unfold": {
       "description": "Tactic step 「应用定义」. Unfold a definition. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -576,7 +621,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.notation": {
       "description": "Tactic step 「记号」. Introduce notation or an abbreviation. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -612,7 +660,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.transpose": {
       "description": "Tactic step 「移项」. Move terms across a relation. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -648,7 +699,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.trans": {
       "description": "Tactic step 「传递性」. Chain relations by transitivity. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -684,7 +738,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.antisymm": {
       "description": "Tactic step 「反对称性」. Conclude equality from two opposite inequalities. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -720,7 +777,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.trivial": {
       "description": "Tactic step 「显然」. The claim is immediate. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -756,7 +816,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.assume": {
       "description": "Tactic step 「假设」. Introduce the assumption of a contradiction or a case. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -792,7 +855,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.basis": {
       "description": "Tactic step 「分类依据」. State what a case analysis splits on. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -828,7 +894,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.linarith": {
       "description": "Tactic step 「linarith」. Closed by linear arithmetic over ordered fields. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -864,7 +933,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.nlinarith": {
       "description": "Tactic step 「nlinarith」. Closed by nonlinear arithmetic. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -900,7 +972,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.tac.omega": {
       "description": "Tactic step 「omega」. Closed by linear integer arithmetic. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",
@@ -936,7 +1011,10 @@
           "block_template_name": "step"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.calc": {
       "description": "计算 — a calculation chain. First child is the opening term; each later child is a Proof.calc.rel carrying one relation and the term it reaches.",
@@ -972,7 +1050,10 @@
           "block_template_name": "calc"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.calc.rel": {
       "description": "One link of a calculation chain: a relation symbol plus its right-hand side. Keeping them separate is what lets a renderer align relations in a column.",
@@ -1006,7 +1087,10 @@
           "template": "#0 #1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.qed": {
       "description": "Marks a completed proof.",
@@ -1040,7 +1124,10 @@
           "template": "∎"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.done": {
       "description": "Marks a discharged goal.",
@@ -1074,7 +1161,10 @@
           "template": "→ 完成"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.absurd": {
       "description": "Marks the contradiction reached.",
@@ -1108,7 +1198,10 @@
           "template": "→ 矛盾"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.ref": {
       "description": "A citation of a named result; its child carries an `@entryId` postfix so the reference resolves to a real entry.",
@@ -1142,7 +1235,10 @@
           "template": "#0"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.implies": {
       "description": "「A ⟹ B」as a step body: premise and conclusion are separate children, so each is addressable instead of buried in one string. The arrow is a literal character: a text-mode template is not a math environment, so `$…$` in it would be text and the linter's KaTeX check rejects it.",
@@ -1176,7 +1272,10 @@
           "template": "#0 ⟹ #1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.applyOn": {
       "description": "「对 X 应用 THM 可知 C」— the object, the cited theorem, and the consequence as three children. This is the atomic form of a 解构 step.",
@@ -1210,7 +1309,10 @@
           "template": "对 #0 应用 #1 可知 #2"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.obtain": {
       "description": "「存在 x 使得 P」— the witness introduced by a 解构 step and the property it satisfies.",
@@ -1244,7 +1346,10 @@
           "template": "存在 #0 使得 #1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.simplifies": {
       "description": "「条件 A 可化简为 B」— the atomic form of a 变形 step.",
@@ -1278,7 +1383,10 @@
           "template": "条件 #0 可化简为 #1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.fromPremises": {
       "description": "「由 p, q, … 可推出所需结论」— each premise is its own child, so a transitivity chain is a list rather than a sentence. The separator is explicit: `#*` concatenates its children with nothing in between unless one is set, which ran the premises together as `\\eta_2>-a\\xi>\\eta_2…`.",
@@ -1313,7 +1421,10 @@
           "separator": " , "
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.claim": {
       "description": "「我们断言 x 就是所要找的对象, 下面我们证明 P」— the atomic form of a 构造 step.",
@@ -1347,7 +1458,10 @@
           "template": "我们断言 #0 就是所要找的对象, 下面我们证明 #1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.and": {
       "description": "Conjunction of two goals, as used when a 构造 step announces what remains.",
@@ -1381,7 +1495,10 @@
           "template": "#0 且 #1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.divideBoth": {
       "description": "「两边同除以 d 即得 C」— the atomic form of a 移项 step.",
@@ -1415,7 +1532,10 @@
           "template": "两边同除以 #0 即得 #1"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     },
     "Proof.because": {
       "description": "「由于 X P,」— the ground an inference rests on, as a subject node plus the property asserted of it, so the subject stays addressable.",
@@ -1449,7 +1569,10 @@
           "template": "由于 #0 #1,"
         }
       ],
-      "tags": []
+      "tags": [],
+      "default_style": {
+        "en": "default"
+      }
     }
   }
 }

@@ -1,0 +1,67 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "Logic",
+  "macro": {
+    "description": "False / ⊥",
+    "source": {
+      "entries": [
+        "Logic.def.false"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "bot",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "\\bot"
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "text",
+        "template": "False"
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "bot"
+    },
+    "name": "Logic.false"
+  }
+}

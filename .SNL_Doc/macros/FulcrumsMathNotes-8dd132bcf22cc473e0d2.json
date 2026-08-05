@@ -1,0 +1,68 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FulcrumsMathNotes",
+  "macro": {
+    "description": "Structure body (enumerate or cases)",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "partial",
+    "dynamic_arity": true,
+    "styles": [
+      {
+        "mode": "block",
+        "template": "#*",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "enumerate",
+        "tags": [],
+        "separator": "\n",
+        "block_template_name": "enumerate"
+      },
+      {
+        "mode": "formula_display",
+        "template": "\\begin{cases}\n#*\n\\end{cases}",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "cases",
+        "tags": [],
+        "separator": "\\\\\n"
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "enumerate"
+    },
+    "name": "struct"
+  }
+}

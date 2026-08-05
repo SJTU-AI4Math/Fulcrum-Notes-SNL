@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.funLimit",
+    "kind": "definition",
+    "title": "Limit of a Function at a Point",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @L), Real)), Analysis.funLim(F, @y, x, L), Logic.and(Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Set.subset(Analysis.nbhDel(x, delta), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Analysis.nbhDel(x, delta)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
+      "markdown": "`F` tends to `L` as `x → x₀` iff two things hold. First, well-posedness: some punctured neighbourhood `U°(x₀, delta)` lies inside `F.domain`, so the limit is asked at a point the function actually approaches. Second, the epsilon-delta clause: for every `epsilon > 0` there is `delta > 0` with `F.map x ∈ U(L, epsilon)` for all `x ∈ U°(x₀, delta)`.\n\nThe value at `x₀` itself is irrelevant — indeed `x₀` need not lie in the domain at all. That is precisely what the *punctured* neighbourhood encodes, and it is what separates this notion from continuity at `x₀`."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

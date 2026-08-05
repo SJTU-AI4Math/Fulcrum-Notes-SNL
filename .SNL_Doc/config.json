@@ -1,5 +1,5 @@
 {
-  "version": "0.0.3",
+  "version": "0.0.6",
   "entry_kinds": [
     {
       "id": "section",
@@ -8,8 +8,8 @@
         "stroke": "#787878",
         "background": "#F0F0F0"
       },
-      "numbering": "1",
-      "style": "section"
+      "style": "section",
+      "defaultCounterName": ""
     },
     {
       "id": "subsection",
@@ -18,8 +18,8 @@
         "stroke": "#787878",
         "background": "#F0F0F0"
       },
-      "numbering": ".1",
-      "style": "section"
+      "style": "section",
+      "defaultCounterName": ""
     },
     {
       "id": "definition",
@@ -28,8 +28,8 @@
         "stroke": "#009C27",
         "background": "#D6FEE0"
       },
-      "numbering": ".1",
-      "style": ""
+      "style": "",
+      "defaultCounterName": ""
     },
     {
       "id": "axiom",
@@ -38,8 +38,8 @@
         "stroke": "#C1C103",
         "background": "#FFFFAC"
       },
-      "numbering": ".1",
-      "style": ""
+      "style": "",
+      "defaultCounterName": ""
     },
     {
       "id": "lemma",
@@ -48,8 +48,8 @@
         "stroke": "#005B9C",
         "background": "#DAF0FF"
       },
-      "numbering": ".1",
-      "style": ""
+      "style": "",
+      "defaultCounterName": ""
     },
     {
       "id": "theorem",
@@ -58,8 +58,8 @@
         "stroke": "#005B9C",
         "background": "#DAF0FF"
       },
-      "numbering": ".1",
-      "style": ""
+      "style": "",
+      "defaultCounterName": ""
     },
     {
       "id": "corollary",
@@ -68,8 +68,8 @@
         "stroke": "#005B9C",
         "background": "#DAF0FF"
       },
-      "numbering": ".1",
-      "style": ""
+      "style": "",
+      "defaultCounterName": ""
     },
     {
       "id": "property",
@@ -78,8 +78,8 @@
         "stroke": "#AC00AF",
         "background": "#FFEDFF"
       },
-      "numbering": ".1",
-      "style": ""
+      "style": "",
+      "defaultCounterName": ""
     },
     {
       "id": "remark",
@@ -88,8 +88,8 @@
         "stroke": "#E07B00",
         "background": "#FFEBD2"
       },
-      "numbering": "",
-      "style": "remark"
+      "style": "remark",
+      "defaultCounterName": ""
     },
     {
       "id": "example",
@@ -98,8 +98,8 @@
         "stroke": "#7700E4",
         "background": "#EFDFFF"
       },
-      "numbering": ".1",
-      "style": ""
+      "style": "",
+      "defaultCounterName": ""
     },
     {
       "id": "counterexample",
@@ -108,8 +108,8 @@
         "stroke": "#D20022",
         "background": "#FFD6DC"
       },
-      "numbering": ".1",
-      "style": ""
+      "style": "",
+      "defaultCounterName": ""
     },
     {
       "id": "construction",
@@ -118,8 +118,8 @@
         "stroke": "#787878",
         "background": "#F0F0F0"
       },
-      "numbering": "",
-      "style": "proof"
+      "style": "proof",
+      "defaultCounterName": ""
     },
     {
       "id": "proof",
@@ -128,8 +128,8 @@
         "stroke": "#787878",
         "background": "#F0F0F0"
       },
-      "numbering": "",
-      "style": "proof"
+      "style": "proof",
+      "defaultCounterName": ""
     },
     {
       "id": "problem",
@@ -138,8 +138,8 @@
         "stroke": "#005B9C",
         "background": "#DAF0FF"
       },
-      "numbering": ".1",
-      "style": "problem"
+      "style": "problem",
+      "defaultCounterName": ""
     },
     {
       "id": "context",
@@ -148,8 +148,8 @@
         "stroke": "#00AAAA",
         "background": "#DFFFFF"
       },
-      "numbering": ".1",
-      "style": ""
+      "style": "",
+      "defaultCounterName": ""
     }
   ],
   "macro_kinds": [
@@ -222,5 +222,19 @@
     "SetTheory",
     "Tactics",
     "TypeTheory"
-  ]
+  ],
+  "entity_storage": {
+    "version": 1,
+    "legacy_backup_version": "0.0.5",
+    "entry_default_package": "_unpackaged",
+    "receipt": {
+      "legacy_backup_present": true,
+      "legacy_entries_present": true,
+      "entry_count": 230,
+      "macro_package_count": 13,
+      "macro_count": 308,
+      "entries_digest": "0357b257f2dc021fc7f28f5b540620a76537c4460736f403a898f068e7021ed6",
+      "macro_packages_digest": "08b105c060b001443c665153c38a82dab4a1c118a845390719d4d890cfeb5f81"
+    }
+  }
 }

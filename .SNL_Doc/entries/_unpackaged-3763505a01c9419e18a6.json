@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Set.def.compl",
+    "kind": "definition",
+    "title": "Complement",
+    "content": {
+      "snl": "def(Set.compl(A@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Set.nmem(x,A@Set.ctxt.AB)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

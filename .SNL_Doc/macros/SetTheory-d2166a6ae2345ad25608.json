@@ -1,0 +1,67 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "SetTheory",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Set.def.emptyset"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "\\varnothing",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "round",
+        "tags": []
+      },
+      {
+        "mode": "formula_inline",
+        "template": "\\emptyset",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "slim",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "round"
+    },
+    "name": "Set.emptyset"
+  }
+}

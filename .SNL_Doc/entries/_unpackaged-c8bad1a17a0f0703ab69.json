@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.def.false",
+    "kind": "definition",
+    "title": "False",
+    "content": {
+      "snl": "def-inductive[prop](Logic.false,struct)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

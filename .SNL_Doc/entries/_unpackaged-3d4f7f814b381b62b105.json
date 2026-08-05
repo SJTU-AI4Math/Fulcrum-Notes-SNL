@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.def.eq",
+    "kind": "definition",
+    "title": "Equality",
+    "content": {
+      "snl": "def-inductive-hyp[prop](Type.judge[paren](list-partial(@a,@b),T),Eq(a,b),ctors(Type.judge(%Reflexivity%,Logic.forall(@a,Eq(a,a)))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Measure.prop.finiteAdditivity",
+    "kind": "property",
+    "title": "Finite Additivity",
+    "content": {
+      "snl": "thm-hyp(Eq(Set.inter(A,B),Set.emptyset[slim]),Measure.additive($\\mu$,A,B))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

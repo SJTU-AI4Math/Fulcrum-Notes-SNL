@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.def.and",
+    "kind": "definition",
+    "title": "Conjunction",
+    "content": {
+      "snl": "def-struct[prop](Logic.and(p,q),struct(Type.judge(%left%,p),Type.judge(%right%,q)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

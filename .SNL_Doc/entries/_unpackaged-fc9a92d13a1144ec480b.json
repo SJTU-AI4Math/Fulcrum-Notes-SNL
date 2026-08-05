@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "HS.Sec.Set",
+    "kind": "section",
+    "title": "Sets",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

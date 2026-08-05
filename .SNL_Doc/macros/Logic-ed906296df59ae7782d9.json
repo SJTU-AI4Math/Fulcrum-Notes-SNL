@@ -1,0 +1,89 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "Logic",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Logic.def.implies"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "#0 \\Longrightarrow #1",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "longdouble",
+        "tags": []
+      },
+      {
+        "mode": "formula_inline",
+        "template": "#0 \\Rightarrow #1",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "double",
+        "tags": []
+      },
+      {
+        "mode": "formula_inline",
+        "template": "#0 \\rightarrow #1",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "single",
+        "tags": []
+      }
+    ],
+    "tags": [],
+    "default_style": {
+      "en": "longdouble"
+    },
+    "name": "Logic.implies"
+  }
+}

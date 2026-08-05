@@ -1,0 +1,28 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "macro": {
+    "description": "Natural-language statement container",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "partial",
+    "dynamic_arity": true,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "block",
+        "template": "#*",
+        "style_name": "default",
+        "separator": "",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "FP.statement"
+  }
+}

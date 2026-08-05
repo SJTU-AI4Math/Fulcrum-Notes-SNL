@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.def.implies",
+    "kind": "definition",
+    "title": "Implication",
+    "content": {
+      "snl": "def(Logic.implies(p,q),Type.to(p,q))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

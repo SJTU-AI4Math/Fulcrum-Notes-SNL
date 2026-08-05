@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.nthDerivative",
+    "kind": "definition",
+    "title": "Higher-Order Derivatives",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@n, Nat)), Analysis.nthDiff(n, F), Analysis.diff(Analysis.nthDiff($#0 - 1$(n), F)))",
+      "markdown": "Defined by iterating the differential operator: the zeroth derivative is `F` itself and the `(n+1)`-st is the derivative of the `n`-th. Because the operator is total on `PFun`, the iteration needs no hypothesis; domains simply shrink as the order rises.\n\n`F` is `n`-times differentiable at `x₀` exactly when `x₀` survives into the domain of the `n`-th iterate."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

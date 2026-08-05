@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "real-analysis.def.measurable",
+    "kind": "definition",
+    "title": "Lebesgue Measurable Function",
+    "content": {
+      "snl": "def-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.measurable(f), Logic.forall-typed(@c, EReal, RealAnalysis.measurable(Set.sep-typed(@x, D@real-analysis.ctxt.D, Eq(Add.add(f(x), Logic.neg(c)), $0$)))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

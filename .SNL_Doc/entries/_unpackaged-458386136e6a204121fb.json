@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.thm.limitUnique",
+    "kind": "theorem",
+    "title": "Uniqueness of the Limit",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A, Analysis.Seq), Type.judge(list-partial(@L, @M), Real), Analysis.seqLim(A, L), Analysis.seqLim(A, M)), Eq(L, M))",
+      "markdown": "If a sequence tends to both `L` and `M` then `L = M`, and the same holds for each of the seven function-limit notions. Uniqueness is what licenses the value forms of the previous subsection: without it there would be no well-defined element to name."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

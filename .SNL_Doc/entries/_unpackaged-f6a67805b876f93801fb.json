@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "BasicAnalysis.def.equivInfinitesimal",
+    "kind": "definition",
+    "title": "Equivalent Infinitesimals",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(@x, Real)), Analysis.equivInfinitesimal(F, G, x), Logic.and(Analysis.infinitesimal(F, x), Logic.and(Analysis.infinitesimal(G, x), Analysis.funLim(Div.div(F, G), @y, x, $1$))))",
+      "markdown": "`F ∼ G` at `x₀` iff both are infinitesimals there and their quotient tends to `1`. Note that the quotient is formed in the PFun algebra, so its domain already excludes the zero set of `G` — the usual side condition \"`G` is nonzero near `x₀`\" is discharged by the carrier rather than stated.\n\nThis is an equivalence relation on infinitesimals at a fixed point, and it is the justification for the standard substitution table (`sin u ∼ u`, `√(1+u) − 1 ∼ u/2`, `(1+u)^a − 1 ∼ a·u`). Substitution is valid in factors of a product or quotient, and is *not* valid inside a sum — replacing a summand by an equivalent can destroy the cancellation that determines the answer."
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}

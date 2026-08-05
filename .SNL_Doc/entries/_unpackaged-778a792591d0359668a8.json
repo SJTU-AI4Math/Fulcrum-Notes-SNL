@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Measure.ctxt.AB",
+    "kind": "context",
+    "title": "$A, B$",
+    "content": {
+      "snl": "Type.judge(list-partial(@A,@B),Sigma@Measure.ctxt.Sigma)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "_unpackaged"
+  }
+}
