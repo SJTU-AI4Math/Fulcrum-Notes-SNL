@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rl.lambda-typed",
+    "package": "TypeTheory",
+    "kind": "axiom",
+    "title": "Lambda Abstraction (Typed)",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

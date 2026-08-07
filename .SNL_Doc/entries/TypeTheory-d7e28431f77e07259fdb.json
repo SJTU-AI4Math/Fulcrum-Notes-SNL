@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.S-Combinator",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "S Combinator",
+    "content": {
+      "snl": "def(Lambda.S,Type.lambda(list-partial[none](@x,@y,@z),Lambda.apply(x,y,x,z)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

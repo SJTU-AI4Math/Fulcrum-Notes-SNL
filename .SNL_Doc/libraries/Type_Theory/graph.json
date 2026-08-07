@@ -1,0 +1,141 @@
+{
+  "nodes": [
+    {
+      "id": "n_3",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.sec.LC",
+        "counterId": "41a2a398-9174-4ba0-b6ad-24ab613f44ae"
+      }
+    },
+    {
+      "id": "n_4",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.sec.STLC",
+        "counterId": "41a2a398-9174-4ba0-b6ad-24ab613f44ae"
+      }
+    },
+    {
+      "id": "n_1",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rl.judge",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rl.fun",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rl.univ",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_8",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.sec.DTT",
+        "counterId": "41a2a398-9174-4ba0-b6ad-24ab613f44ae"
+      }
+    },
+    {
+      "id": "n_7",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.nat",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.sec.CIC",
+        "counterId": "41a2a398-9174-4ba0-b6ad-24ab613f44ae"
+      }
+    },
+    {
+      "id": "n_9",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rl.pi",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_10",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rl.lambda-typed",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_11",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rl.Expr-STLC",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_12",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.S-Combinator"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n_4",
+      "to": "n_11",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "n_7",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_9",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_10",
+      "label": "branch"
+    },
+    {
+      "from": "n_3",
+      "to": "n_12",
+      "label": "branch"
+    }
+  ]
+}

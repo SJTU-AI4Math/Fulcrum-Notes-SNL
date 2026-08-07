@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rl.fun",
+    "package": "TypeTheory",
+    "kind": "axiom",
+    "title": "Function Type",
+    "content": {
+      "snl": "def-hyp-opq(list-partial(Type.judge(@A,Type[univ](@u)),Type.judge(@B,Type[univ](@v))),Type.judge(Type.to(A,B),Type))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

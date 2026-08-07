@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rl.Expr-STLC",
+    "package": "TypeTheory",
+    "kind": "axiom",
+    "title": "Expression",
+    "content": {
+      "snl": "def-inductive(Type.Expr,ctors(Type.judge(%lambda%,Type.Expr),Type.judge(%binded variable%,Type.to(Nat,Type.Expr)),Type.judge(%apply%,Type.to(Type.Expr,Type.to(Type.Expr,Type.Expr))),Type.judge(%function type%,Type.to(Type.Expr,Type.to(Type.Expr,Type.Expr)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

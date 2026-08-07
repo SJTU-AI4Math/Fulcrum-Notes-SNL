@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rl.univ",
+    "package": "TypeTheory",
+    "kind": "axiom",
+    "title": "Type Universe",
+    "content": {
+      "snl": "def-hyp-opq(Type.judge(@n,Nat),Type[univ](n))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

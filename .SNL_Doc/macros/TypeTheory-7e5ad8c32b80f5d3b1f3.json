@@ -5,13 +5,13 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [
-        "Type.rl.fun"
-      ],
+      "entries": [],
       "urls": []
     },
-    "kind": "rule",
     "dynamic_arity": false,
+    "default_style": {
+      "en": "default"
+    },
     "styles": [
       {
         "style_name": "default",
@@ -33,13 +33,11 @@
         "markdown": "",
         "text": "",
         "mode": "formula_inline",
-        "template": "#0 \\to #1"
+        "template": "S"
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
-    "name": "Type.to"
+    "kind": "const",
+    "name": "Lambda.S"
   }
 }

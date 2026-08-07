@@ -76,6 +76,28 @@
         "text": "",
         "mode": "text",
         "template": "premise #0 applied to context #1"
+      },
+      {
+        "style_name": "none",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "#0#1"
       }
     ],
     "tags": [],

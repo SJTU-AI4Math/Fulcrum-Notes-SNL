@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.nat",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Natural Number Type",
+    "content": {
+      "snl": "def-inductive(Nat,ctors(Type.judge(%zero%,Nat),Type.judge(%succ%,Type.to(Nat,Nat))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

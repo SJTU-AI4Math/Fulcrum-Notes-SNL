@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rl.judge",
+    "package": "TypeTheory",
+    "kind": "axiom",
+    "title": "Type judgement",
+    "content": {
+      "snl": "def-hyp-opq(Type.judge[be](list-partial(@a,@b),Type.Term),Type.judge(a,b))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -5,16 +5,18 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [
-        "Type.rl.fun"
-      ],
+      "entries": [],
       "urls": []
     },
     "kind": "rule",
-    "dynamic_arity": false,
+    "dynamic_arity": true,
+    "default_style": {
+      "en": "default"
+    },
     "styles": [
       {
         "style_name": "default",
+        "separator": "",
         "tags": [],
         "typst": {
           "built_in": "",
@@ -33,13 +35,10 @@
         "markdown": "",
         "text": "",
         "mode": "formula_inline",
-        "template": "#0 \\to #1"
+        "template": "#*"
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
-    "name": "Type.to"
+    "name": "Lambda.apply"
   }
 }

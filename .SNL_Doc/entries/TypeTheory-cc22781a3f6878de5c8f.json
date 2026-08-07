@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rl.pi",
+    "package": "TypeTheory",
+    "kind": "axiom",
+    "title": "Pi Type",
+    "content": {
+      "snl": "def-hyp-opq(list-partial(Type.judge(@T,Type(@u)),Type.judge(@P,Type.to(T,Type(@v)))),Type.judge(Type.Pi(@x,T,Type.apply(P,x)),Type))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

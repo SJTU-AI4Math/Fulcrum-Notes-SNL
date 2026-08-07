@@ -1,17 +1,18 @@
 {
   "format": "snl-macro",
   "version": 1,
-  "package": "TypeTheory",
+  "package": "FulcrumsMathNotes",
   "macro": {
     "description": "",
     "source": {
-      "entries": [
-        "Type.rl.fun"
-      ],
+      "entries": [],
       "urls": []
     },
     "kind": "rule",
     "dynamic_arity": false,
+    "default_style": {
+      "en": "default"
+    },
     "styles": [
       {
         "style_name": "default",
@@ -32,14 +33,11 @@
         },
         "markdown": "",
         "text": "",
-        "mode": "formula_inline",
-        "template": "#0 \\to #1"
+        "mode": "text",
+        "template": "Let #0, opaquely define “#1”."
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
-    "name": "Type.to"
+    "name": "def-hyp-opq"
   }
 }

@@ -340,19 +340,6 @@
       }
     },
     {
-      "id": "ctx.Measure.def.almostEverywhere.Measure.ctxt.mu",
-      "from": "Measure.def.almostEverywhere",
-      "to": "Measure.ctxt.mu",
-      "label": "uses_context",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "postfixes": [
-          "Measure.ctxt.mu"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
       "id": "ctx.Measure.def.almostEverywhere.Measure.ctxt.Sigma",
       "from": "Measure.def.almostEverywhere",
       "to": "Measure.ctxt.Sigma",
@@ -379,6 +366,19 @@
       }
     },
     {
+      "id": "ctx.Measure.def.almostEverywhere.Measure.ctxt.mu",
+      "from": "Measure.def.almostEverywhere",
+      "to": "Measure.ctxt.mu",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Measure.ctxt.mu"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "ctx.Measure.def.borel.Measure.ctxt.X",
       "from": "Measure.def.borel",
       "to": "Measure.ctxt.X",
@@ -387,19 +387,6 @@
         "generator": "macro-source-scan",
         "postfixes": [
           "Measure.ctxt.X"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "ctx.Measure.def.complete.Measure.ctxt.mu",
-      "from": "Measure.def.complete",
-      "to": "Measure.ctxt.mu",
-      "label": "uses_context",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "postfixes": [
-          "Measure.ctxt.mu"
         ],
         "isAtomic": true
       }
@@ -431,6 +418,19 @@
       }
     },
     {
+      "id": "ctx.Measure.def.complete.Measure.ctxt.mu",
+      "from": "Measure.def.complete",
+      "to": "Measure.ctxt.mu",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Measure.ctxt.mu"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "ctx.Measure.def.generatedSigma.Measure.ctxt.X",
       "from": "Measure.def.generatedSigma",
       "to": "Measure.ctxt.X",
@@ -439,19 +439,6 @@
         "generator": "macro-source-scan",
         "postfixes": [
           "Measure.ctxt.X"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "ctx.Measure.def.measure.Measure.ctxt.mu",
-      "from": "Measure.def.measure",
-      "to": "Measure.ctxt.mu",
-      "label": "uses_context",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "postfixes": [
-          "Measure.ctxt.mu"
         ],
         "isAtomic": true
       }
@@ -467,6 +454,19 @@
           "Measure.ctxt.Sigma"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "ctx.Measure.def.measure.Measure.ctxt.mu",
+      "from": "Measure.def.measure",
+      "to": "Measure.ctxt.mu",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Measure.ctxt.mu"
+        ],
+        "isAtomic": true
       }
     },
     {
@@ -496,19 +496,6 @@
       }
     },
     {
-      "id": "ctx.Measure.prop.aeConjunction.Measure.ctxt.mu",
-      "from": "Measure.prop.aeConjunction",
-      "to": "Measure.ctxt.mu",
-      "label": "uses_context",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "postfixes": [
-          "Measure.ctxt.mu"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
       "id": "ctx.Measure.prop.aeConjunction.Measure.ctxt.X",
       "from": "Measure.prop.aeConjunction",
       "to": "Measure.ctxt.X",
@@ -522,8 +509,8 @@
       }
     },
     {
-      "id": "ctx.Measure.prop.aeCountable.Measure.ctxt.mu",
-      "from": "Measure.prop.aeCountable",
+      "id": "ctx.Measure.prop.aeConjunction.Measure.ctxt.mu",
+      "from": "Measure.prop.aeConjunction",
       "to": "Measure.ctxt.mu",
       "label": "uses_context",
       "metadata": {
@@ -548,8 +535,8 @@
       }
     },
     {
-      "id": "ctx.Measure.prop.aeImplication.Measure.ctxt.mu",
-      "from": "Measure.prop.aeImplication",
+      "id": "ctx.Measure.prop.aeCountable.Measure.ctxt.mu",
+      "from": "Measure.prop.aeCountable",
       "to": "Measure.ctxt.mu",
       "label": "uses_context",
       "metadata": {
@@ -574,8 +561,8 @@
       }
     },
     {
-      "id": "ctx.Measure.prop.continuityBelow.Measure.ctxt.mu",
-      "from": "Measure.prop.continuityBelow",
+      "id": "ctx.Measure.prop.aeImplication.Measure.ctxt.mu",
+      "from": "Measure.prop.aeImplication",
       "to": "Measure.ctxt.mu",
       "label": "uses_context",
       "metadata": {
@@ -600,8 +587,8 @@
       }
     },
     {
-      "id": "ctx.Measure.prop.emptyZero.Measure.ctxt.mu",
-      "from": "Measure.prop.emptyZero",
+      "id": "ctx.Measure.prop.continuityBelow.Measure.ctxt.mu",
+      "from": "Measure.prop.continuityBelow",
       "to": "Measure.ctxt.mu",
       "label": "uses_context",
       "metadata": {
@@ -623,6 +610,19 @@
           "Measure.ctxt.Sigma"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "ctx.Measure.prop.emptyZero.Measure.ctxt.mu",
+      "from": "Measure.prop.emptyZero",
+      "to": "Measure.ctxt.mu",
+      "label": "uses_context",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "postfixes": [
+          "Measure.ctxt.mu"
+        ],
+        "isAtomic": true
       }
     },
     {
@@ -3612,201 +3612,6 @@
       }
     },
     {
-      "id": "dep.real-analysis.ctxt.D.Set.def.set",
-      "from": "real-analysis.ctxt.D",
-      "to": "Set.def.set",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Set"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.def.ae-equal.Logic.def.eq",
-      "from": "real-analysis.def.ae-equal",
-      "to": "Logic.def.eq",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Eq"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.def.ae-equal.Logic.def.iff",
-      "from": "real-analysis.def.ae-equal",
-      "to": "Logic.def.iff",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Logic.iff"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.def.measurable.Logic.def.eq",
-      "from": "real-analysis.def.measurable",
-      "to": "Logic.def.eq",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Eq"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.def.measurable.Logic.def.forall",
-      "from": "real-analysis.def.measurable",
-      "to": "Logic.def.forall",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Logic.forall"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.real-analysis.def.measurable.Logic.def.neg",
-      "from": "real-analysis.def.measurable",
-      "to": "Logic.def.neg",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Logic.neg"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.def.measurable.Set.def.sep",
-      "from": "real-analysis.def.measurable",
-      "to": "Set.def.sep",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Set.sep"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.def.simple-function.Logic.def.and",
-      "from": "real-analysis.def.simple-function",
-      "to": "Logic.def.and",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Logic.and"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.def.simple-function.Logic.def.iff",
-      "from": "real-analysis.def.simple-function",
-      "to": "Logic.def.iff",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Logic.iff"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.def.simple-function.Logic.def.neg",
-      "from": "real-analysis.def.simple-function",
-      "to": "Logic.def.neg",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Logic.neg"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.ex.continuous-measurable.Logic.def.and",
-      "from": "real-analysis.ex.continuous-measurable",
-      "to": "Logic.def.and",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Logic.and"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.prop.measurable-iff.Logic.def.iff",
-      "from": "real-analysis.prop.measurable-iff",
-      "to": "Logic.def.iff",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Logic.iff"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.prop.measurable-iff.Logic.def.neg",
-      "from": "real-analysis.prop.measurable-iff",
-      "to": "Logic.def.neg",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Logic.neg"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.real-analysis.prop.measurable-iff.Set.def.compl",
-      "from": "real-analysis.prop.measurable-iff",
-      "to": "Set.def.compl",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Set.compl"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.real-analysis.prop.measurable-iff.Set.def.sep",
-      "from": "real-analysis.prop.measurable-iff",
-      "to": "Set.def.sep",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Set.sep"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
       "id": "dep.Set.ctxt.AB.Set.def.set",
       "from": "Set.ctxt.AB",
       "to": "Set.def.set",
@@ -4324,6 +4129,201 @@
           "Set.sep"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.ctxt.D.Set.def.set",
+      "from": "real-analysis.ctxt.D",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.def.ae-equal.Logic.def.eq",
+      "from": "real-analysis.def.ae-equal",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.def.ae-equal.Logic.def.iff",
+      "from": "real-analysis.def.ae-equal",
+      "to": "Logic.def.iff",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.iff"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.def.measurable.Logic.def.eq",
+      "from": "real-analysis.def.measurable",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.def.measurable.Logic.def.forall",
+      "from": "real-analysis.def.measurable",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.real-analysis.def.measurable.Logic.def.neg",
+      "from": "real-analysis.def.measurable",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.def.measurable.Set.def.sep",
+      "from": "real-analysis.def.measurable",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.def.simple-function.Logic.def.and",
+      "from": "real-analysis.def.simple-function",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.def.simple-function.Logic.def.iff",
+      "from": "real-analysis.def.simple-function",
+      "to": "Logic.def.iff",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.iff"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.def.simple-function.Logic.def.neg",
+      "from": "real-analysis.def.simple-function",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.ex.continuous-measurable.Logic.def.and",
+      "from": "real-analysis.ex.continuous-measurable",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.prop.measurable-iff.Logic.def.iff",
+      "from": "real-analysis.prop.measurable-iff",
+      "to": "Logic.def.iff",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.iff"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.prop.measurable-iff.Logic.def.neg",
+      "from": "real-analysis.prop.measurable-iff",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.real-analysis.prop.measurable-iff.Set.def.compl",
+      "from": "real-analysis.prop.measurable-iff",
+      "to": "Set.def.compl",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.compl"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.real-analysis.prop.measurable-iff.Set.def.sep",
+      "from": "real-analysis.prop.measurable-iff",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": false
       }
     }
   ]

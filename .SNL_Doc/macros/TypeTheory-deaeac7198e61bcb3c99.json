@@ -5,7 +5,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.rl.univ"
+      ],
       "urls": []
     },
     "kind": "rule",
