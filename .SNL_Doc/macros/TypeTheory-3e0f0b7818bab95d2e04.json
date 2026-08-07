@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "TypeTheory",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Type.rl.Expr-LC"
+      ],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": false,
+    "default_style": {
+      "en": "default"
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "\\mathcal{E}_\\lambda"
+      }
+    ],
+    "tags": [],
+    "name": "Lambda.Expr"
+  }
+}

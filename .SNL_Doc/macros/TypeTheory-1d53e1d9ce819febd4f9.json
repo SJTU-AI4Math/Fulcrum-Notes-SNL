@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "TypeTheory",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Lambda.def.beta"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "default_style": {
+      "en": "default"
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "#0 \\overset{\\beta}{\\to} #1"
+      }
+    ],
+    "tags": [],
+    "name": "Lambda.beta"
+  }
+}

@@ -2545,6 +2545,19 @@
       }
     },
     {
+      "id": "dep.Lambda.def.beta.Type.rl.judge",
+      "from": "Lambda.def.beta",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Logic.ctxt.PQ.Logic.def.proposition",
       "from": "Logic.ctxt.PQ",
       "to": "Logic.def.proposition",
@@ -4127,6 +4140,45 @@
         "generator": "macro-source-scan",
         "macros": [
           "Set.sep"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.rl.Expr-LC.Type.def.nat",
+      "from": "Type.rl.Expr-LC",
+      "to": "Type.def.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.rl.Expr-LC.Type.rl.fun",
+      "from": "Type.rl.Expr-LC",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.rl.Expr-LC.Type.rl.judge",
+      "from": "Type.rl.Expr-LC",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
         ],
         "isAtomic": true
       }

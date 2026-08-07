@@ -92,24 +92,57 @@
       "id": "n_12",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.S-Combinator"
+        "entryId": "Type.def.S-Combinator",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_13",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rl.Expr-LC",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_14",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.beta",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_15",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.basics",
+        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
+      }
+    },
+    {
+      "id": "n_16",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.basics",
+        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
       }
     }
   ],
   "relationships": [
     {
       "from": "n_4",
+      "to": "n_16",
+      "label": "branch"
+    },
+    {
+      "from": "n_16",
       "to": "n_11",
       "label": "branch"
     },
     {
-      "from": "n_4",
+      "from": "n_16",
       "to": "n_2",
-      "label": "branch"
-    },
-    {
-      "from": "n_4",
-      "to": "n_1",
       "label": "branch"
     },
     {
@@ -123,18 +156,38 @@
       "label": "branch"
     },
     {
-      "from": "n_4",
+      "from": "n_16",
+      "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_16",
       "to": "n_5",
       "label": "branch"
     },
     {
-      "from": "n_4",
-      "to": "n_10",
+      "from": "n_3",
+      "to": "n_15",
       "label": "branch"
     },
     {
-      "from": "n_3",
+      "from": "n_15",
+      "to": "n_13",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
       "to": "n_12",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_14",
+      "label": "branch"
+    },
+    {
+      "from": "n_16",
+      "to": "n_10",
       "label": "branch"
     }
   ]

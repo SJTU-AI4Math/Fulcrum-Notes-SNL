@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Lambda.def.beta",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Beta Reduction",
+    "content": {
+      "snl": "def-hyp-opq(Type.judge(list-partial(@a,@b),Lambda.Expr),Lambda.beta(a,b))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}
