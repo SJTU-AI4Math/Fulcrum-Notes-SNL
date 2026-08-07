@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Church-Zero",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Church Numeral Zero",
+    "content": {
+      "snl": "def(Church.zero,Type.lambda(list-partial[none](@f,@x),x))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

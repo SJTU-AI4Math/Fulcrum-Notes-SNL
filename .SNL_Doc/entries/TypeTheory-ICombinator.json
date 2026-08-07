@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.I-Combinator",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "I Combinator",
+    "content": {
+      "snl": "def(Lambda.I,Type.lambda(@x,x))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

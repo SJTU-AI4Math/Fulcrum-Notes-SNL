@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.K-Combinator",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "K Combinator",
+    "content": {
+      "snl": "def(Lambda.K,Type.lambda(list-partial[none](@x,@y),x))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

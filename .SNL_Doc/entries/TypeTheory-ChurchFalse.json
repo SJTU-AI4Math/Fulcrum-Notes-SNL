@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Church-False",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Church Boolean False",
+    "content": {
+      "snl": "def(Church.false,Type.lambda(list-partial[none](@x,@y),y))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

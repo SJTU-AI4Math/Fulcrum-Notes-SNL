@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Iota-Combinator",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Iota Combinator",
+    "content": {
+      "snl": "def(Lambda.iota,Type.lambda(@x,Lambda.apply(x,Lambda.S,Lambda.K)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

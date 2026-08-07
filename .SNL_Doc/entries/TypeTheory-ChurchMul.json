@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Church-Mul",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Church Multiplication",
+    "content": {
+      "snl": "def(Church.mul,Type.lambda(list-partial[none](@m,@n,@f),Lambda.apply(m,Lambda.apply(n,f))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

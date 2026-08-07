@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Omega-Big",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Big Omega (Ω)",
+    "content": {
+      "snl": "def(Lambda.Omega,Lambda.apply(Lambda.omega,Lambda.omega))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

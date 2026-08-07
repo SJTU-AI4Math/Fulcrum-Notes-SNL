@@ -1,0 +1,43 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "TypeTheory",
+  "macro": {
+    "description": "Church numeral one — λf x. f x",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "dynamic_arity": false,
+    "default_style": {
+      "en": "default"
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "\\underline{1}"
+      }
+    ],
+    "tags": [],
+    "kind": "const",
+    "name": "Church.one"
+  }
+}

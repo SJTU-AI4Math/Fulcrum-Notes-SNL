@@ -127,44 +127,121 @@
         "entryId": "Type.subsec.basics",
         "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
       }
+    },
+    {
+      "id": "n_17",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.K-Combinator"
+      }
+    },
+    {
+      "id": "n_18",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.I-Combinator"
+      }
+    },
+    {
+      "id": "n_19",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.omega-Combinator"
+      }
+    },
+    {
+      "id": "n_20",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Omega-Big"
+      }
+    },
+    {
+      "id": "n_21",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Iota-Combinator"
+      }
+    },
+    {
+      "id": "n_22",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-True"
+      }
+    },
+    {
+      "id": "n_23",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-False"
+      }
+    },
+    {
+      "id": "n_24",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-And"
+      }
+    },
+    {
+      "id": "n_25",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-Or"
+      }
+    },
+    {
+      "id": "n_26",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-Not"
+      }
+    },
+    {
+      "id": "n_27",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-Zero"
+      }
+    },
+    {
+      "id": "n_28",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-One"
+      }
+    },
+    {
+      "id": "n_29",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-Two"
+      }
+    },
+    {
+      "id": "n_30",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-Succ"
+      }
+    },
+    {
+      "id": "n_31",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-Add"
+      }
+    },
+    {
+      "id": "n_32",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-Mul"
+      }
     }
   ],
   "relationships": [
-    {
-      "from": "n_4",
-      "to": "n_16",
-      "label": "branch"
-    },
-    {
-      "from": "n_16",
-      "to": "n_11",
-      "label": "branch"
-    },
-    {
-      "from": "n_16",
-      "to": "n_2",
-      "label": "branch"
-    },
-    {
-      "from": "n_6",
-      "to": "n_7",
-      "label": "branch"
-    },
-    {
-      "from": "n_8",
-      "to": "n_9",
-      "label": "branch"
-    },
-    {
-      "from": "n_16",
-      "to": "n_1",
-      "label": "branch"
-    },
-    {
-      "from": "n_16",
-      "to": "n_5",
-      "label": "branch"
-    },
     {
       "from": "n_3",
       "to": "n_15",
@@ -186,8 +263,123 @@
       "label": "branch"
     },
     {
+      "from": "n_15",
+      "to": "n_17",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_18",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_19",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_20",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_21",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_22",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_23",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_24",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_25",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_26",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_27",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_28",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_29",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_30",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_31",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_32",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_16",
+      "label": "branch"
+    },
+    {
+      "from": "n_16",
+      "to": "n_11",
+      "label": "branch"
+    },
+    {
+      "from": "n_16",
+      "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_16",
+      "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_16",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
       "from": "n_16",
       "to": "n_10",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "n_7",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_9",
       "label": "branch"
     }
   ]
