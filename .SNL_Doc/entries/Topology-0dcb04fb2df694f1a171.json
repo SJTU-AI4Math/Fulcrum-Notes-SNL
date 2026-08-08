@@ -7,7 +7,7 @@
     "kind": "definition",
     "title": "Topology",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@S,Type),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topology(τ,S@Topology.ctxt.S),Logic.and(Set.subset(τ,Set.powerset(S@Topology.ctxt.S)),Logic.and(Set.mem(S@Topology.ctxt.S,τ),Logic.and(Set.mem(Set.emptyset[slim],τ),Logic.and(Logic.forall-typed(@A,Set(Set(S@Topology.ctxt.S)),Logic.implies(Set.subset(A,τ),Set.mem(Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(U,A),Set.mem(x,U)))),τ))),Logic.forall-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.forall-typed(@V,Set(Set(S@Topology.ctxt.S)),Logic.implies(Logic.and(Set.mem(U,τ),Set.mem(V,τ)),Set.mem(Set.inter(U,V),τ)))))))))"
+      "snl": "def-struct-hyp(list-partial(Type.judge(@S,Type),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topology(τ,S@Topology.ctxt.S),struct(member[colon](%包含全集和空集%,Logic.and(Set.mem(S@Topology.ctxt.S,τ),Set.mem(Set.emptyset[slim],τ))),member[colon](%对任意并封闭%,Logic.forall-typed(@A,Set(Set(S@Topology.ctxt.S)),Logic.implies(Set.subset(A,τ),Set.mem(Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(U,A),Set.mem(x,U)))),τ)))),member[colon](%对有限交封闭%,Logic.forall-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.forall-typed(@V,Set(Set(S@Topology.ctxt.S)),Logic.implies(Logic.and(Set.mem(U,τ),Set.mem(V,τ)),Set.mem(Set.inter(U,V),τ)))))))"
     },
     "contribution_info": null,
     "pointer": null,
