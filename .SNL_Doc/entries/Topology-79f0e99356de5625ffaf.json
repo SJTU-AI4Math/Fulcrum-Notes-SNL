@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.prop.heineReduction",
+    "kind": "property",
+    "title": "Heine's Reduction Principle",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@y,Y@Topology.ctxt.Y),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.iff(Topology.mapLimit(x,f,y),Logic.forall-typed(@x_n,Type.to(Nat,X@Topology.ctxt.X),Logic.implies(Topology.seqConvergence(x_n,x),Topology.seqConvergence(Type.apply(f,x_n),y)))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

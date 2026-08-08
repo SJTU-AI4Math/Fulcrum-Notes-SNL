@@ -1,0 +1,7 @@
+{
+  "format": "snl-package",
+  "version": 1,
+  "id": "Topology",
+  "name": "Topology",
+  "description": "Point-set topology macros"
+}

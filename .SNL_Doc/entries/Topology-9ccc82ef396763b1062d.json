@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.prop.compactClosedInT2",
+    "kind": "property",
+    "title": "Compact Sets are Closed in T2 Spaces",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@K,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.T2(S@Topology.ctxt.S),Logic.implies(Topology.compact(K),Set.mem(Set.compl[sup](K,S@Topology.ctxt.S),τ))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

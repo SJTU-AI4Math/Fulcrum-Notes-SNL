@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.sec.continuousMap",
+    "kind": "section",
+    "title": "Continuous Maps",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

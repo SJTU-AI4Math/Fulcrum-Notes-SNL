@@ -82,9 +82,9 @@
   {
     "id": "Set.def.sep",
     "kind": "definition",
-    "title": "Predicate separated set",
+    "title": "Set Comprehension",
     "content": {
-      "snl": "def-hyp(Type.judge(@P,Type.to(T,Proposition)),Set.sep-typed(@x,T,P(x)),P)"
+      "snl": "def-hyp(Type.judge[paren](@P,Type.to(T@Set.ctxt.T,Proposition)),Set.sep-typed(@x,T@Set.ctxt.T,P(x)),P)"
     },
     "contribution_info": null,
     "pointer": null
@@ -104,7 +104,7 @@
     "kind": "definition",
     "title": "Universal Set",
     "content": {
-      "snl": "def(Set.univ(T@Set.ctxt.T),Set.sep-typed(@x,T@Set.ctxt.T,Logic.true))"
+      "snl": "def(Set.univ,Set.sep-typed(@x,T@Set.ctxt.T,Logic.neg(Logic.false)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -228,9 +228,9 @@
   {
     "id": "Logic.ctxt.PQ",
     "kind": "context",
-    "title": "$p, q$",
+    "title": "$P, Q$",
     "content": {
-      "snl": "Type.judge(list-partial(@p,@q),Proposition)"
+      "snl": "Type.judge(list-partial(@P,@Q),Proposition)"
     },
     "contribution_info": null,
     "pointer": null
@@ -256,7 +256,7 @@
     "kind": "definition",
     "title": "True",
     "content": {
-      "snl": "def-inductive[prop](Logic.true,ctors(Type.judge(%true%,Logic.true)))"
+      "snl": "def(Logic.true, Type.judge(Logic.true, Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -266,7 +266,7 @@
     "kind": "definition",
     "title": "Conjunction",
     "content": {
-      "snl": "def-struct[prop](Logic.and(p,q),struct(Type.judge(%left%,p),Type.judge(%right%,q)))"
+      "snl": "def(Logic.and(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Type.judge(Logic.and(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -276,7 +276,7 @@
     "kind": "definition",
     "title": "Disjunction",
     "content": {
-      "snl": "def-inductive[prop](Logic.or(p,q),ctors(Type.judge(%left%,p),Type.judge(%right%,q)))"
+      "snl": "def(Logic.or(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Type.judge(Logic.or(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -286,7 +286,7 @@
     "kind": "definition",
     "title": "Implication",
     "content": {
-      "snl": "def(Logic.implies(p,q),Type.to(p,q))"
+      "snl": "def(Logic.implies(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Type.judge(Logic.implies(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -296,7 +296,7 @@
     "kind": "definition",
     "title": "Negation",
     "content": {
-      "snl": "def(Logic.neg(p),Type.to(p,Proposition))"
+      "snl": "def(Logic.neg(P@Logic.ctxt.PQ), Type.judge(Logic.neg(P@Logic.ctxt.PQ), Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -306,7 +306,7 @@
     "kind": "definition",
     "title": "Equivalence",
     "content": {
-      "snl": "def-struct[prop](Logic.iff(p,q),struct(Type.judge(%right%,Logic.implies(p,q)),Type.judge(%left%,Logic.implies(q,p))))"
+      "snl": "def(Logic.iff(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Type.judge(Logic.iff(P@Logic.ctxt.PQ,Q@Logic.ctxt.PQ), Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -316,7 +316,7 @@
     "kind": "definition",
     "title": "Universal Quantifier",
     "content": {
-      "snl": "def(Logic.forall-typed(x,T,P(x)),Type.Pi(@x,T,P(x)))"
+      "snl": "def-hyp(Type.judge[paren](@P,Type.to(T@Logic.ctxt.T,Proposition)), Logic.forall-typed(@x,T@Logic.ctxt.T,P(x)), Type.judge(Logic.forall-typed(x,T@Logic.ctxt.T,P(x)), Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -326,7 +326,7 @@
     "kind": "definition",
     "title": "Existential Quantifier",
     "content": {
-      "snl": "def-struct[prop](Logic.exists-typed(x,T,P(x)),struct(member(%Instance%,Type.judge(x,T)),Type.judge(%Property%,Type.apply(P,x))))"
+      "snl": "def-hyp(Type.judge[paren](@P,Type.to(T@Logic.ctxt.T,Proposition)), Logic.exists-typed(@x,T@Logic.ctxt.T,P(x)), Type.judge(Logic.exists-typed(x,T@Logic.ctxt.T,P(x)), Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -336,7 +336,7 @@
     "kind": "definition",
     "title": "Equality",
     "content": {
-      "snl": "def-inductive-hyp[prop](Type.judge[paren](list-partial(@a,@b),T),Eq(a,b),ctors(Type.judge(%Reflexivity%,Logic.forall(@a,Eq(a,a)))))"
+      "snl": "def-hyp(Type.judge[paren](list-partial(@a,@b),T@Logic.ctxt.T), Eq(a,b), Type.judge(Eq(a,b), Proposition))"
     },
     "contribution_info": null,
     "pointer": null
@@ -410,7 +410,7 @@
     "kind": "definition",
     "title": "Semigroup",
     "content": {
-      "snl": "def[predicateDisplay](Algebra.Semigroup(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z))))))))"
+      "snl": "def[predicate-display](Algebra.Semigroup(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z))))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -420,7 +420,7 @@
     "kind": "definition",
     "title": "Monoid",
     "content": {
-      "snl": "def[predicateDisplay](Algebra.Monoid(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z)))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))))"
+      "snl": "def[predicate-display](Algebra.Monoid(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z)))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -440,7 +440,7 @@
     "kind": "definition",
     "title": "Group",
     "content": {
-      "snl": "def[predicateDisplay](Algebra.Group(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a))))), member[colon](%Inverse%, Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.exists-typed(@b,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](b,a),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,b),e@Algebra.def.monoid)))))))"
+      "snl": "def[predicate-display](Algebra.Group(G@Algebra.ctxt.G,dot@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,Algebra.mul[dot](y,z))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed[paren](@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a))))), member[colon](%Inverse%, Logic.forall[paren](@a,G@Algebra.ctxt.G,Logic.exists-typed(@b,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](b,a),e@Algebra.def.monoid),Eq(Algebra.mul[dot](a,b),e@Algebra.def.monoid)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -458,7 +458,7 @@
     "kind": "definition",
     "title": "Group Homomorphism",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpHom, Logic.and(Eq(Type.apply[paren](f,Algebra.e),Algebra.e),Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,Algebra.mul[dot](a,b)),dotH(Type.apply[paren](f,a),Type.apply[paren](f,b)))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GHom, Logic.and(Eq(Type.apply[paren](f,Algebra.e),Algebra.e),Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,Algebra.mul[dot](a,b)),Algebra.mul[dotH](Type.apply[paren](f,a),Type.apply[paren](f,b)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -468,7 +468,7 @@
     "kind": "definition",
     "title": "Group Monomorphism",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpMono, Logic.and(Algebra.GrpHom,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.implies(Eq(Type.apply[paren](f,a),Type.apply[paren](f,b)),Eq(a,b))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GMono, Logic.and(Algebra.GHom,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.implies(Eq(Type.apply[paren](f,a),Type.apply[paren](f,b)),Eq(a,b))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -478,7 +478,7 @@
     "kind": "definition",
     "title": "Group Epimorphism",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpEpi, Logic.and(Algebra.GrpHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
+      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GEpi, Logic.and(Algebra.GHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -488,7 +488,7 @@
     "kind": "definition",
     "title": "Group Isomorphism",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpIso, Logic.and(Algebra.GrpMono,Algebra.GrpEpi))"
+      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GIso, Logic.and(Algebra.GMono,Algebra.GEpi))"
     },
     "contribution_info": null,
     "pointer": null
@@ -498,7 +498,7 @@
     "kind": "definition",
     "title": "Kernel",
     "content": {
-      "snl": "def(Algebra.GrpKer,Set.sep-typed(@a,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,a),Algebra.e@Algebra.ctxt.G)))"
+      "snl": "def(Algebra.Ker,Set.sep-typed(@a,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,a),Algebra.e@Algebra.ctxt.G)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -508,7 +508,7 @@
     "kind": "definition",
     "title": "Image",
     "content": {
-      "snl": "def(Algebra.GrpIm,Set.sep-typed(@y,H@Algebra.def.groupHom,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,x),y))))"
+      "snl": "def(Algebra.Im,Set.sep-typed(@y,H@Algebra.def.groupHom,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,x),y))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -564,7 +564,7 @@
     "kind": "definition",
     "title": "Cycle",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@r,Nat),Type.judge[paren](list-partial(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
+      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@r,Algebra.Nat),Type.judge[paren](list-partial(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
     },
     "contribution_info": null,
     "pointer": null
@@ -592,7 +592,7 @@
     "kind": "definition",
     "title": "Group Action",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@alpha,Type.to(G@Algebra.ctxt.G,Type.to(X,X)))), Algebra.GrpAction, Logic.and(Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.e),x),x)),Logic.forall-typed(@g,G@Algebra.ctxt.G,Logic.forall-typed(@h,G@Algebra.ctxt.G,Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.mul[dot](g,h)),x),Type.apply[paren](Type.apply[paren](alpha,g),Type.apply[paren](Type.apply[paren](alpha,h),x))))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@alpha,Type.to(G@Algebra.ctxt.G,Type.to(X,X)))), Algebra.Action, Logic.and(Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.e),x),x)),Logic.forall-typed(@g,G@Algebra.ctxt.G,Logic.forall-typed(@h,G@Algebra.ctxt.G,Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.mul[dot](g,h)),x),Type.apply[paren](Type.apply[paren](alpha,g),Type.apply[paren](Type.apply[paren](alpha,h),x))))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -648,7 +648,7 @@
     "kind": "context",
     "title": "f, g",
     "content": {
-      "snl": "Type.judge(list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, EReal))"
+      "snl": "Type.judge(list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal))"
     },
     "contribution_info": null,
     "pointer": null
@@ -666,7 +666,7 @@
     "kind": "definition",
     "title": "Lebesgue Measurable Function",
     "content": {
-      "snl": "def-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.measurable(f), Logic.forall-typed(@c, EReal, RealAnalysis.measurable(Set.sep-typed(@x, D@real-analysis.ctxt.D, Eq(Add.add(f(x), Logic.neg(c)), $0$)))))"
+      "snl": "def-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), RealAnalysis.measurable(f), Logic.forall-typed(@c, RealAnalysis.EReal, RealAnalysis.measurable(Set.sep-typed(@x, D@real-analysis.ctxt.D, Eq(Add.add(f(x), Logic.neg(c)), $0$)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -676,7 +676,7 @@
     "kind": "property",
     "title": "Equivalent Definitions of Lebesgue Measurable",
     "content": {
-      "snl": "thm-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, EReal)), Logic.iff(RealAnalysis.measurable(f), Logic.neg(RealAnalysis.measurable(Set.compl(Set.sep-typed(@x, D@real-analysis.ctxt.D, RealAnalysis.measurable($f(x)$)))))))"
+      "snl": "thm-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), Logic.iff(RealAnalysis.measurable(f), Logic.neg(RealAnalysis.measurable(Set.compl(Set.sep-typed(@x, D@real-analysis.ctxt.D, RealAnalysis.measurable($f(x)$)))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -686,7 +686,7 @@
     "kind": "definition",
     "title": "Simple Function",
     "content": {
-      "snl": "def-hyp(Type.judge(@phi, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.simple(phi), Logic.and(RealAnalysis.measurable(phi), Logic.neg(Logic.iff($|\\phi(D)|$, $\\infty$))))"
+      "snl": "def-hyp(Type.judge(@phi, Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), RealAnalysis.simple(phi), Logic.and(RealAnalysis.measurable(phi), Logic.neg(Logic.iff($|\\phi(D)|$, $\\infty$))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -696,7 +696,7 @@
     "kind": "definition",
     "title": "Almost Everywhere Equal",
     "content": {
-      "snl": "def-hyp(Type.judge[paren](list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, EReal)), $f \\stackrel{\\text{a.e.}}{=} g$, Logic.iff(RealAnalysis.almostEverywhere($x \\in D$, Eq(f(x), g(x))), $\\mu(\\{x \\in D \\mid f(x) \\neq g(x)\\}) = 0$))"
+      "snl": "def-hyp(Type.judge[paren](list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, RealAnalysis.EReal)), $f \\stackrel{\\text{a.e.}}{=} g$, Logic.iff(RealAnalysis.almostEverywhere($x \\in D$, Eq(f(x), g(x))), $\\mu(\\{x \\in D \\mid f(x) \\neq g(x)\\}) = 0$))"
     },
     "contribution_info": null,
     "pointer": null
@@ -801,10 +801,10 @@
   },
   {
     "id": "FP.def.bind",
-    "kind": "definition",
+    "kind": "property",
     "title": "Bind as an Equivalent Monad Presentation",
     "content": {
-      "snl": "def-hyp(FP.Monad(M),a,b)"
+      "snl": "thm-hyp(Type.judge(@x,Type.apply(M,A)),Eq(FP.bindFromMapFlatten(M,x,@f),FP.flatten(M,FP.map(M,x,f))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1004,7 +1004,7 @@
     "kind": "definition",
     "title": "Option / Maybe",
     "content": {
-      "snl": "def-inductive(FP.Option[ques](A),struct[enumerate](member[colon](Option.none,FP.Option[ques](A)),member[colon](Option.some,Type.to(A,FP.Option[ques](A)))))"
+      "snl": "def-inductive(FP.Option(A),struct[enumerate](member[colon](FP.none,Type.to(Type,FP.Option(A))),member[colon](FP.some,Type.to(A,FP.Option(A)))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1024,7 +1024,7 @@
     "kind": "example",
     "title": "Option / Maybe Monad",
     "content": {
-      "markdown": "`Option` monad is used as "
+      "snl": "thm-hyp(Type.judge(@x,FP.Option(A)),Eq(FP.map(FP.Option,x,@f),FP.bind(FP.Option,x,Type.lambda(@a,FP.pure(FP.Option,Type.apply(f,a))))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1120,7 +1120,7 @@
     "kind": "context",
     "title": "$\\Sigma$",
     "content": {
-      "snl": "Type.judge(@$\\Sigma$,Set(Set(X)))"
+      "snl": "Type.judge(@Sigma,Set(Set(X@Measure.ctxt.X)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1130,7 +1130,7 @@
     "kind": "context",
     "title": "$\\mu$",
     "content": {
-      "snl": "Type.judge(@mu,Type.to(Sigma@Measure.ctxt.Sigma,ENNReal))"
+      "snl": "Type.judge(@mu,Type.to(Sigma@Measure.ctxt.Sigma,Measure.ENNReal))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1158,7 +1158,7 @@
     "kind": "definition",
     "title": "Set Semiring",
     "content": {
-      "snl": "def-struct-hyp(Type.judge(@R,Set(Set(X))),Measure.SetSemiring(R),struct[enumerate](member[colon](%Empty set%,Measure.containsEmpty(R)),member[colon](%Intersection closure%,Measure.interClosed(R)),member[colon](%Finite disjoint difference decomposition%,Measure.diffFiniteUnion(R))))"
+      "snl": "def-hyp(Type.judge(@R,Set(Set(X@Measure.ctxt.X))),Measure.SetSemiring(R),struct[enumerate](member[colon](%Empty set%,Measure.containsEmpty(R)),member[colon](%Intersection closure%,Measure.interClosed(R)),member[colon](%Finite disjoint difference decomposition%,Measure.diffFiniteUnion(R))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1168,7 +1168,7 @@
     "kind": "definition",
     "title": "Sigma-Algebra",
     "content": {
-      "snl": "def-struct(Measure.SigmaAlgebra($\\Sigma$),struct[enumerate](member[colon](%Whole space%,Measure.containsUniv(X,$\\Sigma$)),member[colon](%Complement closure%,Measure.complClosed($\\Sigma$,X)),member[colon](%Countable-union closure%,Measure.countableUnionClosed($\\Sigma$))))"
+      "snl": "def[predicate-display](Measure.SigmaAlgebra(Sigma@Measure.ctxt.Sigma),struct[enumerate](member[colon](%Whole space%,Measure.containsUniv(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma)),member[colon](%Complement closure%,Measure.complClosed(Sigma@Measure.ctxt.Sigma,X@Measure.ctxt.X)),member[colon](%Countable-union closure%,Measure.countableUnionClosed(Sigma@Measure.ctxt.Sigma))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1216,7 +1216,7 @@
     "kind": "definition",
     "title": "Measure",
     "content": {
-      "snl": "def[predicateDisplay](Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Nonnegativity%,Measure.nonnegative(mu@Measure.ctxt.mu)),member[colon](%Countable additivity%,Measure.countablyAdditive(mu@Measure.ctxt.mu))))"
+      "snl": "def[predicate-display](Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Nonnegativity%,Measure.nonnegative(mu@Measure.ctxt.mu)),member[colon](%Countable additivity%,Measure.countablyAdditive(mu@Measure.ctxt.mu))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1226,7 +1226,7 @@
     "kind": "definition",
     "title": "Measure Space",
     "content": {
-      "snl": "def(Measure.MeasureSpace(X,$\\Sigma$,$\\mu$),Logic.and(Measure.SigmaAlgebra($\\Sigma$),Measure.Measure($\\Sigma$,$\\mu$)))"
+      "snl": "def(Measure.MeasureSpace(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.and(Measure.SigmaAlgebra(Sigma@Measure.ctxt.Sigma),Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1256,7 +1256,7 @@
     "kind": "property",
     "title": "Finite Additivity",
     "content": {
-      "snl": "thm-hyp(Eq(Set.inter(A,B),Set.emptyset[slim]),Measure.additive($\\mu$,A,B))"
+      "snl": "thm-hyp(Eq(Set.inter(A@Measure.ctxt.AB,B@Measure.ctxt.AB),Set.emptyset[slim]),Measure.additive(mu@Measure.ctxt.mu,A@Measure.ctxt.AB,B@Measure.ctxt.AB))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1276,7 +1276,7 @@
     "kind": "definition",
     "title": "Regular Measure",
     "content": {
-      "snl": "def[predicateDisplay](Measure.regular(mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Outer regularity%,Measure.outerRegular(mu@Measure.ctxt.mu)),member[colon](%Inner regularity%,Measure.innerRegular(mu@Measure.ctxt.mu))))"
+      "snl": "def[predicate-display](Measure.regular(mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Outer regularity%,Measure.outerRegular(mu@Measure.ctxt.mu)),member[colon](%Inner regularity%,Measure.innerRegular(mu@Measure.ctxt.mu))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1294,7 +1294,7 @@
     "kind": "definition",
     "title": "Borel Measure on the Real Line",
     "content": {
-      "snl": "def-hyp(Type.judge(@$\\nu$,Type.to(Measure.Borel(Real),ENNReal)),Measure.BorelMeasure($\\nu$),Logic.forall-typed[paren](list-partial(@a,@b),Real,Eq(Measure.apply($\\nu$,Measure.interval(a,b)),Measure.length(a,b))))"
+      "snl": "def-hyp(Type.judge(@nu,Type.to(Measure.Borel($\\mathbb{R}$),Measure.ENNReal)),Measure.BorelMeasure(nu),Logic.forall-typed[paren](list-partial(@a,@b),$\\mathbb{R}$,Eq(Measure.apply(nu,Measure.interval(a,b)),Measure.length(a,b))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1324,7 +1324,7 @@
     "kind": "definition",
     "title": "Complete Measure Space",
     "content": {
-      "snl": "def[predicateDisplay](Measure.Complete(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.forall-typed(@N,Sigma@Measure.ctxt.Sigma,Logic.implies(Eq(Measure.apply(mu@Measure.ctxt.mu,N),Measure.zero),Set.subset(Set.powerset(N),Sigma@Measure.ctxt.Sigma))))"
+      "snl": "def[predicate-display](Measure.Complete(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.forall-typed(@N,Sigma@Measure.ctxt.Sigma,Logic.implies(Eq(Measure.apply(mu@Measure.ctxt.mu,N),Measure.zero),Set.subset(Set.powerset(N),Sigma@Measure.ctxt.Sigma))))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1334,7 +1334,7 @@
     "kind": "definition",
     "title": "Outer Measure",
     "content": {
-      "snl": "def-hyp(Type.judge(@muStar,Type.to(Set(X@Measure.ctxt.X),ENNReal)),Measure.OuterMeasure(muStar),struct[enumerate](member[colon](%Empty set%,Eq(Measure.outer(muStar,Set.emptyset[slim]),Measure.zero)),member[colon](%Monotonicity%,%monotone under subset inclusion%),member[colon](%Countable subadditivity%,%subadditive over countable unions%)))"
+      "snl": "def-hyp(Type.judge(@muStar,Type.to(Set(X@Measure.ctxt.X),Measure.ENNReal)),Measure.OuterMeasure(muStar),struct[enumerate](member[colon](%Empty set%,Eq(Measure.outer(muStar,Set.emptyset[slim]),Measure.zero)),member[colon](%Monotonicity%,%monotone under subset inclusion%),member[colon](%Countable subadditivity%,%subadditive over countable unions%)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1344,7 +1344,7 @@
     "kind": "definition",
     "title": "Lebesgue-Measurable Set",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@E,Set($\\mathbb{R}$)),Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal))),Measure.lebesgueMeasurable(E),Measure.caratheodory(muStar,E))"
+      "snl": "def-hyp(list-partial(Type.judge(@E,Set($\\mathbb{R}$)),Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),Measure.ENNReal))),Measure.lebesgueMeasurable(E),Measure.caratheodory(muStar,E))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1354,7 +1354,7 @@
     "kind": "theorem",
     "title": "Lebesgue-Measurable Sets Form a Sigma-Algebra",
     "content": {
-      "snl": "thm-hyp(Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal)),Measure.SigmaAlgebra(Measure.LebesgueSets($\\mathbb{R}$)))"
+      "snl": "thm-hyp(Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),Measure.ENNReal)),Measure.SigmaAlgebra(Measure.LebesgueSets($\\mathbb{R}$)))"
     },
     "contribution_info": null,
     "pointer": null
@@ -1432,840 +1432,863 @@
     "kind": "property",
     "title": "Countable Families of Almost-Everywhere Properties",
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@P,Type.to(Nat,Type.to(X@Measure.ctxt.X,Proposition))),Logic.forall-typed(@n,Nat,Measure.almostEverywhere(@x,P(n,x),mu@Measure.ctxt.mu))),Measure.almostEverywhere(@x,Logic.forall-typed(@n,Nat,P(n,x)),mu@Measure.ctxt.mu))"
+      "snl": "thm-hyp(list-partial(Type.judge(@P,Type.to(Measure.Nat,Type.to(X@Measure.ctxt.X,Proposition))),Logic.forall-typed(@n,Measure.Nat,Measure.almostEverywhere(@x,P(n,x),mu@Measure.ctxt.mu))),Measure.almostEverywhere(@x,Logic.forall-typed(@n,Measure.Nat,P(n,x)),mu@Measure.ctxt.mu))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.thm.NewtonLeibniz",
-    "kind": "theorem",
-    "title": "Newton-Leibniz Formula",
-    "content": {
-      "snl": "thm-hyp[display](list-partial(Type.judge(list-partial(@a,@b),Real),$#0 > #1$(b,a),Type.judge[paren](@f,Type.to(Icc(a,b),Real)),let(@F,quotient(parentheses(Type.to(Icc(a,b),Real)),Analysis.equiv),Analysis.rIndefInt[inline](@x,Type.apply(f,x)))),$$#0$$(Eq(Analysis.rIntIcc(a,b,@x,Type.apply(f,x)),Analysis.evalDiff(F,a,b))))"
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.sec.integral",
+    "id": "Topology.sec.topology",
     "kind": "section",
-    "title": "Riemannian Integral",
+    "title": "Topological Spaces",
     "content": {},
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.subsec.compute",
-    "kind": "section",
-    "title": "Computation",
-    "content": {},
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "Logic.def.false",
-    "kind": "definition",
-    "title": "False",
-    "content": {
-      "snl": "def-inductive[prop](Logic.false,struct)"
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "Logic.rmk.false",
-    "kind": "remark",
-    "title": "False",
-    "content": {
-      "snl": "%Inductive Type #0 does not have any constructors, and it's impossible to construct any inhabitant within #0.%(Logic.false)"
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "Logic.ppt.false-rec",
-    "kind": "property",
-    "title": "Explosion",
-    "content": {
-      "snl": "thm-hyp(Type.judge(@p,Proposition),Logic.implies(Logic.false,p))"
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "Logic.def.proposition",
-    "kind": "definition",
-    "title": "Proposition",
-    "content": {
-      "snl": "def(Proposition,Type[univ](0))"
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "Logic.rmk.true",
-    "kind": "remark",
-    "title": "True",
-    "content": {
-      "snl": "%Inductive type #0 has an enumerative constructor, so there is always a proof for #0, and #0 proves nothing.%(Logic.true)"
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.sec.structures",
-    "kind": "section",
-    "title": "Functions and Sequences with Carriers",
-    "content": {
-      "markdown": "Calculus_21 does not model a real function as a bare `ℝ → ℝ`, nor a sequence as a bare `ℕ → ℝ`. Both carry their region of definition alongside the map: a function bundles a total map with a domain set, and a sequence bundles a map with an index window. Every limit, continuity and differentiability notion downstream is stated against these carriers, which is what makes side conditions such as \"the punctured neighbourhood lies inside the domain\" expressible rather than tacitly assumed."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.ctxt.pfun",
+    "id": "Topology.ctxt.1",
     "kind": "context",
-    "title": "Context: Domain-Carrying Functions",
+    "title": "S, τ",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.ctxt.S",
+    "kind": "context",
+    "title": "S",
     "content": {
-      "markdown": "Shared binders for `BasicAnalysis.sec.structures` and everything downstream. Declares `F G : PFun` (domain-carrying real functions), `A B : Seq` (index-windowed real sequences), `x x₀ L : ℝ` (points and candidate limits), `epsilon delta : ℝ` constrained positive (tolerance and threshold binders), `n N : ℕ` (index binders), and `I : Set ℝ` (an ambient interval or region)."
+      "snl": "Type.judge(@S,Type)"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.subsec.carriers",
+    "id": "Topology.ctxt.tau",
+    "kind": "context",
+    "title": "τ",
+    "content": {
+      "snl": "Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.subsec.basicConcepts",
     "kind": "subsection",
-    "title": "Carriers",
-    "content": {
-      "markdown": "The two bundled structures, their accessors, and the neighbourhood vocabulary in which every limit notion below is phrased."
-    },
+    "title": "Basic Concepts",
+    "content": {},
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.pfun",
+    "id": "Topology.def.topology",
     "kind": "definition",
-    "title": "Domain-Carrying Function",
+    "title": "Topology",
     "content": {
-      "snl": "def(Type.judge(@F, Analysis.PFun), Analysis.mkPFun(Analysis.map(F), Analysis.domain(F)))",
-      "markdown": "A domain-carrying function `F : PFun` consists of a total map `F.map : ℝ → ℝ` together with a domain `F.domain : Set ℝ`. The total map is defined everywhere as a Lean function, but only its restriction to `F.domain` carries mathematical content. Two PFuns are equal exactly when both components agree.\n\nThe point of the bundling is that domains compose. The arithmetic operations intersect domains, so `(F+G).domain = F.domain ∩ G.domain`; division additionally removes the zero set of the denominator; the power operation additionally restricts to where the base is positive. A bare `ℝ → ℝ` cannot express any of this, so those side conditions would have to be re-supplied by hand at every use site."
+      "snl": "def-hyp(list-partial(Type.judge(@S,Type),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topology(τ,S@Topology.ctxt.S),Logic.and(Set.subset(τ,Set.powerset(S@Topology.ctxt.S)),Logic.and(Set.mem(S@Topology.ctxt.S,τ),Logic.and(Set.mem(Set.emptyset[slim],τ),Logic.and(Logic.forall-typed(@A,Set(Set(S@Topology.ctxt.S)),Logic.implies(Set.subset(A,τ),Set.mem(Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(U,A),Set.mem(x,U)))),τ))),Logic.forall-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.forall-typed(@V,Set(Set(S@Topology.ctxt.S)),Logic.implies(Logic.and(Set.mem(U,τ),Set.mem(V,τ)),Set.mem(Set.inter(U,V),τ)))))))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.seqWindow",
+    "id": "Topology.def.topologicalSpace",
     "kind": "definition",
-    "title": "Sequence with an Index Window",
+    "title": "Topological Space",
     "content": {
-      "snl": "def(Type.judge(@A, Analysis.Seq), Analysis.mkSeq(Analysis.map(A), Analysis.init(A), Analysis.final(A)))",
-      "markdown": "A sequence `A : Seq` consists of a total map `A.map : ℕ → ℝ`, a first index `A.init : ℕ`, and an end marker `A.final : WithTop ℕ` holding one past the last index. `A.final = none` marks an infinite sequence; a finite sequence occupies the index range `[A.init, A.final)`.\n\nThe window is what lets a single type carry both finite and infinite sequences, and it is why the limit definition must explicitly require `A.final = none`: asking for the limit of a finite sequence is a category error rather than a false statement."
+      "snl": "def-hyp(list-partial(Type.judge(@S,Type),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topologicalSpace(S@Topology.ctxt.S,τ),Topology.topology(τ,S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.pfunComp",
+    "id": "Topology.def.openSet",
     "kind": "definition",
-    "title": "Composition of Domain-Carrying Functions",
+    "title": "Open Set",
     "content": {
-      "snl": "def-hyp(Type.judge(list-partial(@F, @G), Analysis.PFun), Analysis.comp(F, G), Analysis.mkPFun($F.\\mathrm{map} \\circ G.\\mathrm{map}$, Set.inter(Analysis.domain(G), Set.sep-typed(@x, Analysis.domain(G), Set.mem(Type.apply(Analysis.map(G), x), Analysis.domain(F))))))",
-      "markdown": "The composite `F ⊙ G` has map `F.map ∘ G.map` and domain `G.domain ∩ { x | G.map x ∈ F.domain }`. Note the asymmetry: the domain condition is a pullback along `G`, not an intersection of the two domains, so composition is where the carrier discipline pays off most visibly."
+      "snl": "def-hyp(list-partial(Type.judge(@U,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.openSet(U,τ),Set.mem(U,τ))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.neighbourhood",
+    "id": "Topology.def.closedSet",
     "kind": "definition",
-    "title": "Neighbourhood and Punctured Neighbourhood",
+    "title": "Closed Set",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(list-partial(@x, @delta), Real), $#0 > 0$(delta)), list-partial(Analysis.nbh(x, delta), Analysis.nbhDel(x, delta)), Logic.and(Eq(Analysis.nbh(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1$(x, delta, y))), Eq(Analysis.nbhDel(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1 \\land #2 \\ne #0$(x, delta, y)))))",
-      "markdown": "For `x₀ : ℝ` and `delta > 0`, the neighbourhood is `U(x₀, delta) = { x | x₀ − delta < x < x₀ + delta }`; the punctured neighbourhood removes the centre, `U°(x₀, delta) = { x | x₀ − delta < x < x₀ + delta ∧ x ≠ x₀ }`. Equivalently `x ∈ U(x₀, delta) ↔ |x − x₀| < delta`, and `U°(x₀, delta) ⊆ U(x₀, delta)`.\n\nEvery epsilon-N and epsilon-delta statement below is phrased as membership in a neighbourhood. That formulation survives the move to metric and topological spaces, whereas the inequality `|a − L| < epsilon` is bookkeeping specific to ℝ."
+      "snl": "def-hyp(list-partial(Type.judge(@U,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.closedSet(U,τ,S@Topology.ctxt.S),Set.mem(Set.compl[sup](U,S@Topology.ctxt.S),τ))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.sec.limits",
-    "kind": "section",
-    "title": "Limits",
+    "id": "Topology.def.neighborhood",
+    "kind": "definition",
+    "title": "Neighborhood",
     "content": {
-      "markdown": "The eight limit notions Calculus_21 carries: sequence limits, function limits at a finite point, the two one-sided limits, and the three limits at infinity. Each appears in two forms — a *predicate* relating a carrier to a candidate value, and a partial *value* form usable inside expressions. The bridge results connecting the two forms are what let an ordinary calculation stand in for an epsilon-delta argument."
+      "snl": "def-hyp(list-partial(Type.judge(@x,S@Topology.ctxt.S),Type.judge(@U,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.neighborhood(U,x),Logic.exists-typed(@O,Set(Set(S@Topology.ctxt.S)),Logic.and(Logic.and(Set.mem(O,τ),Set.mem(x,O)),Set.subset(O,U))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.subsec.limitDefs",
+    "id": "Topology.def.neighborhoodFamily",
+    "kind": "definition",
+    "title": "Neighborhood Family",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.Nbr(x),Set.sep-typed(@U,Set(S@Topology.ctxt.S),Topology.neighborhood(U,x)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.interior",
+    "kind": "definition",
+    "title": "Interior",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.interior(A),Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@O,Set(Set(S@Topology.ctxt.S)),Logic.and(Logic.and(Set.mem(O,τ),Set.subset(O,A)),Set.mem(x,O)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.interiorPoint",
+    "kind": "property",
+    "title": "Interior Point",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Set.mem(x,Topology.interior(A)),Topology.neighborhood(A,x)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.openIffInteriorSelf",
+    "kind": "property",
+    "title": "Open iff Interior is Self",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Set.mem(A,τ),Eq(A,Topology.interior(A))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.closure",
+    "kind": "definition",
+    "title": "Closure",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.closure(A),Set.sep-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@F,Set(Set(S@Topology.ctxt.S)),Logic.implies(Logic.and(Set.mem(Set.compl[sup](F,S@Topology.ctxt.S),τ),Set.subset(A,F)),Set.mem(x,F)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.closureClosed",
+    "kind": "property",
+    "title": "Closure is Closed",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Set.mem(Set.compl[sup](Topology.closure(A),S@Topology.ctxt.S),τ))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.closedIffClosureSelf",
+    "kind": "property",
+    "title": "Closed iff Closure is Self",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Set.mem(Set.compl[sup](A,S@Topology.ctxt.S),τ),Eq(A,Topology.closure(A))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.closurePoint",
+    "kind": "definition",
+    "title": "Closure Point",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.closurePoint(x,A),Logic.forall-typed(@U,Set(S@Topology.ctxt.S),Logic.implies(Topology.neighborhood(U,x),Logic.neg(Set.mem(Set.inter(U,A),Set.emptyset[slim])))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.boundary",
+    "kind": "definition",
+    "title": "Boundary",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.boundary(A),Set.diff(Topology.closure(A),Topology.interior(A)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.generatedTopology",
+    "kind": "definition",
+    "title": "Generated Topology",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@B,Set(Set(S@Topology.ctxt.S))),Type.judge(@S,Type)),Topology.generatedTopology(B),Set.sep-typed(@U,Set(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.implies(Set.mem(x,U),Logic.exists-typed(@B2,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(B2,B),Logic.and(Set.mem(x,B2),Set.subset(B2,U))))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.topologicalBasis",
+    "kind": "definition",
+    "title": "Topological Basis",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@B,Set(Set(S@Topology.ctxt.S))),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topologicalBasis(B,τ),Logic.and(Set.subset(B,τ),Eq(Topology.generatedTopology(B),τ)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.subspaceTopology",
+    "kind": "definition",
+    "title": "Subspace Topology",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@X,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.subspaceTopology(X),Set.sep-typed(@U,Set(X),Logic.exists-typed(@V,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(V,τ),Eq(U,Set.inter(V,X))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.productTopology",
+    "kind": "definition",
+    "title": "Product Topology",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@τ_X,Set(Set(X))),Type.judge(@Y,Type),Type.judge(@τ_Y,Set(Set(Y)))),Topology.productTopology,Set.sep-typed(@U,Set(Set.Prod(X,Y)),Logic.forall-typed(@p,Set.Prod(X,Y),Logic.implies(Set.mem(p,U),Logic.exists-typed(@U_X,Set(Set(X)),Logic.exists-typed(@U_Y,Set(Set(Y)),Logic.and(Logic.and(Set.mem(U_X,τ_X),Set.mem(U_Y,τ_Y)),Logic.and(Set.mem(p,Set.Prod(U_X,U_Y)),Set.subset(Set.Prod(U_X,U_Y),U)))))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.subsec.limit",
     "kind": "subsection",
-    "title": "Definitions of Limit",
-    "content": {
-      "markdown": "Each definition has two clauses: a well-posedness clause requiring the relevant region to sit inside the domain, and the epsilon clause proper. The first clause is exactly what the carrier discipline of `BasicAnalysis.def.pfun` buys."
-    },
+    "title": "Limit",
+    "content": {},
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.seqLimit",
+    "id": "Topology.def.deletedNeighborhood",
     "kind": "definition",
-    "title": "Limit of a Sequence",
+    "title": "Deleted Neighborhood",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@A, Analysis.Seq), Type.judge(@L, Real)), Analysis.seqLim(A, L), Logic.and(Eq(Analysis.final(A), FP.none), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@N, Nat, Logic.forall-typed(@n, Nat, Logic.implies($#0 > #1$(n, N), Set.mem(Type.apply(Analysis.map(A), n), Analysis.nbh(L, epsilon)))))))))",
-      "markdown": "`A` tends to `L` iff `A` is infinite (`A.final = none`) and for every `epsilon > 0` there is `N : ℕ` such that `A.map n ∈ U(L, epsilon)` for all `n > N`.\n\nThe infiniteness clause is not decoration. Without it the statement would be vacuously satisfiable by a finite window, since the epsilon clause only constrains indices beyond `N`. `A` is convergent iff some `L` works, and the limit is then unique."
+      "snl": "def-hyp(list-partial(Type.judge(@x,S@Topology.ctxt.S),Type.judge(@U,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.deletedNeighborhood(U,x),Logic.and(Topology.neighborhood(Set.union(U,Set.sep-typed(@y,S@Topology.ctxt.S,Eq(y,x))),x),Logic.neg(Set.mem(x,U))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.seqLimitValue",
+    "id": "Topology.def.limitPoint",
     "kind": "definition",
-    "title": "The Limit of a Sequence as a Value",
+    "title": "Limit Point / Accumulation Point",
     "content": {
-      "snl": "def-hyp(Type.judge(@A, Analysis.Seq), Analysis.seqLimVal(A), Analysis.seqLimVal(A))",
-      "markdown": "The predicate `BasicAnalysis.def.seqLimit` relates a sequence to a candidate value; the *value* form is a partial element of ℝ, present exactly when the sequence converges and absent otherwise. Writing the limit as a value is what allows it to appear inside an arithmetic expression and be manipulated by ordinary equational reasoning.\n\nPartiality is essential and cannot be papered over with a junk value: `limit(A) + limit(B) = limit(A + B)` must fail to be an unconditional equation when either side diverges. The two forms are connected in both directions — a proof of the predicate yields the value, and knowing the value is present recovers the predicate."
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.limitPoint(x,A),Logic.forall-typed(@U,Set(S@Topology.ctxt.S),Logic.implies(Topology.deletedNeighborhood(U,x),Logic.neg(Set.mem(Set.inter(U,A),Set.emptyset[slim])))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.funLimit",
+    "id": "Topology.def.derivedSet",
     "kind": "definition",
-    "title": "Limit of a Function at a Point",
+    "title": "Derived Set",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @L), Real)), Analysis.funLim(F, @y, x, L), Logic.and(Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Set.subset(Analysis.nbhDel(x, delta), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Analysis.nbhDel(x, delta)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
-      "markdown": "`F` tends to `L` as `x → x₀` iff two things hold. First, well-posedness: some punctured neighbourhood `U°(x₀, delta)` lies inside `F.domain`, so the limit is asked at a point the function actually approaches. Second, the epsilon-delta clause: for every `epsilon > 0` there is `delta > 0` with `F.map x ∈ U(L, epsilon)` for all `x ∈ U°(x₀, delta)`.\n\nThe value at `x₀` itself is irrelevant — indeed `x₀` need not lie in the domain at all. That is precisely what the *punctured* neighbourhood encodes, and it is what separates this notion from continuity at `x₀`."
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.derivedSet(A),Set.sep-typed(@x,S@Topology.ctxt.S,Topology.limitPoint(x,A)))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.funLimitValue",
+    "id": "Topology.def.isolatedPoint",
     "kind": "definition",
-    "title": "The Limit of a Function as a Value",
+    "title": "Isolated Point",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.funLimVal(F, @y, x), Analysis.funLimVal(F, @y, x))",
-      "markdown": "The value counterpart of `BasicAnalysis.def.funLimit`, and likewise partial. The same value form is reused for the one-sided limits and the limits at infinity, each with its own notation.\n\nThis is the layer on which the derivative is defined: the derivative value at a point is the value of the limit of the difference quotient, so differentiability becomes \"that value is present\" rather than a fresh quantifier block."
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.isolatedPoint(x,A),Logic.and(Set.mem(x,A),Logic.neg(Set.mem(x,Topology.derivedSet(A)))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.oneSidedLimit",
+    "id": "Topology.prop.derivedClosure",
+    "kind": "property",
+    "title": "Derived Set and Closure",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Eq(Set.union(A,Topology.derivedSet(A)),Topology.closure(A)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.closedIffContainsLimitPoints",
+    "kind": "property",
+    "title": "Closed iff Contains All Limit Points",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Set.mem(Set.compl[sup](A,S@Topology.ctxt.S),τ),Set.subset(Topology.derivedSet(A),A)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.denseSet",
     "kind": "definition",
-    "title": "One-Sided Limits",
+    "title": "Dense Set",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @L), Real)), list-partial(Analysis.limLeft(F, @y, x, L), Analysis.limRight(F, @y, x, L)), Logic.and(Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Set.subset(Ioo(Sub.sub(x, delta), x), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Ioo(Sub.sub(x, delta), x)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
-      "markdown": "The left limit replaces the punctured neighbourhood by the left half-interval `(x₀ − delta, x₀)`; the right limit uses `(x₀, x₀ + delta)`. Both keep the two-clause shape of `BasicAnalysis.def.funLimit`, including the well-posedness requirement that the relevant half-interval lie inside the domain.\n\nA function has a limit at `x₀` iff both one-sided limits exist and agree, which is the standard route to detecting a jump discontinuity."
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.dense(A,S@Topology.ctxt.S),Eq(Topology.closure(A),S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.oneSidedLimitValue",
+    "id": "Topology.def.nowhereDense",
     "kind": "definition",
-    "title": "One-Sided Limits as Values",
+    "title": "Nowhere Dense Set",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), list-partial(Analysis.limLeftVal(F, @y, x), Analysis.limRightVal(F, @y, x)), list-partial(Analysis.limLeftVal(F, @y, x), Analysis.limRightVal(F, @y, x)))",
-      "markdown": "The partial value forms of the two one-sided limits. They are the basis for the one-sided derivatives, and comparing the two values is how the classification of discontinuities is stated."
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.nowhereDense(A),Eq(Topology.interior(Topology.closure(A)),Set.emptyset[slim]))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.limitAtInfinity",
+    "id": "Topology.def.selfDense",
     "kind": "definition",
-    "title": "Limits at Infinity",
+    "title": "Self-Dense Set",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@L, Real)), list-partial(Analysis.limNegInf(F, @y, L), Analysis.limPosInf(F, @y, L), Analysis.limInf(F, @y, L)), Logic.and(Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Set.subset($\\left(#0,\\ +\\infty\\right)$(M), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, $\\left(#0,\\ +\\infty\\right)$(M)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
-      "markdown": "Three variants sharing the two-clause shape. At `+∞` the region is a ray `(M, +∞)`; at `−∞` it is `(−∞, −M)`; the two-sided `∞` limit requires both rays to lie in the domain and the epsilon condition to hold on both simultaneously with a *common* `M`.\n\nRequiring one threshold for both rays, rather than one per ray, is the same uniformity move that makes the sequence definition non-vacuous."
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.selfDense(A),Set.subset(A,Topology.derivedSet(A)))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.limitAtInfinityValue",
+    "id": "Topology.def.perfectSet",
     "kind": "definition",
-    "title": "Limits at Infinity as Values",
+    "title": "Perfect Set",
     "content": {
-      "snl": "def-hyp(Type.judge(@F, Analysis.PFun), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)))",
-      "markdown": "The partial value forms of the three limits at infinity."
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.perfect(A),Eq(Topology.derivedSet(A),A))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.subsec.limitProps",
+    "id": "Topology.def.seqLimit",
+    "kind": "definition",
+    "title": "Sequence Limit",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@x_n,Type.to(Nat,S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.seqLimit(x_n,x),Logic.forall-typed(@U,Set(S@Topology.ctxt.S),Logic.implies(Topology.neighborhood(U,x),Logic.exists-typed(@N,Nat,Logic.forall-typed(@n,Nat,Logic.implies(Logic.and(Logic.forall-typed(@k,Nat,Logic.true),Logic.true),Set.mem(Type.apply(x_n,n),U)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.seqConvergence",
+    "kind": "definition",
+    "title": "Sequence Convergence",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@x_n,Type.to(Nat,S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.seqConvergence(x_n,x),Topology.seqLimit(x_n,x))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.sequentialCompactness",
+    "kind": "definition",
+    "title": "Sequential Compactness",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@x_n,Type.to(Nat,S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.sequentialCompact(x_n),Logic.exists-typed(@p,Type.to(Nat,Nat),Logic.exists-typed(@x,S@Topology.ctxt.S,Topology.seqConvergence(Type.apply(x_n,p),x))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.subsec.connectedness",
     "kind": "subsection",
-    "title": "Properties of Limits",
+    "title": "Connectedness",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.connected",
+    "kind": "definition",
+    "title": "Connectedness",
     "content": {
-      "markdown": "The two structural facts every limit notion satisfies, plus the congruence principle that makes limits a local notion."
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.connected(A),Logic.neg(Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.exists-typed(@V,Set(Set(S@Topology.ctxt.S)),Logic.and(Logic.and(Set.mem(U,τ),Set.mem(V,τ)),Logic.and(Logic.and(Set.subset(U,A),Set.subset(V,A)),Logic.and(Logic.and(Logic.neg(Set.mem(U,Set.emptyset[slim])),Logic.neg(Set.mem(V,Set.emptyset[slim]))),Logic.and(Eq(Set.inter(U,V),Set.emptyset[slim]),Eq(A,Set.union(U,V))))))))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.thm.limitUnique",
+    "id": "Topology.def.pathConnected",
+    "kind": "definition",
+    "title": "Path Connectedness",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.pathConnected(A),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Logic.and(Set.mem(x,A),Set.mem(y,A)),Logic.exists-typed(@f,Type.to(Set.inter(Set.sep-typed(@t,Type,Logic.and(Logic.true,Logic.true)),Set.sep-typed(@t,Type,Logic.true)),S@Topology.ctxt.S),Logic.true)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.pathConnectedImpliesConnected",
+    "kind": "property",
+    "title": "Path Connectedness Implies Connectedness",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.pathConnected(A),Topology.connected(A)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.subsec.compactness",
+    "kind": "subsection",
+    "title": "Compactness",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.openCover",
+    "kind": "definition",
+    "title": "Open Cover",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@C,Set(Set(Set(S@Topology.ctxt.S)))),Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.openCover(C,A),Logic.and(Logic.forall-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.implies(Set.mem(U,C),Set.mem(U,τ))),Set.subset(A,Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(U,C),Set.mem(x,U)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.compactness",
+    "kind": "definition",
+    "title": "Compactness",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.compact(A),Logic.forall-typed(@C,Set(Set(Set(S@Topology.ctxt.S))),Logic.implies(Topology.openCover(C,A),Logic.exists-typed(@F,Set(Set(Set(S@Topology.ctxt.S))),Logic.and(Set.subset(F,C),Logic.and(Set.subset(F,A),Topology.openCover(F,A)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.countablyCompact",
+    "kind": "definition",
+    "title": "Countable Compactness",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.countablyCompact(A),Logic.forall-typed(@C,Set(Set(Set(S@Topology.ctxt.S))),Logic.implies(Logic.and(Topology.openCover(C,A),Logic.true),Logic.exists-typed(@F,Set(Set(Set(S@Topology.ctxt.S))),Logic.and(Set.subset(F,C),Topology.openCover(F,A))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.compactImpliesCountablyCompact",
+    "kind": "property",
+    "title": "Compactness Implies Countable Compactness",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.compact(A),Topology.countablyCompact(A)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.seqCompactImpliesCountablyCompact",
+    "kind": "property",
+    "title": "Sequential Compactness Implies Countable Compactness",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.sequentialCompact(A),Topology.countablyCompact(A)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.closedSubsetOfCompact",
+    "kind": "property",
+    "title": "Closed Subset of Compact is Compact",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@K,Set(S@Topology.ctxt.S)),Type.judge(@C,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Logic.and(Topology.compact(K),Logic.and(Set.subset(C,K),Set.mem(Set.compl[sup](C,S@Topology.ctxt.S),τ))),Topology.compact(C)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.thm.heineBorel",
     "kind": "theorem",
-    "title": "Uniqueness of the Limit",
+    "title": "Heine-Borel Theorem",
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@A, Analysis.Seq), Type.judge(list-partial(@L, @M), Real), Analysis.seqLim(A, L), Analysis.seqLim(A, M)), Eq(L, M))",
-      "markdown": "If a sequence tends to both `L` and `M` then `L = M`, and the same holds for each of the seven function-limit notions. Uniqueness is what licenses the value forms of the previous subsection: without it there would be no well-defined element to name."
+      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(Set(S@Topology.ctxt.S))),Type.judge(@S,Type)),Topology.heineBorel)"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.thm.convergentBounded",
-    "kind": "theorem",
-    "title": "Convergence Implies Boundedness",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@A, Analysis.Seq), Analysis.seqConv(A)), Analysis.bounded(A))",
-      "markdown": "A convergent sequence is bounded. The function analogue is weaker and necessarily local: a function with a limit at `x₀` is bounded on some punctured neighbourhood of `x₀`, not globally, and correspondingly a function converging at `+∞` is bounded only on some ray.\n\nThe direction does not reverse: `((−1)ⁿ)` is bounded and divergent."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.thm.limitCongr",
-    "kind": "theorem",
-    "title": "Limits are Local",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(list-partial(@x, @L), Real), Analysis.funLim(F, @y, x, L), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.and(Set.subset(Analysis.nbhDel(x, delta), Analysis.domain(G)), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Analysis.nbhDel(x, delta)), Eq(Type.apply(Analysis.map(F), y), Type.apply(Analysis.map(G), y)))))))), Analysis.funLim(G, @y, x, L))",
-      "markdown": "If `F` tends to `L` at `x₀` and `G` agrees with `F` on some punctured neighbourhood of `x₀` (and that neighbourhood lies in `G`'s domain), then `G` tends to `L` at `x₀` as well. For sequences the corresponding statement is agreement beyond some index.\n\nThis is the precise sense in which a limit sees only germ-level data. It is also the workhorse lemma for rewriting under a limit, since it lets an algebraic simplification valid near `x₀` — but not at `x₀` — be applied."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.sec.asymptotics",
-    "kind": "section",
-    "title": "Infinitesimals",
-    "content": {
-      "markdown": "Comparison of vanishing quantities, stated as relations between domain-carrying functions at a point rather than as informal orders of magnitude. This is the vocabulary Taylor's theorem with Peano remainder is phrased in."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.subsec.infinitesimal",
+    "id": "Topology.subsec.examples",
     "kind": "subsection",
-    "title": "Infinitesimals and Their Comparison",
+    "title": "Examples",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.example.trivialTopology",
+    "kind": "example",
+    "title": "Trivial Topology",
     "content": {
-      "markdown": "One base notion and two comparison relations built on it."
+      "snl": "def-hyp(Type.judge(@S,Type),Topology.trivialTopology,Topology.topology(Set.sep-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.or(Eq(U,Set.emptyset[slim]),Eq(U,S@Topology.ctxt.S))),S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.infinitesimal",
-    "kind": "definition",
-    "title": "Infinitesimal",
+    "id": "Topology.example.discreteTopology",
+    "kind": "example",
+    "title": "Discrete Topology",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.infinitesimal(F, x), Analysis.funLim(F, @y, x, $0$))",
-      "markdown": "`F` is an infinitesimal at `x₀` iff it tends to `0` there. The one-sided variants are defined by the corresponding one-sided limits.\n\nBeing an infinitesimal is a statement about a function at a point, not a kind of number: ℝ is Archimedean and contains no nonzero element smaller than every `1/n`. The two closure facts used constantly downstream are that a sum or product of infinitesimals is an infinitesimal, and that a locally bounded function times an infinitesimal is an infinitesimal."
+      "snl": "def-hyp(Type.judge(@S,Type),Topology.discreteTopology,Topology.topology(Set.powerset(S@Topology.ctxt.S),S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.equivInfinitesimal",
-    "kind": "definition",
-    "title": "Equivalent Infinitesimals",
+    "id": "Topology.example.orderTopology",
+    "kind": "example",
+    "title": "Order Topology",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(@x, Real)), Analysis.equivInfinitesimal(F, G, x), Logic.and(Analysis.infinitesimal(F, x), Logic.and(Analysis.infinitesimal(G, x), Analysis.funLim(Div.div(F, G), @y, x, $1$))))",
-      "markdown": "`F ∼ G` at `x₀` iff both are infinitesimals there and their quotient tends to `1`. Note that the quotient is formed in the PFun algebra, so its domain already excludes the zero set of `G` — the usual side condition \"`G` is nonzero near `x₀`\" is discharged by the carrier rather than stated.\n\nThis is an equivalence relation on infinitesimals at a fixed point, and it is the justification for the standard substitution table (`sin u ∼ u`, `√(1+u) − 1 ∼ u/2`, `(1+u)^a − 1 ∼ a·u`). Substitution is valid in factors of a product or quotient, and is *not* valid inside a sum — replacing a summand by an equivalent can destroy the cancellation that determines the answer."
+      "snl": "def-hyp(Type.judge(@S,Type),Topology.orderTopology,Topology.topologicalSpace(S@Topology.ctxt.S,Topology.orderTopology))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.higherInfinitesimal",
-    "kind": "definition",
-    "title": "Higher-Order Infinitesimal",
+    "id": "Topology.example.usualTopologyR",
+    "kind": "example",
+    "title": "Usual Topology on Real Numbers",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(@x, Real)), Analysis.higherInfinitesimal(F, G, x), Logic.and(Analysis.infinitesimal(F, x), Logic.and(Analysis.infinitesimal(G, x), Analysis.funLim(Div.div(F, G), @y, x, $0$))))",
-      "markdown": "`F = o(G)` at `x₀` iff both are infinitesimals there and `F/G` tends to `0`; `F` vanishes strictly faster than `G`. This is the relation in which the Peano form of Taylor's remainder is stated: the remainder is `o((x − x₀)ᴺ)`."
+      "snl": "def-hyp(Type.judge(@R,Type),Topology.usualTopology,Topology.topologicalSpace(R,Topology.usualTopology))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.sec.continuity",
+    "id": "Topology.sec.continuousMap",
     "kind": "section",
-    "title": "Continuity",
+    "title": "Continuous Maps",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.ctxt.map",
+    "kind": "context",
+    "title": "X, Y, τ_X, τ_Y, f",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.ctxt.X",
+    "kind": "context",
+    "title": "X",
     "content": {
-      "markdown": "Continuity as the coincidence of the limit with the value, its one-sided refinements, and the closed-interval theorems that make continuity a global tool rather than a pointwise annotation."
+      "snl": "Type.judge(@X,Type)"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.subsec.contDefs",
+    "id": "Topology.ctxt.Y",
+    "kind": "context",
+    "title": "Y",
+    "content": {
+      "snl": "Type.judge(@Y,Type)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.ctxt.tauX",
+    "kind": "context",
+    "title": "τ_X",
+    "content": {
+      "snl": "Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.ctxt.tauY",
+    "kind": "context",
+    "title": "τ_Y",
+    "content": {
+      "snl": "Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.ctxt.f",
+    "kind": "context",
+    "title": "f",
+    "content": {
+      "snl": "Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.subsec.mapLimit",
     "kind": "subsection",
-    "title": "Definitions of Continuity",
+    "title": "Limit and Continuity of Maps",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.mapLimit",
+    "kind": "definition",
+    "title": "Limit of a Map",
     "content": {
-      "markdown": "Pointwise, one-sided, and the closed-interval convention."
+      "snl": "def-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@y,Y@Topology.ctxt.Y),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.mapLimit(x,f,y),Logic.forall-typed(@V,Set(Y@Topology.ctxt.Y),Logic.implies(Set.mem(V,τ_Y),Logic.and(Set.mem(y,V),Logic.exists-typed(@U,Set(X@Topology.ctxt.X),Logic.and(Logic.and(Set.mem(U,τ_X),Set.mem(x,U)),Set.subset(Set.sep-typed(@t,X@Topology.ctxt.X,Logic.and(Set.mem(t,Set.diff(U,Set.sep-typed(@z,X@Topology.ctxt.X,Eq(z,x)))),Set.mem(Type.apply(f,t),V))),V)))))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.continuousAt",
+    "id": "Topology.def.mapConvergence",
+    "kind": "definition",
+    "title": "Convergence of a Map",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@y,Y@Topology.ctxt.Y),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.mapConvergence(f,x,y),Topology.mapLimit(x,f,y))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.heineReduction",
+    "kind": "property",
+    "title": "Heine's Reduction Principle",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@y,Y@Topology.ctxt.Y),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.iff(Topology.mapLimit(x,f,y),Logic.forall-typed(@x_n,Type.to(Nat,X@Topology.ctxt.X),Logic.implies(Topology.seqConvergence(x_n,x),Topology.seqConvergence(Type.apply(f,x_n),y)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.continuityAtPoint",
     "kind": "definition",
     "title": "Continuity at a Point",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.contAt(F, x), Logic.and(Set.mem(x, Analysis.domain(F)), Analysis.funLim(F, @y, x, Type.apply(Analysis.map(F), x))))",
-      "markdown": "`F` is continuous at `x₀` iff `x₀` lies in `F.domain` *and* the limit of `F` at `x₀` equals `F.map x₀`. Both clauses are needed and neither follows from the other: `BasicAnalysis.def.funLimit` deliberately says nothing about `x₀` itself.\n\n`F` is continuous (unqualified) iff it is continuous at every point of its domain. Since the domain is carried by the function, this is a statement about `F` alone rather than about `F` together with a separately supplied region."
+      "snl": "def-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.continuous(f,x),Topology.mapLimit(x,f,Type.apply(f,x)))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.continuousOn",
+    "id": "Topology.def.continuousMap",
     "kind": "definition",
-    "title": "Continuity on a Region",
+    "title": "Continuous Map",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@I, Set(Real))), Analysis.contOn(F, I), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, I), Analysis.contAt(F, x))))",
-      "markdown": "Continuity at every point of a given region `I`. This is pointwise continuity quantified over `I`, and is strictly weaker than uniform continuity on `I` — the `delta` is allowed to depend on the point."
+      "snl": "def-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Logic.forall-typed(@x,X@Topology.ctxt.X,Logic.implies(Set.mem(x,E),Topology.continuous(f,x))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.oneSidedContinuity",
+    "id": "Topology.prop.continuityViaNeighborhood",
+    "kind": "property",
+    "title": "Neighborhood Definition of Continuity",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.iff(Topology.continuous(f,x),Logic.forall-typed(@V,Set(Y@Topology.ctxt.Y),Logic.implies(Topology.neighborhood(V,Type.apply(f,x)),Logic.exists-typed(@U,Set(X@Topology.ctxt.X),Logic.and(Topology.neighborhood(U,x),Set.subset(Set.sep-typed(@t,X@Topology.ctxt.X,Set.mem(Type.apply(f,t),V)),U)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.continuityViaPreimage",
+    "kind": "property",
+    "title": "Preimage Definition of Continuity",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.iff(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Logic.forall-typed(@V,Set(Y@Topology.ctxt.Y),Logic.implies(Set.mem(V,τ_Y),Set.mem(Set.sep-typed(@x,X@Topology.ctxt.X,Logic.and(Set.mem(x,E),Set.mem(Type.apply(f,x),V))),τ_X)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.compositionPreservesContinuity",
+    "kind": "property",
+    "title": "Composition Preserves Continuity",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@g,Type.to(Y@Topology.ctxt.Y,Type)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y))),Type.judge(@τ_Z,Set(Set(Type)))),Logic.implies(Logic.and(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Topology.continuousMap(g,Set.sep-typed(@y,Y@Topology.ctxt.Y,Set.mem(Type.apply(f,y),E)),Type)),Topology.continuousMap(Type.apply(g,f),E,Type)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.continuousPreservesConnectedness",
+    "kind": "property",
+    "title": "Continuous Maps Preserve Connectedness",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.implies(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Topology.connected(Set.sep-typed(@y,Y@Topology.ctxt.Y,Logic.exists-typed(@x,X@Topology.ctxt.X,Logic.and(Set.mem(x,E),Eq(Type.apply(f,x),y)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.continuousPreservesCompactness",
+    "kind": "property",
+    "title": "Continuous Maps Preserve Compactness",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.implies(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Topology.compact(Set.sep-typed(@y,Y@Topology.ctxt.Y,Logic.exists-typed(@x,X@Topology.ctxt.X,Logic.and(Set.mem(x,E),Eq(Type.apply(f,x),y)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.def.lipschitzContinuity",
     "kind": "definition",
-    "title": "One-Sided Continuity",
+    "title": "Lipschitz Continuity",
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), list-partial(Analysis.contLeftAt(F, x), Analysis.contRightAt(F, x)), Logic.and(Set.mem(x, Analysis.domain(F)), Analysis.limLeft(F, @y, x, Type.apply(Analysis.map(F), x))))",
-      "markdown": "Left-continuity at `x₀` asks that the left limit exist and equal `F.map x₀`; right-continuity uses the right limit. `F` is continuous at `x₀` iff it is both left- and right-continuous there."
+      "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.lipschitz(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y),Logic.true)"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.def.continuousOnIcc",
-    "kind": "definition",
-    "title": "Continuity on a Closed Interval",
-    "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b)), Analysis.contOnIcc(F, a, b), Logic.and(Analysis.contOn(F, Ioo(a, b)), Logic.and(Analysis.contRightAt(F, a), Analysis.contLeftAt(F, b))))",
-      "markdown": "Continuity on `[a, b]` means continuity on the open interior together with right-continuity at `a` and left-continuity at `b`. Demanding two-sided continuity at the endpoints would be wrong: it would force `F` to be defined outside `[a, b]`, so no function with domain exactly `[a, b]` could ever satisfy it.\n\nThe convention presupposes `a < b`; it is the hypothesis under which the closed-interval theorems below are stated."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.subsec.closedInterval",
+    "id": "Topology.subsec.homeomorphism",
     "kind": "subsection",
-    "title": "Closed-Interval Theorems",
-    "content": {
-      "markdown": "The three classical consequences of continuity on a compact interval. Each fails on an open or unbounded interval, so each genuinely consumes compactness."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.thm.extremeValue",
-    "kind": "theorem",
-    "title": "Attainment of Extrema",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b)), Logic.exists-typed(@m, Real, Logic.and(Set.mem(m, Icc(a, b)), Analysis.minPoint(F, m))))",
-      "markdown": "A function continuous on `[a, b]` attains a minimum and a maximum at points of `[a, b]`. Attainment, not merely boundedness, is the content: `x ↦ x` on `(0, 1)` is bounded and attains neither bound, and `x ↦ 1/x` on `(0, 1]` is not even bounded. Boundedness follows as a corollary."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.thm.intermediateValue",
-    "kind": "theorem",
-    "title": "Intermediate Value Theorem",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b, @C), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), $#0 < #1 \\land #1 < #2$(Type.apply(Analysis.map(F), a), C, Type.apply(Analysis.map(F), b))), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Icc(a, b)), Eq(Type.apply(Analysis.map(F), c), C))))",
-      "markdown": "A function continuous on `[a, b]` takes every value between `F a` and `F b`. Combined with the previous theorem this says the continuous image of a closed bounded interval is again a closed bounded interval.\n\nThe standard corollary is a root existence principle: a sign change over `[a, b]` forces a zero inside. The theorem is genuinely about the completeness of ℝ — the same statement over ℚ is false, as `x ↦ x² − 2` witnesses."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.sec.differentiation",
-    "kind": "section",
-    "title": "Differentiation",
-    "content": {
-      "markdown": "The derivative as a limit of difference quotients, the differential operator as a map from functions to functions, higher orders by iteration, the mean value theorems, and Taylor expansion."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.subsec.derivDefs",
-    "kind": "subsection",
-    "title": "Definitions of Derivative",
-    "content": {
-      "markdown": "The derivative is defined by reusing the limit layer verbatim: it is the limit at `x₀` of the difference quotient, itself formed in the PFun algebra, so the domain bookkeeping is inherited rather than repeated."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.def.derivative",
-    "kind": "definition",
-    "title": "Derivative at a Point",
-    "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @D), Real)), Analysis.deriv(F, x, D), Analysis.funLim(Div.div(Sub.sub(F, Type.apply(Analysis.map(F), x)), Sub.sub(@y, x)), @y, x, D))",
-      "markdown": "`F` has derivative `D` at `x₀` iff the difference quotient `(F − F(x₀)) / (id − x₀)` tends to `D` at `x₀`. The quotient is built in the PFun algebra, so the removal of `x₀` from its domain — where the denominator vanishes — happens automatically, and the punctured neighbourhood of `BasicAnalysis.def.funLimit` is exactly what makes the expression meaningful there.\n\n`F` is differentiable at `x₀` iff some `D` works; uniqueness of `D` is inherited from uniqueness of limits."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.def.oneSidedDerivative",
-    "kind": "definition",
-    "title": "One-Sided Derivatives",
-    "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @D), Real)), list-partial(Analysis.derivLeft(F, x, D), Analysis.derivRight(F, x, D)), Analysis.limLeft(Div.div(Sub.sub(F, Type.apply(Analysis.map(F), x)), Sub.sub(@y, x)), @y, x, D))",
-      "markdown": "The same difference quotient with the one-sided limits substituted. `F` is differentiable at `x₀` iff both one-sided derivatives exist and agree; `x ↦ |x|` at `0` is the standard example where they exist and differ."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.def.diffOperator",
-    "kind": "definition",
-    "title": "The Differential Operator",
-    "content": {
-      "snl": "def-hyp(Type.judge(@F, Analysis.PFun), Analysis.diff(F), Analysis.mkPFun(Analysis.map(Analysis.diff(F)), Set.sep-typed(@x, Real, Analysis.derivable(F, x))))",
-      "markdown": "`F'` is again a domain-carrying function: its domain is the set of points at which `F` is differentiable, and its map sends each such point to the derivative there.\n\nThe derivative's domain may be strictly smaller than `F`'s, and may even be empty — a nowhere-differentiable continuous function is a perfectly good `PFun` whose derivative has empty domain. Making the operator total-on-`PFun` rather than partially defined is what allows it to be iterated without a fresh side condition at each step."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.def.nthDerivative",
-    "kind": "definition",
-    "title": "Higher-Order Derivatives",
-    "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@n, Nat)), Analysis.nthDiff(n, F), Analysis.diff(Analysis.nthDiff($#0 - 1$(n), F)))",
-      "markdown": "Defined by iterating the differential operator: the zeroth derivative is `F` itself and the `(n+1)`-st is the derivative of the `n`-th. Because the operator is total on `PFun`, the iteration needs no hypothesis; domains simply shrink as the order rises.\n\n`F` is `n`-times differentiable at `x₀` exactly when `x₀` survives into the domain of the `n`-th iterate."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.subsec.meanValue",
-    "kind": "subsection",
-    "title": "Mean Value Theorems",
-    "content": {
-      "markdown": "The chain from Fermat's interior-extremum lemma to the Cauchy form, each step a strict generalisation of the previous one."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.thm.fermat",
-    "kind": "theorem",
-    "title": "Fermat's Interior Extremum Lemma",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real), Analysis.derivable(F, x), Analysis.maxPoint(F, x)), Analysis.deriv(F, x, $0$))",
-      "markdown": "At an interior local extremum where the derivative exists, the derivative vanishes. Both hypotheses are load-bearing: `x ↦ x` on `[0, 1]` has extrema only at the endpoints, and `x ↦ |x|` has an interior minimum where the derivative fails to exist.\n\nThe converse is false — `x ↦ x³` has vanishing derivative at `0` and no extremum there — so this is a necessary condition only."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.thm.rolle",
-    "kind": "theorem",
-    "title": "Rolle's Theorem",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), Eq(Type.apply(Analysis.map(F), a), Type.apply(Analysis.map(F), b))), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Ioo(a, b)), Analysis.deriv(F, c, $0$))))",
-      "markdown": "A function continuous on `[a, b]`, differentiable on `(a, b)`, and taking equal values at the endpoints has a stationary point strictly inside.\n\nThe proof is the previous two theorems in sequence: extrema are attained by `BasicAnalysis.thm.extremeValue`, and either one is interior — whence `BasicAnalysis.thm.fermat` applies — or both are attained at the endpoints, in which case the function is constant and every interior point works. Note the asymmetry between the closed interval for continuity and the open one for differentiability: it is what lets the theorem apply to `x ↦ √(1 − x²)` on `[−1, 1]`."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.thm.lagrangeMVT",
-    "kind": "theorem",
-    "title": "Lagrange's Mean Value Theorem",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b)), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Ioo(a, b)), Analysis.deriv(F, c, Div.div(Sub.sub(Type.apply(Analysis.map(F), b), Type.apply(Analysis.map(F), a)), Sub.sub(b, a))))))",
-      "markdown": "Some interior point has derivative equal to the average rate of change `(F b − F a)/(b − a)`. It follows from Rolle applied to `F` minus the secant line.\n\nThis is the bridge from local to global information and the engine behind most of one-variable calculus: vanishing derivative on an interval forces constancy, a sign condition on the derivative forces monotonicity, and a bound on the derivative gives a Lipschitz estimate. Each of these is false without connectedness of the interval."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.thm.cauchyMVT",
-    "kind": "theorem",
-    "title": "Cauchy's Mean Value Theorem",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), Analysis.contOnIcc(G, a, b)), Logic.exists-typed(@c, Real, Set.mem(c, Ioo(a, b))))",
-      "markdown": "The parametric form: for a suitable interior `c`, `(F b − F a) · G'(c) = (G b − G a) · F'(c)`. Taking `G = id` recovers Lagrange's theorem.\n\nStating it in the product form rather than as a ratio avoids a non-vanishing hypothesis on `G'`. This is the theorem L'Hôpital's rule is proved from, which is why the rule needs no differentiability at the limit point itself."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.subsec.taylor",
-    "kind": "subsection",
-    "title": "Taylor Expansion",
-    "content": {
-      "markdown": "The polynomial approximation and its two remainder forms."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.def.taylorPolynomial",
-    "kind": "definition",
-    "title": "Taylor Polynomial",
-    "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real), Type.judge(@N, Nat)), Analysis.taylorPoly(F, x, N), Analysis.taylorPoly(F, x, N))",
-      "markdown": "The polynomial of degree at most `N` whose derivatives at `x₀` up to order `N` agree with those of `F`, namely `Σ_{k=0}^{N} F⁽ᵏ⁾(x₀)/k! · (x − x₀)ᵏ`. It is the unique such polynomial, which is the cleanest characterisation and explains why the coefficients must be what they are."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.thm.taylorPeano",
-    "kind": "theorem",
-    "title": "Taylor's Theorem with Peano Remainder",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real), Type.judge(@N, Nat), $#0 > 0$(N)), Logic.exists-typed(@R, Analysis.PFun, Logic.and(Eq(F, Add.add(Analysis.taylorPoly(F, x, N), R)), Analysis.higherInfinitesimal(R, Power(Sub.sub(@y, x), N), x))))",
-      "markdown": "If `F` is `N`-times differentiable at `x₀` then `F` splits as its Taylor polynomial plus a remainder that is `o((x − x₀)ᴺ)` at `x₀`.\n\nThis is a purely local statement: it says the polynomial is the best degree-`N` approximation *near* `x₀` and says nothing at any fixed distance. It requires only differentiability at the single point `x₀`, which is the weakest hypothesis of any Taylor result here, and it is the form used for computing limits."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.thm.taylorLagrange",
-    "kind": "theorem",
-    "title": "Taylor's Theorem with Lagrange Remainder",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @y), Real), Type.judge(@N, Nat), $#0 < #1$(y, x)), Logic.exists-typed(@z, Real, Logic.and(Set.mem(z, Ioo(y, x)), Eq(Type.apply(Analysis.map(F), y), Add.add(Type.apply(Analysis.map(Analysis.taylorPoly(F, x, N)), y), Div.div(Mul.mul(Type.apply(Analysis.map(Analysis.nthDiff($#0 + 1$(N), F)), z), Power(Sub.sub(y, x), $#0 + 1$(N))), $\\left(#0 + 1\\right)!$(N)))))))",
-      "markdown": "Under `(N+1)`-fold differentiability on the interval between the base point and the evaluation point, the remainder has the closed form `F⁽ᴺ⁺¹⁾(ξ)/(N+1)! · (x − x₀)ᴺ⁺¹` for some intermediate `ξ`.\n\nUnlike the Peano form this is a statement at a fixed distance, and it is what yields concrete error bounds once `F⁽ᴺ⁺¹⁾` is bounded. It generalises `BasicAnalysis.thm.lagrangeMVT`, which is the case `N = 0`. The interval hypothesis is directional, so the left and right cases are stated separately."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.subsec.boundedness",
-    "kind": "subsection",
-    "title": "Boundedness",
-    "content": {
-      "markdown": "Boundedness for both carriers. For a sequence the quantifier ranges over the index window, so the finite and infinite cases are stated separately; for a function it ranges over the domain."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.def.bounded",
-    "kind": "definition",
-    "title": "Bounded Sequence and Bounded Function",
-    "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@A, Analysis.Seq)), list-partial(Analysis.bounded(F), Analysis.boundedAbove(F), Analysis.boundedBelow(F)), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, Analysis.domain(F)), $\\left|#0\\right| < #1$(Type.apply(Analysis.map(F), x), M))))))",
-      "markdown": "`F` is bounded iff some `M > 0` dominates `|F.map x|` for every `x` in `F.domain`; bounded above and bounded below drop the absolute value and keep one inequality.\n\nFor a sequence the same definition is relative to the index window: on a finite window the quantifier ranges over `[A.init, A.final)`, on an infinite one over `[A.init, ∞)`. Because the bound is only required on the carrier's own region, a function that blows up outside its domain is still bounded."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.def.locallyBounded",
-    "kind": "definition",
-    "title": "Local Boundedness",
-    "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.locallyBounded(F, x), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Set.inter(Analysis.domain(F), Analysis.nbh(x, delta))), $\\left|#0\\right| < #1$(Type.apply(Analysis.map(F), y), M))))))))",
-      "markdown": "`F` is bounded near `x₀` iff it is bounded on the intersection of its domain with some neighbourhood of `x₀`. This is the conclusion available from convergence at a point: a function with a limit at `x₀` is locally bounded there, never globally.\n\nThe variants at `±∞` replace the neighbourhood by a ray."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.def.extremePoint",
-    "kind": "definition",
-    "title": "Minimum and Maximum Points",
-    "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@m, Real)), list-partial(Analysis.minPoint(F, m), Analysis.maxPoint(F, m)), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, Analysis.domain(F)), $#0 \\geqslant #1$(Type.apply(Analysis.map(F), x), Type.apply(Analysis.map(F), m)))))",
-      "markdown": "`m` is a minimum point of `F` iff `F.map x ≥ F.map m` for every `x` in the domain; maximum points reverse the inequality. These are the points whose existence `BasicAnalysis.thm.extremeValue` asserts, and whose interior instances `BasicAnalysis.thm.fermat` constrains."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.proof.rolle",
-    "kind": "proof",
-    "title": "Proof of Rolle's Theorem",
-    "content": {
-      "snl": "proof(%If $F$ is continuous on $[a,b]$, differentiable on $(a,b)$, and $F(a) = F(b)$, then $F'(c) = 0$ for some $c \\in (a,b)$.%, proof-step(list-partial(%Since $F$ is continuous on the closed interval $[a,b]$ — which by %, %continuity on a closed interval%@BasicAnalysis.def.continuousOnIcc, % means continuity on $(a,b)$ together with right-continuity at $a$ and left-continuity at $b$ — %, %the extreme value theorem%@BasicAnalysis.thm.extremeValue, % applies, so $F$ attains a minimum at some $m \\in [a,b]$ and a maximum at some $M \\in [a,b]$.%)), by-cases(%The argument now splits on whether either extremum is attained in the open interval $(a,b)$.%, case(%Case 1: at least one of $m, M$ lies in the open interval $(a,b)$.%, proof-step(%Call that point $c$, so $c \\in (a,b)$ and $c$ is a local extremum of $F$.%), proof-step(list-partial(%$F$ is differentiable on $(a,b)$ by hypothesis, so in particular %, %the derivative%@BasicAnalysis.def.derivative, % exists at $c$.%)), proof-step(list-partial(%Both hypotheses of %, %Fermat's lemma%@BasicAnalysis.thm.fermat, % are therefore met at $c$: the extremum is interior, and the derivative exists there.%)), so(%$F'(c) = 0$, and $c$ is the point the theorem asks for.%)), case(%Case 2: both $m$ and $M$ lie in $\\{a, b\\}$.%, proof-step(%Then the minimum and maximum values are both taken at endpoints. By hypothesis $F(a) = F(b)$, so $F(m) = F(M)$.%), proof-step(%A function whose minimum equals its maximum is constant: for every $x \\in [a,b]$ we have $F(m) \\leqslant F(x) \\leqslant F(M) = F(m)$, forcing $F(x) = F(m)$.%), proof-step(list-partial(%The difference quotient of a constant function vanishes identically, so by %, %the derivative%@BasicAnalysis.def.derivative, % every interior point has derivative $0$.%)), so(%any $c \\in (a,b)$ works — and $(a,b)$ is nonempty because $a < b$.%))), proof-step(%In both cases a point $c \\in (a,b)$ with $F'(c) = 0$ has been produced.%), qed)",
-      "markdown": "The proof is the two preceding theorems applied in sequence, with a case\nsplit in between.\n\nContinuity on the compact interval `[a, b]` yields attained extrema\n(`BasicAnalysis.thm.extremeValue`). Either one of them is interior, in which\ncase `BasicAnalysis.thm.fermat` immediately gives a vanishing derivative there,\nor both sit at the endpoints — and then the equal-endpoint hypothesis forces the\nfunction to be constant, so every interior point qualifies.\n\nNote where each hypothesis is consumed. Continuity is used only on the closed\ninterval, to obtain attainment; differentiability is used only on the open\ninterval, because Fermat's lemma is applied at an interior point. That asymmetry\nis not an accident of this particular argument — it is what lets the theorem\napply to functions such as `x ↦ √(1 − x²)` on `[−1, 1]`, whose one-sided\nderivatives at the endpoints are infinite. The hypothesis `a < b` is what makes\n`(a, b)` nonempty, without which Case 2 would have no point to return."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "ProofStyle.sec.ecnu",
-    "kind": "section",
-    "title": "ECNU 20260523 Problem 22",
-    "content": {
-      "markdown": "A transcription target, not new mathematics. This library exists to\nexercise the `Proof.*` package against a proof whose structure is already\nfixed — the rendering at https://mitar.top/ — so the SNL tree can be diffed\nagainst a reference instead of judged by taste.\n\nTwo properties are being tested. First, that the subgoal decomposition can be\nreproduced *identically*: same subgoal statements, same order, same nested\n`我们有` blocks. Second, that a step decomposes into atoms — the sentence frame\nis a macro and every formula is its own node, so nothing is a paragraph of\nChinese with mathematics embedded in it as string content."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "ProofStyle.thm.ecnu1",
-    "kind": "theorem",
-    "title": "ECNU 20260523 Problem 22 (1)",
-    "content": {
-      "snl": "thm-hyp(list-partial($f:\\mathbb{R}\\to\\mathbb{R}$, Proof.because($f''$, %在 $[-a,a]$ 上连续%), $f(0)=0$), Proof.obtain($\\xi\\in(-a,a)$, $f''(\\xi)=\\frac{f(a)+f(-a)}{a^{2}}$))",
-      "markdown": "Given `f''` continuous on `[-a, a]` and `f(0) = 0`, there is\n`ξ ∈ (-a, a)` with `f''(ξ) = (f(a) + f(-a)) / a²`.\n\nTwo Taylor expansions with Lagrange remainder, one on each side of `0`, produce\nwitnesses `η₁` and `η₂`; the intermediate value theorem applied to the\ncontinuous `f''` produces `ξ` between them carrying the average of the two\nsecond derivatives; and `f(0) = 0` is what makes the first-order terms cancel."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "ProofStyle.proof.ecnu1",
-    "kind": "proof",
-    "title": "Proof of ECNU 20260523 Problem 22 (1)",
-    "content": {
-      "snl": "Proof.proofOf(%ECNU 20260523 Problem 22-1%, Proof.tac.observe(Proof.implies($a>0$, $-a<0$)), Proof.tac.destruct(Proof.applyOn($[0,a]$, Proof.ref(%带Lagrange余项的Taylor公式%@BasicAnalysis.thm.taylorLagrange), Proof.obtain($\\eta_{1}\\in(\\min\\{0,a\\},\\max\\{0,a\\})$, $f(a)=f(0)+f'(0)(a-0)+\\frac{f''(\\eta_{1})}{2}(a-0)^{2}$))), Proof.tac.destruct(Proof.applyOn($[-a,0]$, Proof.ref(%带Lagrange余项的Taylor公式%@BasicAnalysis.thm.taylorLagrange), Proof.obtain($\\eta_{2}\\in(\\min\\{0,-a\\},\\max\\{0,-a\\})$, $f(-a)=f(0)+f'(0)(-a-0)+\\frac{f''(\\eta_{2})}{2}(-a-0)^{2}$))), Proof.tac.destruct(Proof.applyOn(Proof.because($f''$, %连续%), Proof.ref(%介值定理%@BasicAnalysis.thm.intermediateValue), Proof.obtain($\\xi\\in(\\min\\{\\eta_{1},\\eta_{2}\\},\\max\\{\\eta_{1},\\eta_{2}\\})$, $f''(\\xi)=\\frac{f''(\\eta_{1})+f''(\\eta_{2})}{2}$))), Proof.tac.construct(Proof.claim($\\xi$, Proof.and($\\xi\\in(-a,a)$, $f''(\\xi)=\\frac{f(a)+f(-a)}{a^{2}}$))), Proof.split(%目标分解%, Proof.goal($\\xi\\in(-a,a)$, Proof.tac.rewrite(Proof.simplifies($\\eta_{1}\\in(\\min\\{0,a\\},\\max\\{0,a\\})$, $\\eta_{1}\\in(0,a)$)), Proof.tac.rewrite(Proof.simplifies($\\eta_{2}\\in(\\min\\{0,-a\\},\\max\\{0,-a\\})$, $\\eta_{2}\\in(-a,0)$)), Proof.tac.observe(Proof.implies(Proof.and($\\eta_{2}<0$, $\\eta_{1}>0$), $\\eta_{2}<\\eta_{1}$)), Proof.tac.rewrite(Proof.simplifies($\\xi\\in(\\min\\{\\eta_{1},\\eta_{2}\\},\\max\\{\\eta_{1},\\eta_{2}\\})$, $\\xi\\in(\\eta_{2},\\eta_{1})$)), Proof.tac.trans(Proof.fromPremises($\\eta_{2}>-a$, $\\xi>\\eta_{2}$, $\\xi<\\eta_{1}$, $\\eta_{1}<a$)), Proof.done), Proof.goal($f''(\\xi)=\\frac{f(a)+f(-a)}{a^{2}}$, Proof.have($f(a)=f'(0)a+\\frac{f''(\\eta_{1})}{2}a^{2}$, Proof.calc($f(a)$, Proof.calc.rel($=$, $f(0)+f'(0)(a-0)+\\frac{f''(\\eta_{1})}{2}(a-0)^{2}$), Proof.calc.rel($=$, $0+f'(0)(a-0)+\\frac{f''(\\eta_{1})}{2}(a-0)^{2}$), Proof.calc.rel($=$, $f'(0)a+\\frac{f''(\\eta_{1})}{2}a^{2}$))), Proof.have($f(-a)=f'(0)(-a)+\\frac{f''(\\eta_{2})}{2}a^{2}$, Proof.calc($f(-a)$, Proof.calc.rel($=$, $f(0)+f'(0)(-a-0)+\\frac{f''(\\eta_{2})}{2}(-a-0)^{2}$), Proof.calc.rel($=$, $0+f'(0)(-a-0)+\\frac{f''(\\eta_{2})}{2}(-a-0)^{2}$), Proof.calc.rel($=$, $f'(0)(-a)+\\frac{f''(\\eta_{2})}{2}a^{2}$))), Proof.calc($|f(a)-f(-a)|$, Proof.calc.rel($=$, $\\displaystyle\\left|\\frac{f''(\\eta_{1})}{2}(a-x_0)^{2}-\\frac{f''(\\eta_{2})}{2}(a+x_0)^{2}\\right|$), Proof.calc.rel($\\le$, $\\displaystyle\\left|\\frac{f''(\\eta_{1})}{2}(a-x_0)^{2}\\right|+\\left|\\frac{f''(\\eta_{2})}{2}(a+x_0)^{2}\\right|$), Proof.calc.rel($=$, $\\displaystyle\\frac{|f''(\\eta_{1})|}{2}(a-x_0)^{2}+\\frac{|f''(\\eta_{2})|}{2}(a+x_0)^{2}$)), Proof.done)))",
-      "markdown": "Transcribed verbatim from the Mitar rendering: five setup steps,\nthen 目标分解 into exactly two subgoals, the second containing two nested\n`我们有` calc blocks followed by a closing chain.\n\n**The closing chain is reproduced as it appears upstream, `x_0` and all.** That\nsubexpression belongs to part (2) of the problem, so the reference's own\nrendering is inconsistent there. Silently repairing it would defeat the purpose\nof a transcription test — the value of this entry is that its tree can be\ndiffed against the reference, and a \"corrected\" tree diffs against nothing.\n\nOn atomicity: no step body is a prose blob. `Proof.applyOn(对象, 定理, 结论)`,\n`Proof.obtain(见证, 性质)`, `Proof.simplifies(原条件, 化简结果)`,\n`Proof.implies(前提, 结论)` and `Proof.fromPremises(#*)` are the sentence\nframes, and each mathematical operand is a `$…$` node. So `η₁ ∈ (0, a)` is a\nsubtree that a tool can find and rewrite, not a substring inside a sentence."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "Logic.ctxt.P",
-    "kind": "context",
-    "title": "$P$",
-    "content": {
-      "snl": "Type.judge(P,Type.to(T,Proposition))"
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "FP.subsec.intro",
-    "kind": "subsection",
-    "title": "Introduction",
+    "title": "Homeomorphism",
     "content": {},
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "cgt",
-    "kind": "theorem",
-    "title": "123",
+    "id": "Topology.def.openMap",
+    "kind": "definition",
+    "title": "Open Map",
     "content": {
-      "snl": "cgt(A,B,C,D,h,f,g,$h'$)"
+      "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.openMap(f),Logic.forall-typed(@U,Set(X@Topology.ctxt.X),Logic.implies(Set.mem(U,τ_X),Set.mem(Set.sep-typed(@y,Y@Topology.ctxt.Y,Logic.exists-typed(@x,X@Topology.ctxt.X,Logic.and(Set.mem(x,U),Eq(Type.apply(f,x),y)))),τ_Y))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "ECNU.test",
-    "kind": "problem",
-    "title": "ECNU 20260523 Problem 22 (1)",
+    "id": "Topology.def.homeomorphism",
+    "kind": "definition",
+    "title": "Homeomorphism",
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@a,Real),Gt(a,0),Type.judge(@f,Type.to(Real,Real)),Analysis.isContinuousOn(Analysis.deriv2(f),Icc(neg(a),a)),Eq(Type.apply(f,0),0)),Logic.exists-typed(@$\\xi$,Real,Logic.and(Set.mem($\\xi$,Ioo(neg(a),a)),Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Power(a,2))))))"
+      "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.homeomorphism(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y),Logic.and(Topology.continuousMap(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y),Topology.openMap(f)))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "ECNU.test.prf1",
-    "kind": "proof",
-    "title": "ECNU(1)",
+    "id": "Topology.def.homeomorphic",
+    "kind": "definition",
+    "title": "Homeomorphic Spaces",
     "content": {
-      "snl": "Lean4-tactic($\\textit{Proof.}$,Lean4-tactic(have(Lt(neg(a),0)),Type.apply[termProof](neg_lt_zero,Gt(a,0))),Lean4-tactic(rcases(taylor_lagrange),list-partial[enumerate](Type.judge(@$\\eta_1$,Real),Set.mem($\\eta_1$,Ioo(min-binary(0,a),max-binary(0,a))),Eq(Type.apply(f,a),Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(a,0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(parentheses(Sub.sub(a,0)),2)))))),Lean4-tactic(rcases(taylor_lagrange),list-partial[enumerate](Type.judge(@$\\eta_2$,Real),Set.mem($\\eta_2$,Ioo(min-binary(0,neg(a)),max-binary(0,neg(a)))),Eq(Type.apply(f,neg(a)),Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(neg(a),0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(parentheses(Sub.sub(neg(a),0)),2)))))),Lean4-tactic(rcases(ivt_average),list-partial[enumerate](Type.judge(@$\\xi$,Real),Set.mem($\\xi$,Icc(min-binary($\\eta_1$,$\\eta_2$),max-binary($\\eta_1$,$\\eta_2$))),Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(Analysis.deriv2(f),$\\eta_1$),Type.apply(Analysis.deriv2(f),$\\eta_2$)),2)))),Lean4-tactic(Lean4.use($\\xi$),Lean4-tactic(Lean4.constructor,Lean4-tactic(Set.mem($\\xi$,Ioo(neg(a),a)),Lean4-tactic(Lean4.rw(Set.mem($\\eta_1$,Ioo(min-binary(0,a),max-binary(0,a))),Set.mem($\\eta_1$,Ioo(0,a)))),Lean4-tactic(Lean4.rw(Set.mem($\\eta_2$,Ioo(min-binary(0,neg(a)),max-binary(0,neg(a)))),Set.mem($\\eta_2$,Ioo(neg(a),0)))),Lean4-tactic(have(Lt($\\eta_2$,$\\eta_1$)),Lean4.exact(list-partial[formula](Lt($\\eta_2$,0),Lt(0,$\\eta_1$),Lt($\\eta_2$,$\\eta_1$)))),Lean4-tactic(Lean4.rw(Set.mem($\\xi$,Icc(min-binary($\\eta_1$,$\\eta_2$),max-binary($\\eta_1$,$\\eta_2$))),Set.mem($\\xi$,Icc($\\eta_2$,$\\eta_1$)))),Lean4-tactic(Lean4.exact(list-partial[formula](Lt(neg(a),$\\eta_2$),Le($\\eta_2$,$\\xi$),Le($\\xi$,$\\eta_1$),Lt($\\eta_1$,a),Set.mem($\\xi$,Ioo(neg(a),a)))))),Lean4-tactic(Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Power(a,2))),Lean4-tactic(have(Eq(Type.apply(f,a),Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),a),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(a,2))))),calc(Type.apply(f,a),calc-partial(Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(a,0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(parentheses(Sub.sub(a,0)),2))),Add.finite(0,Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(a,0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(parentheses(Sub.sub(a,0)),2))),Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),a),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(a,2)))))),Lean4-tactic(have(Eq(Type.apply(f,neg(a)),Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),neg(a)),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(a,2))))),calc(Type.apply(f,neg(a)),calc-partial(Add.finite(Type.apply(f,0),Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(neg(a),0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(parentheses(Sub.sub(neg(a),0)),2))),Add.finite(0,Mul.mul(Type.apply(Analysis.deriv(f),0),parentheses(Sub.sub(neg(a),0))),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(parentheses(Sub.sub(neg(a),0)),2))),Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),neg(a)),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(a,2)))))),Lean4-tactic(Lean4.symm),calc(Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Power(a,2)),calc-partial(Div.div(Add.add(Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),a),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_1$),2),Power(a,2))),Add.add(Mul.mul(Type.apply(Analysis.deriv(f),0),neg(a)),Mul.mul(Div.div(Type.apply(Analysis.deriv2(f),$\\eta_2$),2),Power(a,2)))),Power(a,2)),Div.div(Mul.mul(Div.div(Add.add(Type.apply(Analysis.deriv2(f),$\\eta_1$),Type.apply(Analysis.deriv2(f),$\\eta_2$)),2),Power(a,2)),Power(a,2)),Div.div(Add.add(Type.apply(Analysis.deriv2(f),$\\eta_1$),Type.apply(Analysis.deriv2(f),$\\eta_2$)),2),Type.apply(Analysis.deriv2(f),$\\xi$)))))))",
-      "markdown": "A fully structured transcription of the first proof on mitar.top. Every displayed formula is a macro tree; only atomic symbols such as η₁, η₂, ξ and relation glyphs remain formula literals. The two Taylor expansions, interval argument, and final cancellation calculation are represented as nested tactic and calc nodes."
+      "snl": "def-hyp(list-partial(Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.homeomorphic(X@Topology.ctxt.X,Y@Topology.ctxt.Y),Logic.exists-typed(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y),Topology.homeomorphism(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y)))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicTheorems.lem.negLtZero",
-    "kind": "lemma",
-    "title": "A Positive Number Has Negative Negation",
+    "id": "Topology.prop.inverseOfContinuousOnCompact",
+    "kind": "property",
+    "title": "Inverse of Continuous Map on Compact Space",
     "content": {
-      "snl": "thm-hyp(Type.judge(@a,Real),Logic.iff(Lt(neg(a),0),Gt(a,0)))",
-      "markdown": "For a real number `a`, the inequality `-a < 0` is equivalent to `a > 0`."
+      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.implies(Logic.and(Topology.compact(E),Topology.continuousMap(f,E,Y@Topology.ctxt.Y)),Logic.true))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "BasicAnalysis.lem.ivtAverage",
-    "kind": "lemma",
-    "title": "Intermediate Value at the Endpoint Average",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@g,Type.to(Real,Real)),Type.judge(list-partial(@x_1,@x_2),Real),Analysis.isContinuousOn(g,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2)))),Logic.exists-typed(@c,Real,Logic.and(Set.mem(c,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2))),Eq(Type.apply(g,c),Div.div(Add.add(Type.apply(g,x_1),Type.apply(g,x_2)),2)))))",
-      "markdown": "A continuous real function assumes the arithmetic mean of its endpoint values at some point between the endpoints."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "BasicAnalysis.ax.taylorLagrange",
-    "kind": "axiom",
-    "title": "Taylor Formula with Symmetric Lagrange Remainder",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@f,Type.to(Real,Real)),Type.judge(@f_1,Type.to(Real,Real)),Type.judge(@f_2,Type.to(Real,Real)),Type.judge(list-partial(@x_0,@x),Real),Logic.neg(Eq(x_0,x)),Analysis.isDeriv(f,f_1),Analysis.isDeriv(f_1,f_2)),Logic.exists-typed(@xi,Real,Logic.and(Set.mem(xi,Ioo(min-binary(x_0,x),max-binary(x_0,x))),Eq(Type.apply(f,x),Add.finite(Type.apply(f,x_0),Mul.mul(Type.apply(f_1,x_0),parentheses(Sub.sub(x,x_0))),Mul.mul(Div.div(Type.apply(f_2,xi),2),Power(parentheses(Sub.sub(x,x_0)),2)))))))",
-      "markdown": "For distinct real points `x₀` and `x`, if `f′` and `f′′` are derivatives of `f` and `f′`, respectively, then the second-order Taylor formula at `x₀` holds at `x` with a Lagrange remainder evaluated at some `ξ` between the two points. The interval is written with `min` and `max`, so the statement handles either endpoint order."
-    },
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "HS.Sec.Set",
-    "kind": "section",
-    "title": "Sets",
-    "content": {},
-    "contribution_info": null,
-    "pointer": null
-  },
-  {
-    "id": "HS.Subsec.Intervals",
+    "id": "Topology.subsec.separation",
     "kind": "subsection",
-    "title": "Intervals",
+    "title": "Separation Axioms",
     "content": {},
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "HS.def.Ioo",
+    "id": "Topology.def.T0",
     "kind": "definition",
-    "title": "Open Interval",
+    "title": "T0 Space / Kolmogorov Space",
     "content": {
-      "snl": "def(Ioo(a,b),Set.sep-typed(@x,Real,Logic.and($#0 < #1$(a,x),$#0 < #1$(x,b))))"
+      "snl": "def-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.T0(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Logic.neg(Eq(x,y)),Logic.or(Logic.exists-typed(@U,Set(S@Topology.ctxt.S),Logic.and(Topology.neighborhood(U,x),Logic.neg(Set.mem(y,U)))),Logic.exists-typed(@V,Set(S@Topology.ctxt.S),Logic.and(Topology.neighborhood(V,y),Logic.neg(Set.mem(x,V)))))))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "HS.def.Icc",
+    "id": "Topology.def.T1",
     "kind": "definition",
-    "title": "Closed Interval",
+    "title": "T1 Space / Frechet Space",
     "content": {
-      "snl": "def(Icc(a,b),Set.sep-typed(@x,Real,Logic.and($#0 \\leq #1$(a,x),$#0 \\leq #1$(x,b))))"
+      "snl": "def-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.T1(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Logic.neg(Eq(x,y)),Logic.and(Logic.exists-typed(@U,Set(S@Topology.ctxt.S),Logic.and(Topology.neighborhood(U,x),Logic.neg(Set.mem(y,U)))),Logic.exists-typed(@V,Set(S@Topology.ctxt.S),Logic.and(Topology.neighborhood(V,y),Logic.neg(Set.mem(x,V)))))))))"
     },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "HS.Subsec.Real",
-    "kind": "subsection",
-    "title": "Real Numbers",
-    "content": {},
+    "id": "Topology.prop.T1Equivalent",
+    "kind": "property",
+    "title": "Equivalent Definition of T1",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Topology.T1(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Set.mem(Set.compl[sup](Set.sep-typed(@z,S@Topology.ctxt.S,Eq(z,x)),S@Topology.ctxt.S),τ))))"
+    },
     "contribution_info": null,
     "pointer": null
   },
   {
-    "id": "Real.real",
+    "id": "Topology.def.T2",
     "kind": "definition",
-    "title": "Real Number Type",
+    "title": "T2 Space / Hausdorff Space",
     "content": {
-      "snl": "def(Real,%Opaque%)"
+      "snl": "def-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.T2(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Logic.neg(Eq(x,y)),Logic.exists-typed(@U,Set(S@Topology.ctxt.S),Logic.exists-typed(@V,Set(S@Topology.ctxt.S),Logic.and(Logic.and(Topology.neighborhood(U,x),Topology.neighborhood(V,y)),Eq(Set.inter(U,V),Set.emptyset[slim]))))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.limitUniqueInT2",
+    "kind": "property",
+    "title": "Limits are Unique in T2 Spaces",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.true)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.compactClosedInT2",
+    "kind": "property",
+    "title": "Compact Sets are Closed in T2 Spaces",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@K,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.T2(S@Topology.ctxt.S),Logic.implies(Topology.compact(K),Set.mem(Set.compl[sup](K,S@Topology.ctxt.S),τ))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.nestedCompactInT2",
+    "kind": "property",
+    "title": "Nested Compact Set Theorem in T2 Spaces",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@K_n,Type.to(Nat,Set(S@Topology.ctxt.S))),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.true)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.prop.continuousPreservesConvergenceInT2",
+    "kind": "property",
+    "title": "Continuous Maps Preserve Convergence in T2 Spaces",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@x_n,Type.to(Nat,X@Topology.ctxt.X)),Type.judge(@x,X@Topology.ctxt.X),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.implies(Logic.and(Topology.T2(X@Topology.ctxt.X),Topology.continuous(f,x)),Logic.implies(Topology.seqConvergence(x_n,x),Topology.seqConvergence(Type.apply(f,x_n),Type.apply(f,x)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  },
+  {
+    "id": "Topology.example.sierpinskiSpace",
+    "kind": "example",
+    "title": "Sierpinski Space",
+    "content": {
+      "snl": "def-hyp(Type.judge(@S,Type),Topology.sierpinski,Topology.topologicalSpace(S,Topology.sierpinski))"
     },
     "contribution_info": null,
     "pointer": null

@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.thm.heineBorel",
+    "kind": "theorem",
+    "title": "Heine-Borel Theorem",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(Set(S@Topology.ctxt.S))),Type.judge(@S,Type)),Topology.heineBorel)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

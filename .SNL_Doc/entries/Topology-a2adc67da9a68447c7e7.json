@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.subsec.homeomorphism",
+    "kind": "subsection",
+    "title": "Homeomorphism",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

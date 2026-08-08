@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.prop.seqCompactImpliesCountablyCompact",
+    "kind": "property",
+    "title": "Sequential Compactness Implies Countable Compactness",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.sequentialCompact(A),Topology.countablyCompact(A)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

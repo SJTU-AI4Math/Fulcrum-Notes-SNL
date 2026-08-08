@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.example.usualTopologyR",
+    "kind": "example",
+    "title": "Usual Topology on Real Numbers",
+    "content": {
+      "snl": "def-hyp(Type.judge(@R,Type),Topology.usualTopology,Topology.topologicalSpace(R,Topology.usualTopology))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

@@ -1,0 +1,1922 @@
+{
+  "version": "8",
+  "name": "Topology",
+  "macros": {
+    "Topology.tau": {
+      "description": "The topology tau",
+      "source": {
+        "entries": [
+          "Topology.def.topology"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\tau",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.topology": {
+      "description": "Predicate: tau is a topology on S",
+      "source": {
+        "entries": [
+          "Topology.def.topology"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是 }#1\\text{ 上的拓扑}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.topologicalSpace": {
+      "description": "Predicate: (S, tau) is a topological space",
+      "source": {
+        "entries": [
+          "Topology.def.topologicalSpace"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "(#0,#1)\\text{ 是拓扑空间}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.openSet": {
+      "description": "Predicate: U is open in (S, tau)",
+      "source": {
+        "entries": [
+          "Topology.def.openSet"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\in #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.closedSet": {
+      "description": "Predicate: U is closed in (S, tau)",
+      "source": {
+        "entries": [
+          "Topology.def.closedSet"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#2\\setminus #0\\in #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.neighborhood": {
+      "description": "Predicate: U is a neighborhood of x in (S, tau)",
+      "source": {
+        "entries": [
+          "Topology.def.neighborhood"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\in\\operatorname{Nbr}(#1)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.Nbr": {
+      "description": "Operator: neighborhood family of x in (S, tau)",
+      "source": {
+        "entries": [
+          "Topology.def.neighborhoodFamily"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\operatorname{Nbr}(#0)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.delNbr": {
+      "description": "Operator: deleted neighborhood family of x",
+      "source": {
+        "entries": [
+          "Topology.def.deletedNeighborhood"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\operatorname{Nbr}^{\\circ}(#0)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.deletedNeighborhood": {
+      "description": "Predicate: U is a deleted neighborhood of x",
+      "source": {
+        "entries": [
+          "Topology.def.deletedNeighborhood"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\in\\operatorname{Nbr}^{\\circ}(#1)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.interior": {
+      "description": "Operator: interior of A",
+      "source": {
+        "entries": [
+          "Topology.def.interior"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\operatorname{Int}(#0)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        },
+        {
+          "mode": "formula_inline",
+          "template": "#0^{\\circ}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "superscript",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.closure": {
+      "description": "Operator: closure of A",
+      "source": {
+        "entries": [
+          "Topology.def.closure"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\operatorname{Cl}(#0)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        },
+        {
+          "mode": "formula_inline",
+          "template": "\\overline{#0}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "overline",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.closurePoint": {
+      "description": "Predicate: x is a closure point of A",
+      "source": {
+        "entries": [
+          "Topology.def.closurePoint"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\in\\operatorname{Cl}(#1)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.boundary": {
+      "description": "Operator: boundary of A",
+      "source": {
+        "entries": [
+          "Topology.def.boundary"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\partial #0",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.derivedSet": {
+      "description": "Operator: derived set (limit points) of A",
+      "source": {
+        "entries": [
+          "Topology.def.derivedSet"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0'",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.limitPoint": {
+      "description": "Predicate: x is a limit point (accumulation point) of A",
+      "source": {
+        "entries": [
+          "Topology.def.limitPoint"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是 }#1\\text{ 的极限点}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.isolatedPoint": {
+      "description": "Predicate: x is an isolated point of A",
+      "source": {
+        "entries": [
+          "Topology.def.isolatedPoint"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是 }#1\\text{ 的孤立点}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.dense": {
+      "description": "Predicate: A is dense in (S, tau)",
+      "source": {
+        "entries": [
+          "Topology.def.denseSet"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 在 }#1\\text{ 中稠密}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.nowhereDense": {
+      "description": "Predicate: A is nowhere dense",
+      "source": {
+        "entries": [
+          "Topology.def.nowhereDense"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是稀疏集}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.selfDense": {
+      "description": "Predicate: A is self-dense",
+      "source": {
+        "entries": [
+          "Topology.def.selfDense"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是自稠密集}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.perfect": {
+      "description": "Predicate: A is perfect",
+      "source": {
+        "entries": [
+          "Topology.def.perfectSet"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是完美集}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.seqLimit": {
+      "description": "Notation: limit of sequence x_n = x",
+      "source": {
+        "entries": [
+          "Topology.def.seqLimit"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\lim_{#0\\to\\infty}#1=#2",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.seqConvergence": {
+      "description": "Predicate: sequence x_n converges to x",
+      "source": {
+        "entries": [
+          "Topology.def.seqConvergence"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\to #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.sequentialCompact": {
+      "description": "Predicate: A is sequentially compact",
+      "source": {
+        "entries": [
+          "Topology.def.sequentialCompactness"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是序列紧的}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.connected": {
+      "description": "Predicate: A is connected",
+      "source": {
+        "entries": [
+          "Topology.def.connected"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是连通的}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.pathConnected": {
+      "description": "Predicate: A is path-connected",
+      "source": {
+        "entries": [
+          "Topology.def.pathConnected"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是道路连通的}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.openCover": {
+      "description": "Predicate: C is an open cover of A",
+      "source": {
+        "entries": [
+          "Topology.def.openCover"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是 }#1\\text{ 的开覆盖}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.compact": {
+      "description": "Predicate: A is compact",
+      "source": {
+        "entries": [
+          "Topology.def.compactness"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是紧致的}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.countablyCompact": {
+      "description": "Predicate: A is countably compact",
+      "source": {
+        "entries": [
+          "Topology.def.countablyCompact"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是可数紧的}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.mapLimit": {
+      "description": "Notation: limit of map f at x is y",
+      "source": {
+        "entries": [
+          "Topology.def.mapLimit"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\lim_{#0\\to#1}#2(#0)=#3",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.mapConvergence": {
+      "description": "Predicate: f converges to y at x",
+      "source": {
+        "entries": [
+          "Topology.def.mapConvergence"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 在 }#1\\text{ 处收敛于 }#2",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.continuous": {
+      "description": "Predicate: f is continuous at point x",
+      "source": {
+        "entries": [
+          "Topology.def.continuityAtPoint"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 在 }#1\\text{ 处连续}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.continuousMap": {
+      "description": "Predicate: f is a continuous map on E",
+      "source": {
+        "entries": [
+          "Topology.def.continuousMap"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\in\\operatorname{C}(#1,#2)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.cont": {
+      "description": "Operator: continuous function space C(X, Y)",
+      "source": {
+        "entries": [
+          "Topology.def.continuousMap"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\operatorname{C}(#0,#1)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.lipschitz": {
+      "description": "Predicate: f is Lipschitz continuous",
+      "source": {
+        "entries": [
+          "Topology.def.lipschitzContinuity"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\in\\operatorname{Lip}(#1,#2)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.lip": {
+      "description": "Operator: Lipschitz function space Lip(X, Y)",
+      "source": {
+        "entries": [
+          "Topology.def.lipschitzContinuity"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\operatorname{Lip}(#0,#1)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.openMap": {
+      "description": "Predicate: f is an open map",
+      "source": {
+        "entries": [
+          "Topology.def.openMap"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是开映射}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.homeomorphism": {
+      "description": "Predicate: f is a homeomorphism between X and Y",
+      "source": {
+        "entries": [
+          "Topology.def.homeomorphism"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是 }#1\\text{ 和 }#2\\text{ 之间的同胚映射}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.homeomorphic": {
+      "description": "Predicate: X and Y are homeomorphic",
+      "source": {
+        "entries": [
+          "Topology.def.homeomorphic"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\cong #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.T0": {
+      "description": "Predicate: (S, tau) is a T0 (Kolmogorov) space",
+      "source": {
+        "entries": [
+          "Topology.def.T0"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是 }T_0\\text{ 空间}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.T1": {
+      "description": "Predicate: (S, tau) is a T1 (Frechet) space",
+      "source": {
+        "entries": [
+          "Topology.def.T1"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是 }T_1\\text{ 空间}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.T2": {
+      "description": "Predicate: (S, tau) is a T2 (Hausdorff) space",
+      "source": {
+        "entries": [
+          "Topology.def.T2"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是 }T_2\\text{ 空间}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.generatedTopology": {
+      "description": "Operator: topology generated by basis B",
+      "source": {
+        "entries": [
+          "Topology.def.generatedTopology"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\tau(#0)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.basis": {
+      "description": "Operator: topological basis B (typographic)",
+      "source": {
+        "entries": [
+          "Topology.def.topologicalBasis"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\mathcal{B}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.topologicalBasis": {
+      "description": "Predicate: B is a basis for topology tau",
+      "source": {
+        "entries": [
+          "Topology.def.topologicalBasis"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "#0\\text{ 是 }#1\\text{ 的拓扑基}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.subspaceTopology": {
+      "description": "Operator: subspace topology on X induced by tau",
+      "source": {
+        "entries": [
+          "Topology.def.subspaceTopology"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\tau_{#0}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.productTopology": {
+      "description": "Operator: product topology on X x Y",
+      "source": {
+        "entries": [
+          "Topology.def.productTopology"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\tau_{\\times}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.trivialTopology": {
+      "description": "Constant: trivial topology on S",
+      "source": {
+        "entries": [
+          "Topology.example.trivialTopology"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\tau_{\\text{triv}}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.discreteTopology": {
+      "description": "Constant: discrete topology on S",
+      "source": {
+        "entries": [
+          "Topology.example.discreteTopology"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\tau_{\\text{disc}}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.orderTopology": {
+      "description": "Constant: order topology on an ordered set",
+      "source": {
+        "entries": [
+          "Topology.example.orderTopology"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\tau_{\\text{order}}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.usualTopology": {
+      "description": "Constant: usual topology on R",
+      "source": {
+        "entries": [
+          "Topology.example.usualTopologyR"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\tau_{\\text{usual}}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.sierpinski": {
+      "description": "Constant: Sierpinski space",
+      "source": {
+        "entries": [
+          "Topology.example.sierpinskiSpace"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "formula_inline",
+          "template": "\\mathbb{S}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    },
+    "Topology.heineBorel": {
+      "description": "Named concept: Heine-Borel theorem",
+      "source": {
+        "entries": [
+          "Topology.thm.heineBorel"
+        ],
+        "urls": []
+      },
+      "kind": "const",
+      "dynamic_arity": false,
+      "tags": [],
+      "styles": [
+        {
+          "mode": "text",
+          "template": "Heine-Borel 定理",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "style_name": "default",
+          "tags": []
+        }
+      ]
+    }
+  }
+}
