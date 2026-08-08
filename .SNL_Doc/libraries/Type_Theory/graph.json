@@ -77,7 +77,7 @@
       "label": "Entry",
       "props": {
         "entryId": "Type.rl.lambda-typed",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
     {
@@ -132,112 +132,165 @@
       "id": "n_17",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.K-Combinator"
+        "entryId": "Type.def.K-Combinator",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_18",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.I-Combinator"
+        "entryId": "Type.def.I-Combinator",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_19",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.omega-Combinator"
+        "entryId": "Type.def.omega-Combinator",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_20",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Omega-Big"
+        "entryId": "Type.def.Omega-Big",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_21",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Iota-Combinator"
+        "entryId": "Type.def.Iota-Combinator",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_22",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Church-True"
+        "entryId": "Type.def.Church-True",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_23",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Church-False"
+        "entryId": "Type.def.Church-False",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_24",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Church-And"
+        "entryId": "Type.def.Church-And",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_25",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Church-Or"
+        "entryId": "Type.def.Church-Or",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_26",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Church-Not"
-      }
-    },
-    {
-      "id": "n_27",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.Church-Zero"
-      }
-    },
-    {
-      "id": "n_28",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.Church-One"
-      }
-    },
-    {
-      "id": "n_29",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.Church-Two"
+        "entryId": "Type.def.Church-Not",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_30",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Church-Succ"
+        "entryId": "Type.def.Church-Succ",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_31",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Church-Add"
+        "entryId": "Type.def.Church-Add",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_32",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Church-Mul"
+        "entryId": "Type.def.Church-Mul",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_33",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.Church",
+        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
+      }
+    },
+    {
+      "id": "n_34",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.combinators",
+        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
+      }
+    },
+    {
+      "id": "n_35",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.LegalExpr-LC",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_36",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Substitution-LC",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_37",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.inductive-types"
+      }
+    },
+    {
+      "id": "n_38",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.beta-single",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_39",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.defeq"
+      }
+    },
+    {
+      "id": "n_40",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Church-Nat"
       }
     }
   ],
@@ -254,91 +307,96 @@
     },
     {
       "from": "n_15",
+      "to": "n_35",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_36",
+      "label": "branch"
+    },
+    {
+      "from": "n_3",
+      "to": "n_34",
+      "label": "branch"
+    },
+    {
+      "from": "n_34",
       "to": "n_12",
       "label": "branch"
     },
     {
-      "from": "n_15",
-      "to": "n_14",
-      "label": "branch"
-    },
-    {
-      "from": "n_15",
+      "from": "n_34",
       "to": "n_17",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_34",
       "to": "n_18",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_34",
       "to": "n_19",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_34",
       "to": "n_20",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_34",
       "to": "n_21",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_3",
+      "to": "n_33",
+      "label": "branch"
+    },
+    {
+      "from": "n_33",
       "to": "n_22",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_33",
       "to": "n_23",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_33",
       "to": "n_24",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_33",
       "to": "n_25",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_33",
       "to": "n_26",
       "label": "branch"
     },
     {
-      "from": "n_15",
-      "to": "n_27",
+      "from": "n_33",
+      "to": "n_40",
       "label": "branch"
     },
     {
-      "from": "n_15",
-      "to": "n_28",
-      "label": "branch"
-    },
-    {
-      "from": "n_15",
-      "to": "n_29",
-      "label": "branch"
-    },
-    {
-      "from": "n_15",
+      "from": "n_33",
       "to": "n_30",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_33",
       "to": "n_31",
       "label": "branch"
     },
     {
-      "from": "n_15",
+      "from": "n_33",
       "to": "n_32",
       "label": "branch"
     },
@@ -350,6 +408,11 @@
     {
       "from": "n_16",
       "to": "n_11",
+      "label": "branch"
+    },
+    {
+      "from": "n_11",
+      "to": "n_10",
       "label": "branch"
     },
     {
@@ -368,18 +431,33 @@
       "label": "branch"
     },
     {
-      "from": "n_16",
-      "to": "n_10",
-      "label": "branch"
-    },
-    {
       "from": "n_6",
-      "to": "n_7",
+      "to": "n_37",
       "label": "branch"
     },
     {
       "from": "n_8",
       "to": "n_9",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_38",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_14",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_39",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "n_7",
       "label": "branch"
     }
   ]

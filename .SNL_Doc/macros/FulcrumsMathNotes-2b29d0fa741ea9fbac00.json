@@ -30,8 +30,8 @@
         },
         "markdown": "",
         "text": "",
-        "mode": "text",
-        "template": "∎"
+        "mode": "formula_inline",
+        "template": "\\square"
       }
     ],
     "tags": [],

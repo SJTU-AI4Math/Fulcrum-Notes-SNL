@@ -5,15 +5,17 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.rl.pi"
+      ],
       "urls": []
     },
     "kind": "rule",
     "dynamic_arity": false,
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "\\Pi_{(#0:#1)}#2",
+        "style_name": "default",
+        "tags": [],
         "typst": {
           "built_in": "",
           "synthesis": {
@@ -30,8 +32,8 @@
         },
         "markdown": "",
         "text": "",
-        "style_name": "default",
-        "tags": []
+        "mode": "formula_inline",
+        "template": "\\Pi_{(#0:#1)}#2"
       }
     ],
     "tags": [],

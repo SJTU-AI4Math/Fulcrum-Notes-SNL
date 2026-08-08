@@ -5,15 +5,17 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Fulcrum.def"
+      ],
       "urls": []
     },
     "kind": "rule",
     "dynamic_arity": false,
     "styles": [
       {
-        "mode": "text",
-        "template": "Let #0, define “#1” to be #2. ",
+        "style_name": "EN",
+        "tags": [],
         "typst": {
           "built_in": "",
           "synthesis": {
@@ -30,12 +32,12 @@
         },
         "markdown": "",
         "text": "",
-        "style_name": "inline",
-        "tags": []
+        "mode": "text",
+        "template": "Let #0, define “#1” to be #2. "
       },
       {
-        "mode": "text",
-        "template": "Let #0, define “#1” if and only if #2. ",
+        "style_name": "predicate",
+        "tags": [],
         "typst": {
           "built_in": "",
           "synthesis": {
@@ -52,13 +54,58 @@
         },
         "markdown": "",
         "text": "",
-        "style_name": "predicate",
-        "tags": []
+        "mode": "text",
+        "template": "Let #0, define “#1” if and only if #2. "
+      },
+      {
+        "style_name": "中文",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "text",
+        "template": "设 #0，定义【#1】为 #2。"
+      },
+      {
+        "style_name": "谓词",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "text",
+        "template": "设 #0，定义【#1】当且仅当 #2。"
       }
     ],
     "tags": [],
     "default_style": {
-      "en": "inline"
+      "en": "EN",
+      "zh-CN": "中文"
     },
     "name": "def-hyp"
   }

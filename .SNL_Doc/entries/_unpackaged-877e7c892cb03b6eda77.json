@@ -3,10 +3,10 @@
   "version": 1,
   "package": "_unpackaged",
   "entry": {
-    "id": "Type.subsec.basics",
+    "id": "Lambda.def.beta-single",
     "package": "_unpackaged",
-    "kind": "subsection",
-    "title": "Basics",
+    "kind": "definition",
+    "title": "Single-step $\\beta$-reduction",
     "content": {},
     "contribution_info": null,
     "pointer": null

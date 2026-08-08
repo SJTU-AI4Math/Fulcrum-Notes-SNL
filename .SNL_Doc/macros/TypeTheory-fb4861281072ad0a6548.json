@@ -5,7 +5,9 @@
   "macro": {
     "description": "Iota combinator — the one-combinator basis for SKI",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.Iota-Combinator"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

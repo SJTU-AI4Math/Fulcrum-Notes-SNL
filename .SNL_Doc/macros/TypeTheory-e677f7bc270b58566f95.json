@@ -5,7 +5,9 @@
   "macro": {
     "description": "Church successor — λn f x. f (n f x)",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.Church-Succ"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

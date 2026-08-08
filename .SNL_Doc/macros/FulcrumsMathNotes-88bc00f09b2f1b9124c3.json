@@ -12,7 +12,7 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "style_name": "default",
+        "style_name": "EN",
         "tags": [],
         "typst": {
           "built_in": "",
@@ -54,11 +54,56 @@
         "text": "",
         "mode": "text",
         "template": "Define “#0” if and only if all following data are provided:\n#1"
+      },
+      {
+        "style_name": "中文",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "text",
+        "template": "定义结构体【#0】包含以下信息：\n#1"
+      },
+      {
+        "style_name": "谓词",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "text",
+        "template": "定义【#0】当且仅当可提供以下所有信息：\n#1"
       }
     ],
     "tags": [],
     "default_style": {
-      "en": "default"
+      "en": "EN",
+      "zh-CN": "中文"
     },
     "name": "def-struct"
   }

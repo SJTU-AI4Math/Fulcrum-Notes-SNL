@@ -5,7 +5,9 @@
   "macro": {
     "description": "Church boolean false — λx y. y",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.Church-False"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

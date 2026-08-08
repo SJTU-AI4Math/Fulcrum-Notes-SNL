@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Church-Nat",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Church Encoding of Natural Numbers",
+    "content": {
+      "snl": "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.lambda[maspto](1,Type.lambda(list-partial[none](@f,@x),x)),Type.lambda[maspto](Nat.succ(@m),Type.lambda(list-partial[none](@f,@x),Lambda.apply(f,m,f,x))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

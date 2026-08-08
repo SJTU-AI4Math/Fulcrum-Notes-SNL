@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "FulcrumsMathNotes",
+  "entry": {
+    "id": "Fulcrum.def",
+    "package": "FulcrumsMathNotes",
+    "kind": "remark",
+    "title": "Definition by Abbreviation",
+    "content": {
+      "markdown": "Sentence \"Define `#0` : `#1` to be `#2`.\" append constant `#0` with type `#1` into the global context, with the fact that `#0` is definitionally equal to `#2`, so that the definition is merely an abbreviation of an expression that is already available within the given global context.\r\n\r\nLet `T` be a type in the meta-context, sentence \"Let (x : T), define `#0` to be `#1`\" is a syntactical sugar of sentence \"Define #0 to be λ(x : T).`#1`\", a syntax preferred by Lean 4."
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

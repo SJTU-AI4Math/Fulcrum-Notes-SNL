@@ -5,7 +5,9 @@
   "macro": {
     "description": "K combinator constant",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.K-Combinator"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

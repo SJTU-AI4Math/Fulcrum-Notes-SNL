@@ -1,18 +1,24 @@
 {
   "format": "snl-macro",
   "version": 1,
-  "package": "FulcrumsMathNotes",
+  "package": "TypeTheory",
   "macro": {
-    "description": "Inductive type definition by constructors",
+    "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.LegalExpr-LC"
+      ],
       "urls": []
     },
-    "kind": "rule",
+    "kind": "const",
     "dynamic_arity": false,
+    "default_style": {
+      "en": "is",
+      "zh-CN": "中文"
+    },
     "styles": [
       {
-        "style_name": "EN",
+        "style_name": "is",
         "tags": [],
         "typst": {
           "built_in": "",
@@ -31,10 +37,10 @@
         "markdown": "",
         "text": "",
         "mode": "text",
-        "template": "Define type “#0” to consist inhabitants provided by any of the following constructors:\n#1"
+        "template": "#0 is legal"
       },
       {
-        "style_name": "prop",
+        "style_name": "are",
         "tags": [],
         "typst": {
           "built_in": "",
@@ -53,7 +59,7 @@
         "markdown": "",
         "text": "",
         "mode": "text",
-        "template": "Define “#0” to admit proofs provided by any of the following constructors:\n#1"
+        "template": "#0 are legal"
       },
       {
         "style_name": "中文",
@@ -75,36 +81,10 @@
         "markdown": "",
         "text": "",
         "mode": "text",
-        "template": "定义类型【#0】包含由以下构造子之一提供的对象：\n#1"
-      },
-      {
-        "style_name": "谓词",
-        "tags": [],
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
-        "mode": "formula_inline",
-        "template": "定义【#0】可由以下构造子之一提供证明：\n#1"
+        "template": "#0 是合法 $\\lambda$-表达式"
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "EN",
-      "zh-CN": "中文"
-    },
-    "name": "def-inductive"
+    "name": "Lambda.LegalExpr"
   }
 }

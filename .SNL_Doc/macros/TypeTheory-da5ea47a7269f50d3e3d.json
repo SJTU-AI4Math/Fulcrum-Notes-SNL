@@ -3,20 +3,19 @@
   "version": 1,
   "package": "TypeTheory",
   "macro": {
-    "description": "Church and — λp q. p q p",
+    "description": "",
     "source": {
-      "entries": [
-        "Type.def.Church-And"
-      ],
+      "entries": [],
       "urls": []
     },
-    "dynamic_arity": false,
+    "dynamic_arity": true,
     "default_style": {
       "en": "default"
     },
     "styles": [
       {
         "style_name": "default",
+        "separator": "\\\\",
         "tags": [],
         "typst": {
           "built_in": "",
@@ -35,11 +34,11 @@
         "markdown": "",
         "text": "",
         "mode": "formula_inline",
-        "template": "\\mathsf{and}"
+        "template": "\\begin{cases}#*\\end{cases}"
       }
     ],
     "tags": [],
-    "kind": "const",
-    "name": "Church.and"
+    "kind": "partial",
+    "name": "cases"
   }
 }

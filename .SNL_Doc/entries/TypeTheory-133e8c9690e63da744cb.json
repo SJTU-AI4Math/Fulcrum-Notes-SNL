@@ -5,8 +5,8 @@
   "entry": {
     "id": "Type.rl.Expr-LC",
     "package": "TypeTheory",
-    "kind": "axiom",
-    "title": "Expression",
+    "kind": "definition",
+    "title": "Expression (Non-typed Lambda Calculus)",
     "content": {
       "snl": "def-inductive(Lambda.Expr,ctors(Type.judge(%Lambda Abstraction%,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(%Application%,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(%Binded variable%,Type.to(Nat,Lambda.Expr))))"
     },

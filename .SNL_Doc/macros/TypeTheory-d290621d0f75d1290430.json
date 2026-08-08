@@ -5,7 +5,9 @@
   "macro": {
     "description": "Church or — λp q. p p q",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.Church-One"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

@@ -5,7 +5,9 @@
   "macro": {
     "description": "Church multiplication — λm n f. m (n f)",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.Church-Mul"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

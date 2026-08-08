@@ -5,7 +5,9 @@
   "macro": {
     "description": "Big Omega combinator — the paradigmatic non-terminating term ω ω",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.Omega-Big"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

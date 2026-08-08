@@ -1,7 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
-  "package": "FulcrumsMathNotes",
+  "package": "TypeTheory",
   "macro": {
     "description": "",
     "source": {
@@ -35,7 +35,7 @@
         "markdown": "",
         "text": "",
         "mode": "text",
-        "template": "Let #0, opaquely define “#1”."
+        "template": "match #0 by cases, if #0 is #1"
       },
       {
         "style_name": "中文",
@@ -57,10 +57,10 @@
         "markdown": "",
         "text": "",
         "mode": "text",
-        "template": "设 #0，不透明地定义【#1】。"
+        "template": "对 #0 进行模式匹配：若 #0 为 #1"
       }
     ],
     "tags": [],
-    "name": "def-hyp-opq"
+    "name": "match"
   }
 }

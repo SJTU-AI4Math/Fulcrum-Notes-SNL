@@ -5,7 +5,9 @@
   "macro": {
     "description": "Church numeral one — λf x. f x",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.Church-One"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

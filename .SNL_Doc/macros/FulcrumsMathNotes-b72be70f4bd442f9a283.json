@@ -5,14 +5,16 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Fulcrum.def"
+      ],
       "urls": []
     },
     "kind": "rule",
     "dynamic_arity": false,
     "styles": [
       {
-        "style_name": "inline",
+        "style_name": "EN",
         "tags": [],
         "typst": {
           "built_in": "",
@@ -98,11 +100,34 @@
         "text": "",
         "mode": "text",
         "template": "Define “#0” if and only if #1."
+      },
+      {
+        "style_name": "中文",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "text",
+        "template": "定义【#0】为 #1。"
       }
     ],
     "tags": [],
     "default_style": {
-      "en": "inline"
+      "en": "EN",
+      "zh-CN": "中文"
     },
     "name": "def"
   }

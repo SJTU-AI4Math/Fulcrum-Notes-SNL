@@ -2545,6 +2545,32 @@
       }
     },
     {
+      "id": "dep.Lambda.def.beta.Type.def.LegalExpr-LC",
+      "from": "Lambda.def.beta",
+      "to": "Type.def.LegalExpr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.LegalExpr"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Lambda.def.beta.Type.rl.Expr-LC",
+      "from": "Lambda.def.beta",
+      "to": "Type.rl.Expr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.Expr"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Lambda.def.beta.Type.rl.judge",
       "from": "Lambda.def.beta",
       "to": "Type.rl.judge",
@@ -2554,7 +2580,85 @@
         "macros": [
           "Type.judge"
         ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.Lambda.def.beta",
+      "from": "Lambda.def.defeq",
+      "to": "Lambda.def.beta",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.beta"
+        ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.Logic.def.forall",
+      "from": "Lambda.def.defeq",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.Type.def.LegalExpr-LC",
+      "from": "Lambda.def.defeq",
+      "to": "Type.def.LegalExpr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.LegalExpr"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.Type.rl.Expr-LC",
+      "from": "Lambda.def.defeq",
+      "to": "Type.rl.Expr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.Expr"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.Type.rl.fun",
+      "from": "Lambda.def.defeq",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.Type.rl.judge",
+      "from": "Lambda.def.defeq",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
       }
     },
     {
@@ -4142,6 +4246,97 @@
           "Set.sep"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.Church-Nat.Type.def.nat",
+      "from": "Type.def.Church-Nat",
+      "to": "Type.def.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.Church-Nat.Type.rl.judge",
+      "from": "Type.def.Church-Nat",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.LegalExpr-LC.Type.rl.Expr-LC",
+      "from": "Type.def.LegalExpr-LC",
+      "to": "Type.rl.Expr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.Expr"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.LegalExpr-LC.Type.rl.judge",
+      "from": "Type.def.LegalExpr-LC",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.Substitution-LC.Type.def.LegalExpr-LC",
+      "from": "Type.def.Substitution-LC",
+      "to": "Type.def.LegalExpr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.LegalExpr"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.Substitution-LC.Type.rl.Expr-LC",
+      "from": "Type.def.Substitution-LC",
+      "to": "Type.rl.Expr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.Expr"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.Substitution-LC.Type.rl.judge",
+      "from": "Type.def.Substitution-LC",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
       }
     },
     {

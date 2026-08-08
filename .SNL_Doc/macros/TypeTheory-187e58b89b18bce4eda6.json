@@ -12,8 +12,8 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "\\lambda #0.\\ #1",
+        "style_name": "default",
+        "tags": [],
         "typst": {
           "built_in": "",
           "synthesis": {
@@ -30,8 +30,52 @@
         },
         "markdown": "",
         "text": "",
-        "style_name": "default",
-        "tags": []
+        "mode": "formula_inline",
+        "template": "\\lambda #0.#1"
+      },
+      {
+        "style_name": "maspto",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "#0 \\mapsto #1"
+      },
+      {
+        "style_name": "match",
+        "tags": [],
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "mode": "formula_inline",
+        "template": "#1, #0"
       }
     ],
     "tags": [],

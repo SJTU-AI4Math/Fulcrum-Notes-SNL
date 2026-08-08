@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Lambda.def.defeq",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Definitional Equality",
+    "content": {
+      "snl": "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Lambda Extentionality%,),Type.judge(%Application Extensionality%,)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

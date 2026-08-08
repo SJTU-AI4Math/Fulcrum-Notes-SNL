@@ -3,13 +3,12 @@
   "version": 1,
   "package": "TypeTheory",
   "macro": {
-    "description": "Church and — λp q. p q p",
+    "description": "",
     "source": {
-      "entries": [
-        "Type.def.Church-And"
-      ],
+      "entries": [],
       "urls": []
     },
+    "kind": "partial",
     "dynamic_arity": false,
     "default_style": {
       "en": "default"
@@ -35,11 +34,10 @@
         "markdown": "",
         "text": "",
         "mode": "formula_inline",
-        "template": "\\mathsf{and}"
+        "template": "#0 &, #1"
       }
     ],
     "tags": [],
-    "kind": "const",
-    "name": "Church.and"
+    "name": "match-case"
   }
 }

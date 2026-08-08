@@ -5,7 +5,9 @@
   "macro": {
     "description": "Church not — λp x y. p y x",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.Church-Not"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

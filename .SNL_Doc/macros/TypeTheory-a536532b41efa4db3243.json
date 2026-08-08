@@ -5,7 +5,9 @@
   "macro": {
     "description": "I combinator constant",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.I-Combinator"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

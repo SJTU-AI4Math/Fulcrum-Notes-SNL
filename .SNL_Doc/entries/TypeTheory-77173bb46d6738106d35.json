@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.LegalExpr-LC",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Legal Expression (Non-typed Lambda Calculus)",
+    "content": {
+      "snl": "def-hyp-opq(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr(e))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

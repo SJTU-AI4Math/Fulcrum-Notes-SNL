@@ -3,10 +3,10 @@
   "version": 1,
   "package": "TypeTheory",
   "macro": {
-    "description": "Church and — λp q. p q p",
+    "description": "",
     "source": {
       "entries": [
-        "Type.def.Church-And"
+        "Lambda.def.beta"
       ],
       "urls": []
     },
@@ -35,11 +35,11 @@
         "markdown": "",
         "text": "",
         "mode": "formula_inline",
-        "template": "\\mathsf{and}"
+        "template": "#0 \\overset{\\beta}{\\twoheadrightarrow} #1"
       }
     ],
     "tags": [],
     "kind": "const",
-    "name": "Church.and"
+    "name": "Lambda.beta-closure"
   }
 }

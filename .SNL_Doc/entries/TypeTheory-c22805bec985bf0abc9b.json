@@ -6,9 +6,9 @@
     "id": "Lambda.def.beta",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Beta Reduction",
+    "title": "$\\beta$-reduction",
     "content": {
-      "snl": "def-hyp-opq(Type.judge(list-partial(@a,@b),Lambda.Expr),Lambda.beta(a,b))"
+      "snl": "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.Expr), Lambda.LegalExpr[are](list-partial[formula](a, b))),\r\n    Lambda.beta(a, b)\r\n)"
     },
     "contribution_info": null,
     "pointer": null
