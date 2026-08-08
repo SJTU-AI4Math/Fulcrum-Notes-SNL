@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.ctxt.map",
+    "kind": "context",
+    "title": "X, Y, τ_X, τ_Y, f",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

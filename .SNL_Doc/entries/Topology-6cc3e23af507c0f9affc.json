@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.def.openCover",
+    "kind": "definition",
+    "title": "Open Cover",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@C,Set(Set(Set(S@Topology.ctxt.S)))),Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.openCover(C,A),Logic.and(Logic.forall-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.implies(Set.mem(U,C),Set.mem(U,τ))),Set.subset(A,Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(U,C),Set.mem(x,U)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.prop.inverseOfContinuousOnCompact",
+    "kind": "property",
+    "title": "Inverse of Continuous Map on Compact Space",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.implies(Logic.and(Topology.compact(E),Topology.continuousMap(f,E,Y@Topology.ctxt.Y)),Logic.true))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

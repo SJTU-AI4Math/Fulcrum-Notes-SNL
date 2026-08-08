@@ -221,7 +221,8 @@
     "RealAnalysis",
     "SetTheory",
     "Tactics",
-    "TypeTheory"
+    "TypeTheory",
+    "Topology"
   ],
   "entity_storage": {
     "version": 1,
@@ -230,11 +231,11 @@
     "receipt": {
       "legacy_backup_present": true,
       "legacy_entries_present": true,
-      "entry_count": 230,
-      "macro_package_count": 13,
-      "macro_count": 308,
-      "entries_digest": "0357b257f2dc021fc7f28f5b540620a76537c4460736f403a898f068e7021ed6",
-      "macro_packages_digest": "08b105c060b001443c665153c38a82dab4a1c118a845390719d4d890cfeb5f81"
+      "entry_count": 349,
+      "macro_package_count": 15,
+      "macro_count": 383,
+      "entries_digest": "41ddff7569280d73a158a2532373118dd1e1b7cd15caf7d2054dce2379da7ab8",
+      "macro_packages_digest": "a4a7141a7e09aef634fa938f8634928d4721aa30cb1735b49c06fef8934eb33f"
     }
   }
 }

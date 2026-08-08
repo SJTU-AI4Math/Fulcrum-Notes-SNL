@@ -1,0 +1,67 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "Operator: closure of A",
+    "source": {
+      "entries": [
+        "Topology.def.closure"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "\\operatorname{Cl}(#0)",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "default",
+        "tags": []
+      },
+      {
+        "mode": "formula_inline",
+        "template": "\\overline{#0}",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "overline",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Topology.closure"
+  }
+}

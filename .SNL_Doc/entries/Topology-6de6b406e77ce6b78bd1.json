@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.ctxt.Y",
+    "kind": "context",
+    "title": "Y",
+    "content": {
+      "snl": "Type.judge(@Y,Type)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

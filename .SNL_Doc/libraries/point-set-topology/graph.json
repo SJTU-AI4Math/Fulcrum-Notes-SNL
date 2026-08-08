@@ -1,0 +1,1052 @@
+{
+  "nodes": [
+    {
+      "id": "n_0",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.sec.topology"
+      }
+    },
+    {
+      "id": "n_1",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.1"
+      }
+    },
+    {
+      "id": "n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.S"
+      }
+    },
+    {
+      "id": "n_3",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.tau"
+      }
+    },
+    {
+      "id": "n_4",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.basicConcepts"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.limit"
+      }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.connectedness"
+      }
+    },
+    {
+      "id": "n_7",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.compactness"
+      }
+    },
+    {
+      "id": "n_8",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.examples"
+      }
+    },
+    {
+      "id": "n_9",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.topology"
+      }
+    },
+    {
+      "id": "n_10",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.topologicalSpace"
+      }
+    },
+    {
+      "id": "n_11",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.openSet"
+      }
+    },
+    {
+      "id": "n_12",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.closedSet"
+      }
+    },
+    {
+      "id": "n_13",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.neighborhood"
+      }
+    },
+    {
+      "id": "n_14",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.neighborhoodFamily"
+      }
+    },
+    {
+      "id": "n_15",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.interior"
+      }
+    },
+    {
+      "id": "n_16",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.closure"
+      }
+    },
+    {
+      "id": "n_17",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.closurePoint"
+      }
+    },
+    {
+      "id": "n_18",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.boundary"
+      }
+    },
+    {
+      "id": "n_19",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.generatedTopology"
+      }
+    },
+    {
+      "id": "n_20",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.topologicalBasis"
+      }
+    },
+    {
+      "id": "n_21",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.subspaceTopology"
+      }
+    },
+    {
+      "id": "n_22",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.productTopology"
+      }
+    },
+    {
+      "id": "n_23",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.interiorPoint"
+      }
+    },
+    {
+      "id": "n_24",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.openIffInteriorSelf"
+      }
+    },
+    {
+      "id": "n_25",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.closureClosed"
+      }
+    },
+    {
+      "id": "n_26",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.closedIffClosureSelf"
+      }
+    },
+    {
+      "id": "n_27",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.deletedNeighborhood"
+      }
+    },
+    {
+      "id": "n_28",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.limitPoint"
+      }
+    },
+    {
+      "id": "n_29",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.derivedSet"
+      }
+    },
+    {
+      "id": "n_30",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.isolatedPoint"
+      }
+    },
+    {
+      "id": "n_31",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.denseSet"
+      }
+    },
+    {
+      "id": "n_32",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.nowhereDense"
+      }
+    },
+    {
+      "id": "n_33",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.selfDense"
+      }
+    },
+    {
+      "id": "n_34",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.perfectSet"
+      }
+    },
+    {
+      "id": "n_35",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.seqLimit"
+      }
+    },
+    {
+      "id": "n_36",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.seqConvergence"
+      }
+    },
+    {
+      "id": "n_37",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.sequentialCompactness"
+      }
+    },
+    {
+      "id": "n_38",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.derivedClosure"
+      }
+    },
+    {
+      "id": "n_39",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.closedIffContainsLimitPoints"
+      }
+    },
+    {
+      "id": "n_40",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.connected"
+      }
+    },
+    {
+      "id": "n_41",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.pathConnected"
+      }
+    },
+    {
+      "id": "n_42",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.pathConnectedImpliesConnected"
+      }
+    },
+    {
+      "id": "n_43",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.openCover"
+      }
+    },
+    {
+      "id": "n_44",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.compactness"
+      }
+    },
+    {
+      "id": "n_45",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.countablyCompact"
+      }
+    },
+    {
+      "id": "n_46",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.thm.heineBorel"
+      }
+    },
+    {
+      "id": "n_47",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.compactImpliesCountablyCompact"
+      }
+    },
+    {
+      "id": "n_48",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.seqCompactImpliesCountablyCompact"
+      }
+    },
+    {
+      "id": "n_49",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.closedSubsetOfCompact"
+      }
+    },
+    {
+      "id": "n_50",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.example.trivialTopology"
+      }
+    },
+    {
+      "id": "n_51",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.example.discreteTopology"
+      }
+    },
+    {
+      "id": "n_52",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.example.orderTopology"
+      }
+    },
+    {
+      "id": "n_53",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.example.usualTopologyR"
+      }
+    },
+    {
+      "id": "n_54",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.sec.continuousMap"
+      }
+    },
+    {
+      "id": "n_55",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.map"
+      }
+    },
+    {
+      "id": "n_56",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.X"
+      }
+    },
+    {
+      "id": "n_57",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.Y"
+      }
+    },
+    {
+      "id": "n_58",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.tauX"
+      }
+    },
+    {
+      "id": "n_59",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.tauY"
+      }
+    },
+    {
+      "id": "n_60",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.f"
+      }
+    },
+    {
+      "id": "n_61",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.mapLimit"
+      }
+    },
+    {
+      "id": "n_62",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.homeomorphism"
+      }
+    },
+    {
+      "id": "n_63",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.separation"
+      }
+    },
+    {
+      "id": "n_64",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.mapLimit"
+      }
+    },
+    {
+      "id": "n_65",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.mapConvergence"
+      }
+    },
+    {
+      "id": "n_66",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.continuityAtPoint"
+      }
+    },
+    {
+      "id": "n_67",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.continuousMap"
+      }
+    },
+    {
+      "id": "n_68",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.lipschitzContinuity"
+      }
+    },
+    {
+      "id": "n_69",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.heineReduction"
+      }
+    },
+    {
+      "id": "n_70",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.continuityViaNeighborhood"
+      }
+    },
+    {
+      "id": "n_71",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.continuityViaPreimage"
+      }
+    },
+    {
+      "id": "n_72",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.compositionPreservesContinuity"
+      }
+    },
+    {
+      "id": "n_73",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.continuousPreservesConnectedness"
+      }
+    },
+    {
+      "id": "n_74",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.continuousPreservesCompactness"
+      }
+    },
+    {
+      "id": "n_75",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.openMap"
+      }
+    },
+    {
+      "id": "n_76",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.homeomorphism"
+      }
+    },
+    {
+      "id": "n_77",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.homeomorphic"
+      }
+    },
+    {
+      "id": "n_78",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.inverseOfContinuousOnCompact"
+      }
+    },
+    {
+      "id": "n_79",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.T0"
+      }
+    },
+    {
+      "id": "n_80",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.T1"
+      }
+    },
+    {
+      "id": "n_81",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.T2"
+      }
+    },
+    {
+      "id": "n_82",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.example.sierpinskiSpace"
+      }
+    },
+    {
+      "id": "n_83",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.T1Equivalent"
+      }
+    },
+    {
+      "id": "n_84",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.limitUniqueInT2"
+      }
+    },
+    {
+      "id": "n_85",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.compactClosedInT2"
+      }
+    },
+    {
+      "id": "n_86",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.nestedCompactInT2"
+      }
+    },
+    {
+      "id": "n_87",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.continuousPreservesConvergenceInT2"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n_0",
+      "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_3",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "n_4",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "n_6",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "n_7",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "n_8",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_9",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_10",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_11",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_12",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_13",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_14",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_15",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_16",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_17",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_18",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_19",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_20",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_21",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_22",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_23",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_24",
+      "label": "branch"
+    },
+    {
+      "from": "n_16",
+      "to": "n_25",
+      "label": "branch"
+    },
+    {
+      "from": "n_16",
+      "to": "n_26",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_27",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_28",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_29",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_30",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_31",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_32",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_33",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_34",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_35",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_36",
+      "label": "branch"
+    },
+    {
+      "from": "n_5",
+      "to": "n_37",
+      "label": "branch"
+    },
+    {
+      "from": "n_29",
+      "to": "n_38",
+      "label": "branch"
+    },
+    {
+      "from": "n_29",
+      "to": "n_39",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "n_40",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "n_41",
+      "label": "branch"
+    },
+    {
+      "from": "n_41",
+      "to": "n_42",
+      "label": "branch"
+    },
+    {
+      "from": "n_7",
+      "to": "n_43",
+      "label": "branch"
+    },
+    {
+      "from": "n_7",
+      "to": "n_44",
+      "label": "branch"
+    },
+    {
+      "from": "n_7",
+      "to": "n_45",
+      "label": "branch"
+    },
+    {
+      "from": "n_7",
+      "to": "n_46",
+      "label": "branch"
+    },
+    {
+      "from": "n_44",
+      "to": "n_47",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "n_48",
+      "label": "branch"
+    },
+    {
+      "from": "n_44",
+      "to": "n_49",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_50",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_51",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_52",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_53",
+      "label": "branch"
+    },
+    {
+      "from": "n_54",
+      "to": "n_55",
+      "label": "branch"
+    },
+    {
+      "from": "n_55",
+      "to": "n_56",
+      "label": "branch"
+    },
+    {
+      "from": "n_55",
+      "to": "n_57",
+      "label": "branch"
+    },
+    {
+      "from": "n_55",
+      "to": "n_58",
+      "label": "branch"
+    },
+    {
+      "from": "n_55",
+      "to": "n_59",
+      "label": "branch"
+    },
+    {
+      "from": "n_55",
+      "to": "n_60",
+      "label": "branch"
+    },
+    {
+      "from": "n_54",
+      "to": "n_61",
+      "label": "branch"
+    },
+    {
+      "from": "n_54",
+      "to": "n_62",
+      "label": "branch"
+    },
+    {
+      "from": "n_54",
+      "to": "n_63",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_64",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_65",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_66",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_67",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_68",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_69",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_70",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_71",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_72",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_73",
+      "label": "branch"
+    },
+    {
+      "from": "n_61",
+      "to": "n_74",
+      "label": "branch"
+    },
+    {
+      "from": "n_62",
+      "to": "n_75",
+      "label": "branch"
+    },
+    {
+      "from": "n_62",
+      "to": "n_76",
+      "label": "branch"
+    },
+    {
+      "from": "n_62",
+      "to": "n_77",
+      "label": "branch"
+    },
+    {
+      "from": "n_62",
+      "to": "n_78",
+      "label": "branch"
+    },
+    {
+      "from": "n_63",
+      "to": "n_79",
+      "label": "branch"
+    },
+    {
+      "from": "n_63",
+      "to": "n_80",
+      "label": "branch"
+    },
+    {
+      "from": "n_63",
+      "to": "n_81",
+      "label": "branch"
+    },
+    {
+      "from": "n_63",
+      "to": "n_82",
+      "label": "branch"
+    },
+    {
+      "from": "n_80",
+      "to": "n_83",
+      "label": "branch"
+    },
+    {
+      "from": "n_81",
+      "to": "n_84",
+      "label": "branch"
+    },
+    {
+      "from": "n_81",
+      "to": "n_85",
+      "label": "branch"
+    },
+    {
+      "from": "n_81",
+      "to": "n_86",
+      "label": "branch"
+    },
+    {
+      "from": "n_81",
+      "to": "n_87",
+      "label": "branch"
+    }
+  ]
+}

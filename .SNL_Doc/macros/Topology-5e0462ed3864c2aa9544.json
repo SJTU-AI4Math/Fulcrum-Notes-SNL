@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "The topology tau",
+    "source": {
+      "entries": [
+        "Topology.def.topology"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "\\tau",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Topology.tau"
+  }
+}

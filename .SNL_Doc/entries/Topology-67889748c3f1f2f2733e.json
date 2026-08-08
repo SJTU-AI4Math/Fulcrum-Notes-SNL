@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.def.perfectSet",
+    "kind": "definition",
+    "title": "Perfect Set",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.perfect(A),Eq(Topology.derivedSet(A),A))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

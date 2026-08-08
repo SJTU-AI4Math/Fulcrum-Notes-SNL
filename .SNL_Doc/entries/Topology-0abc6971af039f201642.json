@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.def.seqConvergence",
+    "kind": "definition",
+    "title": "Sequence Convergence",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@x_n,Type.to(Nat,S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.seqConvergence(x_n,x),Topology.seqLimit(x_n,x))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

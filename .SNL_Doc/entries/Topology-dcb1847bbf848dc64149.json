@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.ctxt.tauY",
+    "kind": "context",
+    "title": "τ_Y",
+    "content": {
+      "snl": "Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

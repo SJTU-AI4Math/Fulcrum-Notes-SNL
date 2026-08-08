@@ -1,0 +1,16 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.def.connected",
+    "kind": "definition",
+    "title": "Connectedness",
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.connected(A),Logic.neg(Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.exists-typed(@V,Set(Set(S@Topology.ctxt.S)),Logic.and(Logic.and(Set.mem(U,τ),Set.mem(V,τ)),Logic.and(Logic.and(Set.subset(U,A),Set.subset(V,A)),Logic.and(Logic.and(Logic.neg(Set.mem(U,Set.emptyset[slim])),Logic.neg(Set.mem(V,Set.emptyset[slim]))),Logic.and(Eq(Set.inter(U,V),Set.emptyset[slim]),Eq(A,Set.union(U,V))))))))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}

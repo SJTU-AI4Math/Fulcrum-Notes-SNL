@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "Predicate: f is an open map",
+    "source": {
+      "entries": [
+        "Topology.def.openMap"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "mode": "formula_inline",
+        "template": "#0\\text{ 是开映射}",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "",
+        "style_name": "default",
+        "tags": []
+      }
+    ],
+    "default_style": {
+      "en": "default"
+    },
+    "name": "Topology.openMap"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.subsec.connectedness",
+    "kind": "subsection",
+    "title": "Connectedness",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Topology"
+  }
+}
