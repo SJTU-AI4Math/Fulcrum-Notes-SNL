@@ -17,29 +17,28 @@
       {
         "style_name": "default",
         "tags": [],
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
-        "mode": "formula_inline",
-        "template": "\\mathbb{N}"
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathbb{N}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
-    "default_style": {
-      "en": "default"
-    },
     "name": "Nat"
   }
 }

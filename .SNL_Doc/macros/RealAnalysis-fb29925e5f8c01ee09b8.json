@@ -12,16 +12,15 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "mode": "formula_display",
-        "template": "\\int_{#0}#1",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_display",
+          "body": "\\int_{#0}#1"
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "RealAnalysis.simpleIntegral"
   }
 }

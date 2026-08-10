@@ -14,30 +14,29 @@
       {
         "style_name": "default",
         "tags": [],
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
-        "mode": "text",
-        "template": "我们断言 #0 就是所要找的对象, 下面我们证明 #1"
+        "template": {
+          "mode": "text",
+          "body": "我们断言 #0 就是所要找的对象, 下面我们证明 #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "Proof.claim"
   }
 }

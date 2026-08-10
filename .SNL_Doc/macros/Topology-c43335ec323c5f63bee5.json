@@ -15,53 +15,54 @@
     "tags": [],
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "\\operatorname{Int}(#0)",
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Int}(#0)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       },
       {
-        "mode": "formula_inline",
-        "template": "#0^{\\circ}",
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
         "style_name": "superscript",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0^{\\circ}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
-    "default_style": {
-      "en": "default"
-    },
     "name": "Topology.interior"
   }
 }

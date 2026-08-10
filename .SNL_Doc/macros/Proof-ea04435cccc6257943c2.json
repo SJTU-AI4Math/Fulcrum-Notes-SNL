@@ -14,32 +14,31 @@
       {
         "style_name": "default",
         "tags": [],
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
-        "mode": "block",
-        "template": "#*",
-        "separator": "\n",
-        "block_template_name": "collapsible"
+        "template": {
+          "mode": "block",
+          "body": "#*",
+          "separator": "\n",
+          "block_template_name": "collapsible",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "Proof.goal"
   }
 }

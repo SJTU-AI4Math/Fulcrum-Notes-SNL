@@ -14,30 +14,29 @@
       {
         "style_name": "default",
         "tags": [],
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
-        "mode": "formula_display",
-        "template": "\\int_{#0}^{#1}#3\\mathrm{d}#2"
+        "template": {
+          "mode": "formula_display",
+          "body": "\\int_{#0}^{#1}#3\\mathrm{d}#2",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "Analysis.rIntIcc"
   }
 }

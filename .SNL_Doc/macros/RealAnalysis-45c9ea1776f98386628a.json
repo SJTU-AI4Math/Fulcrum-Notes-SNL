@@ -12,16 +12,15 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "#0_{#1}",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0_{#1}"
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "RealAnalysis.crossSection"
   }
 }

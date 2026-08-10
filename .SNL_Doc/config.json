@@ -1,12 +1,18 @@
 {
-  "version": "0.0.6",
+  "version": "0.0.9",
   "entry_kinds": [
     {
       "id": "section",
       "name": "Section",
       "coloring": {
-        "stroke": "#787878",
-        "background": "#F0F0F0"
+        "light": {
+          "stroke": "#787878",
+          "background": "#F0F0F0"
+        },
+        "dark": {
+          "stroke": "#787878",
+          "background": "#F0F0F0"
+        }
       },
       "style": "section",
       "defaultCounterName": ""
@@ -15,8 +21,14 @@
       "id": "subsection",
       "name": "Subsection",
       "coloring": {
-        "stroke": "#787878",
-        "background": "#F0F0F0"
+        "light": {
+          "stroke": "#787878",
+          "background": "#F0F0F0"
+        },
+        "dark": {
+          "stroke": "#787878",
+          "background": "#F0F0F0"
+        }
       },
       "style": "section",
       "defaultCounterName": ""
@@ -25,8 +37,14 @@
       "id": "definition",
       "name": "Definition",
       "coloring": {
-        "stroke": "#009C27",
-        "background": "#D6FEE0"
+        "light": {
+          "stroke": "#009C27",
+          "background": "#D6FEE0"
+        },
+        "dark": {
+          "stroke": "#009C27",
+          "background": "#D6FEE0"
+        }
       },
       "style": "",
       "defaultCounterName": ""
@@ -35,8 +53,14 @@
       "id": "axiom",
       "name": "Axiom",
       "coloring": {
-        "stroke": "#C1C103",
-        "background": "#FFFFAC"
+        "light": {
+          "stroke": "#C1C103",
+          "background": "#FFFFAC"
+        },
+        "dark": {
+          "stroke": "#C1C103",
+          "background": "#FFFFAC"
+        }
       },
       "style": "",
       "defaultCounterName": ""
@@ -45,8 +69,14 @@
       "id": "lemma",
       "name": "Lemma",
       "coloring": {
-        "stroke": "#005B9C",
-        "background": "#DAF0FF"
+        "light": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        },
+        "dark": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        }
       },
       "style": "",
       "defaultCounterName": ""
@@ -55,8 +85,14 @@
       "id": "theorem",
       "name": "Theorem",
       "coloring": {
-        "stroke": "#005B9C",
-        "background": "#DAF0FF"
+        "light": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        },
+        "dark": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        }
       },
       "style": "",
       "defaultCounterName": ""
@@ -65,8 +101,14 @@
       "id": "corollary",
       "name": "Corollary",
       "coloring": {
-        "stroke": "#005B9C",
-        "background": "#DAF0FF"
+        "light": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        },
+        "dark": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        }
       },
       "style": "",
       "defaultCounterName": ""
@@ -75,8 +117,14 @@
       "id": "property",
       "name": "Property",
       "coloring": {
-        "stroke": "#AC00AF",
-        "background": "#FFEDFF"
+        "light": {
+          "stroke": "#AC00AF",
+          "background": "#FFEDFF"
+        },
+        "dark": {
+          "stroke": "#AC00AF",
+          "background": "#FFEDFF"
+        }
       },
       "style": "",
       "defaultCounterName": ""
@@ -85,8 +133,14 @@
       "id": "remark",
       "name": "Remark",
       "coloring": {
-        "stroke": "#E07B00",
-        "background": "#FFEBD2"
+        "light": {
+          "stroke": "#E07B00",
+          "background": "#FFEBD2"
+        },
+        "dark": {
+          "stroke": "#E07B00",
+          "background": "#FFEBD2"
+        }
       },
       "style": "remark",
       "defaultCounterName": ""
@@ -95,8 +149,14 @@
       "id": "example",
       "name": "Example",
       "coloring": {
-        "stroke": "#7700E4",
-        "background": "#EFDFFF"
+        "light": {
+          "stroke": "#7700E4",
+          "background": "#EFDFFF"
+        },
+        "dark": {
+          "stroke": "#7700E4",
+          "background": "#EFDFFF"
+        }
       },
       "style": "",
       "defaultCounterName": ""
@@ -105,8 +165,14 @@
       "id": "counterexample",
       "name": "Counterexample",
       "coloring": {
-        "stroke": "#D20022",
-        "background": "#FFD6DC"
+        "light": {
+          "stroke": "#D20022",
+          "background": "#FFD6DC"
+        },
+        "dark": {
+          "stroke": "#D20022",
+          "background": "#FFD6DC"
+        }
       },
       "style": "",
       "defaultCounterName": ""
@@ -115,8 +181,14 @@
       "id": "construction",
       "name": "Construction",
       "coloring": {
-        "stroke": "#787878",
-        "background": "#F0F0F0"
+        "light": {
+          "stroke": "#787878",
+          "background": "#F0F0F0"
+        },
+        "dark": {
+          "stroke": "#787878",
+          "background": "#F0F0F0"
+        }
       },
       "style": "proof",
       "defaultCounterName": ""
@@ -125,8 +197,14 @@
       "id": "proof",
       "name": "Proof",
       "coloring": {
-        "stroke": "#787878",
-        "background": "#F0F0F0"
+        "light": {
+          "stroke": "#787878",
+          "background": "#F0F0F0"
+        },
+        "dark": {
+          "stroke": "#787878",
+          "background": "#F0F0F0"
+        }
       },
       "style": "proof",
       "defaultCounterName": ""
@@ -135,8 +213,14 @@
       "id": "problem",
       "name": "Problem",
       "coloring": {
-        "stroke": "#005B9C",
-        "background": "#DAF0FF"
+        "light": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        },
+        "dark": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        }
       },
       "style": "problem",
       "defaultCounterName": ""
@@ -145,8 +229,14 @@
       "id": "context",
       "name": "Context",
       "coloring": {
-        "stroke": "#00AAAA",
-        "background": "#DFFFFF"
+        "light": {
+          "stroke": "#00AAAA",
+          "background": "#DFFFFF"
+        },
+        "dark": {
+          "stroke": "#00AAAA",
+          "background": "#DFFFFF"
+        }
       },
       "style": "",
       "defaultCounterName": ""
@@ -158,8 +248,14 @@
       "name": "Rule",
       "description": "Meta-mathematical rule symbols (∀, ∃, `:`, `def`, apply, implies, paren…).",
       "coloring": {
-        "stroke": "#009C27",
-        "background": "#D6FEE0"
+        "light": {
+          "stroke": "#009C27",
+          "background": "#D6FEE0"
+        },
+        "dark": {
+          "stroke": "#009C27",
+          "background": "#D6FEE0"
+        }
       }
     },
     {
@@ -167,8 +263,14 @@
       "name": "Const",
       "description": "Mathematical constants / defined terms (add, mul, and, or…).",
       "coloring": {
-        "stroke": "#005B9C",
-        "background": "#DAF0FF"
+        "light": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        },
+        "dark": {
+          "stroke": "#005B9C",
+          "background": "#DAF0FF"
+        }
       }
     },
     {
@@ -176,8 +278,14 @@
       "name": "Bound variable",
       "description": "Bound-variable occurrences.",
       "coloring": {
-        "stroke": "#7700E4",
-        "background": "#EFDFFF"
+        "light": {
+          "stroke": "#7700E4",
+          "background": "#EFDFFF"
+        },
+        "dark": {
+          "stroke": "#7700E4",
+          "background": "#EFDFFF"
+        }
       }
     },
     {
@@ -185,8 +293,14 @@
       "name": "Binder",
       "description": "Binding sites (∀-`x`, λ parameter, informal `dx`…).",
       "coloring": {
-        "stroke": "#00DDDD",
-        "background": "#DFFFFF"
+        "light": {
+          "stroke": "#00DDDD",
+          "background": "#DFFFFF"
+        },
+        "dark": {
+          "stroke": "#00DDDD",
+          "background": "#DFFFFF"
+        }
       }
     },
     {
@@ -194,8 +308,14 @@
       "name": "Free variable",
       "description": "Free variables (undefined, effectively `sorry`s).",
       "coloring": {
-        "stroke": "#D20022",
-        "background": "#FFD6DC"
+        "light": {
+          "stroke": "#D20022",
+          "background": "#FFD6DC"
+        },
+        "dark": {
+          "stroke": "#D20022",
+          "background": "#FFD6DC"
+        }
       }
     },
     {
@@ -203,8 +323,14 @@
       "name": "Partial",
       "description": "Helper subtree that is NOT a complete syntactic node — e.g. a matrix.row inside a Matrix macro. Rendered with no visual frame, and hover feedback skips over it to its parent macro. Use for implementation-only intermediate macros that shouldn't attract user attention.",
       "coloring": {
-        "stroke": "inherit",
-        "background": "transparent"
+        "light": {
+          "stroke": "inherit",
+          "background": "transparent"
+        },
+        "dark": {
+          "stroke": "inherit",
+          "background": "transparent"
+        }
       }
     }
   ],

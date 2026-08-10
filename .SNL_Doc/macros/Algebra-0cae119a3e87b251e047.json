@@ -13,53 +13,54 @@
     "tags": [],
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "#0 \\cdot #1",
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
         "style_name": "dot",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\cdot #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       },
       {
-        "mode": "formula_inline",
-        "template": "#0#1",
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
         "style_name": "juxt",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0#1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
-    "default_style": {
-      "en": "dot"
-    },
     "name": "Algebra.mul"
   }
 }

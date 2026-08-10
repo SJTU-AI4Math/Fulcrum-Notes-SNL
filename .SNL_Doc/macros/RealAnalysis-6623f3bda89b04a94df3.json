@@ -12,16 +12,15 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "mode": "formula_display",
-        "template": "\\|#0+#1\\|_{#2}\\le\\|#0\\|_{#2}+\\|#1\\|_{#2}",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_display",
+          "body": "\\|#0+#1\\|_{#2}\\le\\|#0\\|_{#2}+\\|#1\\|_{#2}"
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "RealAnalysis.minkowski"
   }
 }

@@ -15,75 +15,78 @@
     "tags": [],
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "#0^{\\mathrm{C}}",
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
         "style_name": "sup",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0^{\\mathrm{C}}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       },
       {
-        "mode": "formula_inline",
-        "template": "\\complement #0",
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
         "style_name": "prefix",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\complement #0",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       },
       {
-        "mode": "formula_inline",
-        "template": "\\overline{#0}",
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
         "style_name": "overline",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\overline{#0}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
-    "default_style": {
-      "en": "sup"
-    },
     "name": "Set.compl"
   }
 }

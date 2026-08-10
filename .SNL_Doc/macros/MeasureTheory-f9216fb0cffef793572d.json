@@ -14,16 +14,15 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "#0(#1\\cup #2)=#0(#1)+#0(#2)",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0(#1\\cup #2)=#0(#1)+#0(#2)"
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "Measure.additive"
   }
 }

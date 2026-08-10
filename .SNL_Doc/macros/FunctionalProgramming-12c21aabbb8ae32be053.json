@@ -15,15 +15,14 @@
     "tags": [],
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "nil",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "nil"
+        }
       }
     ],
-    "default_style": {
-      "en": "default"
-    },
     "name": "FP.nil"
   }
 }

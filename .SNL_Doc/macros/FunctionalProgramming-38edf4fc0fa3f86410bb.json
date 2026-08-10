@@ -15,15 +15,14 @@
     "tags": [],
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "bind(x,f) = flatten(map(x,f))",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "bind(x,f) = flatten(map(x,f))"
+        }
       }
     ],
-    "default_style": {
-      "en": "default"
-    },
     "name": "FP.bindFromMapFlatten"
   }
 }

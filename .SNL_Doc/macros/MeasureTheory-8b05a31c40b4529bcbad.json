@@ -14,16 +14,15 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "\\operatorname{OuterMeasure}(#0)",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{OuterMeasure}(#0)"
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "Measure.OuterMeasure"
   }
 }

@@ -15,15 +15,14 @@
     "tags": [],
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "some(#0)",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "some(#0)"
+        }
       }
     ],
-    "default_style": {
-      "en": "default"
-    },
     "name": "FP.some"
   }
 }

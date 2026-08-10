@@ -8,33 +8,32 @@
       "entries": [],
       "urls": []
     },
-    "kind": "partial",
+    "kind": "sub",
     "dynamic_arity": false,
-    "default_style": {
-      "en": "default"
-    },
     "styles": [
       {
         "style_name": "default",
         "tags": [],
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
-        "mode": "formula_inline",
-        "template": "#0 &, #1"
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 &, #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
     "tags": [],

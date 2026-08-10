@@ -13,33 +13,32 @@
     "styles": [
       {
         "style_name": "list",
-        "separator": "\n",
         "tags": [],
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
-        "mode": "block",
-        "template": "#*",
-        "block_template_name": "list"
+        "template": {
+          "mode": "block",
+          "body": "#*",
+          "separator": "\n",
+          "block_template_name": "list",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "list"
-    },
     "name": "proof"
   }
 }

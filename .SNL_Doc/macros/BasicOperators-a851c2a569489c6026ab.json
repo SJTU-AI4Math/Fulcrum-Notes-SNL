@@ -14,30 +14,29 @@
       {
         "style_name": "default",
         "tags": [],
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
-        "mode": "formula_display",
-        "template": "\\begin{CD}\n#0 @>{#4}>> #1\\\\\n@V{#5}VV @VV{#6}V\\\\\n#2 @>>{#7}> #3\n\\end{CD}"
+        "template": {
+          "mode": "formula_display",
+          "body": "\\begin{CD}\n#0 @>{#4}>> #1\\\\\n@V{#5}VV @VV{#6}V\\\\\n#2 @>>{#7}> #3\n\\end{CD}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "cgt"
   }
 }

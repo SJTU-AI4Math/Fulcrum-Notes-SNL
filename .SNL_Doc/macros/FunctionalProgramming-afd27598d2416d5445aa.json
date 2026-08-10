@@ -8,21 +8,20 @@
       "entries": [],
       "urls": []
     },
-    "kind": "partial",
+    "kind": "sub",
     "dynamic_arity": true,
     "tags": [],
     "styles": [
       {
-        "mode": "block",
-        "template": "#*",
         "style_name": "default",
-        "separator": "",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "block",
+          "body": "#*",
+          "separator": ""
+        }
       }
     ],
-    "default_style": {
-      "en": "default"
-    },
     "name": "FP.statement"
   }
 }

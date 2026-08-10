@@ -9,36 +9,35 @@
       "urls": []
     },
     "dynamic_arity": true,
-    "default_style": {
-      "en": "default"
-    },
     "styles": [
       {
         "style_name": "default",
-        "separator": "\\\\",
         "tags": [],
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": "",
-        "mode": "formula_inline",
-        "template": "\\begin{cases}#*\\end{cases}"
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\begin{cases}#*\\end{cases}",
+          "separator": "\\\\",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
     "tags": [],
-    "kind": "partial",
+    "kind": "sub",
     "name": "cases"
   }
 }

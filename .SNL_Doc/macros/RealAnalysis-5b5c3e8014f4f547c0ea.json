@@ -12,16 +12,15 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "mode": "formula_inline",
-        "template": "\\operatorname{ess\\,sup}|#0|",
         "style_name": "default",
-        "tags": []
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{ess\\,sup}|#0|"
+        }
       }
     ],
     "tags": [],
-    "default_style": {
-      "en": "default"
-    },
     "name": "RealAnalysis.essentialSupremum"
   }
 }
