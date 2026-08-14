@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.or",
     "kind": "definition",
-    "title": "Disjunction",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Disjunction",
+        "zh-CN": "析取"
+      }
+    },
     "content": {
       "snl": "def-inductive[prop](Logic.or(p,q),ctors(Type.judge(%left%,p),Type.judge(%right%,q)))"
     },

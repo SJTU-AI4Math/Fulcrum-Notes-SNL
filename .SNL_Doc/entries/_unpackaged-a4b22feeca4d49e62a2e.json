@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.ctxt.1",
     "kind": "context",
-    "title": "T, A, B",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "T, A, B",
+        "zh-CN": "T, A, B"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

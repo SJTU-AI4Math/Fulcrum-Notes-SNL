@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lambda Abstraction Constructor",
+        "zh-CN": "Lambda 抽象构造子"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

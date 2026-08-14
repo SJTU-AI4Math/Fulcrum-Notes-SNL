@@ -18,24 +18,50 @@
         "style_name": "default",
         "tags": [],
         "template": {
-          "mode": "text",
-          "body": "Perm",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "Perm",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "置换",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
             }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
+          }
         }
       }
     ],

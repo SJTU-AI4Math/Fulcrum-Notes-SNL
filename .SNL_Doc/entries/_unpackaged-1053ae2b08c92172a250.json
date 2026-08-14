@@ -5,9 +5,23 @@
   "entry": {
     "id": "BasicAnalysis.subsec.contDefs",
     "kind": "subsection",
-    "title": "Definitions of Continuity",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Definitions of Continuity",
+        "zh-CN": "连续性的定义"
+      }
+    },
     "content": {
-      "markdown": "Pointwise, one-sided, and the closed-interval convention."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Pointwise, one-sided, and the closed-interval convention.",
+          "zh-CN": "逐点连续性、单侧连续性，以及闭区间约定。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

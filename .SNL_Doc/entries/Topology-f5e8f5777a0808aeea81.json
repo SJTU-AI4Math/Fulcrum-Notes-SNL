@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.compactImpliesCountablyCompact",
     "kind": "property",
-    "title": "Compactness Implies Countable Compactness",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Compactness Implies Countable Compactness",
+        "zh-CN": "紧性蕴含可数紧性"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.compact(A),Topology.countablyCompact(A)))"
     },

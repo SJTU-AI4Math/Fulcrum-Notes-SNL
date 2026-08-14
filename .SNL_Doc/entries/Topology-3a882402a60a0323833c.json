@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.generatedTopology",
     "kind": "definition",
-    "title": "Generated Topology",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Generated Topology",
+        "zh-CN": "生成拓扑"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@B,Set(Set(S@Topology.ctxt.S))),Type.judge(@S,Type)),Topology.generatedTopology(B),Set.sep-typed(@U,Set(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.implies(Set.mem(x,U),Logic.exists-typed(@B2,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(B2,B),Logic.and(Set.mem(x,B2),Set.subset(B2,U))))))))"
     },

@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.prod.recursor",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Product Type Recursor",
+        "zh-CN": "积类型递归子"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

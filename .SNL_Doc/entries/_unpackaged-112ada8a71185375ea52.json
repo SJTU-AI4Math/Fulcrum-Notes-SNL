@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.groupMono",
     "kind": "definition",
-    "title": "Group Monomorphism",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Group Monomorphism",
+        "zh-CN": "群单同态"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpMono, Logic.and(Algebra.GrpHom,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Logic.implies(Eq(Type.apply[paren](f,a),Type.apply[paren](f,b)),Eq(a,b))))))"
     },

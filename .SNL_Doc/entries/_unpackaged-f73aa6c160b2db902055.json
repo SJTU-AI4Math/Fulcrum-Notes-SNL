@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.monoid",
     "kind": "definition",
-    "title": "Monoid",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Monoid",
+        "zh-CN": "幺半群"
+      }
+    },
     "content": {
       "snl": "def[predicateDisplay](Algebra.Monoid(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z)))))), member[colon](%Identity%, Logic.exists-typed(@e,G@Algebra.ctxt.G,Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.and(Eq(Algebra.mul[dot](e,a),a),Eq(Algebra.mul[dot](a,e),a)))))))"
     },

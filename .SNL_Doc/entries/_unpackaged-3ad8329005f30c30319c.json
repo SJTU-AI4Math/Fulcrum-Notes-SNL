@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.prop.lebesgueTranslationInvariant",
     "kind": "property",
-    "title": "Translation Invariance of Lebesgue Measure",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Translation Invariance of Lebesgue Measure",
+        "zh-CN": "勒贝格测度的平移不变性"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@E,Measure.LebesgueSets($\\mathbb{R}$)),%Lebesgue measure is invariant under translations of E%)"
     },

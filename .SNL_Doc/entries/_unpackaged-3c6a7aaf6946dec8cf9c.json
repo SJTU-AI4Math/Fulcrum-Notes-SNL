@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.thm.eq_refl",
     "kind": "theorem",
-    "title": "Reflexivity of =",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Reflexivity of =",
+        "zh-CN": "等号的自反性"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@a,T@Logic.ctxt.T), Logic.forall-typed(@a,T@Logic.ctxt.T,Eq(a,a)), Logic.true)"
     },

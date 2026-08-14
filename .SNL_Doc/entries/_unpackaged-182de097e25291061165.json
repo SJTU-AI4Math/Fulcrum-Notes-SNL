@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.def.lebesgueMeasurable",
     "kind": "definition",
-    "title": "Lebesgue-Measurable Set",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lebesgue-Measurable Set",
+        "zh-CN": "勒贝格可测集"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@E,Set($\\mathbb{R}$)),Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal))),Measure.lebesgueMeasurable(E),Measure.caratheodory(muStar,E))"
     },

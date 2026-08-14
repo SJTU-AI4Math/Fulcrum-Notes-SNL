@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.sec.logic",
     "kind": "section",
-    "title": "Logic",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Logic",
+        "zh-CN": "逻辑"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

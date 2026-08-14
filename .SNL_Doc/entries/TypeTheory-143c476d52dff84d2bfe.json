@@ -6,7 +6,14 @@
     "id": "Type.subsec.basics",
     "package": "TypeTheory",
     "kind": "subsection",
-    "title": "Basics",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Basics",
+        "zh-CN": "基础"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

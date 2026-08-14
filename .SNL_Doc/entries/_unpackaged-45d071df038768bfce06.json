@@ -5,9 +5,23 @@
   "entry": {
     "id": "BasicAnalysis.sec.differentiation",
     "kind": "section",
-    "title": "Differentiation",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Differentiation",
+        "zh-CN": "微分学"
+      }
+    },
     "content": {
-      "markdown": "The derivative as a limit of difference quotients, the differential operator as a map from functions to functions, higher orders by iteration, the mean value theorems, and Taylor expansion."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The derivative as a limit of difference quotients, the differential operator as a map from functions to functions, higher orders by iteration, the mean value theorems, and Taylor expansion.",
+          "zh-CN": "将导数定义为差商的极限，将微分算子定义为从函数到函数的映射，通过迭代得到高阶导数，并进一步讨论中值定理与泰勒展开。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

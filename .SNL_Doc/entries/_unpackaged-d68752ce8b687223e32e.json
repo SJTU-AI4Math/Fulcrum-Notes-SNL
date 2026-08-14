@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.def.eq.ctor.refl",
+    "package": "_unpackaged",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Reflexivity Constructor",
+        "zh-CN": "自反性构造子"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

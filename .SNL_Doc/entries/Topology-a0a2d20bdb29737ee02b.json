@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.T1Equivalent",
     "kind": "property",
-    "title": "Equivalent Definition of T1",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Equivalent Definition of T1",
+        "zh-CN": "T1 的等价定义"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Topology.T1(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Set.mem(Set.compl[sup](Set.sep-typed(@z,S@Topology.ctxt.S,Eq(z,x)),S@Topology.ctxt.S),τ))))"
     },

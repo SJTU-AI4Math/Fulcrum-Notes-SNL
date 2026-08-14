@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.nowhereDense",
     "kind": "definition",
-    "title": "Nowhere Dense Set",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Nowhere Dense Set",
+        "zh-CN": "无处稠密集"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.nowhereDense(A),Eq(Topology.interior(Topology.closure(A)),Set.emptyset[slim]))"
     },

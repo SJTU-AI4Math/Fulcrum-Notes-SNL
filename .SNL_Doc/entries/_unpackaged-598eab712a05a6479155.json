@@ -5,10 +5,24 @@
   "entry": {
     "id": "BasicAnalysis.thm.cauchyMVT",
     "kind": "theorem",
-    "title": "Cauchy's Mean Value Theorem",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Cauchy's Mean Value Theorem",
+        "zh-CN": "柯西中值定理"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), Analysis.contOnIcc(G, a, b)), Logic.exists-typed(@c, Real, Set.mem(c, Ioo(a, b))))",
-      "markdown": "The parametric form: for a suitable interior `c`, `(F b − F a) · G'(c) = (G b − G a) · F'(c)`. Taking `G = id` recovers Lagrange's theorem.\n\nStating it in the product form rather than as a ratio avoids a non-vanishing hypothesis on `G'`. This is the theorem L'Hôpital's rule is proved from, which is why the rule needs no differentiability at the limit point itself."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The parametric form: for a suitable interior `c`, `(F b − F a) · G'(c) = (G b − G a) · F'(c)`. Taking `G = id` recovers Lagrange's theorem.\n\nStating it in the product form rather than as a ratio avoids a non-vanishing hypothesis on `G'`. This is the theorem L'Hôpital's rule is proved from, which is why the rule needs no differentiability at the limit point itself.",
+          "zh-CN": "参数形式：对某个适当的内点 `c`，有 `(F b − F a) · G'(c) = (G b − G a) · F'(c)`。取 `G = id` 即得到拉格朗日定理。\n\n将其表述为乘积形式而非比值形式，避免了关于 `G'` 非零的假设。洛必达法则由此定理证明，这也解释了为什么该法则不要求函数在极限点本身可导。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

@@ -6,7 +6,14 @@
     "id": "Type.def.Church-Nat",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Encoding of Natural Numbers",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Encoding of Natural Numbers",
+        "zh-CN": "自然数的丘奇编码"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.lambda[maspto](1,Type.lambda(list-partial[none](@f,@x),x)),Type.lambda[maspto](Nat.succ(@m),Type.lambda(list-partial[none](@f,@x),Lambda.apply(f,m,f,x))))))"
     },

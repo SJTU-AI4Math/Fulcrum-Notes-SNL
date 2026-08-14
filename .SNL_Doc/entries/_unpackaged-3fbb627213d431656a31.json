@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.subsec.borelLebesgue",
     "kind": "subsection",
-    "title": "Borel and Lebesgue Measure",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Borel and Lebesgue Measure",
+        "zh-CN": "博雷尔测度与勒贝格测度"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

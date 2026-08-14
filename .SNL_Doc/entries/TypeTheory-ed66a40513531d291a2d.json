@@ -6,7 +6,14 @@
     "id": "Type.def.Church-Or",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Boolean Or",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Boolean Or",
+        "zh-CN": "丘奇布尔或"
+      }
+    },
     "content": {
       "snl": "def(Church.or,Type.lambda(list-partial[none](@p,@q),Lambda.apply(p,p,q)))"
     },

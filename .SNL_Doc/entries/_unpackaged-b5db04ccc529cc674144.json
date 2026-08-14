@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.thm.eq_subst",
     "kind": "theorem",
-    "title": "Substitution",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Substitution",
+        "zh-CN": "代换"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge[paren](list-partial(@a,@b),T@Logic.ctxt.T), Logic.implies(Eq(a,b), Logic.forall-typed(@P,Type.to(T@Logic.ctxt.T,Proposition),Logic.implies(P(a),P(b)))), Logic.true)"
     },

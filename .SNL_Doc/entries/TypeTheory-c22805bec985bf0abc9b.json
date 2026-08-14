@@ -6,7 +6,14 @@
     "id": "Lambda.def.beta",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "$\\beta$-reduction",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$\\beta$-reduction",
+        "zh-CN": "$\\beta$-归约"
+      }
+    },
     "content": {
       "snl": "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.Expr), Lambda.LegalExpr[are](list-partial[formula](a, b))),\r\n    Lambda.beta(a, b)\r\n)"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.prop.monotone",
     "kind": "property",
-    "title": "Monotonicity of Measures",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Monotonicity of Measures",
+        "zh-CN": "测度的单调性"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Set.subset(A@Measure.ctxt.AB,B@Measure.ctxt.AB),Measure.leq(Measure.apply(mu@Measure.ctxt.mu,A@Measure.ctxt.AB),Measure.apply(mu@Measure.ctxt.mu,B@Measure.ctxt.AB)))"
     },

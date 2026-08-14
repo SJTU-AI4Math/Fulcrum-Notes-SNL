@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.closureClosed",
     "kind": "property",
-    "title": "Closure is Closed",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Closure is Closed",
+        "zh-CN": "闭包是闭集"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Set.mem(Set.compl[sup](Topology.closure(A),S@Topology.ctxt.S),τ))"
     },

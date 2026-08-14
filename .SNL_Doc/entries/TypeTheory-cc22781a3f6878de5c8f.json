@@ -6,7 +6,14 @@
     "id": "Type.rl.pi",
     "package": "TypeTheory",
     "kind": "axiom",
-    "title": "Pi Type",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Pi Type",
+        "zh-CN": "Π 类型"
+      }
+    },
     "content": {
       "snl": "def-hyp-opq(list-partial(Type.judge(@T,Type(@u)),Type.judge(@P,Type.to(T,Type(@v)))),Type.judge(Type.Pi(@x,T,Type.apply(P,x)),Type))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.subsec.homeomorphism",
     "kind": "subsection",
-    "title": "Homeomorphism",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Homeomorphism",
+        "zh-CN": "同胚"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

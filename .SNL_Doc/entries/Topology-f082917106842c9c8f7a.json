@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.sequentialCompactness",
     "kind": "definition",
-    "title": "Sequential Compactness",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Sequential Compactness",
+        "zh-CN": "序列紧性"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@x_n,Type.to(Nat,S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.sequentialCompact(x_n),Logic.exists-typed(@p,Type.to(Nat,Nat),Logic.exists-typed(@x,S@Topology.ctxt.S,Topology.seqConvergence(Type.apply(x_n,p),x))))"
     },

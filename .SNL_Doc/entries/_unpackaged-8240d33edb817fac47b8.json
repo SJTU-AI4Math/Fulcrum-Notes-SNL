@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.transposition",
     "kind": "definition",
-    "title": "Transposition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Transposition",
+        "zh-CN": "对换"
+      }
+    },
     "content": {
       "snl": "def(Algebra.Trans, Logic.true)"
     },

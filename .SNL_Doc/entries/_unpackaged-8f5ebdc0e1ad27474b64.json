@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.subsec.homomorphism",
     "kind": "subsection",
-    "title": "Homomorphisms",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Homomorphisms",
+        "zh-CN": "同态"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

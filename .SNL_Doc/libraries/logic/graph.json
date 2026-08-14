@@ -161,6 +161,70 @@
       "props": {
         "entryId": "Logic.ctxt.P"
       }
+    },
+    {
+      "id": "n_sub_1875c9facf56",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.eq.ctor.refl",
+        "counterId": "661f6949-9c4d-4d92-a740-84a44d4904e6"
+      }
+    },
+    {
+      "id": "n_sub_44dd30f95854",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.eq.recursor",
+        "counterId": "661f6949-9c4d-4d92-a740-84a44d4904e6"
+      }
+    },
+    {
+      "id": "n_sub_893a86eac31f",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.false.recursor",
+        "counterId": "661f6949-9c4d-4d92-a740-84a44d4904e6"
+      }
+    },
+    {
+      "id": "n_sub_50a2fc62ccbc",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.or.ctor.left",
+        "counterId": "661f6949-9c4d-4d92-a740-84a44d4904e6"
+      }
+    },
+    {
+      "id": "n_sub_cbbf7383c94a",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.or.ctor.right",
+        "counterId": "661f6949-9c4d-4d92-a740-84a44d4904e6"
+      }
+    },
+    {
+      "id": "n_sub_ee289ce16738",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.or.recursor",
+        "counterId": "661f6949-9c4d-4d92-a740-84a44d4904e6"
+      }
+    },
+    {
+      "id": "n_sub_7296b5594518",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.true.ctor.true",
+        "counterId": "661f6949-9c4d-4d92-a740-84a44d4904e6"
+      }
+    },
+    {
+      "id": "n_sub_b1721923149b",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.def.true.recursor",
+        "counterId": "661f6949-9c4d-4d92-a740-84a44d4904e6"
+      }
     }
   ],
   "relationships": [
@@ -262,6 +326,46 @@
     {
       "from": "n_ctx1",
       "to": "n_6",
+      "label": "branch"
+    },
+    {
+      "from": "n_true",
+      "to": "n_sub_7296b5594518",
+      "label": "branch"
+    },
+    {
+      "from": "n_true",
+      "to": "n_sub_b1721923149b",
+      "label": "branch"
+    },
+    {
+      "from": "n_or",
+      "to": "n_sub_50a2fc62ccbc",
+      "label": "branch"
+    },
+    {
+      "from": "n_or",
+      "to": "n_sub_cbbf7383c94a",
+      "label": "branch"
+    },
+    {
+      "from": "n_or",
+      "to": "n_sub_ee289ce16738",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_sub_893a86eac31f",
+      "label": "branch"
+    },
+    {
+      "from": "n_eq",
+      "to": "n_sub_1875c9facf56",
+      "label": "branch"
+    },
+    {
+      "from": "n_eq",
+      "to": "n_sub_44dd30f95854",
       "label": "branch"
     }
   ]

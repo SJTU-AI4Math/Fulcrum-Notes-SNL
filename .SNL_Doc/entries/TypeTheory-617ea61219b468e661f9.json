@@ -6,7 +6,14 @@
     "id": "Type.def.Church-Not",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Boolean Not",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Boolean Not",
+        "zh-CN": "丘奇布尔非"
+      }
+    },
     "content": {
       "snl": "def(Church.not,Type.lambda(list-partial[none](@p,@x,@y),Lambda.apply(p,y,x)))"
     },

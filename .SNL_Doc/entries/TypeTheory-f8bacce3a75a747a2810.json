@@ -6,7 +6,14 @@
     "id": "Type.def.Omega-Big",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Big Omega (Ω)",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Big Omega (Ω)",
+        "zh-CN": "大 Omega（Ω）"
+      }
+    },
     "content": {
       "snl": "def(Lambda.Omega,Lambda.apply(Lambda.omega,Lambda.omega))"
     },

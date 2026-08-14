@@ -5,10 +5,24 @@
   "entry": {
     "id": "BasicAnalysis.def.infinitesimal",
     "kind": "definition",
-    "title": "Infinitesimal",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Infinitesimal",
+        "zh-CN": "无穷小"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.infinitesimal(F, x), Analysis.funLim(F, @y, x, $0$))",
-      "markdown": "`F` is an infinitesimal at `x₀` iff it tends to `0` there. The one-sided variants are defined by the corresponding one-sided limits.\n\nBeing an infinitesimal is a statement about a function at a point, not a kind of number: ℝ is Archimedean and contains no nonzero element smaller than every `1/n`. The two closure facts used constantly downstream are that a sum or product of infinitesimals is an infinitesimal, and that a locally bounded function times an infinitesimal is an infinitesimal."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "`F` is an infinitesimal at `x₀` iff it tends to `0` there. The one-sided variants are defined by the corresponding one-sided limits.\n\nBeing an infinitesimal is a statement about a function at a point, not a kind of number: ℝ is Archimedean and contains no nonzero element smaller than every `1/n`. The two closure facts used constantly downstream are that a sum or product of infinitesimals is an infinitesimal, and that a locally bounded function times an infinitesimal is an infinitesimal.",
+          "zh-CN": "`F` 在 `x₀` 处是无穷小，当且仅当它在那里趋于 `0`。单侧变体由对应的单侧极限定义。\n\n无穷小是关于函数在一点处的陈述，而非某种数：ℝ 具有阿基米德性，不包含小于每个 `1/n` 的非零元素。下文不断使用的两个封闭性事实是：无穷小之和或之积仍为无穷小，局部有界函数与无穷小之积仍为无穷小。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

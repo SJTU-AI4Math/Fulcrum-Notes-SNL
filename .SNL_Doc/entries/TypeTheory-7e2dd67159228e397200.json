@@ -6,7 +6,14 @@
     "id": "Type.def.K-Combinator",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "K Combinator",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "K Combinator",
+        "zh-CN": "K 组合子"
+      }
+    },
     "content": {
       "snl": "def(Lambda.K,Type.lambda(list-partial[none](@x,@y),x))"
     },

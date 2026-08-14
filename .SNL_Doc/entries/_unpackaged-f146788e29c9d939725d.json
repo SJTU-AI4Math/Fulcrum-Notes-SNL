@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.prop.transformerLiftPure",
     "kind": "property",
-    "title": "Lift Preserves Pure",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lift Preserves Pure",
+        "zh-CN": "Lift 保持 Pure"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@a,A),Eq(FP.lift(T,M,FP.pure(M,a)),FP.pure(Type.apply(T,M),a)))"
     },

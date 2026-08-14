@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.def.list",
     "kind": "definition",
-    "title": "List",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "List",
+        "zh-CN": "列表"
+      }
+    },
     "content": {
       "snl": "def-inductive(FP.List(A),struct[enumerate](member[colon](FP.nil,FP.List(A)),member[colon](FP.cons,Type.to(A,Type.to(FP.List(A),FP.List(A))))))"
     },

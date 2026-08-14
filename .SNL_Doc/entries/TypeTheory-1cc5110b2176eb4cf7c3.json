@@ -6,7 +6,14 @@
     "id": "Type.def.Church-One",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Numeral One",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Numeral One",
+        "zh-CN": "丘奇数一"
+      }
+    },
     "content": {
       "snl": "def(Church.one,Type.lambda(list-partial[none](@f,@x),Lambda.apply(f,x)))"
     },

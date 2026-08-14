@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.def.monadOrder",
     "kind": "definition",
-    "title": "Ordered Monad",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Ordered Monad",
+        "zh-CN": "有序单子"
+      }
+    },
     "content": {
       "snl": "def-struct(FP.OrderedMonad(M),struct[enumerate](member[colon](%order%,Type.Pi(@A,Type,FP.PartialOrder(Type.apply(M,A)))),member[colon](%pure monotone%,FP.monotone(FP.pure(M,@a))),member[colon](%bind monotone%,FP.monotone(FP.bind(M,@x,@f)))))"
     },

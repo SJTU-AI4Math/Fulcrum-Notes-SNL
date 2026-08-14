@@ -18,8 +18,18 @@
         "style_name": "default",
         "tags": [],
         "template": {
-          "mode": "text",
-          "body": "#0 is a lattice"
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a lattice"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是格"
+            }
+          }
         }
       }
     ],

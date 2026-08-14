@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.def.optionBind",
     "kind": "property",
-    "title": "Option / Maybe Bind",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Option / Maybe Bind",
+        "zh-CN": "Option / Maybe Bind"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@x,FP.Option(A)),Eq(FP.bind(FP.Option,x,@f),FP.bind(FP.Option,x,f)))"
     },

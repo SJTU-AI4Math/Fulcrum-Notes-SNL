@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.pathConnected",
     "kind": "definition",
-    "title": "Path Connectedness",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Path Connectedness",
+        "zh-CN": "道路连通性"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.pathConnected(A),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Logic.and(Set.mem(x,A),Set.mem(y,A)),Logic.exists-typed(@f,Type.to(Set.inter(Set.sep-typed(@t,Type,Logic.and(Logic.true,Logic.true)),Set.sep-typed(@t,Type,Logic.true)),S@Topology.ctxt.S),Logic.true)))))"
     },

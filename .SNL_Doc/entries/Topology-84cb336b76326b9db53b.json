@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.example.sierpinskiSpace",
     "kind": "example",
-    "title": "Sierpinski Space",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Sierpinski Space",
+        "zh-CN": "谢尔宾斯基空间"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@S,Type),Topology.sierpinski,Topology.topologicalSpace(S,Topology.sierpinski))"
     },

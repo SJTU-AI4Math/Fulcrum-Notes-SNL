@@ -5,10 +5,24 @@
   "entry": {
     "id": "BasicAnalysis.def.neighbourhood",
     "kind": "definition",
-    "title": "Neighbourhood and Punctured Neighbourhood",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Neighbourhood and Punctured Neighbourhood",
+        "zh-CN": "邻域与去心邻域"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(list-partial(@x, @delta), Real), $#0 > 0$(delta)), list-partial(Analysis.nbh(x, delta), Analysis.nbhDel(x, delta)), Logic.and(Eq(Analysis.nbh(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1$(x, delta, y))), Eq(Analysis.nbhDel(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1 \\land #2 \\ne #0$(x, delta, y)))))",
-      "markdown": "For `x₀ : ℝ` and `delta > 0`, the neighbourhood is `U(x₀, delta) = { x | x₀ − delta < x < x₀ + delta }`; the punctured neighbourhood removes the centre, `U°(x₀, delta) = { x | x₀ − delta < x < x₀ + delta ∧ x ≠ x₀ }`. Equivalently `x ∈ U(x₀, delta) ↔ |x − x₀| < delta`, and `U°(x₀, delta) ⊆ U(x₀, delta)`.\n\nEvery epsilon-N and epsilon-delta statement below is phrased as membership in a neighbourhood. That formulation survives the move to metric and topological spaces, whereas the inequality `|a − L| < epsilon` is bookkeeping specific to ℝ."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "For `x₀ : ℝ` and `delta > 0`, the neighbourhood is `U(x₀, delta) = { x | x₀ − delta < x < x₀ + delta }`; the punctured neighbourhood removes the centre, `U°(x₀, delta) = { x | x₀ − delta < x < x₀ + delta ∧ x ≠ x₀ }`. Equivalently `x ∈ U(x₀, delta) ↔ |x − x₀| < delta`, and `U°(x₀, delta) ⊆ U(x₀, delta)`.\n\nEvery epsilon-N and epsilon-delta statement below is phrased as membership in a neighbourhood. That formulation survives the move to metric and topological spaces, whereas the inequality `|a − L| < epsilon` is bookkeeping specific to ℝ.",
+          "zh-CN": "对 `x₀ : ℝ` 和 `delta > 0`，邻域为 `U(x₀, delta) = { x | x₀ − delta < x < x₀ + delta }`；去心邻域移除中心点，即 `U°(x₀, delta) = { x | x₀ − delta < x < x₀ + delta ∧ x ≠ x₀ }`。等价地，`x ∈ U(x₀, delta) ↔ |x − x₀| < delta`，且 `U°(x₀, delta) ⊆ U(x₀, delta)`。\n\n下文每个 epsilon-N 和 epsilon-delta 陈述都表述为属于某个邻域。此表述能够自然推广到度量空间和拓扑空间，而不等式 `|a − L| < epsilon` 只是 ℝ 所特有的记账方式。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

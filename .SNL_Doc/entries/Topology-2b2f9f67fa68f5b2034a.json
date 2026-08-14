@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.openMap",
     "kind": "definition",
-    "title": "Open Map",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Open Map",
+        "zh-CN": "开映射"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.openMap(f),Logic.forall-typed(@U,Set(X@Topology.ctxt.X),Logic.implies(Set.mem(U,τ_X),Set.mem(Set.sep-typed(@y,Y@Topology.ctxt.Y,Logic.exists-typed(@x,X@Topology.ctxt.X,Logic.and(Set.mem(x,U),Eq(Type.apply(f,x),y)))),τ_Y))))"
     },

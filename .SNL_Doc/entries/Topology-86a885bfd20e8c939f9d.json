@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.ctxt.X",
     "kind": "context",
-    "title": "X",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "X",
+        "zh-CN": "X"
+      }
+    },
     "content": {
       "snl": "Type.judge(@X,Type)"
     },

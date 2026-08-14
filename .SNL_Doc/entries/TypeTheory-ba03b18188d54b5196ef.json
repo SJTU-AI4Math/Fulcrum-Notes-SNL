@@ -6,7 +6,14 @@
     "id": "Type.sec.LC",
     "package": "TypeTheory",
     "kind": "section",
-    "title": "Lambda Calculus",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lambda Calculus",
+        "zh-CN": "λ 演算"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

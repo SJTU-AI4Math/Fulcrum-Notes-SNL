@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.prop.aeConjunction",
     "kind": "property",
-    "title": "Almost-Everywhere Conjunction",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Almost-Everywhere Conjunction",
+        "zh-CN": "几乎处处合取"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(list-partial(@P,@Q),Type.to(X@Measure.ctxt.X,Proposition)),Logic.iff(Measure.almostEverywhere(@x,Logic.and(P(x),Q(x)),mu@Measure.ctxt.mu),Logic.and(Measure.almostEverywhere(@x,P(x),mu@Measure.ctxt.mu),Measure.almostEverywhere(@x,Q(x),mu@Measure.ctxt.mu))))"
     },

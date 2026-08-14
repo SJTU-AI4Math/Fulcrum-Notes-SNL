@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.example.discreteTopology",
     "kind": "example",
-    "title": "Discrete Topology",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Discrete Topology",
+        "zh-CN": "离散拓扑"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@S,Type),Topology.discreteTopology,Topology.topology(Set.powerset(S@Topology.ctxt.S),S@Topology.ctxt.S))"
     },

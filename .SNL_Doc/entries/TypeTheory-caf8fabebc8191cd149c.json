@@ -6,7 +6,14 @@
     "id": "Type.def.Church-Zero",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Numeral Zero",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Numeral Zero",
+        "zh-CN": "丘奇数零"
+      }
+    },
     "content": {
       "snl": "def(Church.zero,Type.lambda(list-partial[none](@f,@x),x))"
     },

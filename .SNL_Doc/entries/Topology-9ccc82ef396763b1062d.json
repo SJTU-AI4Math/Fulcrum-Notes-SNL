@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.compactClosedInT2",
     "kind": "property",
-    "title": "Compact Sets are Closed in T2 Spaces",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Compact Sets are Closed in T2 Spaces",
+        "zh-CN": "T2 空间中的紧集是闭集"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@K,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.T2(S@Topology.ctxt.S),Logic.implies(Topology.compact(K),Set.mem(Set.compl[sup](K,S@Topology.ctxt.S),τ))))"
     },

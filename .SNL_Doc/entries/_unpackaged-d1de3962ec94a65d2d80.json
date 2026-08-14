@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.symmetricGroup",
     "kind": "definition",
-    "title": "Symmetric Group",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Symmetric Group",
+        "zh-CN": "对称群"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@X,Type), Algebra.Sym, Algebra.Group)"
     },

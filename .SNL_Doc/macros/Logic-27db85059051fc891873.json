@@ -41,24 +41,50 @@
         "style_name": "text",
         "tags": [],
         "template": {
-          "mode": "text",
-          "body": "False",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "False",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "假",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
             }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
+          }
         }
       }
     ],

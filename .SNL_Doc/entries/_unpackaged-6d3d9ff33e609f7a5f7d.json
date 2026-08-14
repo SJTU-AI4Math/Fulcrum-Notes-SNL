@@ -5,7 +5,14 @@
   "entry": {
     "id": "real-analysis.ctxt.fg",
     "kind": "context",
-    "title": "f, g",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "f, g",
+        "zh-CN": "f, g"
+      }
+    },
     "content": {
       "snl": "Type.judge(list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, EReal))"
     },

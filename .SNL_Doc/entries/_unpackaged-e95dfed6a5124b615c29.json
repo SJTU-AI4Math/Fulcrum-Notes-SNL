@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.prop.lebesgueComplete",
     "kind": "property",
-    "title": "Lebesgue Measure is Complete",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lebesgue Measure is Complete",
+        "zh-CN": "勒贝格测度是完备的"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Logic.true,Measure.Complete($\\mathbb{R}$,Measure.LebesgueSets($\\mathbb{R}$),Measure.LebesgueMeasure($\\mathbb{R}$)))"
     },

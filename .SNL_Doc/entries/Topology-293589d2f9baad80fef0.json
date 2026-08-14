@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.topologicalSpace",
     "kind": "definition",
-    "title": "Topological Space",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Topological Space",
+        "zh-CN": "拓扑空间"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@S,Type),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topologicalSpace(S@Topology.ctxt.S,τ),Topology.topology(τ,S@Topology.ctxt.S))"
     },

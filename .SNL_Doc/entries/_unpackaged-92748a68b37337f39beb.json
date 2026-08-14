@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.prop.finiteAdditivity",
     "kind": "property",
-    "title": "Finite Additivity",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Finite Additivity",
+        "zh-CN": "有限可加性"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Eq(Set.inter(A,B),Set.emptyset[slim]),Measure.additive($\\mu$,A,B))"
     },

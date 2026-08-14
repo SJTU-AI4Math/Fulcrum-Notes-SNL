@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.ctxt.mu",
     "kind": "context",
-    "title": "$\\mu$",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$\\mu$",
+        "zh-CN": "$\\mu$"
+      }
+    },
     "content": {
       "snl": "Type.judge(@mu,Type.to(Sigma@Measure.ctxt.Sigma,ENNReal))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.interiorPoint",
     "kind": "property",
-    "title": "Interior Point",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Interior Point",
+        "zh-CN": "内点"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Set.mem(x,Topology.interior(A)),Topology.neighborhood(A,x)))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.subsec.transformers",
     "kind": "subsection",
-    "title": "Monad Transformers",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Monad Transformers",
+        "zh-CN": "单子变换器"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

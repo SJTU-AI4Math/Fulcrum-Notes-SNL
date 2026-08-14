@@ -6,7 +6,14 @@
     "id": "Type.sec.CIC",
     "package": "TypeTheory",
     "kind": "section",
-    "title": "Calculus of Inductive Construction",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Calculus of Inductive Construction",
+        "zh-CN": "归纳构造演算"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

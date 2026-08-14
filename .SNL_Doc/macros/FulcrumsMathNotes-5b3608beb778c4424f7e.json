@@ -66,24 +66,50 @@
         "style_name": "display",
         "tags": [],
         "template": {
-          "mode": "text",
-          "body": "Let #0, then #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "Let #0, then #1",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "设 #0，则 #1",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
             }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
+          }
         }
       }
     ],

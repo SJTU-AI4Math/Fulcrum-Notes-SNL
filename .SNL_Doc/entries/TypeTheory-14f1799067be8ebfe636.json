@@ -6,7 +6,14 @@
     "id": "Type.def.Church-Succ",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Successor",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Successor",
+        "zh-CN": "丘奇后继"
+      }
+    },
     "content": {
       "snl": "def(Church.succ,Type.lambda(list-partial[none](@n,@f,@x),Lambda.apply(f,Lambda.apply(n,f,x))))"
     },

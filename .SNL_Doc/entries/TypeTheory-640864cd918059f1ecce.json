@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.prod.ctor.pair",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Product Pair Constructor",
+        "zh-CN": "积类型序对构造子"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

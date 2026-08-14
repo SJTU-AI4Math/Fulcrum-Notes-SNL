@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.T2",
     "kind": "definition",
-    "title": "T2 Space / Hausdorff Space",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "T2 Space / Hausdorff Space",
+        "zh-CN": "T2 空间／豪斯多夫空间"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.T2(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Logic.neg(Eq(x,y)),Logic.exists-typed(@U,Set(S@Topology.ctxt.S),Logic.exists-typed(@V,Set(S@Topology.ctxt.S),Logic.and(Logic.and(Topology.neighborhood(U,x),Topology.neighborhood(V,y)),Eq(Set.inter(U,V),Set.emptyset[slim]))))))))"
     },

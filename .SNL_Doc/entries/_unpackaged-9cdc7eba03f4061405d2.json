@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.stabilizer",
     "kind": "definition",
-    "title": "Stabilizer",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Stabilizer",
+        "zh-CN": "稳定子群"
+      }
+    },
     "content": {
       "snl": "def(Algebra.Stab,Set.sep-typed(@g,G@Algebra.ctxt.G,Eq(Type.apply[paren](Type.apply[paren](alpha@Algebra.def.groupAction,g),x@Algebra.def.groupAction),x@Algebra.def.groupAction)))"
     },

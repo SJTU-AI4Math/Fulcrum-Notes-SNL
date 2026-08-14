@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.cycle",
     "kind": "definition",
-    "title": "Cycle",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Cycle",
+        "zh-CN": "轮换"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@r,Nat),Type.judge[paren](list-partial(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
     },

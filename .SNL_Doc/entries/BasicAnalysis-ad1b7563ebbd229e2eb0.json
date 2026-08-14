@@ -5,7 +5,14 @@
   "entry": {
     "id": "BasicAnalysis.sec.integral",
     "kind": "section",
-    "title": "Riemannian Integral",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Riemannian Integral",
+        "zh-CN": "黎曼积分"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

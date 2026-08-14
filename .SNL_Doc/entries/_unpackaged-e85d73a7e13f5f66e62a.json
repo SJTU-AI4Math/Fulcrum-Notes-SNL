@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.def.generatedSigma",
     "kind": "definition",
-    "title": "Generated Sigma-Algebra",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Generated Sigma-Algebra",
+        "zh-CN": "生成的 σ-代数"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@C,Set(Set(X@Measure.ctxt.X))),Measure.generatedSigma(C),%the intersection of all sigma-algebras on X containing C%)"
     },

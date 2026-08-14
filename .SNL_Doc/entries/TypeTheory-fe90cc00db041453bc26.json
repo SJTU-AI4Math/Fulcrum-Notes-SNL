@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rl.Expr-LC.ctor.bound-variable",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Bound Variable Constructor",
+        "zh-CN": "约束变量构造子"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

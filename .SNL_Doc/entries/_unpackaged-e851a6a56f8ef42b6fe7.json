@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.sec.monad",
     "kind": "section",
-    "title": "Functional Programming: Monads",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Functional Programming: Monads",
+        "zh-CN": "函数式编程：单子"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

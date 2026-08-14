@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.groupHom",
     "kind": "definition",
-    "title": "Group Homomorphism",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Group Homomorphism",
+        "zh-CN": "群同态"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpHom, Logic.and(Eq(Type.apply[paren](f,Algebra.e),Algebra.e),Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,Algebra.mul[dot](a,b)),dotH(Type.apply[paren](f,a),Type.apply[paren](f,b)))))))"
     },

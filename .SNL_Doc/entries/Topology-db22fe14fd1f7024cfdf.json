@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.productTopology",
     "kind": "definition",
-    "title": "Product Topology",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Product Topology",
+        "zh-CN": "积拓扑"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@τ_X,Set(Set(X))),Type.judge(@Y,Type),Type.judge(@τ_Y,Set(Set(Y)))),Topology.productTopology,Set.sep-typed(@U,Set(Set.Prod(X,Y)),Logic.forall-typed(@p,Set.Prod(X,Y),Logic.implies(Set.mem(p,U),Logic.exists-typed(@U_X,Set(Set(X)),Logic.exists-typed(@U_Y,Set(Set(Y)),Logic.and(Logic.and(Set.mem(U_X,τ_X),Set.mem(U_Y,τ_Y)),Logic.and(Set.mem(p,Set.Prod(U_X,U_Y)),Set.subset(Set.Prod(U_X,U_Y),U)))))))))"
     },

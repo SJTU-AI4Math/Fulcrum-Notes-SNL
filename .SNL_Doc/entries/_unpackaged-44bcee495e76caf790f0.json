@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.sec.foundations",
     "kind": "section",
-    "title": "Measure Theory Foundations",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Measure Theory Foundations",
+        "zh-CN": "测度论基础"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

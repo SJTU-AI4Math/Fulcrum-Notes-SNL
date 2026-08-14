@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.subsec.order",
     "kind": "subsection",
-    "title": "Monad Order and Lattice Structure",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Monad Order and Lattice Structure",
+        "zh-CN": "单子的序与格结构"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

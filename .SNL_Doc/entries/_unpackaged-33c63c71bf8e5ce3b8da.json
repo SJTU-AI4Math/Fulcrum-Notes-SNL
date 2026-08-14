@@ -5,10 +5,24 @@
   "entry": {
     "id": "BasicAnalysis.def.higherInfinitesimal",
     "kind": "definition",
-    "title": "Higher-Order Infinitesimal",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Higher-Order Infinitesimal",
+        "zh-CN": "高阶无穷小"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(@x, Real)), Analysis.higherInfinitesimal(F, G, x), Logic.and(Analysis.infinitesimal(F, x), Logic.and(Analysis.infinitesimal(G, x), Analysis.funLim(Div.div(F, G), @y, x, $0$))))",
-      "markdown": "`F = o(G)` at `x₀` iff both are infinitesimals there and `F/G` tends to `0`; `F` vanishes strictly faster than `G`. This is the relation in which the Peano form of Taylor's remainder is stated: the remainder is `o((x − x₀)ᴺ)`."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "`F = o(G)` at `x₀` iff both are infinitesimals there and `F/G` tends to `0`; `F` vanishes strictly faster than `G`. This is the relation in which the Peano form of Taylor's remainder is stated: the remainder is `o((x − x₀)ᴺ)`.",
+          "zh-CN": "`F = o(G)` 在 `x₀` 处成立，当且仅当二者在那里都是无穷小，且 `F/G` 趋于 `0`；即 `F` 比 `G` 消失得严格更快。泰勒余项的佩亚诺形式正是用此关系陈述的：余项为 `o((x − x₀)ᴺ)`。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

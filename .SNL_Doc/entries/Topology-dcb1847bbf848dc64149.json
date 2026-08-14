@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.ctxt.tauY",
     "kind": "context",
-    "title": "τ_Y",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "τ_Y",
+        "zh-CN": "τ_Y"
+      }
+    },
     "content": {
       "snl": "Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))"
     },

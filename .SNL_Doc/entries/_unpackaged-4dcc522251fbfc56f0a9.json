@@ -5,9 +5,23 @@
   "entry": {
     "id": "BasicAnalysis.sec.structures",
     "kind": "section",
-    "title": "Functions and Sequences with Carriers",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Functions and Sequences with Carriers",
+        "zh-CN": "带载体的函数与数列"
+      }
+    },
     "content": {
-      "markdown": "Calculus_21 does not model a real function as a bare `ℝ → ℝ`, nor a sequence as a bare `ℕ → ℝ`. Both carry their region of definition alongside the map: a function bundles a total map with a domain set, and a sequence bundles a map with an index window. Every limit, continuity and differentiability notion downstream is stated against these carriers, which is what makes side conditions such as \"the punctured neighbourhood lies inside the domain\" expressible rather than tacitly assumed."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Calculus_21 does not model a real function as a bare `ℝ → ℝ`, nor a sequence as a bare `ℕ → ℝ`. Both carry their region of definition alongside the map: a function bundles a total map with a domain set, and a sequence bundles a map with an index window. Every limit, continuity and differentiability notion downstream is stated against these carriers, which is what makes side conditions such as \"the punctured neighbourhood lies inside the domain\" expressible rather than tacitly assumed.",
+          "zh-CN": "Calculus_21 不把实函数建模为单独的 `ℝ → ℝ`，也不把数列建模为单独的 `ℕ → ℝ`。两者都在映射之外携带其定义区域：函数将全映射与定义域集合捆绑，数列则将映射与指标窗口捆绑。下文每个极限、连续性和可导性概念都相对于这些载体陈述；这使“去心邻域包含于定义域”等附加条件能够被显式表达，而非默认成立。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

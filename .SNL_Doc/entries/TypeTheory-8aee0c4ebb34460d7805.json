@@ -6,7 +6,14 @@
     "id": "Type.def.Iota-Combinator",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Iota Combinator",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Iota Combinator",
+        "zh-CN": "Iota 组合子"
+      }
+    },
     "content": {
       "snl": "def(Lambda.iota,Type.lambda(@x,Lambda.apply(x,Lambda.S,Lambda.K)))"
     },

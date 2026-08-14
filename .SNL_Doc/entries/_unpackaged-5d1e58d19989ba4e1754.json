@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.iff",
     "kind": "definition",
-    "title": "Equivalence",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Equivalence",
+        "zh-CN": "等价"
+      }
+    },
     "content": {
       "snl": "def-struct[prop](Logic.iff(p,q),struct(Type.judge(%right%,Logic.implies(p,q)),Type.judge(%left%,Logic.implies(q,p))))"
     },

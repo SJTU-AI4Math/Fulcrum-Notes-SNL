@@ -6,7 +6,14 @@
     "id": "Type.def.Church-Mul",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Multiplication",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Multiplication",
+        "zh-CN": "丘奇乘法"
+      }
+    },
     "content": {
       "snl": "def(Church.mul,Type.lambda(list-partial[none](@m,@n,@f),Lambda.apply(m,Lambda.apply(n,f))))"
     },

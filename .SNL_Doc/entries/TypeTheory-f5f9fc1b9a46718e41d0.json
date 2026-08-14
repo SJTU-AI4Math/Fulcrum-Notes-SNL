@@ -6,7 +6,14 @@
     "id": "Type.def.omega-Combinator",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Omega Combinator (ω)",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Omega Combinator (ω)",
+        "zh-CN": "Omega 组合子（ω）"
+      }
+    },
     "content": {
       "snl": "def(Lambda.omega,Type.lambda(@x,Lambda.apply(x,x)))"
     },

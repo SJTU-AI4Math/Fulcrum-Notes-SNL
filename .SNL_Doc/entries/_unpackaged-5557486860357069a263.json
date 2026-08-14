@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.prop.borelUnique",
     "kind": "property",
-    "title": "Uniqueness of Borel Measure",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Uniqueness of Borel Measure",
+        "zh-CN": "博雷尔测度的唯一性"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Logic.and(Measure.BorelMeasure(@nu),Measure.BorelMeasure(@rho)),Eq(nu,rho))"
     },

@@ -5,9 +5,23 @@
   "entry": {
     "id": "BasicAnalysis.sec.continuity",
     "kind": "section",
-    "title": "Continuity",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Continuity",
+        "zh-CN": "连续性"
+      }
+    },
     "content": {
-      "markdown": "Continuity as the coincidence of the limit with the value, its one-sided refinements, and the closed-interval theorems that make continuity a global tool rather than a pointwise annotation."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Continuity as the coincidence of the limit with the value, its one-sided refinements, and the closed-interval theorems that make continuity a global tool rather than a pointwise annotation.",
+          "zh-CN": "将连续性理解为极限与函数值的一致，包括其单侧细化，以及使连续性从逐点标注转变为全局工具的闭区间定理。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

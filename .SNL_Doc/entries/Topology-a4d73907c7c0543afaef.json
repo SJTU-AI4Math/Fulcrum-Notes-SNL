@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.homeomorphic",
     "kind": "definition",
-    "title": "Homeomorphic Spaces",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Homeomorphic Spaces",
+        "zh-CN": "同胚空间"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.homeomorphic(X@Topology.ctxt.X,Y@Topology.ctxt.Y),Logic.exists-typed(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y),Topology.homeomorphism(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y)))"
     },

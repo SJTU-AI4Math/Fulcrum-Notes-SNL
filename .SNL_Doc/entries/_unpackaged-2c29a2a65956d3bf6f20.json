@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.implies",
     "kind": "definition",
-    "title": "Implication",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Implication",
+        "zh-CN": "蕴含"
+      }
+    },
     "content": {
       "snl": "def(Logic.implies(p,q),Type.to(p,q))"
     },

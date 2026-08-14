@@ -6,7 +6,14 @@
     "id": "Type.def.list",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "List",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "List",
+        "zh-CN": "列表"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

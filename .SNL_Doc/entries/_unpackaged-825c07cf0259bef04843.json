@@ -5,9 +5,23 @@
   "entry": {
     "id": "BasicAnalysis.subsec.closedInterval",
     "kind": "subsection",
-    "title": "Closed-Interval Theorems",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Closed-Interval Theorems",
+        "zh-CN": "闭区间定理"
+      }
+    },
     "content": {
-      "markdown": "The three classical consequences of continuity on a compact interval. Each fails on an open or unbounded interval, so each genuinely consumes compactness."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The three classical consequences of continuity on a compact interval. Each fails on an open or unbounded interval, so each genuinely consumes compactness.",
+          "zh-CN": "紧区间上连续性的三个经典推论。每一个在开区间或无界区间上都会失效，因此每一个都真正使用了紧致性。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

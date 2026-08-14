@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.kernel",
     "kind": "definition",
-    "title": "Kernel",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Kernel",
+        "zh-CN": "核"
+      }
+    },
     "content": {
       "snl": "def(Algebra.GrpKer,Set.sep-typed(@a,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,a),Algebra.e@Algebra.ctxt.G)))"
     },

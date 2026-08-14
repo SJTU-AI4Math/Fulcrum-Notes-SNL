@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.def.symmetric_difference",
     "kind": "definition",
-    "title": "Symmetric Difference",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Symmetric Difference",
+        "zh-CN": "对称差"
+      }
+    },
     "content": {
       "snl": "def(Set.SymmDiff(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.diff(parentheses(Set.union(A@Set.ctxt.AB,B@Set.ctxt.AB)),parentheses(Set.inter(A@Set.ctxt.AB,B@Set.ctxt.AB))))"
     },

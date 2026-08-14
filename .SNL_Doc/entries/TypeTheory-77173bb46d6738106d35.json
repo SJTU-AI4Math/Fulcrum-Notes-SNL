@@ -6,7 +6,14 @@
     "id": "Type.def.LegalExpr-LC",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Legal Expression (Non-typed Lambda Calculus)",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Legal Expression (Non-typed Lambda Calculus)",
+        "zh-CN": "合法表达式（无类型 λ 演算）"
+      }
+    },
     "content": {
       "snl": "def-hyp-opq(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr(e))"
     },

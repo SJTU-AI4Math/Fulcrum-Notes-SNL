@@ -6,7 +6,14 @@
     "id": "Type.def.ctor-legal",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Legal Constructor",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Legal Constructor",
+        "zh-CN": "合法构造子"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

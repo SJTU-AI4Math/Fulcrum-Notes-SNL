@@ -5,7 +5,14 @@
   "entry": {
     "id": "HS.Subsec.Real",
     "kind": "subsection",
-    "title": "Real Numbers",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Real Numbers",
+        "zh-CN": "实数"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

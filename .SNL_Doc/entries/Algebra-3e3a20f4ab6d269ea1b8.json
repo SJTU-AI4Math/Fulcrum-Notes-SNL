@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.ctxt.1",
     "kind": "context",
-    "title": "G, dot",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "G, dot",
+        "zh-CN": "G，点乘"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

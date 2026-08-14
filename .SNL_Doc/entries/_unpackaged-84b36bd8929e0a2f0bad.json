@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.ctxt.P",
     "kind": "context",
-    "title": "$P$",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$P$",
+        "zh-CN": "$P$"
+      }
+    },
     "content": {
       "snl": "Type.judge(P,Type.to(T,Proposition))"
     },

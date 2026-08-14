@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.def.flatten",
     "kind": "property",
-    "title": "Flatten is the Monad Flatten Operation",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Flatten is the Monad Flatten Operation",
+        "zh-CN": "Flatten 是单子的展平操作"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@x,Type.apply(M,Type.apply(M,A))),Eq(FP.flatten(M,x),FP.bind(M,x,Type.lambda(@a,a))))"
     },

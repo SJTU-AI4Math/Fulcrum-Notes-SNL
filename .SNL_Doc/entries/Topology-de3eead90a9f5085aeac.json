@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.continuousPreservesCompactness",
     "kind": "property",
-    "title": "Continuous Maps Preserve Compactness",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Continuous Maps Preserve Compactness",
+        "zh-CN": "连续映射保持紧性"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.implies(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Topology.compact(Set.sep-typed(@y,Y@Topology.ctxt.Y,Logic.exists-typed(@x,X@Topology.ctxt.X,Logic.and(Set.mem(x,E),Eq(Type.apply(f,x),y)))))))"
     },

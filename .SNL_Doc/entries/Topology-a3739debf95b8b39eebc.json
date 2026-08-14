@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.mapLimit",
     "kind": "definition",
-    "title": "Limit of a Map",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Limit of a Map",
+        "zh-CN": "映射的极限"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@y,Y@Topology.ctxt.Y),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.mapLimit(x,f,y),Logic.forall-typed(@V,Set(Y@Topology.ctxt.Y),Logic.implies(Set.mem(V,τ_Y),Logic.and(Set.mem(y,V),Logic.exists-typed(@U,Set(X@Topology.ctxt.X),Logic.and(Logic.and(Set.mem(U,τ_X),Set.mem(x,U)),Set.subset(Set.sep-typed(@t,X@Topology.ctxt.X,Logic.and(Set.mem(t,Set.diff(U,Set.sep-typed(@z,X@Topology.ctxt.X,Eq(z,x)))),Set.mem(Type.apply(f,t),V))),V)))))))"
     },

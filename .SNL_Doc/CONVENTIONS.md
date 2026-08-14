@@ -179,3 +179,31 @@ alone.
 at derivations or applications of it. A macro whose concept has no defining
 Entry keeps `entries: []` — pure notation such as `Add.add` legitimately has no
 source. Fill these during Phase 5, not while inventing the name.
+
+## 7. English and Simplified-Chinese localization
+
+- Entry titles and Markdown bodies use complete `I18n` values with exactly `en`
+  and `zh-CN`; English is the default projection unless a pre-existing entity
+  explicitly uses another default.
+- A Macro Style is localized only when its resolved template mode is `text`.
+  Formula and block templates remain language-invariant structural data.
+- Every localized Macro Style preserves the same `#0`, `#1`, … or `#*`
+  placeholder contract in both languages. Macro names, style identities,
+  descriptions, arity, package ownership, and source indexes do not change for
+  translation.
+- Literal `%…%` text embedded directly in an SNL tree has no language projection.
+  Do not pretend it is localized; reuse an existing localized text Macro when
+  one already exists, or leave it unchanged until a separately reviewed Macro
+  is introduced.
+
+## 8. Inductive constructors and recursors
+
+- Each audited inductive type owns one empty `definition` subentry for every
+  constructor and one empty `definition` subentry for its per-type recursor.
+- Constructor ids qualify the parent as `.ctor.<slug>`; recursor ids qualify it
+  as `.recursor`. An existing semantically identical empty Entry is reused
+  instead of duplicated.
+- These Entries stay in the same Package as their inductive parent and are
+  attached below every intended parent occurrence with the Library's
+  `Subentry` counter. Their `content` remains `{}` until the corresponding
+  definitions are authored.

@@ -6,7 +6,14 @@
     "id": "Type.subsec.inductive-def",
     "package": "TypeTheory",
     "kind": "subsection",
-    "title": "Inductive Declarations",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Inductive Declarations",
+        "zh-CN": "归纳声明"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

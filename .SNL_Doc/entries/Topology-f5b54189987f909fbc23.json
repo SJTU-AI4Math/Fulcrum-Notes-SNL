@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.isolatedPoint",
     "kind": "definition",
-    "title": "Isolated Point",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Isolated Point",
+        "zh-CN": "孤立点"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.isolatedPoint(x,A),Logic.and(Set.mem(x,A),Logic.neg(Set.mem(x,Topology.derivedSet(A)))))"
     },

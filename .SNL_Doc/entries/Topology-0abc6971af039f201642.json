@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.seqConvergence",
     "kind": "definition",
-    "title": "Sequence Convergence",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Sequence Convergence",
+        "zh-CN": "序列收敛"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@x_n,Type.to(Nat,S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.seqConvergence(x_n,x),Topology.seqLimit(x_n,x))"
     },

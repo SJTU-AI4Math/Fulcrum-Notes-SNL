@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.def.identityBind",
     "kind": "property",
-    "title": "Identity Bind",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Identity Bind",
+        "zh-CN": "恒等 Bind"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@x,FP.Identity(A)),Eq(FP.bind(FP.Identity,x,@f),Type.apply(f,x)))"
     },

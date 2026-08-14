@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.prop.singletonZero",
     "kind": "property",
-    "title": "Singletons Have Measure Zero",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Singletons Have Measure Zero",
+        "zh-CN": "单点集的测度为零"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Measure.BorelMeasure(@nu),Logic.forall-typed(@x,$\\mathbb{R}$,Eq(Measure.apply(nu,Set.sep-typed(@y,$\\mathbb{R}$,Eq(y,x))),Measure.zero)))"
     },

@@ -6,7 +6,14 @@
     "id": "Type.rl.univ",
     "package": "TypeTheory",
     "kind": "axiom",
-    "title": "Type Universe",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Type Universe",
+        "zh-CN": "类型宇宙"
+      }
+    },
     "content": {
       "snl": "def-hyp-opq(Type.judge(@n,Nat),Type[univ](n))"
     },

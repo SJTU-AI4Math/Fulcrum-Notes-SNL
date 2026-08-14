@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.subsec.operations",
     "kind": "subsection",
-    "title": "Operations",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Operations",
+        "zh-CN": "运算"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

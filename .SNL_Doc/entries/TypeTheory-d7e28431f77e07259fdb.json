@@ -6,7 +6,14 @@
     "id": "Type.def.S-Combinator",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "S Combinator",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "S Combinator",
+        "zh-CN": "S 组合子"
+      }
+    },
     "content": {
       "snl": "def(Lambda.S,Type.lambda(list-partial[none](@x,@y,@z),Lambda.apply(x,y,x,z)))"
     },

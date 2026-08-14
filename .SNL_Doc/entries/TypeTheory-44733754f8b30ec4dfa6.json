@@ -6,7 +6,14 @@
     "id": "Type.def.nat",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Natural Number Type",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Natural Number Type",
+        "zh-CN": "自然数类型"
+      }
+    },
     "content": {
       "snl": "def-inductive(Nat,ctors(Type.judge(%zero%,Nat),Type.judge(%succ%,Type.to(Nat,Nat))))"
     },

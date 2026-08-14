@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.closedSubsetOfCompact",
     "kind": "property",
-    "title": "Closed Subset of Compact is Compact",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Closed Subset of Compact is Compact",
+        "zh-CN": "紧空间的闭子集是紧的"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@K,Set(S@Topology.ctxt.S)),Type.judge(@C,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Logic.and(Topology.compact(K),Logic.and(Set.subset(C,K),Set.mem(Set.compl[sup](C,S@Topology.ctxt.S),τ))),Topology.compact(C)))"
     },

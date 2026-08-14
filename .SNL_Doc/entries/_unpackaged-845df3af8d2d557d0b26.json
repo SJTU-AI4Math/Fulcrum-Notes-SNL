@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.exists",
     "kind": "definition",
-    "title": "Existential Quantifier",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Existential Quantifier",
+        "zh-CN": "存在量词"
+      }
+    },
     "content": {
       "snl": "def-struct[prop](Logic.exists-typed(x,T,P(x)),struct(member(%Instance%,Type.judge(x,T)),Type.judge(%Property%,Type.apply(P,x))))"
     },

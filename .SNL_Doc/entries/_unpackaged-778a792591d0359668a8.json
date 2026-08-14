@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.ctxt.AB",
     "kind": "context",
-    "title": "$A, B$",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$A, B$",
+        "zh-CN": "$A, B$"
+      }
+    },
     "content": {
       "snl": "Type.judge(list-partial(@A,@B),Sigma@Measure.ctxt.Sigma)"
     },

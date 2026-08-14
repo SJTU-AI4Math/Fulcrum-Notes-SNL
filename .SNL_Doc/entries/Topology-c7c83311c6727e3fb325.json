@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.thm.heineBorel",
     "kind": "theorem",
-    "title": "Heine-Borel Theorem",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Heine-Borel Theorem",
+        "zh-CN": "海涅–博雷尔定理"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@E,Set(Set(S@Topology.ctxt.S))),Type.judge(@S,Type)),Topology.heineBorel)"
     },

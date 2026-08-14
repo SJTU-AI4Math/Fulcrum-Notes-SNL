@@ -6,7 +6,14 @@
     "id": "Type.def.inductiveInfo",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Inductive Info",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Inductive Info",
+        "zh-CN": "归纳类型信息"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

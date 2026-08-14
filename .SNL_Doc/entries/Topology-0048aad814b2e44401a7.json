@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.limitPoint",
     "kind": "definition",
-    "title": "Limit Point / Accumulation Point",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Limit Point / Accumulation Point",
+        "zh-CN": "极限点／聚点"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.limitPoint(x,A),Logic.forall-typed(@U,Set(S@Topology.ctxt.S),Logic.implies(Topology.deletedNeighborhood(U,x),Logic.neg(Set.mem(Set.inter(U,A),Set.emptyset[slim])))))"
     },

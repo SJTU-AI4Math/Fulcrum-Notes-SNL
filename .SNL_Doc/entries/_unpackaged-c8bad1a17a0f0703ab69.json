@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.false",
     "kind": "definition",
-    "title": "False",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "False",
+        "zh-CN": "假"
+      }
+    },
     "content": {
       "snl": "def-inductive[prop](Logic.false,struct)"
     },

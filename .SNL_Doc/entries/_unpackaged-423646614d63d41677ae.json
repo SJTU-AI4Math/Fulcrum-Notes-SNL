@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.subgroup",
     "kind": "definition",
-    "title": "Subgroup",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Subgroup",
+        "zh-CN": "子群"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@H,Set(G@Algebra.ctxt.G)), Algebra.Subgroup, Algebra.Group)"
     },

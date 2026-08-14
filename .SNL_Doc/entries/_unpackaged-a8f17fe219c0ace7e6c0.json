@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.prop.bindBottom",
     "kind": "property",
-    "title": "Bottom is a Left Zero for Bind",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Bottom is a Left Zero for Bind",
+        "zh-CN": "底元素是 Bind 的左零元"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@f,Type.to(A,Type.apply(M,B))),Eq(FP.bind(M,FP.bottom(M,A),f),FP.bottom(M,B)))"
     },

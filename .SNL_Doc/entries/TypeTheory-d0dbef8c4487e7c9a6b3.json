@@ -6,7 +6,14 @@
     "id": "Type.subsec.patternMatching",
     "package": "TypeTheory",
     "kind": "subsection",
-    "title": "Pattern Matching",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Pattern Matching",
+        "zh-CN": "模式匹配"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

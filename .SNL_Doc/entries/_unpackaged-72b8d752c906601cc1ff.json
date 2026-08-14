@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.ctxt.Sigma",
     "kind": "context",
-    "title": "$\\Sigma$",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$\\Sigma$",
+        "zh-CN": "$\\Sigma$"
+      }
+    },
     "content": {
       "snl": "Type.judge(@$\\Sigma$,Set(Set(X)))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.example.orderTopology",
     "kind": "example",
-    "title": "Order Topology",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Order Topology",
+        "zh-CN": "序拓扑"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@S,Type),Topology.orderTopology,Topology.topologicalSpace(S@Topology.ctxt.S,Topology.orderTopology))"
     },

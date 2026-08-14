@@ -5,10 +5,24 @@
   "entry": {
     "id": "BasicAnalysis.thm.taylorPeano",
     "kind": "theorem",
-    "title": "Taylor's Theorem with Peano Remainder",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Taylor's Theorem with Peano Remainder",
+        "zh-CN": "带佩亚诺余项的泰勒定理"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real), Type.judge(@N, Nat), $#0 > 0$(N)), Logic.exists-typed(@R, Analysis.PFun, Logic.and(Eq(F, Add.add(Analysis.taylorPoly(F, x, N), R)), Analysis.higherInfinitesimal(R, Power(Sub.sub(@y, x), N), x))))",
-      "markdown": "If `F` is `N`-times differentiable at `x₀` then `F` splits as its Taylor polynomial plus a remainder that is `o((x − x₀)ᴺ)` at `x₀`.\n\nThis is a purely local statement: it says the polynomial is the best degree-`N` approximation *near* `x₀` and says nothing at any fixed distance. It requires only differentiability at the single point `x₀`, which is the weakest hypothesis of any Taylor result here, and it is the form used for computing limits."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "If `F` is `N`-times differentiable at `x₀` then `F` splits as its Taylor polynomial plus a remainder that is `o((x − x₀)ᴺ)` at `x₀`.\n\nThis is a purely local statement: it says the polynomial is the best degree-`N` approximation *near* `x₀` and says nothing at any fixed distance. It requires only differentiability at the single point `x₀`, which is the weakest hypothesis of any Taylor result here, and it is the form used for computing limits.",
+          "zh-CN": "若 `F` 是 `N` 次可导的（在 `x₀` 处），则 `F` 可分解为其泰勒多项式与一个为 `o((x − x₀)ᴺ)`（在 `x₀` 处）的余项之和。\n\n这是纯粹的局部陈述：它说明该多项式是最佳的 `N` 次逼近（在 `x₀` *附近*），而不对任何固定距离处作出断言。它只要求函数在单个点 `x₀` 处可导，是此处所有泰勒结果中假设最弱的形式，也是计算极限时所用的形式。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

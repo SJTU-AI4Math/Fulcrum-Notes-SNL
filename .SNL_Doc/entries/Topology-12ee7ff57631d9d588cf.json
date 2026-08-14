@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.continuousMap",
     "kind": "definition",
-    "title": "Continuous Map",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Continuous Map",
+        "zh-CN": "连续映射"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Logic.forall-typed(@x,X@Topology.ctxt.X,Logic.implies(Set.mem(x,E),Topology.continuous(f,x))))"
     },

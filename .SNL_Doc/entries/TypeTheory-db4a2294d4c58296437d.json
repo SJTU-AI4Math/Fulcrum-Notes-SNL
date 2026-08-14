@@ -6,7 +6,14 @@
     "id": "Type.def.prod",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Product Type",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Product Type",
+        "zh-CN": "积类型"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

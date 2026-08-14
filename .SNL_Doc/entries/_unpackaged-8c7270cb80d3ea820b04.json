@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.orbit",
     "kind": "definition",
-    "title": "Orbit",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Orbit",
+        "zh-CN": "轨道"
+      }
+    },
     "content": {
       "snl": "def(Algebra.Orb,Set.sep-typed(@y,X@Algebra.def.groupAction,Logic.exists-typed(@g,G@Algebra.ctxt.G,Eq(Type.apply[paren](Type.apply[paren](alpha@Algebra.def.groupAction,g),x@Algebra.def.groupAction),y))))"
     },

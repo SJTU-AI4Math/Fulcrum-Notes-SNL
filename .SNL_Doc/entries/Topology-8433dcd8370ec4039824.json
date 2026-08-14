@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.mapConvergence",
     "kind": "definition",
-    "title": "Convergence of a Map",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Convergence of a Map",
+        "zh-CN": "映射的收敛"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@y,Y@Topology.ctxt.Y),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.mapConvergence(f,x,y),Topology.mapLimit(x,f,y))"
     },

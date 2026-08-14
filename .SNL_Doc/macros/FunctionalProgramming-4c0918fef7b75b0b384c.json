@@ -18,8 +18,18 @@
         "style_name": "default",
         "tags": [],
         "template": {
-          "mode": "text",
-          "body": "#0 is a partial order"
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a partial order"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是偏序"
+            }
+          }
         }
       }
     ],

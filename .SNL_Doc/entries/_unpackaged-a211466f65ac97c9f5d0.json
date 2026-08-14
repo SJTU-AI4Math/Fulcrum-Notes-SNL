@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.def.borelMeasure",
     "kind": "definition",
-    "title": "Borel Measure on the Real Line",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Borel Measure on the Real Line",
+        "zh-CN": "实数轴上的博雷尔测度"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@$\\nu$,Type.to(Measure.Borel(Real),ENNReal)),Measure.BorelMeasure($\\nu$),Logic.forall-typed[paren](list-partial(@a,@b),Real,Eq(Measure.apply($\\nu$,Measure.interval(a,b)),Measure.length(a,b))))"
     },

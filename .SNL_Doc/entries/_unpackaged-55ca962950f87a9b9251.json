@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.sec.set",
     "kind": "section",
-    "title": "Set",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Set",
+        "zh-CN": "集合"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

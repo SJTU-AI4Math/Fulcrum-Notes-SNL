@@ -5,7 +5,14 @@
   "entry": {
     "id": "real-analysis.ctxt.1",
     "kind": "context",
-    "title": "D, f, g",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "D, f, g",
+        "zh-CN": "D, f, g"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

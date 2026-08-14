@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.ppt.false-rec",
     "kind": "property",
-    "title": "Explosion",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Explosion",
+        "zh-CN": "爆炸原理"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@p,Proposition),Logic.implies(Logic.false,p))"
     },

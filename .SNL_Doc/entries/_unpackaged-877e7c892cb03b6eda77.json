@@ -6,7 +6,14 @@
     "id": "Lambda.def.beta-single",
     "package": "_unpackaged",
     "kind": "definition",
-    "title": "Single-step $\\beta$-reduction",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Single-step $\\beta$-reduction",
+        "zh-CN": "单步 $\\beta$-归约"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

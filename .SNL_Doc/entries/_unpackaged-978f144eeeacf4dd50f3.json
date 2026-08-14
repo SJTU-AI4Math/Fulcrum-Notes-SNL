@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.def.sigmaAlgebra",
     "kind": "definition",
-    "title": "Sigma-Algebra",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Sigma-Algebra",
+        "zh-CN": "σ-代数"
+      }
+    },
     "content": {
       "snl": "def-struct(Measure.SigmaAlgebra($\\Sigma$),struct[enumerate](member[colon](%Whole space%,Measure.containsUniv(X,$\\Sigma$)),member[colon](%Complement closure%,Measure.complClosed($\\Sigma$,X)),member[colon](%Countable-union closure%,Measure.countableUnionClosed($\\Sigma$))))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.thm.lebesgueSigmaAlgebra",
     "kind": "theorem",
-    "title": "Lebesgue-Measurable Sets Form a Sigma-Algebra",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lebesgue-Measurable Sets Form a Sigma-Algebra",
+        "zh-CN": "勒贝格可测集构成 σ-代数"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal)),Measure.SigmaAlgebra(Measure.LebesgueSets($\\mathbb{R}$)))"
     },

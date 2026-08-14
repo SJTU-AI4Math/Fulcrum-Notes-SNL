@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.subsec.subgroup",
     "kind": "subsection",
-    "title": "Subgroups",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Subgroups",
+        "zh-CN": "子群"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

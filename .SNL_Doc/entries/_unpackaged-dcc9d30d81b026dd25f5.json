@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.def.complete",
     "kind": "definition",
-    "title": "Complete Measure Space",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Complete Measure Space",
+        "zh-CN": "完备测度空间"
+      }
+    },
     "content": {
       "snl": "def[predicateDisplay](Measure.Complete(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.forall-typed(@N,Sigma@Measure.ctxt.Sigma,Logic.implies(Eq(Measure.apply(mu@Measure.ctxt.mu,N),Measure.zero),Set.subset(Set.powerset(N),Sigma@Measure.ctxt.Sigma))))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "HS.def.Icc",
     "kind": "definition",
-    "title": "Closed Interval",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Closed Interval",
+        "zh-CN": "闭区间"
+      }
+    },
     "content": {
       "snl": "def(Icc(a,b),Set.sep-typed(@x,Real,Logic.and($#0 \\leq #1$(a,x),$#0 \\leq #1$(x,b))))"
     },

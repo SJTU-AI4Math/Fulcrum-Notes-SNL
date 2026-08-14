@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.sec.topology",
     "kind": "section",
-    "title": "Topological Spaces",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Topological Spaces",
+        "zh-CN": "拓扑空间"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

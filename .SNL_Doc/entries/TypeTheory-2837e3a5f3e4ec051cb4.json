@@ -7,7 +7,14 @@
     "id": "Type.thm.SKI-complete",
     "package": "TypeTheory",
     "kind": "theorem",
-    "title": "SKI is Complete",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "SKI is Complete",
+        "zh-CN": "SKI 是完备的"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

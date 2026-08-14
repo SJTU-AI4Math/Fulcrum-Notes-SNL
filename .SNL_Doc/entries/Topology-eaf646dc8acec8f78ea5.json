@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.example.trivialTopology",
     "kind": "example",
-    "title": "Trivial Topology",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Trivial Topology",
+        "zh-CN": "平凡拓扑"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@S,Type),Topology.trivialTopology,Topology.topology(Set.sep-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.or(Eq(U,Set.emptyset[slim]),Eq(U,S@Topology.ctxt.S))),S@Topology.ctxt.S))"
     },

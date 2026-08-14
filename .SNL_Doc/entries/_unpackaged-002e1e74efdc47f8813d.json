@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.def.regularity",
     "kind": "definition",
-    "title": "Regular Measure",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Regular Measure",
+        "zh-CN": "正则测度"
+      }
+    },
     "content": {
       "snl": "def[predicateDisplay](Measure.regular(mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Outer regularity%,Measure.outerRegular(mu@Measure.ctxt.mu)),member[colon](%Inner regularity%,Measure.innerRegular(mu@Measure.ctxt.mu))))"
     },

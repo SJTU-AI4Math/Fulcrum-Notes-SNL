@@ -282,6 +282,54 @@
       "props": {
         "entryId": "FP.def.option"
       }
+    },
+    {
+      "id": "n_sub_5200c0f02c32",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.list.ctor.cons",
+        "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
+      }
+    },
+    {
+      "id": "n_sub_2a3b2fff11cf",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.list.ctor.nil",
+        "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
+      }
+    },
+    {
+      "id": "n_sub_86eb0a6f134e",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.list.recursor",
+        "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
+      }
+    },
+    {
+      "id": "n_sub_7ceccf0e7730",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.option.ctor.none",
+        "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
+      }
+    },
+    {
+      "id": "n_sub_1e3de98859ea",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.option.ctor.some",
+        "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
+      }
+    },
+    {
+      "id": "n_sub_6d34f114caee",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.option.recursor",
+        "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
+      }
     }
   ],
   "relationships": [
@@ -458,6 +506,51 @@
     {
       "from": "n_xmp_option",
       "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_list",
+      "to": "n_sub_2a3b2fff11cf",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_list",
+      "to": "n_sub_5200c0f02c32",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_list",
+      "to": "n_sub_86eb0a6f134e",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_option",
+      "to": "n_sub_7ceccf0e7730",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_sub_7ceccf0e7730",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_option",
+      "to": "n_sub_1e3de98859ea",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_sub_1e3de98859ea",
+      "label": "branch"
+    },
+    {
+      "from": "n_def_option",
+      "to": "n_sub_6d34f114caee",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_sub_6d34f114caee",
       "label": "branch"
     }
   ]

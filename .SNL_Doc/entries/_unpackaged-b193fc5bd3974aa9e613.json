@@ -5,9 +5,23 @@
   "entry": {
     "id": "BasicAnalysis.subsec.infinitesimal",
     "kind": "subsection",
-    "title": "Infinitesimals and Their Comparison",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Infinitesimals and Their Comparison",
+        "zh-CN": "无穷小及其比较"
+      }
+    },
     "content": {
-      "markdown": "One base notion and two comparison relations built on it."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "One base notion and two comparison relations built on it.",
+          "zh-CN": "一个基本概念以及在其上构建的两个比较关系。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

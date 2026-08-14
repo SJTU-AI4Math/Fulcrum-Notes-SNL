@@ -5,9 +5,23 @@
   "entry": {
     "id": "FP.xmp.option",
     "kind": "example",
-    "title": "Option / Maybe Monad",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Option / Maybe Monad",
+        "zh-CN": "Option / Maybe 单子"
+      }
+    },
     "content": {
-      "markdown": "`Option` monad is used as "
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "`Option` monad is used as ",
+          "zh-CN": "`Option` 单子的用途是 "
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

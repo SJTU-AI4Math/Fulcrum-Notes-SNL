@@ -6,7 +6,14 @@
     "id": "Type.rl.fun",
     "package": "TypeTheory",
     "kind": "axiom",
-    "title": "Function Type",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Function Type",
+        "zh-CN": "函数类型"
+      }
+    },
     "content": {
       "snl": "def-hyp-opq(list-partial(Type.judge(@A,Type[univ](@u)),Type.judge(@B,Type[univ](@v))),Type.judge(Type.to(A,B),Type))"
     },

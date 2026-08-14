@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.groupIso",
     "kind": "definition",
-    "title": "Group Isomorphism",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Group Isomorphism",
+        "zh-CN": "群同构"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpIso, Logic.and(Algebra.GrpMono,Algebra.GrpEpi))"
     },

@@ -6,7 +6,14 @@
     "id": "Type.def.I-Combinator",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "I Combinator",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "I Combinator",
+        "zh-CN": "I 组合子"
+      }
+    },
     "content": {
       "snl": "def(Lambda.I,Type.lambda(@x,x))"
     },

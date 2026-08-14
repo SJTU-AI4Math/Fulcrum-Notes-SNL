@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.def.option",
     "kind": "definition",
-    "title": "Option / Maybe",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Option / Maybe",
+        "zh-CN": "Option / Maybe"
+      }
+    },
     "content": {
       "snl": "def-inductive(FP.Option[ques](A),struct[enumerate](member[colon](Option.none,FP.Option[ques](A)),member[colon](Option.some,Type.to(A,FP.Option[ques](A)))))"
     },

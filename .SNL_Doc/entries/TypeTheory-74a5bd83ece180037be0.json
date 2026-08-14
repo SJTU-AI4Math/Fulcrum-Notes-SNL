@@ -6,7 +6,14 @@
     "id": "Type.def.Church-False",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Boolean False",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Boolean False",
+        "zh-CN": "丘奇布尔假值"
+      }
+    },
     "content": {
       "snl": "def(Church.false,Type.lambda(list-partial[none](@x,@y),y))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.prop.listMonad",
     "kind": "property",
-    "title": "List is a Monad",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "List is a Monad",
+        "zh-CN": "List 是单子"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@xs,FP.List(A)),Eq(FP.flatten(FP.List,xs),FP.bind(FP.List,xs,Type.lambda(@a,a))))"
     },

@@ -6,7 +6,14 @@
     "id": "Type.subsec.Church",
     "package": "TypeTheory",
     "kind": "subsection",
-    "title": "Church Encoding",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Encoding",
+        "zh-CN": "丘奇编码"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

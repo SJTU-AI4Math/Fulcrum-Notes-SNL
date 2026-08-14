@@ -5,7 +5,14 @@
   "entry": {
     "id": "BasicAnalysis.subsec.compute",
     "kind": "section",
-    "title": "Computation",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Computation",
+        "zh-CN": "计算"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

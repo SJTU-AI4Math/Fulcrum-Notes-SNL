@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.def.listBind",
     "kind": "property",
-    "title": "List Bind",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "List Bind",
+        "zh-CN": "列表 Bind"
+      }
+    },
     "content": {
       "snl": "thm-hyp(Type.judge(@xs,FP.List(A)),Eq(FP.bind(FP.List,xs,@f),FP.concat(FP.map(FP.List,xs,f))))"
     },

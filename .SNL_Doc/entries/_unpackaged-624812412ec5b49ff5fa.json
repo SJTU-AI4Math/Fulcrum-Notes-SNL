@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.def.univ",
     "kind": "definition",
-    "title": "Universal Set",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Universal Set",
+        "zh-CN": "全集"
+      }
+    },
     "content": {
       "snl": "def(Set.univ(T@Set.ctxt.T),Set.sep-typed(@x,T@Set.ctxt.T,Logic.true))"
     },

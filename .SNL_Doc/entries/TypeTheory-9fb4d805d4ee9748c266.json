@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Y-Combinator",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$Y$ Combinator",
+        "zh-CN": "$Y$ 组合子"
+      }
+    },
+    "content": {
+      "snl": "def($Y$,Type.lambda(@f,Lambda.apply($\\left(#0\\right)$(Type.lambda(@x,Lambda.apply(f,Lambda.apply(x,x)))),$\\left(#0\\right)$(Type.lambda(@x,Lambda.apply(f,Lambda.apply(x,x)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

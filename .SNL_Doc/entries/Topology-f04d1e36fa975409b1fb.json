@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.subsec.mapLimit",
     "kind": "subsection",
-    "title": "Limit and Continuity of Maps",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Limit and Continuity of Maps",
+        "zh-CN": "映射的极限与连续性"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

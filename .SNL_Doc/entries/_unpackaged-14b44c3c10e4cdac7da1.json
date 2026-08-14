@@ -5,7 +5,14 @@
   "entry": {
     "id": "real-analysis.ctxt.D",
     "kind": "context",
-    "title": "D",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "D",
+        "zh-CN": "D"
+      }
+    },
     "content": {
       "snl": "Type.judge(@D, Set($\\mathbb{R}$))"
     },

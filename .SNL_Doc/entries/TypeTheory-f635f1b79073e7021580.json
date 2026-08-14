@@ -5,8 +5,15 @@
   "entry": {
     "id": "Type.rl.lambda-typed",
     "package": "TypeTheory",
-    "kind": "axiom",
-    "title": "Lambda Abstraction (Typed)",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lambda Abstraction Constructor (Typed)",
+        "zh-CN": "Lambda 抽象构造子（有类型）"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

@@ -6,7 +6,14 @@
     "id": "Type.def.Church-Add",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Addition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Addition",
+        "zh-CN": "丘奇加法"
+      }
+    },
     "content": {
       "snl": "def(Church.add,Type.lambda(list-partial[none](@m,@n,@f,@x),Lambda.apply(m,f,Lambda.apply(n,f,x))))"
     },

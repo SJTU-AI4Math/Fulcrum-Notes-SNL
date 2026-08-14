@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.ctxt.map",
     "kind": "context",
-    "title": "X, Y, τ_X, τ_Y, f",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "X, Y, τ_X, τ_Y, f",
+        "zh-CN": "X，Y，τ_X，τ_Y，f"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

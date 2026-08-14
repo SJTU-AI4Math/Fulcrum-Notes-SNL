@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.def.emptyset",
     "kind": "definition",
-    "title": "Empty Set",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Empty Set",
+        "zh-CN": "空集"
+      }
+    },
     "content": {
       "snl": "def(Set.emptyset[slim],Set.sep-typed(@x,T@Set.ctxt.T,Logic.false))"
     },

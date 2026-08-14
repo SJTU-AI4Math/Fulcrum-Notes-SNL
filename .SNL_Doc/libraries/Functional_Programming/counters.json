@@ -14,7 +14,14 @@
               "id": "edd30eac-4ec6-4526-9808-4cc9910c6c7a",
               "name": "Entry",
               "numbering": ".1",
-              "children": []
+              "children": [
+                {
+                  "id": "6b5acf2e-1c43-5150-a600-13275539320e",
+                  "name": "Subentry",
+                  "numbering": ".1",
+                  "children": []
+                }
+              ]
             }
           ]
         }

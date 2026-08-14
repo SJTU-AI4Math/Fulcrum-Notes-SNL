@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rmk.lambdaTuringComplete",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Turing Completeness of Untyped $\\lambda$-Calculus",
+        "zh-CN": "无类型 $\\lambda$-演算的图灵完备性"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Untyped $\\lambda$-calculus is Turing-complete.",
+          "zh-CN": "无类型 $\\lambda$-演算是图灵完备的。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.continuityViaPreimage",
     "kind": "property",
-    "title": "Preimage Definition of Continuity",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Preimage Definition of Continuity",
+        "zh-CN": "连续性的原像定义"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.iff(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Logic.forall-typed(@V,Set(Y@Topology.ctxt.Y),Logic.implies(Set.mem(V,τ_Y),Set.mem(Set.sep-typed(@x,X@Topology.ctxt.X,Logic.and(Set.mem(x,E),Set.mem(Type.apply(f,x),V))),τ_X)))))"
     },

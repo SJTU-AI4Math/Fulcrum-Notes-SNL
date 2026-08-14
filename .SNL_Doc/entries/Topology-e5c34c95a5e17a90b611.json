@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.closedSet",
     "kind": "definition",
-    "title": "Closed Set",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Closed Set",
+        "zh-CN": "闭集"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@U,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.closedSet(U,τ,S@Topology.ctxt.S),Set.mem(Set.compl[sup](U,S@Topology.ctxt.S),τ))"
     },

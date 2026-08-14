@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.subsec.instances",
     "kind": "subsection",
-    "title": "Standard Monad Instances",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Standard Monad Instances",
+        "zh-CN": "标准单子实例"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

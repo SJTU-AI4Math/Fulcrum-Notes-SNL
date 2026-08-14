@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.subsec.connectedness",
     "kind": "subsection",
-    "title": "Connectedness",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Connectedness",
+        "zh-CN": "连通性"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

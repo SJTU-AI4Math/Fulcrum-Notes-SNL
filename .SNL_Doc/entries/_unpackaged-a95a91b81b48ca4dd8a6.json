@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.def.union",
     "kind": "definition",
-    "title": "Union of sets",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Union of sets",
+        "zh-CN": "集合的并"
+      }
+    },
     "content": {
       "snl": "def(Set.union(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.or(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
     },

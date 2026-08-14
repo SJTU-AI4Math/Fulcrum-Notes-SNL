@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.proposition",
     "kind": "definition",
-    "title": "Proposition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Proposition",
+        "zh-CN": "命题"
+      }
+    },
     "content": {
       "snl": "def(Proposition,Type[univ](0))"
     },

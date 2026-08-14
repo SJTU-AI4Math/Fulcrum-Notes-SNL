@@ -6,7 +6,14 @@
     "id": "Type.rl.Expr-STLC",
     "package": "TypeTheory",
     "kind": "axiom",
-    "title": "Expression",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Expression",
+        "zh-CN": "表达式"
+      }
+    },
     "content": {
       "snl": "def-inductive(Type.Expr,ctors(Type.judge(%lambda%,Type.Expr),Type.judge(%binded variable%,Type.to(Nat,Type.Expr)),Type.judge(%apply%,Type.to(Type.Expr,Type.to(Type.Expr,Type.Expr))),Type.judge(%function type%,Type.to(Type.Expr,Type.to(Type.Expr,Type.Expr)))))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.nestedCompactInT2",
     "kind": "property",
-    "title": "Nested Compact Set Theorem in T2 Spaces",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Nested Compact Set Theorem in T2 Spaces",
+        "zh-CN": "T2 空间中的嵌套紧集定理"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@K_n,Type.to(Nat,Set(S@Topology.ctxt.S))),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.true)"
     },

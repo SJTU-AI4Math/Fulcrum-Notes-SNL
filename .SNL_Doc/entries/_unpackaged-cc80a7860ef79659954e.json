@@ -5,10 +5,24 @@
   "entry": {
     "id": "BasicAnalysis.def.limitAtInfinityValue",
     "kind": "definition",
-    "title": "Limits at Infinity as Values",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Limits at Infinity as Values",
+        "zh-CN": "作为值的无穷远处极限"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@F, Analysis.PFun), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)))",
-      "markdown": "The partial value forms of the three limits at infinity."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The partial value forms of the three limits at infinity.",
+          "zh-CN": "三个无穷远处极限的偏值形式。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

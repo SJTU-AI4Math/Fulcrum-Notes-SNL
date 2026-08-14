@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.def.powerset",
     "kind": "definition",
-    "title": "Power Set",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Power Set",
+        "zh-CN": "幂集"
+      }
+    },
     "content": {
       "snl": "def(Set.powerset(A@Set.ctxt.AB),Set.sep-typed(@t,Set(T@Set.ctxt.T),Set.subset(t,A@Set.ctxt.AB)))"
     },

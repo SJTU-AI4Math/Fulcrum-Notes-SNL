@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.def.setSemiring",
     "kind": "definition",
-    "title": "Set Semiring",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Set Semiring",
+        "zh-CN": "集合半环"
+      }
+    },
     "content": {
       "snl": "def-struct-hyp(Type.judge(@R,Set(Set(X))),Measure.SetSemiring(R),struct[enumerate](member[colon](%Empty set%,Measure.containsEmpty(R)),member[colon](%Intersection closure%,Measure.interClosed(R)),member[colon](%Finite disjoint difference decomposition%,Measure.diffFiniteUnion(R))))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.ctxt.1",
     "kind": "context",
-    "title": "S, τ",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "S, τ",
+        "zh-CN": "S，τ"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

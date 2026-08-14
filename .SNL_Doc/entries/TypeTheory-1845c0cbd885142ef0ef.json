@@ -6,7 +6,14 @@
     "id": "Type.def.Sigma",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Sigma Type",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Sigma Type",
+        "zh-CN": "Σ 类型"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.closedIffContainsLimitPoints",
     "kind": "property",
-    "title": "Closed iff Contains All Limit Points",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Closed iff Contains All Limit Points",
+        "zh-CN": "闭集当且仅当包含其所有极限点"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Set.mem(Set.compl[sup](A,S@Topology.ctxt.S),τ),Set.subset(Topology.derivedSet(A),A)))"
     },

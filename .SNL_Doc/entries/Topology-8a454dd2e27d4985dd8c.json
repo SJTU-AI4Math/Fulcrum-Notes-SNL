@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.subsec.compactness",
     "kind": "subsection",
-    "title": "Compactness",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Compactness",
+        "zh-CN": "紧性"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

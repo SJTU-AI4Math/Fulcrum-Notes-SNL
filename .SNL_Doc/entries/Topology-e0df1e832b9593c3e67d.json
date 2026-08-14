@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.example.usualTopologyR",
     "kind": "example",
-    "title": "Usual Topology on Real Numbers",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Usual Topology on Real Numbers",
+        "zh-CN": "实数上的通常拓扑"
+      }
+    },
     "content": {
       "snl": "def-hyp(Type.judge(@R,Type),Topology.usualTopology,Topology.topologicalSpace(R,Topology.usualTopology))"
     },

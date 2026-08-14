@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.def.inter",
     "kind": "definition",
-    "title": "Intersection of sets",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Intersection of sets",
+        "zh-CN": "集合的交"
+      }
+    },
     "content": {
       "snl": "def(Set.inter(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.and(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
     },

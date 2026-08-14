@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.def.set",
     "kind": "definition",
-    "title": "Set",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Set",
+        "zh-CN": "集合"
+      }
+    },
     "content": {
       "snl": "def(FP.Set(A),Set(A))"
     },

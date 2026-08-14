@@ -6,7 +6,14 @@
     "id": "Type.def.Church-Two",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Church Numeral Two",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Church Numeral Two",
+        "zh-CN": "丘奇数二"
+      }
+    },
     "content": {
       "snl": "def(Church.two,Type.lambda(list-partial[none](@f,@x),Lambda.apply(f,Lambda.apply(f,x))))"
     },

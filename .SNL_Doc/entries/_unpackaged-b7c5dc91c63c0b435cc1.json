@@ -5,7 +5,14 @@
   "entry": {
     "id": "real-analysis.sec.measurable-fns",
     "kind": "section",
-    "title": "Lebesgue Measurable Functions",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lebesgue Measurable Functions",
+        "zh-CN": "勒贝格可测函数"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

@@ -6,7 +6,14 @@
     "id": "Type.cxmp.Bad",
     "package": "TypeTheory",
     "kind": "counterexample",
-    "title": "Bad Inductive Type",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Bad Inductive Type",
+        "zh-CN": "不合法的归纳类型"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

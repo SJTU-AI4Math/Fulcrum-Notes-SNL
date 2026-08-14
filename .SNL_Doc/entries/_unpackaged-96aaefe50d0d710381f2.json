@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.groupEpi",
     "kind": "definition",
-    "title": "Group Epimorphism",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Group Epimorphism",
+        "zh-CN": "群满同态"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpEpi, Logic.and(Algebra.GrpHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
     },

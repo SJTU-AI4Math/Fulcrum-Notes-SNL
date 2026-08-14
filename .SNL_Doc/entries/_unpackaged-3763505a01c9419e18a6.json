@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.def.compl",
     "kind": "definition",
-    "title": "Complement",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Complement",
+        "zh-CN": "补集"
+      }
+    },
     "content": {
       "snl": "def(Set.compl(A@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Set.nmem(x,A@Set.ctxt.AB)))"
     },

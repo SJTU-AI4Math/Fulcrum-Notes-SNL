@@ -5,7 +5,14 @@
   "entry": {
     "id": "Real.real",
     "kind": "definition",
-    "title": "Real Number Type",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Real Number Type",
+        "zh-CN": "实数类型"
+      }
+    },
     "content": {
       "snl": "def(Real,%Opaque%)"
     },

@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "_unpackaged",
+  "entry": {
+    "id": "Logic.def.false.recursor",
+    "package": "_unpackaged",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "False Recursor",
+        "zh-CN": "假命题递归子"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

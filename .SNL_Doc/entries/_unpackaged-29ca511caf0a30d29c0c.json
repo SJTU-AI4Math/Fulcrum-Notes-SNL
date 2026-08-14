@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.subsec.relations",
     "kind": "subsection",
-    "title": "Relations",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Relations",
+        "zh-CN": "关系"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

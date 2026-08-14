@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.and",
     "kind": "definition",
-    "title": "Conjunction",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Conjunction",
+        "zh-CN": "合取"
+      }
+    },
     "content": {
       "snl": "def-struct[prop](Logic.and(p,q),struct(Type.judge(%left%,p),Type.judge(%right%,q)))"
     },

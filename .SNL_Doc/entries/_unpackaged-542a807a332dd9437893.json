@@ -5,10 +5,24 @@
   "entry": {
     "id": "BasicAnalysis.thm.fermat",
     "kind": "theorem",
-    "title": "Fermat's Interior Extremum Lemma",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Fermat's Interior Extremum Lemma",
+        "zh-CN": "费马内点极值引理"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real), Analysis.derivable(F, x), Analysis.maxPoint(F, x)), Analysis.deriv(F, x, $0$))",
-      "markdown": "At an interior local extremum where the derivative exists, the derivative vanishes. Both hypotheses are load-bearing: `x ↦ x` on `[0, 1]` has extrema only at the endpoints, and `x ↦ |x|` has an interior minimum where the derivative fails to exist.\n\nThe converse is false — `x ↦ x³` has vanishing derivative at `0` and no extremum there — so this is a necessary condition only."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "At an interior local extremum where the derivative exists, the derivative vanishes. Both hypotheses are load-bearing: `x ↦ x` on `[0, 1]` has extrema only at the endpoints, and `x ↦ |x|` has an interior minimum where the derivative fails to exist.\n\nThe converse is false — `x ↦ x³` has vanishing derivative at `0` and no extremum there — so this is a necessary condition only.",
+          "zh-CN": "在导数存在的内部局部极值点处，导数为零。两个假设都不可或缺：`x ↦ x` 在 `[0, 1]` 上仅在端点处有极值，而 `x ↦ |x|` 在内点处取得最小值，但导数不存在。\n\n逆命题不成立——`x ↦ x³` 在 `0` 处导数为零，但在那里没有极值——因此这只是必要条件。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.semigroup",
     "kind": "definition",
-    "title": "Semigroup",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Semigroup",
+        "zh-CN": "半群"
+      }
+    },
     "content": {
       "snl": "def[predicateDisplay](Algebra.Semigroup(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul), struct[enumerate](member[colon](%Associativity%, Logic.forall-typed[paren](list-partial(@x,@y,@z),G@Algebra.ctxt.G,Eq(Algebra.mul[dot](Algebra.mul[dot](x,y),z),Algebra.mul[dot](x,parentheses(Algebra.mul[dot](y,z))))))))"
     },

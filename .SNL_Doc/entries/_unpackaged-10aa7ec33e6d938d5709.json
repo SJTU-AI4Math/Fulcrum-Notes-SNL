@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.ctxt.G",
     "kind": "context",
-    "title": "$G$",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$G$",
+        "zh-CN": "$G$"
+      }
+    },
     "content": {
       "snl": "Type.judge(@G,Type)"
     },

@@ -6,7 +6,14 @@
     "id": "Type.sec.STLC",
     "package": "TypeTheory",
     "kind": "section",
-    "title": "Simple Typed Lambda Calculus",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Simple Typed Lambda Calculus",
+        "zh-CN": "简单类型 λ 演算"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

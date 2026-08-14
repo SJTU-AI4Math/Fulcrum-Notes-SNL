@@ -6,7 +6,14 @@
     "id": "Type.def.recursor",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Recursor",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Recursor",
+        "zh-CN": "递归子"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

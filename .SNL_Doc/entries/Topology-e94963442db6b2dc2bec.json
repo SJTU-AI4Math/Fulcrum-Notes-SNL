@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.openIffInteriorSelf",
     "kind": "property",
-    "title": "Open iff Interior is Self",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Open iff Interior is Self",
+        "zh-CN": "开集当且仅当其内部为自身"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Set.mem(A,τ),Eq(A,Topology.interior(A))))"
     },

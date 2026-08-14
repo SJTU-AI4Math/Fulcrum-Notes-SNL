@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.subsec.measures",
     "kind": "subsection",
-    "title": "Measures and Measure Spaces",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Measures and Measure Spaces",
+        "zh-CN": "测度与测度空间"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

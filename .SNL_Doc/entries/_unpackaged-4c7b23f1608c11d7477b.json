@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.subsec.basic",
     "kind": "subsection",
-    "title": "Basic Concepts",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Basic Concepts",
+        "zh-CN": "基本概念"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

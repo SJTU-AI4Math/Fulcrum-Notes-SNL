@@ -6,9 +6,23 @@
     "id": "Fulcrum.def",
     "package": "FulcrumsMathNotes",
     "kind": "remark",
-    "title": "Definition by Abbreviation",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Definition by Abbreviation",
+        "zh-CN": "通过缩写定义"
+      }
+    },
     "content": {
-      "markdown": "Sentence \"Define `#0` : `#1` to be `#2`.\" append constant `#0` with type `#1` into the global context, with the fact that `#0` is definitionally equal to `#2`, so that the definition is merely an abbreviation of an expression that is already available within the given global context.\r\n\r\nLet `T` be a type in the meta-context, sentence \"Let (x : T), define `#0` to be `#1`\" is a syntactical sugar of sentence \"Define #0 to be λ(x : T).`#1`\", a syntax preferred by Lean 4."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Sentence \"Define `#0` : `#1` to be `#2`.\" append constant `#0` with type `#1` into the global context, with the fact that `#0` is definitionally equal to `#2`, so that the definition is merely an abbreviation of an expression that is already available within the given global context.\r\n\r\nLet `T` be a type in the meta-context, sentence \"Let (x : T), define `#0` to be `#1`\" is a syntactical sugar of sentence \"Define #0 to be λ(x : T).`#1`\", a syntax preferred by Lean 4.",
+          "zh-CN": "句子“Define `#0` : `#1` to be `#2`.”将常量 `#0` 及其类型 `#1` 添加到全局上下文中，并附带 `#0` 在定义上等于 `#2` 这一事实，因此该定义仅仅是给定全局上下文中已有表达式的一个缩写。\r\n\r\n设 `T` 为元上下文中的一个类型，句子“Let (x : T), define `#0` to be `#1`”是句子“Define #0 to be λ(x : T).`#1`”的语法糖；Lean 4 偏好这种语法。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null

@@ -1,0 +1,226 @@
+{
+  "requested_entries": [
+    {
+      "id": "Type.ppt.Iota-K",
+      "package": "TypeTheory",
+      "kind": "property",
+      "title": { "en": "$K$ can be expressed by $\\iota$", "zh-CN": "$K$ 可由 $\\iota$ 表示" },
+      "parent_entry_id": "Type.def.Iota-Combinator",
+      "parent_node_ids": ["n_21"],
+      "graph_level": "subentry"
+    },
+    {
+      "id": "Type.ppt.Iota-I",
+      "package": "TypeTheory",
+      "kind": "property",
+      "title": { "en": "$I$ can be expressed by $\\iota$", "zh-CN": "$I$ 可由 $\\iota$ 表示" },
+      "parent_entry_id": "Type.def.Iota-Combinator",
+      "parent_node_ids": ["n_21"],
+      "graph_level": "subentry"
+    },
+    {
+      "id": "Type.ppt.Iota-complete",
+      "package": "TypeTheory",
+      "kind": "property",
+      "title": { "en": "$\\iota$ is Complete", "zh-CN": "$\\iota$ 是完备的" },
+      "parent_entry_id": "Type.def.Iota-Combinator",
+      "parent_node_ids": ["n_21"],
+      "graph_level": "subentry"
+    },
+    {
+      "id": "Lambda.def.eta",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": { "en": "$\\eta$-reduction", "zh-CN": "$\\eta$-归约" },
+      "parent_entry_id": "Type.subsec.basics",
+      "parent_node_ids": ["n_15"],
+      "graph_level": "entry"
+    },
+    {
+      "id": "Type.def.Y-Combinator",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": { "en": "$Y$ Combinator", "zh-CN": "$Y$ 组合子" },
+      "content": {
+        "snl": "def($Y$,Type.lambda(@f,Lambda.apply($\\left(#0\\right)$(Type.lambda(@x,Lambda.apply(f,Lambda.apply(x,x)))),$\\left(#0\\right)$(Type.lambda(@x,Lambda.apply(f,Lambda.apply(x,x)))))))"
+      },
+      "parent_entry_id": "Type.subsec.combinators",
+      "parent_node_ids": ["n_34"],
+      "after_entry_id": "Type.def.Omega-Big",
+      "graph_level": "entry"
+    },
+    {
+      "id": "Type.rmk.lambdaTuringComplete",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": { "en": "Turing Completeness of Untyped $\\lambda$-Calculus", "zh-CN": "无类型 $\\lambda$-演算的图灵完备性" },
+      "content": {
+        "markdown": {
+          "en": "Untyped $\\lambda$-calculus is Turing-complete.",
+          "zh-CN": "无类型 $\\lambda$-演算是图灵完备的。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.combinators",
+      "parent_node_ids": ["n_34"],
+      "after_entry_id": "Type.def.Y-Combinator",
+      "graph_level": "entry"
+    }
+  ],
+  "inductive_types": [
+    {
+      "parent_entry_id": "Type.rl.Expr-STLC",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.rl.lambda-typed", "reuse": true, "title": { "en": "Lambda Abstraction Constructor (Typed)", "zh-CN": "Lambda 抽象构造子（有类型）" } },
+        { "id": "Type.rl.Expr-STLC.ctor.bound-variable", "title": { "en": "Bound Variable Constructor (Typed)", "zh-CN": "约束变量构造子（有类型）" } },
+        { "id": "Type.rl.Expr-STLC.ctor.application", "title": { "en": "Application Constructor (Typed)", "zh-CN": "应用构造子（有类型）" } },
+        { "id": "Type.rl.Expr-STLC.ctor.function-type", "title": { "en": "Function Type Constructor", "zh-CN": "函数类型构造子" } }
+      ],
+      "recursor": { "id": "Type.rl.Expr-STLC.recursor", "title": { "en": "Typed Expression Recursor", "zh-CN": "有类型表达式递归子" } }
+    },
+    {
+      "parent_entry_id": "Logic.def.true",
+      "package": "_unpackaged",
+      "constructors": [
+        { "id": "Logic.def.true.ctor.true", "title": { "en": "True Constructor", "zh-CN": "真命题构造子" } }
+      ],
+      "recursor": { "id": "Logic.def.true.recursor", "title": { "en": "True Recursor", "zh-CN": "真命题递归子" } }
+    },
+    {
+      "parent_entry_id": "Logic.def.or",
+      "package": "_unpackaged",
+      "constructors": [
+        { "id": "Logic.def.or.ctor.left", "title": { "en": "Left Disjunction Constructor", "zh-CN": "析取左构造子" } },
+        { "id": "Logic.def.or.ctor.right", "title": { "en": "Right Disjunction Constructor", "zh-CN": "析取右构造子" } }
+      ],
+      "recursor": { "id": "Logic.def.or.recursor", "title": { "en": "Disjunction Recursor", "zh-CN": "析取递归子" } }
+    },
+    {
+      "parent_entry_id": "FP.def.list",
+      "package": "_unpackaged",
+      "constructors": [
+        { "id": "FP.def.list.ctor.nil", "title": { "en": "Empty List Constructor", "zh-CN": "空列表构造子" } },
+        { "id": "FP.def.list.ctor.cons", "title": { "en": "List Cons Constructor", "zh-CN": "列表 Cons 构造子" } }
+      ],
+      "recursor": { "id": "FP.def.list.recursor", "title": { "en": "List Recursor", "zh-CN": "列表递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.def.nat",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.def.nat.ctor.zero", "title": { "en": "Zero Constructor", "zh-CN": "零构造子" } },
+        { "id": "Type.def.nat.ctor.succ", "title": { "en": "Successor Constructor", "zh-CN": "后继构造子" } }
+      ],
+      "recursor": { "id": "Type.def.nat.recursor", "title": { "en": "Natural Number Recursor", "zh-CN": "自然数递归子" } }
+    },
+    {
+      "parent_entry_id": "Logic.def.false",
+      "package": "_unpackaged",
+      "constructors": [],
+      "recursor": { "id": "Logic.def.false.recursor", "title": { "en": "False Recursor", "zh-CN": "假命题递归子" } }
+    },
+    {
+      "parent_entry_id": "FP.def.option",
+      "package": "_unpackaged",
+      "constructors": [
+        { "id": "FP.def.option.ctor.none", "title": { "en": "None Constructor", "zh-CN": "None 构造子" } },
+        { "id": "FP.def.option.ctor.some", "title": { "en": "Some Constructor", "zh-CN": "Some 构造子" } }
+      ],
+      "recursor": { "id": "FP.def.option.recursor", "title": { "en": "Option Recursor", "zh-CN": "Option 递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.rl.Expr-LC",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.rl.Expr-LC.ctor.lambda-abstraction", "title": { "en": "Lambda Abstraction Constructor", "zh-CN": "Lambda 抽象构造子" } },
+        { "id": "Type.rl.Expr-LC.ctor.application", "title": { "en": "Application Constructor", "zh-CN": "应用构造子" } },
+        { "id": "Type.rl.Expr-LC.ctor.bound-variable", "title": { "en": "Bound Variable Constructor", "zh-CN": "约束变量构造子" } }
+      ],
+      "recursor": { "id": "Type.rl.Expr-LC.recursor", "title": { "en": "Untyped Expression Recursor", "zh-CN": "无类型表达式递归子" } }
+    },
+    {
+      "parent_entry_id": "Logic.def.eq",
+      "package": "_unpackaged",
+      "constructors": [
+        { "id": "Logic.def.eq.ctor.refl", "title": { "en": "Reflexivity Constructor", "zh-CN": "自反性构造子" } }
+      ],
+      "recursor": { "id": "Logic.def.eq.recursor", "title": { "en": "Equality Recursor", "zh-CN": "等式递归子" } }
+    },
+    {
+      "parent_entry_id": "Lambda.def.defeq",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Lambda.def.defeq.ctor.beta-reduction", "title": { "en": "$\\beta$-reduction Constructor", "zh-CN": "$\\beta$-归约构造子" } },
+        { "id": "Lambda.def.defeq.ctor.lambda-extensionality", "title": { "en": "Lambda Extensionality Constructor", "zh-CN": "Lambda 外延性构造子" } },
+        { "id": "Lambda.def.defeq.ctor.application-extensionality", "title": { "en": "Application Extensionality Constructor", "zh-CN": "应用外延性构造子" } }
+      ],
+      "recursor": { "id": "Lambda.def.defeq.recursor", "title": { "en": "Definitional Equality Recursor", "zh-CN": "定义等式递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.def.list",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.def.list.ctor.nil", "title": { "en": "Empty List Constructor", "zh-CN": "空列表构造子" } },
+        { "id": "Type.def.list.ctor.cons", "title": { "en": "List Cons Constructor", "zh-CN": "列表 Cons 构造子" } }
+      ],
+      "recursor": { "id": "Type.def.list.recursor", "title": { "en": "List Recursor", "zh-CN": "列表递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.def.prod",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.def.prod.ctor.pair", "title": { "en": "Product Pair Constructor", "zh-CN": "积类型序对构造子" } }
+      ],
+      "recursor": { "id": "Type.def.prod.recursor", "title": { "en": "Product Type Recursor", "zh-CN": "积类型递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.def.sum",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.def.sum.ctor.inl", "title": { "en": "Left Injection Constructor", "zh-CN": "左嵌入构造子" } },
+        { "id": "Type.def.sum.ctor.inr", "title": { "en": "Right Injection Constructor", "zh-CN": "右嵌入构造子" } }
+      ],
+      "recursor": { "id": "Type.def.sum.recursor", "title": { "en": "Sum Type Recursor", "zh-CN": "和类型递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.def.unit",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.def.unit.ctor.unit", "title": { "en": "Unit Constructor", "zh-CN": "单位类型构造子" } }
+      ],
+      "recursor": { "id": "Type.def.unit.recursor", "title": { "en": "Unit Type Recursor", "zh-CN": "单位类型递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.def.void",
+      "package": "TypeTheory",
+      "constructors": [],
+      "recursor": { "id": "Type.def.void.recursor", "title": { "en": "Void Type Recursor", "zh-CN": "空类型递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.def.vector",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.def.vector.ctor.nil", "title": { "en": "Empty Vector Constructor", "zh-CN": "空向量构造子" } },
+        { "id": "Type.def.vector.ctor.cons", "title": { "en": "Vector Cons Constructor", "zh-CN": "向量 Cons 构造子" } }
+      ],
+      "recursor": { "id": "Type.def.vector.recursor", "title": { "en": "Vector Recursor", "zh-CN": "向量递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.def.bin-tree",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.def.bin-tree.ctor.leaf", "title": { "en": "Binary Tree Leaf Constructor", "zh-CN": "二叉树叶节点构造子" } },
+        { "id": "Type.def.bin-tree.ctor.node", "title": { "en": "Binary Tree Node Constructor", "zh-CN": "二叉树节点构造子" } }
+      ],
+      "recursor": { "id": "Type.def.bin-tree.recursor", "title": { "en": "Binary Tree Recursor", "zh-CN": "二叉树递归子" } }
+    },
+    {
+      "parent_entry_id": "Type.def.Sigma",
+      "package": "TypeTheory",
+      "constructors": [
+        { "id": "Type.def.Sigma.ctor.pair", "title": { "en": "Sigma Pair Constructor", "zh-CN": "Sigma 序对构造子" } }
+      ],
+      "recursor": { "id": "Type.def.Sigma.recursor", "title": { "en": "Sigma Type Recursor", "zh-CN": "Sigma 类型递归子" } }
+    }
+  ]
+}

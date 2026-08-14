@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.deletedNeighborhood",
     "kind": "definition",
-    "title": "Deleted Neighborhood",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Deleted Neighborhood",
+        "zh-CN": "去心邻域"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@x,S@Topology.ctxt.S),Type.judge(@U,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.deletedNeighborhood(U,x),Logic.and(Topology.neighborhood(Set.union(U,Set.sep-typed(@y,S@Topology.ctxt.S,Eq(y,x))),x),Logic.neg(Set.mem(x,U))))"
     },

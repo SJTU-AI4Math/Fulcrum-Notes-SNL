@@ -5,9 +5,23 @@
   "entry": {
     "id": "BasicAnalysis.sec.asymptotics",
     "kind": "section",
-    "title": "Infinitesimals",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Infinitesimals",
+        "zh-CN": "无穷小"
+      }
+    },
     "content": {
-      "markdown": "Comparison of vanishing quantities, stated as relations between domain-carrying functions at a point rather than as informal orders of magnitude. This is the vocabulary Taylor's theorem with Peano remainder is phrased in."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Comparison of vanishing quantities, stated as relations between domain-carrying functions at a point rather than as informal orders of magnitude. This is the vocabulary Taylor's theorem with Peano remainder is phrased in.",
+          "zh-CN": "对趋于零的量进行比较，并将其表述为自带定义域的函数在一点处的关系，而非非形式化的数量级。这正是带佩亚诺余项的泰勒定理所采用的语言。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

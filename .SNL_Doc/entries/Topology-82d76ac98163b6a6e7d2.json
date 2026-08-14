@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.neighborhood",
     "kind": "definition",
-    "title": "Neighborhood",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Neighborhood",
+        "zh-CN": "邻域"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@x,S@Topology.ctxt.S),Type.judge(@U,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.neighborhood(U,x),Logic.exists-typed(@O,Set(Set(S@Topology.ctxt.S)),Logic.and(Logic.and(Set.mem(O,τ),Set.mem(x,O)),Set.subset(O,U))))"
     },

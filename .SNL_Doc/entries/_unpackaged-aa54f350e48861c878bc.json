@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.subsec.setSystems",
     "kind": "subsection",
-    "title": "Set Systems and Sigma-Algebras",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Set Systems and Sigma-Algebras",
+        "zh-CN": "集系与 σ-代数"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

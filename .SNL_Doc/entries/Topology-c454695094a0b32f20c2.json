@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.continuousPreservesConvergenceInT2",
     "kind": "property",
-    "title": "Continuous Maps Preserve Convergence in T2 Spaces",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Continuous Maps Preserve Convergence in T2 Spaces",
+        "zh-CN": "连续映射保持 T2 空间中的收敛"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@x_n,Type.to(Nat,X@Topology.ctxt.X)),Type.judge(@x,X@Topology.ctxt.X),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.implies(Logic.and(Topology.T2(X@Topology.ctxt.X),Topology.continuous(f,x)),Logic.implies(Topology.seqConvergence(x_n,x),Topology.seqConvergence(Type.apply(f,x_n),Type.apply(f,x)))))"
     },

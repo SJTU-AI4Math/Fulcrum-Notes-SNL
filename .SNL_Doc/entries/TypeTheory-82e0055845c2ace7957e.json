@@ -7,7 +7,14 @@
     "id": "Type.ppt.Iota-S",
     "package": "TypeTheory",
     "kind": "property",
-    "title": "$S$ can be expressed by $\\iota$",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$S$ can be expressed by $\\iota$",
+        "zh-CN": "$S$ 可由 $\\iota$ 表示"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.limitUniqueInT2",
     "kind": "property",
-    "title": "Limits are Unique in T2 Spaces",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Limits are Unique in T2 Spaces",
+        "zh-CN": "T2 空间中的极限唯一"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.true)"
     },

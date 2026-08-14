@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.def.boundary",
     "kind": "definition",
-    "title": "Boundary",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Boundary",
+        "zh-CN": "边界"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.boundary(A),Set.diff(Topology.closure(A),Topology.interior(A)))"
     },

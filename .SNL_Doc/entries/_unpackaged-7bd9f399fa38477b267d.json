@@ -5,10 +5,24 @@
   "entry": {
     "id": "ProofStyle.thm.ecnu1",
     "kind": "theorem",
-    "title": "ECNU 20260523 Problem 22 (1)",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "ECNU 20260523 Problem 22 (1)",
+        "zh-CN": "ECNU 20260523 第 22 题（1）"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial($f:\\mathbb{R}\\to\\mathbb{R}$, Proof.because($f''$, %在 $[-a,a]$ 上连续%), $f(0)=0$), Proof.obtain($\\xi\\in(-a,a)$, $f''(\\xi)=\\frac{f(a)+f(-a)}{a^{2}}$))",
-      "markdown": "Given `f''` continuous on `[-a, a]` and `f(0) = 0`, there is\n`ξ ∈ (-a, a)` with `f''(ξ) = (f(a) + f(-a)) / a²`.\n\nTwo Taylor expansions with Lagrange remainder, one on each side of `0`, produce\nwitnesses `η₁` and `η₂`; the intermediate value theorem applied to the\ncontinuous `f''` produces `ξ` between them carrying the average of the two\nsecond derivatives; and `f(0) = 0` is what makes the first-order terms cancel."
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Given `f''` continuous on `[-a, a]` and `f(0) = 0`, there is\n`ξ ∈ (-a, a)` with `f''(ξ) = (f(a) + f(-a)) / a²`.\n\nTwo Taylor expansions with Lagrange remainder, one on each side of `0`, produce\nwitnesses `η₁` and `η₂`; the intermediate value theorem applied to the\ncontinuous `f''` produces `ξ` between them carrying the average of the two\nsecond derivatives; and `f(0) = 0` is what makes the first-order terms cancel.",
+          "zh-CN": "给定 `f''` 在 `[-a, a]` 上连续且 `f(0) = 0`，存在\n`ξ ∈ (-a, a)`，使得 `f''(ξ) = (f(a) + f(-a)) / a²`。\n\n分别在 `0` 的两侧作带拉格朗日余项的泰勒展开，得到见证 `η₁` 和 `η₂`；\n将介值定理应用于连续的 `f''`，得到两者之间的 `ξ`，使其取两个二阶\n导数的平均值；而 `f(0) = 0` 正是使一阶项相消的条件。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null,

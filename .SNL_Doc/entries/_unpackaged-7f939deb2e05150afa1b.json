@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.prop.aeImplication",
     "kind": "property",
-    "title": "Pointwise Implication Preserves Almost-Everywhere Truth",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Pointwise Implication Preserves Almost-Everywhere Truth",
+        "zh-CN": "逐点蕴含保持几乎处处成立"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(list-partial(@P,@Q),Type.to(X@Measure.ctxt.X,Proposition)),Logic.forall-typed(@x,X@Measure.ctxt.X,Logic.implies(P(x),Q(x))),Measure.almostEverywhere(@x,P(x),mu@Measure.ctxt.mu)),Measure.almostEverywhere(@x,Q(x),mu@Measure.ctxt.mu))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "cgt",
     "kind": "theorem",
-    "title": "123",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "123",
+        "zh-CN": "123"
+      }
+    },
     "content": {
       "snl": "cgt(A,B,C,D,h,f,g,$h'$)"
     },

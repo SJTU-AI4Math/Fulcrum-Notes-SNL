@@ -5,7 +5,14 @@
   "entry": {
     "id": "Measure.def.measureSpace",
     "kind": "definition",
-    "title": "Measure Space",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Measure Space",
+        "zh-CN": "测度空间"
+      }
+    },
     "content": {
       "snl": "def(Measure.MeasureSpace(X,$\\Sigma$,$\\mu$),Logic.and(Measure.SigmaAlgebra($\\Sigma$),Measure.Measure($\\Sigma$,$\\mu$)))"
     },

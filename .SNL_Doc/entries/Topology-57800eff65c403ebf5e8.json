@@ -5,7 +5,14 @@
   "entry": {
     "id": "Topology.prop.derivedClosure",
     "kind": "property",
-    "title": "Derived Set and Closure",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Derived Set and Closure",
+        "zh-CN": "导集与闭包"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Eq(Set.union(A,Topology.derivedSet(A)),Topology.closure(A)))"
     },

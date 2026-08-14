@@ -5,7 +5,14 @@
   "entry": {
     "id": "Algebra.def.permutation",
     "kind": "definition",
-    "title": "Permutation",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Permutation",
+        "zh-CN": "置换"
+      }
+    },
     "content": {
       "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@sigma,Type.to(X,X))), Algebra.Perm, Logic.and(Logic.forall-typed(@y,X,Logic.exists-typed(@x,X,Eq(Type.apply[paren](sigma,x),y))),Logic.forall-typed(@a,X,Logic.forall-typed(@b,X,Logic.implies(Eq(Type.apply[paren](sigma,a),Type.apply[paren](sigma,b)),Eq(a,b))))))"
     },

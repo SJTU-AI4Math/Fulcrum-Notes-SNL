@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.true",
     "kind": "definition",
-    "title": "True",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "True",
+        "zh-CN": "真"
+      }
+    },
     "content": {
       "snl": "def-inductive[prop](Logic.true,ctors(Type.judge(%true%,Logic.true)))"
     },

@@ -6,7 +6,14 @@
     "id": "Type.rl.Expr-LC",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "Expression (Non-typed Lambda Calculus)",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Expression (Non-typed Lambda Calculus)",
+        "zh-CN": "表达式（无类型 λ 演算）"
+      }
+    },
     "content": {
       "snl": "def-inductive(Lambda.Expr,ctors(Type.judge(%Lambda Abstraction%,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(%Application%,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(%Binded variable%,Type.to(Nat,Lambda.Expr))))"
     },

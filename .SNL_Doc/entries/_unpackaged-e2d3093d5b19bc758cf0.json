@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.subsec.intro",
     "kind": "subsection",
-    "title": "Introduction",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Introduction",
+        "zh-CN": "引言"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null,

@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.prop.leftIdentity",
     "kind": "property",
-    "title": "Monad Law: Left Identity",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Monad Law: Left Identity",
+        "zh-CN": "单子律：左单位律"
+      }
+    },
     "content": {
       "snl": "thm-hyp(list-partial(Type.judge(@a,A),Type.judge(@f,Type.to(A,Type.apply(M,B)))),Eq(FP.bind(M,FP.pure(M,a),f),Type.apply(f,a)))"
     },

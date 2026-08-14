@@ -5,7 +5,14 @@
   "entry": {
     "id": "FP.def.bind",
     "kind": "definition",
-    "title": "Bind as an Equivalent Monad Presentation",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Bind as an Equivalent Monad Presentation",
+        "zh-CN": "Bind：单子的等价表述"
+      }
+    },
     "content": {
       "snl": "def-hyp(FP.Monad(M),a,b)"
     },

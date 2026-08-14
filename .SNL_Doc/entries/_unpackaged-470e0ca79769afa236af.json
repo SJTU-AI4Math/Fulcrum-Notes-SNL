@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.neg",
     "kind": "definition",
-    "title": "Negation",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Negation",
+        "zh-CN": "否定"
+      }
+    },
     "content": {
       "snl": "def(Logic.neg(p),Type.to(p,Proposition))"
     },

@@ -5,7 +5,14 @@
   "entry": {
     "id": "Logic.def.forall",
     "kind": "definition",
-    "title": "Universal Quantifier",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Universal Quantifier",
+        "zh-CN": "全称量词"
+      }
+    },
     "content": {
       "snl": "def(Logic.forall-typed(x,T,P(x)),Type.Pi(@x,T,P(x)))"
     },

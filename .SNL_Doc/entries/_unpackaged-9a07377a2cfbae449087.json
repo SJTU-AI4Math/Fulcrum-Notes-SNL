@@ -5,7 +5,14 @@
   "entry": {
     "id": "Set.def.subset",
     "kind": "definition",
-    "title": "Subset",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Subset",
+        "zh-CN": "子集"
+      }
+    },
     "content": {
       "snl": "def(Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB),Logic.forall(@x,Logic.implies(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
     },
