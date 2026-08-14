@@ -5,9 +5,16 @@
   "entry": {
     "id": "Logic.def.eq",
     "kind": "definition",
-    "title": "Equality",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "等式",
+        "en": "Equality"
+      }
+    },
     "content": {
-      "snl": "def-inductive-hyp[prop](Type.judge[paren](list-partial(@a,@b),T),Eq(a,b),ctors(Type.judge(%Reflexivity%,Logic.forall(@a,Eq(a,a)))))"
+      "snl": "def-inductive-hyp[prop](Type.judge[paren](list-partial(@a,@b),T@Logic.ctxt.T),Eq(a,b),ctors(Type.judge(Eq.refl,Logic.forall(@a,Eq(a,a)))))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Currying",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Currying",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -2675,6 +2675,19 @@
       }
     },
     {
+      "id": "dep.Logic.def.eq.Fulcrum.def",
+      "from": "Logic.def.eq",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Logic.def.eq.Logic.def.forall",
       "from": "Logic.def.eq",
       "to": "Logic.def.forall",
@@ -2683,6 +2696,19 @@
         "generator": "macro-source-scan",
         "macros": [
           "Logic.forall"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Logic.def.eq.Type.rl.judge",
+      "from": "Logic.def.eq",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
         ],
         "isAtomic": true
       }

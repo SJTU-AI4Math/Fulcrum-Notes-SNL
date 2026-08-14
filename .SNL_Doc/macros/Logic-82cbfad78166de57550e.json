@@ -1,15 +1,14 @@
 {
   "format": "snl-macro",
   "version": 1,
-  "schema_version": 1,
-  "package": "FulcrumsMathNotes",
+  "package": "Logic",
   "macro": {
     "description": "",
     "source": {
       "entries": [],
       "urls": []
     },
-    "kind": "rule",
+    "kind": "const",
     "dynamic_arity": false,
     "styles": [
       {
@@ -21,7 +20,7 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "设 #0，则 #1。",
+              "body": "自反性",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -41,7 +40,7 @@
             },
             "en": {
               "mode": "text",
-              "body": "Let #0, then #1.",
+              "body": "Reflexivity",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -61,33 +60,9 @@
             }
           }
         }
-      },
-      {
-        "style_name": "display",
-        "tags": [],
-        "template": {
-          "mode": "text",
-          "body": "Let #0, then #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
       }
     ],
     "tags": [],
-    "name": "thm-hyp"
+    "name": "Eq.refl"
   }
 }

@@ -3,5 +3,7 @@
   "version": 1,
   "id": "Tactics",
   "name": "Lean 4 Tactics",
-  "description": ""
+  "description": "",
+  "schema_version": 2,
+  "entry_ids": []
 }

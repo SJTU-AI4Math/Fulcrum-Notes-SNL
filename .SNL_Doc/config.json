@@ -1,21 +1,22 @@
 {
-  "version": "0.0.9",
+  "version": "0.0.11",
   "entry_kinds": [
     {
       "id": "section",
       "name": "Section",
+      "description": "",
       "coloring": {
         "light": {
           "stroke": "#787878",
           "background": "#F0F0F0"
         },
         "dark": {
-          "stroke": "#787878",
-          "background": "#F0F0F0"
+          "stroke": "#cfcfcf",
+          "background": "#1E1E1E"
         }
       },
-      "style": "section",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": "section"
     },
     {
       "id": "subsection",
@@ -26,12 +27,13 @@
           "background": "#F0F0F0"
         },
         "dark": {
-          "stroke": "#787878",
-          "background": "#F0F0F0"
+          "stroke": "#949494",
+          "background": "#1E1E1E"
         }
       },
+      "defaultCounterName": "",
       "style": "section",
-      "defaultCounterName": ""
+      "description": ""
     },
     {
       "id": "definition",
@@ -42,28 +44,29 @@
           "background": "#D6FEE0"
         },
         "dark": {
-          "stroke": "#009C27",
-          "background": "#D6FEE0"
+          "stroke": "#8affa7",
+          "background": "#313131"
         }
       },
-      "style": "",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": ""
     },
     {
       "id": "axiom",
       "name": "Axiom",
+      "description": "",
       "coloring": {
         "light": {
           "stroke": "#C1C103",
           "background": "#FFFFAC"
         },
         "dark": {
-          "stroke": "#C1C103",
-          "background": "#FFFFAC"
+          "stroke": "#fefe43",
+          "background": "#313131"
         }
       },
-      "style": "",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": ""
     },
     {
       "id": "lemma",
@@ -78,24 +81,25 @@
           "background": "#DAF0FF"
         }
       },
-      "style": "",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": ""
     },
     {
       "id": "theorem",
       "name": "Theorem",
+      "description": "",
       "coloring": {
         "light": {
           "stroke": "#005B9C",
           "background": "#DAF0FF"
         },
         "dark": {
-          "stroke": "#005B9C",
-          "background": "#DAF0FF"
+          "stroke": "#24a4ff",
+          "background": "#313131"
         }
       },
-      "style": "",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": ""
     },
     {
       "id": "corollary",
@@ -110,28 +114,30 @@
           "background": "#DAF0FF"
         }
       },
-      "style": "",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": ""
     },
     {
       "id": "property",
       "name": "Property",
+      "description": "",
       "coloring": {
         "light": {
           "stroke": "#AC00AF",
           "background": "#FFEDFF"
         },
         "dark": {
-          "stroke": "#AC00AF",
-          "background": "#FFEDFF"
+          "stroke": "#fb00ff",
+          "background": "#313131"
         }
       },
-      "style": "",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": ""
     },
     {
       "id": "remark",
       "name": "Remark",
+      "description": "",
       "coloring": {
         "light": {
           "stroke": "#E07B00",
@@ -139,43 +145,45 @@
         },
         "dark": {
           "stroke": "#E07B00",
-          "background": "#FFEBD2"
+          "background": "#313131"
         }
       },
-      "style": "remark",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": "remark"
     },
     {
       "id": "example",
       "name": "Example",
+      "description": "",
       "coloring": {
         "light": {
           "stroke": "#7700E4",
           "background": "#EFDFFF"
         },
         "dark": {
-          "stroke": "#7700E4",
-          "background": "#EFDFFF"
+          "stroke": "#a442ff",
+          "background": "#313131"
         }
       },
-      "style": "",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": ""
     },
     {
       "id": "counterexample",
       "name": "Counterexample",
+      "description": "",
       "coloring": {
         "light": {
           "stroke": "#D20022",
           "background": "#FFD6DC"
         },
         "dark": {
-          "stroke": "#D20022",
-          "background": "#FFD6DC"
+          "stroke": "#fe5d78",
+          "background": "#313131"
         }
       },
-      "style": "",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": ""
     },
     {
       "id": "construction",
@@ -190,24 +198,25 @@
           "background": "#F0F0F0"
         }
       },
-      "style": "proof",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": "proof"
     },
     {
       "id": "proof",
       "name": "Proof",
+      "description": "",
       "coloring": {
         "light": {
           "stroke": "#787878",
           "background": "#F0F0F0"
         },
         "dark": {
-          "stroke": "#787878",
-          "background": "#F0F0F0"
+          "stroke": "#dedede",
+          "background": "#313131"
         }
       },
-      "style": "proof",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": "proof"
     },
     {
       "id": "problem",
@@ -218,12 +227,12 @@
           "background": "#DAF0FF"
         },
         "dark": {
-          "stroke": "#005B9C",
-          "background": "#DAF0FF"
+          "stroke": "#76c6fe",
+          "background": "#313131"
         }
       },
-      "style": "problem",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": "problem"
     },
     {
       "id": "context",
@@ -234,12 +243,28 @@
           "background": "#DFFFFF"
         },
         "dark": {
-          "stroke": "#00AAAA",
-          "background": "#DFFFFF"
+          "stroke": "#70ffff",
+          "background": "#313131"
         }
       },
-      "style": "",
-      "defaultCounterName": ""
+      "defaultCounterName": "",
+      "style": ""
+    },
+    {
+      "id": "ctor",
+      "name": "Constructor",
+      "coloring": {
+        "light": {
+          "stroke": "#408f00",
+          "background": "#cfffa8"
+        },
+        "dark": {
+          "stroke": "#cfffa8",
+          "background": "#313131"
+        }
+      },
+      "defaultCounterName": "ctor",
+      "style": "ctor"
     }
   ],
   "macro_kinds": [

@@ -26,6 +26,12 @@
           ]
         }
       ]
+    },
+    {
+      "id": "d7778249-354a-4643-91ef-e020cb0df1cf",
+      "name": "Example",
+      "numbering": "1",
+      "children": []
     }
   ]
 }

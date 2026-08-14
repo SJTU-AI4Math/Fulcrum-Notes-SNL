@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.vector",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Vector Type",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

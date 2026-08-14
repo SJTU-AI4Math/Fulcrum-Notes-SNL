@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.thm.SKI-complete",
+    "package": "TypeTheory",
+    "kind": "theorem",
+    "title": "SKI is Complete",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

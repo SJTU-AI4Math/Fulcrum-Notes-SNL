@@ -1,0 +1,14 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.list",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "List",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}
