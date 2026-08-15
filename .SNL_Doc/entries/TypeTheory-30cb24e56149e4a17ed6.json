@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.cxmp.vector-index-not-defeq",
+    "package": "TypeTheory",
+    "kind": "counterexample",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Commutativity of Vector Indices Is Not Definitional Equality",
+        "zh-CN": "向量下标的交换律不是依定义相等"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "In CIC, for variable natural-number indices $m,n$, the types $\\operatorname{Vector}(m+n)$ and $\\operatorname{Vector}(n+m)$ are generally not definitionally equal. Commutativity of addition gives a propositional equality, so transporting or rewriting along that proof is required.",
+          "zh-CN": "在 CIC 中，对于作为变量的自然数下标 $m,n$，类型 $\\operatorname{Vector}(m+n)$ 与 $\\operatorname{Vector}(n+m)$ 一般不是依定义相等的。加法交换律给出的是命题相等，因此需要沿该证明进行转运或改写。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

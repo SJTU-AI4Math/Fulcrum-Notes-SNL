@@ -1076,7 +1076,7 @@
     "Lambda.def.defeq": {
       "title": {
         "en": "Definitional Equality",
-        "zh-CN": "定义相等"
+        "zh-CN": "依定义相等"
       }
     },
     "Logic.ctxt.1": {

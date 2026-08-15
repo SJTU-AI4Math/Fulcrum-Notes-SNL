@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Lambda.ppt.defeq-equivalence",
+    "package": "TypeTheory",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Definitional Equality Is an Equivalence Relation",
+        "zh-CN": "依定义相等是等价关系"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Definitional equality is an equivalence relation on the set of all legal expressions.",
+          "zh-CN": "依定义相等是全体合法表达式上的等价关系。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

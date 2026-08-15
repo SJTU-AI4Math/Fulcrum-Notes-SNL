@@ -207,6 +207,15 @@ for spec in new_specs:
     entry_paths[entry_id] = path
     entry_envelopes[entry_id] = envelope
 
+# Apply exact, explicitly planned semantic updates to existing Entries.
+for update in plan.get("entry_updates", []):
+    entry_id = update["id"]
+    assert entry_id in entries, f"Entry update references unknown Entry {entry_id}"
+    entry = entries[entry_id]
+    current_snl = entry.get("content", {}).get("snl")
+    assert current_snl in update["accepted_content_snl"], f"stale Entry update for {entry_id}"
+    entry["content"]["snl"] = update["content_snl"]
+
 # Persist Entry and Macro envelopes.
 for entry_id, envelope in entry_envelopes.items():
     write_json(entry_paths[entry_id], envelope)
@@ -229,11 +238,32 @@ for path in sorted((DOC / "packages").glob("*.json")):
         write_json(path, manifest)
 
 # Attach requested Entries and inductive subentries to every Library occurrence of their parent.
-relations = [(spec["parent_entry_id"], spec["id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id")) for spec in plan["requested_entries"]]
 managed_new_entry_ids = {spec["id"] for spec in plan["requested_entries"]}
+generated_child_ids = {
+    child["id"]
+    for inductive in plan["inductive_types"]
+    for child in [*inductive["constructors"], inductive["recursor"]]
+}
+immediate_requested = [spec for spec in plan["requested_entries"] if spec.get("after_entry_id") not in generated_child_ids]
+deferred_requested = [spec for spec in plan["requested_entries"] if spec.get("after_entry_id") in generated_child_ids]
+relations = [
+    (spec["parent_entry_id"], spec["id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"))
+    for spec in immediate_requested
+]
 for inductive in plan["inductive_types"]:
-    relations.extend((inductive["parent_entry_id"], child["id"], "subentry", None, None) for child in [*inductive["constructors"], inductive["recursor"]])
-    managed_new_entry_ids.update(child["id"] for child in [*inductive["constructors"], inductive["recursor"]] if not child.get("reuse"))
+    children = [*inductive["constructors"], inductive["recursor"]]
+    relations.extend(
+        (
+            inductive["parent_entry_id"], child["id"], "subentry", None,
+            children[index - 1]["id"] if inductive.get("ordered_children") and index else None
+        )
+        for index, child in enumerate(children)
+    )
+    managed_new_entry_ids.update(child["id"] for child in children if not child.get("reuse"))
+relations.extend(
+    (spec["parent_entry_id"], spec["id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"))
+    for spec in deferred_requested
+)
 
 for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
     graph = read_json(graph_path)

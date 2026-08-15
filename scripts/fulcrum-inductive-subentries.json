@@ -64,6 +64,79 @@
       "parent_node_ids": ["n_34"],
       "after_entry_id": "Type.def.Y-Combinator",
       "graph_level": "entry"
+    },
+    {
+      "id": "Lambda.ppt.defeq-equivalence",
+      "package": "TypeTheory",
+      "kind": "property",
+      "title": {
+        "en": "Definitional Equality Is an Equivalence Relation",
+        "zh-CN": "依定义相等是等价关系"
+      },
+      "content": {
+        "markdown": {
+          "en": "Definitional equality is an equivalence relation on the set of all legal expressions.",
+          "zh-CN": "依定义相等是全体合法表达式上的等价关系。"
+        }
+      },
+      "parent_entry_id": "Lambda.def.defeq",
+      "parent_node_ids": [
+        "n_39"
+      ],
+      "after_entry_id": "Lambda.def.defeq.recursor",
+      "graph_level": "subentry"
+    },
+    {
+      "id": "Logic.cxmp.nat-add-not-defeq",
+      "package": "_unpackaged",
+      "kind": "counterexample",
+      "title": {
+        "en": "Commutativity of Natural-Number Addition Is Not Definitional Equality",
+        "zh-CN": "自然数加法交换律不是依定义相等"
+      },
+      "content": {
+        "markdown": {
+          "en": "In the metatheory of untyped $\\lambda$-calculus, let $m,n$ be variables standing for natural-number expressions. The open expressions $\\mathsf{add}\\;m\\;n$ and $\\mathsf{add}\\;n\\;m$ are generally not definitionally equal. This concerns expressions, not closed expressions obtained by substituting concrete Church numerals; the latter both $\\beta$-reduce to the same Church numeral.",
+          "zh-CN": "在无类型 $\\lambda$-演算的元理论中，令 $m,n$ 为表示自然数表达式的变量。开放表达式 $\\mathsf{add}\\;m\\;n$ 与 $\\mathsf{add}\\;n\\;m$ 一般不是依定义相等的。这讨论的是表达式，而不是代入具体丘奇数后得到的闭表达式；后两者都可通过 $\\beta$-归约得到同一个丘奇数。"
+        }
+      },
+      "parent_entry_id": "Logic.subsec.propositional",
+      "parent_node_ids": [
+        "n_sub_prop"
+      ],
+      "after_entry_id": "Logic.def.iff",
+      "graph_level": "entry"
+    },
+    {
+      "id": "Type.cxmp.vector-index-not-defeq",
+      "package": "TypeTheory",
+      "kind": "counterexample",
+      "title": {
+        "en": "Commutativity of Vector Indices Is Not Definitional Equality",
+        "zh-CN": "向量下标的交换律不是依定义相等"
+      },
+      "content": {
+        "markdown": {
+          "en": "In CIC, for variable natural-number indices $m,n$, the types $\\operatorname{Vector}(m+n)$ and $\\operatorname{Vector}(n+m)$ are generally not definitionally equal. Commutativity of addition gives a propositional equality, so transporting or rewriting along that proof is required.",
+          "zh-CN": "在 CIC 中，对于作为变量的自然数下标 $m,n$，类型 $\\operatorname{Vector}(m+n)$ 与 $\\operatorname{Vector}(n+m)$ 一般不是依定义相等的。加法交换律给出的是命题相等，因此需要沿该证明进行转运或改写。"
+        }
+      },
+      "parent_entry_id": "Type.def.vector",
+      "parent_node_ids": [
+        "n_54"
+      ],
+      "after_entry_id": "Type.def.vector.recursor",
+      "graph_level": "subentry"
+    }
+  ],
+  "entry_updates": [
+    {
+      "id": "Lambda.def.defeq",
+      "accepted_content_snl": [
+        "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Lambda Extentionality%,),Type.judge(%Application Extensionality%,)))",
+        "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,),Type.judge(%Abstraction Extensionality%,),Type.judge(%Application Extensionality%,)))"
+      ],
+      "content_snl": "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,),Type.judge(%Abstraction Extensionality%,),Type.judge(%Application Extensionality%,)))"
     }
   ],
   "inductive_types": [
@@ -151,10 +224,14 @@
       "package": "TypeTheory",
       "constructors": [
         { "id": "Lambda.def.defeq.ctor.beta-reduction", "title": { "en": "$\\beta$-reduction Constructor", "zh-CN": "$\\beta$-归约构造子" } },
-        { "id": "Lambda.def.defeq.ctor.lambda-extensionality", "title": { "en": "Lambda Extensionality Constructor", "zh-CN": "Lambda 外延性构造子" } },
+        { "id": "Lambda.def.defeq.ctor.reflexivity", "title": { "en": "Reflexivity Constructor", "zh-CN": "自反性构造子" } },
+        { "id": "Lambda.def.defeq.ctor.symmetry", "title": { "en": "Symmetry Constructor", "zh-CN": "对称性构造子" } },
+        { "id": "Lambda.def.defeq.ctor.transitivity", "title": { "en": "Transitivity Constructor", "zh-CN": "传递性构造子" } },
+        { "id": "Lambda.def.defeq.ctor.lambda-extensionality", "title": { "en": "Abstraction Extensionality Constructor", "zh-CN": "抽象外延性构造子" } },
         { "id": "Lambda.def.defeq.ctor.application-extensionality", "title": { "en": "Application Extensionality Constructor", "zh-CN": "应用外延性构造子" } }
       ],
-      "recursor": { "id": "Lambda.def.defeq.recursor", "title": { "en": "Definitional Equality Recursor", "zh-CN": "定义等式递归子" } }
+      "recursor": { "id": "Lambda.def.defeq.recursor", "title": { "en": "Definitional Equality Recursor", "zh-CN": "依定义相等递归子" } },
+      "ordered_children": true
     },
     {
       "parent_entry_id": "Type.def.list",
