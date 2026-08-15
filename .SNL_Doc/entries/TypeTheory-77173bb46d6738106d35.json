@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Type.def.LegalExpr-LC",
@@ -11,7 +12,7 @@
       "default_language": "en",
       "values": {
         "en": "Legal Expression (Non-typed Lambda Calculus)",
-        "zh-CN": "合法表达式（无类型 λ 演算）"
+        "zh-CN": "合法表达式（无类型 $\\lambda$-演算）"
       }
     },
     "content": {

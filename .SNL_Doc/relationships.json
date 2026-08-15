@@ -2545,6 +2545,84 @@
       }
     },
     {
+      "id": "dep.Lambda.def.beta-single.Fulcrum.def",
+      "from": "Lambda.def.beta-single",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.beta-single.Lambda.def.beta",
+      "from": "Lambda.def.beta-single",
+      "to": "Lambda.def.beta",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.beta"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Lambda.def.beta-single.Type.def.LegalExpr-LC",
+      "from": "Lambda.def.beta-single",
+      "to": "Type.def.LegalExpr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.LegalExpr"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.beta-single.Type.rl.Expr-LC",
+      "from": "Lambda.def.beta-single",
+      "to": "Type.rl.Expr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.Expr"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.beta-single.Type.rl.judge",
+      "from": "Lambda.def.beta-single",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.beta.Fulcrum.def",
+      "from": "Lambda.def.beta",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Lambda.def.beta.Type.def.LegalExpr-LC",
       "from": "Lambda.def.beta",
       "to": "Type.def.LegalExpr-LC",
@@ -4296,6 +4374,19 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.LegalExpr-LC.Fulcrum.def",
+      "from": "Type.def.LegalExpr-LC",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
         ],
         "isAtomic": true
       }
