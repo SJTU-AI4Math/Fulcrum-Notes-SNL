@@ -11,11 +11,11 @@
       "default_language": "en",
       "values": {
         "en": "Definitional Equality",
-        "zh-CN": "定义相等"
+        "zh-CN": "依定义相等"
       }
     },
     "content": {
-      "snl": "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Lambda Extentionality%,),Type.judge(%Application Extensionality%,)))"
+      "snl": "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,),Type.judge(%Abstraction Extensionality%,),Type.judge(%Application Extensionality%,)))"
     },
     "contribution_info": null,
     "pointer": null

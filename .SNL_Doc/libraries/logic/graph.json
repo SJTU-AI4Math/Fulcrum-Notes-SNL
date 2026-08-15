@@ -163,6 +163,14 @@
       }
     },
     {
+      "id": "n_sub_92b76c3bd853",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.cxmp.nat-add-not-defeq",
+        "counterId": "11533dda-5f5e-422d-9f75-7911cdcb7baa"
+      }
+    },
+    {
       "id": "n_sub_1875c9facf56",
       "label": "Entry",
       "props": {
@@ -316,6 +324,11 @@
     {
       "from": "n_sub_prop",
       "to": "n_iff",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_prop",
+      "to": "n_sub_92b76c3bd853",
       "label": "branch"
     },
     {

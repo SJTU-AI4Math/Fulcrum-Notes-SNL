@@ -151,6 +151,7 @@
     "Logic.ctxt.P",
     "Logic.ctxt.PQ",
     "Logic.ctxt.T",
+    "Logic.cxmp.nat-add-not-defeq",
     "Logic.def.and",
     "Logic.def.eq",
     "Logic.def.eq.ctor.refl",

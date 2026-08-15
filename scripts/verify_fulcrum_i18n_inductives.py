@@ -13,8 +13,8 @@ PLAN = json.loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text
 I18N = json.loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
 EXPECTED_BASE_ENTRIES = 379
 EXPECTED_BASE_MACROS = 392
-EXPECTED_NEW_REQUESTED = 6
-EXPECTED_NEW_CHILDREN = 48  # 31 constructors + 18 recursors, with one reused constructor Entry.
+EXPECTED_NEW_REQUESTED = 9
+EXPECTED_NEW_CHILDREN = 51  # 34 constructors + 18 recursors, with one reused constructor Entry.
 
 
 def load_entities(directory: str, key: str):
@@ -132,6 +132,11 @@ for spec in PLAN["requested_entries"]:
     assert entry.get("content") == expected_content, f"wrong requested Entry content: {spec['id']}"
     assert i18n_values(entry["title"], f"requested Entry {spec['id']} title") == spec["title"]
 
+for update in PLAN.get("entry_updates", []):
+    entry = entries.get(update["id"])
+    assert entry is not None, f"missing updated Entry {update['id']}"
+    assert entry.get("content", {}).get("snl") == update["content_snl"], f"Entry update did not land: {update['id']}"
+
 # Every audited inductive type has constructor and recursor definition subentries, all still empty.
 child_specs = []
 for inductive in PLAN["inductive_types"]:
@@ -172,7 +177,15 @@ for macro_name, macro in macros.items():
 
 # Every parent occurrence in a Library graph has a branch to each requested child/subentry occurrence.
 expected_relations = [(spec["parent_entry_id"], spec["id"], spec.get("parent_node_ids"), spec.get("after_entry_id")) for spec in PLAN["requested_entries"]]
-expected_relations += [(parent_id, child["id"], None, None) for parent_id, _, child in child_specs]
+for inductive in PLAN["inductive_types"]:
+    children = [*inductive["constructors"], inductive["recursor"]]
+    expected_relations.extend(
+        (
+            inductive["parent_entry_id"], child["id"], None,
+            children[index - 1]["id"] if inductive.get("ordered_children") and index else None
+        )
+        for index, child in enumerate(children)
+    )
 for parent_id, child_id, allowed_parent_node_ids, after_entry_id in expected_relations:
     parent_occurrences = 0
     attached_occurrences = 0

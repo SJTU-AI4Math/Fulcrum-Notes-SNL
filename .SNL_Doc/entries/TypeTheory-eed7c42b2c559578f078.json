@@ -3,15 +3,15 @@
   "version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Lambda.def.defeq.ctor.lambda-extensionality",
+    "id": "Lambda.def.defeq.ctor.transitivity",
     "package": "TypeTheory",
     "kind": "definition",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Abstraction Extensionality Constructor",
-        "zh-CN": "抽象外延性构造子"
+        "en": "Transitivity Constructor",
+        "zh-CN": "传递性构造子"
       }
     },
     "content": {},

@@ -496,6 +496,30 @@
       }
     },
     {
+      "id": "n_sub_6217490671da",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.defeq.ctor.reflexivity",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_c9c537d2ed77",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.defeq.ctor.symmetry",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_12aa30880f2c",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.defeq.ctor.transitivity",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
       "id": "n_sub_5db0d93abf05",
       "label": "Entry",
       "props": {
@@ -512,6 +536,14 @@
       }
     },
     {
+      "id": "n_sub_1c6b0d59eb71",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.ppt.defeq-equivalence",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
       "id": "n_sub_1875c9facf56",
       "label": "Entry",
       "props": {
@@ -524,6 +556,14 @@
       "label": "Entry",
       "props": {
         "entryId": "Logic.def.eq.recursor",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_6c831755d0d7",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.cxmp.vector-index-not-defeq",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -1186,6 +1226,21 @@
     },
     {
       "from": "n_39",
+      "to": "n_sub_6217490671da",
+      "label": "branch"
+    },
+    {
+      "from": "n_39",
+      "to": "n_sub_c9c537d2ed77",
+      "label": "branch"
+    },
+    {
+      "from": "n_39",
+      "to": "n_sub_12aa30880f2c",
+      "label": "branch"
+    },
+    {
+      "from": "n_39",
       "to": "n_sub_37f2fbd41471",
       "label": "branch"
     },
@@ -1197,6 +1252,11 @@
     {
       "from": "n_39",
       "to": "n_sub_5db0d93abf05",
+      "label": "branch"
+    },
+    {
+      "from": "n_39",
+      "to": "n_sub_1c6b0d59eb71",
       "label": "branch"
     },
     {
@@ -1267,6 +1327,11 @@
     {
       "from": "n_54",
       "to": "n_sub_f7a1119a3f63",
+      "label": "branch"
+    },
+    {
+      "from": "n_54",
+      "to": "n_sub_6c831755d0d7",
       "label": "branch"
     },
     {
