@@ -107,6 +107,7 @@
     "Type.subsec.Curry-Howard",
     "Type.subsec.inductive-def",
     "Type.subsec.inductive-types",
+    "Type.subsec.lambda-cube",
     "Type.subsec.patternMatching",
     "Type.subsec.structure",
     "Type.thm.SKI-complete"

@@ -4,15 +4,15 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Type.subsec.Church",
+    "id": "Type.subsec.lambda-cube",
     "package": "TypeTheory",
     "kind": "subsection",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Church Encoding",
-        "zh-CN": "Church 编码"
+        "en": "$\\lambda$-Cube",
+        "zh-CN": "$\\lambda$-立方"
       }
     },
     "content": {},

@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Type.def.Church-True",
@@ -11,7 +12,7 @@
       "default_language": "en",
       "values": {
         "en": "Church Boolean True",
-        "zh-CN": "丘奇布尔真值"
+        "zh-CN": "真（Church 编码）"
       }
     },
     "content": {

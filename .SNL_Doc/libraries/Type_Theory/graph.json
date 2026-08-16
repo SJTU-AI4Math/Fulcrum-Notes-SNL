@@ -33,19 +33,19 @@
       }
     },
     {
-      "id": "n_5",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.rl.univ",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
-      }
-    },
-    {
       "id": "n_8",
       "label": "Entry",
       "props": {
         "entryId": "Type.sec.DTT",
         "counterId": "41a2a398-9174-4ba0-b6ad-24ab613f44ae"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rl.univ",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
@@ -846,6 +846,13 @@
         "entryId": "Type.rmk.lambdaTuringComplete",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
+    },
+    {
+      "id": "n_60",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.lambda-cube"
+      }
     }
   ],
   "relationships": [
@@ -1000,11 +1007,6 @@
       "label": "branch"
     },
     {
-      "from": "n_16",
-      "to": "n_5",
-      "label": "branch"
-    },
-    {
       "from": "n_6",
       "to": "n_43",
       "label": "branch"
@@ -1066,12 +1068,12 @@
     },
     {
       "from": "n_43",
-      "to": "n_44",
+      "to": "n_45",
       "label": "branch"
     },
     {
       "from": "n_43",
-      "to": "n_45",
+      "to": "n_44",
       "label": "branch"
     },
     {
@@ -1357,6 +1359,16 @@
     {
       "from": "n_50",
       "to": "n_sub_b59b05545413",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_60",
       "label": "branch"
     }
   ]

@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Type.rl.Expr-LC",
@@ -10,12 +11,12 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Expression (Non-typed Lambda Calculus)",
-        "zh-CN": "表达式（无类型 λ 演算）"
+        "en": "Closed Expression (Non-typed $\\lambda$ -Calculus",
+        "zh-CN": "闭表达式（无类型 $\\lambda$-演算）"
       }
     },
     "content": {
-      "snl": "def-inductive(Lambda.Expr,ctors(Type.judge(%Lambda Abstraction%,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(%Application%,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(%Binded variable%,Type.to(Nat,Lambda.Expr))))"
+      "snl": "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(%Application%,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(%Binded variable%,Type.to(Nat,Lambda.Expr))))"
     },
     "contribution_info": null,
     "pointer": null
