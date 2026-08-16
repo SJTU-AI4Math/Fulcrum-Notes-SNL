@@ -10,11 +10,20 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Sigma Type",
-        "zh-CN": "Σ 类型"
+        "en": "$\\Sigma$-Type",
+        "zh-CN": "$\\Sigma$-类型"
       }
     },
-    "content": {},
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Given `A : Type` and `B : A → Type`, the Σ-type contains dependent pairs `(a, b)` with `a : A` and `b : B a`. Its second projection depends on the first.",
+          "zh-CN": "给定 `A : Type` 与 `B : A → Type`，Σ-类型包含依值序对 `(a, b)`，其中 `a : A` 且 `b : B a`；第二投影的类型依赖第一投影。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

@@ -5,7 +5,7 @@
   "entry": {
     "id": "Type.rl.judge",
     "package": "TypeTheory",
-    "kind": "axiom",
+    "kind": "definition",
     "title": {
       "type": "i18n",
       "default_language": "en",

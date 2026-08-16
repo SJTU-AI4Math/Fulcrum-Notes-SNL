@@ -3,20 +3,18 @@
   "version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Type.rl.univ",
+    "id": "Type.def.enum.ctor.green",
     "package": "TypeTheory",
     "kind": "definition",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Type Universe",
-        "zh-CN": "类型宇宙"
+        "en": "Green Constructor",
+        "zh-CN": "绿色构造子"
       }
     },
-    "content": {
-      "snl": "def-hyp-opq(Type.judge(@n,Nat),Type[univ](n))"
-    },
+    "content": {},
     "contribution_info": null,
     "pointer": null
   }

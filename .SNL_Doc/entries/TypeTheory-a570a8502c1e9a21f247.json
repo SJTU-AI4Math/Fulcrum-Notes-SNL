@@ -10,8 +10,8 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Simple Typed Lambda Calculus",
-        "zh-CN": "简单类型 λ 演算"
+        "en": "Simple Typed $\\lambda$-Calculus",
+        "zh-CN": "简单类型 $\\lambda$-演算"
       }
     },
     "content": {},

@@ -11,7 +11,7 @@
       "default_language": "en",
       "values": {
         "en": "Church Boolean False",
-        "zh-CN": "丘奇布尔假值"
+        "zh-CN": "假（Church 编码）"
       }
     },
     "content": {

@@ -1,5 +1,5 @@
 {
-  "source_head": "7b53c57c05dde57c66620884c961165cfdbc6535",
+  "source_head": "14e7c49b7c4895c7b2c6ae32dd96eba3fdc58681",
   "entries": {
     "Algebra.ctxt.1": {
       "title": {
@@ -2126,73 +2126,73 @@
     "Type.def.Church-Add": {
       "title": {
         "en": "Church Addition",
-        "zh-CN": "丘奇加法"
+        "zh-CN": "加法（Church 编码）"
       }
     },
     "Type.def.Church-And": {
       "title": {
         "en": "Church Boolean And",
-        "zh-CN": "丘奇布尔与"
+        "zh-CN": "与（Church 编码）"
       }
     },
     "Type.def.Church-False": {
       "title": {
         "en": "Church Boolean False",
-        "zh-CN": "丘奇布尔假值"
+        "zh-CN": "假（Church 编码）"
       }
     },
     "Type.def.Church-Mul": {
       "title": {
         "en": "Church Multiplication",
-        "zh-CN": "丘奇乘法"
+        "zh-CN": "乘法（Church 编码）"
       }
     },
     "Type.def.Church-Nat": {
       "title": {
         "en": "Church Encoding of Natural Numbers",
-        "zh-CN": "自然数的丘奇编码"
+        "zh-CN": "自然数（Church 编码）"
       }
     },
     "Type.def.Church-Not": {
       "title": {
         "en": "Church Boolean Not",
-        "zh-CN": "丘奇布尔非"
+        "zh-CN": "非（Church 编码）"
       }
     },
     "Type.def.Church-One": {
       "title": {
         "en": "Church Numeral One",
-        "zh-CN": "丘奇数一"
+        "zh-CN": "一（Church 编码）"
       }
     },
     "Type.def.Church-Or": {
       "title": {
         "en": "Church Boolean Or",
-        "zh-CN": "丘奇布尔或"
+        "zh-CN": "或（Church 编码）"
       }
     },
     "Type.def.Church-Succ": {
       "title": {
         "en": "Church Successor",
-        "zh-CN": "丘奇后继"
+        "zh-CN": "后继（Church 编码）"
       }
     },
     "Type.def.Church-True": {
       "title": {
         "en": "Church Boolean True",
-        "zh-CN": "丘奇布尔真值"
+        "zh-CN": "真（Church 编码）"
       }
     },
     "Type.def.Church-Two": {
       "title": {
         "en": "Church Numeral Two",
-        "zh-CN": "丘奇数二"
+        "zh-CN": "二（Church 编码）"
       }
     },
     "Type.def.Church-Zero": {
       "title": {
         "en": "Church Numeral Zero",
-        "zh-CN": "丘奇数零"
+        "zh-CN": "零（Church 编码）"
       }
     },
     "Type.def.Currying": {
@@ -2221,9 +2221,12 @@
     },
     "Type.def.LegalExpr-LC": {
       "title": {
-        "en": "Legal Expression (Non-typed Lambda Calculus)",
-        "zh-CN": "合法表达式（无类型 λ 演算）"
-      }
+        "en": "Legal Expression (Non-typed $\\lambda$-Calculus)",
+        "zh-CN": "合法表达式（无类型 $\\lambda$-演算）"
+      },
+      "accepted_title_en": [
+        "Legal Expression (Non-typed Lambda Calculus)"
+      ]
     },
     "Type.def.Omega-Big": {
       "title": {
@@ -2239,9 +2242,12 @@
     },
     "Type.def.Sigma": {
       "title": {
-        "en": "Sigma Type",
-        "zh-CN": "Σ 类型"
-      }
+        "en": "$\\Sigma$-Type",
+        "zh-CN": "$\\Sigma$-类型"
+      },
+      "accepted_title_en": [
+        "Sigma Type"
+      ]
     },
     "Type.def.Substitution-LC": {
       "title": {
@@ -2305,9 +2311,12 @@
     },
     "Type.def.sum": {
       "title": {
-        "en": "Summation Type",
+        "en": "Sum Type",
         "zh-CN": "和类型"
-      }
+      },
+      "accepted_title_en": [
+        "Summation Type"
+      ]
     },
     "Type.def.unit": {
       "title": {
@@ -2341,9 +2350,13 @@
     },
     "Type.rl.Expr-LC": {
       "title": {
-        "en": "Expression (Non-typed Lambda Calculus)",
-        "zh-CN": "表达式（无类型 λ 演算）"
-      }
+        "en": "Closed Expression (Non-typed $\\lambda$-Calculus)",
+        "zh-CN": "闭表达式（无类型 $\\lambda$-演算）"
+      },
+      "accepted_title_en": [
+        "Expression (Non-typed Lambda Calculus)",
+        "Closed Expression (Non-typed $\\lambda$ -Calculus"
+      ]
     },
     "Type.rl.Expr-STLC": {
       "title": {
@@ -2365,14 +2378,17 @@
     },
     "Type.rl.lambda-typed": {
       "title": {
-        "en": "Lambda Abstraction (Typed)",
-        "zh-CN": "λ 抽象（有类型）"
-      }
+        "en": "$\\lambda$-Abstraction Constructor (Typed)",
+        "zh-CN": "$\\lambda$-抽象构造子（有类型）"
+      },
+      "accepted_title_en": [
+        "Lambda Abstraction Constructor (Typed)"
+      ]
     },
     "Type.rl.pi": {
       "title": {
-        "en": "Pi Type",
-        "zh-CN": "Π 类型"
+        "en": "$\\Pi$-Type",
+        "zh-CN": "$\\Pi$-类型"
       }
     },
     "Type.rl.univ": {
@@ -2395,20 +2411,26 @@
     },
     "Type.sec.LC": {
       "title": {
-        "en": "Lambda Calculus",
-        "zh-CN": "λ 演算"
-      }
+        "en": "$\\lambda$-Calculus",
+        "zh-CN": "$\\lambda$-演算"
+      },
+      "accepted_title_en": [
+        "Lambda Calculus"
+      ]
     },
     "Type.sec.STLC": {
       "title": {
-        "en": "Simple Typed Lambda Calculus",
-        "zh-CN": "简单类型 λ 演算"
-      }
+        "en": "Simple Typed $\\lambda$-Calculus",
+        "zh-CN": "简单类型 $\\lambda$-演算"
+      },
+      "accepted_title_en": [
+        "Simple Typed Lambda Calculus"
+      ]
     },
     "Type.subsec.Church": {
       "title": {
         "en": "Church Encoding",
-        "zh-CN": "丘奇编码"
+        "zh-CN": "Church 编码"
       }
     },
     "Type.subsec.Curry-Howard": {
@@ -2738,10 +2760,6 @@
     "Type.judge::be-an": {
       "en": "#0 be an #1",
       "zh-CN": "#0 是一个 #1"
-    },
-    "Type::text": {
-      "en": "Type",
-      "zh-CN": "类型"
     },
     "contradiction::default": {
       "en": "which is a contradiction",

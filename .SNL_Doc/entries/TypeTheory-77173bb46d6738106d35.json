@@ -11,7 +11,7 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Legal Expression (Non-typed Lambda Calculus)",
+        "en": "Legal Expression (Non-typed $\\lambda$-Calculus)",
         "zh-CN": "合法表达式（无类型 $\\lambda$-演算）"
       }
     },

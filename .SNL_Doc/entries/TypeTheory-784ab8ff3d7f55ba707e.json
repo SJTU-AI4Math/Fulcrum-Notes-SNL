@@ -11,7 +11,7 @@
       "default_language": "en",
       "values": {
         "en": "Church Boolean And",
-        "zh-CN": "丘奇布尔与"
+        "zh-CN": "与（Church 编码）"
       }
     },
     "content": {

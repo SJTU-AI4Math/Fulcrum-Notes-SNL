@@ -853,6 +853,110 @@
       "props": {
         "entryId": "Type.subsec.lambda-cube"
       }
+    },
+    {
+      "id": "n_sub_d1f1504ddc88",
+      "label": "Entry",
+      "props": {
+        "entryId": "Measure.def.measureSpace",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_3a1e213f3aa0",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.W",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_bb40a8cd94dc",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.W.ctor.sup",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_fd90f7f51c18",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.W.recursor",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_03148c978b72",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.enum",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_2da5dedf2dcb",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.enum.ctor.blue",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_066f5545745a",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.enum.ctor.green",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_11948a70bd8a",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.enum.ctor.red",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_00186733b859",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.enum.recursor",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_4b375342d840",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.structure",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_50788dc3f963",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.structure.ctor.mk",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_ba218a91c6ad",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.structure.projection.dependent",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_1886166d7fa0",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.structure.projection.first",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
     }
   ],
   "relationships": [
@@ -1033,6 +1137,16 @@
     },
     {
       "from": "n_37",
+      "to": "n_sub_3a1e213f3aa0",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "n_sub_03148c978b72",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
       "to": "n_7",
       "label": "branch"
     },
@@ -1043,12 +1157,12 @@
     },
     {
       "from": "n_37",
-      "to": "n_28",
+      "to": "n_29",
       "label": "branch"
     },
     {
       "from": "n_37",
-      "to": "n_29",
+      "to": "n_28",
       "label": "branch"
     },
     {
@@ -1059,6 +1173,26 @@
     {
       "from": "n_37",
       "to": "n_42",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "n_52",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "n_56",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "n_54",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "n_55",
       "label": "branch"
     },
     {
@@ -1098,7 +1232,17 @@
     },
     {
       "from": "n_49",
+      "to": "n_sub_4b375342d840",
+      "label": "branch"
+    },
+    {
+      "from": "n_49",
       "to": "n_50",
+      "label": "branch"
+    },
+    {
+      "from": "n_49",
+      "to": "n_sub_d1f1504ddc88",
       "label": "branch"
     },
     {
@@ -1107,28 +1251,8 @@
       "label": "branch"
     },
     {
-      "from": "n_37",
-      "to": "n_52",
-      "label": "branch"
-    },
-    {
       "from": "n_43",
       "to": "n_53",
-      "label": "branch"
-    },
-    {
-      "from": "n_37",
-      "to": "n_54",
-      "label": "branch"
-    },
-    {
-      "from": "n_37",
-      "to": "n_55",
-      "label": "branch"
-    },
-    {
-      "from": "n_37",
-      "to": "n_56",
       "label": "branch"
     },
     {
@@ -1369,6 +1493,51 @@
     {
       "from": "n_8",
       "to": "n_60",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_4b375342d840",
+      "to": "n_sub_50788dc3f963",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_4b375342d840",
+      "to": "n_sub_1886166d7fa0",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_4b375342d840",
+      "to": "n_sub_ba218a91c6ad",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_3a1e213f3aa0",
+      "to": "n_sub_bb40a8cd94dc",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_3a1e213f3aa0",
+      "to": "n_sub_fd90f7f51c18",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_03148c978b72",
+      "to": "n_sub_11948a70bd8a",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_03148c978b72",
+      "to": "n_sub_066f5545745a",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_03148c978b72",
+      "to": "n_sub_2da5dedf2dcb",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_03148c978b72",
+      "to": "n_sub_00186733b859",
       "label": "branch"
     }
   ]

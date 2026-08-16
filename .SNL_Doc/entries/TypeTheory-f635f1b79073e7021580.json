@@ -10,8 +10,8 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Lambda Abstraction Constructor (Typed)",
-        "zh-CN": "Lambda 抽象构造子（有类型）"
+        "en": "$\\lambda$-Abstraction Constructor (Typed)",
+        "zh-CN": "$\\lambda$-抽象构造子（有类型）"
       }
     },
     "content": {},

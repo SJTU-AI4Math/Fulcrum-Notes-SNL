@@ -96,27 +96,22 @@ i18n = read_json(I18N_PATH)
 plan = read_json(PLAN_PATH)
 entries, entry_paths, entry_envelopes = load_records("entries", "id")
 macros, macro_paths, macro_envelopes = load_records("macros", "name")
-reused_title_ids = {
-    child["id"]
-    for inductive in plan["inductive_types"]
-    for child in inductive["constructors"]
-    if child.get("reuse")
-}
-
 # Localize every existing Entry title and Markdown body covered by the exact mapping.
 for entry_id, projection in i18n["entries"].items():
     assert entry_id in entries, f"I18n map references unknown Entry {entry_id}"
     entry = entries[entry_id]
     title = projection.get("title")
-    if title is not None and entry_id not in reused_title_ids:
+    if title is not None:
         expected = localized(title)
         if entry.get("title") != expected:
             current_title = entry.get("title")
             if isinstance(current_title, dict) and current_title.get("type") == "i18n":
                 assert current_title.get("default_language") == "en" and set(current_title.get("values", {})) == {"en", "zh-CN"}, f"stale localized title {entry_id}"
-                assert current_title["values"]["en"] == title["en"], f"stale English title mapping for {entry_id}"
+                accepted_title_en = set(projection.get("accepted_title_en", [])) | {title["en"]}
+                assert current_title["values"]["en"] in accepted_title_en, f"stale English title mapping for {entry_id}"
             else:
-                assert current_title == title["en"], f"stale English title mapping for {entry_id}"
+                accepted_title_en = set(projection.get("accepted_title_en", [])) | {title["en"]}
+                assert current_title in accepted_title_en, f"stale English title mapping for {entry_id}"
             entry["title"] = expected
     markdown = projection.get("markdown")
     if markdown is not None:
@@ -216,6 +211,22 @@ for update in plan.get("entry_updates", []):
     assert current_snl in update["accepted_content_snl"], f"stale Entry update for {entry_id}"
     entry["content"]["snl"] = update["content_snl"]
 
+# Apply exact metadata corrections generalized from the user's axiom→definition edits.
+for update in plan.get("metadata_updates", []):
+    entry_id = update["id"]
+    assert entry_id in entries, f"Metadata update references unknown Entry {entry_id}"
+    entry = entries[entry_id]
+    assert entry.get("kind") in update["accepted_kind"], f"stale Entry kind for {entry_id}"
+    entry["kind"] = update["kind"]
+
+# Keep Macro provenance aligned with the Entries that now define each notation.
+for update in plan.get("macro_source_updates", []):
+    name = update["name"]
+    assert name in macros, f"Macro source update references unknown Macro {name}"
+    source = macros[name].setdefault("source", {"entries": [], "urls": []})
+    assert source.get("entries", []) in update["accepted_entries"], f"stale Macro source for {name}"
+    source["entries"] = update["entries"]
+
 # Persist Entry and Macro envelopes.
 for entry_id, envelope in entry_envelopes.items():
     write_json(entry_paths[entry_id], envelope)
@@ -238,7 +249,7 @@ for path in sorted((DOC / "packages").glob("*.json")):
         write_json(path, manifest)
 
 # Attach requested Entries and inductive subentries to every Library occurrence of their parent.
-managed_new_entry_ids = {spec["id"] for spec in plan["requested_entries"]}
+managed_new_entry_ids = {spec["id"] for spec in plan["requested_entries"] if not spec.get("existing")}
 generated_child_ids = {
     child["id"]
     for inductive in plan["inductive_types"]
@@ -250,6 +261,10 @@ relations = [
     (spec["parent_entry_id"], spec["id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"))
     for spec in immediate_requested
 ]
+relations.extend(
+    (spec["parent_entry_id"], spec["entry_id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"))
+    for spec in plan.get("graph_references", [])
+)
 for inductive in plan["inductive_types"]:
     children = [*inductive["constructors"], inductive["recursor"]]
     relations.extend(
@@ -259,7 +274,8 @@ for inductive in plan["inductive_types"]:
         )
         for index, child in enumerate(children)
     )
-    managed_new_entry_ids.update(child["id"] for child in children if not child.get("reuse"))
+    if not inductive.get("existing"):
+        managed_new_entry_ids.update(child["id"] for child in children if not child.get("reuse"))
 relations.extend(
     (spec["parent_entry_id"], spec["id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"))
     for spec in deferred_requested
@@ -315,6 +331,32 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
             elif relation not in relationships:
                 relationships.append(relation)
                 changed = True
+    # Normalize only explicitly ordered parent sibling lists; preserve unrelated relationship order.
+    by_node_id = {node["id"]: node for node in nodes}
+    for order_spec in plan.get("ordered_graph_children", []):
+        parent_nodes = [node for node in nodes if node.get("props", {}).get("entryId") == order_spec["parent_entry_id"]]
+        for parent_node in parent_nodes:
+            branch_indices = [i for i, rel in enumerate(relationships) if rel.get("from") == parent_node["id"] and rel.get("label") == "branch"]
+            if not branch_indices:
+                continue
+            branch_rels = [relationships[i] for i in branch_indices]
+            by_entry = {}
+            for rel in branch_rels:
+                child_entry_id = by_node_id[rel["to"]].get("props", {}).get("entryId")
+                by_entry.setdefault(child_entry_id, []).append(rel)
+            expected_order = order_spec["entry_ids"]
+            assert all(len(by_entry.get(entry_id, [])) == 1 for entry_id in expected_order), f"ordered child missing or duplicated under {order_spec['parent_entry_id']}"
+            ordered = [by_entry[entry_id][0] for entry_id in expected_order]
+            ordered_ids = set(expected_order)
+            trailing = [rel for rel in branch_rels if by_node_id[rel["to"]].get("props", {}).get("entryId") not in ordered_ids]
+            replacement = [*ordered, *trailing]
+            before = relationships[:]
+            first = branch_indices[0]
+            relationships[:] = [rel for i, rel in enumerate(relationships) if i not in set(branch_indices)]
+            relationships[first:first] = replacement
+            if relationships != before:
+                changed = True
+
     base_nodes = [node for node in nodes if node.get("props", {}).get("entryId") not in managed_new_entry_ids]
     managed_nodes = sorted(
         (node for node in nodes if node.get("props", {}).get("entryId") in managed_new_entry_ids),

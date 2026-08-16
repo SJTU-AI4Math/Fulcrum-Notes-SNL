@@ -3,20 +3,18 @@
   "version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Type.rl.univ",
+    "id": "Type.def.enum.recursor",
     "package": "TypeTheory",
     "kind": "definition",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Type Universe",
-        "zh-CN": "类型宇宙"
+        "en": "Enumeration Recursor",
+        "zh-CN": "枚举类型递归子"
       }
     },
-    "content": {
-      "snl": "def-hyp-opq(Type.judge(@n,Nat),Type[univ](n))"
-    },
+    "content": {},
     "contribution_info": null,
     "pointer": null
   }

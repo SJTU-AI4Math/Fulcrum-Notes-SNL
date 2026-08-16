@@ -11,7 +11,7 @@
       "default_language": "en",
       "values": {
         "en": "Church Multiplication",
-        "zh-CN": "丘奇乘法"
+        "zh-CN": "乘法（Church 编码）"
       }
     },
     "content": {

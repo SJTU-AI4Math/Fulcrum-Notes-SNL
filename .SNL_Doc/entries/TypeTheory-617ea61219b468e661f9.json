@@ -11,7 +11,7 @@
       "default_language": "en",
       "values": {
         "en": "Church Boolean Not",
-        "zh-CN": "丘奇布尔非"
+        "zh-CN": "非（Church 编码）"
       }
     },
     "content": {

@@ -10,8 +10,8 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Lambda Calculus",
-        "zh-CN": "λ 演算"
+        "en": "$\\lambda$-Calculus",
+        "zh-CN": "$\\lambda$-演算"
       }
     },
     "content": {},

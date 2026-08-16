@@ -11,7 +11,7 @@
       "default_language": "en",
       "values": {
         "en": "Church Addition",
-        "zh-CN": "丘奇加法"
+        "zh-CN": "加法（Church 编码）"
       }
     },
     "content": {

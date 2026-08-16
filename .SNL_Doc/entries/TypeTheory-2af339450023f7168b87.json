@@ -14,7 +14,16 @@
         "zh-CN": "向量类型"
       }
     },
-    "content": {},
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "For `A : Type`, `Vector A n` is an inductive family indexed by its length: `nil` has index zero and `cons` increases the index by one.",
+          "zh-CN": "给定 `A : Type`，`Vector A n` 是以长度为指标的归纳族：`nil` 的指标为零，`cons` 将指标增加一。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

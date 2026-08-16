@@ -5,7 +5,7 @@
   "entry": {
     "id": "Type.rl.fun",
     "package": "TypeTheory",
-    "kind": "axiom",
+    "kind": "definition",
     "title": {
       "type": "i18n",
       "default_language": "en",

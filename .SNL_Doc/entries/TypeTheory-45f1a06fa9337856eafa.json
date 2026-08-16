@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.structure",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Structure Type",
+        "zh-CN": "结构类型"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A structure type packages named fields. Its constructor introduces all fields at once, while each field name generates a projection function. Later field types may depend on earlier projections.",
+          "zh-CN": "结构类型将具名字段打包在一起。构造子一次引入全部字段，每个字段名则生成一个投影函数；后续字段的类型可以依赖先前字段的投影。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

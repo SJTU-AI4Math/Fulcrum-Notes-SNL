@@ -11,10 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / ".SNL_Doc"
 PLAN = json.loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
 I18N = json.loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
-EXPECTED_BASE_ENTRIES = 379
-EXPECTED_BASE_MACROS = 392
-EXPECTED_NEW_REQUESTED = 9
-EXPECTED_NEW_CHILDREN = 51  # 34 constructors + 18 recursors, with one reused constructor Entry.
+EXPECTED_ENTRIES = 452  # user baseline 440 + 6 new ordinary Entries + 6 W/enum children
+EXPECTED_MACROS = 393
 
 
 def load_entities(directory: str, key: str):
@@ -63,21 +61,15 @@ def is_lexical(text: str) -> bool:
 
 entries, entry_paths = load_entities("entries", "entry")
 macros, macro_paths = load_entities("macros", "macro")
-assert len(macros) == EXPECTED_BASE_MACROS, f"Macro count changed: {len(macros)}"
-assert len(entries) == EXPECTED_BASE_ENTRIES + EXPECTED_NEW_REQUESTED + EXPECTED_NEW_CHILDREN, f"unexpected Entry count: {len(entries)}"
-assert I18N.get("source_head") == "7b53c57c05dde57c66620884c961165cfdbc6535", "I18n map source lease changed"
+assert len(macros) == EXPECTED_MACROS, f"Macro count changed: {len(macros)}"
+assert len(entries) == EXPECTED_ENTRIES, f"unexpected Entry count: {len(entries)}"
+assert I18N.get("source_head") == "14e7c49b7c4895c7b2c6ae32dd96eba3fdc58681", "I18n map source lease changed"
 assert len(I18N.get("entries", {})) == 378, "I18n Entry mapping coverage changed"
-assert len(I18N.get("styles", {})) == 84, "I18n Macro-style mapping coverage changed"
+assert len(I18N.get("styles", {})) == 83, "I18n Macro-style mapping coverage changed"
 
-reused_title_ids = {
-    child["id"]
-    for inductive in PLAN["inductive_types"]
-    for child in inductive["constructors"]
-    if child.get("reuse")
-}
 for entry_id, projection in I18N["entries"].items():
     assert entry_id in entries, f"I18n map references missing Entry {entry_id}"
-    if "title" in projection and entry_id not in reused_title_ids:
+    if "title" in projection:
         assert i18n_values(entries[entry_id]["title"], f"mapped Entry {entry_id} title") == projection["title"]
     if "markdown" in projection:
         assert i18n_values(entries[entry_id]["content"]["markdown"], f"mapped Entry {entry_id} markdown") == projection["markdown"]
@@ -136,6 +128,15 @@ for update in PLAN.get("entry_updates", []):
     entry = entries.get(update["id"])
     assert entry is not None, f"missing updated Entry {update['id']}"
     assert entry.get("content", {}).get("snl") == update["content_snl"], f"Entry update did not land: {update['id']}"
+for update in PLAN.get("metadata_updates", []):
+    entry = entries.get(update["id"])
+    assert entry is not None, f"missing metadata-updated Entry {update['id']}"
+    assert entry.get("kind") == update["kind"], f"Entry metadata update did not land: {update['id']}"
+
+for update in PLAN.get("macro_source_updates", []):
+    macro = macros.get(update["name"])
+    assert macro is not None, f"missing source-updated Macro {update['name']}"
+    assert macro.get("source", {}).get("entries") == update["entries"], f"Macro source update did not land: {update['name']}"
 
 # Every audited inductive type has constructor and recursor definition subentries, all still empty.
 child_specs = []
@@ -177,6 +178,7 @@ for macro_name, macro in macros.items():
 
 # Every parent occurrence in a Library graph has a branch to each requested child/subentry occurrence.
 expected_relations = [(spec["parent_entry_id"], spec["id"], spec.get("parent_node_ids"), spec.get("after_entry_id")) for spec in PLAN["requested_entries"]]
+expected_relations.extend((spec["parent_entry_id"], spec["entry_id"], spec.get("parent_node_ids"), spec.get("after_entry_id")) for spec in PLAN.get("graph_references", []))
 for inductive in PLAN["inductive_types"]:
     children = [*inductive["constructors"], inductive["recursor"]]
     expected_relations.extend(
@@ -252,12 +254,47 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
         stack.extend(outgoing[node_id])
     assert seen == node_id_set, f"cycle or unreachable graph node in {graph_path}: {sorted(node_id_set - seen)}"
 
+# Every teaching concept has one declared primary Library; secondary occurrences are explicit applications/variants.
+for ownership in PLAN.get("concept_ownership", []):
+    entry_id = ownership["entry_id"]
+    assert entry_id in entries, f"ownership references missing Entry: {entry_id}"
+    graph_path = DOC / "libraries" / ownership["primary_library"] / "graph.json"
+    assert graph_path.exists(), f"ownership references missing Library: {ownership['primary_library']}"
+    graph = json.loads(graph_path.read_text(encoding="utf-8"))
+    assert any(node.get("props", {}).get("entryId") == entry_id for node in graph.get("nodes", [])), f"primary Library does not contain {entry_id}"
+    for secondary in ownership.get("secondary_entries", []):
+        secondary_id = secondary["entry_id"]
+        assert secondary_id in entries, f"secondary ownership references missing Entry: {secondary_id}"
+        secondary_graph = DOC / "libraries" / secondary["library"] / "graph.json"
+        assert secondary_graph.exists(), f"secondary ownership references missing Library: {secondary['library']}"
+        data = json.loads(secondary_graph.read_text(encoding="utf-8"))
+        assert any(node.get("props", {}).get("entryId") == secondary_id for node in data.get("nodes", [])), f"secondary Library does not contain {secondary_id}"
+
+# Explicitly planned Library sibling orders encode the concept-ownership presentation.
+for order_spec in PLAN.get("ordered_graph_children", []):
+    found = 0
+    for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
+        graph = json.loads(graph_path.read_text(encoding="utf-8"))
+        nodes = graph.get("nodes", [])
+        by_id = {node["id"]: node for node in nodes}
+        for parent in [node for node in nodes if node.get("props", {}).get("entryId") == order_spec["parent_entry_id"]]:
+            found += 1
+            actual = [
+                by_id[rel["to"]].get("props", {}).get("entryId")
+                for rel in graph.get("relationships", [])
+                if rel.get("from") == parent["id"] and rel.get("label") == "branch"
+            ]
+            expected = order_spec["entry_ids"]
+            assert actual[:len(expected)] == expected, f"wrong sibling order under {order_spec['parent_entry_id']}: {actual}"
+    assert found > 0, f"ordered parent not found: {order_spec['parent_entry_id']}"
+
 print(json.dumps({
     "entries": len(entries),
     "macros": len(macros),
-    "requested_entries": EXPECTED_NEW_REQUESTED,
+    "requested_entries": len(PLAN["requested_entries"]),
+    "new_requested_entries": sum(not spec.get("existing") for spec in PLAN["requested_entries"]),
     "inductive_types": len(PLAN["inductive_types"]),
     "constructors": sum(len(x["constructors"]) for x in PLAN["inductive_types"]),
     "recursors": len(PLAN["inductive_types"]),
-    "new_inductive_subentries": EXPECTED_NEW_CHILDREN
+    "planned_inductive_subentries": sum(len(x["constructors"]) + 1 for x in PLAN["inductive_types"])
 }, ensure_ascii=False))
