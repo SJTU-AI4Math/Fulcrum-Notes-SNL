@@ -11,8 +11,8 @@
           "background": "#F0F0F0"
         },
         "dark": {
-          "stroke": "#cfcfcf",
-          "background": "#1E1E1E"
+          "stroke": "#CBD5E1",
+          "background": "#313131"
         }
       },
       "defaultCounterName": "",
@@ -27,8 +27,8 @@
           "background": "#F0F0F0"
         },
         "dark": {
-          "stroke": "#949494",
-          "background": "#1E1E1E"
+          "stroke": "#94A3B8",
+          "background": "#313131"
         }
       },
       "defaultCounterName": "",
@@ -44,7 +44,7 @@
           "background": "#D6FEE0"
         },
         "dark": {
-          "stroke": "#8affa7",
+          "stroke": "#4ADE80",
           "background": "#313131"
         }
       },
@@ -61,7 +61,7 @@
           "background": "#FFFFAC"
         },
         "dark": {
-          "stroke": "#fefe43",
+          "stroke": "#FACC15",
           "background": "#313131"
         }
       },
@@ -77,8 +77,8 @@
           "background": "#DAF0FF"
         },
         "dark": {
-          "stroke": "#005B9C",
-          "background": "#DAF0FF"
+          "stroke": "#93C5FD",
+          "background": "#313131"
         }
       },
       "defaultCounterName": "",
@@ -94,7 +94,7 @@
           "background": "#DAF0FF"
         },
         "dark": {
-          "stroke": "#24a4ff",
+          "stroke": "#60A5FA",
           "background": "#313131"
         }
       },
@@ -110,8 +110,8 @@
           "background": "#DAF0FF"
         },
         "dark": {
-          "stroke": "#005B9C",
-          "background": "#DAF0FF"
+          "stroke": "#7DD3FC",
+          "background": "#313131"
         }
       },
       "defaultCounterName": "",
@@ -127,7 +127,7 @@
           "background": "#FFEDFF"
         },
         "dark": {
-          "stroke": "#fb00ff",
+          "stroke": "#E879F9",
           "background": "#313131"
         }
       },
@@ -144,7 +144,7 @@
           "background": "#FFEBD2"
         },
         "dark": {
-          "stroke": "#E07B00",
+          "stroke": "#FB923C",
           "background": "#313131"
         }
       },
@@ -161,7 +161,7 @@
           "background": "#EFDFFF"
         },
         "dark": {
-          "stroke": "#a442ff",
+          "stroke": "#C084FC",
           "background": "#313131"
         }
       },
@@ -178,7 +178,7 @@
           "background": "#FFD6DC"
         },
         "dark": {
-          "stroke": "#fe5d78",
+          "stroke": "#FB7185",
           "background": "#313131"
         }
       },
@@ -194,8 +194,8 @@
           "background": "#F0F0F0"
         },
         "dark": {
-          "stroke": "#787878",
-          "background": "#F0F0F0"
+          "stroke": "#A3A3A3",
+          "background": "#313131"
         }
       },
       "defaultCounterName": "",
@@ -211,7 +211,7 @@
           "background": "#F0F0F0"
         },
         "dark": {
-          "stroke": "#dedede",
+          "stroke": "#D1D5DB",
           "background": "#313131"
         }
       },
@@ -227,7 +227,7 @@
           "background": "#DAF0FF"
         },
         "dark": {
-          "stroke": "#76c6fe",
+          "stroke": "#38BDF8",
           "background": "#313131"
         }
       },
@@ -243,7 +243,7 @@
           "background": "#DFFFFF"
         },
         "dark": {
-          "stroke": "#70ffff",
+          "stroke": "#A78BFA",
           "background": "#313131"
         }
       },
@@ -259,7 +259,7 @@
           "background": "#cfffa8"
         },
         "dark": {
-          "stroke": "#cfffa8",
+          "stroke": "#A3E635",
           "background": "#313131"
         }
       },
@@ -278,8 +278,8 @@
           "background": "#D6FEE0"
         },
         "dark": {
-          "stroke": "#009C27",
-          "background": "#D6FEE0"
+          "stroke": "#4ADE80",
+          "background": "#313131"
         }
       }
     },
@@ -293,8 +293,8 @@
           "background": "#DAF0FF"
         },
         "dark": {
-          "stroke": "#005B9C",
-          "background": "#DAF0FF"
+          "stroke": "#60A5FA",
+          "background": "#313131"
         }
       }
     },
@@ -308,8 +308,8 @@
           "background": "#EFDFFF"
         },
         "dark": {
-          "stroke": "#7700E4",
-          "background": "#EFDFFF"
+          "stroke": "#C084FC",
+          "background": "#313131"
         }
       }
     },
@@ -323,8 +323,8 @@
           "background": "#DFFFFF"
         },
         "dark": {
-          "stroke": "#00DDDD",
-          "background": "#DFFFFF"
+          "stroke": "#FB923C",
+          "background": "#313131"
         }
       }
     },
@@ -338,8 +338,8 @@
           "background": "#FFD6DC"
         },
         "dark": {
-          "stroke": "#D20022",
-          "background": "#FFD6DC"
+          "stroke": "#FB7185",
+          "background": "#313131"
         }
       }
     },

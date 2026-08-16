@@ -13,6 +13,17 @@ PLAN = json.loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text
 I18N = json.loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
 EXPECTED_ENTRIES = 452  # user baseline 440 + 6 new ordinary Entries + 6 W/enum children
 EXPECTED_MACROS = 393
+EXPECTED_DARK_ENTRY_STROKES = {
+    "section": "#CBD5E1", "subsection": "#94A3B8", "definition": "#4ADE80",
+    "axiom": "#FACC15", "theorem": "#60A5FA", "lemma": "#93C5FD",
+    "corollary": "#7DD3FC", "property": "#E879F9", "remark": "#FB923C",
+    "example": "#C084FC", "counterexample": "#FB7185", "construction": "#A3A3A3",
+    "proof": "#D1D5DB", "problem": "#38BDF8", "context": "#A78BFA", "ctor": "#A3E635",
+}
+EXPECTED_DARK_MACRO_STROKES = {
+    "rule": "#4ADE80", "const": "#60A5FA", "bvar": "#C084FC",
+    "binder": "#FB923C", "fvar": "#FB7185",
+}
 
 
 def load_entities(directory: str, key: str):
@@ -58,6 +69,17 @@ def js_locale_sorted(values: list[str]) -> list[str]:
 def is_lexical(text: str) -> bool:
     return bool(re.search(r"[A-Za-z\u4e00-\u9fff]", text))
 
+
+config = json.loads((DOC / "config.json").read_text(encoding="utf-8"))
+entry_kinds = {kind["id"]: kind for kind in config["entry_kinds"]}
+assert set(entry_kinds) == set(EXPECTED_DARK_ENTRY_STROKES), "Fulcrum Entry Kind catalog changed"
+for kind_id, stroke in EXPECTED_DARK_ENTRY_STROKES.items():
+    assert entry_kinds[kind_id]["coloring"]["dark"] == {"stroke": stroke, "background": "#313131"}, f"dark Entry palette drift: {kind_id}"
+macro_kinds = {kind["id"]: kind for kind in config["macro_kinds"]}
+assert set(macro_kinds) == set(EXPECTED_DARK_MACRO_STROKES) | {"partial"}, "Fulcrum Macro Kind catalog or transparent exception changed"
+for kind_id, stroke in EXPECTED_DARK_MACRO_STROKES.items():
+    assert macro_kinds[kind_id]["coloring"]["dark"] == {"stroke": stroke, "background": "#313131"}, f"dark Macro palette drift: {kind_id}"
+assert macro_kinds["partial"]["coloring"]["dark"] == {"stroke": "inherit", "background": "transparent"}
 
 entries, entry_paths = load_entities("entries", "entry")
 macros, macro_paths = load_entities("macros", "macro")
