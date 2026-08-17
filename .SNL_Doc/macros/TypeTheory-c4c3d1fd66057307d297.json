@@ -6,9 +6,7 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [
-        "Type.def.LegalExpr-LC"
-      ],
+      "entries": [],
       "urls": []
     },
     "kind": "const",
@@ -18,8 +16,8 @@
         "style_name": "default",
         "tags": [],
         "template": {
-          "mode": "formula_inline",
-          "body": "\\mathcal{E}_{\\lambda}^{\\checkmark}",
+          "mode": "text",
+          "body": "$\\lambda$-抽象外延性",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,6 +38,6 @@
       }
     ],
     "tags": [],
-    "name": "Lambda.LegalExpr"
+    "name": "Lambda.defeq.lam-ext"
   }
 }

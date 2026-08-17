@@ -1,11 +1,14 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
     "description": "Untyped lambda abstraction",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.rl.Expr-LC.ctor.lambda-abstraction"
+      ],
       "urls": []
     },
     "kind": "rule",

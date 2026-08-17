@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Lambda.def.defeq",
@@ -15,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,),Type.judge(%Abstraction Extensionality%,),Type.judge(%Application Extensionality%,)))"
+      "snl": "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-ext,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(%Application Extensionality%,),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,)))"
     },
     "contribution_info": null,
     "pointer": null

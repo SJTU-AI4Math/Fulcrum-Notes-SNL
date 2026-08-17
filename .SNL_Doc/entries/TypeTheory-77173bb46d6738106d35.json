@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr(e))"
+      "snl": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda)))"
     },
     "contribution_info": null,
     "pointer": null

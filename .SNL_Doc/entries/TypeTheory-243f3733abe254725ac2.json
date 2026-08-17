@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Type.rl.Expr-LC.ctor.lambda-abstraction",
@@ -10,11 +11,13 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "$\\lambda$-Abstraction Constructor",
-        "zh-CN": "$\\lambda$-抽象构造子"
+        "en": "$\\lambda$-Abstraction",
+        "zh-CN": "$\\lambda$-抽象"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "def-hyp-opq(Type.judge(@a,Lambda.Expr),Type.lambda(@$ $,@a))"
+    },
     "contribution_info": null,
     "pointer": null
   }

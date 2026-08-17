@@ -1,11 +1,14 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
     "description": "Function application",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.rl.Expr-LC.ctor.application"
+      ],
       "urls": []
     },
     "kind": "rule",

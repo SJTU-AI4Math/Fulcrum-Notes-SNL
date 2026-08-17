@@ -2,26 +2,28 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "FulcrumsMathNotes",
+  "package": "TypeTheory",
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.rl.Expr-LC.ctor.bound-variable"
+      ],
       "urls": []
     },
-    "kind": "rule",
+    "kind": "const",
     "dynamic_arity": false,
     "styles": [
       {
-        "style_name": "localized-default",
+        "style_name": "default",
         "tags": [],
         "template": {
           "type": "i18n",
-          "default_language": "en",
+          "default_language": "zh-CN",
           "values": {
-            "en": {
+            "zh-CN": {
               "mode": "text",
-              "body": "Let #0, define “#1”.",
+              "body": "受束变元",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -39,9 +41,9 @@
               "markdown": "",
               "text": ""
             },
-            "zh-CN": {
+            "en": {
               "mode": "text",
-              "body": "设 #0，定义【#1】。",
+              "body": "Bound Variable",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -64,6 +66,6 @@
       }
     ],
     "tags": [],
-    "name": "def-hyp-opq"
+    "name": "Type.Expr-UTLC.bvar"
   }
 }

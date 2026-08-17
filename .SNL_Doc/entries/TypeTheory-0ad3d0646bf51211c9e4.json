@@ -1,17 +1,18 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Lambda.def.defeq.ctor.beta-reduction",
     "package": "TypeTheory",
-    "kind": "definition",
+    "kind": "property",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "$\\beta$-reduction Constructor",
-        "zh-CN": "$\\beta$-归约构造子"
+        "en": "Definitionally Equal by $\\beta$-reduction",
+        "zh-CN": "$\\beta$-归约前后依定义相等"
       }
     },
     "content": {},

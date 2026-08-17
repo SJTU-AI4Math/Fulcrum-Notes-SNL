@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rmk.Expr-LC.lambda",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "$\\lambda$-抽象记号习惯"
+      }
+    },
+    "content": {
+      "snl": "list-partial[enumerate](\r\n    %通常将 #0表达式根据 #1记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda, deBruijnIndex ,Type.lambda(@x, P(x)),),\r\n    %将形如 #0 的多元函数记作 #1%(\r\n        Type.lambda(\r\n            @x,\r\n            Type.lambda(@y, Type.apply(P(x), y))\r\n        ),\r\n        Type.lambda(list-partial[none](@x, @y), Type.apply(P(x), y))\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}
