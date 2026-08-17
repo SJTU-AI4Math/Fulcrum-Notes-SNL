@@ -11,8 +11,20 @@ ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / ".SNL_Doc"
 PLAN = json.loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
 I18N = json.loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
-EXPECTED_ENTRIES = 452  # user baseline 440 + 6 new ordinary Entries + 6 W/enum children
+EXPECTED_ENTRIES = 455  # current 453 + iota-reduction and UTLC let/zeta placeholders
 EXPECTED_MACROS = 393
+EXPECTED_PLACEHOLDERS = {
+    "Type.def.iota-reduction": {
+        "title": {"en": "$\\iota$-reduction", "zh-CN": "$\\iota$-归约"},
+        "parent": "Type.subsec.inductive-def",
+        "after": "Type.def.recursor",
+    },
+    "Lambda.def.let-zeta": {
+        "title": {"en": "let Expression and $\\zeta$-reduction", "zh-CN": "let 表达式与 $\\zeta$-归约"},
+        "parent": "Type.subsec.basics",
+        "after": "Lambda.def.eta",
+    },
+}
 EXPECTED_DARK_ENTRY_STROKES = {
     "section": "#CBD5E1", "subsection": "#94A3B8", "definition": "#4ADE80",
     "axiom": "#FACC15", "theorem": "#60A5FA", "lemma": "#93C5FD",
@@ -131,6 +143,20 @@ for key, projection in I18N["styles"].items():
     assert values["en"]["body"] == projection["en"] and values["zh-CN"]["body"] == projection["zh-CN"], f"mapped Macro body mismatch: {key}"
 
 # Requested Entries have exactly the planned content and graph placement.
+planned_requests = {spec["id"]: spec for spec in PLAN["requested_entries"]}
+integrated_bad_recursor = planned_requests.get("Type.def.Bad.rec")
+assert integrated_bad_recursor is not None, "concurrent Bad recursor is not represented in the authoritative plan"
+assert integrated_bad_recursor["parent_entry_id"] == "Type.cxmp.Bad" and integrated_bad_recursor["graph_level"] == "subentry"
+assert integrated_bad_recursor.get("content", {}) == {}
+
+for entry_id, expected in EXPECTED_PLACEHOLDERS.items():
+    spec = planned_requests.get(entry_id)
+    assert spec is not None, f"missing authoritative placeholder plan: {entry_id}"
+    assert spec["package"] == "TypeTheory" and spec["kind"] == "definition"
+    assert spec["title"] == expected["title"]
+    assert spec["parent_entry_id"] == expected["parent"] and spec.get("after_entry_id") == expected["after"]
+    assert spec.get("content", {}) == {}, f"placeholder plan must remain empty: {entry_id}"
+
 all_expected_new = []
 for spec in PLAN["requested_entries"]:
     all_expected_new.append(spec)

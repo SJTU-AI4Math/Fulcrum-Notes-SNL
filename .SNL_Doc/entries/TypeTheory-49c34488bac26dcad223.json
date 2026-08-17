@@ -1,18 +1,17 @@
 {
   "format": "snl-entry",
   "version": 1,
-  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Type.def.Bad.rec",
+    "id": "Lambda.def.let-zeta",
     "package": "TypeTheory",
     "kind": "definition",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Recursor of $\\mathrm{Bad}$",
-        "zh-CN": "$\\mathrm{Bad}$ 的递归子"
+        "en": "let Expression and $\\zeta$-reduction",
+        "zh-CN": "let 表达式与 $\\zeta$-归约"
       }
     },
     "content": {},

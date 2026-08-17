@@ -315,6 +315,12 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
             nodes.append(child_node)
             child_nodes = [child_node]
             changed = True
+        expected_counter_id = ensure_counter(graph_path.parent / "counters.json", level)
+        for child_node in child_nodes:
+            props = child_node.setdefault("props", {})
+            if props.get("counterId") != expected_counter_id:
+                props["counterId"] = expected_counter_id
+                changed = True
         child_node_id = child_nodes[0]["id"]
         for parent_node in parent_nodes:
             relation = {"from": parent_node["id"], "to": child_node_id, "label": "branch"}

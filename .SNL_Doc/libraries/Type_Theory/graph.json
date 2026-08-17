@@ -863,6 +863,22 @@
       }
     },
     {
+      "id": "n_61",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Bad.rec",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_7974250cee63",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.let-zeta",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
       "id": "n_sub_3a1e213f3aa0",
       "label": "Entry",
       "props": {
@@ -927,6 +943,14 @@
       }
     },
     {
+      "id": "n_sub_d8c6bd40a54c",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.iota-reduction",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
       "id": "n_sub_4b375342d840",
       "label": "Entry",
       "props": {
@@ -956,13 +980,6 @@
       "props": {
         "entryId": "Type.def.structure.projection.first",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
-      }
-    },
-    {
-      "id": "n_61",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.Bad.rec"
       }
     }
   ],
@@ -1228,6 +1245,11 @@
       "label": "branch"
     },
     {
+      "from": "n_43",
+      "to": "n_sub_d8c6bd40a54c",
+      "label": "branch"
+    },
+    {
       "from": "n_6",
       "to": "n_49",
       "label": "branch"
@@ -1285,6 +1307,11 @@
     {
       "from": "n_15",
       "to": "n_sub_7efbf514820e",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_sub_7974250cee63",
       "label": "branch"
     },
     {

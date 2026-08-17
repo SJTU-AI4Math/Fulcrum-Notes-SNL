@@ -373,6 +373,51 @@
       "parent_entry_id": "Type.subsec.inductive-types",
       "graph_level": "entry",
       "existing": true
+    },
+    {
+      "id": "Type.def.iota-reduction",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "$\\iota$-reduction",
+        "zh-CN": "$\\iota$-归约"
+      },
+      "parent_entry_id": "Type.subsec.inductive-def",
+      "parent_node_ids": [
+        "n_43"
+      ],
+      "after_entry_id": "Type.def.recursor",
+      "graph_level": "entry"
+    },
+    {
+      "id": "Lambda.def.let-zeta",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "let Expression and $\\zeta$-reduction",
+        "zh-CN": "let 表达式与 $\\zeta$-归约"
+      },
+      "parent_entry_id": "Type.subsec.basics",
+      "parent_node_ids": [
+        "n_15"
+      ],
+      "after_entry_id": "Lambda.def.eta",
+      "graph_level": "entry"
+    },
+    {
+      "id": "Type.def.Bad.rec",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "Recursor of $\\mathrm{Bad}$",
+        "zh-CN": "$\\mathrm{Bad}$ 的递归子"
+      },
+      "parent_entry_id": "Type.cxmp.Bad",
+      "parent_node_ids": [
+        "n_53"
+      ],
+      "graph_level": "subentry",
+      "existing": true
     }
   ],
   "entry_updates": [

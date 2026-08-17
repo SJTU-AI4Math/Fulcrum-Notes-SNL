@@ -1,18 +1,17 @@
 {
   "format": "snl-entry",
   "version": 1,
-  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Type.def.Bad.rec",
+    "id": "Type.def.iota-reduction",
     "package": "TypeTheory",
     "kind": "definition",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Recursor of $\\mathrm{Bad}$",
-        "zh-CN": "$\\mathrm{Bad}$ 的递归子"
+        "en": "$\\iota$-reduction",
+        "zh-CN": "$\\iota$-归约"
       }
     },
     "content": {},
