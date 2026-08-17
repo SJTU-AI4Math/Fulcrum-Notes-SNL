@@ -14,7 +14,9 @@
         "zh-CN": "传递性"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b,@c),Lambda.Expr),Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))"
+    },
     "contribution_info": null,
     "pointer": null
   }

@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.judge(@xs,FP.List(A)),Eq(FP.flatten(FP.List,xs),FP.bind(FP.List,xs,Type.lambda(@a,a))))"
+      "snl": "thm-hyp(Type.judge(@xs,FP.List(A)),Eq(FP.flatten(FP.List,xs),FP.bind(FP.List,xs,Type.Expr-UTLC.lambda(@a,a))))"
     },
     "contribution_info": null,
     "pointer": null,

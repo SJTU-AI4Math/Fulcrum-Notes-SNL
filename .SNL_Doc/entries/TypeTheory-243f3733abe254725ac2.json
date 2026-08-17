@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(Type.judge(@a,Lambda.Expr),Type.lambda(@$ $,@a))"
+      "snl": "def-hyp-opq(Type.judge(@a,Lambda.Expr),Type.Expr-UTLC.lambda(@$ $,@a))"
     },
     "contribution_info": null,
     "pointer": null

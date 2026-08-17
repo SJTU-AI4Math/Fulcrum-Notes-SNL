@@ -4,19 +4,19 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Lambda.def.defeq.ctor.beta-reduction",
+    "id": "Lambda.def.defeq.ctor.lambda-congruence",
     "package": "TypeTheory",
     "kind": "property",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Definitionally Equal by $\\beta$-reduction",
-        "zh-CN": "$\\beta$-归约前后依定义相等"
+        "en": "$\\lambda$-Abstraction Congruence",
+        "zh-CN": "$\\lambda$-抽象同余性"
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.beta-closure(a,b)),Lambda.defeq(a,b))"
+      "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b)))"
     },
     "contribution_info": null,
     "pointer": null

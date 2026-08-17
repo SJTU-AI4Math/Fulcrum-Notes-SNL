@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Lambda.I,Type.lambda(@x,x))"
+      "snl": "def(Lambda.I,Type.Expr-UTLC.lambda(@x,x))"
     },
     "contribution_info": null,
     "pointer": null

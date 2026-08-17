@@ -7,7 +7,7 @@
     "description": "",
     "source": {
       "entries": [
-        "Lambda.def.defeq.ctor.application-extensionality"
+        "Lambda.def.defeq.ctor.application-congruence"
       ],
       "urls": []
     },

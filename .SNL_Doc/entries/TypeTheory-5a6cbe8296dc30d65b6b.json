@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.apply(a,b))"
+      "snl": "def-hyp-opq(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.Expr-UTLC.apply(a,b))"
     },
     "contribution_info": null,
     "pointer": null

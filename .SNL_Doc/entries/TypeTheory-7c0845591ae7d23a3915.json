@@ -3,19 +3,19 @@
   "version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Lambda.def.defeq.ctor.symmetry",
+    "id": "Lambda.def.defeq.ctor.eta-reduction",
     "package": "TypeTheory",
     "kind": "property",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Symmetry",
-        "zh-CN": "对称性"
+        "en": "Definitionally Equal by $\\eta$-reduction",
+        "zh-CN": "$\\eta$-归约前后依定义相等"
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.defeq(a,b)),Lambda.defeq(b,a))"
+      "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.eta(a,b)),Lambda.defeq(a,b))"
     },
     "contribution_info": null,
     "pointer": null

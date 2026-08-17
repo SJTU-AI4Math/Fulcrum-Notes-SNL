@@ -9,10 +9,10 @@
     "kind": "subsection",
     "title": {
       "type": "i18n",
-      "default_language": "zh-CN",
+      "default_language": "en",
       "values": {
-        "zh-CN": "$\\Pi$-类型",
-        "en": "$\\Pi$-Type"
+        "en": "$\\Pi$-Type",
+        "zh-CN": "$\\Pi$-类型"
       }
     },
     "content": {},

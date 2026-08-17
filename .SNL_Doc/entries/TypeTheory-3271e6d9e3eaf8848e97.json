@@ -4,7 +4,7 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Lambda.def.defeq.ctor.application-extensionality",
+    "id": "Lambda.def.defeq.ctor.application-congruence",
     "package": "TypeTheory",
     "kind": "property",
     "title": {
@@ -15,7 +15,9 @@
         "zh-CN": "应用同余性"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@f,@g,@a,@b),Lambda.Expr),Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b)))"
+    },
     "contribution_info": null,
     "pointer": null
   }

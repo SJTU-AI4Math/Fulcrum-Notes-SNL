@@ -6,7 +6,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Lambda.def.defeq.ctor.eta-reduction"
+      ],
       "urls": []
     },
     "kind": "const",
@@ -41,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "$\\eta$-规约",
+              "body": "$\\eta$-归约",
               "typst": {
                 "built_in": "",
                 "synthesis": {

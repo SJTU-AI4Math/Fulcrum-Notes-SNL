@@ -8,9 +8,10 @@
   "entry_ids": [
     "Lambda.def.beta",
     "Lambda.def.defeq",
-    "Lambda.def.defeq.ctor.application-extensionality",
+    "Lambda.def.defeq.ctor.application-congruence",
     "Lambda.def.defeq.ctor.beta-reduction",
-    "Lambda.def.defeq.ctor.lambda-extensionality",
+    "Lambda.def.defeq.ctor.eta-reduction",
+    "Lambda.def.defeq.ctor.lambda-congruence",
     "Lambda.def.defeq.ctor.reflexivity",
     "Lambda.def.defeq.ctor.symmetry",
     "Lambda.def.defeq.ctor.transitivity",

@@ -9,10 +9,10 @@
     "kind": "subsection",
     "title": {
       "type": "i18n",
-      "default_language": "zh-CN",
+      "default_language": "en",
       "values": {
-        "zh-CN": "类型宇宙",
-        "en": "Type Universe"
+        "en": "Type Universe",
+        "zh-CN": "类型宇宙"
       }
     },
     "content": {},

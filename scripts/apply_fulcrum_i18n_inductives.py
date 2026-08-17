@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import subprocess
 import uuid
 from pathlib import Path
@@ -96,7 +97,64 @@ i18n = read_json(I18N_PATH)
 plan = read_json(PLAN_PATH)
 entries, entry_paths, entry_envelopes = load_records("entries", "id")
 macros, macro_paths, macro_envelopes = load_records("macros", "name")
-# Apply explicit identity migrations before localization and provenance updates.
+
+# Apply explicit Entry identity migrations before graph, Package, provenance,
+# and dependency reconciliation. This is deliberately not a raw text replace.
+for rename in plan.get("entry_renames", []):
+    old_id = rename["old_id"]
+    new_id = rename["new_id"]
+    package_id = rename["package"]
+    if old_id in entries:
+        assert new_id not in entries, f"both old and new Entry identities exist: {old_id}, {new_id}"
+        record = entries.pop(old_id)
+        path = entry_paths.pop(old_id)
+        envelope = entry_envelopes.pop(old_id)
+        assert envelope["package"] == package_id and record["package"] == package_id
+        record["id"] = new_id
+        entries[new_id] = record
+        entry_paths[new_id] = path
+        entry_envelopes[new_id] = envelope
+    else:
+        assert new_id in entries, f"missing Entry identity migration source: {old_id}"
+    path = entry_paths[new_id]
+    canonical_path = DOC / "entries" / f"{package_id}-{identity_hash('entry', package_id, new_id)}.json"
+    if path != canonical_path:
+        assert not canonical_path.exists(), f"Entry identity migration path collision: {canonical_path.name}"
+        path.rename(canonical_path)
+        entry_paths[new_id] = canonical_path
+    for macro in macros.values():
+        source = macro.get("source") or {}
+        source_entries = source.get("entries")
+        if isinstance(source_entries, list):
+            source["entries"] = [new_id if entry_id == old_id else entry_id for entry_id in source_entries]
+    for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
+        graph = read_json(graph_path)
+        graph_changed = False
+        for node in graph.get("nodes", []):
+            props = node.get("props") or {}
+            if props.get("entryId") == old_id:
+                props["entryId"] = new_id
+                graph_changed = True
+        if graph_changed:
+            write_json(graph_path, graph)
+    relationship_path = DOC / "relationships.json"
+    relationship_data = read_json(relationship_path)
+    relationships_changed = False
+    for relationship in relationship_data.get("relationships", []):
+        row_changed = False
+        if relationship.get("from") == old_id:
+            relationship["from"] = new_id
+            row_changed = True
+        if relationship.get("to") == old_id:
+            relationship["to"] = new_id
+            row_changed = True
+        if row_changed and (relationship.get("metadata") or {}).get("generator") == "macro-source-scan":
+            relationship["id"] = f"dep.{relationship['from']}.{relationship['to']}"
+        relationships_changed = relationships_changed or row_changed
+    if relationships_changed:
+        write_json(relationship_path, relationship_data)
+
+# Apply explicit Macro identity migrations before localization and provenance updates.
 for rename in plan.get("macro_renames", []):
     old_name = rename["old_name"]
     new_name = rename["new_name"]
@@ -118,6 +176,112 @@ for rename in plan.get("macro_renames", []):
         assert not canonical_path.exists(), f"Macro identity migration path collision: {canonical_path.name}"
         path.rename(canonical_path)
         macro_paths[new_name] = canonical_path
+
+# Merge legacy presentation Macros into canonical constructor Macros. The
+# complete accepted predecessor records are pinned in the plan: style names
+# alone are not enough because that would promote corrupted templates.
+retired_macro_paths: list[Path] = []
+for merge in plan.get("macro_merges", []):
+    source_name = merge["source_name"]
+    target_name = merge["target_name"]
+    package_id = merge["package"]
+    source_snapshot = merge["accepted_source_macro"]
+    target_snapshot = merge["accepted_target_macro"]
+    assert source_snapshot["name"] == source_name and target_snapshot["name"] == target_name
+    canonical_macro = json.loads(json.dumps(target_snapshot, ensure_ascii=False))
+    text_style = canonical_macro["styles"][0]
+    assert text_style["style_name"] == merge["target_text_style_from"]
+    text_style["style_name"] = merge["target_text_style_name"]
+    canonical_macro["description"] = source_snapshot["description"]
+    canonical_macro["kind"] = source_snapshot["kind"]
+    canonical_macro["dynamic_arity"] = source_snapshot["dynamic_arity"]
+    canonical_macro["styles"] = [*json.loads(json.dumps(source_snapshot["styles"], ensure_ascii=False)), text_style]
+    assert [style["style_name"] for style in canonical_macro["styles"]] == merge["canonical_style_names"]
+
+    assert target_name in macros, f"missing Macro merge target: {target_name}"
+    target = macros[target_name]
+    target_path = macro_paths[target_name]
+    assert macro_envelopes[target_name]["package"] == package_id
+    if source_name in macros:
+        source = macros[source_name]
+        source_path = macro_paths[source_name]
+        assert macro_envelopes[source_name]["package"] == package_id
+        assert source == source_snapshot, f"source Macro snapshot drift: {source_name}"
+        assert target in (target_snapshot, canonical_macro), f"target Macro snapshot drift: {target_name}"
+        target.clear()
+        target.update(json.loads(json.dumps(canonical_macro, ensure_ascii=False)))
+        retired_macro_paths.append(source_path)
+        del macros[source_name], macro_paths[source_name], macro_envelopes[source_name]
+    else:
+        assert target == canonical_macro, f"canonical Macro merge drift: {target_name}"
+    canonical_path = DOC / "macros" / f"{package_id}-{identity_hash('macro', package_id, target_name)}.json"
+    assert target_path == canonical_path, f"noncanonical Macro merge target path: {target_name}"
+
+
+def formula_template(body: str) -> dict:
+    return {
+        "mode": "formula_inline", "body": body,
+        "typst": {"built_in": "", "synthesis": {"mode": "formula", "macro": ""}},
+        "latex": {"built_in": "", "synthesis": {"mode": "formula", "macro": ""}},
+        "markdown": "", "text": "",
+    }
+
+
+# Add a fixed-arity symbolic constructor style without consuming a separate
+# variadic surface-notation Macro. Dynamic arity is a Macro-level contract, so
+# a lexical text style cannot safely share the old `#*` Macro.
+for update in plan.get("macro_style_updates", []):
+    name = update["name"]
+    macro = macros[name]
+    assert macro_paths[name] == DOC / "macros" / f"{update['package']}-{identity_hash('macro', update['package'], name)}.json"
+    current_names = [style["style_name"] for style in macro["styles"]]
+    if current_names == update["accepted_style_names"]:
+        assert macro["kind"] == "const" and macro["dynamic_arity"] is False and macro["description"] == "" and macro["tags"] == []
+        text_style = macro["styles"][0]
+        text_style["style_name"] = update["text_style_name"]
+        macro["styles"] = [
+            {"style_name": update["symbolic_style_name"], "tags": [], "template": formula_template(update["symbolic_body"])},
+            text_style,
+        ]
+        macro["kind"] = update["kind"]
+        macro["dynamic_arity"] = update["dynamic_arity"]
+        macro["description"] = update["description"]
+    else:
+        assert current_names == update["canonical_style_names"], f"canonical Macro style update drift: {name}"
+    assert macro["kind"] == update["kind"] and macro["dynamic_arity"] is update["dynamic_arity"] and macro["description"] == update["description"]
+    assert macro["styles"][0] == {"style_name": update["symbolic_style_name"], "tags": [], "template": formula_template(update["symbolic_body"])}
+
+
+def rewrite_snl_identifier(source: str, old_name: str, new_name: str) -> str:
+    """Rewrite one Macro token, leaving opaque `%...%`/`$...$` bodies untouched."""
+    pattern = re.compile(rf"(?<![A-Za-z0-9_.-]){re.escape(old_name)}(?![A-Za-z0-9_.-])")
+    out = []
+    cursor = 0
+    plain_start = 0
+    while cursor < len(source):
+        delimiter = "$$" if source.startswith("$$", cursor) else source[cursor] if source[cursor] in {"%", "$"} else None
+        if delimiter is None:
+            cursor += 1
+            continue
+        out.append(pattern.sub(new_name, source[plain_start:cursor]))
+        end = source.find(delimiter, cursor + len(delimiter))
+        if end < 0:
+            out.append(source[cursor:])
+            return "".join(out)
+        end += len(delimiter)
+        out.append(source[cursor:end])
+        cursor = end
+        plain_start = end
+    out.append(pattern.sub(new_name, source[plain_start:]))
+    return "".join(out)
+
+
+for rewrite in plan.get("snl_macro_rewrites", []):
+    for entry in entries.values():
+        content = entry.get("content") or {}
+        snl = content.get("snl")
+        if isinstance(snl, str):
+            content["snl"] = rewrite_snl_identifier(snl, rewrite["old_name"], rewrite["new_name"])
 
 # Create or normalize explicitly requested zero-arity localized lexical Macros.
 def lexical_template(body: str) -> dict:
@@ -156,6 +320,13 @@ for spec in plan.get("requested_macros", []):
         assert existing_source["urls"] == [], f"requested Macro source URL drift: {name}"
         assert existing_source["entries"] in spec.get("accepted_source_entries", [[spec["source_entry_id"]]]), f"unaccepted requested Macro provenance: {name}"
         existing_source["entries"] = [spec["source_entry_id"]]
+        if "accepted_bodies" in spec:
+            assert len(existing_macro.get("styles", [])) == 1 and existing_macro["styles"][0].get("style_name") == spec["style_name"], f"requested Macro style drift: {name}"
+            template = existing_macro["styles"][0].get("template")
+            assert isinstance(template, dict) and template.get("type") == "i18n" and template.get("default_language") == "en" and set(template.get("values", {})) == {"en", "zh-CN"}, f"requested Macro locale shape drift: {name}"
+            for locale in ("en", "zh-CN"):
+                assert template["values"][locale].get("body") in spec["accepted_bodies"][locale], f"unaccepted requested Macro body: {name}/{locale}"
+                template["values"][locale]["body"] = spec["body"][locale]
         assert existing_macro == expected_macro, f"requested Macro drift: {name}"
     else:
         assert not canonical_path.exists(), f"requested Macro path collision: {canonical_path.name}"
@@ -175,7 +346,7 @@ for entry_id, projection in i18n["entries"].items():
         if entry.get("title") != expected:
             current_title = entry.get("title")
             if isinstance(current_title, dict) and current_title.get("type") == "i18n":
-                assert current_title.get("default_language") == "en" and set(current_title.get("values", {})) == {"en", "zh-CN"}, f"stale localized title {entry_id}"
+                assert current_title.get("default_language") in {"en", "zh-CN"} and set(current_title.get("values", {})) == {"en", "zh-CN"}, f"stale localized title {entry_id}"
                 accepted_title_en = set(projection.get("accepted_title_en", [])) | {title["en"]}
                 assert current_title["values"]["en"] in accepted_title_en, f"stale English title mapping for {entry_id}"
             else:
@@ -319,9 +490,11 @@ for path in sorted((DOC / "packages").glob("*.json")):
     package_id = manifest["id"]
     expected_ids = set(by_package.get(package_id, []))
     current_ids = manifest.get("entry_ids", [])
-    assert set(current_ids) <= expected_ids, f"Package manifest references an unknown Entry: {package_id}"
+    entry_rename_map = {rename["old_id"]: rename["new_id"] for rename in plan.get("entry_renames", [])}
+    migrated_current_ids = [entry_rename_map.get(entry_id, entry_id) for entry_id in current_ids]
+    assert set(migrated_current_ids) <= expected_ids, f"Package manifest references an unknown Entry: {package_id}"
     sorted_ids = js_locale_sorted(expected_ids)
-    if current_ids != sorted_ids:
+    if migrated_current_ids != sorted_ids:
         manifest["entry_ids"] = sorted_ids
         write_json(path, manifest)
 
@@ -584,6 +757,8 @@ def reconcile_dependency_slice() -> None:
 
 
 reconcile_dependency_slice()
+for retired_macro_path in retired_macro_paths:
+    retired_macro_path.unlink(missing_ok=True)
 
 print(json.dumps({
     "entries": len(entries),

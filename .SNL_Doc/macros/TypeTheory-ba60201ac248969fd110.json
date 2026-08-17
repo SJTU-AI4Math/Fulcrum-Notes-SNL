@@ -7,7 +7,7 @@
     "description": "",
     "source": {
       "entries": [
-        "Lambda.def.defeq.ctor.lambda-extensionality"
+        "Lambda.def.defeq.ctor.lambda-congruence"
       ],
       "urls": []
     },
@@ -23,7 +23,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "$\\lambda$-Abstraction Extensionality",
+              "body": "$\\lambda$-Abstraction Congruence",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "$\\lambda$-抽象外延性",
+              "body": "$\\lambda$-抽象同余性",
               "typst": {
                 "built_in": "",
                 "synthesis": {

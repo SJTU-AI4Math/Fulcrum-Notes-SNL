@@ -15,7 +15,9 @@
         "zh-CN": "自反性"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "thm-hyp(Type.judge(@a,Lambda.Expr),Lambda.defeq(a,a))"
+    },
     "contribution_info": null,
     "pointer": null
   }

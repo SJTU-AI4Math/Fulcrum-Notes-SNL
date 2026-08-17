@@ -1,5 +1,5 @@
 {
-  "source_head": "14e7c49b7c4895c7b2c6ae32dd96eba3fdc58681",
+  "source_head": "5a8ab228c1057d257ef1b454bfcb966dda5fb4c0",
   "entries": {
     "Algebra.ctxt.1": {
       "title": {
@@ -2546,6 +2546,30 @@
         "en": "Basic Definitions",
         "zh-CN": "基本定义"
       }
+    },
+    "Lambda.def.eta": {
+      "title": {
+        "en": "$\\eta$-reduction",
+        "zh-CN": "$\\eta$-归约"
+      }
+    },
+    "Type.subsec.Pi": {
+      "title": {
+        "en": "$\\Pi$-Type",
+        "zh-CN": "$\\Pi$-类型"
+      }
+    },
+    "Type.subsec.ImpredicativeProposition": {
+      "title": {
+        "en": "Impredicative Proposition",
+        "zh-CN": "非直谓命题类型"
+      }
+    },
+    "Type.subsec.universe": {
+      "title": {
+        "en": "Type Universe",
+        "zh-CN": "类型宇宙"
+      }
     }
   },
   "styles": {
@@ -2769,17 +2793,9 @@
       "en": "Let #0, define “#1” if and only if #2. ",
       "zh-CN": "设 #0，定义【#1】当且仅当 #2。"
     },
-    "def-inductive::EN": {
-      "en": "Define type “#0” to consist inhabitants provided by any of the following constructors:\n#1",
-      "zh-CN": "定义类型【#0】包含由以下构造子之一提供的对象：\n#1"
-    },
     "def-inductive::prop": {
       "en": "Define “#0” to admit proofs provided by any of the following constructors:\n#1",
-      "zh-CN": "定义【#0】包含由以下构造子之一提供的证明：\n#1"
-    },
-    "def-inductive::中文": {
-      "en": "Define type “#0” to consist inhabitants provided by any of the following constructors:\n#1",
-      "zh-CN": "定义类型【#0】包含由以下构造子之一提供的对象：\n#1"
+      "zh-CN": "定义【#0】可由以下构造子之一提供的证明：\n#1"
     },
     "def-struct-hyp::EN": {
       "en": "Let #0, define structure “#1” consisting of the following data:\n#2",
@@ -2869,14 +2885,6 @@
       "en": "de Bruijn Index",
       "zh-CN": "de Bruijn 指数"
     },
-    "Type.Expr-UTLC.apply::default": {
-      "en": "$\\lambda$-Application",
-      "zh-CN": "$\\lambda$-应用"
-    },
-    "Type.Expr-UTLC.bvar::default": {
-      "en": "Bound Variable",
-      "zh-CN": "受束变元"
-    },
     "Lambda.defeq.beta::default": {
       "en": "$\\beta$-reduction",
       "zh-CN": "$\\beta$-归约"
@@ -2908,6 +2916,22 @@
     "Lambda.defeq.trans::default": {
       "en": "Transitivity",
       "zh-CN": "传递性"
+    },
+    "Type.Expr-UTLC.bvar::text": {
+      "en": "Bound Variable",
+      "zh-CN": "受束变元"
+    },
+    "Type.Expr-UTLC.apply::text": {
+      "en": "$\\lambda$-Application",
+      "zh-CN": "$\\lambda$-应用"
+    },
+    "Type.Expr-UTLC.lambda::text": {
+      "en": "$\\lambda$-Abstraction",
+      "zh-CN": "$\\lambda$-抽象"
+    },
+    "Lambda.defeq.eta::default": {
+      "en": "$\\eta$-reduction",
+      "zh-CN": "$\\eta$-归约"
     }
   }
 }

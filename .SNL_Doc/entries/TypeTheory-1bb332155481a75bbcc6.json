@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "list-partial[enumerate](\r\n    %#0规定为左结合的。#1 应解释为 #2%(\r\n        Type.Expr-UTLC.apply,\r\n        Lambda.apply(x, y, z, w),\r\n        Lambda.apply(\r\n            parentheses(\r\n                Lambda.apply(\r\n                    parentheses(Lambda.apply(x, y)),\r\n                    z\r\n                )\r\n            ),\r\n            w\r\n        )\r\n    ),\r\n    %运算优先级上 #0较 #1结合更加紧密。#2 应解释为 #3%(Type.Expr-UTLC.apply, Type.Expr-UTLC.lambda, Type.lambda(list-partial[none](@x, @y), Lambda.apply(x, y)),Type.lambda(list-partial[none](@x, @y), parentheses(Lambda.apply(x, y))))\r\n)"
+      "snl": "list-partial[enumerate](\r\n    %#0规定为左结合的。#1 应解释为 #2%(\r\n        Lambda.apply,\r\n        Lambda.apply(x, y, z, w),\r\n        Lambda.apply(\r\n            parentheses(\r\n                Lambda.apply(\r\n                    parentheses(Lambda.apply(x, y)),\r\n                    z\r\n                )\r\n            ),\r\n            w\r\n        )\r\n    ),\r\n    %运算优先级上 #0较 #1结合更加紧密。#2 应解释为 #3%(Lambda.apply, Type.Expr-UTLC.lambda, Type.Expr-UTLC.lambda(list-partial[none](@x, @y), Lambda.apply(x, y)),Type.Expr-UTLC.lambda(list-partial[none](@x, @y), parentheses(Lambda.apply(x, y))))\r\n)"
     },
     "contribution_info": null,
     "pointer": null

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Church.one,Type.lambda(list-partial[none](@f,@x),Lambda.apply(f,x)))"
+      "snl": "def(Church.one,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,x)))"
     },
     "contribution_info": null,
     "pointer": null

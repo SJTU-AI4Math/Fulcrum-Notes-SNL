@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / ".SNL_Doc"
 PLAN = json.loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
 I18N = json.loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
-EXPECTED_ENTRIES = 458  # current 455 + three authored UTLC notation remarks
-EXPECTED_MACROS = 402
+EXPECTED_ENTRIES = 462  # latest authored tree plus the eta defeq constructor
+EXPECTED_MACROS = 403  # lambda notation merged; variadic application remains a surface Macro
 EXPECTED_PLACEHOLDERS = {
     "Type.def.iota-reduction": {
         "title": {"en": "$\\iota$-reduction", "zh-CN": "$\\iota$-归约"},
@@ -136,14 +136,42 @@ entries, entry_paths = load_entities("entries", "entry")
 macros, macro_paths = load_entities("macros", "macro")
 assert len(macros) == EXPECTED_MACROS, f"Macro count changed: {len(macros)}"
 assert len(entries) == EXPECTED_ENTRIES, f"unexpected Entry count: {len(entries)}"
-assert I18N.get("source_head") == "14e7c49b7c4895c7b2c6ae32dd96eba3fdc58681", "I18n map source lease changed"
-assert len(I18N.get("entries", {})) == 378, "I18n Entry mapping coverage changed"
+assert I18N.get("source_head") == "5a8ab228c1057d257ef1b454bfcb966dda5fb4c0", "I18n map source lease changed"
+assert len(I18N.get("entries", {})) == 382, "I18n Entry mapping coverage changed"
 assert len(I18N.get("styles", {})) == 88, "I18n Macro-style mapping coverage changed"
 
 # Macro identity migrations are complete, canonical, and have no stale alias.
 for rename in PLAN.get("macro_renames", []):
     assert rename["old_name"] not in macros, f"stale renamed Macro: {rename['old_name']}"
     assert rename["new_name"] in macros, f"missing renamed Macro: {rename['new_name']}"
+for rename in PLAN.get("entry_renames", []):
+    assert rename["old_id"] not in entries, f"stale renamed Entry: {rename['old_id']}"
+    assert rename["new_id"] in entries, f"missing renamed Entry: {rename['new_id']}"
+for merge in PLAN.get("macro_merges", []):
+    assert merge["source_name"] not in macros, f"stale merged Macro: {merge['source_name']}"
+    target = macros.get(merge["target_name"])
+    assert target is not None, f"missing merged Macro target: {merge['target_name']}"
+    source_snapshot = merge["accepted_source_macro"]
+    target_snapshot = merge["accepted_target_macro"]
+    canonical_macro = json.loads(json.dumps(target_snapshot, ensure_ascii=False))
+    text_style = canonical_macro["styles"][0]
+    assert text_style["style_name"] == merge["target_text_style_from"]
+    text_style["style_name"] = merge["target_text_style_name"]
+    canonical_macro["description"] = source_snapshot["description"]
+    canonical_macro["kind"] = source_snapshot["kind"]
+    canonical_macro["dynamic_arity"] = source_snapshot["dynamic_arity"]
+    canonical_macro["styles"] = [*json.loads(json.dumps(source_snapshot["styles"], ensure_ascii=False)), text_style]
+    assert target == canonical_macro, f"merged Macro snapshot drift: {merge['target_name']}"
+for update in PLAN.get("macro_style_updates", []):
+    macro = macros.get(update["name"])
+    assert macro is not None
+    assert macro["kind"] == update["kind"] and macro["dynamic_arity"] is update["dynamic_arity"]
+    assert [style["style_name"] for style in macro["styles"]] == update["canonical_style_names"]
+    assert macro["styles"][0]["template"]["body"] == update["symbolic_body"]
+for rewrite in PLAN.get("snl_macro_rewrites", []):
+    old_name = rewrite["old_name"]
+    for entry_id, entry in entries.items():
+        assert old_name not in extract_snl_macro_names((entry.get("content") or {}).get("snl", "")), f"stale merged Macro call in {entry_id}: {old_name}"
 
 # All parallel Definitional Equality labels are canonical localized zero-arity Macros.
 for spec in PLAN.get("requested_macros", []):
@@ -291,6 +319,20 @@ for update in PLAN.get("macro_source_updates", []):
     macro = macros.get(update["name"])
     assert macro is not None, f"missing source-updated Macro {update['name']}"
     assert macro.get("source", {}).get("entries") == update["entries"], f"Macro source update did not land: {update['name']}"
+
+# The UTLC definitional-equality family is complete and semantically named.
+defeq_plan = next(item for item in PLAN["inductive_types"] if item["parent_entry_id"] == "Lambda.def.defeq")
+assert [item["id"] for item in defeq_plan["constructors"]] == [
+    "Lambda.def.defeq.ctor.beta-reduction",
+    "Lambda.def.defeq.ctor.eta-reduction",
+    "Lambda.def.defeq.ctor.lambda-congruence",
+    "Lambda.def.defeq.ctor.application-congruence",
+    "Lambda.def.defeq.ctor.reflexivity",
+    "Lambda.def.defeq.ctor.symmetry",
+    "Lambda.def.defeq.ctor.transitivity",
+]
+assert all(item.get("kind") == "property" and item.get("content", {}).get("snl") for item in defeq_plan["constructors"])
+assert "extensionality" not in " ".join(item["id"] for item in defeq_plan["constructors"])
 
 # Every audited inductive type has its exact planned constructor/recursor metadata and content.
 child_specs = []

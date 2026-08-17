@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\r\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$%(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda,Type.lambda(@x,Type.lambda(@y,Lambda.apply(parentheses(Type.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0@#z),Type.Expr-UTLC.bvar(1@#y),Type.Expr-UTLC.bvar(2@#x)))),Type.Expr-UTLC.bvar(0@#y)))))"
+      "snl": "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\r\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$%(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda,Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0@#z),Type.Expr-UTLC.bvar(1@#y),Type.Expr-UTLC.bvar(2@#x)))),Type.Expr-UTLC.bvar(0@#y)))))"
     },
     "contribution_info": null,
     "pointer": null

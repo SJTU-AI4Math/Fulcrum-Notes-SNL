@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "list-partial[enumerate](\r\n    %通常将 #0表达式根据 #1记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda, deBruijnIndex ,Type.lambda(@x, P(x)),),\r\n    %将形如 #0 的多元函数记作 #1%(\r\n        Type.lambda(\r\n            @x,\r\n            Type.lambda(@y, Type.apply(P(x), y))\r\n        ),\r\n        Type.lambda(list-partial[none](@x, @y), Type.apply(P(x), y))\r\n    )\r\n)"
+      "snl": "list-partial[enumerate](\r\n    %通常将 #0表达式根据 #1记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda, deBruijnIndex ,Type.Expr-UTLC.lambda(@x, P(x)),),\r\n    %将形如 #0 的多元函数记作 #1%(\r\n        Type.Expr-UTLC.lambda(\r\n            @x,\r\n            Type.Expr-UTLC.lambda(@y, Type.apply(P(x), y))\r\n        ),\r\n        Type.Expr-UTLC.lambda(list-partial[none](@x, @y), Type.apply(P(x), y))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null
