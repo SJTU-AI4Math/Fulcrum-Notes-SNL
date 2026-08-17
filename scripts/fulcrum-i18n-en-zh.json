@@ -2891,7 +2891,7 @@
     },
     "Lambda.defeq.lam-cong::default": {
       "en": "$\\lambda$-Abstraction Congruence",
-      "zh-CN": "$\\lambda$-抽象同余性",
+      "zh-CN": "$\\lambda$-抽象相容性",
       "accepted_en": [
         "$\\lambda$-Abstraction Extensionality",
         "$\\lambda$-Abstraction Congruence"
@@ -2903,7 +2903,7 @@
     },
     "Lambda.defeq.app-cong::default": {
       "en": "Application Congruence",
-      "zh-CN": "应用同余性"
+      "zh-CN": "应用相容性"
     },
     "Lambda.defeq.refl::default": {
       "en": "Reflexivity",

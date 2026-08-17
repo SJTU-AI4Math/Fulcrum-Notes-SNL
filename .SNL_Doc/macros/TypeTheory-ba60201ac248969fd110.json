@@ -43,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "$\\lambda$-抽象同余性",
+              "body": "$\\lambda$-抽象相容性",
               "typst": {
                 "built_in": "",
                 "synthesis": {

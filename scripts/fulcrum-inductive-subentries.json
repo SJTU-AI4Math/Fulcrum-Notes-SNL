@@ -819,7 +819,7 @@
           "kind": "property",
           "title": {
             "en": "$\\lambda$-Abstraction Congruence",
-            "zh-CN": "$\\lambda$-抽象同余性"
+            "zh-CN": "$\\lambda$-抽象相容性"
           },
           "accepted_kind": [
             "definition",
@@ -834,7 +834,7 @@
           "kind": "property",
           "title": {
             "en": "Application Congruence",
-            "zh-CN": "应用同余性"
+            "zh-CN": "应用相容性"
           },
           "accepted_kind": [
             "definition",
@@ -1560,7 +1560,7 @@
       "style_name": "default",
       "body": {
         "en": "Application Congruence",
-        "zh-CN": "应用同余性"
+        "zh-CN": "应用相容性"
       },
       "source_entry_id": "Lambda.def.defeq.ctor.application-congruence",
       "accepted_source_entries": [
@@ -1571,7 +1571,16 @@
         [
           "Lambda.def.defeq.ctor.application-congruence"
         ]
-      ]
+      ],
+      "accepted_bodies": {
+        "en": [
+          "Application Congruence"
+        ],
+        "zh-CN": [
+          "应用同余性",
+          "应用相容性"
+        ]
+      }
     },
     {
       "name": "Lambda.defeq.refl",

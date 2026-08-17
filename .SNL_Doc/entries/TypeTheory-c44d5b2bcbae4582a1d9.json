@@ -12,7 +12,7 @@
       "default_language": "en",
       "values": {
         "en": "$\\lambda$-Abstraction Congruence",
-        "zh-CN": "$\\lambda$-抽象同余性"
+        "zh-CN": "$\\lambda$-抽象相容性"
       }
     },
     "content": {

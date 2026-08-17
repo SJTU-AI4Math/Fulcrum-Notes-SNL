@@ -43,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "应用同余性",
+              "body": "应用相容性",
               "typst": {
                 "built_in": "",
                 "synthesis": {
