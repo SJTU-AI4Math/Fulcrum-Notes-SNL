@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(Type.Expr-UTLC.apply,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(Type.Expr-UTLC.bvar,Type.to(Nat,Lambda.Expr))))"
+      "snl": "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(Type.Expr-UTLC.apply,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(Type.Expr-UTLC.bvar[text],Type.to(Nat,Lambda.Expr))))"
     },
     "contribution_info": null,
     "pointer": null

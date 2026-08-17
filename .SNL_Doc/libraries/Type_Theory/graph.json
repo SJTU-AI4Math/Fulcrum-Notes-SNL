@@ -880,14 +880,6 @@
       }
     },
     {
-      "id": "n_sub_9f104b6f3c92",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.rl.Expr-LC.recursor",
-        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
-      }
-    },
-    {
       "id": "n_sub_5db0d93abf05",
       "label": "Entry",
       "props": {
@@ -1612,11 +1604,6 @@
     {
       "from": "n_sub_50d85e06a8b4",
       "to": "n_64",
-      "label": "branch"
-    },
-    {
-      "from": "n_13",
-      "to": "n_sub_9f104b6f3c92",
       "label": "branch"
     }
   ]

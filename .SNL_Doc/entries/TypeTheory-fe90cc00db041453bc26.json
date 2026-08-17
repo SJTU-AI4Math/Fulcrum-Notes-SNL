@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Type.rl.Expr-LC.ctor.bound-variable",
@@ -15,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(Type.judge(@n,Nat),Type.apply[paren](Type.Expr-UTLC.bvar,n))"
+      "snl": "def-hyp-opq(Type.judge(@n,Nat),Type.Expr-UTLC.bvar(n))"
     },
     "contribution_info": null,
     "pointer": null

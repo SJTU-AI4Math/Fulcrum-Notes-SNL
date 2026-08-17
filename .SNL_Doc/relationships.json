@@ -4739,7 +4739,7 @@
         "macros": [
           "def"
         ],
-        "isAtomic": false
+        "isAtomic": true
       }
     },
     {
@@ -4751,19 +4751,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Nat"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Type.rl.Expr-LC.ctor.bound-variable.Type.rl.Expr-LC.ctor.application",
-      "from": "Type.rl.Expr-LC.ctor.bound-variable",
-      "to": "Type.rl.Expr-LC.ctor.application",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.apply"
         ],
         "isAtomic": true
       }
@@ -4778,7 +4765,7 @@
         "macros": [
           "Type.judge"
         ],
-        "isAtomic": false
+        "isAtomic": true
       }
     },
     {
