@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Lambda.def.eta",
@@ -14,7 +15,9 @@
         "zh-CN": "$\\eta$-归约"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "def-inductive[prop](Lambda.eta(@$\\cdot$,@$\\cdot$),ctors(Type.to(Type.judge[paren](@f,Lambda.LegalExpr),parentheses(Lambda.eta(Type.lambda(@x,Lambda.apply(f,x)),f)))))"
+    },
     "contribution_info": null,
     "pointer": null
   }

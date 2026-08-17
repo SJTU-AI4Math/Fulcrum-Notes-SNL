@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.Expr), Lambda.LegalExpr[are](list-partial[formula](a, b))),\r\n    Lambda.beta(a, b)\r\n)"
+      "snl": "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.LegalExpr)),\r\n    Lambda.beta(a, b)\r\n)"
     },
     "contribution_info": null,
     "pointer": null

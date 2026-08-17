@@ -6,9 +6,7 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [
-        "Lambda.def.defeq.ctor.lambda-extensionality"
-      ],
+      "entries": [],
       "urls": []
     },
     "kind": "const",
@@ -23,7 +21,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "$\\lambda$-Abstraction Extensionality",
+              "body": "$\\eta$-reduction",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +41,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "$\\lambda$-抽象外延性",
+              "body": "$\\eta$-规约",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -66,6 +64,6 @@
       }
     ],
     "tags": [],
-    "name": "Lambda.defeq.lam-cong"
+    "name": "Lambda.defeq.eta"
   }
 }

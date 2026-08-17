@@ -859,24 +859,21 @@
       "id": "n_62",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rmk.Expr-LC.lambda",
-        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+        "entryId": "Type.rmk.Expr-LC.lambda"
       }
     },
     {
       "id": "n_63",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rmk.deBruijnIndex",
-        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+        "entryId": "Type.rmk.deBruijnIndex"
       }
     },
     {
       "id": "n_64",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rmk.Expr-LC.apply",
-        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+        "entryId": "Type.rmk.Expr-LC.apply"
       }
     },
     {
@@ -997,6 +994,27 @@
       "props": {
         "entryId": "Type.def.structure.projection.first",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_65",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.Pi"
+      }
+    },
+    {
+      "id": "n_66",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.universe"
+      }
+    },
+    {
+      "id": "n_67",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.ImpredicativeProposition"
       }
     }
   ],
@@ -1158,7 +1176,7 @@
     },
     {
       "from": "n_8",
-      "to": "n_9",
+      "to": "n_60",
       "label": "branch"
     },
     {
@@ -1533,12 +1551,17 @@
     },
     {
       "from": "n_8",
-      "to": "n_5",
+      "to": "n_66",
       "label": "branch"
     },
     {
       "from": "n_8",
-      "to": "n_60",
+      "to": "n_67",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_65",
       "label": "branch"
     },
     {
@@ -1604,6 +1627,16 @@
     {
       "from": "n_sub_50d85e06a8b4",
       "to": "n_64",
+      "label": "branch"
+    },
+    {
+      "from": "n_65",
+      "to": "n_9",
+      "label": "branch"
+    },
+    {
+      "from": "n_66",
+      "to": "n_5",
       "label": "branch"
     }
   ]

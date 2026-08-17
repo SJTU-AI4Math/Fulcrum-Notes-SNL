@@ -2558,19 +2558,6 @@
       }
     },
     {
-      "id": "dep.Lambda.def.beta-single.Lambda.def.beta",
-      "from": "Lambda.def.beta-single",
-      "to": "Lambda.def.beta",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Lambda.beta"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
       "id": "dep.Lambda.def.beta-single.Type.def.LegalExpr-LC",
       "from": "Lambda.def.beta-single",
       "to": "Type.def.LegalExpr-LC",
@@ -2580,20 +2567,7 @@
         "macros": [
           "Lambda.LegalExpr"
         ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Lambda.def.beta-single.Type.rl.Expr-LC",
-      "from": "Lambda.def.beta-single",
-      "to": "Type.rl.Expr-LC",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Lambda.Expr"
-        ],
-        "isAtomic": false
+        "isAtomic": true
       }
     },
     {
@@ -2740,6 +2714,19 @@
       }
     },
     {
+      "id": "dep.Lambda.def.defeq.Lambda.def.eta",
+      "from": "Lambda.def.defeq",
+      "to": "Lambda.def.eta",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.eta"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Lambda.def.defeq.Logic.def.forall",
       "from": "Lambda.def.defeq",
       "to": "Logic.def.forall",
@@ -2775,7 +2762,7 @@
         "macros": [
           "Type.lambda"
         ],
-        "isAtomic": true
+        "isAtomic": false
       }
     },
     {
@@ -2794,6 +2781,71 @@
     {
       "id": "dep.Lambda.def.defeq.Type.rl.judge",
       "from": "Lambda.def.defeq",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.eta.Fulcrum.def",
+      "from": "Lambda.def.eta",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.eta.Type.def.LegalExpr-LC",
+      "from": "Lambda.def.eta",
+      "to": "Type.def.LegalExpr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.LegalExpr"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Lambda.def.eta.Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "from": "Lambda.def.eta",
+      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.lambda"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.eta.Type.rl.fun",
+      "from": "Lambda.def.eta",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.eta.Type.rl.judge",
+      "from": "Lambda.def.eta",
       "to": "Type.rl.judge",
       "label": "depends",
       "metadata": {
@@ -4959,6 +5011,19 @@
         "generator": "macro-source-scan",
         "macros": [
           "deBruijnIndex"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.rmk.deBruijnIndex.Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "from": "Type.rmk.deBruijnIndex",
+      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.lambda"
         ],
         "isAtomic": true
       }

@@ -4,15 +4,15 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Lambda.def.defeq.ctor.lambda-extensionality",
+    "id": "Type.subsec.Pi",
     "package": "TypeTheory",
-    "kind": "property",
+    "kind": "subsection",
     "title": {
       "type": "i18n",
-      "default_language": "en",
+      "default_language": "zh-CN",
       "values": {
-        "en": "$\\lambda$-Abstraction Extensionality",
-        "zh-CN": "$\\lambda$-抽象外延性"
+        "zh-CN": "$\\Pi$-类型",
+        "en": "$\\Pi$-Type"
       }
     },
     "content": {},

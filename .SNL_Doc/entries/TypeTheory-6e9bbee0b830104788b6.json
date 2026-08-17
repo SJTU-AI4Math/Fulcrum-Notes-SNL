@@ -4,15 +4,15 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Lambda.def.defeq.ctor.lambda-extensionality",
+    "id": "Type.subsec.ImpredicativeProposition",
     "package": "TypeTheory",
-    "kind": "property",
+    "kind": "subsection",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "$\\lambda$-Abstraction Extensionality",
-        "zh-CN": "$\\lambda$-抽象外延性"
+        "en": "Impredicative Proposition",
+        "zh-CN": "非直谓命题类型"
       }
     },
     "content": {},

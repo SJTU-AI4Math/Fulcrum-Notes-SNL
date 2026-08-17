@@ -123,11 +123,14 @@
     "Type.subsec.Church",
     "Type.subsec.combinators",
     "Type.subsec.Curry-Howard",
+    "Type.subsec.ImpredicativeProposition",
     "Type.subsec.inductive-def",
     "Type.subsec.inductive-types",
     "Type.subsec.lambda-cube",
     "Type.subsec.patternMatching",
+    "Type.subsec.Pi",
     "Type.subsec.structure",
+    "Type.subsec.universe",
     "Type.thm.SKI-complete"
   ]
 }
