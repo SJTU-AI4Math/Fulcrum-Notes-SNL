@@ -11,8 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / ".SNL_Doc"
 PLAN = json.loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
 I18N = json.loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
-EXPECTED_ENTRIES = 455  # current 453 + iota-reduction and UTLC let/zeta placeholders
-EXPECTED_MACROS = 393
+EXPECTED_ENTRIES = 458  # current 455 + three authored UTLC notation remarks
+EXPECTED_MACROS = 402
 EXPECTED_PLACEHOLDERS = {
     "Type.def.iota-reduction": {
         "title": {"en": "$\\iota$-reduction", "zh-CN": "$\\iota$-归约"},
@@ -82,6 +82,45 @@ def is_lexical(text: str) -> bool:
     return bool(re.search(r"[A-Za-z\u4e00-\u9fff]", text))
 
 
+def extract_snl_macro_names(snl: str) -> list[str]:
+    names: set[str] = set()
+    i = 0
+    n = len(snl)
+    is_start = lambda c: c.isascii() and (c.isalpha() or c in "_.")
+    is_cont = lambda c: c.isascii() and (c.isalnum() or c in "_.")
+    while i < n:
+        c = snl[i]
+        if c.isspace() or c in "(),[]":
+            i += 1
+        elif c == "%":
+            i += 1
+            while i < n and snl[i] != "%": i += 1
+            i += 1
+        elif c == "$":
+            delimiter = "$$" if i + 1 < n and snl[i + 1] == "$" else "$"
+            i += len(delimiter)
+            while i < n and not snl.startswith(delimiter, i): i += 1
+            i += len(delimiter)
+        elif c == "@":
+            i += 1
+            if i < n and snl[i] in "%$": continue
+            while i < n and is_cont(snl[i]): i += 1
+        elif is_start(c):
+            j = i + 1
+            while j < n and is_cont(snl[j]): j += 1
+            names.add(snl[i:j])
+            i = j
+            if i < n and snl[i] == "[":
+                while i < n and snl[i] != "]": i += 1
+                if i < n: i += 1
+            if i < n and snl[i] == "@":
+                i += 1
+                while i < n and is_cont(snl[i]): i += 1
+        else:
+            i += 1
+    return sorted(names)
+
+
 config = json.loads((DOC / "config.json").read_text(encoding="utf-8"))
 entry_kinds = {kind["id"]: kind for kind in config["entry_kinds"]}
 assert set(entry_kinds) == set(EXPECTED_DARK_ENTRY_STROKES), "Fulcrum Entry Kind catalog changed"
@@ -99,7 +138,64 @@ assert len(macros) == EXPECTED_MACROS, f"Macro count changed: {len(macros)}"
 assert len(entries) == EXPECTED_ENTRIES, f"unexpected Entry count: {len(entries)}"
 assert I18N.get("source_head") == "14e7c49b7c4895c7b2c6ae32dd96eba3fdc58681", "I18n map source lease changed"
 assert len(I18N.get("entries", {})) == 378, "I18n Entry mapping coverage changed"
-assert len(I18N.get("styles", {})) == 83, "I18n Macro-style mapping coverage changed"
+assert len(I18N.get("styles", {})) == 88, "I18n Macro-style mapping coverage changed"
+
+# Macro identity migrations are complete, canonical, and have no stale alias.
+for rename in PLAN.get("macro_renames", []):
+    assert rename["old_name"] not in macros, f"stale renamed Macro: {rename['old_name']}"
+    assert rename["new_name"] in macros, f"missing renamed Macro: {rename['new_name']}"
+
+# All parallel Definitional Equality labels are canonical localized zero-arity Macros.
+for spec in PLAN.get("requested_macros", []):
+    macro = macros.get(spec["name"])
+    assert macro is not None, f"missing requested Macro: {spec['name']}"
+    assert macro["kind"] == spec["kind"] and macro["dynamic_arity"] is False
+    assert macro["source"] == {"entries": [spec["source_entry_id"]], "urls": []}
+    styles = [style for style in macro["styles"] if style["style_name"] == spec["style_name"]]
+    assert len(styles) == 1 and styles[0]["tags"] == []
+    values = styles[0]["template"]
+    assert values.get("type") == "i18n" and values.get("default_language") == "en" and set(values.get("values", {})) == {"en", "zh-CN"}
+    assert {locale: values["values"][locale]["body"] for locale in ("en", "zh-CN")} == spec["body"]
+
+# The explicitly managed dependency slice exactly matches Entry SNL and Macro provenance.
+dependency_scope = set(PLAN.get("dependency_scope_entries", []))
+assert dependency_scope <= set(entries)
+relationship_data = json.loads((DOC / "relationships.json").read_text(encoding="utf-8"))
+relationships = relationship_data.get("relationships", [])
+assert len({rel["id"] for rel in relationships}) == len(relationships), "duplicate pool relationship id"
+auto_scope = [rel for rel in relationships if rel.get("from") in dependency_scope and rel.get("label") == "depends" and isinstance(rel.get("metadata"), dict) and rel["metadata"].get("generator") == "macro-source-scan"]
+actual_dependencies = {(rel["from"], rel["to"]): tuple(rel["metadata"].get("macros", [])) for rel in auto_scope}
+assert len(actual_dependencies) == len(auto_scope), "duplicate managed dependency edge"
+expected_dependencies = {}
+for entry_id in dependency_scope:
+    by_target = {}
+    for macro_name in extract_snl_macro_names((entries[entry_id].get("content") or {}).get("snl", "")):
+        macro = macros.get(macro_name)
+        if macro is None:
+            continue
+        for target in (macro.get("source") or {}).get("entries", []):
+            if target and target != entry_id and target in entries:
+                by_target.setdefault(target, set()).add(macro_name)
+    for target, witnesses in by_target.items():
+        expected_dependencies[(entry_id, target)] = tuple(sorted(witnesses))
+assert actual_dependencies == expected_dependencies, "managed dependency slice is stale"
+for relation in auto_scope:
+    seen = {relation["from"]}
+    queue = [relation["from"]]
+    reachable = False
+    while queue and not reachable:
+        source = queue.pop(0)
+        for candidate in relationships:
+            if candidate is relation or candidate.get("label") != "depends" or candidate.get("from") != source:
+                continue
+            target = candidate.get("to")
+            if target == relation["to"]:
+                reachable = True
+                break
+            if target not in seen:
+                seen.add(target)
+                queue.append(target)
+    assert relation["metadata"].get("isAtomic") is (not reachable), f"stale dependency atomicity: {relation['id']}"
 
 for entry_id, projection in I18N["entries"].items():
     assert entry_id in entries, f"I18n map references missing Entry {entry_id}"
@@ -144,6 +240,16 @@ for key, projection in I18N["styles"].items():
 
 # Requested Entries have exactly the planned content and graph placement.
 planned_requests = {spec["id"]: spec for spec in PLAN["requested_entries"]}
+PARALLEL_REMARKS = {
+    "Type.rmk.Expr-LC.lambda": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+    "Type.rmk.Expr-LC.apply": "Type.rl.Expr-LC.ctor.application",
+    "Type.rmk.deBruijnIndex": "Type.rl.Expr-LC.ctor.bound-variable",
+}
+for entry_id, parent_id in PARALLEL_REMARKS.items():
+    spec = planned_requests.get(entry_id)
+    assert spec is not None and spec["kind"] == "remark" and spec["parent_entry_id"] == parent_id
+    assert spec["graph_level"] == "subentry" and "snl" in spec.get("content", {})
+
 integrated_bad_recursor = planned_requests.get("Type.def.Bad.rec")
 assert integrated_bad_recursor is not None, "concurrent Bad recursor is not represented in the authoritative plan"
 assert integrated_bad_recursor["parent_entry_id"] == "Type.cxmp.Bad" and integrated_bad_recursor["graph_level"] == "subentry"
@@ -186,7 +292,7 @@ for update in PLAN.get("macro_source_updates", []):
     assert macro is not None, f"missing source-updated Macro {update['name']}"
     assert macro.get("source", {}).get("entries") == update["entries"], f"Macro source update did not land: {update['name']}"
 
-# Every audited inductive type has constructor and recursor definition subentries, all still empty.
+# Every audited inductive type has its exact planned constructor/recursor metadata and content.
 child_specs = []
 for inductive in PLAN["inductive_types"]:
     parent_id = inductive["parent_entry_id"]
@@ -198,8 +304,15 @@ for inductive in PLAN["inductive_types"]:
         entry = entries.get(child["id"])
         assert entry is not None, f"missing inductive subentry {child['id']}"
         assert entry["package"] == inductive["package"], f"subentry package mismatch: {child['id']}"
-        assert entry["kind"] == "definition", f"subentry is not a definition: {child['id']}"
-        assert entry.get("content") == {}, f"subentry content must be empty: {child['id']}"
+        expected_kind = child.get("kind", "definition")
+        expected_content_spec = child.get("content", {})
+        expected_content = {}
+        if "snl" in expected_content_spec:
+            expected_content["snl"] = expected_content_spec["snl"]
+        if "markdown" in expected_content_spec:
+            expected_content["markdown"] = {"type": "i18n", "default_language": "en", "values": expected_content_spec["markdown"]}
+        assert entry["kind"] == expected_kind, f"wrong subentry kind: {child['id']}"
+        assert entry.get("content") == expected_content, f"wrong subentry content: {child['id']}"
         assert i18n_values(entry["title"], f"subentry {child['id']} title") == child["title"]
 
 # Entity paths and package manifests are canonical and complete.
@@ -301,6 +414,27 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
         seen.add(node_id)
         stack.extend(outgoing[node_id])
     assert seen == node_id_set, f"cycle or unreachable graph node in {graph_path}: {sorted(node_id_set - seen)}"
+
+# Explicit counter repairs hold on every occurrence of the adopted Entry.
+for repair in PLAN.get("graph_counter_repairs", []):
+    repaired_occurrences = 0
+    for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
+        graph = json.loads(graph_path.read_text(encoding="utf-8"))
+        repair_nodes = [node for node in graph.get("nodes", []) if node.get("props", {}).get("entryId") == repair["entry_id"]]
+        if not repair_nodes:
+            continue
+        counters = json.loads((graph_path.parent / "counters.json").read_text(encoding="utf-8")).get("counters", [])
+        stack = counters[:]
+        expected_ids = set()
+        while stack:
+            counter = stack.pop()
+            if str(counter.get("name", "")).casefold() == repair["level"].casefold():
+                expected_ids.add(counter["id"])
+            stack.extend(counter.get("children", []))
+        assert len(expected_ids) == 1, f"counter repair level missing or ambiguous: {repair['level']}"
+        assert all(node.get("props", {}).get("counterId") in expected_ids for node in repair_nodes), f"counter repair drift: {repair['entry_id']}"
+        repaired_occurrences += len(repair_nodes)
+    assert repaired_occurrences > 0, f"counter repair Entry missing: {repair['entry_id']}"
 
 # Every teaching concept has one declared primary Library; secondary occurrences are explicit applications/variants.
 for ownership in PLAN.get("concept_ownership", []):

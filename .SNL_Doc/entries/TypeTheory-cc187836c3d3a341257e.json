@@ -11,8 +11,8 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "$\\lambda$-Abstraction Extensionality",
-        "zh-CN": "$\\lambda$-抽象外延性"
+        "en": "$\\lambda$-Abstraction Congruence",
+        "zh-CN": "$\\lambda$-抽象同余性"
       }
     },
     "content": {},

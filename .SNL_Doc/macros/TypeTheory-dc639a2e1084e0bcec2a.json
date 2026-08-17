@@ -7,7 +7,7 @@
     "description": "",
     "source": {
       "entries": [
-        "Type.rl.Expr-LC"
+        "Type.rl.Expr-LC.ctor.lambda-abstraction"
       ],
       "urls": []
     },

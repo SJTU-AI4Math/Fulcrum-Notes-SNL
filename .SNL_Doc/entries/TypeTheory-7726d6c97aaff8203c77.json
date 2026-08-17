@@ -11,8 +11,8 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Application Extensionality",
-        "zh-CN": "应用外延性"
+        "en": "Application Congruence",
+        "zh-CN": "应用同余性"
       }
     },
     "content": {},

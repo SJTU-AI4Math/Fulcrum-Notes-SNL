@@ -2236,8 +2236,8 @@
     },
     "Type.def.S-Combinator": {
       "title": {
-        "en": "S Combinator",
-        "zh-CN": "S 组合子"
+        "en": "$S$ Combinator",
+        "zh-CN": "$S$ 组合子"
       }
     },
     "Type.def.Sigma": {
@@ -2629,18 +2629,6 @@
       "en": "#0 is a partial order",
       "zh-CN": "#0 是偏序"
     },
-    "Lambda.LegalExpr::are": {
-      "en": "#0 are legal",
-      "zh-CN": "#0 是合法 $\\lambda$-表达式"
-    },
-    "Lambda.LegalExpr::is": {
-      "en": "#0 is legal",
-      "zh-CN": "#0 是合法 $\\lambda$-表达式"
-    },
-    "Lambda.LegalExpr::中文": {
-      "en": "#0 is legal",
-      "zh-CN": "#0 是合法 $\\lambda$-表达式"
-    },
     "Lean4.constructor::default": {
       "en": "Split the conjunction into the following goals:",
       "zh-CN": "将合取拆分为以下目标："
@@ -2765,14 +2753,6 @@
       "en": "which is a contradiction",
       "zh-CN": "这就产生了矛盾"
     },
-    "def-hyp-opq::EN": {
-      "en": "Let #0, opaquely define “#1”.",
-      "zh-CN": "设 #0，不透明地定义【#1】。"
-    },
-    "def-hyp-opq::中文": {
-      "en": "Let #0, opaquely define “#1”.",
-      "zh-CN": "设 #0，不透明地定义【#1】。"
-    },
     "def-hyp::EN": {
       "en": "Let #0, define “#1” to be #2. ",
       "zh-CN": "设 #0，定义【#1】为 #2。"
@@ -2880,6 +2860,54 @@
     "thm-hyp::display": {
       "en": "Let #0, then #1",
       "zh-CN": "设 #0，则 #1"
+    },
+    "def-hyp-opq::localized-default": {
+      "en": "Let #0, define “#1”.",
+      "zh-CN": "设 #0，定义【#1】。"
+    },
+    "deBruijnIndex::default": {
+      "en": "de Bruijn Index",
+      "zh-CN": "de Bruijn 指数"
+    },
+    "Type.Expr-UTLC.apply::default": {
+      "en": "$\\lambda$-Application",
+      "zh-CN": "$\\lambda$-应用"
+    },
+    "Type.Expr-UTLC.bvar::default": {
+      "en": "Bound Variable",
+      "zh-CN": "受束变元"
+    },
+    "Lambda.defeq.beta::default": {
+      "en": "$\\beta$-reduction",
+      "zh-CN": "$\\beta$-归约"
+    },
+    "Lambda.defeq.lam-cong::default": {
+      "en": "$\\lambda$-Abstraction Congruence",
+      "zh-CN": "$\\lambda$-抽象同余性",
+      "accepted_en": [
+        "$\\lambda$-Abstraction Extensionality",
+        "$\\lambda$-Abstraction Congruence"
+      ],
+      "accepted_body": [
+        "$\\lambda$-Abstraction Extensionality",
+        "$\\lambda$-抽象外延性"
+      ]
+    },
+    "Lambda.defeq.app-cong::default": {
+      "en": "Application Congruence",
+      "zh-CN": "应用同余性"
+    },
+    "Lambda.defeq.refl::default": {
+      "en": "Reflexivity",
+      "zh-CN": "自反性"
+    },
+    "Lambda.defeq.symm::default": {
+      "en": "Symmetry",
+      "zh-CN": "对称性"
+    },
+    "Lambda.defeq.trans::default": {
+      "en": "Transitivity",
+      "zh-CN": "传递性"
     }
   }
 }

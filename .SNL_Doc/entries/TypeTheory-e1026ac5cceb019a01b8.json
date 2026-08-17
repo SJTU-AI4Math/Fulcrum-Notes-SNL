@@ -9,8 +9,9 @@
     "kind": "remark",
     "title": {
       "type": "i18n",
-      "default_language": "zh-CN",
+      "default_language": "en",
       "values": {
+        "en": "$\\lambda$-Abstraction Notation Conventions",
         "zh-CN": "$\\lambda$-抽象记号习惯"
       }
     },

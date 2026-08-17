@@ -418,6 +418,60 @@
       ],
       "graph_level": "subentry",
       "existing": true
+    },
+    {
+      "id": "Type.rmk.Expr-LC.lambda",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "$\\lambda$-Abstraction Notation Conventions",
+        "zh-CN": "$\\lambda$-抽象记号习惯"
+      },
+      "content": {
+        "snl": "list-partial[enumerate](\r\n    %通常将 #0表达式根据 #1记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda, deBruijnIndex ,Type.lambda(@x, P(x)),),\r\n    %将形如 #0 的多元函数记作 #1%(\r\n        Type.lambda(\r\n            @x,\r\n            Type.lambda(@y, Type.apply(P(x), y))\r\n        ),\r\n        Type.lambda(list-partial[none](@x, @y), Type.apply(P(x), y))\r\n    )\r\n)"
+      },
+      "parent_entry_id": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "parent_node_ids": [
+        "n_sub_37901b2e9ebe"
+      ],
+      "graph_level": "subentry",
+      "existing": true
+    },
+    {
+      "id": "Type.rmk.Expr-LC.apply",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "$\\lambda$-Application Notation Conventions",
+        "zh-CN": "$\\lambda$-应用记号习惯"
+      },
+      "content": {
+        "snl": "list-partial[enumerate](\r\n    %#0规定为左结合的。#1 应解释为 #2%(\r\n        Type.Expr-UTLC.apply,\r\n        Lambda.apply(x, y, z, w),\r\n        Lambda.apply(\r\n            parentheses(\r\n                Lambda.apply(\r\n                    parentheses(Lambda.apply(x, y)),\r\n                    z\r\n                )\r\n            ),\r\n            w\r\n        )\r\n    ),\r\n    %运算优先级上 #0较 #1结合更加紧密。#2 应解释为 #3%(Type.Expr-UTLC.apply, Type.Expr-UTLC.lambda, Type.lambda(list-partial[none](@x, @y), Lambda.apply(x, y)),Type.lambda(list-partial[none](@x, @y), parentheses(Lambda.apply(x, y))))\r\n)"
+      },
+      "parent_entry_id": "Type.rl.Expr-LC.ctor.application",
+      "parent_node_ids": [
+        "n_sub_50d85e06a8b4"
+      ],
+      "graph_level": "subentry",
+      "existing": true
+    },
+    {
+      "id": "Type.rmk.deBruijnIndex",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "de Bruijn Index",
+        "zh-CN": "de Bruijn 指数"
+      },
+      "content": {
+        "snl": "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。%(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda)"
+      },
+      "parent_entry_id": "Type.rl.Expr-LC.ctor.bound-variable",
+      "parent_node_ids": [
+        "n_sub_871cb6341c3d"
+      ],
+      "graph_level": "subentry",
+      "existing": true
     }
   ],
   "entry_updates": [
@@ -425,9 +479,28 @@
       "id": "Lambda.def.defeq",
       "accepted_content_snl": [
         "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Lambda Extentionality%,),Type.judge(%Application Extensionality%,)))",
-        "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,),Type.judge(%Abstraction Extensionality%,),Type.judge(%Application Extensionality%,)))"
+        "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,),Type.judge(%Abstraction Extensionality%,),Type.judge(%Application Extensionality%,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-ext,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(%Application Extensionality%,),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(%Application Congruence%,),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,),Type.judge(Lambda.defeq.refl,),Type.judge(Lambda.defeq.symm,),Type.judge(Lambda.defeq.trans,)))"
       ],
-      "content_snl": "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,),Type.judge(%Abstraction Extensionality%,),Type.judge(%Application Extensionality%,)))"
+      "content_snl": "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,),Type.judge(Lambda.defeq.refl,),Type.judge(Lambda.defeq.symm,),Type.judge(Lambda.defeq.trans,)))"
+    },
+    {
+      "id": "Type.rl.Expr-LC",
+      "accepted_content_snl": [
+        "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(%Application%,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(%Binded variable%,Type.to(Nat,Lambda.Expr))))",
+        "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(Type.Expr-UTLC.apply,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(Type.Expr-UTLC.bvar,Type.to(Nat,Lambda.Expr))))"
+      ],
+      "content_snl": "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(Type.Expr-UTLC.apply,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(Type.Expr-UTLC.bvar,Type.to(Nat,Lambda.Expr))))"
+    },
+    {
+      "id": "Type.def.LegalExpr-LC",
+      "accepted_content_snl": [
+        "def-hyp-opq(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr(e))",
+        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda)))"
+      ],
+      "content_snl": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda)))"
     }
   ],
   "inductive_types": [
@@ -626,23 +699,35 @@
       "constructors": [
         {
           "id": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+          "kind": "definition",
           "title": {
-            "en": "$\\lambda$-Abstraction Constructor",
-            "zh-CN": "$\\lambda$-抽象构造子"
+            "en": "$\\lambda$-Abstraction",
+            "zh-CN": "$\\lambda$-抽象"
+          },
+          "content": {
+            "snl": "def-hyp-opq(Type.judge(@a,Lambda.Expr),Type.lambda(@$ $,@a))"
           }
         },
         {
           "id": "Type.rl.Expr-LC.ctor.application",
+          "kind": "definition",
           "title": {
-            "en": "Application Constructor",
-            "zh-CN": "应用构造子"
+            "en": "Application",
+            "zh-CN": "应用"
+          },
+          "content": {
+            "snl": "def-hyp-opq(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.apply(a,b))"
           }
         },
         {
           "id": "Type.rl.Expr-LC.ctor.bound-variable",
+          "kind": "definition",
           "title": {
-            "en": "Bound Variable Constructor",
-            "zh-CN": "约束变量构造子"
+            "en": "Bound Variable",
+            "zh-CN": "受束变元"
+          },
+          "content": {
+            "snl": "def-hyp-opq(Type.judge(@n,Nat),Type.apply[paren](Type.Expr-UTLC.bvar,n))"
           }
         }
       ],
@@ -682,45 +767,75 @@
       "constructors": [
         {
           "id": "Lambda.def.defeq.ctor.beta-reduction",
+          "kind": "property",
           "title": {
-            "en": "$\\beta$-reduction Constructor",
-            "zh-CN": "$\\beta$-归约构造子"
-          }
-        },
-        {
-          "id": "Lambda.def.defeq.ctor.reflexivity",
-          "title": {
-            "en": "Reflexivity Constructor",
-            "zh-CN": "自反性构造子"
-          }
-        },
-        {
-          "id": "Lambda.def.defeq.ctor.symmetry",
-          "title": {
-            "en": "Symmetry Constructor",
-            "zh-CN": "对称性构造子"
-          }
-        },
-        {
-          "id": "Lambda.def.defeq.ctor.transitivity",
-          "title": {
-            "en": "Transitivity Constructor",
-            "zh-CN": "传递性构造子"
-          }
+            "en": "Definitionally Equal by $\\beta$-reduction",
+            "zh-CN": "$\\beta$-归约前后依定义相等"
+          },
+          "accepted_kind": [
+            "definition",
+            "property"
+          ]
         },
         {
           "id": "Lambda.def.defeq.ctor.lambda-extensionality",
+          "kind": "property",
           "title": {
-            "en": "Abstraction Extensionality Constructor",
-            "zh-CN": "抽象外延性构造子"
-          }
+            "en": "$\\lambda$-Abstraction Congruence",
+            "zh-CN": "$\\lambda$-抽象同余性"
+          },
+          "accepted_kind": [
+            "definition",
+            "property"
+          ]
         },
         {
           "id": "Lambda.def.defeq.ctor.application-extensionality",
+          "kind": "property",
           "title": {
-            "en": "Application Extensionality Constructor",
-            "zh-CN": "应用外延性构造子"
-          }
+            "en": "Application Congruence",
+            "zh-CN": "应用同余性"
+          },
+          "accepted_kind": [
+            "definition",
+            "property"
+          ]
+        },
+        {
+          "id": "Lambda.def.defeq.ctor.reflexivity",
+          "kind": "property",
+          "title": {
+            "en": "Reflexivity",
+            "zh-CN": "自反性"
+          },
+          "accepted_kind": [
+            "definition",
+            "property"
+          ]
+        },
+        {
+          "id": "Lambda.def.defeq.ctor.symmetry",
+          "kind": "property",
+          "title": {
+            "en": "Symmetry",
+            "zh-CN": "对称性"
+          },
+          "accepted_kind": [
+            "definition",
+            "property"
+          ]
+        },
+        {
+          "id": "Lambda.def.defeq.ctor.transitivity",
+          "kind": "property",
+          "title": {
+            "en": "Transitivity",
+            "zh-CN": "传递性"
+          },
+          "accepted_kind": [
+            "definition",
+            "property"
+          ]
         }
       ],
       "recursor": {
@@ -1157,10 +1272,261 @@
         [],
         [
           "Type.rl.Expr-LC"
+        ],
+        [
+          "Type.rl.Expr-LC.ctor.lambda-abstraction"
         ]
       ],
       "entries": [
-        "Type.rl.Expr-LC"
+        "Type.rl.Expr-LC.ctor.lambda-abstraction"
+      ]
+    },
+    {
+      "name": "Type.Expr-UTLC.apply",
+      "accepted_entries": [
+        [],
+        [],
+        [
+          "Type.rl.Expr-LC.ctor.application"
+        ]
+      ],
+      "entries": [
+        "Type.rl.Expr-LC.ctor.application"
+      ]
+    },
+    {
+      "name": "Type.Expr-UTLC.bvar",
+      "accepted_entries": [
+        [],
+        [
+          "Type.rl.Expr-LC.ctor.bound-variable"
+        ],
+        [
+          "Type.rl.Expr-LC.ctor.bound-variable"
+        ]
+      ],
+      "entries": [
+        "Type.rl.Expr-LC.ctor.bound-variable"
+      ]
+    },
+    {
+      "name": "Type.lambda",
+      "accepted_entries": [
+        [],
+        [
+          "Type.rl.Expr-LC.ctor.lambda-abstraction"
+        ],
+        [
+          "Type.rl.Expr-LC.ctor.lambda-abstraction"
+        ]
+      ],
+      "entries": [
+        "Type.rl.Expr-LC.ctor.lambda-abstraction"
+      ]
+    },
+    {
+      "name": "Type.apply",
+      "accepted_entries": [
+        [],
+        [
+          "Type.rl.Expr-LC.ctor.application"
+        ],
+        [
+          "Type.rl.Expr-LC.ctor.application"
+        ]
+      ],
+      "entries": [
+        "Type.rl.Expr-LC.ctor.application"
+      ]
+    },
+    {
+      "name": "deBruijnIndex",
+      "accepted_entries": [
+        [],
+        [
+          "Type.rmk.deBruijnIndex"
+        ],
+        [
+          "Type.rmk.deBruijnIndex"
+        ]
+      ],
+      "entries": [
+        "Type.rmk.deBruijnIndex"
+      ]
+    },
+    {
+      "name": "Lambda.defeq.beta",
+      "accepted_entries": [
+        [],
+        [],
+        [
+          "Lambda.def.defeq.ctor.beta-reduction"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.defeq.ctor.beta-reduction"
+      ]
+    },
+    {
+      "name": "Lambda.defeq.lam-cong",
+      "accepted_entries": [
+        [],
+        [],
+        [
+          "Lambda.def.defeq.ctor.lambda-extensionality"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.defeq.ctor.lambda-extensionality"
+      ]
+    },
+    {
+      "name": "Lambda.defeq.app-cong",
+      "accepted_entries": [
+        [],
+        [
+          "Lambda.def.defeq.ctor.application-extensionality"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.defeq.ctor.application-extensionality"
+      ]
+    },
+    {
+      "name": "Lambda.defeq.refl",
+      "accepted_entries": [
+        [],
+        [
+          "Lambda.def.defeq.ctor.reflexivity"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.defeq.ctor.reflexivity"
+      ]
+    },
+    {
+      "name": "Lambda.defeq.symm",
+      "accepted_entries": [
+        [],
+        [
+          "Lambda.def.defeq.ctor.symmetry"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.defeq.ctor.symmetry"
+      ]
+    },
+    {
+      "name": "Lambda.defeq.trans",
+      "accepted_entries": [
+        [],
+        [
+          "Lambda.def.defeq.ctor.transitivity"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.defeq.ctor.transitivity"
+      ]
+    }
+  ],
+  "macro_renames": [
+    {
+      "old_name": "Lambda.defeq.lam-ext",
+      "new_name": "Lambda.defeq.lam-cong",
+      "package": "TypeTheory"
+    }
+  ],
+  "dependency_scope_entries": [
+    "Lambda.def.defeq",
+    "Lambda.def.defeq.ctor.application-extensionality",
+    "Lambda.def.defeq.ctor.beta-reduction",
+    "Lambda.def.defeq.ctor.lambda-extensionality",
+    "Lambda.def.defeq.ctor.reflexivity",
+    "Lambda.def.defeq.ctor.symmetry",
+    "Lambda.def.defeq.ctor.transitivity",
+    "Type.def.LegalExpr-LC",
+    "Type.def.S-Combinator",
+    "Type.rl.Expr-LC",
+    "Type.rl.Expr-LC.ctor.application",
+    "Type.rl.Expr-LC.ctor.bound-variable",
+    "Type.rl.Expr-LC.ctor.lambda-abstraction",
+    "Type.rmk.Expr-LC.apply",
+    "Type.rmk.Expr-LC.lambda",
+    "Type.rmk.deBruijnIndex"
+  ],
+  "graph_counter_repairs": [
+    {
+      "entry_id": "Lambda.def.defeq",
+      "level": "entry"
+    }
+  ],
+  "requested_macros": [
+    {
+      "name": "Lambda.defeq.app-cong",
+      "package": "TypeTheory",
+      "kind": "const",
+      "style_name": "default",
+      "body": {
+        "en": "Application Congruence",
+        "zh-CN": "应用同余性"
+      },
+      "source_entry_id": "Lambda.def.defeq.ctor.application-extensionality",
+      "accepted_source_entries": [
+        [],
+        [
+          "Lambda.def.defeq.ctor.application-extensionality"
+        ]
+      ]
+    },
+    {
+      "name": "Lambda.defeq.refl",
+      "package": "TypeTheory",
+      "kind": "const",
+      "style_name": "default",
+      "body": {
+        "en": "Reflexivity",
+        "zh-CN": "自反性"
+      },
+      "source_entry_id": "Lambda.def.defeq.ctor.reflexivity",
+      "accepted_source_entries": [
+        [],
+        [
+          "Lambda.def.defeq.ctor.reflexivity"
+        ]
+      ]
+    },
+    {
+      "name": "Lambda.defeq.symm",
+      "package": "TypeTheory",
+      "kind": "const",
+      "style_name": "default",
+      "body": {
+        "en": "Symmetry",
+        "zh-CN": "对称性"
+      },
+      "source_entry_id": "Lambda.def.defeq.ctor.symmetry",
+      "accepted_source_entries": [
+        [],
+        [
+          "Lambda.def.defeq.ctor.symmetry"
+        ]
+      ]
+    },
+    {
+      "name": "Lambda.defeq.trans",
+      "package": "TypeTheory",
+      "kind": "const",
+      "style_name": "default",
+      "body": {
+        "en": "Transitivity",
+        "zh-CN": "传递性"
+      },
+      "source_entry_id": "Lambda.def.defeq.ctor.transitivity",
+      "accepted_source_entries": [
+        [],
+        [
+          "Lambda.def.defeq.ctor.transitivity"
+        ]
       ]
     }
   ]

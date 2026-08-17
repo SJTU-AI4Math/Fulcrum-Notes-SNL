@@ -5,13 +5,13 @@
   "entry": {
     "id": "Lambda.def.defeq.ctor.symmetry",
     "package": "TypeTheory",
-    "kind": "definition",
+    "kind": "property",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Symmetry Constructor",
-        "zh-CN": "对称性构造子"
+        "en": "Symmetry",
+        "zh-CN": "对称性"
       }
     },
     "content": {},

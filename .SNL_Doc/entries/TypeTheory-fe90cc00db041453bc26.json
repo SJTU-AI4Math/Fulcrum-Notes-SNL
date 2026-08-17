@@ -10,11 +10,13 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Bound Variable Constructor",
-        "zh-CN": "约束变量构造子"
+        "en": "Bound Variable",
+        "zh-CN": "受束变元"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "def-hyp-opq(Type.judge(@n,Nat),Type.apply[paren](Type.Expr-UTLC.bvar,n))"
+    },
     "contribution_info": null,
     "pointer": null
   }

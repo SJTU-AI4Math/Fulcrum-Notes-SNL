@@ -10,11 +10,13 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Application Constructor",
-        "zh-CN": "应用构造子"
+        "en": "Application",
+        "zh-CN": "应用"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "def-hyp-opq(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.apply(a,b))"
+    },
     "contribution_info": null,
     "pointer": null
   }

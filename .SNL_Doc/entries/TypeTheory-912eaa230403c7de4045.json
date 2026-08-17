@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-ext,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(%Application Extensionality%,),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,)))"
+      "snl": "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,),Type.judge(Lambda.defeq.refl,),Type.judge(Lambda.defeq.symm,),Type.judge(Lambda.defeq.trans,)))"
     },
     "contribution_info": null,
     "pointer": null

@@ -9,10 +9,10 @@
     "kind": "remark",
     "title": {
       "type": "i18n",
-      "default_language": "zh-CN",
+      "default_language": "en",
       "values": {
-        "zh-CN": "de Bruijn 指数",
-        "en": "de Bruijn Index"
+        "en": "de Bruijn Index",
+        "zh-CN": "de Bruijn 指数"
       }
     },
     "content": {

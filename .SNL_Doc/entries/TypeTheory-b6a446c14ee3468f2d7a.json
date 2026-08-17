@@ -11,8 +11,8 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Reflexivity Constructor",
-        "zh-CN": "自反性构造子"
+        "en": "Reflexivity",
+        "zh-CN": "自反性"
       }
     },
     "content": {},

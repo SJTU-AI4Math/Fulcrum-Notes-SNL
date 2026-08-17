@@ -284,7 +284,8 @@
       "id": "n_39",
       "label": "Entry",
       "props": {
-        "entryId": "Lambda.def.defeq"
+        "entryId": "Lambda.def.defeq",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
@@ -855,6 +856,46 @@
       }
     },
     {
+      "id": "n_62",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.Expr-LC.lambda",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_63",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.deBruijnIndex",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_64",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.Expr-LC.apply",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_9f104b6f3c92",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rl.Expr-LC.recursor",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_5db0d93abf05",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.defeq.recursor",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
       "id": "n_sub_7974250cee63",
       "label": "Entry",
       "props": {
@@ -964,27 +1005,6 @@
       "props": {
         "entryId": "Type.def.structure.projection.first",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
-      }
-    },
-    {
-      "id": "n_62",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.rmk.Expr-LC.lambda"
-      }
-    },
-    {
-      "id": "n_63",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.rmk.deBruijnIndex"
-      }
-    },
-    {
-      "id": "n_64",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.rmk.Expr-LC.apply"
       }
     }
   ],
@@ -1165,6 +1185,11 @@
       "label": "branch"
     },
     {
+      "from": "n_15",
+      "to": "n_sub_7974250cee63",
+      "label": "branch"
+    },
+    {
       "from": "n_37",
       "to": "n_sub_3a1e213f3aa0",
       "label": "branch"
@@ -1315,11 +1340,6 @@
       "label": "branch"
     },
     {
-      "from": "n_15",
-      "to": "n_sub_7974250cee63",
-      "label": "branch"
-    },
-    {
       "from": "n_11",
       "to": "n_sub_075410891138",
       "label": "branch"
@@ -1407,6 +1427,11 @@
     {
       "from": "n_39",
       "to": "n_sub_12aa30880f2c",
+      "label": "branch"
+    },
+    {
+      "from": "n_39",
+      "to": "n_sub_5db0d93abf05",
       "label": "branch"
     },
     {
@@ -1587,6 +1612,11 @@
     {
       "from": "n_sub_50d85e06a8b4",
       "to": "n_64",
+      "label": "branch"
+    },
+    {
+      "from": "n_13",
+      "to": "n_sub_9f104b6f3c92",
       "label": "branch"
     }
   ]

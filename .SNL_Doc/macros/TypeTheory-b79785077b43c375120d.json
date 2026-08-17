@@ -6,7 +6,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Lambda.def.defeq.ctor.beta-reduction"
+      ],
       "urls": []
     },
     "kind": "const",
@@ -41,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "$\\beta$-规约",
+              "body": "$\\beta$-归约",
               "typst": {
                 "built_in": "",
                 "synthesis": {

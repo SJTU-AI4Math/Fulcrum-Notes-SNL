@@ -96,6 +96,75 @@ i18n = read_json(I18N_PATH)
 plan = read_json(PLAN_PATH)
 entries, entry_paths, entry_envelopes = load_records("entries", "id")
 macros, macro_paths, macro_envelopes = load_records("macros", "name")
+# Apply explicit identity migrations before localization and provenance updates.
+for rename in plan.get("macro_renames", []):
+    old_name = rename["old_name"]
+    new_name = rename["new_name"]
+    package_id = rename["package"]
+    if old_name in macros:
+        assert new_name not in macros, f"both old and new Macro identities exist: {old_name}, {new_name}"
+        record = macros.pop(old_name)
+        path = macro_paths.pop(old_name)
+        envelope = macro_envelopes.pop(old_name)
+        record["name"] = new_name
+        macros[new_name] = record
+        macro_paths[new_name] = path
+        macro_envelopes[new_name] = envelope
+    else:
+        assert new_name in macros, f"missing Macro identity migration source: {old_name}"
+    path = macro_paths[new_name]
+    canonical_path = DOC / "macros" / f"{package_id}-{identity_hash('macro', package_id, new_name)}.json"
+    if path != canonical_path:
+        assert not canonical_path.exists(), f"Macro identity migration path collision: {canonical_path.name}"
+        path.rename(canonical_path)
+        macro_paths[new_name] = canonical_path
+
+# Create or normalize explicitly requested zero-arity localized lexical Macros.
+def lexical_template(body: str) -> dict:
+    return {
+        "mode": "text", "body": body,
+        "typst": {"built_in": "", "synthesis": {"mode": "formula", "macro": ""}},
+        "latex": {"built_in": "", "synthesis": {"mode": "formula", "macro": ""}},
+        "markdown": "", "text": "",
+    }
+
+
+for spec in plan.get("requested_macros", []):
+    name = spec["name"]
+    package_id = spec["package"]
+    canonical_path = DOC / "macros" / f"{package_id}-{identity_hash('macro', package_id, name)}.json"
+    expected_macro = {
+        "description": "",
+        "source": {"entries": [spec["source_entry_id"]], "urls": []},
+        "kind": spec["kind"],
+        "dynamic_arity": False,
+        "styles": [{
+            "style_name": spec["style_name"], "tags": [],
+            "template": localized({
+                "en": lexical_template(spec["body"]["en"]),
+                "zh-CN": lexical_template(spec["body"]["zh-CN"]),
+            }),
+        }],
+        "tags": [],
+        "name": name,
+    }
+    if name in macros:
+        assert macro_paths[name] == canonical_path, f"noncanonical requested Macro path: {name}"
+        existing_macro = macros[name]
+        existing_source = existing_macro.get("source")
+        assert isinstance(existing_source, dict) and set(existing_source) == {"entries", "urls"}, f"requested Macro source shape drift: {name}"
+        assert existing_source["urls"] == [], f"requested Macro source URL drift: {name}"
+        assert existing_source["entries"] in spec.get("accepted_source_entries", [[spec["source_entry_id"]]]), f"unaccepted requested Macro provenance: {name}"
+        existing_source["entries"] = [spec["source_entry_id"]]
+        assert existing_macro == expected_macro, f"requested Macro drift: {name}"
+    else:
+        assert not canonical_path.exists(), f"requested Macro path collision: {canonical_path.name}"
+        envelope = {"format": "snl-macro", "version": 1, "schema_version": 1, "package": package_id, "macro": expected_macro}
+        macros[name] = expected_macro
+        macro_paths[name] = canonical_path
+        macro_envelopes[name] = envelope
+        write_json(canonical_path, envelope)
+
 # Localize every existing Entry title and Markdown body covered by the exact mapping.
 for entry_id, projection in i18n["entries"].items():
     assert entry_id in entries, f"I18n map references unknown Entry {entry_id}"
@@ -138,12 +207,16 @@ for key, projection in i18n["styles"].items():
         }
     }
     if template.get("type") == "i18n":
-        assert template.get("default_language") == "en" and set(template.get("values", {})) == {"en", "zh-CN"}, f"stale localized Macro template: {key}"
-        assert template["values"]["en"].get("body") == projection["en"], f"stale English Macro body: {key}"
+        assert template.get("default_language") in {"en", "zh-CN"} and set(template.get("values", {})) == {"en", "zh-CN"}, f"stale localized Macro template: {key}"
+        accepted_en = projection.get("accepted_en", [projection["en"]])
+        assert template["values"]["en"].get("body") in accepted_en, f"stale English Macro body: {key}"
+        template["default_language"] = "en"
+        template["values"]["en"] = template_with_body(template["values"]["en"], projection["en"])
         template["values"]["zh-CN"] = template_with_body(template["values"]["zh-CN"], projection["zh-CN"])
         continue
     assert template.get("mode") == "text", f"cannot localize structural Macro template: {key}"
-    assert template.get("body") in {projection["en"], projection["zh-CN"]}, f"stale Macro body mapping for {key}"
+    accepted_body = set(projection.get("accepted_body", [])) | {projection["en"], projection["zh-CN"]}
+    assert template.get("body") in accepted_body, f"stale Macro body mapping for {key}"
     style["template"] = expected
 
 # Add requested Entries and all constructor/recursor definition subentries.
@@ -155,8 +228,10 @@ for inductive in plan["inductive_types"]:
         spec = {
             "id": child["id"],
             "package": inductive["package"],
-            "kind": "definition",
+            "kind": child.get("kind", "definition"),
+            "accepted_kind": child.get("accepted_kind", [child.get("kind", "definition")]),
             "title": child["title"],
+            "content": child.get("content", {}),
             "parent_entry_id": inductive["parent_entry_id"],
             "graph_level": "subentry",
             "reuse": bool(child.get("reuse"))
@@ -182,7 +257,9 @@ for spec in new_specs:
         continue
     if entry_id in entries:
         entry = entries[entry_id]
-        assert entry["package"] == spec["package"] and entry["kind"] == spec["kind"]
+        assert entry["package"] == spec["package"]
+        assert entry["kind"] in spec.get("accepted_kind", [spec["kind"]]), f"stale Entry kind: {entry_id}"
+        entry["kind"] = spec["kind"]
         entry["title"] = localized(spec["title"])
         entry["content"] = expected_content
         continue
@@ -337,6 +414,18 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
             elif relation not in relationships:
                 relationships.append(relation)
                 changed = True
+    # Repair counters on explicitly adopted pre-existing graph nodes.
+    for repair in plan.get("graph_counter_repairs", []):
+        repair_nodes = [node for node in nodes if node.get("props", {}).get("entryId") == repair["entry_id"]]
+        if not repair_nodes:
+            continue
+        expected_counter_id = ensure_counter(graph_path.parent / "counters.json", repair["level"])
+        for repair_node in repair_nodes:
+            props = repair_node.setdefault("props", {})
+            if props.get("counterId") != expected_counter_id:
+                props["counterId"] = expected_counter_id
+                changed = True
+
     # Normalize only explicitly ordered parent sibling lists; preserve unrelated relationship order.
     by_node_id = {node["id"]: node for node in nodes}
     for order_spec in plan.get("ordered_graph_children", []):
@@ -374,6 +463,127 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
         changed = True
     if changed:
         write_json(graph_path, graph)
+
+# Reconcile the explicitly managed dependency slice from Entry SNL and Macro provenance.
+def extract_snl_macro_names(snl: str) -> list[str]:
+    names: set[str] = set()
+    i = 0
+    n = len(snl)
+    is_start = lambda c: c.isascii() and (c.isalpha() or c in "_.")
+    is_cont = lambda c: c.isascii() and (c.isalnum() or c in "_.")
+    while i < n:
+        c = snl[i]
+        if c.isspace() or c in "(),[]":
+            i += 1
+            continue
+        if c == "%":
+            i += 1
+            while i < n and snl[i] != "%":
+                i += 1
+            i += 1
+            continue
+        if c == "$":
+            delimiter = "$$" if i + 1 < n and snl[i + 1] == "$" else "$"
+            i += len(delimiter)
+            while i < n and not snl.startswith(delimiter, i):
+                i += 1
+            i += len(delimiter)
+            continue
+        if c == "@":
+            i += 1
+            if i < n and snl[i] in "%$":
+                continue
+            while i < n and is_cont(snl[i]):
+                i += 1
+            continue
+        if is_start(c):
+            j = i + 1
+            while j < n and is_cont(snl[j]):
+                j += 1
+            names.add(snl[i:j])
+            i = j
+            if i < n and snl[i] == "[":
+                while i < n and snl[i] != "]":
+                    i += 1
+                if i < n:
+                    i += 1
+            if i < n and snl[i] == "@":
+                i += 1
+                while i < n and is_cont(snl[i]):
+                    i += 1
+            continue
+        i += 1
+    return sorted(names)
+
+
+def reconcile_dependency_slice() -> None:
+    scope = set(plan.get("dependency_scope_entries", []))
+    if not scope:
+        return
+    assert scope <= set(entries), f"dependency scope references unknown Entries: {sorted(scope - set(entries))}"
+    path = DOC / "relationships.json"
+    data = read_json(path)
+    relationships = data.get("relationships", [])
+    auto = lambda rel: rel.get("label") == "depends" and isinstance(rel.get("metadata"), dict) and rel["metadata"].get("generator") == "macro-source-scan"
+    preserved = [rel for rel in relationships if not (auto(rel) and rel.get("from") in scope)]
+    previous = {(rel["from"], rel["to"]): rel for rel in relationships if auto(rel) and rel.get("from") in scope}
+    allocated = {rel["id"] for rel in preserved}
+    generated: list[dict] = []
+    for entry_id in sorted(scope):
+        witnesses: dict[str, set[str]] = {}
+        for name in extract_snl_macro_names((entries[entry_id].get("content") or {}).get("snl", "")):
+            macro = macros.get(name)
+            if macro is None:
+                continue
+            for target in (macro.get("source") or {}).get("entries", []):
+                if target and target != entry_id and target in entries:
+                    witnesses.setdefault(target, set()).add(name)
+        for target in sorted(witnesses):
+            old = previous.get((entry_id, target))
+            if old is not None and old["id"] not in allocated:
+                relation_id = old["id"]
+            else:
+                base = f"dep.{entry_id}.{target}"
+                relation_id = base
+                suffix = 1
+                while relation_id in allocated:
+                    relation_id = f"{base}.{suffix}"
+                    suffix += 1
+            allocated.add(relation_id)
+            generated.append({
+                "id": relation_id,
+                "from": entry_id,
+                "to": target,
+                "label": "depends",
+                "metadata": {
+                    "generator": "macro-source-scan",
+                    "macros": sorted(witnesses[target]),
+                    "isAtomic": True,
+                },
+            })
+    merged = [*preserved, *generated]
+    for current in generated:
+        seen = {current["from"]}
+        queue = [current["from"]]
+        reachable = False
+        while queue and not reachable:
+            source = queue.pop(0)
+            for rel in merged:
+                if rel is current or rel.get("label") != "depends" or rel.get("from") != source:
+                    continue
+                target = rel.get("to")
+                if target == current["to"]:
+                    reachable = True
+                    break
+                if target not in seen:
+                    seen.add(target)
+                    queue.append(target)
+        current["metadata"]["isAtomic"] = not reachable
+    merged.sort(key=lambda rel: rel["id"])
+    write_json(path, {"version": 1, "relationships": merged})
+
+
+reconcile_dependency_slice()
 
 print(json.dumps({
     "entries": len(entries),

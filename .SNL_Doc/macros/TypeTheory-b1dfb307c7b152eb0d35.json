@@ -6,7 +6,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.rl.Expr-LC.ctor.application"
+      ],
       "urls": []
     },
     "kind": "const",
@@ -17,7 +19,7 @@
         "tags": [],
         "template": {
           "type": "i18n",
-          "default_language": "zh-CN",
+          "default_language": "en",
           "values": {
             "zh-CN": {
               "mode": "text",

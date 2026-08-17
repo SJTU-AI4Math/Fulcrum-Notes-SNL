@@ -7,7 +7,7 @@
     "description": "",
     "source": {
       "entries": [
-        "Type.rl.Expr-LC.ctor.bound-variable"
+        "Lambda.def.defeq.ctor.lambda-extensionality"
       ],
       "urls": []
     },
@@ -21,9 +21,9 @@
           "type": "i18n",
           "default_language": "en",
           "values": {
-            "zh-CN": {
+            "en": {
               "mode": "text",
-              "body": "受束变元",
+              "body": "$\\lambda$-Abstraction Congruence",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -41,9 +41,9 @@
               "markdown": "",
               "text": ""
             },
-            "en": {
+            "zh-CN": {
               "mode": "text",
-              "body": "Bound Variable",
+              "body": "$\\lambda$-抽象同余性",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -66,6 +66,6 @@
       }
     ],
     "tags": [],
-    "name": "Type.Expr-UTLC.bvar"
+    "name": "Lambda.defeq.lam-cong"
   }
 }
