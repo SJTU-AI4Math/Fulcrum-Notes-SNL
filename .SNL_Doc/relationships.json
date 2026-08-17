@@ -4353,6 +4353,58 @@
       }
     },
     {
+      "id": "dep.Type.cxmp.Bad.Fulcrum.def",
+      "from": "Type.cxmp.Bad",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.cxmp.Bad.Logic.def.false",
+      "from": "Type.cxmp.Bad",
+      "to": "Logic.def.false",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.false"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.cxmp.Bad.Type.rl.fun",
+      "from": "Type.cxmp.Bad",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.cxmp.Bad.Type.rl.judge",
+      "from": "Type.cxmp.Bad",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Type.def.Church-Nat.Type.def.nat",
       "from": "Type.def.Church-Nat",
       "to": "Type.def.nat",

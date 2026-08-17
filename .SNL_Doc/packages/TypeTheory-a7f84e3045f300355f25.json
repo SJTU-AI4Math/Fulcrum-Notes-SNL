@@ -19,6 +19,7 @@
     "Lambda.ppt.defeq-equivalence",
     "Type.cxmp.Bad",
     "Type.cxmp.vector-index-not-defeq",
+    "Type.def.Bad.rec",
     "Type.def.bin-tree",
     "Type.def.bin-tree.ctor.leaf",
     "Type.def.bin-tree.ctor.node",

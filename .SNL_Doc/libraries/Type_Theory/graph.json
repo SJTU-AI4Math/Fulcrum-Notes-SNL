@@ -957,6 +957,13 @@
         "entryId": "Type.def.structure.projection.first",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
+    },
+    {
+      "id": "n_61",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Bad.rec"
+      }
     }
   ],
   "relationships": [
@@ -1538,6 +1545,11 @@
     {
       "from": "n_sub_03148c978b72",
       "to": "n_sub_00186733b859",
+      "label": "branch"
+    },
+    {
+      "from": "n_53",
+      "to": "n_61",
       "label": "branch"
     }
   ]

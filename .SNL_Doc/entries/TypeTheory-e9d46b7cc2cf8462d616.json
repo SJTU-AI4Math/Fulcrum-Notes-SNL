@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Bad.rec",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "Recursor of $\\mathrm{Bad}$",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}
