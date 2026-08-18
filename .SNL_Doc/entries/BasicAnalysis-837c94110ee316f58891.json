@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.def.limitAtInfinity",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Limits at Infinity",
+        "zh-CN": "无穷远处的极限"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@L, Real)), list-partial(Analysis.limNegInf(F, @y, L), Analysis.limPosInf(F, @y, L), Analysis.limInf(F, @y, L)), Logic.and(Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Set.subset($\\left(#0,\\ +\\infty\\right)$(M), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, $\\left(#0,\\ +\\infty\\right)$(M)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Three variants sharing the two-clause shape. At `+∞` the region is a ray `(M, +∞)`; at `−∞` it is `(−∞, −M)`; the two-sided `∞` limit requires both rays to lie in the domain and the epsilon condition to hold on both simultaneously with a *common* `M`.\n\nRequiring one threshold for both rays, rather than one per ray, is the same uniformity move that makes the sequence definition non-vacuous.",
+          "zh-CN": "三个变体具有相同的双条件结构。在 `+∞` 处，区域是射线 `(M, +∞)`；在 `−∞` 处，区域是 `(−∞, −M)`；双侧的 `∞` 极限要求两条射线都包含于定义域，并要求 epsilon 条件以一个*共同的* `M` 同时在两条射线上成立。\n\n要求两条射线共用一个阈值，而非各用一个阈值，与使数列定义不致空泛所采用的一致性处理相同。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

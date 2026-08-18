@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "entry": {
+    "id": "FP.def.list.ctor.cons",
+    "package": "FunctionalProgramming",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "List Cons Constructor",
+        "zh-CN": "列表 Cons 构造子"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

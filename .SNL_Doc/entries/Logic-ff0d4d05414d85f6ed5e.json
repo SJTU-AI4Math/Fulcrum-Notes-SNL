@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Logic",
+  "entry": {
+    "id": "Logic.ctxt.PQ",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$p, q$",
+        "zh-CN": "$p, q$"
+      }
+    },
+    "content": {
+      "snl": "Type.judge(list-partial(@p,@q),Proposition)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Logic"
+  }
+}

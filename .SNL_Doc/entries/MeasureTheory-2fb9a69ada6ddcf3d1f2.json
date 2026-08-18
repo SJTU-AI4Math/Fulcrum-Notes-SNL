@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "MeasureTheory",
+  "entry": {
+    "id": "Measure.def.lebesgueMeasure",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lebesgue Measure",
+        "zh-CN": "勒贝格测度"
+      }
+    },
+    "content": {
+      "snl": "def(Measure.LebesgueMeasure($\\mathbb{R}$),%the restriction of Lebesgue outer measure to the Lebesgue-measurable sets%)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "MeasureTheory"
+  }
+}

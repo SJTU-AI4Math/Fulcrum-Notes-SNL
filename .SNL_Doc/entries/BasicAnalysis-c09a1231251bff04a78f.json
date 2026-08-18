@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.subsec.boundedness",
+    "kind": "subsection",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Boundedness",
+        "zh-CN": "有界性"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Boundedness for both carriers. For a sequence the quantifier ranges over the index window, so the finite and infinite cases are stated separately; for a function it ranges over the domain.",
+          "zh-CN": "两类载体的有界性。对数列而言，量词遍历指标窗口，因此有限情形与无限情形分别陈述；对函数而言，量词遍历其定义域。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Logic",
+  "entry": {
+    "id": "Logic.def.neg",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Negation",
+        "zh-CN": "否定"
+      }
+    },
+    "content": {
+      "snl": "def(Logic.neg(p),Type.to(p,Proposition))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Logic"
+  }
+}

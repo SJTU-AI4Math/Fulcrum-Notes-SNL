@@ -6,6 +6,32 @@
   "description": "",
   "schema_version": 2,
   "entry_ids": [
-    "Algebra.ctxt.1"
+    "Algebra.ctxt.1",
+    "Algebra.ctxt.G",
+    "Algebra.ctxt.mul",
+    "Algebra.def.cycle",
+    "Algebra.def.group",
+    "Algebra.def.groupAction",
+    "Algebra.def.groupEpi",
+    "Algebra.def.groupHom",
+    "Algebra.def.groupIso",
+    "Algebra.def.groupMono",
+    "Algebra.def.image",
+    "Algebra.def.kernel",
+    "Algebra.def.monoid",
+    "Algebra.def.orbit",
+    "Algebra.def.permutation",
+    "Algebra.def.semigroup",
+    "Algebra.def.stabilizer",
+    "Algebra.def.subgroup",
+    "Algebra.def.symmetricGroup",
+    "Algebra.def.transposition",
+    "Algebra.prop.identityUnique",
+    "Algebra.sec.groupTheory",
+    "Algebra.subsec.action",
+    "Algebra.subsec.definitions",
+    "Algebra.subsec.homomorphism",
+    "Algebra.subsec.permutation",
+    "Algebra.subsec.subgroup"
   ]
 }

@@ -128,7 +128,7 @@
     },
     {
       "id": "Logic.cxmp.nat-add-not-defeq",
-      "package": "_unpackaged",
+      "package": "Logic",
       "kind": "counterexample",
       "title": {
         "en": "Commutativity of Natural-Number Addition Is Not Definitional Equality",
@@ -146,7 +146,11 @@
       ],
       "after_entry_id": "Logic.def.iff",
       "graph_level": "entry",
-      "existing": true
+      "existing": true,
+      "accepted_packages": [
+        "_unpackaged",
+        "Logic"
+      ]
     },
     {
       "id": "Type.cxmp.vector-index-not-defeq",
@@ -568,7 +572,7 @@
     },
     {
       "parent_entry_id": "Logic.def.true",
-      "package": "_unpackaged",
+      "package": "Logic",
       "constructors": [
         {
           "id": "Logic.def.true.ctor.true",
@@ -585,11 +589,15 @@
           "zh-CN": "真命题递归子"
         }
       },
-      "existing": true
+      "existing": true,
+      "accepted_packages": [
+        "_unpackaged",
+        "Logic"
+      ]
     },
     {
       "parent_entry_id": "Logic.def.or",
-      "package": "_unpackaged",
+      "package": "Logic",
       "constructors": [
         {
           "id": "Logic.def.or.ctor.left",
@@ -613,11 +621,15 @@
           "zh-CN": "析取递归子"
         }
       },
-      "existing": true
+      "existing": true,
+      "accepted_packages": [
+        "_unpackaged",
+        "Logic"
+      ]
     },
     {
       "parent_entry_id": "FP.def.list",
-      "package": "_unpackaged",
+      "package": "FunctionalProgramming",
       "constructors": [
         {
           "id": "FP.def.list.ctor.nil",
@@ -641,7 +653,11 @@
           "zh-CN": "列表递归子"
         }
       },
-      "existing": true
+      "existing": true,
+      "accepted_packages": [
+        "_unpackaged",
+        "FunctionalProgramming"
+      ]
     },
     {
       "parent_entry_id": "Type.def.nat",
@@ -673,7 +689,7 @@
     },
     {
       "parent_entry_id": "Logic.def.false",
-      "package": "_unpackaged",
+      "package": "Logic",
       "constructors": [],
       "recursor": {
         "id": "Logic.def.false.recursor",
@@ -682,11 +698,15 @@
           "zh-CN": "假命题递归子"
         }
       },
-      "existing": true
+      "existing": true,
+      "accepted_packages": [
+        "_unpackaged",
+        "Logic"
+      ]
     },
     {
       "parent_entry_id": "FP.def.option",
-      "package": "_unpackaged",
+      "package": "FunctionalProgramming",
       "constructors": [
         {
           "id": "FP.def.option.ctor.none",
@@ -710,7 +730,11 @@
           "zh-CN": "Option 递归子"
         }
       },
-      "existing": true
+      "existing": true,
+      "accepted_packages": [
+        "_unpackaged",
+        "FunctionalProgramming"
+      ]
     },
     {
       "parent_entry_id": "Type.rl.Expr-LC",
@@ -761,7 +785,7 @@
     },
     {
       "parent_entry_id": "Logic.def.eq",
-      "package": "_unpackaged",
+      "package": "Logic",
       "constructors": [
         {
           "id": "Logic.def.eq.ctor.refl",
@@ -778,7 +802,11 @@
           "zh-CN": "等式递归子"
         }
       },
-      "existing": true
+      "existing": true,
+      "accepted_packages": [
+        "_unpackaged",
+        "Logic"
+      ]
     },
     {
       "parent_entry_id": "Lambda.def.defeq",

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.def.oneSidedLimit",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "One-Sided Limits",
+        "zh-CN": "单侧极限"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @L), Real)), list-partial(Analysis.limLeft(F, @y, x, L), Analysis.limRight(F, @y, x, L)), Logic.and(Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Set.subset(Ioo(Sub.sub(x, delta), x), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Ioo(Sub.sub(x, delta), x)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The left limit replaces the punctured neighbourhood by the left half-interval `(x₀ − delta, x₀)`; the right limit uses `(x₀, x₀ + delta)`. Both keep the two-clause shape of `BasicAnalysis.def.funLimit`, including the well-posedness requirement that the relevant half-interval lie inside the domain.\n\nA function has a limit at `x₀` iff both one-sided limits exist and agree, which is the standard route to detecting a jump discontinuity.",
+          "zh-CN": "左极限将去心邻域替换为左半区间 `(x₀ − delta, x₀)`；右极限使用 `(x₀, x₀ + delta)`。二者都保留 `BasicAnalysis.def.funLimit` 的双条件结构，包括要求相应半区间包含于定义域的适定性条件。\n\n函数在 `x₀` 处有极限，当且仅当两个单侧极限都存在且相等；这是识别跳跃间断点的标准方法。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

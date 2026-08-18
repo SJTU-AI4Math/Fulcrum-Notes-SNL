@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.ctxt.pfun",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Context: Domain-Carrying Functions",
+        "zh-CN": "语境：自带定义域的函数"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Shared binders for `BasicAnalysis.sec.structures` and everything downstream. Declares `F G : PFun` (domain-carrying real functions), `A B : Seq` (index-windowed real sequences), `x x₀ L : ℝ` (points and candidate limits), `epsilon delta : ℝ` constrained positive (tolerance and threshold binders), `n N : ℕ` (index binders), and `I : Set ℝ` (an ambient interval or region).",
+          "zh-CN": "`BasicAnalysis.sec.structures` 及其后所有内容所共享的绑定变量。声明 `F G : PFun`（自带定义域的实函数）、`A B : Seq`（带指标窗口的实数列）、`x x₀ L : ℝ`（点与候选极限）、受正值约束的 `epsilon delta : ℝ`（容差与阈值绑定变量）、`n N : ℕ`（指标绑定变量），以及 `I : Set ℝ`（环境区间或区域）。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

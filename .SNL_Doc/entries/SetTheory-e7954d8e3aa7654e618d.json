@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.diff",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Set Difference",
+        "zh-CN": "集合差"
+      }
+    },
+    "content": {
+      "snl": "def(Set.diff[backslash](A@Set.ctxt.AB,B@Set.ctxt.AB),Set.sep-typed(@x,T@Set.ctxt.T,Logic.and(Set.mem(x,A@Set.ctxt.AB),Set.nmem(x,B@Set.ctxt.AB))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "SetTheory"
+  }
+}

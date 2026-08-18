@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.def.seqLimit",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Limit of a Sequence",
+        "zh-CN": "数列的极限"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@A, Analysis.Seq), Type.judge(@L, Real)), Analysis.seqLim(A, L), Logic.and(Eq(Analysis.final(A), FP.none), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@N, Nat, Logic.forall-typed(@n, Nat, Logic.implies($#0 > #1$(n, N), Set.mem(Type.apply(Analysis.map(A), n), Analysis.nbh(L, epsilon)))))))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "`A` tends to `L` iff `A` is infinite (`A.final = none`) and for every `epsilon > 0` there is `N : ℕ` such that `A.map n ∈ U(L, epsilon)` for all `n > N`.\n\nThe infiniteness clause is not decoration. Without it the statement would be vacuously satisfiable by a finite window, since the epsilon clause only constrains indices beyond `N`. `A` is convergent iff some `L` works, and the limit is then unique.",
+          "zh-CN": "`A` 趋于 `L`，当且仅当 `A` 是无限数列（`A.final = none`），并且对每个 `epsilon > 0`，都存在 `N : ℕ`，使 `A.map n ∈ U(L, epsilon)` 对所有 `n > N` 均成立。\n\n无限性条件并非装饰。若无此条件，有限窗口将使该陈述空泛地成立，因为 epsilon 条件只约束 `N` 之后的指标。`A` 收敛，当且仅当存在某个适用的 `L`，而此时极限是唯一的。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

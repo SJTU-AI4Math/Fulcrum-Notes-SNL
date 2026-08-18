@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Logic",
+  "entry": {
+    "id": "Logic.def.forall",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Universal Quantifier",
+        "zh-CN": "全称量词"
+      }
+    },
+    "content": {
+      "snl": "def(Logic.forall-typed(x,T,P(x)),Type.Pi(@x,T,P(x)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Logic"
+  }
+}

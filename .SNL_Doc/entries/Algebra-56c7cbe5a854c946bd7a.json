@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.def.groupAction",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Group Action",
+        "zh-CN": "群作用"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@X,Type),Type.judge(@alpha,Type.to(G@Algebra.ctxt.G,Type.to(X,X)))), Algebra.GrpAction, Logic.and(Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.e),x),x)),Logic.forall-typed(@g,G@Algebra.ctxt.G,Logic.forall-typed(@h,G@Algebra.ctxt.G,Logic.forall-typed(@x,X,Eq(Type.apply[paren](Type.apply[paren](alpha,Algebra.mul[dot](g,h)),x),Type.apply[paren](Type.apply[paren](alpha,g),Type.apply[paren](Type.apply[paren](alpha,h),x))))))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

@@ -7,10 +7,29 @@ import re
 import subprocess
 from pathlib import Path
 
+def _strict_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON key: {key}")
+        result[key] = value
+    return result
+
+
+def _reject_json_constant(value: str):
+    raise ValueError(f"non-finite JSON constant: {value}")
+
+
+def strict_json_loads(text: str):
+    return json.loads(text, object_pairs_hook=_strict_object, parse_constant=_reject_json_constant)
+
+
 ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / ".SNL_Doc"
-PLAN = json.loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
-I18N = json.loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
+PLAN = strict_json_loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
+I18N = strict_json_loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
+ENTRY_PACKAGE_PLAN = strict_json_loads((ROOT / "scripts/fulcrum-entry-packages.json").read_text(encoding="utf-8"))
+assert ENTRY_PACKAGE_PLAN["version"] == 1
 EXPECTED_ENTRIES = 462  # latest authored tree plus the eta defeq constructor
 EXPECTED_MACROS = 403  # lambda notation merged; variadic application remains a surface Macro
 EXPECTED_PLACEHOLDERS = {
@@ -42,7 +61,7 @@ def load_entities(directory: str, key: str):
     records = {}
     paths = {}
     for path in sorted((DOC / directory).glob("*.json")):
-        envelope = json.loads(path.read_text(encoding="utf-8"))
+        envelope = strict_json_loads(path.read_text(encoding="utf-8"))
         record = envelope[key]
         identity = record["id"] if key == "entry" else record["name"]
         assert identity not in records, f"duplicate {key} identity: {identity}"
@@ -121,7 +140,7 @@ def extract_snl_macro_names(snl: str) -> list[str]:
     return sorted(names)
 
 
-config = json.loads((DOC / "config.json").read_text(encoding="utf-8"))
+config = strict_json_loads((DOC / "config.json").read_text(encoding="utf-8"))
 entry_kinds = {kind["id"]: kind for kind in config["entry_kinds"]}
 assert set(entry_kinds) == set(EXPECTED_DARK_ENTRY_STROKES), "Fulcrum Entry Kind catalog changed"
 for kind_id, stroke in EXPECTED_DARK_ENTRY_STROKES.items():
@@ -188,7 +207,7 @@ for spec in PLAN.get("requested_macros", []):
 # The explicitly managed dependency slice exactly matches Entry SNL and Macro provenance.
 dependency_scope = set(PLAN.get("dependency_scope_entries", []))
 assert dependency_scope <= set(entries)
-relationship_data = json.loads((DOC / "relationships.json").read_text(encoding="utf-8"))
+relationship_data = strict_json_loads((DOC / "relationships.json").read_text(encoding="utf-8"))
 relationships = relationship_data.get("relationships", [])
 assert len({rel["id"] for rel in relationships}) == len(relationships), "duplicate pool relationship id"
 auto_scope = [rel for rel in relationships if rel.get("from") in dependency_scope and rel.get("label") == "depends" and isinstance(rel.get("metadata"), dict) and rel["metadata"].get("generator") == "macro-source-scan"]
@@ -360,23 +379,41 @@ for inductive in PLAN["inductive_types"]:
 # Entity paths and package manifests are canonical and complete.
 manifest_members = {}
 for path in sorted((DOC / "packages").glob("*.json")):
-    manifest = json.loads(path.read_text(encoding="utf-8"))
+    manifest = strict_json_loads(path.read_text(encoding="utf-8"))
     package_id = manifest["id"]
+    assert package_id in ENTRY_PACKAGE_PLAN["manifests"], f"unplanned Entry Package: {package_id}"
+    assert manifest == ENTRY_PACKAGE_PLAN["manifests"][package_id]["canonical"], f"Entry Package manifest snapshot drift: {package_id}"
+    assert manifest.get("schema_version") == 2, f"stale Package schema: {package_id}"
     expected_name = f"{package_id}-{identity_hash('package', package_id)}.json"
     assert path.name == expected_name, f"noncanonical Package path: {path.name}"
     ids = manifest.get("entry_ids", [])
     assert ids == js_locale_sorted(ids), f"unsorted package membership: {package_id}"
     assert len(ids) == len(set(ids)), f"duplicate package membership: {package_id}"
     manifest_members[package_id] = set(ids)
+assert set(manifest_members) == set(ENTRY_PACKAGE_PLAN["manifests"]), "Entry Package manifest set drift"
+planned_entry_packages = {}
+for package_id, entry_ids in ENTRY_PACKAGE_PLAN["assignments"].items():
+    assert len(entry_ids) == len(set(entry_ids)), f"duplicate planned Package member: {package_id}"
+    for entry_id in entry_ids:
+        assert entry_id not in planned_entry_packages, f"Entry planned in multiple Packages: {entry_id}"
+        planned_entry_packages[entry_id] = package_id
+assert set(planned_entry_packages) == set(entries), "Entry Package plan must partition every Entry"
+for package_id, spec in ENTRY_PACKAGE_PLAN.get("packages", {}).items():
+    path = DOC / "packages" / f"{package_id}-{identity_hash('package', package_id)}.json"
+    manifest = strict_json_loads(path.read_text(encoding="utf-8"))
+    assert manifest["name"] == spec["name"] and manifest["description"] == spec["description"]
 for entry_id, entry in entries.items():
     package_id = entry["package"]
+    envelope = strict_json_loads(entry_paths[entry_id].read_text(encoding="utf-8"))
+    assert envelope["package"] == package_id == planned_entry_packages[entry_id], f"wrong planned Entry Package: {entry_id}"
     assert entry_paths[entry_id].name == f"{package_id}-{identity_hash('entry', package_id, entry_id)}.json", f"noncanonical Entry path: {entry_id}"
     assert entry_id in manifest_members.get(package_id, set()), f"Entry missing from package manifest: {entry_id}"
 for package_id, ids in manifest_members.items():
     actual = {entry_id for entry_id, entry in entries.items() if entry["package"] == package_id}
     assert ids == actual, f"package membership mismatch: {package_id}"
+assert not manifest_members.get("_unpackaged"), "all Entries must leave _unpackaged"
 for macro_name, macro in macros.items():
-    package_id = json.loads(macro_paths[macro_name].read_text(encoding="utf-8"))["package"]
+    package_id = strict_json_loads(macro_paths[macro_name].read_text(encoding="utf-8"))["package"]
     assert macro_paths[macro_name].name == f"{package_id}-{identity_hash('macro', package_id, macro_name)}.json", f"noncanonical Macro path: {macro_name}"
 
 # Every parent occurrence in a Library graph has a branch to each requested child/subentry occurrence.
@@ -395,7 +432,7 @@ for parent_id, child_id, allowed_parent_node_ids, after_entry_id in expected_rel
     parent_occurrences = 0
     attached_occurrences = 0
     for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
-        graph = json.loads(graph_path.read_text(encoding="utf-8"))
+        graph = strict_json_loads(graph_path.read_text(encoding="utf-8"))
         nodes = graph.get("nodes", [])
         by_id = {node["id"]: node for node in nodes}
         assert len(by_id) == len(nodes), f"duplicate graph node id in {graph_path}"
@@ -420,7 +457,7 @@ for parent_id, child_id, allowed_parent_node_ids, after_entry_id in expected_rel
 
 # All graph identities, counter references, relationships, and reachability are valid.
 for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
-    graph = json.loads(graph_path.read_text(encoding="utf-8"))
+    graph = strict_json_loads(graph_path.read_text(encoding="utf-8"))
     nodes = graph.get("nodes", [])
     node_ids = [node["id"] for node in nodes]
     assert len(node_ids) == len(set(node_ids)), f"duplicate graph node id in {graph_path}"
@@ -429,7 +466,7 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
         entry_id = node.get("props", {}).get("entryId")
         assert entry_id in entries, f"unknown graph Entry {entry_id} in {graph_path}"
     counters_path = graph_path.parent / "counters.json"
-    counters = json.loads(counters_path.read_text(encoding="utf-8")).get("counters", []) if counters_path.exists() else []
+    counters = strict_json_loads(counters_path.read_text(encoding="utf-8")).get("counters", []) if counters_path.exists() else []
     counter_ids = set()
     counter_stack = counters[:]
     while counter_stack:
@@ -461,11 +498,11 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
 for repair in PLAN.get("graph_counter_repairs", []):
     repaired_occurrences = 0
     for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
-        graph = json.loads(graph_path.read_text(encoding="utf-8"))
+        graph = strict_json_loads(graph_path.read_text(encoding="utf-8"))
         repair_nodes = [node for node in graph.get("nodes", []) if node.get("props", {}).get("entryId") == repair["entry_id"]]
         if not repair_nodes:
             continue
-        counters = json.loads((graph_path.parent / "counters.json").read_text(encoding="utf-8")).get("counters", [])
+        counters = strict_json_loads((graph_path.parent / "counters.json").read_text(encoding="utf-8")).get("counters", [])
         stack = counters[:]
         expected_ids = set()
         while stack:
@@ -484,21 +521,21 @@ for ownership in PLAN.get("concept_ownership", []):
     assert entry_id in entries, f"ownership references missing Entry: {entry_id}"
     graph_path = DOC / "libraries" / ownership["primary_library"] / "graph.json"
     assert graph_path.exists(), f"ownership references missing Library: {ownership['primary_library']}"
-    graph = json.loads(graph_path.read_text(encoding="utf-8"))
+    graph = strict_json_loads(graph_path.read_text(encoding="utf-8"))
     assert any(node.get("props", {}).get("entryId") == entry_id for node in graph.get("nodes", [])), f"primary Library does not contain {entry_id}"
     for secondary in ownership.get("secondary_entries", []):
         secondary_id = secondary["entry_id"]
         assert secondary_id in entries, f"secondary ownership references missing Entry: {secondary_id}"
         secondary_graph = DOC / "libraries" / secondary["library"] / "graph.json"
         assert secondary_graph.exists(), f"secondary ownership references missing Library: {secondary['library']}"
-        data = json.loads(secondary_graph.read_text(encoding="utf-8"))
+        data = strict_json_loads(secondary_graph.read_text(encoding="utf-8"))
         assert any(node.get("props", {}).get("entryId") == secondary_id for node in data.get("nodes", [])), f"secondary Library does not contain {secondary_id}"
 
 # Explicitly planned Library sibling orders encode the concept-ownership presentation.
 for order_spec in PLAN.get("ordered_graph_children", []):
     found = 0
     for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
-        graph = json.loads(graph_path.read_text(encoding="utf-8"))
+        graph = strict_json_loads(graph_path.read_text(encoding="utf-8"))
         nodes = graph.get("nodes", [])
         by_id = {node["id"]: node for node in nodes}
         for parent in [node for node in nodes if node.get("props", {}).get("entryId") == order_spec["parent_entry_id"]]:

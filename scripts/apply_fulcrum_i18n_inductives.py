@@ -12,10 +12,28 @@ ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / ".SNL_Doc"
 I18N_PATH = ROOT / "scripts/fulcrum-i18n-en-zh.json"
 PLAN_PATH = ROOT / "scripts/fulcrum-inductive-subentries.json"
+ENTRY_PACKAGE_PLAN_PATH = ROOT / "scripts/fulcrum-entry-packages.json"
+
+
+def _strict_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON key: {key}")
+        result[key] = value
+    return result
+
+
+def _reject_json_constant(value: str):
+    raise ValueError(f"non-finite JSON constant: {value}")
+
+
+def strict_json_loads(text: str):
+    return json.loads(text, object_pairs_hook=_strict_object, parse_constant=_reject_json_constant)
 
 
 def read_json(path: Path):
-    return json.loads(path.read_text(encoding="utf-8"))
+    return strict_json_loads(path.read_text(encoding="utf-8"))
 
 
 def write_json(path: Path, value) -> None:
@@ -95,8 +113,41 @@ def node_id_for(entry_id: str) -> str:
 
 i18n = read_json(I18N_PATH)
 plan = read_json(PLAN_PATH)
+entry_package_plan = read_json(ENTRY_PACKAGE_PLAN_PATH)
+assert entry_package_plan["version"] == 1
 entries, entry_paths, entry_envelopes = load_records("entries", "id")
 macros, macro_paths, macro_envelopes = load_records("macros", "name")
+
+# Preflight complete Package manifests before the first filesystem mutation.
+# Each manifest must be one of two fully pinned states: the exact predecessor
+# or the exact canonical partition. Unknown metadata or membership drift is
+# rejected rather than silently repaired.
+manifest_specs = entry_package_plan["manifests"]
+existing_package_manifests: dict[str, tuple[Path, dict]] = {}
+for path in sorted((DOC / "packages").glob("*.json")):
+    manifest = read_json(path)
+    package_id = manifest["id"]
+    assert package_id in manifest_specs, f"unplanned Entry Package: {package_id}"
+    assert package_id not in existing_package_manifests
+    assert path == DOC / "packages" / f"{package_id}-{identity_hash('package', package_id)}.json"
+    accepted = [manifest_specs[package_id]["canonical"]]
+    predecessor = manifest_specs[package_id].get("accepted_predecessor")
+    if predecessor is not None:
+        accepted.append(predecessor)
+    assert manifest in accepted, f"Entry Package manifest snapshot drift: {package_id}"
+    existing_package_manifests[package_id] = (path, manifest)
+for package_id, spec in manifest_specs.items():
+    if package_id not in existing_package_manifests:
+        assert spec.get("accepted_predecessor") is None, f"missing Entry Package manifest: {package_id}"
+
+# Build only the pinned canonical Package records in memory; publication occurs
+# after every migration precondition has passed.
+package_manifests: dict[str, tuple[Path, dict]] = {}
+for package_id, spec in manifest_specs.items():
+    canonical = json.loads(json.dumps(spec["canonical"], ensure_ascii=False))
+    assert canonical["id"] == package_id and canonical["schema_version"] == 2
+    path = DOC / "packages" / f"{package_id}-{identity_hash('package', package_id)}.json"
+    package_manifests[package_id] = (path, canonical)
 
 # Apply explicit Entry identity migrations before graph, Package, provenance,
 # and dependency reconciliation. This is deliberately not a raw text replace.
@@ -399,6 +450,7 @@ for inductive in plan["inductive_types"]:
         spec = {
             "id": child["id"],
             "package": inductive["package"],
+            "accepted_packages": inductive.get("accepted_packages", [inductive["package"]]),
             "kind": child.get("kind", "definition"),
             "accepted_kind": child.get("accepted_kind", [child.get("kind", "definition")]),
             "title": child["title"],
@@ -420,7 +472,7 @@ for spec in new_specs:
     if spec.get("reuse"):
         assert entry_id in entries, f"reused subentry is missing: {entry_id}"
         entry = entries[entry_id]
-        assert entry["package"] == spec["package"]
+        assert entry["package"] in spec.get("accepted_packages", [spec["package"]])
         assert entry.get("content") in ({}, None), f"reused subentry already has content: {entry_id}"
         entry["kind"] = "definition"
         entry["title"] = localized(spec["title"])
@@ -428,7 +480,7 @@ for spec in new_specs:
         continue
     if entry_id in entries:
         entry = entries[entry_id]
-        assert entry["package"] == spec["package"]
+        assert entry["package"] in spec.get("accepted_packages", [spec["package"]])
         assert entry["kind"] in spec.get("accepted_kind", [spec["kind"]]), f"stale Entry kind: {entry_id}"
         entry["kind"] = spec["kind"]
         entry["title"] = localized(spec["title"])
@@ -467,6 +519,31 @@ for update in plan.get("metadata_updates", []):
     assert entry.get("kind") in update["accepted_kind"], f"stale Entry kind for {entry_id}"
     entry["kind"] = update["kind"]
 
+# Assign every Entry to exactly one semantic Package. The complete explicit
+# partition is authoritative; prefix rules were used only to author the plan.
+planned_entry_packages: dict[str, str] = {}
+for package_id, entry_ids in entry_package_plan["assignments"].items():
+    assert len(entry_ids) == len(set(entry_ids)), f"duplicate Entry within Package plan: {package_id}"
+    for entry_id in entry_ids:
+        assert entry_id not in planned_entry_packages, f"Entry assigned to multiple Packages: {entry_id}"
+        planned_entry_packages[entry_id] = package_id
+assert set(planned_entry_packages) == set(entries), "Entry Package plan must partition the complete Entry set"
+retired_entry_package_paths: list[Path] = []
+for entry_id, target_package in planned_entry_packages.items():
+    entry = entries[entry_id]
+    envelope = entry_envelopes[entry_id]
+    current_package = entry["package"]
+    assert envelope["package"] == current_package
+    assert current_package in ("_unpackaged", target_package), f"unexpected existing Entry Package: {entry_id}"
+    canonical_path = DOC / "entries" / f"{target_package}-{identity_hash('entry', target_package, entry_id)}.json"
+    if current_package != target_package:
+        retired_entry_package_paths.append(entry_paths[entry_id])
+        entry["package"] = target_package
+        envelope["package"] = target_package
+        entry_paths[entry_id] = canonical_path
+    else:
+        assert entry_paths[entry_id] == canonical_path, f"noncanonical Entry path: {entry_id}"
+
 # Keep Macro provenance aligned with the Entries that now define each notation.
 for update in plan.get("macro_source_updates", []):
     name = update["name"]
@@ -475,28 +552,28 @@ for update in plan.get("macro_source_updates", []):
     assert source.get("entries", []) in update["accepted_entries"], f"stale Macro source for {name}"
     source["entries"] = update["entries"]
 
-# Persist Entry and Macro envelopes.
-for entry_id, envelope in entry_envelopes.items():
-    write_json(entry_paths[entry_id], envelope)
-for macro_name, envelope in macro_envelopes.items():
-    write_json(macro_paths[macro_name], envelope)
-
-# Keep package manifests exact, sorted, and authoritative.
+# Validate and prepare every Package manifest before any Entry move is
+# persisted. A stale manifest must fail closed without leaving duplicate or
+# half-moved canonical files behind.
 by_package: dict[str, list[str]] = {}
 for entry_id, entry in entries.items():
     by_package.setdefault(entry["package"], []).append(entry_id)
-for path in sorted((DOC / "packages").glob("*.json")):
-    manifest = read_json(path)
-    package_id = manifest["id"]
-    expected_ids = set(by_package.get(package_id, []))
-    current_ids = manifest.get("entry_ids", [])
-    entry_rename_map = {rename["old_id"]: rename["new_id"] for rename in plan.get("entry_renames", [])}
-    migrated_current_ids = [entry_rename_map.get(entry_id, entry_id) for entry_id in current_ids]
-    assert set(migrated_current_ids) <= expected_ids, f"Package manifest references an unknown Entry: {package_id}"
-    sorted_ids = js_locale_sorted(expected_ids)
-    if migrated_current_ids != sorted_ids:
-        manifest["entry_ids"] = sorted_ids
-        write_json(path, manifest)
+for package_id, (_, manifest) in sorted(package_manifests.items()):
+    expected_ids = js_locale_sorted(set(by_package.get(package_id, [])))
+    assert manifest["entry_ids"] == expected_ids, f"canonical Entry Package plan mismatch: {package_id}"
+assert set(entry_package_plan["assignments"]) <= set(package_manifests)
+
+# Persist Entry, Macro, and Package envelopes only after all migration
+# preconditions have passed, then retire predecessor Entry paths.
+for entry_id, envelope in entry_envelopes.items():
+    write_json(entry_paths[entry_id], envelope)
+for old_path in retired_entry_package_paths:
+    if old_path.exists():
+        old_path.unlink()
+for macro_name, envelope in macro_envelopes.items():
+    write_json(macro_paths[macro_name], envelope)
+for _, (path, manifest) in sorted(package_manifests.items()):
+    write_json(path, manifest)
 
 # Attach requested Entries and inductive subentries to every Library occurrence of their parent.
 managed_new_entry_ids = {spec["id"] for spec in plan["requested_entries"] if not spec.get("existing")}

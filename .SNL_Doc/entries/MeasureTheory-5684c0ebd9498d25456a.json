@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "MeasureTheory",
+  "entry": {
+    "id": "Measure.def.sigmaAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Sigma-Algebra",
+        "zh-CN": "σ-代数"
+      }
+    },
+    "content": {
+      "snl": "def-struct(Measure.SigmaAlgebra($\\Sigma$),struct[enumerate](member[colon](%Whole space%,Measure.containsUniv(X,$\\Sigma$)),member[colon](%Complement closure%,Measure.complClosed($\\Sigma$,X)),member[colon](%Countable-union closure%,Measure.countableUnionClosed($\\Sigma$))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "MeasureTheory"
+  }
+}

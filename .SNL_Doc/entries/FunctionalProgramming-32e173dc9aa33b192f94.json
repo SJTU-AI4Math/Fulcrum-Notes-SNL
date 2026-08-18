@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "entry": {
+    "id": "FP.prop.bindSup",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Bind Distributes over Binary Join",
+        "zh-CN": "Bind 对二元并具有分配性"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@x,Type.apply(M,A)),Type.judge(@y,Type.apply(M,A)),Type.judge(@f,Type.to(A,Type.apply(M,B)))),Eq(FP.bind(M,FP.sup(x,y),f),FP.sup(FP.bind(M,x,f),FP.bind(M,y,f))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "FunctionalProgramming"
+  }
+}

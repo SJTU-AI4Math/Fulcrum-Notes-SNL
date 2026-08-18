@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.subsec.limitDefs",
+    "kind": "subsection",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Definitions of Limit",
+        "zh-CN": "极限的定义"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Each definition has two clauses: a well-posedness clause requiring the relevant region to sit inside the domain, and the epsilon clause proper. The first clause is exactly what the carrier discipline of `BasicAnalysis.def.pfun` buys.",
+          "zh-CN": "每个定义都包含两个条件：适定性条件要求相关区域包含于定义域，以及真正的 epsilon 条件。第一个条件正是 `BasicAnalysis.def.pfun` 的载体机制所带来的收益。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

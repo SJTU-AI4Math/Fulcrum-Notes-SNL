@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.thm.intermediateValue",
+    "kind": "theorem",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Intermediate Value Theorem",
+        "zh-CN": "介值定理"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@a, @b, @C), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), $#0 < #1 \\land #1 < #2$(Type.apply(Analysis.map(F), a), C, Type.apply(Analysis.map(F), b))), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Icc(a, b)), Eq(Type.apply(Analysis.map(F), c), C))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A function continuous on `[a, b]` takes every value between `F a` and `F b`. Combined with the previous theorem this says the continuous image of a closed bounded interval is again a closed bounded interval.\n\nThe standard corollary is a root existence principle: a sign change over `[a, b]` forces a zero inside. The theorem is genuinely about the completeness of ℝ — the same statement over ℚ is false, as `x ↦ x² − 2` witnesses.",
+          "zh-CN": "在 `[a, b]` 上连续的函数取得 `F a` 与 `F b` 之间的每一个值。结合前一定理可知，闭有界区间的连续像仍是闭有界区间。\n\n标准推论是根的存在性原理：在 `[a, b]` 上变号会迫使区间内存在一个零点。该定理本质上涉及 ℝ 的完备性——在 ℚ 上同一陈述为假，`x ↦ x² − 2` 即为反例。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

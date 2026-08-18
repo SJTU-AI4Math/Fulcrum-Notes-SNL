@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "HighSchool",
+  "entry": {
+    "id": "HS.def.Ioo",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Open Interval",
+        "zh-CN": "开区间"
+      }
+    },
+    "content": {
+      "snl": "def(Ioo(a,b),Set.sep-typed(@x,Real,Logic.and($#0 < #1$(a,x),$#0 < #1$(x,b))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "HighSchool"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.def.locallyBounded",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Local Boundedness",
+        "zh-CN": "局部有界性"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.locallyBounded(F, x), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Set.inter(Analysis.domain(F), Analysis.nbh(x, delta))), $\\left|#0\\right| < #1$(Type.apply(Analysis.map(F), y), M))))))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "`F` is bounded near `x₀` iff it is bounded on the intersection of its domain with some neighbourhood of `x₀`. This is the conclusion available from convergence at a point: a function with a limit at `x₀` is locally bounded there, never globally.\n\nThe variants at `±∞` replace the neighbourhood by a ray.",
+          "zh-CN": "`F` 在 `x₀` 附近有界，当且仅当它在其定义域与 `x₀` 某个邻域的交集上有界。这是函数在一点收敛时能够得到的结论：在 `x₀` 处有极限的函数在那里局部有界，而非全局有界。\n\n`±∞` 处的变体用射线替代邻域。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

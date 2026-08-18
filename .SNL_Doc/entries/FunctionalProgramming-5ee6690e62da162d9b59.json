@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "entry": {
+    "id": "FP.ctxt.types",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$A, B, C$",
+        "zh-CN": "$A, B, C$"
+      }
+    },
+    "content": {
+      "snl": "Type.judge(list-partial[formula](@A,@B,@C),Type)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "FunctionalProgramming"
+  }
+}

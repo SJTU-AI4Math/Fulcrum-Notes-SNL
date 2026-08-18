@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Logic",
+  "entry": {
+    "id": "Logic.rmk.true",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "True",
+        "zh-CN": "真"
+      }
+    },
+    "content": {
+      "snl": "%Inductive type #0 has an enumerative constructor, so there is always a proof for #0, and #0 proves nothing.%(Logic.true)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Logic"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "RealAnalysis",
+  "entry": {
+    "id": "real-analysis.def.ae-equal",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Almost Everywhere Equal",
+        "zh-CN": "几乎处处相等"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(Type.judge[paren](list-partial(@f, @g), Type.to(D@real-analysis.ctxt.D, EReal)), $f \\stackrel{\\text{a.e.}}{=} g$, Logic.iff(RealAnalysis.almostEverywhere($x \\in D$, Eq(f(x), g(x))), $\\mu(\\{x \\in D \\mid f(x) \\neq g(x)\\}) = 0$))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "RealAnalysis"
+  }
+}

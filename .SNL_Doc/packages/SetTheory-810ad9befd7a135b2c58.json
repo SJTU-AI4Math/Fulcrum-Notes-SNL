@@ -5,5 +5,27 @@
   "name": "SetTheory",
   "description": "",
   "schema_version": 2,
-  "entry_ids": []
+  "entry_ids": [
+    "Set.ctxt.1",
+    "Set.ctxt.AB",
+    "Set.ctxt.T",
+    "Set.def.compl",
+    "Set.def.diff",
+    "Set.def.emptyset",
+    "Set.def.ext",
+    "Set.def.inter",
+    "Set.def.mem",
+    "Set.def.nmem",
+    "Set.def.powerset",
+    "Set.def.sep",
+    "Set.def.set",
+    "Set.def.subset",
+    "Set.def.symmetric_difference",
+    "Set.def.union",
+    "Set.def.univ",
+    "Set.sec.set",
+    "Set.subsec.basic",
+    "Set.subsec.operations",
+    "Set.subsec.relations"
+  ]
 }

@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.sec.groupTheory",
+    "kind": "section",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Group Theory",
+        "zh-CN": "群论"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

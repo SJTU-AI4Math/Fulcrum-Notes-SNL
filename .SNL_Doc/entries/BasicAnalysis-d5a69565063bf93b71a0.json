@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.def.continuousOn",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Continuity on a Region",
+        "zh-CN": "区域上的连续性"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@I, Set(Real))), Analysis.contOn(F, I), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, I), Analysis.contAt(F, x))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Continuity at every point of a given region `I`. This is pointwise continuity quantified over `I`, and is strictly weaker than uniform continuity on `I` — the `delta` is allowed to depend on the point.",
+          "zh-CN": "在给定区域 `I` 的每一点处连续。这是在 `I` 上量化的逐点连续性，并且严格弱于 `I` 上的一致连续性——`delta` 可以依赖于该点。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

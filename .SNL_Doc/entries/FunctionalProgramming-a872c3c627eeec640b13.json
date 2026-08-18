@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "entry": {
+    "id": "FP.ctxt.T",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$T$",
+        "zh-CN": "$T$"
+      }
+    },
+    "content": {
+      "snl": "Type.judge(@T,Type.to(Type.to(Type,Type),Type.to(Type,Type)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "FunctionalProgramming"
+  }
+}

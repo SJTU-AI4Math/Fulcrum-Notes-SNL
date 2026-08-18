@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.def.derivative",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Derivative at a Point",
+        "zh-CN": "点处导数"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @D), Real)), Analysis.deriv(F, x, D), Analysis.funLim(Div.div(Sub.sub(F, Type.apply(Analysis.map(F), x)), Sub.sub(@y, x)), @y, x, D))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "`F` has derivative `D` at `x₀` iff the difference quotient `(F − F(x₀)) / (id − x₀)` tends to `D` at `x₀`. The quotient is built in the PFun algebra, so the removal of `x₀` from its domain — where the denominator vanishes — happens automatically, and the punctured neighbourhood of `BasicAnalysis.def.funLimit` is exactly what makes the expression meaningful there.\n\n`F` is differentiable at `x₀` iff some `D` works; uniqueness of `D` is inherited from uniqueness of limits.",
+          "zh-CN": "`F` 的导数为 `D`（在 `x₀` 处），当且仅当差商 `(F − F(x₀)) / (id − x₀)` 趋于 `D`（在 `x₀` 处）。该商在 PFun 代数中构造，因此 `x₀` 会因分母在此为零而自动从其定义域中移除；`BasicAnalysis.def.funLimit` 的去心邻域恰好使该表达式在此有意义。\n\n`F` 在 `x₀` 处可导，当且仅当存在某个适用的 `D`；`D` 的唯一性继承自极限的唯一性。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

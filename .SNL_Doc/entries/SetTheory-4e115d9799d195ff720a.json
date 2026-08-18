@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.mem",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Membership",
+        "zh-CN": "属于关系"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@x,T@Set.ctxt.T),Type.judge(@S,Set(T@Set.ctxt.T))),Set.mem(x,S),Type.apply[paren](S,x))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "SetTheory"
+  }
+}

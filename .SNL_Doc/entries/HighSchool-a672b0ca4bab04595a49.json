@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "HighSchool",
+  "entry": {
+    "id": "Real.real",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Real Number Type",
+        "zh-CN": "实数类型"
+      }
+    },
+    "content": {
+      "snl": "def(Real,%Opaque%)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "HighSchool"
+  }
+}

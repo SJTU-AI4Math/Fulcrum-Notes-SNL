@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.subsec.action",
+    "kind": "subsection",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Group Actions",
+        "zh-CN": "群作用"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

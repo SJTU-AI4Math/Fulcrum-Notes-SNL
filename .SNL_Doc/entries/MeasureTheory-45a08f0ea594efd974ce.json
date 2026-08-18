@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "MeasureTheory",
+  "entry": {
+    "id": "Measure.prop.aeCountable",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Countable Families of Almost-Everywhere Properties",
+        "zh-CN": "几乎处处性质的可数族"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@P,Type.to(Nat,Type.to(X@Measure.ctxt.X,Proposition))),Logic.forall-typed(@n,Nat,Measure.almostEverywhere(@x,P(n,x),mu@Measure.ctxt.mu))),Measure.almostEverywhere(@x,Logic.forall-typed(@n,Nat,P(n,x)),mu@Measure.ctxt.mu))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "MeasureTheory"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Lambda.def.beta-single",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Single-step $\\beta$-reduction",
+        "zh-CN": "单步 $\\beta$-归约"
+      }
+    },
+    "content": {
+      "snl": "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.LegalExpr)),\r\n    Lambda.beta(a, b)\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

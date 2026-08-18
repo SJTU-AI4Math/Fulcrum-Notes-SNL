@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.def.image",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Image",
+        "zh-CN": "像"
+      }
+    },
+    "content": {
+      "snl": "def(Algebra.GrpIm,Set.sep-typed(@y,H@Algebra.def.groupHom,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,x),y))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Logic",
+  "entry": {
+    "id": "Logic.cxmp.nat-add-not-defeq",
+    "package": "Logic",
+    "kind": "counterexample",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Commutativity of Natural-Number Addition Is Not Definitional Equality",
+        "zh-CN": "自然数加法交换律不是依定义相等"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "In the metatheory of untyped $\\lambda$-calculus, let $m,n$ be variables standing for natural-number expressions. The open expressions $\\mathsf{add}\\;m\\;n$ and $\\mathsf{add}\\;n\\;m$ are generally not definitionally equal. This concerns expressions, not closed expressions obtained by substituting concrete Church numerals; the latter both $\\beta$-reduce to the same Church numeral.",
+          "zh-CN": "在无类型 $\\lambda$-演算的元理论中，令 $m,n$ 为表示自然数表达式的变量。开放表达式 $\\mathsf{add}\\;m\\;n$ 与 $\\mathsf{add}\\;n\\;m$ 一般不是依定义相等的。这讨论的是表达式，而不是代入具体丘奇数后得到的闭表达式；后两者都可通过 $\\beta$-归约得到同一个丘奇数。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

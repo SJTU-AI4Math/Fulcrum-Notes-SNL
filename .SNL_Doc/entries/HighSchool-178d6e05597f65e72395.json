@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "HighSchool",
+  "entry": {
+    "id": "HS.Sec.Set",
+    "kind": "section",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Sets",
+        "zh-CN": "集合"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "HighSchool"
+  }
+}

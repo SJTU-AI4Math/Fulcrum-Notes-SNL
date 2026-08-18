@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "RealAnalysis",
+  "entry": {
+    "id": "real-analysis.def.simple-function",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Simple Function",
+        "zh-CN": "简单函数"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(Type.judge(@phi, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.simple(phi), Logic.and(RealAnalysis.measurable(phi), Logic.neg(Logic.iff($|\\phi(D)|$, $\\infty$))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "RealAnalysis"
+  }
+}

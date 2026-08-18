@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.sec.limits",
+    "kind": "section",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Limits",
+        "zh-CN": "极限"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The eight limit notions Calculus_21 carries: sequence limits, function limits at a finite point, the two one-sided limits, and the three limits at infinity. Each appears in two forms — a *predicate* relating a carrier to a candidate value, and a partial *value* form usable inside expressions. The bridge results connecting the two forms are what let an ordinary calculation stand in for an epsilon-delta argument.",
+          "zh-CN": "Calculus_21 包含八种极限概念：数列极限、函数在有限点处的极限、两个单侧极限，以及三个无穷远处的极限。每一种都有两种形式——把载体与候选值联系起来的*谓词*形式，以及可在表达式内使用的偏*值*形式。连接两种形式的桥接结果，使普通计算能够代替 epsilon-delta 论证。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

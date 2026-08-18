@@ -5,5 +5,16 @@
   "name": "RealAnalysis",
   "description": "Real Analysis (实分析) macros: Lebesgue measurable functions, convergence modes, Lebesgue integral, differentiation, product measure, L^p spaces.",
   "schema_version": 2,
-  "entry_ids": []
+  "entry_ids": [
+    "real-analysis.ctxt.1",
+    "real-analysis.ctxt.D",
+    "real-analysis.ctxt.fg",
+    "real-analysis.def.ae-equal",
+    "real-analysis.def.measurable",
+    "real-analysis.def.simple-function",
+    "real-analysis.ex.continuous-measurable",
+    "real-analysis.prop.measurable-iff",
+    "real-analysis.sec.measurable-fns",
+    "real-analysis.subsec.basic-defs"
+  ]
 }

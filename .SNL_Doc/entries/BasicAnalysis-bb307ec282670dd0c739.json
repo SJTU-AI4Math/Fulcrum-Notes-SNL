@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.def.pfun",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Domain-Carrying Function",
+        "zh-CN": "自带定义域的函数"
+      }
+    },
+    "content": {
+      "snl": "def(Type.judge(@F, Analysis.PFun), Analysis.mkPFun(Analysis.map(F), Analysis.domain(F)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A domain-carrying function `F : PFun` consists of a total map `F.map : ℝ → ℝ` together with a domain `F.domain : Set ℝ`. The total map is defined everywhere as a Lean function, but only its restriction to `F.domain` carries mathematical content. Two PFuns are equal exactly when both components agree.\n\nThe point of the bundling is that domains compose. The arithmetic operations intersect domains, so `(F+G).domain = F.domain ∩ G.domain`; division additionally removes the zero set of the denominator; the power operation additionally restricts to where the base is positive. A bare `ℝ → ℝ` cannot express any of this, so those side conditions would have to be re-supplied by hand at every use site.",
+          "zh-CN": "一个自带定义域的函数 `F : PFun` 由一个全映射 `F.map : ℝ → ℝ` 和一个定义域 `F.domain : Set ℝ` 组成。作为 Lean 函数，该全映射处处有定义，但只有它在 `F.domain` 上的限制才具有数学内容。两个 PFun 相等，恰好当两个分量都相等。\n\n这种捆绑的意义在于定义域可以复合。算术运算取定义域的交，因此 `(F+G).domain = F.domain ∩ G.domain`；除法还要移除分母的零点集；幂运算还要限制在底数为正之处。单独的 `ℝ → ℝ` 无法表达这些内容，因此每次使用时都必须手动重新提供这些附加条件。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

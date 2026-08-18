@@ -1,0 +1,21 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "MeasureTheory",
+  "entry": {
+    "id": "Measure.sec.foundations",
+    "kind": "section",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Measure Theory Foundations",
+        "zh-CN": "测度论基础"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null,
+    "package": "MeasureTheory"
+  }
+}

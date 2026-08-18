@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.def.continuousAt",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Continuity at a Point",
+        "zh-CN": "点处连续性"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.contAt(F, x), Logic.and(Set.mem(x, Analysis.domain(F)), Analysis.funLim(F, @y, x, Type.apply(Analysis.map(F), x))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "`F` is continuous at `x₀` iff `x₀` lies in `F.domain` *and* the limit of `F` at `x₀` equals `F.map x₀`. Both clauses are needed and neither follows from the other: `BasicAnalysis.def.funLimit` deliberately says nothing about `x₀` itself.\n\n`F` is continuous (unqualified) iff it is continuous at every point of its domain. Since the domain is carried by the function, this is a statement about `F` alone rather than about `F` together with a separately supplied region.",
+          "zh-CN": "`F` 在 `x₀` 处连续，当且仅当 `x₀` 属于 `F.domain`，*并且* `F` 在 `x₀` 处的极限等于 `F.map x₀`。两个条件均不可少，且互不蕴含：`BasicAnalysis.def.funLimit` 有意不对 `x₀` 本身作任何规定。\n\n`F` 连续（不加限定），当且仅当它在其定义域的每一点都连续。由于定义域由函数自身携带，这是一个只关于 `F` 的陈述，而不是关于 `F` 与另行给定区域的陈述。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

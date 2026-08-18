@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "entry": {
+    "id": "FP.prop.identityMonad",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Identity is a Monad",
+        "zh-CN": "Identity 是单子"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(Type.judge(@x,A),FP.statement(Eq(FP.pure(FP.Identity,x),x),%, and %,Eq(FP.map(FP.Identity,x,@f),Type.apply(f,x)),%, and %,Eq(FP.flatten(FP.Identity,x),x)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "FunctionalProgramming"
+  }
+}

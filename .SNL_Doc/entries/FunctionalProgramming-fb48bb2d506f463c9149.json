@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "entry": {
+    "id": "FP.def.identity",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Identity",
+        "zh-CN": "恒等"
+      }
+    },
+    "content": {
+      "snl": "def(FP.Identity(A),A)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "FunctionalProgramming"
+  }
+}

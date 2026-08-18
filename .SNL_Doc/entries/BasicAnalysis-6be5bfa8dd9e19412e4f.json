@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.subsec.meanValue",
+    "kind": "subsection",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Mean Value Theorems",
+        "zh-CN": "中值定理"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The chain from Fermat's interior-extremum lemma to the Cauchy form, each step a strict generalisation of the previous one.",
+          "zh-CN": "从费马内点极值引理到柯西形式的推演链，其中每一步都是前一步的严格推广。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "BasicAnalysis"
+  }
+}

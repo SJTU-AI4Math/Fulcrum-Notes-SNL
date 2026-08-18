@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.ctxt.G",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$G$",
+        "zh-CN": "$G$"
+      }
+    },
+    "content": {
+      "snl": "Type.judge(@G,Type)"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "FunctionalProgramming",
+  "entry": {
+    "id": "FP.def.monad",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Monad",
+        "zh-CN": "单子"
+      }
+    },
+    "content": {
+      "snl": "def-struct(FP.Monad(M),struct[enumerate](member[colon](%pure%,Type.Pi(@A,Type,Type.to(A,Type.apply(M,A)))),member[colon](%map%,Type.Pi(list-partial[formula](A,B),Type,parentheses(Type.to(parentheses(Type.to(A,B)),Type.to(A,Type.apply(M,B)))))),member[colon](%flatten%,Type.Pi(A,Type,parentheses(Type.to(Type.apply(M,Type.apply(M,A)),Type.apply(M,A)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "FunctionalProgramming"
+  }
+}
