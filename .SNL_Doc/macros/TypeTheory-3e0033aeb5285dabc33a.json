@@ -7,7 +7,7 @@
     "description": "",
     "source": {
       "entries": [
-        "Logic.def.proposition"
+        "Type.def.prod"
       ],
       "urls": []
     },
@@ -15,11 +15,11 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "style_name": "text",
+        "style_name": "default",
         "tags": [],
         "template": {
-          "mode": "text",
-          "body": "Prop",
+          "mode": "formula_inline",
+          "body": "#0\\times #1",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -39,7 +39,10 @@
         }
       }
     ],
-    "tags": [],
-    "name": "Proposition"
+    "tags": [
+      "times",
+      "product"
+    ],
+    "name": "Type.prod"
   }
 }

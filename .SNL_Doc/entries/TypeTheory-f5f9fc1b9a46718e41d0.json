@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Type.def.omega-Combinator",
@@ -11,7 +12,7 @@
       "default_language": "en",
       "values": {
         "en": "Omega Combinator (ω)",
-        "zh-CN": "Omega 组合子（ω）"
+        "zh-CN": "$\\omega$ 组合子"
       }
     },
     "content": {

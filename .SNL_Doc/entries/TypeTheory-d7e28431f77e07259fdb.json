@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Lambda.S,Type.Expr-UTLC.lambda(list-partial[none](@x,@y,@z),Lambda.apply(x,y,x,z)))"
+      "snl": "def(Lambda.S,Type.Expr-UTLC.lambda(list-partial[none](@x,@y,@z),Lambda.apply(Lambda.apply(x,z),parentheses(Lambda.apply(y,z)))))"
     },
     "contribution_info": null,
     "pointer": null

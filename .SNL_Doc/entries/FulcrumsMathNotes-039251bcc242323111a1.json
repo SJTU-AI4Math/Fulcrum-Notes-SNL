@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumsMathNotes",
+  "entry": {
+    "id": "Fulcrum.thm",
+    "package": "FulcrumsMathNotes",
+    "kind": "remark",
+    "title": "定理",
+    "content": {
+      "markdown": "通过陈述命题确立一个定理的语义。\r\n\r\n视为定理的命题应当有合法的证明条目支撑。"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

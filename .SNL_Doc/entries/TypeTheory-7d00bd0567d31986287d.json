@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Lambda.ppt.NF-is-HNF",
+    "package": "TypeTheory",
+    "kind": "property",
+    "title": "标准型严于首标准型",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

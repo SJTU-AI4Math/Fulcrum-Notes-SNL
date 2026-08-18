@@ -7,7 +7,7 @@
     "description": "",
     "source": {
       "entries": [
-        "Logic.def.proposition"
+        "Type.def.Currying"
       ],
       "urls": []
     },
@@ -15,11 +15,11 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "style_name": "text",
+        "style_name": "default",
         "tags": [],
         "template": {
           "mode": "text",
-          "body": "Prop",
+          "body": "#0 的 Curry 化",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,6 +40,6 @@
       }
     ],
     "tags": [],
-    "name": "Proposition"
+    "name": "Type.Curry"
   }
 }

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "list-partial[enumerate](\r\n    %通常将 #0表达式根据 #1记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda, deBruijnIndex ,Type.Expr-UTLC.lambda(@x, P(x)),),\r\n    %将形如 #0 的多元函数记作 #1%(\r\n        Type.Expr-UTLC.lambda(\r\n            @x,\r\n            Type.Expr-UTLC.lambda(@y, Type.apply(P(x), y))\r\n        ),\r\n        Type.Expr-UTLC.lambda(list-partial[none](@x, @y), Type.apply(P(x), y))\r\n    )\r\n)"
+      "snl": "list-partial[enumerate](%通常将 #0表达式根据 #1的指涉关系记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda[text](,),deBruijnIndex,Type.Expr-UTLC.lambda(@x,P(x))),%将形如 #0 的多元函数记作 #1。%(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),%在记号上，若形式参数名称发生重复，受束变元应视为指涉最内层的形式参数。如表达式 #0 中的 $x$ 应视为指涉较晚出现的形式参数 $x$。%(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@x,x))))"
     },
     "contribution_info": null,
     "pointer": null

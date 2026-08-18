@@ -2948,14 +2948,27 @@
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.Type.rl.Expr-LC",
+      "id": "dep.Lambda.def.defeq.Logic.def.proposition",
       "from": "Lambda.def.defeq",
-      "to": "Type.rl.Expr-LC",
+      "to": "Logic.def.proposition",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Proposition"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.Type.def.LegalExpr-LC",
+      "from": "Lambda.def.defeq",
+      "to": "Type.def.LegalExpr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.LegalExpr"
         ],
         "isAtomic": false
       }
@@ -5198,6 +5211,84 @@
       }
     },
     {
+      "id": "dep.Type.def.Currying.Fulcrum.def",
+      "from": "Type.def.Currying",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.Currying.Type.def.prod",
+      "from": "Type.def.Currying",
+      "to": "Type.def.prod",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.prod"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.Currying.Type.rl.Expr-LC.ctor.application",
+      "from": "Type.def.Currying",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.Currying.Type.rl.fun",
+      "from": "Type.def.Currying",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.Currying.Type.rl.judge",
+      "from": "Type.def.Currying",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.Currying.Type.rl.univ",
+      "from": "Type.def.Currying",
+      "to": "Type.rl.univ",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Type.def.I-Combinator.Fulcrum.def",
       "from": "Type.def.I-Combinator",
       "to": "Fulcrum.def",
@@ -5298,7 +5389,7 @@
         "macros": [
           "Lambda.Expr"
         ],
-        "isAtomic": true
+        "isAtomic": false
       }
     },
     {
@@ -5328,6 +5419,32 @@
       }
     },
     {
+      "id": "dep.Type.def.Omega-Big.Fulcrum.def",
+      "from": "Type.def.Omega-Big",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.Omega-Big.Type.rl.Expr-LC.ctor.application",
+      "from": "Type.def.Omega-Big",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Type.def.S-Combinator.Fulcrum.def",
       "from": "Type.def.S-Combinator",
       "to": "Fulcrum.def",
@@ -5336,6 +5453,19 @@
         "generator": "macro-source-scan",
         "macros": [
           "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.S-Combinator.Type.rl.Expr-LC.ctor.application",
+      "from": "Type.def.S-Combinator",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.apply"
         ],
         "isAtomic": true
       }
@@ -5401,6 +5531,19 @@
         "generator": "macro-source-scan",
         "macros": [
           "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.omega-Combinator.Type.rl.Expr-LC.ctor.application",
+      "from": "Type.def.omega-Combinator",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.apply"
         ],
         "isAtomic": true
       }
@@ -5679,6 +5822,19 @@
       }
     },
     {
+      "id": "dep.Type.rmk.Expr-LC.apply.Type.rl.Expr-LC.ctor.application",
+      "from": "Type.rmk.Expr-LC.apply",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Type.rmk.Expr-LC.lambda.Type.rl.Expr-LC.ctor.application",
       "from": "Type.rmk.Expr-LC.lambda",
       "to": "Type.rl.Expr-LC.ctor.application",
@@ -5688,7 +5844,7 @@
         "macros": [
           "Type.apply"
         ],
-        "isAtomic": true
+        "isAtomic": false
       }
     },
     {
@@ -5700,6 +5856,19 @@
         "generator": "macro-source-scan",
         "macros": [
           "deBruijnIndex"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.rmk.deBruijnIndex.Type.rl.Expr-LC.ctor.application",
+      "from": "Type.rmk.deBruijnIndex",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.apply"
         ],
         "isAtomic": true
       }

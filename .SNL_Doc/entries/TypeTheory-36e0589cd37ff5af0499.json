@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Type.def.Currying",
@@ -11,10 +12,12 @@
       "default_language": "en",
       "values": {
         "en": "Currying",
-        "zh-CN": "柯里化"
+        "zh-CN": "Curry 化"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "def-hyp(list-partial(Type.judge(list-partial[formula](@A,@B,@C),Type),Type.judge(@f,Type.to(Type.prod(A,B),C))),Type.Curry(f),Type.lambda-typed(@x,A,Type.lambda-typed(@y,B,Type.apply[none](f,Type.pair(x,y)))))"
+    },
     "contribution_info": null,
     "pointer": null
   }

@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
     "description": "Typed lambda abstraction (mapsto)",
@@ -16,7 +17,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0 : #1 \\mapsto #2",
+          "body": "\\left(#0 : #1\\right) \\mapsto #2",
           "typst": {
             "built_in": "",
             "synthesis": {

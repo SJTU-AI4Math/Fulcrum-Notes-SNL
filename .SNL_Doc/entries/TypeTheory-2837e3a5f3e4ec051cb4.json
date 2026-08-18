@@ -15,7 +15,9 @@
         "zh-CN": "SKI 是完备的"
       }
     },
-    "content": {},
+    "content": {
+      "markdown": "任何无类型 $\\lambda$-演算表达式均依定义相等于 $S$, $K$, $I$ 的有限次应用。"
+    },
     "contribution_info": null,
     "pointer": null
   }

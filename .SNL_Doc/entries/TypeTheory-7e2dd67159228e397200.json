@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
     "id": "Type.def.K-Combinator",
@@ -10,8 +11,8 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "K Combinator",
-        "zh-CN": "K 组合子"
+        "en": "$K$ Combinator",
+        "zh-CN": "$K$ 组合子"
       }
     },
     "content": {

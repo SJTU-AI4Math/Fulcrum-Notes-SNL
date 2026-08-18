@@ -6,6 +6,13 @@
       "props": {
         "entryId": "Fulcrum.def"
       }
+    },
+    {
+      "id": "n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "Fulcrum.thm"
+      }
     }
   ],
   "relationships": []
