@@ -1,0 +1,9 @@
+{
+  "format": "snl-package",
+  "version": 1,
+  "schema_version": 2,
+  "id": "FulcrumNotesOneOffI18N",
+  "name": "Fulcrum One-Off I18N Macros",
+  "description": "Long, low-collision helper Macros used only to localize one-off prose.",
+  "entry_ids": []
+}

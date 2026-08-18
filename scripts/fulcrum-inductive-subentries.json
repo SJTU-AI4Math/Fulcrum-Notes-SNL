@@ -435,7 +435,7 @@
         "zh-CN": "$\\lambda$-抽象记号习惯"
       },
       "content": {
-        "snl": "list-partial[enumerate](\r\n    %通常将 #0表达式根据 #1记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda, deBruijnIndex ,Type.Expr-UTLC.lambda(@x, P(x)),),\r\n    %将形如 #0 的多元函数记作 #1%(\r\n        Type.Expr-UTLC.lambda(\r\n            @x,\r\n            Type.Expr-UTLC.lambda(@y, Type.apply(P(x), y))\r\n        ),\r\n        Type.Expr-UTLC.lambda(list-partial[none](@x, @y), Type.apply(P(x), y))\r\n    )\r\n)"
+        "snl": "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.NamedBinder(Type.Expr-UTLC.lambda[text](,),deBruijnIndex,Type.Expr-UTLC.lambda(@x,P(x))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.MultipleBinders(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.Shadowing(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@x,x))))"
       },
       "parent_entry_id": "Type.rl.Expr-LC.ctor.lambda-abstraction",
       "parent_node_ids": [
@@ -453,7 +453,7 @@
         "zh-CN": "$\\lambda$-应用记号习惯"
       },
       "content": {
-        "snl": "list-partial[enumerate](\r\n    %#0规定为左结合的。#1 应解释为 #2%(\r\n        Lambda.apply,\r\n        Lambda.apply(x, y, z, w),\r\n        Lambda.apply(\r\n            parentheses(\r\n                Lambda.apply(\r\n                    parentheses(Lambda.apply(x, y)),\r\n                    z\r\n                )\r\n            ),\r\n            w\r\n        )\r\n    ),\r\n    %运算优先级上 #0较 #1结合更加紧密。#2 应解释为 #3%(Lambda.apply, Type.Expr-UTLC.lambda, Type.Expr-UTLC.lambda(list-partial[none](@x, @y), Lambda.apply(x, y)),Type.Expr-UTLC.lambda(list-partial[none](@x, @y), parentheses(Lambda.apply(x, y))))\r\n)"
+        "snl": "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative(Type.Expr-UTLC.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply(parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda(Type.Expr-UTLC.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))"
       },
       "parent_entry_id": "Type.rl.Expr-LC.ctor.application",
       "parent_node_ids": [
@@ -471,7 +471,7 @@
         "zh-CN": "de Bruijn 指数"
       },
       "content": {
-        "snl": "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\r\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$%(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda,Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0@#z),Type.Expr-UTLC.bvar(1@#y),Type.Expr-UTLC.bvar(2@#x)))),Type.Expr-UTLC.bvar(0@#y)))))"
+        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.DeBruijnIndex.Explanation(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0),Type.Expr-UTLC.bvar(1),Type.Expr-UTLC.bvar(2)))),Type.Expr-UTLC.bvar(0)))))"
       },
       "parent_entry_id": "Type.rl.Expr-LC.ctor.bound-variable",
       "parent_node_ids": [
@@ -495,9 +495,10 @@
         "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(%Application Congruence%,),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,)))",
         "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,),Type.judge(Lambda.defeq.refl,),Type.judge(Lambda.defeq.symm,),Type.judge(Lambda.defeq.trans,)))",
         "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,),Type.judge(Lambda.defeq.refl,),Type.judge(Lambda.defeq.symm,),Type.judge(Lambda.defeq.trans,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Lambda.Expr,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b))))),Type.judge(Lambda.defeq.refl,Logic.forall-typed(@a,Lambda.Expr,Lambda.defeq(a,a))),Type.judge(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.judge(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Lambda.Expr,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))"
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Lambda.Expr,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b))))),Type.judge(Lambda.defeq.refl,Logic.forall-typed(@a,Lambda.Expr,Lambda.defeq(a,a))),Type.judge(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.judge(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Lambda.Expr,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))",
+        "def-inductive[prop](Type.judge(Lambda.defeq(@$\\cdot$,@$\\cdot$),Type.to(Lambda.LegalExpr,Type.to(Lambda.LegalExpr,Proposition))),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Lambda.LegalExpr,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b))))),Type.judge(Lambda.defeq.refl,Logic.forall-typed(@a,Lambda.LegalExpr,Lambda.defeq(a,a))),Type.judge(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.judge(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Lambda.LegalExpr,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))"
       ],
-      "content_snl": "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Lambda.Expr,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b))))),Type.judge(Lambda.defeq.refl,Logic.forall-typed(@a,Lambda.Expr,Lambda.defeq(a,a))),Type.judge(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.judge(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Lambda.Expr,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))"
+      "content_snl": "def-inductive[prop](Type.judge(Lambda.defeq(@$\\cdot$,@$\\cdot$),Type.to(Lambda.LegalExpr,Type.to(Lambda.LegalExpr,Proposition))),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Lambda.LegalExpr,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b))))),Type.judge(Lambda.defeq.refl,Logic.forall-typed(@a,Lambda.LegalExpr,Lambda.defeq(a,a))),Type.judge(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.judge(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Lambda.LegalExpr,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))"
     },
     {
       "id": "Type.rl.Expr-LC",
@@ -513,9 +514,11 @@
       "id": "Type.def.LegalExpr-LC",
       "accepted_content_snl": [
         "def-hyp-opq(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr(e))",
-        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda)))"
+        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda)))",
+        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))",
+        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
       ],
-      "content_snl": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda)))"
+      "content_snl": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
     },
     {
       "id": "Lambda.def.beta-single",
@@ -1572,7 +1575,8 @@
     "Type.rl.Expr-LC.ctor.lambda-abstraction",
     "Type.rmk.Expr-LC.apply",
     "Type.rmk.Expr-LC.lambda",
-    "Type.rmk.deBruijnIndex"
+    "Type.rmk.deBruijnIndex",
+    "Type.def.Currying"
   ],
   "graph_counter_repairs": [
     {
@@ -1686,6 +1690,104 @@
           "$\\eta$-归约"
         ]
       }
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative",
+      "package": "FulcrumNotesOneOffI18N",
+      "source_entry_id": "Type.rmk.Expr-LC.apply",
+      "kind": "sub",
+      "style_name": "default",
+      "body": {
+        "en": "#0 is left-associative. #1 is interpreted as #2",
+        "zh-CN": "#0规定为左结合的。#1 应解释为 #2"
+      },
+      "accepted_kinds": [
+        "partial"
+      ]
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda",
+      "package": "FulcrumNotesOneOffI18N",
+      "source_entry_id": "Type.rmk.Expr-LC.apply",
+      "kind": "sub",
+      "style_name": "default",
+      "body": {
+        "en": "In precedence, #0 binds more tightly than #1. #2 is interpreted as #3",
+        "zh-CN": "运算优先级上#0较 #1结合更加紧密。#2 应解释为 #3"
+      },
+      "accepted_kinds": [
+        "partial"
+      ]
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve",
+      "package": "FulcrumNotesOneOffI18N",
+      "source_entry_id": "Type.def.LegalExpr-LC",
+      "kind": "sub",
+      "style_name": "default",
+      "body": {
+        "en": "Every #1 in #0 resolves to a valid #2 syntax node",
+        "zh-CN": "#0 中所有 #1均可指称到合法的 #2语法节点"
+      },
+      "accepted_kinds": [
+        "partial"
+      ]
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.DeBruijnIndex.Explanation",
+      "package": "FulcrumNotesOneOffI18N",
+      "source_entry_id": "Type.rmk.deBruijnIndex",
+      "kind": "sub",
+      "style_name": "default",
+      "body": {
+        "en": "The natural-number argument of #0 is called #1 and indicates how many #2 scopes to escape outward.\nFor example, in #3, the inner \\#0 refers to $z$, \\#1 to $y$, and \\#2 to $x$; the outer \\#0 refers to $y$",
+        "zh-CN": "#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$"
+      },
+      "accepted_kinds": [
+        "partial"
+      ]
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.NamedBinder",
+      "package": "FulcrumNotesOneOffI18N",
+      "source_entry_id": "Type.rmk.Expr-LC.lambda",
+      "kind": "sub",
+      "style_name": "default",
+      "body": {
+        "en": "A #0 expression is usually written as #2 according to the reference relation encoded by #1",
+        "zh-CN": "通常将 #0表达式根据 #1的指涉关系记作形如 #2 的表达式。"
+      },
+      "accepted_kinds": [
+        "partial"
+      ]
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.MultipleBinders",
+      "package": "FulcrumNotesOneOffI18N",
+      "source_entry_id": "Type.rmk.Expr-LC.lambda",
+      "kind": "sub",
+      "style_name": "default",
+      "body": {
+        "en": "A multi-argument function of the form #0 is written as #1",
+        "zh-CN": "将形如 #0 的多元函数记作 #1。"
+      },
+      "accepted_kinds": [
+        "partial"
+      ]
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.Shadowing",
+      "package": "FulcrumNotesOneOffI18N",
+      "source_entry_id": "Type.rmk.Expr-LC.lambda",
+      "kind": "sub",
+      "style_name": "default",
+      "body": {
+        "en": "When formal parameter names repeat, a bound-variable occurrence refers to the innermost binder. In #0, $x$ refers to the later $x$ binder.",
+        "zh-CN": "在记号上，若形式参数名称发生重复，受束变元应视为指涉最内层的形式参数。如表达式 #0 中的 $x$ 应视为指涉较晚出现的形式参数 $x$。"
+      },
+      "accepted_kinds": [
+        "partial"
+      ]
     }
   ],
   "entry_renames": [
@@ -1898,5 +2000,1289 @@
       "dynamic_arity": false,
       "description": "Untyped lambda application"
     }
+  ],
+  "macro_snapshot_updates": [
+    {
+      "name": "Lambda.apply",
+      "accepted_predecessors": [
+        {
+          "description": "",
+          "source": {
+            "entries": [
+              "Type.rl.Expr-LC.ctor.application"
+            ],
+            "urls": []
+          },
+          "kind": "rule",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "#0 #1",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            },
+            {
+              "style_name": "text",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "Application",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "应用",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Lambda.apply"
+        }
+      ],
+      "canonical": {
+        "description": "",
+        "source": {
+          "entries": [],
+          "urls": []
+        },
+        "kind": "rule",
+        "dynamic_arity": true,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "#*",
+              "separator": "",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Lambda.apply"
+      }
+    },
+    {
+      "name": "Proposition",
+      "accepted_predecessors": [
+        {
+          "description": "",
+          "source": {
+            "entries": [
+              "Logic.def.proposition"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "text",
+              "tags": [],
+              "template": {
+                "mode": "text",
+                "body": "Prop",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Proposition"
+        }
+      ],
+      "canonical": {
+        "description": "",
+        "source": {
+          "entries": [
+            "Logic.def.proposition"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "text",
+            "tags": [],
+            "template": {
+              "mode": "text",
+              "body": "Prop",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Proposition"
+      }
+    },
+    {
+      "name": "def-inductive",
+      "accepted_predecessors": [
+        {
+          "description": "Inductive type definition by constructors",
+          "source": {
+            "entries": [],
+            "urls": []
+          },
+          "kind": "rule",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "localized-default",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "Define type “#0” to consist inhabitants provided by any of the following constructors:\n#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "定义类型【#0】包含由以下构造子之一提供的对象：\n#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            },
+            {
+              "style_name": "prop",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "Define “#0” to admit proofs provided by any of the following constructors:\n#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "定义【#0】可由以下构造子之一提供证明：\n#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "def-inductive"
+        },
+        {
+          "description": "Inductive type definition by constructors",
+          "source": {
+            "entries": [],
+            "urls": []
+          },
+          "kind": "rule",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "localized-default",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "Define type “#0” to consist inhabitants provided by any of the following constructors:\n#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "定义类型【#0】包含由以下构造子之一提供的对象：\n#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            },
+            {
+              "style_name": "prop",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "Define “#0” to admit proofs provided by any of the following constructors:\n#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "定义【#0】可由以下构造子之一提供的证明：\n#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "def-inductive"
+        }
+      ],
+      "canonical": {
+        "description": "Inductive type definition by constructors",
+        "source": {
+          "entries": [],
+          "urls": []
+        },
+        "kind": "rule",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "localized-default",
+            "tags": [],
+            "template": {
+              "type": "i18n",
+              "default_language": "en",
+              "values": {
+                "en": {
+                  "mode": "text",
+                  "body": "Define type “#0” to consist of inhabitants provided by any of the following constructors:\n#1",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                },
+                "zh-CN": {
+                  "mode": "text",
+                  "body": "定义类型【#0】包含由以下构造子之一提供的对象：\n#1",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                }
+              }
+            }
+          },
+          {
+            "style_name": "prop",
+            "tags": [],
+            "template": {
+              "type": "i18n",
+              "default_language": "en",
+              "values": {
+                "en": {
+                  "mode": "text",
+                  "body": "Define “#0” to admit proofs provided by any of the following constructors:\n#1",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                },
+                "zh-CN": {
+                  "mode": "text",
+                  "body": "定义【#0】可由以下构造子之一提供证明：\n#1",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                }
+              }
+            }
+          }
+        ],
+        "tags": [],
+        "name": "def-inductive"
+      }
+    },
+    {
+      "name": "thm-hyp",
+      "accepted_predecessors": [
+        {
+          "description": "",
+          "source": {
+            "entries": [
+              "Fulcrum.thm"
+            ],
+            "urls": []
+          },
+          "kind": "rule",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "zh-CN",
+                "values": {
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "设 #0，则 #1。",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "en": {
+                    "mode": "text",
+                    "body": "Let #0, then #1.",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            },
+            {
+              "style_name": "display",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "Let #0, then #1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "设 #0，则 #1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "thm-hyp"
+        }
+      ],
+      "canonical": {
+        "description": "",
+        "source": {
+          "entries": [
+            "Fulcrum.thm"
+          ],
+          "urls": []
+        },
+        "kind": "rule",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "type": "i18n",
+              "default_language": "zh-CN",
+              "values": {
+                "zh-CN": {
+                  "mode": "text",
+                  "body": "设 #0，则 #1。",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                },
+                "en": {
+                  "mode": "text",
+                  "body": "Let #0, then #1.",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                }
+              }
+            }
+          },
+          {
+            "style_name": "display",
+            "tags": [],
+            "template": {
+              "type": "i18n",
+              "default_language": "en",
+              "values": {
+                "en": {
+                  "mode": "text",
+                  "body": "Let #0, then #1",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                },
+                "zh-CN": {
+                  "mode": "text",
+                  "body": "设 #0，则 #1",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                }
+              }
+            }
+          }
+        ],
+        "tags": [],
+        "name": "thm-hyp"
+      }
+    },
+    {
+      "name": "Type.lambda-typed",
+      "accepted_predecessors": [
+        {
+          "description": "Typed lambda abstraction (mapsto)",
+          "source": {
+            "entries": [],
+            "urls": []
+          },
+          "kind": "rule",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "mapsto",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\left(#0 : #1\\right) \\mapsto #2",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            },
+            {
+              "style_name": "lambda",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\lambda #0 : #1.\\ #2",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.lambda-typed"
+        }
+      ],
+      "canonical": {
+        "description": "Typed lambda abstraction (mapsto)",
+        "source": {
+          "entries": [],
+          "urls": []
+        },
+        "kind": "rule",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "mapsto",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\left(#0 : #1\\right) \\mapsto #2",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          },
+          {
+            "style_name": "lambda",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\lambda #0 : #1.\\ #2",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.lambda-typed"
+      }
+    },
+    {
+      "name": "Type.Curry",
+      "accepted_predecessors": [
+        {
+          "description": "",
+          "source": {
+            "entries": [
+              "Type.def.Currying"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "text",
+                "body": "#0 的 Curry 化",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.Curry"
+        }
+      ],
+      "canonical": {
+        "description": "",
+        "source": {
+          "entries": [
+            "Type.def.Currying"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "type": "i18n",
+              "default_language": "en",
+              "values": {
+                "en": {
+                  "mode": "text",
+                  "body": "Currying of #0",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                },
+                "zh-CN": {
+                  "mode": "text",
+                  "body": "#0 的 Curry 化",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                }
+              }
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.Curry"
+      }
+    },
+    {
+      "name": "Type.prod",
+      "accepted_predecessors": [
+        {
+          "description": "",
+          "source": {
+            "entries": [
+              "Type.def.prod"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "#0\\times #1",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [
+            "times",
+            "product"
+          ],
+          "name": "Type.prod"
+        }
+      ],
+      "canonical": {
+        "description": "",
+        "source": {
+          "entries": [
+            "Type.def.prod"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "#0\\times #1",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [
+          "times",
+          "product"
+        ],
+        "name": "Type.prod"
+      }
+    },
+    {
+      "name": "Type.pair",
+      "accepted_predecessors": [
+        {
+          "description": "",
+          "source": {
+            "entries": [],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "tags": [],
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\left(#0, #1\\right)",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "name": "Type.pair"
+        }
+      ],
+      "canonical": {
+        "description": "",
+        "source": {
+          "entries": [
+            "Type.def.prod.ctor.pair"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "tags": [],
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\left(#0, #1\\right)",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "name": "Type.pair"
+      }
+    }
+  ],
+  "managed_macro_packages": [
+    "FulcrumNotesOneOffI18N"
+  ],
+  "entry_snl_updates": [
+    {
+      "id": "Type.rmk.Expr-LC.apply",
+      "accepted_predecessors": [
+        "list-partial[enumerate](%#0规定为左结合的。#1 应解释为 #2%(Lambda.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply[text](parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),%运算优先级上#0较 #1结合更加紧密。#2 应解释为 #3%(Lambda.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))",
+        "list-partial[enumerate](\r\n    %#0规定为左结合的。#1 应解释为 #2%(\r\n        Lambda.apply,\r\n        Lambda.apply(x, y, z, w),\r\n        Lambda.apply(\r\n            parentheses(\r\n                Lambda.apply(\r\n                    parentheses(Lambda.apply(x, y)),\r\n                    z\r\n                )\r\n            ),\r\n            w\r\n        )\r\n    ),\r\n    %运算优先级上 #0较 #1结合更加紧密。#2 应解释为 #3%(Lambda.apply, Type.Expr-UTLC.lambda, Type.Expr-UTLC.lambda(list-partial[none](@x, @y), Lambda.apply(x, y)),Type.Expr-UTLC.lambda(list-partial[none](@x, @y), parentheses(Lambda.apply(x, y))))\r\n)",
+        "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative(Type.Expr-UTLC.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply(parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda(Type.Expr-UTLC.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))"
+      ],
+      "canonical": "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative(Type.Expr-UTLC.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply(parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda(Type.Expr-UTLC.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))"
+    },
+    {
+      "id": "Type.def.LegalExpr-LC",
+      "accepted_predecessors": [
+        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))",
+        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
+      ],
+      "canonical": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
+    },
+    {
+      "id": "Type.rmk.deBruijnIndex",
+      "accepted_predecessors": [
+        "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\r\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$%(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0),Type.Expr-UTLC.bvar(1),Type.Expr-UTLC.bvar(2)))),Type.Expr-UTLC.bvar(0)))))",
+        "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\r\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$%(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda,Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0@#z),Type.Expr-UTLC.bvar(1@#y),Type.Expr-UTLC.bvar(2@#x)))),Type.Expr-UTLC.bvar(0@#y)))))",
+        "FulcrumNotes.OneOffI18N.TypeTheory.DeBruijnIndex.Explanation(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0),Type.Expr-UTLC.bvar(1),Type.Expr-UTLC.bvar(2)))),Type.Expr-UTLC.bvar(0)))))"
+      ],
+      "canonical": "FulcrumNotes.OneOffI18N.TypeTheory.DeBruijnIndex.Explanation(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0),Type.Expr-UTLC.bvar(1),Type.Expr-UTLC.bvar(2)))),Type.Expr-UTLC.bvar(0)))))"
+    },
+    {
+      "id": "Type.rmk.Expr-LC.lambda",
+      "accepted_predecessors": [
+        "list-partial[enumerate](%通常将 #0表达式根据 #1的指涉关系记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda[text](,),deBruijnIndex,Type.Expr-UTLC.lambda(@x,P(x))),%将形如 #0 的多元函数记作 #1。%(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),%在记号上，若形式参数名称发生重复，受束变元应视为指涉最内层的形式参数。如表达式 #0 中的 $x$ 应视为指涉较晚出现的形式参数 $x$。%(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@x,x))))",
+        "list-partial[enumerate](\r\n    %通常将 #0表达式根据 #1记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda, deBruijnIndex ,Type.Expr-UTLC.lambda(@x, P(x)),),\r\n    %将形如 #0 的多元函数记作 #1%(\r\n        Type.Expr-UTLC.lambda(\r\n            @x,\r\n            Type.Expr-UTLC.lambda(@y, Type.apply(P(x), y))\r\n        ),\r\n        Type.Expr-UTLC.lambda(list-partial[none](@x, @y), Type.apply(P(x), y))\r\n    )\r\n)",
+        "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.NamedBinder(Type.Expr-UTLC.lambda[text](,),deBruijnIndex,Type.Expr-UTLC.lambda(@x,P(x))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.MultipleBinders(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.Shadowing(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@x,x))))"
+      ],
+      "canonical": "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.NamedBinder(Type.Expr-UTLC.lambda[text](,),deBruijnIndex,Type.Expr-UTLC.lambda(@x,P(x))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.MultipleBinders(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.Shadowing(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@x,x))))"
+    },
+    {
+      "id": "Type.def.Church-Two",
+      "accepted_predecessors": [
+        "def(Church.two,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,Lambda.apply(f,x))))"
+      ],
+      "canonical": "def(Church.two,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,parentheses(Lambda.apply(f,x)))))"
+    },
+    {
+      "id": "Type.def.Church-Succ",
+      "accepted_predecessors": [
+        "def(Church.succ,Type.Expr-UTLC.lambda(list-partial[none](@n,@f,@x),Lambda.apply(f,Lambda.apply(n,f,x))))"
+      ],
+      "canonical": "def(Church.succ,Type.Expr-UTLC.lambda(list-partial[none](@n,@f,@x),Lambda.apply(f,parentheses(Lambda.apply(n,f,x)))))"
+    },
+    {
+      "id": "Type.def.Church-Add",
+      "accepted_predecessors": [
+        "def(Church.add,Type.Expr-UTLC.lambda(list-partial[none](@m,@n,@f,@x),Lambda.apply(m,f,Lambda.apply(n,f,x))))"
+      ],
+      "canonical": "def(Church.add,Type.Expr-UTLC.lambda(list-partial[none](@m,@n,@f,@x),Lambda.apply(m,f,parentheses(Lambda.apply(n,f,x)))))"
+    },
+    {
+      "id": "Type.def.Church-Mul",
+      "accepted_predecessors": [
+        "def(Church.mul,Type.Expr-UTLC.lambda(list-partial[none](@m,@n,@f),Lambda.apply(m,Lambda.apply(n,f))))"
+      ],
+      "canonical": "def(Church.mul,Type.Expr-UTLC.lambda(list-partial[none](@m,@n,@f),Lambda.apply(m,parentheses(Lambda.apply(n,f)))))"
+    },
+    {
+      "id": "Type.def.Church-Nat",
+      "accepted_predecessors": [
+        "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.Expr-UTLC.lambda[maspto](1,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Type.Expr-UTLC.lambda[maspto](Nat.succ(@m),Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,m,f,x))))))",
+        "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.Expr-UTLC.lambda[maspto](1,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Type.Expr-UTLC.lambda[maspto](Nat.succ(@m),Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,parentheses(Lambda.apply(Church.Nat(m),f,x))))))))"
+      ],
+      "canonical": "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.Expr-UTLC.lambda[maspto](0,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Type.Expr-UTLC.lambda[maspto](Nat.succ(@m),Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,parentheses(Lambda.apply(Church.Nat(m),f,x))))))))"
+    }
+  ],
+  "invariant_macro_styles": [
+    "Proposition::text"
+  ],
+  "retired_macro_packages": [
+    "FulcrumNotes.OneOffI18N"
   ]
 }

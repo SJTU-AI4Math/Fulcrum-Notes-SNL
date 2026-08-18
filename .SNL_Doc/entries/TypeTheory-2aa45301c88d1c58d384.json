@@ -7,7 +7,14 @@
     "id": "Type.subsec.UTLC-design",
     "package": "TypeTheory",
     "kind": "subsection",
-    "title": "无类型 $\\lambda$-演算的进一步设计",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Further Design of Untyped $\\lambda$-Calculus",
+        "zh-CN": "无类型 $\\lambda$-演算的进一步设计"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

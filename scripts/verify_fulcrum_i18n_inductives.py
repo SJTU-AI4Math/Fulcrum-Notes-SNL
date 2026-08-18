@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+if not __debug__:
+    raise RuntimeError("Fulcrum authority tooling must run without Python optimization; -O disables required assertions")
+
 import hashlib
 import json
 import re
 import subprocess
 from pathlib import Path
+
+from fulcrum_authority_validation import validate_authorities
+
 
 def _strict_object(pairs):
     result = {}
@@ -29,9 +35,10 @@ DOC = ROOT / ".SNL_Doc"
 PLAN = strict_json_loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
 I18N = strict_json_loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
 ENTRY_PACKAGE_PLAN = strict_json_loads((ROOT / "scripts/fulcrum-entry-packages.json").read_text(encoding="utf-8"))
-assert ENTRY_PACKAGE_PLAN["version"] == 1
-EXPECTED_ENTRIES = 462  # latest authored tree plus the eta defeq constructor
-EXPECTED_MACROS = 403  # lambda notation merged; variadic application remains a surface Macro
+EXPECTED_SOURCE_HEAD = "fe2bb7ff7401cdd4474e6d137b2401ccc51d1007"
+validate_authorities(I18N, PLAN, ENTRY_PACKAGE_PLAN, EXPECTED_SOURCE_HEAD)
+EXPECTED_ENTRIES = 475  # user-authored TypeTheory expansion plus managed inductive entries
+EXPECTED_MACROS = 412  # includes seven package-scoped one-off I18N helper Macros
 EXPECTED_PLACEHOLDERS = {
     "Type.def.iota-reduction": {
         "title": {"en": "$\\iota$-reduction", "zh-CN": "$\\iota$-归约"},
@@ -85,6 +92,10 @@ def i18n_values(value, label: str):
     return values
 
 
+def template_envelope(template: dict):
+    return {key: value for key, value in template.items() if key != "body"}
+
+
 def placeholder_signature(text: str):
     return tuple(sorted(set(re.findall(r"(?<!\\)#(?:\*|\d+)", text))))
 
@@ -106,7 +117,7 @@ def extract_snl_macro_names(snl: str) -> list[str]:
     i = 0
     n = len(snl)
     is_start = lambda c: c.isascii() and (c.isalpha() or c in "_.")
-    is_cont = lambda c: c.isascii() and (c.isalnum() or c in "_.")
+    is_cont = lambda c: c.isascii() and (c.isalnum() or c in "_.-")
     while i < n:
         c = snl[i]
         if c.isspace() or c in "(),[]":
@@ -155,9 +166,18 @@ entries, entry_paths = load_entities("entries", "entry")
 macros, macro_paths = load_entities("macros", "macro")
 assert len(macros) == EXPECTED_MACROS, f"Macro count changed: {len(macros)}"
 assert len(entries) == EXPECTED_ENTRIES, f"unexpected Entry count: {len(entries)}"
-assert I18N.get("source_head") == "5a8ab228c1057d257ef1b454bfcb966dda5fb4c0", "I18n map source lease changed"
-assert len(I18N.get("entries", {})) == 382, "I18n Entry mapping coverage changed"
-assert len(I18N.get("styles", {})) == 88, "I18n Macro-style mapping coverage changed"
+for spec in PLAN.get("macro_snapshot_updates", []):
+    assert spec["name"] in macros and macros[spec["name"]] == spec["canonical"], f"canonical Macro snapshot drift: {spec['name']}"
+for spec in PLAN.get("entry_snl_updates", []):
+    assert spec["id"] in entries and (entries[spec["id"]].get("content") or {}).get("snl") == spec["canonical"], f"canonical Entry SNL drift: {spec['id']}"
+for package_id in PLAN.get("managed_macro_packages", []):
+    assert package_id in config.get("active_macro_packages", []), f"inactive managed Macro Package: {package_id}"
+for package_id in PLAN.get("retired_macro_packages", []):
+    assert package_id not in config.get("active_macro_packages", []), f"retired Macro Package remains active: {package_id}"
+assert I18N.get("source_head") == EXPECTED_SOURCE_HEAD, "I18n map source lease changed"
+assert ENTRY_PACKAGE_PLAN.get("source_head") == EXPECTED_SOURCE_HEAD, "Entry Package source lease changed"
+assert len(I18N.get("entries", {})) == 395, "I18n Entry mapping coverage changed"
+assert len(I18N.get("styles", {})) == 87, "I18n Macro-style mapping coverage changed"
 
 # Macro identity migrations are complete, canonical, and have no stale alias.
 for rename in PLAN.get("macro_renames", []):
@@ -275,15 +295,20 @@ for macro_name, macro in macros.items():
             assert isinstance(template, dict), f"{label} invalid template"
             body = template.get("body", "")
             if template.get("mode") == "text" and isinstance(body, str) and is_lexical(body):
-                raise AssertionError(f"{label} lexical text is not localized")
+                style_key = f"{macro_name}::{style.get('style_name')}"
+                assert style_key in PLAN.get("invariant_macro_styles", []), f"{label} lexical text is not localized"
 
 for key, projection in I18N["styles"].items():
     macro_name, style_name = key.split("::", 1)
     assert macro_name in macros, f"I18n map references missing Macro {macro_name}"
     styles = [style for style in macros[macro_name]["styles"] if style["style_name"] == style_name]
     assert len(styles) == 1, f"mapped Macro style is not unique: {key}"
-    values = styles[0]["template"]["values"]
+    template = styles[0]["template"]
+    assert template.get("type") == "i18n" and template.get("default_language") == "en", f"mapped Macro localization envelope mismatch: {key}"
+    values = template["values"]
     assert values["en"]["body"] == projection["en"] and values["zh-CN"]["body"] == projection["zh-CN"], f"mapped Macro body mismatch: {key}"
+    for locale in ("en", "zh-CN"):
+        assert template_envelope(values[locale]) == projection["template_envelope"], f"mapped Macro template envelope mismatch: {key}/{locale}"
 
 # Requested Entries have exactly the planned content and graph placement.
 planned_requests = {spec["id"]: spec for spec in PLAN["requested_entries"]}
@@ -376,12 +401,12 @@ for inductive in PLAN["inductive_types"]:
         assert entry.get("content") == expected_content, f"wrong subentry content: {child['id']}"
         assert i18n_values(entry["title"], f"subentry {child['id']} title") == child["title"]
 
-# Entity paths and package manifests are canonical and complete.
+# Entity paths and shared Package-registry manifests are canonical and complete.
 manifest_members = {}
 for path in sorted((DOC / "packages").glob("*.json")):
     manifest = strict_json_loads(path.read_text(encoding="utf-8"))
     package_id = manifest["id"]
-    assert package_id in ENTRY_PACKAGE_PLAN["manifests"], f"unplanned Entry Package: {package_id}"
+    assert package_id in ENTRY_PACKAGE_PLAN["manifests"], f"unplanned Package registry manifest: {package_id}"
     assert manifest == ENTRY_PACKAGE_PLAN["manifests"][package_id]["canonical"], f"Entry Package manifest snapshot drift: {package_id}"
     assert manifest.get("schema_version") == 2, f"stale Package schema: {package_id}"
     expected_name = f"{package_id}-{identity_hash('package', package_id)}.json"
@@ -390,7 +415,9 @@ for path in sorted((DOC / "packages").glob("*.json")):
     assert ids == js_locale_sorted(ids), f"unsorted package membership: {package_id}"
     assert len(ids) == len(set(ids)), f"duplicate package membership: {package_id}"
     manifest_members[package_id] = set(ids)
-assert set(manifest_members) == set(ENTRY_PACKAGE_PLAN["manifests"]), "Entry Package manifest set drift"
+assert set(manifest_members) == set(ENTRY_PACKAGE_PLAN["manifests"]), "Package registry manifest set drift"
+for package_id in PLAN.get("managed_macro_packages", []):
+    assert manifest_members.get(package_id) == set(), f"Macro-only package unexpectedly owns Entries: {package_id}"
 planned_entry_packages = {}
 for package_id, entry_ids in ENTRY_PACKAGE_PLAN["assignments"].items():
     assert len(entry_ids) == len(set(entry_ids)), f"duplicate planned Package member: {package_id}"

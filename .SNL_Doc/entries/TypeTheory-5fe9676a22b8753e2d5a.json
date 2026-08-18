@@ -7,7 +7,14 @@
     "id": "Type.subsec.TypeSystem",
     "package": "TypeTheory",
     "kind": "subsection",
-    "title": "类型系统",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Type Systems",
+        "zh-CN": "类型系统"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

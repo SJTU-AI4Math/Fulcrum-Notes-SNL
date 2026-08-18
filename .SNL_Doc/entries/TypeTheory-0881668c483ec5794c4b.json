@@ -7,8 +7,24 @@
     "id": "Lambda.def.NF",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "标准型",
-    "content": {},
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Normal Form",
+        "zh-CN": "标准型"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "In this untyped λ-calculus section, a λ-term is in normal form when none of its subterms is a β-redex.",
+          "zh-CN": "在本节的无类型 λ-演算中，若一个 λ-项的任何子项都不是 β-可约式，则称其为标准型。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

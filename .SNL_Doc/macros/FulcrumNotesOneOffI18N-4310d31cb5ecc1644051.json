@@ -2,16 +2,16 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "TypeTheory",
+  "package": "FulcrumNotesOneOffI18N",
   "macro": {
     "description": "",
     "source": {
       "entries": [
-        "Type.def.Currying"
+        "Type.rmk.Expr-LC.apply"
       ],
       "urls": []
     },
-    "kind": "const",
+    "kind": "sub",
     "dynamic_arity": false,
     "styles": [
       {
@@ -23,7 +23,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "Currying of #0",
+              "body": "In precedence, #0 binds more tightly than #1. #2 is interpreted as #3",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "#0 的 Curry 化",
+              "body": "运算优先级上#0较 #1结合更加紧密。#2 应解释为 #3",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -66,6 +66,6 @@
       }
     ],
     "tags": [],
-    "name": "Type.Curry"
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda"
   }
 }

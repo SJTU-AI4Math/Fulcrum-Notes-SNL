@@ -11,7 +11,7 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Big Omega (Ω)",
+        "en": "$\\Omega$ Combinator",
         "zh-CN": "$\\Omega$ 组合子"
       }
     },

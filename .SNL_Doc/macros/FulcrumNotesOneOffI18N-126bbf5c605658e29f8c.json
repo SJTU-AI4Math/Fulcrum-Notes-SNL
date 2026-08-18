@@ -2,16 +2,16 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "TypeTheory",
+  "package": "FulcrumNotesOneOffI18N",
   "macro": {
     "description": "",
     "source": {
       "entries": [
-        "Type.def.Currying"
+        "Type.rmk.Expr-LC.apply"
       ],
       "urls": []
     },
-    "kind": "const",
+    "kind": "sub",
     "dynamic_arity": false,
     "styles": [
       {
@@ -23,7 +23,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "Currying of #0",
+              "body": "#0 is left-associative. #1 is interpreted as #2",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "#0 的 Curry 化",
+              "body": "#0规定为左结合的。#1 应解释为 #2",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -66,6 +66,6 @@
       }
     ],
     "tags": [],
-    "name": "Type.Curry"
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative"
   }
 }

@@ -11,8 +11,8 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Closed Expression (Non-typed $\\lambda$-Calculus)",
-        "zh-CN": "闭表达式（无类型 $\\lambda$-演算）"
+        "en": "Raw Expression (Untyped $\\lambda$-Calculus)",
+        "zh-CN": "原始表达式（无类型 $\\lambda$-演算）"
       }
     },
     "content": {

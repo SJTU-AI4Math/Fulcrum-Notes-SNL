@@ -12,7 +12,7 @@
       "default_language": "en",
       "values": {
         "en": "Currying",
-        "zh-CN": "Curry 化"
+        "zh-CN": "柯里化"
       }
     },
     "content": {

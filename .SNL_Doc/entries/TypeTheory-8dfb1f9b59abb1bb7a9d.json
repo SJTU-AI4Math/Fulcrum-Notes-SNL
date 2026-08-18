@@ -7,8 +7,24 @@
     "id": "Type.def.named-lambda",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "$\\lambda$-抽象的绑定子命名",
-    "content": {},
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Named-Binder Presentation of $\\lambda$-Abstraction",
+        "zh-CN": "$\\lambda$-抽象的绑定子命名"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A named-binder presentation writes each λ-binder and its bound occurrences using a variable name. The names are presentation data: consistently renaming a binder by α-conversion preserves the binding structure.",
+          "zh-CN": "绑定子命名表示用变量名书写每个 λ-绑定子及其约束的出现。名称属于表示层数据；通过 α-转换一致地重命名绑定子不会改变绑定结构。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

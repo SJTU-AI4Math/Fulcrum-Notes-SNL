@@ -2,16 +2,16 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "TypeTheory",
+  "package": "FulcrumNotesOneOffI18N",
   "macro": {
     "description": "",
     "source": {
       "entries": [
-        "Type.def.Currying"
+        "Type.rmk.Expr-LC.lambda"
       ],
       "urls": []
     },
-    "kind": "const",
+    "kind": "sub",
     "dynamic_arity": false,
     "styles": [
       {
@@ -23,7 +23,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "Currying of #0",
+              "body": "When formal parameter names repeat, a bound-variable occurrence refers to the innermost binder. In #0, $x$ refers to the later $x$ binder.",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "#0 的 Curry 化",
+              "body": "在记号上，若形式参数名称发生重复，受束变元应视为指涉最内层的形式参数。如表达式 #0 中的 $x$ 应视为指涉较晚出现的形式参数 $x$。",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -66,6 +66,6 @@
       }
     ],
     "tags": [],
-    "name": "Type.Curry"
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.Shadowing"
   }
 }

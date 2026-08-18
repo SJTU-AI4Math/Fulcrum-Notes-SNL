@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.Expr-UTLC.lambda[maspto](1,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Type.Expr-UTLC.lambda[maspto](Nat.succ(@m),Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,m,f,x))))))"
+      "snl": "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.Expr-UTLC.lambda[maspto](0,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Type.Expr-UTLC.lambda[maspto](Nat.succ(@m),Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,parentheses(Lambda.apply(Church.Nat(m),f,x))))))))"
     },
     "contribution_info": null,
     "pointer": null

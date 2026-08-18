@@ -7,8 +7,24 @@
     "id": "Lambda.ppt.NF-is-HNF",
     "package": "TypeTheory",
     "kind": "property",
-    "title": "标准型严于首标准型",
-    "content": {},
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Every Normal Form Is a Head Normal Form",
+        "zh-CN": "标准型必为首标准型"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Every normal form is a head normal form, but not conversely. For example, `λx. x ((λy. y) z)` is in head normal form but not in normal form.",
+          "zh-CN": "每个标准型都是首标准型，反之不成立。例如，`λx. x ((λy. y) z)` 是首标准型，但不是标准型。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

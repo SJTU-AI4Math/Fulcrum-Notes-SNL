@@ -11,12 +11,19 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "SKI is Complete",
+        "en": "SKI Is Complete",
         "zh-CN": "SKI 是完备的"
       }
     },
     "content": {
-      "markdown": "任何无类型 $\\lambda$-演算表达式均依定义相等于 $S$, $K$, $I$ 的有限次应用。"
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Every closed untyped λ-term is βη-equivalent to a combinatory term built solely from `S`, `K`, `I`, and application.",
+          "zh-CN": "每个闭的无类型 λ-项都与一个仅由 `S`、`K`、`I` 和应用构成的组合子项 βη-等价。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null

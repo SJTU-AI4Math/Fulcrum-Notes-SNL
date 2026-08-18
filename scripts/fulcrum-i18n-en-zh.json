@@ -1,5 +1,5 @@
 {
-  "source_head": "5a8ab228c1057d257ef1b454bfcb966dda5fb4c0",
+  "source_head": "fe2bb7ff7401cdd4474e6d137b2401ccc51d1007",
   "entries": {
     "Algebra.ctxt.1": {
       "title": {
@@ -2203,9 +2203,13 @@
     },
     "Type.def.I-Combinator": {
       "title": {
-        "en": "I Combinator",
-        "zh-CN": "I 组合子"
-      }
+        "en": "$I$ Combinator",
+        "zh-CN": "$I$ 组合子"
+      },
+      "accepted_title_en": [
+        "$I$ Combinator",
+        "I Combinator"
+      ]
     },
     "Type.def.Iota-Combinator": {
       "title": {
@@ -2215,24 +2219,32 @@
     },
     "Type.def.K-Combinator": {
       "title": {
-        "en": "K Combinator",
-        "zh-CN": "K 组合子"
-      }
+        "en": "$K$ Combinator",
+        "zh-CN": "$K$ 组合子"
+      },
+      "accepted_title_en": [
+        "$K$ Combinator",
+        "K Combinator"
+      ]
     },
     "Type.def.LegalExpr-LC": {
       "title": {
-        "en": "Legal Expression (Non-typed $\\lambda$-Calculus)",
+        "en": "Legal Expression (Untyped $\\lambda$-Calculus)",
         "zh-CN": "合法表达式（无类型 $\\lambda$-演算）"
       },
       "accepted_title_en": [
+        "Legal Expression (Non-typed $\\lambda$-Calculus)",
         "Legal Expression (Non-typed Lambda Calculus)"
       ]
     },
     "Type.def.Omega-Big": {
       "title": {
-        "en": "Big Omega (Ω)",
-        "zh-CN": "大 Omega（Ω）"
-      }
+        "en": "$\\Omega$ Combinator",
+        "zh-CN": "$\\Omega$ 组合子"
+      },
+      "accepted_title_en": [
+        "Big Omega (Ω)"
+      ]
     },
     "Type.def.S-Combinator": {
       "title": {
@@ -2293,9 +2305,12 @@
     },
     "Type.def.omega-Combinator": {
       "title": {
-        "en": "Omega Combinator (ω)",
-        "zh-CN": "Omega 组合子（ω）"
-      }
+        "en": "$\\omega$ Combinator",
+        "zh-CN": "$\\omega$ 组合子"
+      },
+      "accepted_title_en": [
+        "Omega Combinator (ω)"
+      ]
     },
     "Type.def.prod": {
       "title": {
@@ -2350,12 +2365,15 @@
     },
     "Type.rl.Expr-LC": {
       "title": {
-        "en": "Closed Expression (Non-typed $\\lambda$-Calculus)",
-        "zh-CN": "闭表达式（无类型 $\\lambda$-演算）"
+        "en": "Raw Expression (Untyped $\\lambda$-Calculus)",
+        "zh-CN": "原始表达式（无类型 $\\lambda$-演算）"
       },
       "accepted_title_en": [
+        "Closed Expression (Non-typed $\\lambda$ -Calculus",
+        "Closed Expression (Non-typed $\\lambda$-Calculus)",
         "Expression (Non-typed Lambda Calculus)",
-        "Closed Expression (Non-typed $\\lambda$ -Calculus"
+        "Closed Expression (Untyped $\\lambda$-Calculus)",
+        "Closed Expression (Non-Typed $\\lambda$-Calculus)"
       ]
     },
     "Type.rl.Expr-STLC": {
@@ -2477,9 +2495,19 @@
     },
     "Type.thm.SKI-complete": {
       "title": {
-        "en": "SKI is Complete",
+        "en": "SKI Is Complete",
         "zh-CN": "SKI 是完备的"
-      }
+      },
+      "accepted_title_en": [
+        "SKI is Complete"
+      ],
+      "markdown": {
+        "en": "Every closed untyped λ-term is βη-equivalent to a combinatory term built solely from `S`, `K`, `I`, and application.",
+        "zh-CN": "每个闭的无类型 λ-项都与一个仅由 `S`、`K`、`I` 和应用构成的组合子项 βη-等价。"
+      },
+      "accepted_markdown": [
+        "任何无类型 $\\lambda$-演算表达式均依定义相等于 $S$, $K$, $I$ 的有限次应用。"
+      ]
     },
     "cgt": {
       "title": {
@@ -2570,324 +2598,1909 @@
         "en": "Type Universe",
         "zh-CN": "类型宇宙"
       }
+    },
+    "Fulcrum.thm": {
+      "title": {
+        "en": "Theorem",
+        "zh-CN": "定理"
+      },
+      "accepted_title_en": [
+        "定理"
+      ],
+      "markdown": {
+        "en": "A theorem is established by stating a proposition together with a valid proof. A proposition presented as a theorem should be supported by a well-formed proof entry.",
+        "zh-CN": "定理通过命题陈述及其合法证明来确立。作为定理陈述的命题应当有良构的证明条目支撑。"
+      },
+      "accepted_markdown": [
+        "通过陈述命题确立一个定理的语义。\r\n\r\n视为定理的命题应当有合法的证明条目支撑。"
+      ]
+    },
+    "Lambda.def.HNF": {
+      "title": {
+        "en": "Head Normal Form",
+        "zh-CN": "首标准型"
+      },
+      "accepted_title_en": [
+        "首标准型"
+      ],
+      "markdown": {
+        "en": "A λ-term is in head normal form when it has the shape `λx₁ … xₙ. h t₁ … tₘ`, where `h` is a variable or a declared constant. Equivalently, after removing leading λ-abstractions, no β-redex occurs along the head spine. The arguments `tᵢ` need not themselves be normal.",
+        "zh-CN": "若一个 λ-项形如 `λx₁ … xₙ. h t₁ … tₘ`，其中 `h` 是变量或已声明常量，则称其为首标准型。等价地，去掉开头的 λ-抽象后，其首部脊柱上不存在 β-可约式；各参数 `tᵢ` 本身不必已经标准化。"
+      },
+      "accepted_markdown": [
+        null
+      ]
+    },
+    "Lambda.def.WHNF": {
+      "title": {
+        "en": "Weak Head Normal Form",
+        "zh-CN": "弱首标准型"
+      },
+      "accepted_title_en": [
+        "弱首标准型"
+      ],
+      "markdown": {
+        "en": "A λ-term is in weak head normal form when its outermost head requires no reduction: it is a λ-abstraction, or a variable or declared constant, possibly applied to arguments. Its body and arguments may still contain redexes.",
+        "zh-CN": "若一个 λ-项的最外层首部无需继续归约，即它是 λ-抽象，或是变量或已声明常量（可带若干参数），则称其为弱首标准型。其函数体和参数中仍可含有可约式。"
+      },
+      "accepted_markdown": [
+        null,
+        {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": "A λ-term is in weak head normal form when its outermost head requires no reduction: it is a λ-abstraction, or an application headed by a variable or declared constant. Its body and arguments may still contain redexes.",
+            "zh-CN": "若一个 λ-项的最外层首部无需继续归约，即它是 λ-抽象，或是以变量或已声明常量为首部的应用，则称其为弱首标准型。其函数体和参数中仍可含有可约式。"
+          }
+        }
+      ]
+    },
+    "Lambda.def.NF": {
+      "title": {
+        "en": "Normal Form",
+        "zh-CN": "标准型"
+      },
+      "accepted_title_en": [
+        "标准型"
+      ],
+      "markdown": {
+        "en": "In this untyped λ-calculus section, a λ-term is in normal form when none of its subterms is a β-redex.",
+        "zh-CN": "在本节的无类型 λ-演算中，若一个 λ-项的任何子项都不是 β-可约式，则称其为标准型。"
+      },
+      "accepted_markdown": [
+        null
+      ]
+    },
+    "Lambda.ppt.HNF-is-WHNF": {
+      "title": {
+        "en": "Every Head Normal Form Is a Weak Head Normal Form",
+        "zh-CN": "首标准型必为弱首标准型"
+      },
+      "accepted_title_en": [
+        "首标准型严于弱首标准型"
+      ],
+      "markdown": {
+        "en": "Every head normal form is a weak head normal form, but not conversely. For example, `λx. (λy. y) z` is in weak head normal form but not in head normal form.",
+        "zh-CN": "每个首标准型都是弱首标准型，反之不成立。例如，`λx. (λy. y) z` 是弱首标准型，但不是首标准型。"
+      },
+      "accepted_markdown": [
+        null
+      ]
+    },
+    "Lambda.ppt.NF-is-HNF": {
+      "title": {
+        "en": "Every Normal Form Is a Head Normal Form",
+        "zh-CN": "标准型必为首标准型"
+      },
+      "accepted_title_en": [
+        "标准型严于首标准型"
+      ],
+      "markdown": {
+        "en": "Every normal form is a head normal form, but not conversely. For example, `λx. x ((λy. y) z)` is in head normal form but not in normal form.",
+        "zh-CN": "每个标准型都是首标准型，反之不成立。例如，`λx. x ((λy. y) z)` 是首标准型，但不是标准型。"
+      },
+      "accepted_markdown": [
+        null
+      ]
+    },
+    "Type.cxmp.noHNF": {
+      "title": {
+        "en": "$\\Omega$ Has No Head Normal Form",
+        "zh-CN": "$\\Omega$ 组合子没有首标准型"
+      },
+      "accepted_title_en": [
+        "$\\Omega$ 组合子不可表示为首标准型"
+      ],
+      "markdown": {
+        "en": "The term `Ω = (λx. x x) (λx. x x)` contracts to itself. Every head-reduction sequence therefore repeats `Ω`, so `Ω` has no head normal form.",
+        "zh-CN": "项 `Ω = (λx. x x) (λx. x x)` 归约后仍为自身，因此任何首部归约序列都会重复 `Ω`，故 `Ω` 没有首标准型。"
+      },
+      "accepted_markdown": [
+        null
+      ]
+    },
+    "Type.def.alpha-conversion": {
+      "title": {
+        "en": "$\\alpha$-Conversion",
+        "zh-CN": "$\\alpha$-转换"
+      },
+      "accepted_title_en": [
+        "$\\alpha$-转换"
+      ],
+      "markdown": {
+        "en": "α-conversion consistently renames a binder and its bound occurrences to a fresh name, without changing binding structure or capturing free variables.",
+        "zh-CN": "α-转换把一个绑定子及其约束的出现一致地改为新名称，同时不改变绑定结构，也不捕获自由变量。"
+      },
+      "accepted_markdown": [
+        null
+      ]
+    },
+    "Type.def.named-lambda": {
+      "title": {
+        "en": "Named-Binder Presentation of $\\lambda$-Abstraction",
+        "zh-CN": "$\\lambda$-抽象的绑定子命名"
+      },
+      "accepted_title_en": [
+        "$\\lambda$-抽象的绑定子命名"
+      ],
+      "markdown": {
+        "en": "A named-binder presentation writes each λ-binder and its bound occurrences using a variable name. The names are presentation data: consistently renaming a binder by α-conversion preserves the binding structure.",
+        "zh-CN": "绑定子命名表示用变量名书写每个 λ-绑定子及其约束的出现。名称属于表示层数据；通过 α-转换一致地重命名绑定子不会改变绑定结构。"
+      },
+      "accepted_markdown": [
+        null
+      ]
+    },
+    "Type.def.UTLC-const": {
+      "title": {
+        "en": "Constant Context",
+        "zh-CN": "常量语境"
+      },
+      "accepted_title_en": [
+        "常量语境"
+      ],
+      "markdown": {
+        "en": "A constant context records the free constant symbols available to an untyped λ-term. Unlike variables introduced by λ-abstraction, these constants are not captured by λ-binders.",
+        "zh-CN": "常量语境记录无类型 λ-项可以使用的自由常量符号。与 λ-抽象引入的变量不同，这些常量不会被 λ-绑定子捕获。"
+      },
+      "accepted_markdown": [
+        null
+      ]
+    },
+    "Type.def.UTLC-term": {
+      "title": {
+        "en": "$\\lambda$-Term",
+        "zh-CN": "$\\lambda$-项"
+      },
+      "accepted_title_en": [
+        "$\\lambda$-项"
+      ],
+      "markdown": {
+        "en": "A λ-term is a well-scoped expression generated from variables, λ-abstraction, and application, optionally using constants declared in the current constant context.",
+        "zh-CN": "λ-项是由变量、λ-抽象和应用生成的良作用域表达式，并可选用当前常量语境中声明的常量。"
+      },
+      "accepted_markdown": [
+        null
+      ]
+    },
+    "Type.subsec.TypeSystem": {
+      "title": {
+        "en": "Type Systems",
+        "zh-CN": "类型系统"
+      },
+      "accepted_title_en": [
+        "类型系统"
+      ]
+    },
+    "Type.subsec.UTLC-design": {
+      "title": {
+        "en": "Further Design of Untyped $\\lambda$-Calculus",
+        "zh-CN": "无类型 $\\lambda$-演算的进一步设计"
+      },
+      "accepted_title_en": [
+        "无类型 $\\lambda$-演算的进一步设计"
+      ]
     }
   },
   "styles": {
     "Algebra.Cycle::default": {
       "en": "Cycle",
-      "zh-CN": "轮换"
+      "zh-CN": "轮换",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Algebra.Group::default": {
       "en": "(#0, #1) is a group",
-      "zh-CN": "(#0, #1) 是群"
+      "zh-CN": "(#0, #1) 是群",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "(#0, #1) is a group"
+      }
     },
     "Algebra.GrpAction::default": {
       "en": "Action",
-      "zh-CN": "作用"
+      "zh-CN": "作用",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Algebra.GrpEpi::default": {
       "en": "Epi",
-      "zh-CN": "满态射"
+      "zh-CN": "满态射",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Algebra.GrpHom::default": {
       "en": "Hom",
-      "zh-CN": "同态"
+      "zh-CN": "同态",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Algebra.GrpIso::default": {
       "en": "Iso",
-      "zh-CN": "同构"
+      "zh-CN": "同构",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Algebra.GrpMono::default": {
       "en": "Mono",
-      "zh-CN": "单态射"
+      "zh-CN": "单态射",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Algebra.Monoid::default": {
       "en": "(#0, #1) is a monoid",
-      "zh-CN": "(#0, #1) 是幺半群"
+      "zh-CN": "(#0, #1) 是幺半群",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "(#0, #1) is a monoid"
+      }
     },
     "Algebra.Perm::default": {
       "en": "Perm",
-      "zh-CN": "置换"
+      "zh-CN": "置换",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Algebra.Semigroup::default": {
       "en": "(#0, #1) is a semigroup",
-      "zh-CN": "(#0, #1) 是半群"
+      "zh-CN": "(#0, #1) 是半群",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": "(#0, #1) is a semigroup"
+      }
     },
     "Algebra.Subgroup::default": {
       "en": "Subgroup",
-      "zh-CN": "子群"
+      "zh-CN": "子群",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Algebra.Trans::default": {
       "en": "Trans",
-      "zh-CN": "对换"
+      "zh-CN": "对换",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Analysis.isContinuousOn::default": {
       "en": "#0 is continuous on #1",
-      "zh-CN": "#0 在 #1 上连续"
+      "zh-CN": "#0 在 #1 上连续",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Analysis.isDeriv::default": {
       "en": "#0 has derivative #1",
-      "zh-CN": "#0 的导数为 #1"
+      "zh-CN": "#0 的导数为 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "FP.Lattice::default": {
       "en": "#0 is a lattice",
-      "zh-CN": "#0 是格"
+      "zh-CN": "#0 是格",
+      "template_envelope": {
+        "mode": "text"
+      }
     },
     "FP.Monad::default": {
       "en": "#0 is a monad",
-      "zh-CN": "#0 是单子"
+      "zh-CN": "#0 是单子",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "FP.MonadLattice::default": {
       "en": "#0 is a monad lattice",
-      "zh-CN": "#0 是单子格"
+      "zh-CN": "#0 是单子格",
+      "template_envelope": {
+        "mode": "text"
+      }
     },
     "FP.MonadTransformer::default": {
       "en": "#0 is a monad transformer",
-      "zh-CN": "#0 是单子变换器"
+      "zh-CN": "#0 是单子变换器",
+      "template_envelope": {
+        "mode": "text"
+      }
     },
     "FP.OrderedMonad::default": {
       "en": "#0 is an ordered monad",
-      "zh-CN": "#0 是有序单子"
+      "zh-CN": "#0 是有序单子",
+      "template_envelope": {
+        "mode": "text"
+      }
     },
     "FP.PartialOrder::default": {
       "en": "#0 is a partial order",
-      "zh-CN": "#0 是偏序"
+      "zh-CN": "#0 是偏序",
+      "template_envelope": {
+        "mode": "text"
+      }
     },
     "Lean4.constructor::default": {
       "en": "Split the conjunction into the following goals:",
-      "zh-CN": "将合取拆分为以下目标："
+      "zh-CN": "将合取拆分为以下目标：",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lean4.exact::default": {
       "en": "The conclusion follows from #0.",
-      "zh-CN": "由 #0 可得结论。"
+      "zh-CN": "由 #0 可得结论。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lean4.rw::default": {
       "en": "Rewrite #0 as #1.",
-      "zh-CN": "将 #0 改写为 #1。"
+      "zh-CN": "将 #0 改写为 #1。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lean4.symm::default": {
       "en": "Reverse the equality.",
-      "zh-CN": "将等式反向。"
+      "zh-CN": "将等式反向。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lean4.use::default": {
       "en": "Use #0 as the witness. It remains to prove:",
-      "zh-CN": "使用 #0 作为见证。还需证明："
+      "zh-CN": "使用 #0 作为见证。还需证明：",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Logic.false::text": {
       "en": "False",
-      "zh-CN": "假"
+      "zh-CN": "假",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Logic.true::text": {
       "en": "True",
-      "zh-CN": "真"
+      "zh-CN": "真",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Measure.MeasureSpace::default": {
       "en": "#0 is a measure space",
-      "zh-CN": "#0 是测度空间"
+      "zh-CN": "#0 是测度空间",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Monad::default": {
       "en": "#0 is a monad",
-      "zh-CN": "#0 是单子"
+      "zh-CN": "#0 是单子",
+      "template_envelope": {
+        "mode": "text"
+      }
     },
     "Proof.absurd::default": {
       "en": "→ Contradiction",
-      "zh-CN": "→ 矛盾"
+      "zh-CN": "→ 矛盾",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Proof.and::default": {
       "en": "#0 and #1",
-      "zh-CN": "#0 且 #1"
+      "zh-CN": "#0 且 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Proof.applyOn::default": {
       "en": "On #0, applying #1 yields #2",
-      "zh-CN": "对 #0 应用 #1 可知 #2"
+      "zh-CN": "对 #0 应用 #1 可知 #2",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Proof.because::default": {
       "en": "Since #0 #1,",
-      "zh-CN": "由于 #0 #1,"
+      "zh-CN": "由于 #0 #1,",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Proof.claim::default": {
       "en": "We claim that #0 is the desired object; below we prove #1",
-      "zh-CN": "我们断言 #0 就是所要找的对象, 下面我们证明 #1"
+      "zh-CN": "我们断言 #0 就是所要找的对象, 下面我们证明 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Proof.divideBoth::default": {
       "en": "Dividing both sides by #0 gives #1",
-      "zh-CN": "两边同除以 #0 即得 #1"
+      "zh-CN": "两边同除以 #0 即得 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Proof.done::default": {
       "en": "→ Done",
-      "zh-CN": "→ 完成"
+      "zh-CN": "→ 完成",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Proof.fromPremises::default": {
       "en": "The desired conclusion follows from #*",
-      "zh-CN": "由 #* 可推出所需结论"
+      "zh-CN": "由 #* 可推出所需结论",
+      "template_envelope": {
+        "mode": "text",
+        "separator": " , ",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Proof.obtain::default": {
       "en": "There exists #0 such that #1",
-      "zh-CN": "存在 #0 使得 #1"
+      "zh-CN": "存在 #0 使得 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Proof.simplifies::default": {
       "en": "Condition #0 simplifies to #1",
-      "zh-CN": "条件 #0 可化简为 #1"
-    },
-    "Proposition::text": {
-      "en": "Prop",
-      "zh-CN": "命题"
+      "zh-CN": "条件 #0 可化简为 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "RealAnalysis.almostEverywhere::default": {
       "en": "#0 a.e.",
-      "zh-CN": "#0 几乎处处成立"
+      "zh-CN": "#0 几乎处处成立",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "RealAnalysis.measurable::default": {
       "en": "#0 is measuable",
-      "zh-CN": "#0 是可测的"
+      "zh-CN": "#0 是可测的",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "RealAnalysis.simple::default": {
       "en": "#0 is simple",
-      "zh-CN": "#0 是简单函数"
+      "zh-CN": "#0 是简单函数",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Topology.heineBorel::default": {
       "en": "Heine-Borel theorem",
-      "zh-CN": "Heine-Borel 定理"
+      "zh-CN": "Heine-Borel 定理",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Type.Expr::default": {
       "en": "Expression",
-      "zh-CN": "表达式"
+      "zh-CN": "表达式",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Type.Term::default": {
       "en": "Term",
-      "zh-CN": "项"
+      "zh-CN": "项",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Type.apply::termProof": {
       "en": "premise #0 applied to context #1",
-      "zh-CN": "将前提 #0 应用于上下文 #1"
+      "zh-CN": "将前提 #0 应用于上下文 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Type.judge::be": {
       "en": "#0 be #1",
-      "zh-CN": "#0 是 #1"
+      "zh-CN": "#0 是 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Type.judge::be-a": {
       "en": "#0 be a #1",
-      "zh-CN": "#0 是一个 #1"
+      "zh-CN": "#0 是一个 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Type.judge::be-an": {
       "en": "#0 be an #1",
-      "zh-CN": "#0 是一个 #1"
+      "zh-CN": "#0 是一个 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "contradiction::default": {
       "en": "which is a contradiction",
-      "zh-CN": "这就产生了矛盾"
+      "zh-CN": "这就产生了矛盾",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-hyp::EN": {
       "en": "Let #0, define “#1” to be #2. ",
-      "zh-CN": "设 #0，定义【#1】为 #2。"
+      "zh-CN": "设 #0，定义【#1】为 #2。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-hyp::predicate": {
       "en": "Let #0, define “#1” if and only if #2. ",
-      "zh-CN": "设 #0，定义【#1】当且仅当 #2。"
+      "zh-CN": "设 #0，定义【#1】当且仅当 #2。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-hyp::中文": {
       "en": "Let #0, define “#1” to be #2. ",
-      "zh-CN": "设 #0，定义【#1】为 #2。"
+      "zh-CN": "设 #0，定义【#1】为 #2。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-hyp::谓词": {
       "en": "Let #0, define “#1” if and only if #2. ",
-      "zh-CN": "设 #0，定义【#1】当且仅当 #2。"
+      "zh-CN": "设 #0，定义【#1】当且仅当 #2。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-inductive::prop": {
       "en": "Define “#0” to admit proofs provided by any of the following constructors:\n#1",
-      "zh-CN": "定义【#0】可由以下构造子之一提供的证明：\n#1"
+      "zh-CN": "定义【#0】可由以下构造子之一提供证明：\n#1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-struct-hyp::EN": {
       "en": "Let #0, define structure “#1” consisting of the following data:\n#2",
-      "zh-CN": "设#0，定义结构体【#1】包含以下信息:\n#2"
+      "zh-CN": "设#0，定义结构体【#1】包含以下信息:\n#2",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-struct-hyp::中文": {
       "en": "Let #0, define structure “#1” consisting of the following data:\n#2",
-      "zh-CN": "设#0，定义结构体【#1】包含以下信息:\n#2"
+      "zh-CN": "设#0，定义结构体【#1】包含以下信息:\n#2",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-struct::EN": {
       "en": "Define structure “#0” consisting of the following data:\n#1",
-      "zh-CN": "定义结构体【#0】包含以下信息：\n#1"
+      "zh-CN": "定义结构体【#0】包含以下信息：\n#1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-struct::prop": {
       "en": "Define “#0” if and only if all following data are provided:\n#1",
-      "zh-CN": "定义【#0】当且仅当可提供以下所有信息：\n#1"
+      "zh-CN": "定义【#0】当且仅当可提供以下所有信息：\n#1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-struct::中文": {
       "en": "Define structure “#0” consisting of the following data:\n#1",
-      "zh-CN": "定义结构体【#0】包含以下信息：\n#1"
+      "zh-CN": "定义结构体【#0】包含以下信息：\n#1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-struct::谓词": {
       "en": "Define “#0” if and only if all following data are provided:\n#1",
-      "zh-CN": "定义【#0】当且仅当可提供以下所有信息：\n#1"
+      "zh-CN": "定义【#0】当且仅当可提供以下所有信息：\n#1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def::EN": {
       "en": "Define “#0” to be #1. ",
-      "zh-CN": "定义【#0】为 #1。"
+      "zh-CN": "定义【#0】为 #1。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def::display": {
       "en": "Define “#0” to be: #1",
-      "zh-CN": "定义【#0】为：#1"
+      "zh-CN": "定义【#0】为：#1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def::predicate": {
       "en": "Define “#0” if and only if #1.",
-      "zh-CN": "定义【#0】当且仅当 #1。"
+      "zh-CN": "定义【#0】当且仅当 #1。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def::predicateDisplay": {
       "en": "Define “#0” if and only if:\n#1",
-      "zh-CN": "定义【#0】当且仅当：\n#1"
+      "zh-CN": "定义【#0】当且仅当：\n#1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def::中文": {
       "en": "Define “#0” to be #1. ",
-      "zh-CN": "定义【#0】为 #1。"
+      "zh-CN": "定义【#0】为 #1。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "have::default": {
       "en": "We have: #0, proved by:",
-      "zh-CN": "我们有：#0，证明如下："
+      "zh-CN": "我们有：#0，证明如下：",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "ivt_average::default": {
       "en": "the intermediate value theorem for the endpoint average",
-      "zh-CN": "端点平均值的介值定理"
+      "zh-CN": "端点平均值的介值定理",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "let::default": {
       "en": "#0 : #1 be #2",
-      "zh-CN": "令 #0 : #1 为 #2"
+      "zh-CN": "令 #0 : #1 为 #2",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "match::EN": {
       "en": "match #0 by cases, if #0 is #1",
-      "zh-CN": "对 #0 进行模式匹配：若 #0 为 #1"
+      "zh-CN": "对 #0 进行模式匹配：若 #0 为 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "match::中文": {
       "en": "match #0 by cases, if #0 is #1",
-      "zh-CN": "对 #0 进行模式匹配：若 #0 为 #1"
+      "zh-CN": "对 #0 进行模式匹配：若 #0 为 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "rcases::default": {
       "en": "Decompose #0 so that we obtain:",
-      "zh-CN": "分解 #0，从而得到："
+      "zh-CN": "分解 #0，从而得到：",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "so::default": {
       "en": "hence #0",
-      "zh-CN": "故 #0"
+      "zh-CN": "故 #0",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "taylor_lagrange::default": {
       "en": "Taylor's formula with the Lagrange remainder",
-      "zh-CN": "带拉格朗日余项的泰勒公式"
+      "zh-CN": "带拉格朗日余项的泰勒公式",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "thm-hyp::display": {
       "en": "Let #0, then #1",
-      "zh-CN": "设 #0，则 #1"
+      "zh-CN": "设 #0，则 #1",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "def-hyp-opq::localized-default": {
       "en": "Let #0, define “#1”.",
-      "zh-CN": "设 #0，定义【#1】。"
+      "zh-CN": "设 #0，定义【#1】。",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "deBruijnIndex::default": {
       "en": "de Bruijn Index",
-      "zh-CN": "de Bruijn 指数"
+      "zh-CN": "de Bruijn 指数",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lambda.defeq.beta::default": {
       "en": "$\\beta$-reduction",
-      "zh-CN": "$\\beta$-归约"
+      "zh-CN": "$\\beta$-归约",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lambda.defeq.lam-cong::default": {
       "en": "$\\lambda$-Abstraction Congruence",
@@ -2899,39 +4512,210 @@
       "accepted_body": [
         "$\\lambda$-Abstraction Extensionality",
         "$\\lambda$-抽象外延性"
-      ]
+      ],
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lambda.defeq.app-cong::default": {
       "en": "Application Congruence",
-      "zh-CN": "应用相容性"
+      "zh-CN": "应用相容性",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lambda.defeq.refl::default": {
       "en": "Reflexivity",
-      "zh-CN": "自反性"
+      "zh-CN": "自反性",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lambda.defeq.symm::default": {
       "en": "Symmetry",
-      "zh-CN": "对称性"
+      "zh-CN": "对称性",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lambda.defeq.trans::default": {
       "en": "Transitivity",
-      "zh-CN": "传递性"
+      "zh-CN": "传递性",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Type.Expr-UTLC.bvar::text": {
       "en": "Bound Variable",
-      "zh-CN": "受束变元"
+      "zh-CN": "受束变元",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Type.Expr-UTLC.apply::text": {
       "en": "$\\lambda$-Application",
-      "zh-CN": "$\\lambda$-应用"
+      "zh-CN": "$\\lambda$-应用",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Type.Expr-UTLC.lambda::text": {
       "en": "$\\lambda$-Abstraction",
-      "zh-CN": "$\\lambda$-抽象"
+      "zh-CN": "$\\lambda$-抽象",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     },
     "Lambda.defeq.eta::default": {
       "en": "$\\eta$-reduction",
-      "zh-CN": "$\\eta$-归约"
+      "zh-CN": "$\\eta$-归约",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
     }
   }
 }

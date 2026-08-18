@@ -373,7 +373,8 @@
     "SetTheory",
     "Tactics",
     "TypeTheory",
-    "Topology"
+    "Topology",
+    "FulcrumNotesOneOffI18N"
   ],
   "entity_storage": {
     "version": 1,

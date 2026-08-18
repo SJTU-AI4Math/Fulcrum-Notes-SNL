@@ -7,9 +7,23 @@
     "id": "Fulcrum.thm",
     "package": "FulcrumsMathNotes",
     "kind": "remark",
-    "title": "定理",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Theorem",
+        "zh-CN": "定理"
+      }
+    },
     "content": {
-      "markdown": "通过陈述命题确立一个定理的语义。\r\n\r\n视为定理的命题应当有合法的证明条目支撑。"
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A theorem is established by stating a proposition together with a valid proof. A proposition presented as a theorem should be supported by a well-formed proof entry.",
+          "zh-CN": "定理通过命题陈述及其合法证明来确立。作为定理陈述的命题应当有良构的证明条目支撑。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null

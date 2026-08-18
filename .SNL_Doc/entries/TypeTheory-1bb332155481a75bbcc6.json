@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "list-partial[enumerate](%#0规定为左结合的。#1 应解释为 #2%(Lambda.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply[text](parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),%运算优先级上#0较 #1结合更加紧密。#2 应解释为 #3%(Lambda.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))"
+      "snl": "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative(Type.Expr-UTLC.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply(parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda(Type.Expr-UTLC.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))"
     },
     "contribution_info": null,
     "pointer": null

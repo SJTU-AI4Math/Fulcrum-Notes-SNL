@@ -139,12 +139,14 @@ Reserved style vocabulary; reuse these spellings rather than inventing synonyms:
 ## 4. Entry ids
 
 ```text
-entryId := Domain "." kindAbbrev "." slug ("." qualifier)?
+entryId := Domain "." kindAbbrev "." slug ("." facet)*
 ```
 
-- Dots only. Hyphens are avoided because KaTeX may read them as minus signs.
-- `Domain` matches the macro namespace of the same theory (`BasicAnalysis`,
-  `Set`, `Logic`, `Algebra`).
+- New ids use dots between components and `lowerCamelCase` within `slug` and
+  `facet`. Existing hyphenated ids are compatibility identities, not templates.
+- `Domain` is the stable semantic owner (`BasicAnalysis`, `Type`, `Lambda`,
+  `Set`, `Logic`, `Algebra`), independent of the Entry Package and Library in
+  which an occurrence is stored or displayed.
 - `kindAbbrev` is a fixed abbreviation of the Entry kind:
 
   | kind | abbrev | kind | abbrev |
@@ -158,11 +160,31 @@ entryId := Domain "." kindAbbrev "." slug ("." qualifier)?
   | corollary | `cor` | problem | `prob` |
   | context | `ctxt` | | |
 
-- `slug` is `lowerCamelCase`.
-- A proof Entry qualifies its parent statement's id:
-  `BasicAnalysis.thm.bolzanoWeierstrass.proof`.
-- Ids are lifetime identities. Renaming goes through `snl-find-refs` then
-  `snl-rename-id --dry-run`, never a text substitution.
+- `slug` and every additional `facet` are ASCII `lowerCamelCase`; normalize
+  acronyms as words (`utlcDesign`, `skiComplete`). Display capitalization lives
+  in the localized title, never in the id.
+- For every new Entry, `kindAbbrev` must agree with `entry.kind`. Historical ids
+  such as `Lambda.ppt.*`, `Type.cxmp.*`, and `Type.rl.*` are grandfathered until
+  their semantic family receives an explicit, atomic migration. Do not copy
+  those abbreviations into new ids.
+- A proof Entry uses the configured proof kind; its graph edge, not a mismatched theorem segment, records the parent statement:
+  `BasicAnalysis.proof.bolzanoWeierstrass`.
+- Ids are lifetime identities. The current Extension has no general Entry/Macro
+  rename command, so a rename is a repository-specific migration: enumerate and
+  update the canonical record and hash path, Entry Package manifest, Library
+  graphs, relationships, Macro `source.entries`, every SNL call/reference, and
+  all authority snapshots in one reviewed change. Never use blind text
+  substitution and never infer ownership from an id prefix.
+
+### Gradual adoption
+
+The canonical grammar gates new identities first. Existing violations remain on
+an explicit compatibility baseline; they are not mass-renamed for cosmetics.
+Migrate an old identity only while changing its whole semantic family, and fail
+closed if any graph, relationship, source, package, SNL, or authority reference
+still names the predecessor. There is currently no native alias field, so do not
+claim backward compatibility unless an external checked migration map or an
+identical-contract Macro wrapper actually provides it.
 
 ## 5. Library slugs
 
@@ -180,6 +202,11 @@ at derivations or applications of it. A macro whose concept has no defining
 Entry keeps `entries: []` — pure notation such as `Add.add` legitimately has no
 source. Fill these during Phase 5, not while inventing the name.
 
+Entry Package, Macro Package, and Library are three independent axes. A Macro
+may cite a defining Entry from another Entry Package, and one Entry may appear
+at several Library graph positions. Repository validation checks declared
+membership and references; SNL-Basics must not guess ontology from prefixes.
+
 ## 7. English and Simplified-Chinese localization
 
 - Entry titles and Markdown bodies use complete `I18n` values with exactly `en`
@@ -195,6 +222,25 @@ source. Fill these during Phase 5, not while inventing the name.
   Do not pretend it is localized; reuse an existing localized text Macro when
   one already exists, or leave it unchanged until a separately reviewed Macro
   is introduced.
+
+### One-off localization Macros
+
+Natural-language fragments used only to make one authored SNL tree localizable
+belong to the dedicated active Macro Package `FulcrumNotesOneOffI18N`, not to a
+domain package and not to an Entry Package. Use a long owner-qualified name:
+
+```text
+FulcrumNotes.OneOffI18N.<Domain>.<EntryOrFamily>.<Purpose>
+```
+
+Such a Macro has exactly one localized text style with the same placeholder
+contract in `en` and `zh-CN`, and `source.entries` identifies its owning Entry.
+The Extension's shared package registry still requires a manifest for an active
+Macro Package; its `entry_ids` is empty, which explicitly means that no Entry is
+assigned to it. This registry record does not collapse Macro ownership into Entry
+membership. It is an implementation detail for I18N, not a reusable public ontology. Short
+one-use names and translated names are rejected. Stable semantic notation stays
+in its domain Macro Package and is localized in place when its style is prose.
 
 ## 8. Inductive constructors and recursors
 

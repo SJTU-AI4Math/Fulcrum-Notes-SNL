@@ -11,12 +11,12 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Legal Expression (Non-typed $\\lambda$-Calculus)",
+        "en": "Legal Expression (Untyped $\\lambda$-Calculus)",
         "zh-CN": "合法表达式（无类型 $\\lambda$-演算）"
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
+      "snl": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
     },
     "contribution_info": null,
     "pointer": null

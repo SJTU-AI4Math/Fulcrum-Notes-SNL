@@ -7,8 +7,24 @@
     "id": "Type.cxmp.noHNF",
     "package": "TypeTheory",
     "kind": "counterexample",
-    "title": "$\\Omega$ 组合子不可表示为首标准型",
-    "content": {},
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$\\Omega$ Has No Head Normal Form",
+        "zh-CN": "$\\Omega$ 组合子没有首标准型"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The term `Ω = (λx. x x) (λx. x x)` contracts to itself. Every head-reduction sequence therefore repeats `Ω`, so `Ω` has no head normal form.",
+          "zh-CN": "项 `Ω = (λx. x x) (λx. x x)` 归约后仍为自身，因此任何首部归约序列都会重复 `Ω`，故 `Ω` 没有首标准型。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

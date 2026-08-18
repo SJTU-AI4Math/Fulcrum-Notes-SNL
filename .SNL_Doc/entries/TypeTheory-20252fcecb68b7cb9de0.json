@@ -7,8 +7,24 @@
     "id": "Lambda.ppt.HNF-is-WHNF",
     "package": "TypeTheory",
     "kind": "property",
-    "title": "首标准型严于弱首标准型",
-    "content": {},
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Every Head Normal Form Is a Weak Head Normal Form",
+        "zh-CN": "首标准型必为弱首标准型"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Every head normal form is a weak head normal form, but not conversely. For example, `λx. (λy. y) z` is in weak head normal form but not in head normal form.",
+          "zh-CN": "每个首标准型都是弱首标准型，反之不成立。例如，`λx. (λy. y) z` 是弱首标准型，但不是首标准型。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

@@ -7,8 +7,24 @@
     "id": "Lambda.def.WHNF",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "弱首标准型",
-    "content": {},
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Weak Head Normal Form",
+        "zh-CN": "弱首标准型"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A λ-term is in weak head normal form when its outermost head requires no reduction: it is a λ-abstraction, or a variable or declared constant, possibly applied to arguments. Its body and arguments may still contain redexes.",
+          "zh-CN": "若一个 λ-项的最外层首部无需继续归约，即它是 λ-抽象，或是变量或已声明常量（可带若干参数），则称其为弱首标准型。其函数体和参数中仍可含有可约式。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

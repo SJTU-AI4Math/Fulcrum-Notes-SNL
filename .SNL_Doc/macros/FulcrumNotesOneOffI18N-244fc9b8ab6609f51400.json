@@ -2,16 +2,16 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "TypeTheory",
+  "package": "FulcrumNotesOneOffI18N",
   "macro": {
     "description": "",
     "source": {
       "entries": [
-        "Type.def.Currying"
+        "Type.def.LegalExpr-LC"
       ],
       "urls": []
     },
-    "kind": "const",
+    "kind": "sub",
     "dynamic_arity": false,
     "styles": [
       {
@@ -23,7 +23,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "Currying of #0",
+              "body": "Every #1 in #0 resolves to a valid #2 syntax node",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "#0 的 Curry 化",
+              "body": "#0 中所有 #1均可指称到合法的 #2语法节点",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -66,6 +66,6 @@
       }
     ],
     "tags": [],
-    "name": "Type.Curry"
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve"
   }
 }

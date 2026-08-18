@@ -1,18 +1,30 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+if not __debug__:
+    raise RuntimeError("Fulcrum authority tooling must run without Python optimization; -O disables required assertions")
+
+import copy
 import hashlib
 import json
+import os
 import re
 import subprocess
+import sys
 import uuid
 from pathlib import Path
+
+from fulcrum_authority_validation import validate_authorities
 
 ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / ".SNL_Doc"
 I18N_PATH = ROOT / "scripts/fulcrum-i18n-en-zh.json"
 PLAN_PATH = ROOT / "scripts/fulcrum-inductive-subentries.json"
 ENTRY_PACKAGE_PLAN_PATH = ROOT / "scripts/fulcrum-entry-packages.json"
+EXPECTED_SOURCE_HEAD = "fe2bb7ff7401cdd4474e6d137b2401ccc51d1007"
+PREFLIGHT_ONLY = os.environ.get("FULCRUM_APPLY_PREFLIGHT_ONLY") == "1"
+_VIRTUAL_JSON: dict[Path, object] = {}
+_VIRTUAL_DELETED: set[Path] = set()
 
 
 def _strict_object(pairs):
@@ -33,12 +45,50 @@ def strict_json_loads(text: str):
 
 
 def read_json(path: Path):
+    path = path.resolve()
+    assert path not in _VIRTUAL_DELETED, f"read after staged removal: {path}"
+    if path in _VIRTUAL_JSON:
+        return copy.deepcopy(_VIRTUAL_JSON[path])
     return strict_json_loads(path.read_text(encoding="utf-8"))
 
 
 def write_json(path: Path, value) -> None:
+    path = path.resolve()
+    if PREFLIGHT_ONLY:
+        _VIRTUAL_DELETED.discard(path)
+        _VIRTUAL_JSON[path] = copy.deepcopy(value)
+        return
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def path_exists(path: Path) -> bool:
+    path = path.resolve()
+    if path in _VIRTUAL_DELETED:
+        return False
+    return path in _VIRTUAL_JSON or path.exists()
+
+
+def rename_json_path(old_path: Path, new_path: Path) -> None:
+    old_path, new_path = old_path.resolve(), new_path.resolve()
+    if PREFLIGHT_ONLY:
+        assert path_exists(old_path) and not path_exists(new_path)
+        _VIRTUAL_JSON[new_path] = read_json(old_path)
+        _VIRTUAL_JSON.pop(old_path, None)
+        _VIRTUAL_DELETED.add(old_path)
+        return
+    old_path.rename(new_path)
+
+
+def unlink_path(path: Path, *, missing_ok: bool = False) -> None:
+    path = path.resolve()
+    if PREFLIGHT_ONLY:
+        if not missing_ok:
+            assert path_exists(path), f"missing staged removal: {path}"
+        _VIRTUAL_JSON.pop(path, None)
+        _VIRTUAL_DELETED.add(path)
+        return
+    path.unlink(missing_ok=missing_ok)
 
 
 def identity_hash(kind: str, *segments: str) -> str:
@@ -81,6 +131,10 @@ def template_with_body(template: dict, body: str):
     return result
 
 
+def template_envelope(template: dict):
+    return json.loads(json.dumps({key: value for key, value in template.items() if key != "body"}, ensure_ascii=False))
+
+
 def counter_nodes(counters: list[dict]):
     for counter in counters:
         yield counter
@@ -111,10 +165,26 @@ def node_id_for(entry_id: str) -> str:
     return "n_sub_" + hashlib.sha256(("snl-subentry\0" + entry_id).encode("utf-8")).hexdigest()[:12]
 
 
+if not PREFLIGHT_ONLY:
+    preflight_env = dict(os.environ)
+    preflight_env["FULCRUM_APPLY_PREFLIGHT_ONLY"] = "1"
+    preflight = subprocess.run(
+        [sys.executable, str(Path(__file__).resolve())],
+        cwd=ROOT,
+        env=preflight_env,
+        text=True,
+        capture_output=True,
+    )
+    if preflight.returncode != 0:
+        raise RuntimeError(f"preflight failed before filesystem mutation:\n{preflight.stderr or preflight.stdout}")
+
+
 i18n = read_json(I18N_PATH)
 plan = read_json(PLAN_PATH)
 entry_package_plan = read_json(ENTRY_PACKAGE_PLAN_PATH)
-assert entry_package_plan["version"] == 1
+
+
+validate_authorities(i18n, plan, entry_package_plan, EXPECTED_SOURCE_HEAD)
 entries, entry_paths, entry_envelopes = load_records("entries", "id")
 macros, macro_paths, macro_envelopes = load_records("macros", "name")
 
@@ -149,6 +219,41 @@ for package_id, spec in manifest_specs.items():
     path = DOC / "packages" / f"{package_id}-{identity_hash('package', package_id)}.json"
     package_manifests[package_id] = (path, canonical)
 
+# Preflight and normalize exact user-authored Macro snapshots before any
+# filesystem mutation. This preserves intentional language-invariant styles
+# while making the few structural repairs explicit and replayable.
+for spec in plan.get("macro_snapshot_updates", []):
+    name = spec["name"]
+    assert name in macros, f"Macro snapshot update references unknown Macro: {name}"
+    accepted = [spec["canonical"], *spec.get("accepted_predecessors", [])]
+    assert macros[name] in accepted, f"Macro snapshot drift: {name}"
+    canonical = json.loads(json.dumps(spec["canonical"], ensure_ascii=False))
+    macros[name] = canonical
+    macro_envelopes[name]["macro"] = canonical
+
+# Rewrite only explicitly leased SNL bodies. Raw text templates are migrated to
+# long, package-scoped one-off I18N Macros rather than split into finer SNL.
+for spec in plan.get("entry_snl_updates", []):
+    entry_id = spec["id"]
+    assert entry_id in entries, f"SNL update references unknown Entry: {entry_id}"
+    current = (entries[entry_id].get("content") or {}).get("snl")
+    assert current in [spec["canonical"], *spec.get("accepted_predecessors", [])], f"Entry SNL snapshot drift: {entry_id}"
+    entries[entry_id]["content"]["snl"] = spec["canonical"]
+
+# Macro ownership and Entry membership are independent. The Extension currently
+# requires every active Macro Package to have a shared package-registry manifest;
+# an empty entry_ids list records that this Macro Package owns no Entries.
+config_path = DOC / "config.json"
+config = read_json(config_path)
+active_macro_packages = config.get("active_macro_packages", [])
+assert isinstance(active_macro_packages, list) and len(active_macro_packages) == len(set(active_macro_packages))
+retired_macro_packages = set(plan.get("retired_macro_packages", []))
+active_macro_packages = [package_id for package_id in active_macro_packages if package_id not in retired_macro_packages]
+for package_id in plan.get("managed_macro_packages", []):
+    if package_id not in active_macro_packages:
+        active_macro_packages.append(package_id)
+config["active_macro_packages"] = active_macro_packages
+
 # Apply explicit Entry identity migrations before graph, Package, provenance,
 # and dependency reconciliation. This is deliberately not a raw text replace.
 for rename in plan.get("entry_renames", []):
@@ -170,8 +275,8 @@ for rename in plan.get("entry_renames", []):
     path = entry_paths[new_id]
     canonical_path = DOC / "entries" / f"{package_id}-{identity_hash('entry', package_id, new_id)}.json"
     if path != canonical_path:
-        assert not canonical_path.exists(), f"Entry identity migration path collision: {canonical_path.name}"
-        path.rename(canonical_path)
+        assert not path_exists(canonical_path), f"Entry identity migration path collision: {canonical_path.name}"
+        rename_json_path(path, canonical_path)
         entry_paths[new_id] = canonical_path
     for macro in macros.values():
         source = macro.get("source") or {}
@@ -224,8 +329,8 @@ for rename in plan.get("macro_renames", []):
     path = macro_paths[new_name]
     canonical_path = DOC / "macros" / f"{package_id}-{identity_hash('macro', package_id, new_name)}.json"
     if path != canonical_path:
-        assert not canonical_path.exists(), f"Macro identity migration path collision: {canonical_path.name}"
-        path.rename(canonical_path)
+        assert not path_exists(canonical_path), f"Macro identity migration path collision: {canonical_path.name}"
+        rename_json_path(path, canonical_path)
         macro_paths[new_name] = canonical_path
 
 # Merge legacy presentation Macros into canonical constructor Macros. The
@@ -371,6 +476,8 @@ for spec in plan.get("requested_macros", []):
         assert existing_source["urls"] == [], f"requested Macro source URL drift: {name}"
         assert existing_source["entries"] in spec.get("accepted_source_entries", [[spec["source_entry_id"]]]), f"unaccepted requested Macro provenance: {name}"
         existing_source["entries"] = [spec["source_entry_id"]]
+        assert existing_macro.get("kind") in [spec["kind"], *spec.get("accepted_kinds", [])], f"unaccepted requested Macro kind: {name}"
+        existing_macro["kind"] = spec["kind"]
         if "accepted_bodies" in spec:
             assert len(existing_macro.get("styles", [])) == 1 and existing_macro["styles"][0].get("style_name") == spec["style_name"], f"requested Macro style drift: {name}"
             template = existing_macro["styles"][0].get("template")
@@ -380,7 +487,7 @@ for spec in plan.get("requested_macros", []):
                 template["values"][locale]["body"] = spec["body"][locale]
         assert existing_macro == expected_macro, f"requested Macro drift: {name}"
     else:
-        assert not canonical_path.exists(), f"requested Macro path collision: {canonical_path.name}"
+        assert not path_exists(canonical_path), f"requested Macro path collision: {canonical_path.name}"
         envelope = {"format": "snl-macro", "version": 1, "schema_version": 1, "package": package_id, "macro": expected_macro}
         macros[name] = expected_macro
         macro_paths[name] = canonical_path
@@ -409,7 +516,8 @@ for entry_id, projection in i18n["entries"].items():
         current = (entry.get("content") or {}).get("markdown")
         expected = localized(markdown)
         if current != expected:
-            assert current == markdown["en"], f"stale English Markdown mapping for {entry_id}"
+            accepted_markdown = projection.get("accepted_markdown", [markdown["en"]])
+            assert current in accepted_markdown, f"stale English Markdown mapping for {entry_id}"
             entry["content"]["markdown"] = expected
 
 # Localize lexical text-mode Macro styles without changing Macro identities or structural projections.
@@ -420,7 +528,21 @@ for key, projection in i18n["styles"].items():
     assert len(styles) == 1, f"style identity is not unique: {key}"
     style = styles[0]
     template = style["template"]
-    expected = {
+    canonical_envelope = projection["template_envelope"]
+    if template.get("type") == "i18n":
+        assert template.get("default_language") in {"en", "zh-CN"} and set(template.get("values", {})) == {"en", "zh-CN"}, f"stale localized Macro template: {key}"
+        accepted_en = projection.get("accepted_en", [projection["en"]])
+        assert template["values"]["en"].get("body") in accepted_en, f"stale English Macro body: {key}"
+        for locale in ("en", "zh-CN"):
+            assert template_envelope(template["values"][locale]) == canonical_envelope, f"stale localized Macro template envelope: {key}/{locale}"
+            template["values"][locale]["body"] = projection[locale]
+        template["default_language"] = "en"
+        continue
+    assert template.get("mode") == "text", f"cannot localize structural Macro template: {key}"
+    accepted_body = set(projection.get("accepted_body", [])) | {projection["en"], projection["zh-CN"]}
+    assert template.get("body") in accepted_body, f"stale Macro body mapping for {key}"
+    assert template_envelope(template) == canonical_envelope, f"stale Macro template envelope: {key}"
+    style["template"] = {
         "type": "i18n",
         "default_language": "en",
         "values": {
@@ -428,18 +550,6 @@ for key, projection in i18n["styles"].items():
             "zh-CN": template_with_body(template, projection["zh-CN"])
         }
     }
-    if template.get("type") == "i18n":
-        assert template.get("default_language") in {"en", "zh-CN"} and set(template.get("values", {})) == {"en", "zh-CN"}, f"stale localized Macro template: {key}"
-        accepted_en = projection.get("accepted_en", [projection["en"]])
-        assert template["values"]["en"].get("body") in accepted_en, f"stale English Macro body: {key}"
-        template["default_language"] = "en"
-        template["values"]["en"] = template_with_body(template["values"]["en"], projection["en"])
-        template["values"]["zh-CN"] = template_with_body(template["values"]["zh-CN"], projection["zh-CN"])
-        continue
-    assert template.get("mode") == "text", f"cannot localize structural Macro template: {key}"
-    accepted_body = set(projection.get("accepted_body", [])) | {projection["en"], projection["zh-CN"]}
-    assert template.get("body") in accepted_body, f"stale Macro body mapping for {key}"
-    style["template"] = expected
 
 # Add requested Entries and all constructor/recursor definition subentries.
 new_specs = []
@@ -568,12 +678,13 @@ assert set(entry_package_plan["assignments"]) <= set(package_manifests)
 for entry_id, envelope in entry_envelopes.items():
     write_json(entry_paths[entry_id], envelope)
 for old_path in retired_entry_package_paths:
-    if old_path.exists():
-        old_path.unlink()
+    if path_exists(old_path):
+        unlink_path(old_path)
 for macro_name, envelope in macro_envelopes.items():
     write_json(macro_paths[macro_name], envelope)
 for _, (path, manifest) in sorted(package_manifests.items()):
     write_json(path, manifest)
+write_json(config_path, config)
 
 # Attach requested Entries and inductive subentries to every Library occurrence of their parent.
 managed_new_entry_ids = {spec["id"] for spec in plan["requested_entries"] if not spec.get("existing")}
@@ -720,7 +831,7 @@ def extract_snl_macro_names(snl: str) -> list[str]:
     i = 0
     n = len(snl)
     is_start = lambda c: c.isascii() and (c.isalpha() or c in "_.")
-    is_cont = lambda c: c.isascii() and (c.isalnum() or c in "_.")
+    is_cont = lambda c: c.isascii() and (c.isalnum() or c in "_.-")
     while i < n:
         c = snl[i]
         if c.isspace() or c in "(),[]":
@@ -835,7 +946,7 @@ def reconcile_dependency_slice() -> None:
 
 reconcile_dependency_slice()
 for retired_macro_path in retired_macro_paths:
-    retired_macro_path.unlink(missing_ok=True)
+    unlink_path(retired_macro_path, missing_ok=True)
 
 print(json.dumps({
     "entries": len(entries),

@@ -21,7 +21,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "Define type “#0” to consist inhabitants provided by any of the following constructors:\n#1",
+              "body": "Define type “#0” to consist of inhabitants provided by any of the following constructors:\n#1",
               "typst": {
                 "built_in": "",
                 "synthesis": {

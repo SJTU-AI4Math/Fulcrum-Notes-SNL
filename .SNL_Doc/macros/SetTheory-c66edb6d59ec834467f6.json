@@ -5,7 +5,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.prod.ctor.pair"
+      ],
       "urls": []
     },
     "kind": "const",

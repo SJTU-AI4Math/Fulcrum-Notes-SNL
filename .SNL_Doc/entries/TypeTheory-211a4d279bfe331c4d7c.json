@@ -7,8 +7,24 @@
     "id": "Type.def.alpha-conversion",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "$\\alpha$-转换",
-    "content": {},
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$\\alpha$-Conversion",
+        "zh-CN": "$\\alpha$-转换"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "α-conversion consistently renames a binder and its bound occurrences to a fresh name, without changing binding structure or capturing free variables.",
+          "zh-CN": "α-转换把一个绑定子及其约束的出现一致地改为新名称，同时不改变绑定结构，也不捕获自由变量。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

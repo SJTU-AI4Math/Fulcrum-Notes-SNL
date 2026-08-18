@@ -7,8 +7,24 @@
     "id": "Lambda.def.HNF",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "首标准型",
-    "content": {},
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Head Normal Form",
+        "zh-CN": "首标准型"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A λ-term is in head normal form when it has the shape `λx₁ … xₙ. h t₁ … tₘ`, where `h` is a variable or a declared constant. Equivalently, after removing leading λ-abstractions, no β-redex occurs along the head spine. The arguments `tᵢ` need not themselves be normal.",
+          "zh-CN": "若一个 λ-项形如 `λx₁ … xₙ. h t₁ … tₘ`，其中 `h` 是变量或已声明常量，则称其为首标准型。等价地，去掉开头的 λ-抽象后，其首部脊柱上不存在 β-可约式；各参数 `tᵢ` 本身不必已经标准化。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

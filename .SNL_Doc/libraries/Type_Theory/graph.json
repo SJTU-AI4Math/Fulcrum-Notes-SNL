@@ -913,6 +913,110 @@
       }
     },
     {
+      "id": "n_68",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.Currying",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_52",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.UTLC-design",
+        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
+      }
+    },
+    {
+      "id": "n_69",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.named-lambda",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_70",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.alpha-conversion",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_71",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.UTLC-const",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_72",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.UTLC-term",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_73",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.NF",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_74",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.HNF",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_75",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.WHNF",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_76",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.ppt.NF-is-HNF",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_77",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.ppt.HNF-is-WHNF",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_78",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.cxmp.noHNF",
+        "counterId": "d7778249-354a-4643-91ef-e020cb0df1cf"
+      }
+    },
+    {
+      "id": "n_sub_5db0d93abf05",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.defeq.recursor",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
       "id": "n_sub_7974250cee63",
       "label": "Entry",
       "props": {
@@ -1023,102 +1127,6 @@
         "entryId": "Type.def.structure.projection.first",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
-    },
-    {
-      "id": "n_68",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.Currying",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
-      }
-    },
-    {
-      "id": "n_52",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.subsec.UTLC-design",
-        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
-      }
-    },
-    {
-      "id": "n_69",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.named-lambda",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
-      }
-    },
-    {
-      "id": "n_70",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.alpha-conversion",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
-      }
-    },
-    {
-      "id": "n_71",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.UTLC-const",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
-      }
-    },
-    {
-      "id": "n_72",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.UTLC-term",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
-      }
-    },
-    {
-      "id": "n_73",
-      "label": "Entry",
-      "props": {
-        "entryId": "Lambda.def.NF",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
-      }
-    },
-    {
-      "id": "n_74",
-      "label": "Entry",
-      "props": {
-        "entryId": "Lambda.def.HNF",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
-      }
-    },
-    {
-      "id": "n_75",
-      "label": "Entry",
-      "props": {
-        "entryId": "Lambda.def.WHNF",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
-      }
-    },
-    {
-      "id": "n_76",
-      "label": "Entry",
-      "props": {
-        "entryId": "Lambda.ppt.NF-is-HNF",
-        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
-      }
-    },
-    {
-      "id": "n_77",
-      "label": "Entry",
-      "props": {
-        "entryId": "Lambda.ppt.HNF-is-WHNF",
-        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
-      }
-    },
-    {
-      "id": "n_78",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.cxmp.noHNF",
-        "counterId": "d7778249-354a-4643-91ef-e020cb0df1cf"
-      }
     }
   ],
   "relationships": [
@@ -1210,6 +1218,11 @@
     {
       "from": "n_34",
       "to": "n_sub_fee94c2c9751",
+      "label": "branch"
+    },
+    {
+      "from": "n_34",
+      "to": "n_sub_4be10367a6cb",
       "label": "branch"
     },
     {
@@ -1329,6 +1342,11 @@
     },
     {
       "from": "n_15",
+      "to": "n_sub_7974250cee63",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
       "to": "n_39",
       "label": "branch"
     },
@@ -1369,11 +1387,6 @@
     },
     {
       "from": "n_37",
-      "to": "n_68",
-      "label": "branch"
-    },
-    {
-      "from": "n_37",
       "to": "n_41",
       "label": "branch"
     },
@@ -1384,12 +1397,22 @@
     },
     {
       "from": "n_37",
+      "to": "n_68",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
       "to": "n_56",
       "label": "branch"
     },
     {
       "from": "n_37",
       "to": "n_54",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "n_55",
       "label": "branch"
     },
     {
@@ -1575,6 +1598,11 @@
     {
       "from": "n_39",
       "to": "n_sub_12aa30880f2c",
+      "label": "branch"
+    },
+    {
+      "from": "n_39",
+      "to": "n_sub_5db0d93abf05",
       "label": "branch"
     },
     {
@@ -1775,11 +1803,6 @@
     {
       "from": "n_13",
       "to": "n_sub_9f104b6f3c92",
-      "label": "branch"
-    },
-    {
-      "from": "n_37",
-      "to": "n_55",
       "label": "branch"
     },
     {
