@@ -16,14 +16,6 @@
       }
     },
     "content": {
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "A λ-term is a well-scoped expression generated from variables, λ-abstraction, and application, optionally using constants declared in the current constant context.",
-          "zh-CN": "λ-项是由变量、λ-抽象和应用生成的良作用域表达式，并可选用当前常量语境中声明的常量。"
-        }
-      },
       "snl": "def(Lambda.Term,Type.Quotient(Lambda.LegalExpr,Lambda.defeq(@$ $,@$ $)))"
     },
     "contribution_info": null,

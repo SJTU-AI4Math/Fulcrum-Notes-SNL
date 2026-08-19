@@ -6,7 +6,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.sum.ctor.inl"
+      ],
       "urls": []
     },
     "kind": "const",

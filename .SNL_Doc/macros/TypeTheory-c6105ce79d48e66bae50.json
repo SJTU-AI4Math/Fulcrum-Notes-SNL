@@ -6,7 +6,9 @@
   "macro": {
     "description": "Typed lambda abstraction (mapsto)",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.ppt.judge-lam"
+      ],
       "urls": []
     },
     "kind": "rule",

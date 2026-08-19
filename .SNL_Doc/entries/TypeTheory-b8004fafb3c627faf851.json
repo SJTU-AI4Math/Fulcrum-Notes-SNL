@@ -7,10 +7,15 @@
     "id": "Type.def.ctx",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "合法语境",
-    "content": {
-      "snl": "def-hyp-opq(@$\\Gamma$,Type.ctx($\\Gamma$))"
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Well-Formed Context",
+        "zh-CN": "合法语境"
+      }
     },
+    "content": {},
     "contribution_info": null,
     "pointer": null
   }

@@ -4,15 +4,15 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Type.ppt.judge-lam",
+    "id": "Type.def.type-expression-stlc",
     "package": "TypeTheory",
-    "kind": "property",
+    "kind": "definition",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Typing Rule for $\\lambda$-Abstraction",
-        "zh-CN": "$\\lambda$-抽象的类型判断规则"
+        "en": "Type Expressions",
+        "zh-CN": "类型表达式"
       }
     },
     "content": {},

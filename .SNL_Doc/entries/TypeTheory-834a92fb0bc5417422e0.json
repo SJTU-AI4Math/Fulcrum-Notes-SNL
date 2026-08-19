@@ -4,10 +4,17 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Type.subsec.TypeInfer",
+    "id": "Type.subsec.type-inference",
     "package": "TypeTheory",
     "kind": "subsection",
-    "title": "类型推断",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Type Inference",
+        "zh-CN": "类型推断"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

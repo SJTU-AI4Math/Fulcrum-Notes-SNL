@@ -6,7 +6,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.type-expression-stlc"
+      ],
       "urls": []
     },
     "kind": "const",

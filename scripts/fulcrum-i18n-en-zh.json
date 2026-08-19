@@ -1,5 +1,5 @@
 {
-  "source_head": "fe2bb7ff7401cdd4474e6d137b2401ccc51d1007",
+  "source_head": "bbbd9bb712960fec9e961d611ec25edd179ab3a5",
   "entries": {
     "Algebra.ctxt.1": {
       "title": {
@@ -2732,7 +2732,15 @@
         "zh-CN": "α-转换把一个绑定子及其约束的出现一致地改为新名称，同时不改变绑定结构，也不捕获自由变量。"
       },
       "accepted_markdown": [
-        null
+        null,
+        {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": "α-conversion consistently renames a binder and its bound occurrences to a fresh name, without changing binding structure or capturing free variables.",
+            "zh-CN": "α-转换把一个绑定子及其约束的出现一致地改为新名称，同时不改变绑定结构，也不捕获自由变量。"
+          }
+        }
       ]
     },
     "Type.def.named-lambda": {
@@ -2742,29 +2750,15 @@
       },
       "accepted_title_en": [
         "$\\lambda$-抽象的绑定子命名"
-      ],
-      "markdown": {
-        "en": "A named-binder presentation writes each λ-binder and its bound occurrences using a variable name. The names are presentation data: consistently renaming a binder by α-conversion preserves the binding structure.",
-        "zh-CN": "绑定子命名表示用变量名书写每个 λ-绑定子及其约束的出现。名称属于表示层数据；通过 α-转换一致地重命名绑定子不会改变绑定结构。"
-      },
-      "accepted_markdown": [
-        null
       ]
     },
     "Type.def.UTLC-const": {
       "title": {
-        "en": "Constant Context",
-        "zh-CN": "常量语境"
+        "en": "Constant",
+        "zh-CN": "常量"
       },
       "accepted_title_en": [
         "常量语境"
-      ],
-      "markdown": {
-        "en": "A constant context records the free constant symbols available to an untyped λ-term. Unlike variables introduced by λ-abstraction, these constants are not captured by λ-binders.",
-        "zh-CN": "常量语境记录无类型 λ-项可以使用的自由常量符号。与 λ-抽象引入的变量不同，这些常量不会被 λ-绑定子捕获。"
-      },
-      "accepted_markdown": [
-        null
       ]
     },
     "Type.def.UTLC-term": {
@@ -2774,13 +2768,6 @@
       },
       "accepted_title_en": [
         "$\\lambda$-项"
-      ],
-      "markdown": {
-        "en": "A λ-term is a well-scoped expression generated from variables, λ-abstraction, and application, optionally using constants declared in the current constant context.",
-        "zh-CN": "λ-项是由变量、λ-抽象和应用生成的良作用域表达式，并可选用当前常量语境中声明的常量。"
-      },
-      "accepted_markdown": [
-        null
       ]
     },
     "Type.subsec.TypeSystem": {
@@ -2800,6 +2787,93 @@
       "accepted_title_en": [
         "无类型 $\\lambda$-演算的进一步设计"
       ]
+    },
+    "Type.ppt.delta-reduction": {
+      "accepted_title_en": [
+        "$\\delta$ 规约"
+      ],
+      "title": {
+        "en": "$\\delta$-Reduction",
+        "zh-CN": "$\\delta$-规约"
+      }
+    },
+    "Type.def.utlc-let-expression": {
+      "title": {
+        "en": "Local Definition",
+        "zh-CN": "局部定义"
+      },
+      "accepted_title_en": [
+        "局部定义"
+      ]
+    },
+    "Type.ppt.zeta-reduction": {
+      "accepted_title_en": [
+        "$\\eta$ 规约"
+      ],
+      "title": {
+        "en": "$\\zeta$-Reduction",
+        "zh-CN": "$\\zeta$-规约"
+      }
+    },
+    "Type.ppt.judge-app": {
+      "title": {
+        "en": "Typing Rule for Application",
+        "zh-CN": "应用的类型判断规则"
+      },
+      "accepted_title_predecessors": [
+        {
+          "type": "i18n",
+          "default_language": "zh-CN",
+          "values": {
+            "zh-CN": "应用规则生成类型判断"
+          }
+        }
+      ]
+    },
+    "Type.rmk.named-lambda": {
+      "title": {
+        "en": "Names for Binders",
+        "zh-CN": "绑定子命名"
+      },
+      "accepted_title_en": [
+        "绑定子命名"
+      ]
+    },
+    "Type.def.type-expression-stlc": {
+      "title": {
+        "en": "Type Expressions",
+        "zh-CN": "类型表达式"
+      },
+      "accepted_title_en": [
+        "类型表达式"
+      ]
+    },
+    "Type.subsec.type-inference": {
+      "title": {
+        "en": "Type Inference",
+        "zh-CN": "类型推断"
+      },
+      "accepted_title_en": [
+        "类型推断"
+      ]
+    },
+    "Type.def.ctx": {
+      "title": {
+        "en": "Well-Formed Context",
+        "zh-CN": "合法语境"
+      },
+      "accepted_title_en": [
+        "合法语境"
+      ]
+    },
+    "Type.ppt.judge-lam": {
+      "accepted_title_en": [
+        "$\\lambda$-抽象规则生成的类型判断"
+      ],
+      "title": {
+        "en": "Typing Rule for $\\lambda$-Abstraction",
+        "zh-CN": "$\\lambda$-抽象的类型判断规则"
+      }
     }
   },
   "styles": {
@@ -4697,6 +4771,58 @@
     "Lambda.defeq.eta::default": {
       "en": "$\\eta$-reduction",
       "zh-CN": "$\\eta$-归约",
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
+    },
+    "Type.to::text": {
+      "en": "Function Type",
+      "zh-CN": "函数类型",
+      "accepted_body": [
+        "函数类型"
+      ],
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
+    },
+    "Lambda.Term::default": {
+      "en": "$\\lambda$-Term",
+      "zh-CN": "$\\lambda$-项",
+      "accepted_body": [
+        "$\\lambda$-项"
+      ],
       "template_envelope": {
         "mode": "text",
         "typst": {

@@ -76,7 +76,7 @@ def _macro(macro: object, label: str) -> None:
 
 
 _PLAN_LIST_FIELDS = {
-    "requested_entries": {"accepted_packages", "after_entry_id", "content", "existing", "graph_level", "id", "kind", "package", "parent_entry_id", "parent_node_ids", "title"},
+    "requested_entries": {"accepted_content", "accepted_packages", "after_entry_id", "content", "existing", "graph_level", "id", "kind", "package", "parent_entry_id", "parent_node_ids", "title"},
     "entry_updates": {"accepted_content_snl", "content_snl", "id"},
     "inductive_types": {"accepted_packages", "constructors", "existing", "ordered_children", "package", "parent_entry_id", "recursor"},
     "graph_references": {"after_entry_id", "entry_id", "graph_level", "parent_entry_id"},
@@ -91,8 +91,11 @@ _PLAN_LIST_FIELDS = {
     "macro_merges": {"accepted_source_macro", "accepted_target_macro", "canonical_style_names", "package", "source_name", "source_style_names", "target_name", "target_text_style_from", "target_text_style_name"},
     "snl_macro_rewrites": {"new_name", "old_name"},
     "macro_style_updates": {"accepted_style_names", "canonical_style_names", "description", "dynamic_arity", "kind", "name", "package", "source_entry_id", "symbolic_body", "symbolic_style_name", "text_style_from", "text_style_name"},
-    "macro_snapshot_updates": {"accepted_predecessors", "canonical", "name"},
+    "macro_snapshot_updates": {"accepted_predecessors", "accepted_predecessor_hashes", "canonical", "name"},
     "entry_snl_updates": {"accepted_predecessors", "canonical", "id"},
+    "retired_macros": {"accepted_snapshots", "name", "package"},
+    "entry_markdown_removals": {"accepted_markdown", "id"},
+    "graph_detachments": {"entry_ids", "library"},
 }
 _PLAN_SCALAR_LISTS = {"dependency_scope_entries", "invariant_macro_styles", "managed_macro_packages", "retired_macro_packages"}
 
@@ -114,6 +117,9 @@ _PLAN_REQUIRED_FIELDS = {
     "macro_style_updates": {"name", "package", "source_entry_id", "accepted_style_names", "canonical_style_names", "symbolic_style_name", "symbolic_body", "text_style_from", "text_style_name", "kind", "dynamic_arity", "description"},
     "macro_snapshot_updates": {"name", "canonical", "accepted_predecessors"},
     "entry_snl_updates": {"id", "canonical", "accepted_predecessors"},
+    "retired_macros": {"name", "package", "accepted_snapshots"},
+    "entry_markdown_removals": {"id", "accepted_markdown"},
+    "graph_detachments": {"library", "entry_ids"},
 }
 
 
@@ -121,12 +127,19 @@ def validate_authorities(i18n: object, plan: object, entry_packages: object, exp
     i18n = _required(i18n, {"source_head", "entries", "styles"}, {"source_head", "entries", "styles"}, "I18N authority")
     _require(i18n["source_head"] == expected_source_head, "I18N source lease changed")
     for entry_id, spec in i18n["entries"].items():
-        spec = _required(spec, {"title"}, {"title", "markdown", "accepted_title_en", "accepted_markdown"}, f"I18N Entry {entry_id}")
+        spec = _required(spec, {"title"}, {"title", "markdown", "accepted_title_en", "accepted_title_predecessors", "accepted_markdown"}, f"I18N Entry {entry_id}")
         for field in ("title", "markdown"):
             if field in spec:
                 _locale_projection(spec[field], f"I18N Entry {entry_id}.{field}")
         if "accepted_title_en" in spec:
             _string_list(spec["accepted_title_en"], f"I18N Entry {entry_id}.accepted_title_en")
+        if "accepted_title_predecessors" in spec:
+            _require(isinstance(spec["accepted_title_predecessors"], list), f"I18N Entry {entry_id}.accepted_title_predecessors must be a list")
+            for predecessor_index, predecessor in enumerate(spec["accepted_title_predecessors"]):
+                predecessor = _required(predecessor, {"type", "default_language", "values"}, {"type", "default_language", "values"}, f"I18N Entry {entry_id}.accepted_title_predecessors[{predecessor_index}]")
+                _require(predecessor["type"] == "i18n" and predecessor["default_language"] in {"en", "zh-CN"}, f"I18N Entry {entry_id}.accepted_title_predecessors[{predecessor_index}] has invalid metadata")
+                values = _known(predecessor["values"], {"en", "zh-CN"}, f"I18N Entry {entry_id}.accepted_title_predecessors[{predecessor_index}].values")
+                _require(values and all(isinstance(value, str) for value in values.values()), f"I18N Entry {entry_id}.accepted_title_predecessors[{predecessor_index}] values must be nonempty strings")
         if "accepted_markdown" in spec:
             _require(isinstance(spec["accepted_markdown"], list), f"I18N Entry {entry_id}.accepted_markdown must be a list")
             for predecessor_index, predecessor in enumerate(spec["accepted_markdown"]):
@@ -152,11 +165,44 @@ def validate_authorities(i18n: object, plan: object, entry_packages: object, exp
     for field in _PLAN_SCALAR_LISTS:
         _string_list(plan[field], field)
 
+    for index, spec in enumerate(plan["graph_detachments"]):
+        _require(isinstance(spec["library"], str) and spec["library"], f"graph_detachments[{index}].library must be a string")
+        _string_list(spec["entry_ids"], f"graph_detachments[{index}].entry_ids")
+
+    for index, spec in enumerate(plan["entry_snl_updates"]):
+        _require(spec["canonical"] is None or isinstance(spec["canonical"], str), f"entry_snl_updates[{index}].canonical must be a string or null")
+        _string_list(spec["accepted_predecessors"], f"entry_snl_updates[{index}].accepted_predecessors")
+
+    for index, spec in enumerate(plan["retired_macros"]):
+        _require(isinstance(spec["name"], str) and spec["name"], f"retired_macros[{index}].name must be a string")
+        _require(isinstance(spec["package"], str) and spec["package"], f"retired_macros[{index}].package must be a string")
+        _require(isinstance(spec["accepted_snapshots"], list) and spec["accepted_snapshots"], f"retired_macros[{index}].accepted_snapshots must be a nonempty list")
+        for snapshot_index, snapshot in enumerate(spec["accepted_snapshots"]):
+            _macro(snapshot, f"retired_macros[{index}].accepted_snapshots[{snapshot_index}]")
+            _require(snapshot["name"] == spec["name"], f"retired_macros[{index}] snapshot name mismatch")
+
+    for index, spec in enumerate(plan["entry_markdown_removals"]):
+        _require(isinstance(spec["accepted_markdown"], list), f"entry_markdown_removals[{index}].accepted_markdown must be a list")
+        for predecessor_index, predecessor in enumerate(spec["accepted_markdown"]):
+            if predecessor is None or isinstance(predecessor, str):
+                continue
+            predecessor = _required(predecessor, {"type", "default_language", "values"}, {"type", "default_language", "values"}, f"entry_markdown_removals[{index}].accepted_markdown[{predecessor_index}]")
+            _require(predecessor["type"] == "i18n" and predecessor["default_language"] in {"en", "zh-CN"}, f"entry_markdown_removals[{index}].accepted_markdown[{predecessor_index}] has invalid metadata")
+            _locale_projection(predecessor["values"], f"entry_markdown_removals[{index}].accepted_markdown[{predecessor_index}].values")
+
     for index, spec in enumerate(plan["requested_entries"]):
         _locale_projection(spec["title"], f"requested_entries[{index}].title")
         content = _known(spec.get("content", {}), {"snl", "markdown"}, f"requested_entries[{index}].content")
         if "markdown" in content:
             _locale_projection(content["markdown"], f"requested_entries[{index}].content.markdown")
+        if "accepted_content" in spec:
+            _require(isinstance(spec["accepted_content"], list), f"requested_entries[{index}].accepted_content must be a list")
+            for predecessor_index, predecessor in enumerate(spec["accepted_content"]):
+                predecessor = _known(predecessor, {"snl", "markdown"}, f"requested_entries[{index}].accepted_content[{predecessor_index}]")
+                if "snl" in predecessor:
+                    _require(isinstance(predecessor["snl"], str), f"requested_entries[{index}].accepted_content[{predecessor_index}].snl must be a string")
+                if "markdown" in predecessor:
+                    _locale_projection(predecessor["markdown"], f"requested_entries[{index}].accepted_content[{predecessor_index}].markdown")
     for index, inductive in enumerate(plan["inductive_types"]):
         for child_kind, children in (("constructors", inductive["constructors"]), ("recursor", [inductive["recursor"]])):
             for child_index, child in enumerate(children):
@@ -182,6 +228,8 @@ def validate_authorities(i18n: object, plan: object, entry_packages: object, exp
         _macro(spec["canonical"], f"macro_snapshot_updates[{index}].canonical")
         for predecessor_index, predecessor in enumerate(spec.get("accepted_predecessors", [])):
             _macro(predecessor, f"macro_snapshot_updates[{index}].accepted_predecessors[{predecessor_index}]")
+        for digest in spec.get("accepted_predecessor_hashes", []):
+            _require(isinstance(digest, str) and len(digest) == 64 and all(char in "0123456789abcdef" for char in digest), f"macro_snapshot_updates[{index}] has invalid predecessor hash")
     for index, spec in enumerate(plan["macro_merges"]):
         _macro(spec["accepted_source_macro"], f"macro_merges[{index}].accepted_source_macro")
         _macro(spec["accepted_target_macro"], f"macro_merges[{index}].accepted_target_macro")

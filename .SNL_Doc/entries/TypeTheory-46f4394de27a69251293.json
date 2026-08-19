@@ -15,17 +15,7 @@
         "zh-CN": "常量"
       }
     },
-    "content": {
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "A constant context records the free constant symbols available to an untyped λ-term. Unlike variables introduced by λ-abstraction, these constants are not captured by λ-binders.",
-          "zh-CN": "常量语境记录无类型 λ-项可以使用的自由常量符号。与 λ-抽象引入的变量不同，这些常量不会被 λ-绑定子捕获。"
-        }
-      },
-      "snl": "def-hyp-opq(Type.judge(@x,`string`),Type.judge(x,Lambda.Expr))"
-    },
+    "content": {},
     "contribution_info": null,
     "pointer": null
   }

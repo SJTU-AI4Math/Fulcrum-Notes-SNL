@@ -16,14 +16,6 @@
       }
     },
     "content": {
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "A named-binder presentation writes each λ-binder and its bound occurrences using a variable name. The names are presentation data: consistently renaming a binder by α-conversion preserves the binding structure.",
-          "zh-CN": ""
-        }
-      },
       "snl": "def-hyp-opq(list-partial(Type.judge(a,Lambda.Expr),Type.judge(x,`string`)),Type.Expr-UTLC.lambda(x,a))"
     },
     "contribution_info": null,

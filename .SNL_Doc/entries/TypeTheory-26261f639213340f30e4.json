@@ -7,10 +7,15 @@
     "id": "Type.ppt.delta-reduction",
     "package": "TypeTheory",
     "kind": "property",
-    "title": "$\\delta$ 规约",
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@x,`string`),Type.judge(@a,Lambda.LegalExpr),%在语境中名为 #0 的常量被定义为 #1%(x,a)),Lambda.defeq(Expr.const(x),a))"
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$\\delta$-Reduction",
+        "zh-CN": "$\\delta$-规约"
+      }
     },
+    "content": {},
     "contribution_info": null,
     "pointer": null
   }

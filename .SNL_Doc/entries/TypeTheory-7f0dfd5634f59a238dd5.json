@@ -4,19 +4,18 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Type.def.judge.app",
+    "id": "Type.ppt.zeta-reduction",
     "package": "TypeTheory",
     "kind": "property",
     "title": {
       "type": "i18n",
-      "default_language": "zh-CN",
+      "default_language": "en",
       "values": {
-        "zh-CN": "应用规则生成类型判断"
+        "en": "$\\zeta$-Reduction",
+        "zh-CN": "$\\zeta$-规约"
       }
     },
-    "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(f,Type.to(A,B)),Type.judge(x,A)),Type.judge(Type.apply(f,x),B))"
-    },
+    "content": {},
     "contribution_info": null,
     "pointer": null
   }

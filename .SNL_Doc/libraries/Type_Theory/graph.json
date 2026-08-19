@@ -1108,7 +1108,7 @@
       "id": "n_79",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.judge.app",
+        "entryId": "Type.ppt.judge-app",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -1132,7 +1132,7 @@
       "id": "n_82",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.TypeExpr-STLC",
+        "entryId": "Type.def.type-expression-stlc",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -1164,7 +1164,7 @@
       "id": "n_86",
       "label": "Entry",
       "props": {
-        "entryId": "Type.subsec.TypeInfer",
+        "entryId": "Type.subsec.type-inference",
         "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
       }
     },
@@ -1187,7 +1187,7 @@
       "id": "n_88",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Expr.let-UTLC",
+        "entryId": "Type.def.utlc-let-expression",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -1195,7 +1195,7 @@
       "id": "n_90",
       "label": "Entry",
       "props": {
-        "entryId": "Type.ppt.eta-reduction",
+        "entryId": "Type.ppt.zeta-reduction",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     }

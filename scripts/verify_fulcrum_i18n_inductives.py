@@ -35,10 +35,10 @@ DOC = ROOT / ".SNL_Doc"
 PLAN = strict_json_loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
 I18N = strict_json_loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
 ENTRY_PACKAGE_PLAN = strict_json_loads((ROOT / "scripts/fulcrum-entry-packages.json").read_text(encoding="utf-8"))
-EXPECTED_SOURCE_HEAD = "fe2bb7ff7401cdd4474e6d137b2401ccc51d1007"
+EXPECTED_SOURCE_HEAD = "bbbd9bb712960fec9e961d611ec25edd179ab3a5"
 validate_authorities(I18N, PLAN, ENTRY_PACKAGE_PLAN, EXPECTED_SOURCE_HEAD)
-EXPECTED_ENTRIES = 475  # user-authored TypeTheory expansion plus managed inductive entries
-EXPECTED_MACROS = 412  # includes seven package-scoped one-off I18N helper Macros
+EXPECTED_ENTRIES = 484  # latest TypeTheory notes plus managed inductive entries
+EXPECTED_MACROS = 428  # includes nine package-scoped one-off I18N helper Macros
 EXPECTED_PLACEHOLDERS = {
     "Type.def.iota-reduction": {
         "title": {"en": "$\\iota$-reduction", "zh-CN": "$\\iota$-归约"},
@@ -164,6 +164,49 @@ assert macro_kinds["partial"]["coloring"]["dark"] == {"stroke": "inherit", "back
 
 entries, entry_paths = load_entities("entries", "entry")
 macros, macro_paths = load_entities("macros", "macro")
+
+# Regression gate for the latest Type-Theory authoring batch.
+assert "Type.ppt.eta-reduction" not in entries, "zeta-reduction Entry is still mislabeled eta"
+assert "Type.ppt.zeta-reduction" in entries, "missing zeta-reduction Entry"
+for entry_id in (
+    "Type.def.named-lambda", "Type.def.list", "Type.def.prod", "Type.def.sum", "Type.def.UTLC-term",
+):
+    content = entries[entry_id].get("content") or {}
+    assert "snl" in content and "markdown" not in content, f"structured Entry retains draft Markdown: {entry_id}"
+alpha_content = entries["Type.def.alpha-conversion"].get("content") or {}
+assert "snl" not in alpha_content, "alpha-conversion must not assert an invalid named-binder equality over the de Bruijn carrier"
+alpha_markdown = i18n_values(alpha_content.get("markdown"), "alpha-conversion Markdown")
+assert "fresh" in alpha_markdown["en"] and "捕获自由变量" in alpha_markdown["zh-CN"], "alpha-conversion explanation lost freshness/non-capture"
+unsupported_placeholders = (
+    "Type.def.UTLC-const", "Type.ppt.delta-reduction", "Type.def.utlc-let-expression",
+    "Type.ppt.zeta-reduction", "Type.def.type-expression-stlc", "Type.def.ctx",
+    "Type.ppt.judge-app", "Type.ppt.judge-lam",
+)
+for entry_id in unsupported_placeholders:
+    assert entries[entry_id].get("content") == {}, f"unsupported formalization must remain an honest placeholder: {entry_id}"
+for entry_id in (
+    "Type.ppt.delta-reduction", "Type.def.utlc-let-expression", "Type.ppt.zeta-reduction",
+    "Type.ppt.judge-app", "Type.rmk.named-lambda", "Type.def.type-expression-stlc",
+    "Type.subsec.type-inference", "Type.def.ctx", "Type.ppt.judge-lam",
+):
+    i18n_values(entries[entry_id]["title"], f"Entry {entry_id} title")
+assert macros["Sum.inl"]["source"]["entries"] == ["Type.def.sum.ctor.inl"]
+assert macros["Sum.inr"]["source"]["entries"] == ["Type.def.sum.ctor.inr"]
+assert "FulcrumNotes.OneOffI18N.TypeTheory.DeltaReduction.ConstantDefinition" not in macros, "orphaned delta-reduction prose Macro remains"
+assert "FulcrumNotes.OneOffI18N.TypeTheory.NamedBinder.SemanticStatus" in macros, "missing named-binder semantic-status Macro"
+for macro_name, style_name in (("Type.to", "text"), ("Lambda.Term", "default")):
+    style = next(style for style in macros[macro_name]["styles"] if style["style_name"] == style_name)
+    template = style["template"]
+    assert template.get("type") == "i18n" and set(template.get("values", {})) == {"en", "zh-CN"}, f"Macro {macro_name}[{style_name}] is not bilingual"
+    assert all(template["values"][locale].get("body", "").strip() for locale in ("en", "zh-CN")), f"Macro {macro_name}[{style_name}] has empty projection"
+assert next(style for style in macros["List.nil"]["styles"] if style["style_name"] == "default")["template"]["body"] == r"\mathsf{nil}"
+assert next(style for style in macros["List.cons"]["styles"] if style["style_name"] == "default")["template"]["body"] == r"\mathsf{cons}"
+type_theory_graph = strict_json_loads((DOC / "libraries" / "Type_Theory" / "graph.json").read_text(encoding="utf-8"))
+type_theory_graph_entries = {node.get("props", {}).get("entryId") for node in type_theory_graph["nodes"]}
+for spec in PLAN.get("graph_detachments", []):
+    if spec["library"] == "Type_Theory":
+        assert not (set(spec["entry_ids"]) & type_theory_graph_entries), "detached Type Theory graph nodes were regenerated"
+
 assert len(macros) == EXPECTED_MACROS, f"Macro count changed: {len(macros)}"
 assert len(entries) == EXPECTED_ENTRIES, f"unexpected Entry count: {len(entries)}"
 for spec in PLAN.get("macro_snapshot_updates", []):
@@ -176,8 +219,8 @@ for package_id in PLAN.get("retired_macro_packages", []):
     assert package_id not in config.get("active_macro_packages", []), f"retired Macro Package remains active: {package_id}"
 assert I18N.get("source_head") == EXPECTED_SOURCE_HEAD, "I18n map source lease changed"
 assert ENTRY_PACKAGE_PLAN.get("source_head") == EXPECTED_SOURCE_HEAD, "Entry Package source lease changed"
-assert len(I18N.get("entries", {})) == 395, "I18n Entry mapping coverage changed"
-assert len(I18N.get("styles", {})) == 87, "I18n Macro-style mapping coverage changed"
+assert len(I18N.get("entries", {})) == 404, "I18n Entry mapping coverage changed"
+assert len(I18N.get("styles", {})) == 89, "I18n Macro-style mapping coverage changed"
 
 # Macro identity migrations are complete, canonical, and have no stale alias.
 for rename in PLAN.get("macro_renames", []):
@@ -455,8 +498,10 @@ for inductive in PLAN["inductive_types"]:
         )
         for index, child in enumerate(children)
     )
+detached_by_library = {spec["library"]: set(spec["entry_ids"]) for spec in PLAN.get("graph_detachments", [])}
 for parent_id, child_id, allowed_parent_node_ids, after_entry_id in expected_relations:
     parent_occurrences = 0
+    detached_parent_occurrences = 0
     attached_occurrences = 0
     for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
         graph = strict_json_loads(graph_path.read_text(encoding="utf-8"))
@@ -466,6 +511,10 @@ for parent_id, child_id, allowed_parent_node_ids, after_entry_id in expected_rel
         all_parent_nodes = [node["id"] for node in nodes if node.get("props", {}).get("entryId") == parent_id]
         parent_nodes = all_parent_nodes if allowed_parent_node_ids is None else [node_id for node_id in all_parent_nodes if node_id in set(allowed_parent_node_ids)]
         child_nodes = {node["id"] for node in nodes if node.get("props", {}).get("entryId") == child_id}
+        detached_entries = detached_by_library.get(graph_path.parent.name, set())
+        if child_id in detached_entries:
+            detached_parent_occurrences += len(parent_nodes)
+            continue
         parent_occurrences += len(parent_nodes)
         relations = graph.get("relationships", [])
         if allowed_parent_node_ids is not None:
@@ -474,12 +523,12 @@ for parent_id, child_id, allowed_parent_node_ids, after_entry_id in expected_rel
         for parent_node in parent_nodes:
             if any(rel.get("from") == parent_node and rel.get("to") in child_nodes and rel.get("label") == "branch" for rel in relations):
                 attached_occurrences += 1
-            if after_entry_id is not None:
+            if after_entry_id is not None and after_entry_id not in detached_entries:
                 sibling_nodes = [rel.get("to") for rel in relations if rel.get("from") == parent_node and rel.get("label") == "branch"]
                 sibling_entries = [by_id[node_id].get("props", {}).get("entryId") for node_id in sibling_nodes]
                 assert sibling_entries.count(after_entry_id) == 1 and sibling_entries.count(child_id) == 1, f"placement entries missing or ambiguous: {after_entry_id} -> {child_id}"
                 assert sibling_entries.index(child_id) == sibling_entries.index(after_entry_id) + 1, f"wrong sibling order: {child_id} must immediately follow {after_entry_id}"
-    assert parent_occurrences > 0, f"parent absent from all Library graphs: {parent_id}"
+    assert parent_occurrences + detached_parent_occurrences > 0, f"parent absent from all Library graphs: {parent_id}"
     assert attached_occurrences == parent_occurrences, f"subentry not attached to every parent occurrence: {parent_id} -> {child_id}"
 
 # All graph identities, counter references, relationships, and reachability are valid.

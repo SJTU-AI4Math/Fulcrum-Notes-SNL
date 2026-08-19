@@ -6,7 +6,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.rl.judge"
+      ],
       "urls": []
     },
     "kind": "rule",

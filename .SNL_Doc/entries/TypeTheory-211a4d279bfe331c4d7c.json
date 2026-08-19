@@ -23,8 +23,7 @@
           "en": "α-conversion consistently renames a binder and its bound occurrences to a fresh name, without changing binding structure or capturing free variables.",
           "zh-CN": "α-转换把一个绑定子及其约束的出现一致地改为新名称，同时不改变绑定结构，也不捕获自由变量。"
         }
-      },
-      "snl": "thm-hyp(list-partial(Type.judge(a,Lambda.Expr),Type.judge(list-partial[formula](x,y),`string`)),Lambda.defeq(Type.Expr-UTLC.lambda(x,a),Type.Expr-UTLC.lambda(y,a)))"
+      }
     },
     "contribution_info": null,
     "pointer": null

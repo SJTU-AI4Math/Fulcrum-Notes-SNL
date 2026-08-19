@@ -6,7 +6,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Type.def.UTLC-term"
+      ],
       "urls": []
     },
     "kind": "rule",

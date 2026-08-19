@@ -4,10 +4,17 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Type.ppt.eta-reduction",
+    "id": "Type.ppt.judge-app",
     "package": "TypeTheory",
     "kind": "property",
-    "title": "$\\eta$ 规约",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Typing Rule for Application",
+        "zh-CN": "应用的类型判断规则"
+      }
+    },
     "content": {},
     "contribution_info": null,
     "pointer": null

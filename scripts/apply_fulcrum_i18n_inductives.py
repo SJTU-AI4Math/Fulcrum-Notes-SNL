@@ -21,7 +21,7 @@ DOC = ROOT / ".SNL_Doc"
 I18N_PATH = ROOT / "scripts/fulcrum-i18n-en-zh.json"
 PLAN_PATH = ROOT / "scripts/fulcrum-inductive-subentries.json"
 ENTRY_PACKAGE_PLAN_PATH = ROOT / "scripts/fulcrum-entry-packages.json"
-EXPECTED_SOURCE_HEAD = "fe2bb7ff7401cdd4474e6d137b2401ccc51d1007"
+EXPECTED_SOURCE_HEAD = "bbbd9bb712960fec9e961d611ec25edd179ab3a5"
 PREFLIGHT_ONLY = os.environ.get("FULCRUM_APPLY_PREFLIGHT_ONLY") == "1"
 _VIRTUAL_JSON: dict[Path, object] = {}
 _VIRTUAL_DELETED: set[Path] = set()
@@ -226,7 +226,8 @@ for spec in plan.get("macro_snapshot_updates", []):
     name = spec["name"]
     assert name in macros, f"Macro snapshot update references unknown Macro: {name}"
     accepted = [spec["canonical"], *spec.get("accepted_predecessors", [])]
-    assert macros[name] in accepted, f"Macro snapshot drift: {name}"
+    current_hash = hashlib.sha256(json.dumps(macros[name], ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+    assert macros[name] in accepted or current_hash in spec.get("accepted_predecessor_hashes", []), f"Macro snapshot drift: {name}"
     canonical = json.loads(json.dumps(spec["canonical"], ensure_ascii=False))
     macros[name] = canonical
     macro_envelopes[name]["macro"] = canonical
@@ -235,10 +236,27 @@ for spec in plan.get("macro_snapshot_updates", []):
 # long, package-scoped one-off I18N Macros rather than split into finer SNL.
 for spec in plan.get("entry_snl_updates", []):
     entry_id = spec["id"]
+    if entry_id not in entries:
+        predecessor_ids = [rename["old_id"] for rename in plan.get("entry_renames", []) if rename["new_id"] == entry_id and rename["old_id"] in entries]
+        assert len(predecessor_ids) == 1, f"SNL update references unknown Entry: {entry_id}"
+        entry_id = predecessor_ids[0]
     assert entry_id in entries, f"SNL update references unknown Entry: {entry_id}"
     current = (entries[entry_id].get("content") or {}).get("snl")
     assert current in [spec["canonical"], *spec.get("accepted_predecessors", [])], f"Entry SNL snapshot drift: {entry_id}"
-    entries[entry_id]["content"]["snl"] = spec["canonical"]
+    if spec["canonical"] is None:
+        entries[entry_id]["content"].pop("snl", None)
+    else:
+        entries[entry_id]["content"]["snl"] = spec["canonical"]
+
+# Remove obsolete draft Markdown only from explicitly leased structured Entries.
+for removal in plan.get("entry_markdown_removals", []):
+    entry_id = removal["id"]
+    assert entry_id in entries, f"Markdown removal references unknown Entry: {entry_id}"
+    content = entries[entry_id].get("content") or {}
+    retired_snl_ids = {spec["id"] for spec in plan.get("entry_snl_updates", []) if spec["canonical"] is None}
+    assert (isinstance(content.get("snl"), str) and content["snl"]) or entry_id in retired_snl_ids, f"Markdown removal requires canonical or explicitly retired SNL: {entry_id}"
+    assert content.get("markdown") in removal["accepted_markdown"], f"unrecognized Markdown predecessor: {entry_id}"
+    content.pop("markdown", None)
 
 # Macro ownership and Entry membership are independent. The Extension currently
 # requires every active Macro Package to have a shared package-registry manifest;
@@ -439,6 +457,21 @@ for rewrite in plan.get("snl_macro_rewrites", []):
         if isinstance(snl, str):
             content["snl"] = rewrite_snl_identifier(snl, rewrite["old_name"], rewrite["new_name"])
 
+# Retire explicitly leased orphan Macros only when their complete snapshot matches.
+for retirement in plan.get("retired_macros", []):
+    name = retirement["name"]
+    package_id = retirement["package"]
+    canonical_path = DOC / "macros" / f"{package_id}-{identity_hash('macro', package_id, name)}.json"
+    if name in macros:
+        assert macro_paths[name] == canonical_path, f"noncanonical retired Macro path: {name}"
+        assert macro_envelopes[name]["package"] == package_id, f"retired Macro Package drift: {name}"
+        assert macros[name] in retirement["accepted_snapshots"], f"retired Macro snapshot drift: {name}"
+        retired_macro_paths.append(canonical_path)
+        del macros[name], macro_paths[name], macro_envelopes[name]
+    else:
+        assert not path_exists(canonical_path), f"retired Macro path remains without loaded identity: {name}"
+
+
 # Create or normalize explicitly requested zero-arity localized lexical Macros.
 def lexical_template(body: str) -> dict:
     return {
@@ -503,7 +536,9 @@ for entry_id, projection in i18n["entries"].items():
         expected = localized(title)
         if entry.get("title") != expected:
             current_title = entry.get("title")
-            if isinstance(current_title, dict) and current_title.get("type") == "i18n":
+            if current_title in projection.get("accepted_title_predecessors", []):
+                pass
+            elif isinstance(current_title, dict) and current_title.get("type") == "i18n":
                 assert current_title.get("default_language") in {"en", "zh-CN"} and set(current_title.get("values", {})) == {"en", "zh-CN"}, f"stale localized title {entry_id}"
                 accepted_title_en = set(projection.get("accepted_title_en", [])) | {title["en"]}
                 assert current_title["values"]["en"] in accepted_title_en, f"stale English title mapping for {entry_id}"
@@ -592,6 +627,7 @@ for spec in new_specs:
         entry = entries[entry_id]
         assert entry["package"] in spec.get("accepted_packages", [spec["package"]])
         assert entry["kind"] in spec.get("accepted_kind", [spec["kind"]]), f"stale Entry kind: {entry_id}"
+        assert entry.get("content") in [expected_content, *spec.get("accepted_content", [])], f"unaccepted requested Entry content drift: {entry_id}"
         entry["kind"] = spec["kind"]
         entry["title"] = localized(spec["title"])
         entry["content"] = expected_content
@@ -724,7 +760,20 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
     nodes = graph.setdefault("nodes", [])
     relationships = graph.setdefault("relationships", [])
     changed = False
+    detached_entry_ids = {
+        entry_id
+        for spec in plan.get("graph_detachments", [])
+        if spec["library"] == graph_path.parent.name
+        for entry_id in spec["entry_ids"]
+    }
+    if detached_entry_ids:
+        detached_node_ids = {node["id"] for node in nodes if node.get("props", {}).get("entryId") in detached_entry_ids}
+        assert not detached_node_ids, f"detached graph entries unexpectedly present in {graph_path}: {sorted(detached_node_ids)}"
     for parent_entry_id, child_entry_id, level, allowed_parent_node_ids, after_entry_id in relations:
+        if child_entry_id in detached_entry_ids:
+            continue
+        if after_entry_id in detached_entry_ids:
+            after_entry_id = None
         all_parent_nodes = [node for node in nodes if node.get("props", {}).get("entryId") == parent_entry_id]
         if not all_parent_nodes:
             continue
@@ -813,15 +862,6 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
             if relationships != before:
                 changed = True
 
-    base_nodes = [node for node in nodes if node.get("props", {}).get("entryId") not in managed_new_entry_ids]
-    managed_nodes = sorted(
-        (node for node in nodes if node.get("props", {}).get("entryId") in managed_new_entry_ids),
-        key=lambda node: node["props"]["entryId"]
-    )
-    normalized_nodes = [*base_nodes, *managed_nodes]
-    if nodes != normalized_nodes:
-        nodes[:] = normalized_nodes
-        changed = True
     if changed:
         write_json(graph_path, graph)
 

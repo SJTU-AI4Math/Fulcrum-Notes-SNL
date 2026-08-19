@@ -19,7 +19,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "前继",
+          "body": "\\mathsf{cons}",
           "typst": {
             "built_in": "",
             "synthesis": {
