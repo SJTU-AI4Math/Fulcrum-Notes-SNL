@@ -109,6 +109,19 @@ def js_locale_sorted(values: set[str]) -> list[str]:
     return json.loads(result.stdout)
 
 
+def validate_macro_envelope(envelope: dict, path: Path, *, require_schema_version: bool = False) -> None:
+    legacy_keys = {"format", "version", "package", "macro"}
+    current_keys = legacy_keys | {"schema_version"}
+    allowed_keys = (current_keys,) if require_schema_version else (legacy_keys, current_keys)
+    assert any(set(envelope) == keys for keys in allowed_keys), f"invalid Macro envelope fields: {path}"
+    assert envelope["format"] == "snl-macro", f"invalid Macro envelope format: {path}"
+    assert envelope["version"] == 1, f"invalid Macro envelope version: {path}"
+    if "schema_version" in envelope:
+        assert envelope["schema_version"] == 1, f"invalid Macro envelope schema version: {path}"
+    assert isinstance(envelope["package"], str) and envelope["package"], f"invalid Macro envelope package: {path}"
+    assert isinstance(envelope["macro"], dict), f"invalid Macro envelope payload: {path}"
+
+
 def load_records(directory: str, identity_key: str):
     records = {}
     paths = {}
@@ -116,6 +129,8 @@ def load_records(directory: str, identity_key: str):
     for path in sorted((DOC / directory).glob("*.json")):
         envelope = read_json(path)
         record_key = "entry" if directory == "entries" else "macro"
+        if record_key == "macro":
+            validate_macro_envelope(envelope, path)
         record = envelope[record_key]
         identity = record[identity_key]
         assert identity not in records
@@ -231,6 +246,7 @@ for spec in plan.get("requested_structural_macros", []):
     if name in macros:
         assert macro_paths[name] == canonical_path, f"noncanonical structural Macro path: {name}"
         assert macro_envelopes[name]["package"] == package_id, f"structural Macro Package drift: {name}"
+        validate_macro_envelope(macro_envelopes[name], macro_paths[name], require_schema_version=True)
         assert macros[name] in [canonical, *spec.get("accepted_predecessors", [])], f"structural Macro snapshot drift: {name}"
         macros[name] = canonical
         macro_envelopes[name]["macro"] = canonical

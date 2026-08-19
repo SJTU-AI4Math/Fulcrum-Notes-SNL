@@ -64,11 +64,26 @@ EXPECTED_DARK_MACRO_STROKES = {
 }
 
 
+def validate_macro_envelope(envelope: dict, path: Path, *, require_schema_version: bool = False) -> None:
+    legacy_keys = {"format", "version", "package", "macro"}
+    current_keys = legacy_keys | {"schema_version"}
+    allowed_keys = (current_keys,) if require_schema_version else (legacy_keys, current_keys)
+    assert any(set(envelope) == keys for keys in allowed_keys), f"invalid Macro envelope fields: {path}"
+    assert envelope["format"] == "snl-macro", f"invalid Macro envelope format: {path}"
+    assert envelope["version"] == 1, f"invalid Macro envelope version: {path}"
+    if "schema_version" in envelope:
+        assert envelope["schema_version"] == 1, f"invalid Macro envelope schema version: {path}"
+    assert isinstance(envelope["package"], str) and envelope["package"], f"invalid Macro envelope package: {path}"
+    assert isinstance(envelope["macro"], dict), f"invalid Macro envelope payload: {path}"
+
+
 def load_entities(directory: str, key: str):
     records = {}
     paths = {}
     for path in sorted((DOC / directory).glob("*.json")):
         envelope = strict_json_loads(path.read_text(encoding="utf-8"))
+        if key == "macro":
+            validate_macro_envelope(envelope, path)
         record = envelope[key]
         identity = record["id"] if key == "entry" else record["name"]
         assert identity not in records, f"duplicate {key} identity: {identity}"
@@ -214,7 +229,9 @@ assert len(macros) == EXPECTED_MACROS, f"Macro count changed: {len(macros)}"
 assert len(entries) == EXPECTED_ENTRIES, f"unexpected Entry count: {len(entries)}"
 for spec in PLAN.get("requested_structural_macros", []):
     assert spec["name"] in macros and macros[spec["name"]] == spec["canonical"], f"canonical structural Macro snapshot drift: {spec['name']}"
-    envelope = strict_json_loads(macro_paths[spec["name"]].read_text(encoding="utf-8"))
+    envelope_path = macro_paths[spec["name"]]
+    envelope = strict_json_loads(envelope_path.read_text(encoding="utf-8"))
+    validate_macro_envelope(envelope, envelope_path, require_schema_version=True)
     assert envelope["package"] == spec["package"], f"wrong structural Macro Package: {spec['name']}"
 for spec in PLAN.get("macro_snapshot_updates", []):
     assert spec["name"] in macros and macros[spec["name"]] == spec["canonical"], f"canonical Macro snapshot drift: {spec['name']}"
