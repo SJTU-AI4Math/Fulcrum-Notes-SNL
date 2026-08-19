@@ -15,7 +15,16 @@
         "zh-CN": "常量"
       }
     },
-    "content": {},
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A constant is a globally named closed expression. A global signature records its name, definition body, and whether that body is transparent. Unlike a free variable, a constant does not require a local free-variable assignment.",
+          "zh-CN": "常量是在全局语境中具名的闭表达式。全局签名记录其名称、定义体以及该定义体是否透明。常量不同于自由变量，不需要局部的自由变量赋值。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

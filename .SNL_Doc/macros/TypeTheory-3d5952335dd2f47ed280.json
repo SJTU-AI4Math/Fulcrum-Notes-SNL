@@ -1,15 +1,17 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
-    "description": "Church or — λp q. p p q",
+    "description": "Untyped lambda expressions admitting free variables",
     "source": {
       "entries": [
-        "Type.def.Church-Or"
+        "Type.def.freeVariable"
       ],
       "urls": []
     },
+    "kind": "const",
     "dynamic_arity": false,
     "styles": [
       {
@@ -17,7 +19,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathsf{or}",
+          "body": "\\mathcal{E}_{\\lambda}^{\\mathrm{open}}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -38,7 +40,6 @@
       }
     ],
     "tags": [],
-    "kind": "const",
-    "name": "Church.or"
+    "name": "Lambda.OpenExpr"
   }
 }

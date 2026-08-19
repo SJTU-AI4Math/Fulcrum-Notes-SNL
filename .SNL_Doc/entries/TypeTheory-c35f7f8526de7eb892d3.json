@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(list-partial(Type.judge(list-partial(@a,@b),Lambda.Expr),Lambda.LegalExpr[are](list-partial(a,b))),)"
+      "snl": "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))"
     },
     "contribution_info": null,
     "pointer": null

@@ -1,23 +1,20 @@
 {
   "format": "snl-entry",
   "version": 1,
-  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Lambda.def.beta",
+    "id": "Type.def.freeVariable.recursor",
     "package": "TypeTheory",
     "kind": "definition",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "$\\beta$-reduction",
-        "zh-CN": "$\\beta$-归约"
+        "en": "Open Expression Recursor",
+        "zh-CN": "开表达式递归子"
       }
     },
-    "content": {
-      "snl": "def(Lambda.beta-closure(@a,@b),Relation.transitiveClosure(Lambda.betaRelation,a,b))"
-    },
+    "content": {},
     "contribution_info": null,
     "pointer": null
   }

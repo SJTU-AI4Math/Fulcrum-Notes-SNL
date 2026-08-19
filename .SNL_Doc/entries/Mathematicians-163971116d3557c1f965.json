@@ -1,0 +1,30 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "Mathematicians",
+  "entry": {
+    "id": "Mathematician.ctxt.alonzoChurch",
+    "package": "Mathematicians",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Alonzo Church",
+        "zh-CN": "阿隆佐·邱奇"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Alonzo Church (1903–1995) was an American mathematician and logician. He developed the $\\lambda$-calculus, introduced what are now called Church encodings, proved the undecidability of the Entscheidungsproblem in his formalism, and formulated the computability thesis now known—together with Turing’s independently developed equivalent account—as the Church–Turing thesis.",
+          "zh-CN": "阿隆佐·邱奇（Alonzo Church，1903–1995）是美国数学家与逻辑学家。他发展了 $\\lambda$-演算，引入了后来称为邱奇编码的方法，在其形式系统中证明了判定问题的不可判定性，并提出了可计算性论题；这一论题与图灵独立提出的等价刻画共同构成今天所称的邱奇–图灵论题。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

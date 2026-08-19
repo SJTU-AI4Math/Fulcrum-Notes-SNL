@@ -5558,19 +5558,6 @@
         "macros": [
           "def"
         ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Type.def.Church-Or.Type.def.Church-One",
-      "from": "Type.def.Church-Or",
-      "to": "Type.def.Church-One",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Church.or"
-        ],
         "isAtomic": true
       }
     },
@@ -5584,7 +5571,7 @@
         "macros": [
           "Type.Expr-UTLC.lambda"
         ],
-        "isAtomic": false
+        "isAtomic": true
       }
     },
     {

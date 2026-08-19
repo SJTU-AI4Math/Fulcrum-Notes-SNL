@@ -520,6 +520,72 @@
           "snl": "def-inductive-hyp(Type.ctx(@$\\Gamma$),Type.TypeExpr,ctors(Type.judge(Type.to[text],Type.to(Type.TypeExpr,Type.to(Type.TypeExpr,Type.TypeExpr)))))"
         }
       ]
+    },
+    {
+      "id": "Mathematician.ctxt.alonzoChurch",
+      "package": "Mathematicians",
+      "kind": "context",
+      "title": {
+        "en": "Alonzo Church",
+        "zh-CN": "阿隆佐·邱奇"
+      },
+      "content": {
+        "markdown": {
+          "en": "Alonzo Church (1903–1995) was an American mathematician and logician. He developed the $\\lambda$-calculus, introduced what are now called Church encodings, proved the undecidability of the Entscheidungsproblem in his formalism, and formulated the computability thesis now known—together with Turing’s independently developed equivalent account—as the Church–Turing thesis.",
+          "zh-CN": "阿隆佐·邱奇（Alonzo Church，1903–1995）是美国数学家与逻辑学家。他发展了 $\\lambda$-演算，引入了后来称为邱奇编码的方法，在其形式系统中证明了判定问题的不可判定性，并提出了可计算性论题；这一论题与图灵独立提出的等价刻画共同构成今天所称的邱奇–图灵论题。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.Church",
+      "graph_level": "entry"
+    },
+    {
+      "id": "Type.rmk.closedExpression",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "Closed and Open Expressions",
+        "zh-CN": "闭表达式与开表达式"
+      },
+      "content": {
+        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.ClosedExpression.GlobalAvailability(Lambda.Expr,Lambda.OpenExpr,Type.Expr-UTLC.fvar[text])"
+      },
+      "parent_entry_id": "Type.rl.Expr-LC",
+      "graph_level": "subentry",
+      "after_entry_id": "Type.rl.Expr-LC.ctor.bound-variable"
+    },
+    {
+      "id": "Type.def.freeVariable",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "Free Variable and Open Expression",
+        "zh-CN": "自由变量与开表达式"
+      },
+      "content": {
+        "snl": "def-inductive(Lambda.OpenExpr,ctors(Type.judge(Type.Expr-UTLC.closed[text],Type.to(Lambda.Expr,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.fvar[text],Type.to(`string`,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.lambda[text],Type.to(Lambda.OpenExpr,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.apply[text],Type.to(Lambda.OpenExpr,Type.to(Lambda.OpenExpr,Lambda.OpenExpr)))))"
+      },
+      "parent_entry_id": "Type.subsec.UTLC-design",
+      "graph_level": "entry",
+      "after_entry_id": "Type.def.alpha-conversion",
+      "accepted_content": [
+        {
+          "snl": "def-inductive(Lambda.OpenExpr,ctors(Type.judge(Type.Expr-UTLC.closed,Type.to(Lambda.Expr,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.fvar,Type.to(`string`,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.lambda[text],Type.to(Lambda.OpenExpr,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.apply[text],Type.to(Lambda.OpenExpr,Type.to(Lambda.OpenExpr,Lambda.OpenExpr)))))"
+        }
+      ]
+    },
+    {
+      "id": "Type.rmk.freeVariableOpenExpression",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "Free Variables and Openness",
+        "zh-CN": "自由变量与开放性"
+      },
+      "content": {
+        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.FreeVariable.OpenExpression(Type.Expr-UTLC.fvar(@x),Lambda.OpenExpr)"
+      },
+      "parent_entry_id": "Type.def.freeVariable",
+      "graph_level": "subentry"
     }
   ],
   "entry_updates": [
@@ -562,12 +628,30 @@
       "content_snl": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
     },
     {
+      "id": "Type.def.Substitution-LC",
+      "accepted_content_snl": [
+        "def-hyp-opq(list-partial(Type.judge(list-partial(@a,@b),Lambda.Expr),Lambda.LegalExpr[are](list-partial(a,b))),)",
+        "def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr))",
+        "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))"
+      ],
+      "content_snl": "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))"
+    },
+    {
       "id": "Lambda.def.beta-single",
       "accepted_content_snl": [
+        "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.LegalExpr)),\r\n    Lambda.beta(a, b)\r\n)",
         "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.Expr), Lambda.LegalExpr[are](list-partial[formula](a, b))),\r\n    Lambda.beta(a, b)\r\n)",
-        "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.LegalExpr)),\r\n    Lambda.beta(a, b)\r\n)"
+        "def-inductive[prop](Type.judge(Lambda.beta(@$\\cdot$,@$\\cdot$),Type.to(Lambda.Expr,Type.to(Lambda.Expr,Proposition))),ctors(Type.judge(Lambda.beta.contract,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Lambda.beta(Type.Expr-UTLC.apply(parentheses(Type.Expr-UTLC.lambda(@$ $,a)),b),Lambda.substitution(a,0,b)))),Type.judge(Lambda.beta.lambda-congruence,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.beta.application-left-congruence,Logic.forall-typed(list-partial[formula](@f,@g,@a),Lambda.Expr,Type.to(Lambda.beta(f,g),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,a))))),Type.judge(Lambda.beta.application-right-congruence,Logic.forall-typed(list-partial[formula](@f,@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(f,b)))))))"
       ],
-      "content_snl": "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.LegalExpr)),\r\n    Lambda.beta(a, b)\r\n)"
+      "content_snl": "def-inductive[prop](Type.judge(Lambda.beta(@$\\cdot$,@$\\cdot$),Type.to(Lambda.Expr,Type.to(Lambda.Expr,Proposition))),ctors(Type.judge(Lambda.beta.contract,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Lambda.beta(Type.Expr-UTLC.apply(parentheses(Type.Expr-UTLC.lambda(@$ $,a)),b),Lambda.substitution(a,0,b)))),Type.judge(Lambda.beta.lambda-congruence,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.beta.application-left-congruence,Logic.forall-typed(list-partial[formula](@f,@g,@a),Lambda.Expr,Type.to(Lambda.beta(f,g),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,a))))),Type.judge(Lambda.beta.application-right-congruence,Logic.forall-typed(list-partial[formula](@f,@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(f,b)))))))"
+    },
+    {
+      "id": "Lambda.def.beta",
+      "accepted_content_snl": [
+        "def-hyp-opq(list-partial(Type.judge(list-partial(@a,@b),Lambda.Expr),Lambda.LegalExpr[are](list-partial[formula](a,b))),Lambda.beta-closure(a,b))",
+        "def(Lambda.beta-closure(@a,@b),Relation.transitiveClosure(Lambda.betaRelation,a,b))"
+      ],
+      "content_snl": "def(Lambda.beta-closure(@a,@b),Relation.transitiveClosure(Lambda.betaRelation,a,b))"
     }
   ],
   "inductive_types": [
@@ -1217,6 +1301,120 @@
       },
       "ordered_children": true,
       "existing": false
+    },
+    {
+      "parent_entry_id": "Type.def.freeVariable",
+      "package": "TypeTheory",
+      "constructors": [
+        {
+          "id": "Type.def.freeVariable.ctor.closedExpression",
+          "title": {
+            "en": "Closed-expression Embedding",
+            "zh-CN": "闭表达式嵌入构造子"
+          },
+          "content": {
+            "snl": "def-hyp-opq(Type.judge(@a,Lambda.Expr),Type.Expr-UTLC.closed(a))"
+          }
+        },
+        {
+          "id": "Type.def.freeVariable.ctor.freeVariable",
+          "title": {
+            "en": "Free Variable Constructor",
+            "zh-CN": "自由变量构造子"
+          },
+          "content": {
+            "snl": "def-hyp-opq(Type.judge(@x,`string`),Type.Expr-UTLC.fvar(x))"
+          }
+        },
+        {
+          "id": "Type.def.freeVariable.ctor.lambdaAbstraction",
+          "title": {
+            "en": "Open $\\lambda$-Abstraction Constructor",
+            "zh-CN": "开 $\\lambda$-抽象构造子"
+          },
+          "content": {
+            "snl": "def-hyp-opq(Type.judge(@a,Lambda.OpenExpr),Type.Expr-UTLC.lambda(@$ $,@a))"
+          }
+        },
+        {
+          "id": "Type.def.freeVariable.ctor.application",
+          "title": {
+            "en": "Open Application Constructor",
+            "zh-CN": "开应用构造子"
+          },
+          "content": {
+            "snl": "def-hyp-opq(Type.judge(list-partial[formula](@a,@b),Lambda.OpenExpr),Type.Expr-UTLC.apply(a,b))"
+          }
+        }
+      ],
+      "recursor": {
+        "id": "Type.def.freeVariable.recursor",
+        "title": {
+          "en": "Open Expression Recursor",
+          "zh-CN": "开表达式递归子"
+        }
+      },
+      "ordered_children": true,
+      "existing": false
+    },
+    {
+      "parent_entry_id": "Lambda.def.beta-single",
+      "package": "TypeTheory",
+      "constructors": [
+        {
+          "id": "Lambda.def.beta-single.ctor.betaContraction",
+          "title": {
+            "en": "$\\beta$-Contraction",
+            "zh-CN": "$\\beta$-收缩"
+          },
+          "kind": "property",
+          "content": {
+            "snl": "thm-hyp(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.beta(Type.Expr-UTLC.apply(parentheses(Type.Expr-UTLC.lambda(@$ $,a)),b),Lambda.substitution(a,0,b)))"
+          }
+        },
+        {
+          "id": "Lambda.def.beta-single.ctor.lambdaCongruence",
+          "title": {
+            "en": "Abstraction Congruence",
+            "zh-CN": "抽象相容性"
+          },
+          "kind": "property",
+          "content": {
+            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.beta(a,b)),Lambda.beta(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b)))"
+          }
+        },
+        {
+          "id": "Lambda.def.beta-single.ctor.applicationFunctionCongruence",
+          "title": {
+            "en": "Application Function-position Congruence",
+            "zh-CN": "应用函数位置相容性"
+          },
+          "kind": "property",
+          "content": {
+            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@f,@g,@a),Lambda.Expr),Lambda.beta(f,g)),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,a)))"
+          }
+        },
+        {
+          "id": "Lambda.def.beta-single.ctor.applicationArgumentCongruence",
+          "title": {
+            "en": "Application Argument-position Congruence",
+            "zh-CN": "应用参数位置相容性"
+          },
+          "kind": "property",
+          "content": {
+            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@f,@a,@b),Lambda.Expr),Lambda.beta(a,b)),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(f,b)))"
+          }
+        }
+      ],
+      "recursor": {
+        "id": "Lambda.def.beta-single.recursor",
+        "title": {
+          "en": "Single-step $\\beta$-reduction Recursor",
+          "zh-CN": "单步 $\\beta$-归约递归子"
+        }
+      },
+      "ordered_children": true,
+      "existing": true
     }
   ],
   "graph_references": [
@@ -1251,6 +1449,43 @@
         "Type.def.structure",
         "Type.def.Sigma",
         "Measure.def.measureSpace"
+      ]
+    },
+    {
+      "parent_entry_id": "Type.subsec.Church",
+      "entry_ids": [
+        "Mathematician.ctxt.alonzoChurch",
+        "Type.def.Church-True",
+        "Type.def.Church-False",
+        "Type.def.Church-And",
+        "Type.def.Church-Or",
+        "Type.def.Church-Not",
+        "Type.def.Church-Nat",
+        "Type.def.Church-Succ",
+        "Type.def.Church-Add",
+        "Type.def.Church-Mul",
+        "Type.rmk.lambdaTuringComplete"
+      ]
+    },
+    {
+      "parent_entry_id": "Type.def.freeVariable",
+      "entry_ids": [
+        "Type.def.freeVariable.ctor.closedExpression",
+        "Type.def.freeVariable.ctor.freeVariable",
+        "Type.def.freeVariable.ctor.lambdaAbstraction",
+        "Type.def.freeVariable.ctor.application",
+        "Type.def.freeVariable.recursor",
+        "Type.rmk.freeVariableOpenExpression"
+      ]
+    },
+    {
+      "parent_entry_id": "Lambda.def.beta-single",
+      "entry_ids": [
+        "Lambda.def.beta-single.ctor.betaContraction",
+        "Lambda.def.beta-single.ctor.lambdaCongruence",
+        "Lambda.def.beta-single.ctor.applicationFunctionCongruence",
+        "Lambda.def.beta-single.ctor.applicationArgumentCongruence",
+        "Lambda.def.beta-single.recursor"
       ]
     }
   ],
@@ -1655,6 +1890,110 @@
       "entries": [
         "Type.ppt.judge-lam"
       ]
+    },
+    {
+      "name": "Church.or",
+      "accepted_entries": [
+        [
+          "Type.def.Church-One"
+        ],
+        [
+          "Type.def.Church-Or"
+        ]
+      ],
+      "entries": [
+        "Type.def.Church-Or"
+      ]
+    },
+    {
+      "name": "Type.Expr-UTLC.closed",
+      "accepted_entries": [
+        [],
+        [
+          "Type.def.freeVariable"
+        ],
+        [
+          "Type.def.freeVariable.ctor.closedExpression"
+        ]
+      ],
+      "entries": [
+        "Type.def.freeVariable.ctor.closedExpression"
+      ]
+    },
+    {
+      "name": "Type.Expr-UTLC.fvar",
+      "accepted_entries": [
+        [],
+        [
+          "Type.def.freeVariable"
+        ],
+        [
+          "Type.def.freeVariable.ctor.freeVariable"
+        ]
+      ],
+      "entries": [
+        "Type.def.freeVariable.ctor.freeVariable"
+      ]
+    },
+    {
+      "name": "Lambda.beta.contract",
+      "accepted_entries": [
+        [],
+        [
+          "Lambda.def.beta-single"
+        ],
+        [
+          "Lambda.def.beta-single.ctor.betaContraction"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.beta-single.ctor.betaContraction"
+      ]
+    },
+    {
+      "name": "Lambda.beta.lambda-congruence",
+      "accepted_entries": [
+        [],
+        [
+          "Lambda.def.beta-single"
+        ],
+        [
+          "Lambda.def.beta-single.ctor.lambdaCongruence"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.beta-single.ctor.lambdaCongruence"
+      ]
+    },
+    {
+      "name": "Lambda.beta.application-left-congruence",
+      "accepted_entries": [
+        [],
+        [
+          "Lambda.def.beta-single"
+        ],
+        [
+          "Lambda.def.beta-single.ctor.applicationFunctionCongruence"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.beta-single.ctor.applicationFunctionCongruence"
+      ]
+    },
+    {
+      "name": "Lambda.beta.application-right-congruence",
+      "accepted_entries": [
+        [],
+        [
+          "Lambda.def.beta-single"
+        ],
+        [
+          "Lambda.def.beta-single.ctor.applicationArgumentCongruence"
+        ]
+      ],
+      "entries": [
+        "Lambda.def.beta-single.ctor.applicationArgumentCongruence"
+      ]
     }
   ],
   "macro_renames": [
@@ -1944,6 +2283,57 @@
       "body": {
         "en": "The #0 constructor used above does not semantically retain a name for the formal parameter of the binder. Names in expressions are treated as syntactic sugar because #1 alone determines the binding structure. An implementation that instead treats binder names as semantic data must quotient definitional equality by $\\alpha$-conversion.",
         "zh-CN": "前例中的 #0 构造子在语义上不保留绑定子形式参数的名称。表达式中的名称仅视为语法糖，因为仅用 #1 即可刻画绑定结构。若某种实现把绑定子名称视为语义数据，则其依定义相等还必须对 $\\alpha$-转换取商。"
+      }
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.ClosedExpression.GlobalAvailability",
+      "package": "FulcrumNotesOneOffI18N",
+      "kind": "sub",
+      "style_name": "default",
+      "source_entry_id": "Type.rmk.closedExpression",
+      "body": {
+        "en": "An expression in #0 is directly available in the global setting and, once its bound indices are well scoped, is legal without a free-variable context. An expression in #1 containing #2 is called an open expression.",
+        "zh-CN": "#0 中的表达式可以直接在全局语境下使用；只要受束指数作用域良构，其合法性就不依赖自由变量语境。#1 中含有 #2 的表达式称为开表达式。"
+      },
+      "accepted_bodies": {
+        "en": [
+          "An expression in #0 is directly available in the global setting and, once its bound indices are well scoped, is legal without a free-variable context. An expression in #1 containing #2 is called an open expression."
+        ],
+        "zh-CN": [
+          "#0 中的表达式可以直接在全局语境下使用；只要受束指数作用域良构，其合法性就不依赖自由变元语境。#1 中含有 #2 的表达式称为开表达式。",
+          "#0 中的表达式可以直接在全局语境下使用；只要受束指数作用域良构，其合法性就不依赖自由变量语境。#1 中含有 #2 的表达式称为开表达式。"
+        ]
+      }
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.FreeVariable.OpenExpression",
+      "package": "FulcrumNotesOneOffI18N",
+      "kind": "sub",
+      "style_name": "default",
+      "source_entry_id": "Type.rmk.freeVariableOpenExpression",
+      "body": {
+        "en": "#0 records a free name. de Bruijn binders do not bind it, so an ambient context must resolve that name. An expression in #1 is open exactly when it contains at least one free-variable node.",
+        "zh-CN": "#0 记录一个自由名称；de Bruijn 绑定子不会约束它，因此必须由外围语境解释该名称。#1 中的表达式恰在含有至少一个自由变量节点时称为开表达式。"
+      },
+      "accepted_bodies": {
+        "en": [
+          "#0 records a free name. de Bruijn binders do not bind it, so an ambient context must resolve that name. An expression in #1 is open exactly when it contains at least one free-variable node."
+        ],
+        "zh-CN": [
+          "#0 记录一个自由名称；de Bruijn 绑定子不会约束它，因此必须由外围语境解释该名称。#1 中的表达式恰在含有至少一个自由变元节点时称为开表达式。",
+          "#0 记录一个自由名称；de Bruijn 绑定子不会约束它，因此必须由外围语境解释该名称。#1 中的表达式恰在含有至少一个自由变量节点时称为开表达式。"
+        ]
+      }
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding",
+      "package": "FulcrumNotesOneOffI18N",
+      "kind": "sub",
+      "style_name": "default",
+      "source_entry_id": "Type.def.Substitution-LC",
+      "body": {
+        "en": "#0 denotes capture-avoiding substitution of #2 for de Bruijn index #1 in #3. Under a binder, indices and the substituted expression are shifted as required to preserve binding.",
+        "zh-CN": "#0 表示在 #3 中把 de Bruijn 指数 #1 捕获规避地替换为 #2。进入绑定子时，按保持绑定结构所需的方式调整指数并提升被替换表达式。"
       }
     }
   ],
@@ -3578,7 +3968,8 @@
     }
   ],
   "managed_macro_packages": [
-    "FulcrumNotesOneOffI18N"
+    "FulcrumNotesOneOffI18N",
+    "MathematicianTerms"
   ],
   "entry_snl_updates": [
     {
@@ -3738,20 +4129,6 @@
   ],
   "entry_markdown_removals": [
     {
-      "id": "Type.def.UTLC-const",
-      "accepted_markdown": [
-        null,
-        {
-          "type": "i18n",
-          "default_language": "en",
-          "values": {
-            "en": "A constant context records the free constant symbols available to an untyped λ-term. Unlike variables introduced by λ-abstraction, these constants are not captured by λ-binders.",
-            "zh-CN": "常量语境记录无类型 λ-项可以使用的自由常量符号。与 λ-抽象引入的变量不同，这些常量不会被 λ-绑定子捕获。"
-          }
-        }
-      ]
-    },
-    {
       "id": "Type.def.named-lambda",
       "accepted_markdown": [
         null,
@@ -3904,6 +4281,1060 @@
           ],
           "tags": [],
           "name": "FulcrumNotes.OneOffI18N.TypeTheory.DeltaReduction.ConstantDefinition"
+        }
+      ]
+    }
+  ],
+  "requested_structural_macros": [
+    {
+      "name": "Mathematician.alonzoChurch",
+      "package": "MathematicianTerms",
+      "canonical": {
+        "description": "Alonzo Church",
+        "source": {
+          "entries": [
+            "Mathematician.ctxt.alonzoChurch"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\text{Alonzo Church}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Mathematician.alonzoChurch"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Lambda.OpenExpr",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Untyped lambda expressions admitting free variables",
+        "source": {
+          "entries": [
+            "Type.def.freeVariable"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\mathcal{E}_{\\lambda}^{\\mathrm{open}}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Lambda.OpenExpr"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.Expr-UTLC.fvar",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Free-variable constructor",
+        "source": {
+          "entries": [
+            "Type.def.freeVariable.ctor.freeVariable"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\operatorname{fvar}(#0)",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          },
+          {
+            "style_name": "text",
+            "tags": [],
+            "template": {
+              "type": "i18n",
+              "default_language": "en",
+              "values": {
+                "en": {
+                  "mode": "text",
+                  "body": "free-variable constructor",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                },
+                "zh-CN": {
+                  "mode": "text",
+                  "body": "自由变量构造子",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                }
+              }
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.Expr-UTLC.fvar"
+      },
+      "accepted_predecessors": [
+        {
+          "description": "Free-variable constructor",
+          "source": {
+            "entries": [
+              "Type.def.freeVariable"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\operatorname{fvar}(#0)",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            },
+            {
+              "style_name": "text",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "free-variable constructor",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "自由变元构造子",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.Expr-UTLC.fvar"
+        },
+        {
+          "description": "Free-variable constructor",
+          "source": {
+            "entries": [
+              "Type.def.freeVariable"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\operatorname{fvar}(#0)",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            },
+            {
+              "style_name": "text",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "free-variable constructor",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "自由变量构造子",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.Expr-UTLC.fvar"
+        }
+      ]
+    },
+    {
+      "name": "Type.Expr-UTLC.closed",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Embedding of a closed expression into the open-expression syntax",
+        "source": {
+          "entries": [
+            "Type.def.freeVariable.ctor.closedExpression"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\operatorname{closed}(#0)",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          },
+          {
+            "style_name": "text",
+            "tags": [],
+            "template": {
+              "type": "i18n",
+              "default_language": "en",
+              "values": {
+                "en": {
+                  "mode": "text",
+                  "body": "closed-expression embedding",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                },
+                "zh-CN": {
+                  "mode": "text",
+                  "body": "闭表达式嵌入",
+                  "typst": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "latex": {
+                    "built_in": "",
+                    "synthesis": {
+                      "mode": "formula",
+                      "macro": ""
+                    }
+                  },
+                  "markdown": "",
+                  "text": ""
+                }
+              }
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.Expr-UTLC.closed"
+      },
+      "accepted_predecessors": [
+        {
+          "description": "Embedding of a closed expression into the open-expression syntax",
+          "source": {
+            "entries": [
+              "Type.def.freeVariable"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\operatorname{closed}(#0)",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.Expr-UTLC.closed"
+        },
+        {
+          "description": "Embedding of a closed expression into the open-expression syntax",
+          "source": {
+            "entries": [
+              "Type.def.freeVariable"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\operatorname{closed}(#0)",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            },
+            {
+              "style_name": "text",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "closed-expression embedding",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "闭表达式嵌入",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.Expr-UTLC.closed"
+        }
+      ]
+    },
+    {
+      "name": "Lambda.substitution",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Capture-avoiding substitution",
+        "source": {
+          "entries": [
+            "Type.def.Substitution-LC"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "#0[#1 \\mapsto #2]",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Lambda.substitution"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Lambda.betaRelation",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Single-step beta-reduction relation symbol",
+        "source": {
+          "entries": [
+            "Lambda.def.beta-single"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\overset{\\beta}{\\to}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Lambda.betaRelation"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Relation.transitiveClosure",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Transitive closure of a binary relation",
+        "source": {
+          "entries": [
+            "Lambda.def.beta"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "#1 \\mathrel{#0^{+}} #2",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Relation.transitiveClosure"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Lambda.beta.contract",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Constructor of single-step beta reduction",
+        "source": {
+          "entries": [
+            "Lambda.def.beta-single.ctor.betaContraction"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\beta",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Lambda.beta.contract"
+      },
+      "accepted_predecessors": [
+        {
+          "description": "Constructor of single-step beta reduction",
+          "source": {
+            "entries": [
+              "Lambda.def.beta-single"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\beta",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Lambda.beta.contract"
+        }
+      ]
+    },
+    {
+      "name": "Lambda.beta.lambda-congruence",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Constructor of single-step beta reduction",
+        "source": {
+          "entries": [
+            "Lambda.def.beta-single.ctor.lambdaCongruence"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\xi_{\\lambda}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Lambda.beta.lambda-congruence"
+      },
+      "accepted_predecessors": [
+        {
+          "description": "Constructor of single-step beta reduction",
+          "source": {
+            "entries": [
+              "Lambda.def.beta-single"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\xi_{\\lambda}",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Lambda.beta.lambda-congruence"
+        }
+      ]
+    },
+    {
+      "name": "Lambda.beta.application-left-congruence",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Constructor of single-step beta reduction",
+        "source": {
+          "entries": [
+            "Lambda.def.beta-single.ctor.applicationFunctionCongruence"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\xi_{\\mathrm{appL}}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Lambda.beta.application-left-congruence"
+      },
+      "accepted_predecessors": [
+        {
+          "description": "Constructor of single-step beta reduction",
+          "source": {
+            "entries": [
+              "Lambda.def.beta-single"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\xi_{\\mathrm{appL}}",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Lambda.beta.application-left-congruence"
+        }
+      ]
+    },
+    {
+      "name": "Lambda.beta.application-right-congruence",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Constructor of single-step beta reduction",
+        "source": {
+          "entries": [
+            "Lambda.def.beta-single.ctor.applicationArgumentCongruence"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\xi_{\\mathrm{appR}}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Lambda.beta.application-right-congruence"
+      },
+      "accepted_predecessors": [
+        {
+          "description": "Constructor of single-step beta reduction",
+          "source": {
+            "entries": [
+              "Lambda.def.beta-single"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_inline",
+                "body": "\\xi_{\\mathrm{appR}}",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Lambda.beta.application-right-congruence"
         }
       ]
     }

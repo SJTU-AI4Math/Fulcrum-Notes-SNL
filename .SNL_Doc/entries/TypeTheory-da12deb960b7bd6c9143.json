@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.LegalExpr)),\r\n    Lambda.beta(a, b)\r\n)"
+      "snl": "def-inductive[prop](Type.judge(Lambda.beta(@$\\cdot$,@$\\cdot$),Type.to(Lambda.Expr,Type.to(Lambda.Expr,Proposition))),ctors(Type.judge(Lambda.beta.contract,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Lambda.beta(Type.Expr-UTLC.apply(parentheses(Type.Expr-UTLC.lambda(@$ $,a)),b),Lambda.substitution(a,0,b)))),Type.judge(Lambda.beta.lambda-congruence,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.beta.application-left-congruence,Logic.forall-typed(list-partial[formula](@f,@g,@a),Lambda.Expr,Type.to(Lambda.beta(f,g),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,a))))),Type.judge(Lambda.beta.application-right-congruence,Logic.forall-typed(list-partial[formula](@f,@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(f,b)))))))"
     },
     "contribution_info": null,
     "pointer": null

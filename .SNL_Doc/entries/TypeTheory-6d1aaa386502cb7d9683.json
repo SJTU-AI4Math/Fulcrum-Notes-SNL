@@ -15,7 +15,16 @@
         "zh-CN": "局部定义"
       }
     },
-    "content": {},
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A local definition `let x := t; u` binds $x$ in $u$ and denotes evaluating $u$ with $t$ substituted for $x$. The substitution is capture-avoiding.",
+          "zh-CN": "局部定义 `let x := t; u` 在 $u$ 中绑定 $x$，其含义是把 $t$ 捕获规避地替换进 $u$ 中 $x$ 的位置后求值。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

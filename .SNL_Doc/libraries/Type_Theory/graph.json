@@ -1198,6 +1198,118 @@
         "entryId": "Type.ppt.zeta-reduction",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
+    },
+    {
+      "id": "n_sub_e7b96f8299f9",
+      "label": "Entry",
+      "props": {
+        "entryId": "Mathematician.ctxt.alonzoChurch",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_d07d04aadc00",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.freeVariable",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_2722ad8c8869",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.freeVariableOpenExpression",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_30dda0e5febf",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.freeVariable.ctor.closedExpression",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_4e810c9fa110",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.freeVariable.ctor.freeVariable",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_68adad8b9eae",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.freeVariable.ctor.lambdaAbstraction",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_6acf006c37dd",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.freeVariable.ctor.application",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_763bb96f8755",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.freeVariable.recursor",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_a64a80464cef",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.beta-single.ctor.betaContraction",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_5f89bd798b1d",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.beta-single.ctor.lambdaCongruence",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_dc10abb00b5e",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.beta-single.ctor.applicationFunctionCongruence",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_bf34100ea07c",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.beta-single.ctor.applicationArgumentCongruence",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_72ddf5f75c71",
+      "label": "Entry",
+      "props": {
+        "entryId": "Lambda.def.beta-single.recursor",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "n_sub_d43d04419608",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.closedExpression",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
     }
   ],
   "relationships": [
@@ -1239,6 +1351,11 @@
     {
       "from": "n_52",
       "to": "n_70",
+      "label": "branch"
+    },
+    {
+      "from": "n_52",
+      "to": "n_sub_d07d04aadc00",
       "label": "branch"
     },
     {
@@ -1314,6 +1431,11 @@
     {
       "from": "n_3",
       "to": "n_34",
+      "label": "branch"
+    },
+    {
+      "from": "n_33",
+      "to": "n_sub_e7b96f8299f9",
       "label": "branch"
     },
     {
@@ -1647,6 +1769,11 @@
       "label": "branch"
     },
     {
+      "from": "n_13",
+      "to": "n_sub_d43d04419608",
+      "label": "branch"
+    },
+    {
       "from": "n_55",
       "to": "n_sub_1875c9facf56",
       "label": "branch"
@@ -1934,6 +2061,61 @@
     {
       "from": "n_69",
       "to": "n_87",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_d07d04aadc00",
+      "to": "n_sub_30dda0e5febf",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_d07d04aadc00",
+      "to": "n_sub_4e810c9fa110",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_d07d04aadc00",
+      "to": "n_sub_68adad8b9eae",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_d07d04aadc00",
+      "to": "n_sub_6acf006c37dd",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_d07d04aadc00",
+      "to": "n_sub_763bb96f8755",
+      "label": "branch"
+    },
+    {
+      "from": "n_sub_d07d04aadc00",
+      "to": "n_sub_2722ad8c8869",
+      "label": "branch"
+    },
+    {
+      "from": "n_38",
+      "to": "n_sub_a64a80464cef",
+      "label": "branch"
+    },
+    {
+      "from": "n_38",
+      "to": "n_sub_5f89bd798b1d",
+      "label": "branch"
+    },
+    {
+      "from": "n_38",
+      "to": "n_sub_dc10abb00b5e",
+      "label": "branch"
+    },
+    {
+      "from": "n_38",
+      "to": "n_sub_bf34100ea07c",
+      "label": "branch"
+    },
+    {
+      "from": "n_38",
+      "to": "n_sub_72ddf5f75c71",
       "label": "branch"
     }
   ]

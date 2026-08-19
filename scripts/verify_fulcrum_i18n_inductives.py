@@ -35,10 +35,10 @@ DOC = ROOT / ".SNL_Doc"
 PLAN = strict_json_loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
 I18N = strict_json_loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
 ENTRY_PACKAGE_PLAN = strict_json_loads((ROOT / "scripts/fulcrum-entry-packages.json").read_text(encoding="utf-8"))
-EXPECTED_SOURCE_HEAD = "bbbd9bb712960fec9e961d611ec25edd179ab3a5"
+EXPECTED_SOURCE_HEAD = "d3a3785e1d1ec1114e48eb2180f9a8ddd7a548f0"
 validate_authorities(I18N, PLAN, ENTRY_PACKAGE_PLAN, EXPECTED_SOURCE_HEAD)
-EXPECTED_ENTRIES = 484  # latest TypeTheory notes plus managed inductive entries
-EXPECTED_MACROS = 428  # includes nine package-scoped one-off I18N helper Macros
+EXPECTED_ENTRIES = 498  # latest TypeTheory notes plus managed inductive entries
+EXPECTED_MACROS = 442  # includes nine package-scoped one-off I18N helper Macros
 EXPECTED_PLACEHOLDERS = {
     "Type.def.iota-reduction": {
         "title": {"en": "$\\iota$-reduction", "zh-CN": "$\\iota$-归约"},
@@ -177,11 +177,14 @@ alpha_content = entries["Type.def.alpha-conversion"].get("content") or {}
 assert "snl" not in alpha_content, "alpha-conversion must not assert an invalid named-binder equality over the de Bruijn carrier"
 alpha_markdown = i18n_values(alpha_content.get("markdown"), "alpha-conversion Markdown")
 assert "fresh" in alpha_markdown["en"] and "捕获自由变量" in alpha_markdown["zh-CN"], "alpha-conversion explanation lost freshness/non-capture"
-unsupported_placeholders = (
-    "Type.def.UTLC-const", "Type.ppt.delta-reduction", "Type.def.utlc-let-expression",
-    "Type.ppt.zeta-reduction", "Type.def.type-expression-stlc", "Type.def.ctx",
-    "Type.ppt.judge-app", "Type.ppt.judge-lam",
+restored_teaching_entries = (
+    "Type.def.UTLC-const", "Type.ppt.delta-reduction", "Type.def.utlc-let-expression", "Type.ppt.zeta-reduction",
 )
+for entry_id in restored_teaching_entries:
+    content = entries[entry_id].get("content") or {}
+    assert "snl" not in content, f"restored teaching text must not revive unsupported formalization: {entry_id}"
+    i18n_values(content.get("markdown"), f"restored teaching Markdown {entry_id}")
+unsupported_placeholders = ("Type.def.type-expression-stlc", "Type.def.ctx", "Type.ppt.judge-app", "Type.ppt.judge-lam")
 for entry_id in unsupported_placeholders:
     assert entries[entry_id].get("content") == {}, f"unsupported formalization must remain an honest placeholder: {entry_id}"
 for entry_id in (
@@ -209,6 +212,10 @@ for spec in PLAN.get("graph_detachments", []):
 
 assert len(macros) == EXPECTED_MACROS, f"Macro count changed: {len(macros)}"
 assert len(entries) == EXPECTED_ENTRIES, f"unexpected Entry count: {len(entries)}"
+for spec in PLAN.get("requested_structural_macros", []):
+    assert spec["name"] in macros and macros[spec["name"]] == spec["canonical"], f"canonical structural Macro snapshot drift: {spec['name']}"
+    envelope = strict_json_loads(macro_paths[spec["name"]].read_text(encoding="utf-8"))
+    assert envelope["package"] == spec["package"], f"wrong structural Macro Package: {spec['name']}"
 for spec in PLAN.get("macro_snapshot_updates", []):
     assert spec["name"] in macros and macros[spec["name"]] == spec["canonical"], f"canonical Macro snapshot drift: {spec['name']}"
 for spec in PLAN.get("entry_snl_updates", []):
@@ -624,6 +631,63 @@ for order_spec in PLAN.get("ordered_graph_children", []):
             expected = order_spec["entry_ids"]
             assert actual[:len(expected)] == expected, f"wrong sibling order under {order_spec['parent_entry_id']}: {actual}"
     assert found > 0, f"ordered parent not found: {order_spec['parent_entry_id']}"
+
+# Regression gate for the Church, closed/open-expression, substitution, and beta-reduction batch.
+assert "Mathematician.ctxt.alonzoChurch" in entries, "Alonzo Church Entry is missing"
+church = entries["Mathematician.ctxt.alonzoChurch"]
+assert church["package"] == "Mathematicians", "Alonzo Church is not in the Mathematicians Entry Package"
+assert church["title"]["values"] == {"en": "Alonzo Church", "zh-CN": "阿隆佐·邱奇"}
+assert set(church.get("content", {}).get("markdown", {}).get("values", {})) == {"en", "zh-CN"}, "Alonzo Church biography is not bilingual"
+assert "MathematicianTerms" in config.get("active_macro_packages", []), "Mathematician term Macro Package is inactive"
+assert "Mathematician.alonzoChurch" in macros, "Alonzo Church term Macro is missing"
+assert macros["Mathematician.alonzoChurch"]["source"]["entries"] == ["Mathematician.ctxt.alonzoChurch"]
+assert macros["Church.or"]["source"]["entries"] == ["Type.def.Church-Or"], "Church.or provenance is stale"
+
+closed_expr = entries["Type.rl.Expr-LC"]
+assert closed_expr["title"]["values"] == {"en": "Closed Expression (Untyped $\\lambda$-Calculus)", "zh-CN": "闭表达式（无类型 $\\lambda$-演算）"}
+for entry_id in ("Type.rmk.closedExpression", "Type.def.freeVariable", "Type.rmk.freeVariableOpenExpression"):
+    assert entry_id in entries, f"missing closed/open-expression Entry: {entry_id}"
+assert "Lambda.OpenExpr" in macros and "Type.Expr-UTLC.fvar" in macros, "open-expression notation is incomplete"
+assert macros["Type.Expr-UTLC.fvar"]["source"]["entries"] == ["Type.def.freeVariable.ctor.freeVariable"]
+open_expr_snl = entries["Type.def.freeVariable"]["content"]["snl"]
+assert "Type.Expr-UTLC.closed[text]" in open_expr_snl and "Type.Expr-UTLC.fvar[text]" in open_expr_snl, "open-expression constructor labels expose empty term slots"
+
+assert "Lambda.substitution" in macros, "dedicated substitution term Macro is missing"
+subst_template = macros["Lambda.substitution"]["styles"][0]["template"]
+assert subst_template["body"] == "#0[#1 \\mapsto #2]", "substitution Macro must render a[x\\mapsto b]"
+substitution_snl = entries["Type.def.Substitution-LC"]["content"]["snl"]
+assert "Lambda.substitution" in substitution_snl
+assert "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding" in substitution_snl, "substitution semantics do not state capture avoidance"
+
+beta_single = entries["Lambda.def.beta-single"]["content"]["snl"]
+for constructor in ("Lambda.beta.contract", "Lambda.beta.lambda-congruence", "Lambda.beta.application-left-congruence", "Lambda.beta.application-right-congruence"):
+    assert constructor in beta_single, f"single-step beta reduction lacks {constructor}"
+assert "Lambda.beta.application-congruence" not in beta_single, "application congruence was not split into one-side steps"
+assert "Lambda.substitution" in beta_single, "beta contraction does not use substitution"
+assert "Relation.transitiveClosure" in entries["Lambda.def.beta"]["content"]["snl"], "multi-step beta reduction is not defined by transitive closure"
+assert "Relation.transitiveClosure" in macros and "Lambda.betaRelation" in macros, "transitive-closure terminology is incomplete"
+
+expected_open_children = {
+    "Type.def.freeVariable.ctor.closedExpression",
+    "Type.def.freeVariable.ctor.freeVariable",
+    "Type.def.freeVariable.ctor.lambdaAbstraction",
+    "Type.def.freeVariable.ctor.application",
+    "Type.def.freeVariable.recursor",
+}
+expected_beta_children = {
+    "Lambda.def.beta-single.ctor.betaContraction",
+    "Lambda.def.beta-single.ctor.lambdaCongruence",
+    "Lambda.def.beta-single.ctor.applicationFunctionCongruence",
+    "Lambda.def.beta-single.ctor.applicationArgumentCongruence",
+    "Lambda.def.beta-single.recursor",
+}
+assert expected_open_children <= entries.keys(), "open-expression constructor/recursor Entries are incomplete"
+assert expected_beta_children <= entries.keys(), "single-step beta constructor/recursor Entries are incomplete"
+for constructor_id in (expected_open_children | expected_beta_children) - {"Type.def.freeVariable.recursor", "Lambda.def.beta-single.recursor"}:
+    assert entries[constructor_id].get("content", {}).get("snl"), f"constructor Entry lacks its actual signature: {constructor_id}"
+
+for restored_id in ("Type.def.UTLC-const", "Type.ppt.delta-reduction", "Type.def.utlc-let-expression", "Type.ppt.zeta-reduction"):
+    assert entries[restored_id].get("content"), f"1.2 content remains deleted: {restored_id}"
 
 print(json.dumps({
     "entries": len(entries),

@@ -87,6 +87,7 @@ _PLAN_LIST_FIELDS = {
     "macro_renames": {"new_name", "old_name", "package"},
     "graph_counter_repairs": {"entry_id", "level"},
     "requested_macros": {"accepted_bodies", "accepted_kinds", "accepted_source_entries", "body", "kind", "name", "package", "source_entry_id", "style_name"},
+    "requested_structural_macros": {"accepted_predecessors", "canonical", "name", "package"},
     "entry_renames": {"new_id", "old_id", "package"},
     "macro_merges": {"accepted_source_macro", "accepted_target_macro", "canonical_style_names", "package", "source_name", "source_style_names", "target_name", "target_text_style_from", "target_text_style_name"},
     "snl_macro_rewrites": {"new_name", "old_name"},
@@ -111,6 +112,7 @@ _PLAN_REQUIRED_FIELDS = {
     "macro_renames": {"old_name", "new_name", "package"},
     "graph_counter_repairs": {"entry_id", "level"},
     "requested_macros": {"name", "package", "kind", "style_name", "source_entry_id", "body"},
+    "requested_structural_macros": {"name", "package", "canonical", "accepted_predecessors"},
     "entry_renames": {"old_id", "new_id", "package"},
     "macro_merges": {"source_name", "target_name", "package", "accepted_source_macro", "accepted_target_macro", "target_text_style_from", "target_text_style_name", "source_style_names", "canonical_style_names"},
     "snl_macro_rewrites": {"old_name", "new_name"},
@@ -224,6 +226,14 @@ def validate_authorities(i18n: object, plan: object, entry_packages: object, exp
             accepted = _known(spec["accepted_bodies"], {"en", "zh-CN"}, f"requested_macros[{index}].accepted_bodies")
             for locale in ("en", "zh-CN"):
                 _string_list(accepted[locale], f"requested_macros[{index}].accepted_bodies.{locale}")
+    for index, spec in enumerate(plan["requested_structural_macros"]):
+        _require(isinstance(spec["name"], str) and spec["name"], f"requested_structural_macros[{index}].name must be a string")
+        _require(isinstance(spec["package"], str) and spec["package"], f"requested_structural_macros[{index}].package must be a string")
+        _macro(spec["canonical"], f"requested_structural_macros[{index}].canonical")
+        _require(spec["canonical"]["name"] == spec["name"], f"requested_structural_macros[{index}] canonical name mismatch")
+        for predecessor_index, predecessor in enumerate(spec["accepted_predecessors"]):
+            _macro(predecessor, f"requested_structural_macros[{index}].accepted_predecessors[{predecessor_index}]")
+            _require(predecessor["name"] == spec["name"], f"requested_structural_macros[{index}] predecessor name mismatch")
     for index, spec in enumerate(plan["macro_snapshot_updates"]):
         _macro(spec["canonical"], f"macro_snapshot_updates[{index}].canonical")
         for predecessor_index, predecessor in enumerate(spec.get("accepted_predecessors", [])):

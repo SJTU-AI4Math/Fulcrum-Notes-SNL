@@ -1,0 +1,71 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumNotesOneOffI18N",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Type.def.Substitution-LC"
+      ],
+      "urls": []
+    },
+    "kind": "sub",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 denotes capture-avoiding substitution of #2 for de Bruijn index #1 in #3. Under a binder, indices and the substituted expression are shifted as required to preserve binding.",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 表示在 #3 中把 de Bruijn 指数 #1 捕获规避地替换为 #2。进入绑定子时，按保持绑定结构所需的方式调整指数并提升被替换表达式。",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        }
+      }
+    ],
+    "tags": [],
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding"
+  }
+}

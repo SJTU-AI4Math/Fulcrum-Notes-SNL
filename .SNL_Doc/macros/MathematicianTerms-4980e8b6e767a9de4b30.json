@@ -1,15 +1,17 @@
 {
   "format": "snl-macro",
   "version": 1,
-  "package": "TypeTheory",
+  "schema_version": 1,
+  "package": "MathematicianTerms",
   "macro": {
-    "description": "Church or — λp q. p p q",
+    "description": "Alonzo Church",
     "source": {
       "entries": [
-        "Type.def.Church-Or"
+        "Mathematician.ctxt.alonzoChurch"
       ],
       "urls": []
     },
+    "kind": "const",
     "dynamic_arity": false,
     "styles": [
       {
@@ -17,7 +19,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathsf{or}",
+          "body": "\\text{Alonzo Church}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -38,7 +40,6 @@
       }
     ],
     "tags": [],
-    "kind": "const",
-    "name": "Church.or"
+    "name": "Mathematician.alonzoChurch"
   }
 }

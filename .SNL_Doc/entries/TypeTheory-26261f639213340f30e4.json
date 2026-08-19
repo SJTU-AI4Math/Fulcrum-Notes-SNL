@@ -15,7 +15,16 @@
         "zh-CN": "$\\delta$-规约"
       }
     },
-    "content": {},
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "If the global signature declares a transparent constant $c$ with definition body $t$, one $\\delta$-step unfolds $c$ to $t$. Opaque constants are not $\\delta$-reduced.",
+          "zh-CN": "若全局签名声明透明常量 $c$ 的定义体为 $t$，则一步 $\\delta$-规约把 $c$ 展开为 $t$。不透明常量不能作 $\\delta$-规约。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

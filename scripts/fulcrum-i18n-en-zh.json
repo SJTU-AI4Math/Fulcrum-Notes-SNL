@@ -1,5 +1,5 @@
 {
-  "source_head": "bbbd9bb712960fec9e961d611ec25edd179ab3a5",
+  "source_head": "d3a3785e1d1ec1114e48eb2180f9a8ddd7a548f0",
   "entries": {
     "Algebra.ctxt.1": {
       "title": {
@@ -2365,8 +2365,8 @@
     },
     "Type.rl.Expr-LC": {
       "title": {
-        "en": "Raw Expression (Untyped $\\lambda$-Calculus)",
-        "zh-CN": "原始表达式（无类型 $\\lambda$-演算）"
+        "en": "Closed Expression (Untyped $\\lambda$-Calculus)",
+        "zh-CN": "闭表达式（无类型 $\\lambda$-演算）"
       },
       "accepted_title_en": [
         "Closed Expression (Non-typed $\\lambda$ -Calculus",
@@ -2374,6 +2374,16 @@
         "Expression (Non-typed Lambda Calculus)",
         "Closed Expression (Untyped $\\lambda$-Calculus)",
         "Closed Expression (Non-Typed $\\lambda$-Calculus)"
+      ],
+      "accepted_title_predecessors": [
+        {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": "Raw Expression (Untyped $\\lambda$-Calculus)",
+            "zh-CN": "原始表达式（无类型 $\\lambda$-演算）"
+          }
+        }
       ]
     },
     "Type.rl.Expr-STLC": {
@@ -2759,6 +2769,21 @@
       },
       "accepted_title_en": [
         "常量语境"
+      ],
+      "markdown": {
+        "en": "A constant is a globally named closed expression. A global signature records its name, definition body, and whether that body is transparent. Unlike a free variable, a constant does not require a local free-variable assignment.",
+        "zh-CN": "常量是在全局语境中具名的闭表达式。全局签名记录其名称、定义体以及该定义体是否透明。常量不同于自由变量，不需要局部的自由变量赋值。"
+      },
+      "accepted_markdown": [
+        {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": "A constant is a globally named closed expression. A global signature records its name, definition body, and whether that body is transparent. Unlike a free variable, a constant does not require a local free-variable assignment.",
+            "zh-CN": "常量是在全局语境中具名的闭表达式。全局签名记录其名称、定义体以及该定义体是否透明。常量不同于自由变元，不需要局部的自由变元赋值。"
+          }
+        },
+        null
       ]
     },
     "Type.def.UTLC-term": {
@@ -2795,7 +2820,14 @@
       "title": {
         "en": "$\\delta$-Reduction",
         "zh-CN": "$\\delta$-规约"
-      }
+      },
+      "markdown": {
+        "en": "If the global signature declares a transparent constant $c$ with definition body $t$, one $\\delta$-step unfolds $c$ to $t$. Opaque constants are not $\\delta$-reduced.",
+        "zh-CN": "若全局签名声明透明常量 $c$ 的定义体为 $t$，则一步 $\\delta$-规约把 $c$ 展开为 $t$。不透明常量不能作 $\\delta$-规约。"
+      },
+      "accepted_markdown": [
+        null
+      ]
     },
     "Type.def.utlc-let-expression": {
       "title": {
@@ -2804,6 +2836,13 @@
       },
       "accepted_title_en": [
         "局部定义"
+      ],
+      "markdown": {
+        "en": "A local definition `let x := t; u` binds $x$ in $u$ and denotes evaluating $u$ with $t$ substituted for $x$. The substitution is capture-avoiding.",
+        "zh-CN": "局部定义 `let x := t; u` 在 $u$ 中绑定 $x$，其含义是把 $t$ 捕获规避地替换进 $u$ 中 $x$ 的位置后求值。"
+      },
+      "accepted_markdown": [
+        null
       ]
     },
     "Type.ppt.zeta-reduction": {
@@ -2813,7 +2852,14 @@
       "title": {
         "en": "$\\zeta$-Reduction",
         "zh-CN": "$\\zeta$-规约"
-      }
+      },
+      "markdown": {
+        "en": "$\\zeta$-reduction eliminates a local definition: `let x := t; u` reduces in one $\\zeta$-step to `u[x ↦ t]`, using capture-avoiding substitution.",
+        "zh-CN": "$\\zeta$-规约消去局部定义：`let x := t; u` 通过一步 $\\zeta$-规约化为 `u[x ↦ t]`，其中替换采用捕获规避语义。"
+      },
+      "accepted_markdown": [
+        null
+      ]
     },
     "Type.ppt.judge-app": {
       "title": {

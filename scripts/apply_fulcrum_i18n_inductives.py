@@ -21,7 +21,7 @@ DOC = ROOT / ".SNL_Doc"
 I18N_PATH = ROOT / "scripts/fulcrum-i18n-en-zh.json"
 PLAN_PATH = ROOT / "scripts/fulcrum-inductive-subentries.json"
 ENTRY_PACKAGE_PLAN_PATH = ROOT / "scripts/fulcrum-entry-packages.json"
-EXPECTED_SOURCE_HEAD = "bbbd9bb712960fec9e961d611ec25edd179ab3a5"
+EXPECTED_SOURCE_HEAD = "d3a3785e1d1ec1114e48eb2180f9a8ddd7a548f0"
 PREFLIGHT_ONLY = os.environ.get("FULCRUM_APPLY_PREFLIGHT_ONLY") == "1"
 _VIRTUAL_JSON: dict[Path, object] = {}
 _VIRTUAL_DELETED: set[Path] = set()
@@ -218,6 +218,28 @@ for package_id, spec in manifest_specs.items():
     assert canonical["id"] == package_id and canonical["schema_version"] == 2
     path = DOC / "packages" / f"{package_id}-{identity_hash('package', package_id)}.json"
     package_manifests[package_id] = (path, canonical)
+
+# Create or normalize full structural Macro snapshots under exact leases.
+# This is distinct from requested_macros, which is intentionally limited to
+# zero-arity localized lexical helpers.
+for spec in plan.get("requested_structural_macros", []):
+    name = spec["name"]
+    package_id = spec["package"]
+    canonical = json.loads(json.dumps(spec["canonical"], ensure_ascii=False))
+    assert canonical["name"] == name
+    canonical_path = DOC / "macros" / f"{package_id}-{identity_hash('macro', package_id, name)}.json"
+    if name in macros:
+        assert macro_paths[name] == canonical_path, f"noncanonical structural Macro path: {name}"
+        assert macro_envelopes[name]["package"] == package_id, f"structural Macro Package drift: {name}"
+        assert macros[name] in [canonical, *spec.get("accepted_predecessors", [])], f"structural Macro snapshot drift: {name}"
+        macros[name] = canonical
+        macro_envelopes[name]["macro"] = canonical
+    else:
+        assert not path_exists(canonical_path), f"structural Macro path collision: {canonical_path.name}"
+        envelope = {"format": "snl-macro", "version": 1, "schema_version": 1, "package": package_id, "macro": canonical}
+        macros[name] = canonical
+        macro_paths[name] = canonical_path
+        macro_envelopes[name] = envelope
 
 # Preflight and normalize exact user-authored Macro snapshots before any
 # filesystem mutation. This preserves intentional language-invariant styles

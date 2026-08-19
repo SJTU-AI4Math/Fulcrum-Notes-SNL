@@ -15,7 +15,16 @@
         "zh-CN": "$\\zeta$-规约"
       }
     },
-    "content": {},
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "$\\zeta$-reduction eliminates a local definition: `let x := t; u` reduces in one $\\zeta$-step to `u[x ↦ t]`, using capture-avoiding substitution.",
+          "zh-CN": "$\\zeta$-规约消去局部定义：`let x := t; u` 通过一步 $\\zeta$-规约化为 `u[x ↦ t]`，其中替换采用捕获规避语义。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

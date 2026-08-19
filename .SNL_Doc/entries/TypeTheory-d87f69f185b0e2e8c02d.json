@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Lambda.def.beta-single.ctor.betaContraction",
+    "package": "TypeTheory",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$\\beta$-Contraction",
+        "zh-CN": "$\\beta$-收缩"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.beta(Type.Expr-UTLC.apply(parentheses(Type.Expr-UTLC.lambda(@$ $,a)),b),Lambda.substitution(a,0,b)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

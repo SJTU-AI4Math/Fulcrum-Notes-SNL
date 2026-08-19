@@ -1,22 +1,21 @@
 {
   "format": "snl-entry",
   "version": 1,
-  "schema_version": 1,
   "package": "TypeTheory",
   "entry": {
-    "id": "Lambda.def.beta",
+    "id": "Type.rmk.freeVariableOpenExpression",
     "package": "TypeTheory",
-    "kind": "definition",
+    "kind": "remark",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "$\\beta$-reduction",
-        "zh-CN": "$\\beta$-归约"
+        "en": "Free Variables and Openness",
+        "zh-CN": "自由变量与开放性"
       }
     },
     "content": {
-      "snl": "def(Lambda.beta-closure(@a,@b),Relation.transitiveClosure(Lambda.betaRelation,a,b))"
+      "snl": "FulcrumNotes.OneOffI18N.TypeTheory.FreeVariable.OpenExpression(Type.Expr-UTLC.fvar(@x),Lambda.OpenExpr)"
     },
     "contribution_info": null,
     "pointer": null
