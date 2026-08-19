@@ -115,9 +115,9 @@ def validate_macro_envelope(envelope: dict, path: Path, *, require_schema_versio
     allowed_keys = (current_keys,) if require_schema_version else (legacy_keys, current_keys)
     assert any(set(envelope) == keys for keys in allowed_keys), f"invalid Macro envelope fields: {path}"
     assert envelope["format"] == "snl-macro", f"invalid Macro envelope format: {path}"
-    assert envelope["version"] == 1, f"invalid Macro envelope version: {path}"
+    assert type(envelope["version"]) is int and envelope["version"] == 1, f"invalid Macro envelope version: {path}"
     if "schema_version" in envelope:
-        assert envelope["schema_version"] == 1, f"invalid Macro envelope schema version: {path}"
+        assert type(envelope["schema_version"]) is int and envelope["schema_version"] == 1, f"invalid Macro envelope schema version: {path}"
     assert isinstance(envelope["package"], str) and envelope["package"], f"invalid Macro envelope package: {path}"
     assert isinstance(envelope["macro"], dict), f"invalid Macro envelope payload: {path}"
 
