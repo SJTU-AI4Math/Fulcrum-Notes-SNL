@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rmk.PropElimination",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Restricted Elimination from Prop",
+        "zh-CN": "从 Prop 出发的受限消去"
+      }
+    },
+    "content": {
+      "snl": "FulcrumNotes.OneOffI18N.TypeTheory.PropElimination.Explanation",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Inductive propositions ordinarily eliminate freely into Prop, but elimination into a data-bearing Type universe is restricted. Empty or singleton-like propositions may receive stronger elimination principles; the exact exception set is system-dependent. The restriction prevents an arbitrary proof in impredicative Prop from being inspected to manufacture computational data.",
+          "zh-CN": "归纳命题通常可以自由消去到 Prop，但消去到携带数据的 Type 宇宙会受到限制。空命题或近似单构造子的命题可能具有更强的消去原则；具体例外取决于所采用的类型论系统。这项限制防止检查非直谓 Prop 中的任意证明并据此制造计算数据。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

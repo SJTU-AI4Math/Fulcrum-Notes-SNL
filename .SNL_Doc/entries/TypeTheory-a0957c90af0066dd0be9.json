@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.ppt.PropImpredicativePi",
+    "package": "TypeTheory",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Impredicative Dependent Products into Prop",
+        "zh-CN": "落入 Prop 的非直谓依赖积"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@A,Type[univ](@u)),Type.judge(@P,Type.to(A,Proposition))),Type.judge(Type.Pi(@x,A,Type.apply(P,x)),Proposition))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "In a CIC-style impredicative Prop, if A lives in any universe and P : A → Prop, then Π x : A, P x is again a proposition. The quantified domain may therefore be much larger than Prop. This does not assert Prop : Prop; Prop itself still has a type in the ordinary universe hierarchy.",
+          "zh-CN": "在 CIC 风格的非直谓 Prop 中，若 A 位于任意宇宙且 P : A → Prop，则 Π x : A, P x 仍然是命题。因此被量化的定义域可以远大于 Prop。这并不声称 Prop : Prop；Prop 自身仍在通常的宇宙层级中拥有类型。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

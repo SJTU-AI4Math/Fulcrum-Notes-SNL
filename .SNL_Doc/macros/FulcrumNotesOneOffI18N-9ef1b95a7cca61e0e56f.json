@@ -1,0 +1,71 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumNotesOneOffI18N",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Type.rmk.PropProofIrrelevance"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "Lean builds proof irrelevance into definitional equality: any two proofs of the same proposition are treated as equal by the kernel. Other CIC-style systems may expose proof irrelevance differently or require an additional principle. In either case, proof irrelevance is not a consequence of impredicativity alone and should not be used to define impredicativity.",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "Lean 把证明无关性内建到依定义相等中：同一命题的任意两个证明都由内核视为相等。其他 CIC 风格系统可能以不同方式提供证明无关性，或需要额外原则。无论采用哪种设计，证明无关性都不是非直谓性本身的推论，也不应被用来定义非直谓性。",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        }
+      }
+    ],
+    "tags": [],
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.PropProofIrrelevance.Explanation"
+  }
+}

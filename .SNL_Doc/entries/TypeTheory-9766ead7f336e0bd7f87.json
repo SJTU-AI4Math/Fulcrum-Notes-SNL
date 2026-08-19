@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rmk.PropUniverseBehavior",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Prop and the Universe Hierarchy",
+        "zh-CN": "Prop 与宇宙层级"
+      }
+    },
+    "content": {
+      "snl": "list-partial[none](%Lean%,Type.judge(Proposition,Type[univ](0)),Type.judge(Type[univ](@u),Type[univ](Nat.succ(u))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "In Lean, Prop : Type 0 and Type u : Type (u+1). Rocq/Coq and abstract CIC presentations use different sort and universe-index conventions, so no numeric universe level for Prop is portable without naming the system. In both Lean and CIC-style systems with impredicative Prop, Π x : A, P x : Prop for an arbitrary universe-level domain A; Prop is not itself a proposition.",
+          "zh-CN": "在 Lean 中，Prop : Type 0，且 Type u : Type (u+1)。Rocq/Coq 与抽象 CIC 表述采用不同的 sort 与宇宙编号约定，因此若不指明系统，就不能把 Prop 的某个数值宇宙层级当作通用结论。在 Lean 以及采用非直谓 Prop 的 CIC 风格系统中，对任意宇宙层级的定义域 A，Π x : A, P x 仍属于 Prop；Prop 自身并不是一个命题。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

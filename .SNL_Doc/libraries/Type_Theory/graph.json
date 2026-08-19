@@ -1310,6 +1310,86 @@
         "entryId": "Type.rmk.closedExpression",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
+    },
+    {
+      "id": "n_sub_b7c155a6462b",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.shift-LC",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_a2839d94ba63",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.strictlyPositiveConstructor",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_f4449e0dfca6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.covariantFunctor",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_02a3037ab97f",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.def.contravariantFunctor",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_17498a747255",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.constructorVariance",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_0dac1fd52a21",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.predicativity",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_7425141bc9d4",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.ppt.PropImpredicativePi",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_55ffe0a7cd25",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.PropUniverseBehavior",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_ed0fc8ded5b4",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.PropElimination",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_sub_46f14a0f6ad4",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.PropProofIrrelevance",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
     }
   ],
   "relationships": [
@@ -1335,12 +1415,52 @@
     },
     {
       "from": "n_15",
+      "to": "n_sub_b7c155a6462b",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
       "to": "n_36",
       "label": "branch"
     },
     {
       "from": "n_15",
       "to": "n_38",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_14",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_73",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_74",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_75",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_sub_7efbf514820e",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_39",
+      "label": "branch"
+    },
+    {
+      "from": "n_15",
+      "to": "n_72",
       "label": "branch"
     },
     {
@@ -1529,36 +1649,6 @@
       "label": "branch"
     },
     {
-      "from": "n_15",
-      "to": "n_14",
-      "label": "branch"
-    },
-    {
-      "from": "n_15",
-      "to": "n_73",
-      "label": "branch"
-    },
-    {
-      "from": "n_15",
-      "to": "n_74",
-      "label": "branch"
-    },
-    {
-      "from": "n_15",
-      "to": "n_75",
-      "label": "branch"
-    },
-    {
-      "from": "n_15",
-      "to": "n_sub_7efbf514820e",
-      "label": "branch"
-    },
-    {
-      "from": "n_15",
-      "to": "n_39",
-      "label": "branch"
-    },
-    {
       "from": "n_3",
       "to": "n_33",
       "label": "branch"
@@ -1645,12 +1735,37 @@
     },
     {
       "from": "n_43",
+      "to": "n_sub_a2839d94ba63",
+      "label": "branch"
+    },
+    {
+      "from": "n_43",
+      "to": "n_sub_f4449e0dfca6",
+      "label": "branch"
+    },
+    {
+      "from": "n_43",
+      "to": "n_sub_02a3037ab97f",
+      "label": "branch"
+    },
+    {
+      "from": "n_43",
+      "to": "n_sub_17498a747255",
+      "label": "branch"
+    },
+    {
+      "from": "n_43",
       "to": "n_46",
       "label": "branch"
     },
     {
       "from": "n_43",
       "to": "n_sub_d8c6bd40a54c",
+      "label": "branch"
+    },
+    {
+      "from": "n_43",
+      "to": "n_53",
       "label": "branch"
     },
     {
@@ -1689,11 +1804,6 @@
       "label": "branch"
     },
     {
-      "from": "n_43",
-      "to": "n_53",
-      "label": "branch"
-    },
-    {
       "from": "n_21",
       "to": "n_59",
       "label": "branch"
@@ -1711,11 +1821,6 @@
     {
       "from": "n_21",
       "to": "n_sub_0899ae5e009c",
-      "label": "branch"
-    },
-    {
-      "from": "n_15",
-      "to": "n_72",
       "label": "branch"
     },
     {
@@ -2116,6 +2221,31 @@
     {
       "from": "n_38",
       "to": "n_sub_72ddf5f75c71",
+      "label": "branch"
+    },
+    {
+      "from": "n_67",
+      "to": "n_sub_0dac1fd52a21",
+      "label": "branch"
+    },
+    {
+      "from": "n_67",
+      "to": "n_sub_7425141bc9d4",
+      "label": "branch"
+    },
+    {
+      "from": "n_67",
+      "to": "n_sub_55ffe0a7cd25",
+      "label": "branch"
+    },
+    {
+      "from": "n_67",
+      "to": "n_sub_ed0fc8ded5b4",
+      "label": "branch"
+    },
+    {
+      "from": "n_67",
+      "to": "n_sub_46f14a0f6ad4",
       "label": "branch"
     }
   ]

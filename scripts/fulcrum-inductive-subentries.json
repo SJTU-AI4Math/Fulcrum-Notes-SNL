@@ -586,6 +586,346 @@
       },
       "parent_entry_id": "Type.def.freeVariable",
       "graph_level": "subentry"
+    },
+    {
+      "id": "Type.def.shift-LC",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "de Bruijn Index Shift",
+        "zh-CN": "de Bruijn 指数提升"
+      },
+      "content": {
+        "snl": "def-hyp(list-partial(Type.judge(@a,Lambda.Expr),Type.judge(list-partial[formula](@d,@c),Nat)),Lambda.shift(d,c,a),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.bvar,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,c)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Add.add(k,d)),Logic.neg(Lt(k,c))))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.lambda,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.shift(d,Nat.succ(c),t))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.app,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.shift(d,c,f),Lambda.shift(d,c,u))))))",
+        "markdown": {
+          "en": "The shift ↑ᵈ_c a increases every bound-variable index k ≥ c by d. Crossing a binder raises the cutoff from c to c+1; application is traversed componentwise. This operation is the lift used when substitution crosses a binder.",
+          "zh-CN": "提升 ↑ᵈ_c a 把每个满足 k ≥ c 的受束变元指数增加 d。穿过绑定子时，截断值由 c 增至 c+1；应用的两部分分别递归处理。替换穿过绑定子时用它提升被代入项。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.basics",
+      "graph_level": "entry",
+      "after_entry_id": "Type.def.LegalExpr-LC",
+      "accepted_content": [
+        {
+          "snl": "def-hyp(list-partial(Type.judge(@a,Lambda.Expr),Type.judge(list-partial[formula](@d,@c),Nat)),Lambda.shift(d,c,a),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(%\\mathsf{bvar}%,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,c)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Add.add(k,d)),Logic.neg(Lt(k,c))))),Type.pattern.branch(Type.pattern.constructor(%\\mathsf{lambda}%,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.shift(d,Nat.succ(c),t))),Type.pattern.branch(Type.pattern.constructor(%\\mathsf{app}%,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.shift(d,c,f),Lambda.shift(d,c,u))))))",
+          "markdown": {
+            "en": "The shift ↑ᵈ_c a increases every bound-variable index k ≥ c by d. Crossing a binder raises the cutoff from c to c+1; application is traversed componentwise. This operation is the lift used when substitution crosses a binder.",
+            "zh-CN": "提升 ↑ᵈ_c a 把每个满足 k ≥ c 的受束变元指数增加 d。穿过绑定子时，截断值由 c 增至 c+1；应用的两部分分别递归处理。替换穿过绑定子时用它提升被代入项。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Type.def.inductiveInfo",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "Inductive Information",
+        "zh-CN": "归纳类型信息"
+      },
+      "content": {
+        "snl": "def-struct(Type.InductiveInfo,struct[enumerate](member[colon](%declaration context%,Type.DeclarationContext),member[colon](%type expression%,Type.TypeExpression),member[colon](%constructor declarations%,List(Type.ConstructorInfo))))",
+        "markdown": {
+          "en": "An inductive declaration records a declaration context Γ, a type expression for the new family I, and a finite list of constructor declarations cᵢ : Cᵢ. The context contains parameters and indices available to the family. Keeping each constructor type as a separate ConstructorInfo makes the result-type and strict-positivity checks local to that constructor.",
+          "zh-CN": "一个归纳声明记录声明语境 Γ、新类型族 I 的类型表达式，以及有限个构造子声明 cᵢ : Cᵢ。语境包含类型族可用的参数与指标。把每个构造子类型分别保存为 ConstructorInfo，可使结果类型检查与严格正性检查逐个构造子进行。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.inductive-def",
+      "graph_level": "entry",
+      "existing": true,
+      "accepted_content": [
+        {}
+      ],
+      "accepted_packages": [
+        "TypeTheory"
+      ],
+      "after_entry_id": null
+    },
+    {
+      "id": "Type.def.ctorInfo",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "Constructor Information",
+        "zh-CN": "构造子信息"
+      },
+      "content": {
+        "snl": "def-struct(Type.ConstructorInfo,struct[enumerate](member[colon](%name%,`string`),member[colon](%type expression%,Type.TypeExpression)))",
+        "markdown": {
+          "en": "A constructor declaration stores its name and complete dependent-function type. Leading Π-binders describe constructor arguments; after those binders are removed, the result must be an application of the inductive family being declared.",
+          "zh-CN": "构造子声明保存其名称与完整的依赖函数类型。开头的 Π-绑定子描述构造参数；去掉这些绑定子后，结果必须是当前所声明归纳类型族的一个应用。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.inductive-def",
+      "graph_level": "entry",
+      "existing": true,
+      "accepted_content": [
+        {}
+      ],
+      "accepted_packages": [
+        "TypeTheory"
+      ],
+      "after_entry_id": "Type.def.inductiveInfo"
+    },
+    {
+      "id": "Type.def.ctor-legal",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "Constructor Result-Type Check",
+        "zh-CN": "构造子结果类型检查"
+      },
+      "content": {
+        "snl": "def(Type.constructorTargets(@C,@I),%after removing the leading dependent-product binders from C, the head of its result is I%)",
+        "markdown": {
+          "en": "For a constructor c : Π Δ, R, remove the leading constructor-argument telescope Δ. The head constant of R must be the newly declared inductive family I, possibly applied to its parameters and indices. Thus c constructs an I-object rather than an unrelated type.",
+          "zh-CN": "对于构造子 c : Π Δ, R，先去掉开头的构造参数望远镜 Δ。R 的头常量必须是新声明的归纳类型族 I，它可以应用于参数和指标。因而 c 确实构造 I 的对象，而不是无关类型。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.inductive-def",
+      "graph_level": "entry",
+      "existing": true,
+      "accepted_content": [
+        {}
+      ],
+      "accepted_packages": [
+        "TypeTheory"
+      ],
+      "after_entry_id": "Type.def.ctorInfo"
+    },
+    {
+      "id": "Type.def.strictlyPositiveConstructor",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "Strict-Positivity Check",
+        "zh-CN": "严格正性检查"
+      },
+      "content": {
+        "snl": "def(Type.strictlyPositive(@I,@C),FulcrumNotes.OneOffI18N.TypeTheory.StrictPositivity.Condition(@I))",
+        "markdown": {
+          "en": "Write a constructor type as Π Δ, I p̄ t̄. The outer telescope Δ introduces constructor arguments and does not itself negate their types. Within each constructor-argument type, I is forbidden in the domain of any nested Π or arrow; checking continues through codomains and through arguments of type formers explicitly accepted as strictly positive by the positivity policy. Ordinary covariance/contravariance parity is only an intuition, not a complete strict-positivity test: ((I → A) → A) is rejected despite two variance reversals.",
+          "zh-CN": "把构造子类型写成 Π Δ, I p̄ t̄。外层望远镜 Δ 用来引入构造参数，本身不会把这些参数类型变成负位置。在每个构造参数类型内部，I 不得出现在任何嵌套 Π 或箭头的定义域中；检查沿值域继续，并可穿过正性策略明确认可为严格正的类型构造器参数。普通协变/反变的符号奇偶只提供直觉，并不能完整刻画严格正性：即使经历两次变性翻转，((I → A) → A) 仍会被拒绝。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.inductive-def",
+      "graph_level": "entry",
+      "after_entry_id": "Type.def.ctor-legal",
+      "accepted_content": [
+        {
+          "snl": "def(Type.strictlyPositive(@I,@C),%every recursive occurrence of I in each constructor argument type is strictly positive%)",
+          "markdown": {
+            "en": "After separating the outer constructor telescope Π Δ, I must occur strictly positively inside every argument type in Δ. For an inner function type A → B, polarity reverses in A and is preserved in B. Hence an argument I is allowed, and B → I is allowed when B contains no I, but I → B is negative and is rejected. The outer arrows introducing constructor arguments are not themselves counted as negative positions.",
+            "zh-CN": "先分离构造子的外层望远镜 Π Δ；随后在 Δ 的每个参数类型内部，I 的递归出现都必须严格为正。对于内部函数类型 A → B，A 中的极性反转，B 中的极性保持。因此直接参数 I 合法；当 B 不含 I 时，B → I 也合法；而 I → B 中的 I 处于负位置，应被拒绝。引入构造参数的最外层箭头本身不计作负位置。"
+          }
+        },
+        {
+          "snl": "def(Type.strictlyPositive(@I,@C),%in every constructor argument type, I never occurs in a nested function domain and occurs only through type formers admitted by the strict-positivity policy%)",
+          "markdown": {
+            "en": "Write a constructor type as Π Δ, I p̄ t̄. The outer telescope Δ introduces constructor arguments and does not itself negate their types. Within each constructor-argument type, I is forbidden in the domain of any nested Π or arrow; checking continues through codomains and through arguments of type formers explicitly accepted as strictly positive by the positivity policy. Ordinary covariance/contravariance parity is only an intuition, not a complete strict-positivity test: ((I → A) → A) is rejected despite two variance reversals.",
+            "zh-CN": "把构造子类型写成 Π Δ, I p̄ t̄。外层望远镜 Δ 用来引入构造参数，本身不会把这些参数类型变成负位置。在每个构造参数类型内部，I 不得出现在任何嵌套 Π 或箭头的定义域中；检查沿值域继续，并可穿过正性策略明确认可为严格正的类型构造器参数。普通协变/反变的符号奇偶只提供直觉，并不能完整刻画严格正性：即使经历两次变性翻转，((I → A) → A) 仍会被拒绝。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Type.def.covariantFunctor",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "Covariant Functor",
+        "zh-CN": "协变函子"
+      },
+      "content": {
+        "snl": "def-struct-hyp(Type.judge(@F,Type.to(Type,Type)),Type.covariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(A) → F(B)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%composition law%,%F(g ∘ f)=F(g) ∘ F(f)%)))",
+        "markdown": {
+          "en": "A covariant functor sends f : A → B to F(f) : F(A) → F(B), preserving identities and composition in the same order. In positivity calculations, a covariant type constructor preserves the polarity of occurrences in its argument.",
+          "zh-CN": "协变函子把 f : A → B 映为 F(f) : F(A) → F(B)，并按相同顺序保持恒等态射与复合。在正性计算中，协变类型构造子保持其参数中各出现的极性。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.inductive-def",
+      "graph_level": "entry",
+      "after_entry_id": "Type.def.strictlyPositiveConstructor"
+    },
+    {
+      "id": "Type.def.contravariantFunctor",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "Contravariant Functor",
+        "zh-CN": "反变（逆变）函子"
+      },
+      "content": {
+        "snl": "def-struct-hyp(Type.judge(@F,Type.to(Type,Type)),Type.contravariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(B) → F(A)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%reversed composition law%,%F(g ∘ f)=F(f) ∘ F(g)%)))",
+        "markdown": {
+          "en": "A contravariant functor sends f : A → B to F(f) : F(B) → F(A), reversing the direction of arrows and the order of composition. In positivity calculations, a contravariant type constructor reverses polarity.",
+          "zh-CN": "反变（逆变）函子把 f : A → B 映为 F(f) : F(B) → F(A)，反转箭头方向与复合次序。在正性计算中，反变类型构造子会反转极性。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.inductive-def",
+      "graph_level": "entry",
+      "after_entry_id": "Type.def.covariantFunctor"
+    },
+    {
+      "id": "Type.rmk.constructorVariance",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "Variance and Constructor Positivity",
+        "zh-CN": "变性与构造子正性"
+      },
+      "content": {
+        "markdown": {
+          "en": "Covariance and contravariance explain how one type-former layer transports occurrences, but sign parity does not characterize strict positivity. Within each constructor-argument type, a recursive occurrence of I is forbidden in the domain of any nested Π or arrow; type formers preserve admissibility only in parameters explicitly accepted as strictly positive by the positivity policy. Thus sup : Π a : A, (B a → W A B) → W A B is accepted: (B a → W A B) is one outer constructor argument, and its recursive W occurs in the codomain of the inner arrow. By contrast, an argument W → A is rejected, as is the double-negative continuation ((W → A) → A).",
+          "zh-CN": "协变与反变可以解释一层类型构造器如何传递出现位置，但符号翻转的奇偶不能刻画严格正性。在每个构造参数类型内部，递归出现的 I 不得位于任何嵌套 Π 或箭头的定义域中；只有正性策略明确认可为严格正的类型构造器参数才保持可接受性。因此 sup : Π a : A, (B a → W A B) → W A B 合法：B a → W A B 是一个完整的外层构造参数，而递归出现的 W 位于其内部箭头的值域。相反，参数 W → A 不合法，双重负位置的 continuation ((W → A) → A) 也仍不合法。"
+        },
+        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.ConstructorVariance.Explanation"
+      },
+      "parent_entry_id": "Type.subsec.inductive-def",
+      "graph_level": "entry",
+      "after_entry_id": "Type.def.contravariantFunctor",
+      "accepted_content": [
+        {
+          "markdown": {
+            "en": "Strict positivity is a variance calculation on each constructor argument type. Covariant layers preserve a positive occurrence of I; contravariant layers flip it to negative. An arrow domain is contravariant and its codomain is covariant. Consequently W may occur in B(a) → W inside a W-type constructor, but an occurrence in W → A is negative. For example, mk : (W → A) → W is rejected even though the constructor as a whole ends in W.",
+            "zh-CN": "严格正性检查本质上是在每个构造参数类型中计算变性。协变层保持 I 的正出现；反变层把它翻转为负出现。函数箭头的定义域反变、值域协变。因此在 W 类型的构造子参数中，W 可以出现在 B(a) → W 的值域；但 W → A 中的 W 是负出现。例如 mk : (W → A) → W 虽然整体以 W 结尾，仍必须被拒绝。"
+          }
+        },
+        {
+          "markdown": {
+            "en": "Strict positivity is a variance calculation on each constructor argument type. Covariant layers preserve a positive occurrence of I; contravariant layers flip it to negative. An arrow domain is contravariant and its codomain is covariant. Consequently W may occur in B(a) → W inside a W-type constructor, but an occurrence in W → A is negative. For example, mk : (W → A) → W is rejected even though the constructor as a whole ends in W.",
+            "zh-CN": "严格正性检查本质上是在每个构造参数类型中计算变性。协变层保持 I 的正出现；反变层把它翻转为负出现。函数箭头的定义域反变、值域协变。因此在 W 类型的构造子参数中，W 可以出现在 B(a) → W 的值域；但 W → A 中的 W 是负出现。例如 mk : (W → A) → W 虽然整体以 W 结尾，仍必须被拒绝。"
+          },
+          "snl": "FulcrumNotes.OneOffI18N.TypeTheory.ConstructorVariance.Explanation"
+        }
+      ]
+    },
+    {
+      "id": "Type.rmk.predicativity",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "Predicativity and Impredicativity",
+        "zh-CN": "直谓性与非直谓性"
+      },
+      "content": {
+        "markdown": {
+          "en": "A predicative universe forms objects using data from previously available or lower universes; quantifying over a universe generally raises the result to a higher universe. An impredicative sort permits a definition to quantify over a collection that already contains the result sort itself. This is a formation principle: it does not by itself imply proof irrelevance, classical logic, or unrestricted elimination into data-bearing universes.",
+          "zh-CN": "直谓宇宙只用已经给定或更低层宇宙中的数据构造对象；对一个宇宙量化通常会把结果提升到更高宇宙。非直谓 sort 则允许一个定义对已经包含结果 sort 自身的范围量化。这是一条形成规则；它本身并不推出证明无关性、经典逻辑，也不推出可无条件消去到携带数据的宇宙。"
+        },
+        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.Predicativity.Explanation"
+      },
+      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
+      "graph_level": "entry",
+      "accepted_content": [
+        {
+          "markdown": {
+            "en": "A predicative universe forms objects using data from previously available or lower universes; quantifying over a universe generally raises the result to a higher universe. An impredicative sort permits a definition to quantify over a collection that already contains the result sort itself. This is a formation principle: it does not by itself imply proof irrelevance, classical logic, or unrestricted elimination into data-bearing universes.",
+            "zh-CN": "直谓宇宙只用已经给定或更低层宇宙中的数据构造对象；对一个宇宙量化通常会把结果提升到更高宇宙。非直谓 sort 则允许一个定义对已经包含结果 sort 自身的范围量化。这是一条形成规则；它本身并不推出证明无关性、经典逻辑，也不推出可无条件消去到携带数据的宇宙。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Type.ppt.PropImpredicativePi",
+      "package": "TypeTheory",
+      "kind": "property",
+      "title": {
+        "en": "Impredicative Dependent Products into Prop",
+        "zh-CN": "落入 Prop 的非直谓依赖积"
+      },
+      "content": {
+        "snl": "thm-hyp(list-partial(Type.judge(@A,Type[univ](@u)),Type.judge(@P,Type.to(A,Proposition))),Type.judge(Type.Pi(@x,A,Type.apply(P,x)),Proposition))",
+        "markdown": {
+          "en": "In a CIC-style impredicative Prop, if A lives in any universe and P : A → Prop, then Π x : A, P x is again a proposition. The quantified domain may therefore be much larger than Prop. This does not assert Prop : Prop; Prop itself still has a type in the ordinary universe hierarchy.",
+          "zh-CN": "在 CIC 风格的非直谓 Prop 中，若 A 位于任意宇宙且 P : A → Prop，则 Π x : A, P x 仍然是命题。因此被量化的定义域可以远大于 Prop。这并不声称 Prop : Prop；Prop 自身仍在通常的宇宙层级中拥有类型。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
+      "graph_level": "entry",
+      "after_entry_id": "Type.rmk.predicativity"
+    },
+    {
+      "id": "Type.rmk.PropUniverseBehavior",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "Prop and the Universe Hierarchy",
+        "zh-CN": "Prop 与宇宙层级"
+      },
+      "content": {
+        "snl": "list-partial[none](%Lean%,Type.judge(Proposition,Type[univ](0)),Type.judge(Type[univ](@u),Type[univ](Nat.succ(u))))",
+        "markdown": {
+          "en": "In Lean, Prop : Type 0 and Type u : Type (u+1). Rocq/Coq and abstract CIC presentations use different sort and universe-index conventions, so no numeric universe level for Prop is portable without naming the system. In both Lean and CIC-style systems with impredicative Prop, Π x : A, P x : Prop for an arbitrary universe-level domain A; Prop is not itself a proposition.",
+          "zh-CN": "在 Lean 中，Prop : Type 0，且 Type u : Type (u+1)。Rocq/Coq 与抽象 CIC 表述采用不同的 sort 与宇宙编号约定，因此若不指明系统，就不能把 Prop 的某个数值宇宙层级当作通用结论。在 Lean 以及采用非直谓 Prop 的 CIC 风格系统中，对任意宇宙层级的定义域 A，Π x : A, P x 仍属于 Prop；Prop 自身并不是一个命题。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
+      "graph_level": "entry",
+      "after_entry_id": "Type.ppt.PropImpredicativePi",
+      "accepted_content": [
+        {
+          "snl": "list-partial[none](Type.judge(Proposition,Type[univ](0)),Type.judge(Type[univ](@u),Type[univ](Nat.succ(u))))",
+          "markdown": {
+            "en": "Prop : Type 0, while Type u : Type (u+1). A dependent product whose codomain lies in Type generally lives at a universe level determined by both domain and codomain. By contrast, an impredicative product whose codomain lies in Prop remains in Prop, regardless of the domain universe. Prop is not itself a proposition.",
+            "zh-CN": "Prop : Type 0，而 Type u : Type (u+1)。值域位于 Type 的依赖积，其宇宙层级通常同时由定义域和值域决定；相反，值域位于 Prop 的非直谓依赖积仍留在 Prop 中，不受定义域宇宙层级影响。Prop 自身并不是一个命题。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Type.rmk.PropElimination",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "Restricted Elimination from Prop",
+        "zh-CN": "从 Prop 出发的受限消去"
+      },
+      "content": {
+        "markdown": {
+          "en": "Inductive propositions ordinarily eliminate freely into Prop, but elimination into a data-bearing Type universe is restricted. Empty or singleton-like propositions may receive stronger elimination principles; the exact exception set is system-dependent. The restriction prevents an arbitrary proof in impredicative Prop from being inspected to manufacture computational data.",
+          "zh-CN": "归纳命题通常可以自由消去到 Prop，但消去到携带数据的 Type 宇宙会受到限制。空命题或近似单构造子的命题可能具有更强的消去原则；具体例外取决于所采用的类型论系统。这项限制防止检查非直谓 Prop 中的任意证明并据此制造计算数据。"
+        },
+        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.PropElimination.Explanation"
+      },
+      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
+      "graph_level": "entry",
+      "after_entry_id": "Type.rmk.PropUniverseBehavior",
+      "accepted_content": [
+        {
+          "markdown": {
+            "en": "Inductive propositions ordinarily eliminate freely into Prop, but elimination into a data-bearing Type universe is restricted. Empty or singleton-like propositions may receive stronger elimination principles; the exact exception set is system-dependent. The restriction prevents an arbitrary proof in impredicative Prop from being inspected to manufacture computational data.",
+            "zh-CN": "归纳命题通常可以自由消去到 Prop，但消去到携带数据的 Type 宇宙会受到限制。空命题或近似单构造子的命题可能具有更强的消去原则；具体例外取决于所采用的类型论系统。这项限制防止检查非直谓 Prop 中的任意证明并据此制造计算数据。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Type.rmk.PropProofIrrelevance",
+      "package": "TypeTheory",
+      "kind": "remark",
+      "title": {
+        "en": "Proof Irrelevance is a Separate Principle",
+        "zh-CN": "证明无关性是独立原则"
+      },
+      "content": {
+        "markdown": {
+          "en": "Lean builds proof irrelevance into definitional equality: any two proofs of the same proposition are treated as equal by the kernel. Other CIC-style systems may expose proof irrelevance differently or require an additional principle. In either case, proof irrelevance is not a consequence of impredicativity alone and should not be used to define impredicativity.",
+          "zh-CN": "Lean 把证明无关性内建到依定义相等中：同一命题的任意两个证明都由内核视为相等。其他 CIC 风格系统可能以不同方式提供证明无关性，或需要额外原则。无论采用哪种设计，证明无关性都不是非直谓性本身的推论，也不应被用来定义非直谓性。"
+        },
+        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.PropProofIrrelevance.Explanation"
+      },
+      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
+      "graph_level": "entry",
+      "after_entry_id": "Type.rmk.PropElimination",
+      "accepted_content": [
+        {
+          "markdown": {
+            "en": "Lean builds proof irrelevance into definitional equality: any two proofs of the same proposition are treated as equal by the kernel. Other CIC-style systems may expose proof irrelevance differently or require an additional principle. In either case, proof irrelevance is not a consequence of impredicativity alone and should not be used to define impredicativity.",
+            "zh-CN": "Lean 把证明无关性内建到依定义相等中：同一命题的任意两个证明都由内核视为相等。其他 CIC 风格系统可能以不同方式提供证明无关性，或需要额外原则。无论采用哪种设计，证明无关性都不是非直谓性本身的推论，也不应被用来定义非直谓性。"
+          }
+        }
+      ]
     }
   ],
   "entry_updates": [
@@ -632,9 +972,12 @@
       "accepted_content_snl": [
         "def-hyp-opq(list-partial(Type.judge(list-partial(@a,@b),Lambda.Expr),Lambda.LegalExpr[are](list-partial(a,b))),)",
         "def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr))",
-        "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))"
+        "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))",
+        "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))",
+        "def-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Lambda.substitution(a,x,b),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(%\\mathsf{bvar}%,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(b,Eq(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Type.pattern.branch(Type.pattern.constructor(%\\mathsf{lambda}%,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.substitution(t,Nat.succ(x),Lambda.shift(1,0,b)))),Type.pattern.branch(Type.pattern.constructor(%\\mathsf{app}%,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.substitution(f,x,b),Lambda.substitution(u,x,b))))))",
+        "def-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Lambda.substitution(a,x,b),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.bvar,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(b,Eq(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.lambda,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.substitution(t,Nat.succ(x),Lambda.shift(1,0,b)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.app,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.substitution(f,x,b),Lambda.substitution(u,x,b))))))"
       ],
-      "content_snl": "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))"
+      "content_snl": "def-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Lambda.substitution(a,x,b),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.bvar,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(b,Eq(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.lambda,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.substitution(t,Nat.succ(x),Lambda.shift(1,0,b)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.app,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.substitution(f,x,b),Lambda.substitution(u,x,b))))))"
     },
     {
       "id": "Lambda.def.beta-single",
@@ -1487,6 +1830,48 @@
         "Lambda.def.beta-single.ctor.applicationArgumentCongruence",
         "Lambda.def.beta-single.recursor"
       ]
+    },
+    {
+      "parent_entry_id": "Type.subsec.basics",
+      "entry_ids": [
+        "Type.rl.Expr-LC",
+        "Type.def.LegalExpr-LC",
+        "Type.def.shift-LC",
+        "Type.def.Substitution-LC",
+        "Lambda.def.beta-single",
+        "Lambda.def.beta",
+        "Lambda.def.NF",
+        "Lambda.def.HNF",
+        "Lambda.def.WHNF",
+        "Lambda.def.eta",
+        "Lambda.def.defeq",
+        "Type.def.UTLC-term"
+      ]
+    },
+    {
+      "parent_entry_id": "Type.subsec.inductive-def",
+      "entry_ids": [
+        "Type.def.inductiveInfo",
+        "Type.def.ctorInfo",
+        "Type.def.ctor-legal",
+        "Type.def.strictlyPositiveConstructor",
+        "Type.def.covariantFunctor",
+        "Type.def.contravariantFunctor",
+        "Type.rmk.constructorVariance",
+        "Type.def.recursor",
+        "Type.def.iota-reduction",
+        "Type.cxmp.Bad"
+      ]
+    },
+    {
+      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
+      "entry_ids": [
+        "Type.rmk.predicativity",
+        "Type.ppt.PropImpredicativePi",
+        "Type.rmk.PropUniverseBehavior",
+        "Type.rmk.PropElimination",
+        "Type.rmk.PropProofIrrelevance"
+      ]
     }
   ],
   "metadata_updates": [
@@ -2326,15 +2711,69 @@
       }
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding",
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.ConstructorVariance.Explanation",
+      "package": "FulcrumNotesOneOffI18N",
+      "kind": "const",
+      "style_name": "default",
+      "body": {
+        "en": "Covariance and contravariance explain how one type-former layer transports occurrences, but sign parity does not characterize strict positivity. Within each constructor-argument type, a recursive occurrence of I is forbidden in the domain of any nested Π or arrow; type formers preserve admissibility only in parameters explicitly accepted as strictly positive by the positivity policy. Thus sup : Π a : A, (B a → W A B) → W A B is accepted: (B a → W A B) is one outer constructor argument, and its recursive W occurs in the codomain of the inner arrow. By contrast, an argument W → A is rejected, as is the double-negative continuation ((W → A) → A).",
+        "zh-CN": "协变与反变可以解释一层类型构造器如何传递出现位置，但符号翻转的奇偶不能刻画严格正性。在每个构造参数类型内部，递归出现的 I 不得位于任何嵌套 Π 或箭头的定义域中；只有正性策略明确认可为严格正的类型构造器参数才保持可接受性。因此 sup : Π a : A, (B a → W A B) → W A B 合法：B a → W A B 是一个完整的外层构造参数，而递归出现的 W 位于其内部箭头的值域。相反，参数 W → A 不合法，双重负位置的 continuation ((W → A) → A) 也仍不合法。"
+      },
+      "source_entry_id": "Type.rmk.constructorVariance",
+      "accepted_bodies": {
+        "en": [
+          "Strict positivity is a variance calculation on each constructor argument type. Covariant layers preserve a positive occurrence of I; contravariant layers flip it to negative. An arrow domain is contravariant and its codomain is covariant. Consequently W may occur in B(a) → W inside a W-type constructor, but an occurrence in W → A is negative. For example, mk : (W → A) → W is rejected even though the constructor as a whole ends in W.",
+          "Covariance and contravariance explain how one type-former layer transports occurrences, but sign parity does not characterize strict positivity. Within each constructor-argument type, a recursive occurrence of I is forbidden in the domain of any nested Π or arrow; type formers preserve admissibility only in parameters explicitly accepted as strictly positive by the positivity policy. Thus sup : Π a : A, (B a → W A B) → W A B is accepted: (B a → W A B) is one outer constructor argument, and its recursive W occurs in the codomain of the inner arrow. By contrast, an argument W → A is rejected, as is the double-negative continuation ((W → A) → A)."
+        ],
+        "zh-CN": [
+          "严格正性检查本质上是在每个构造参数类型中计算变性。协变层保持 I 的正出现；反变层把它翻转为负出现。函数箭头的定义域反变、值域协变。因此在 W 类型的构造子参数中，W 可以出现在 B(a) → W 的值域；但 W → A 中的 W 是负出现。例如 mk : (W → A) → W 虽然整体以 W 结尾，仍必须被拒绝。",
+          "协变与反变可以解释一层类型构造器如何传递出现位置，但符号翻转的奇偶不能刻画严格正性。在每个构造参数类型内部，递归出现的 I 不得位于任何嵌套 Π 或箭头的定义域中；只有正性策略明确认可为严格正的类型构造器参数才保持可接受性。因此 sup : Π a : A, (B a → W A B) → W A B 合法：B a → W A B 是一个完整的外层构造参数，而递归出现的 W 位于其内部箭头的值域。相反，参数 W → A 不合法，双重负位置的 continuation ((W → A) → A) 也仍不合法。"
+        ]
+      }
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.Predicativity.Explanation",
+      "package": "FulcrumNotesOneOffI18N",
+      "kind": "const",
+      "style_name": "default",
+      "body": {
+        "en": "A predicative universe forms objects using data from previously available or lower universes; quantifying over a universe generally raises the result to a higher universe. An impredicative sort permits a definition to quantify over a collection that already contains the result sort itself. This is a formation principle: it does not by itself imply proof irrelevance, classical logic, or unrestricted elimination into data-bearing universes.",
+        "zh-CN": "直谓宇宙只用已经给定或更低层宇宙中的数据构造对象；对一个宇宙量化通常会把结果提升到更高宇宙。非直谓 sort 则允许一个定义对已经包含结果 sort 自身的范围量化。这是一条形成规则；它本身并不推出证明无关性、经典逻辑，也不推出可无条件消去到携带数据的宇宙。"
+      },
+      "source_entry_id": "Type.rmk.predicativity"
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.PropElimination.Explanation",
+      "package": "FulcrumNotesOneOffI18N",
+      "kind": "const",
+      "style_name": "default",
+      "body": {
+        "en": "Inductive propositions ordinarily eliminate freely into Prop, but elimination into a data-bearing Type universe is restricted. Empty or singleton-like propositions may receive stronger elimination principles; the exact exception set is system-dependent. The restriction prevents an arbitrary proof in impredicative Prop from being inspected to manufacture computational data.",
+        "zh-CN": "归纳命题通常可以自由消去到 Prop，但消去到携带数据的 Type 宇宙会受到限制。空命题或近似单构造子的命题可能具有更强的消去原则；具体例外取决于所采用的类型论系统。这项限制防止检查非直谓 Prop 中的任意证明并据此制造计算数据。"
+      },
+      "source_entry_id": "Type.rmk.PropElimination"
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.PropProofIrrelevance.Explanation",
+      "package": "FulcrumNotesOneOffI18N",
+      "kind": "const",
+      "style_name": "default",
+      "body": {
+        "en": "Lean builds proof irrelevance into definitional equality: any two proofs of the same proposition are treated as equal by the kernel. Other CIC-style systems may expose proof irrelevance differently or require an additional principle. In either case, proof irrelevance is not a consequence of impredicativity alone and should not be used to define impredicativity.",
+        "zh-CN": "Lean 把证明无关性内建到依定义相等中：同一命题的任意两个证明都由内核视为相等。其他 CIC 风格系统可能以不同方式提供证明无关性，或需要额外原则。无论采用哪种设计，证明无关性都不是非直谓性本身的推论，也不应被用来定义非直谓性。"
+      },
+      "source_entry_id": "Type.rmk.PropProofIrrelevance"
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.StrictPositivity.Condition",
       "package": "FulcrumNotesOneOffI18N",
       "kind": "sub",
       "style_name": "default",
-      "source_entry_id": "Type.def.Substitution-LC",
       "body": {
-        "en": "#0 denotes capture-avoiding substitution of #2 for de Bruijn index #1 in #3. Under a binder, indices and the substituted expression are shifted as required to preserve binding.",
-        "zh-CN": "#0 表示在 #3 中把 de Bruijn 指数 #1 捕获规避地替换为 #2。进入绑定子时，按保持绑定结构所需的方式调整指数并提升被替换表达式。"
-      }
+        "en": "in every constructor argument type, #0 never occurs in a nested function domain and occurs only through type formers admitted by the strict-positivity policy",
+        "zh-CN": "在每个构造参数类型中，#0 不得出现在嵌套函数的定义域中，并且只能穿过严格正性策略所认可的类型构造器"
+      },
+      "source_entry_id": "Type.def.strictlyPositiveConstructor"
     }
   ],
   "entry_renames": [
@@ -4283,6 +4722,77 @@
           "name": "FulcrumNotes.OneOffI18N.TypeTheory.DeltaReduction.ConstantDefinition"
         }
       ]
+    },
+    {
+      "name": "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding",
+      "package": "FulcrumNotesOneOffI18N",
+      "accepted_snapshots": [
+        {
+          "description": "",
+          "source": {
+            "entries": [
+              "Type.def.Substitution-LC"
+            ],
+            "urls": []
+          },
+          "kind": "sub",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "#0 denotes capture-avoiding substitution of #2 for de Bruijn index #1 in #3. Under a binder, indices and the substituted expression are shifted as required to preserve binding.",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "#0 表示在 #3 中把 de Bruijn 指数 #1 捕获规避地替换为 #2。进入绑定子时，按保持绑定结构所需的方式调整指数并提升被替换表达式。",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding"
+        }
+      ]
     }
   ],
   "requested_structural_macros": [
@@ -5337,6 +5847,950 @@
           "name": "Lambda.beta.application-right-congruence"
         }
       ]
+    },
+    {
+      "name": "Type.pattern.match",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Structured pattern match",
+        "source": {
+          "entries": [
+            "Type.subsec.patternMatching"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_display",
+              "body": "\\mathsf{case}_{#0}\\;#1",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.pattern.match"
+      },
+      "accepted_predecessors": [
+        {
+          "description": "Structured pattern match",
+          "source": {
+            "entries": [
+              "Type.subsec.patternMatching"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "formula_display",
+                "body": "\\operatorname{match}\\;#0\\;\\operatorname{with}\\;#1",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.pattern.match"
+        },
+        {
+          "description": "Structured pattern match",
+          "source": {
+            "entries": [
+              "Type.subsec.patternMatching"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "formula_display",
+                    "body": "\\text{match }#0\\text{ with }#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "formula_display",
+                    "body": "\\text{匹配 }#0\\text{ 的分支 }#1",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.pattern.match"
+        }
+      ]
+    },
+    {
+      "name": "Type.pattern.branches",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Pattern-match branch collection",
+        "source": {
+          "entries": [
+            "Type.subsec.patternMatching"
+          ],
+          "urls": []
+        },
+        "kind": "sub",
+        "dynamic_arity": true,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_display",
+              "body": "\\left\\{\\begin{aligned}#*\\end{aligned}\\right.",
+              "separator": "\\\\\n",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.pattern.branches"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.pattern.branch",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Pattern-match branch",
+        "source": {
+          "entries": [
+            "Type.subsec.patternMatching"
+          ],
+          "urls": []
+        },
+        "kind": "sub",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "#0 &\\mapsto #1",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.pattern.branch"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.pattern.constructor",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Constructor pattern",
+        "source": {
+          "entries": [
+            "Type.subsec.patternMatching"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "#0(#1)",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.pattern.constructor"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.pattern.arguments",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Constructor-pattern arguments",
+        "source": {
+          "entries": [
+            "Type.subsec.patternMatching"
+          ],
+          "urls": []
+        },
+        "kind": "sub",
+        "dynamic_arity": true,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "#*",
+              "separator": ", ",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.pattern.arguments"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.piecewise",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Piecewise expression",
+        "source": {
+          "entries": [
+            "Type.subsec.patternMatching"
+          ],
+          "urls": []
+        },
+        "kind": "sub",
+        "dynamic_arity": true,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_display",
+              "body": "\\begin{cases}#*\\end{cases}",
+              "separator": "\\\\\n",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.piecewise"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.piecewise.branch",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Piecewise branch",
+        "source": {
+          "entries": [
+            "Type.subsec.patternMatching"
+          ],
+          "urls": []
+        },
+        "kind": "sub",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "#0 & #1",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.piecewise.branch"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Lambda.shift",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "de Bruijn index shift",
+        "source": {
+          "entries": [
+            "Type.def.shift-LC"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\uparrow_{#1}^{#0}#2",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Lambda.shift"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.InductiveInfo",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Inductive declaration information",
+        "source": {
+          "entries": [
+            "Type.def.inductiveInfo"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\mathsf{InductiveInfo}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.InductiveInfo"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.ConstructorInfo",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Constructor declaration information",
+        "source": {
+          "entries": [
+            "Type.def.ctorInfo"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\mathsf{ConstructorInfo}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.ConstructorInfo"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.DeclarationContext",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Declaration context",
+        "source": {
+          "entries": [
+            "Type.def.inductiveInfo"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\mathsf{Context}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.DeclarationContext"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.TypeExpression",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Type expression syntax",
+        "source": {
+          "entries": [
+            "Type.def.inductiveInfo"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\mathsf{TypeExpr}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.TypeExpression"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.constructorTargets",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Constructor result targets the inductive family",
+        "source": {
+          "entries": [
+            "Type.def.ctor-legal"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\operatorname{head}(\\operatorname{cod}(#0))=#1",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.constructorTargets"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.strictlyPositive",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Strictly positive occurrence predicate",
+        "source": {
+          "entries": [
+            "Type.def.strictlyPositiveConstructor"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\operatorname{StrictlyPositive}(#0,#1)",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.strictlyPositive"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.covariant",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Covariant functor predicate",
+        "source": {
+          "entries": [
+            "Type.def.covariantFunctor"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\operatorname{Covariant}(#0)",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.covariant"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Type.contravariant",
+      "package": "TypeTheory",
+      "canonical": {
+        "description": "Contravariant functor predicate",
+        "source": {
+          "entries": [
+            "Type.def.contravariantFunctor"
+          ],
+          "urls": []
+        },
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "style_name": "default",
+            "tags": [],
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\operatorname{Contravariant}(#0)",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        ],
+        "tags": [],
+        "name": "Type.contravariant"
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Lambda.pattern.bvar",
+      "package": "TypeTheory",
+      "canonical": {
+        "name": "Lambda.pattern.bvar",
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\mathsf{bvar}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "style_name": "default",
+            "tags": []
+          }
+        ],
+        "description": "bvar constructor pattern label",
+        "source": {
+          "entries": [
+            "Type.rl.Expr-LC.ctor.bound-variable"
+          ],
+          "urls": []
+        },
+        "tags": []
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Lambda.pattern.lambda",
+      "package": "TypeTheory",
+      "canonical": {
+        "name": "Lambda.pattern.lambda",
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\mathsf{lambda}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "style_name": "default",
+            "tags": []
+          }
+        ],
+        "description": "lambda constructor pattern label",
+        "source": {
+          "entries": [
+            "Type.rl.Expr-LC.ctor.lambda-abstraction"
+          ],
+          "urls": []
+        },
+        "tags": []
+      },
+      "accepted_predecessors": []
+    },
+    {
+      "name": "Lambda.pattern.app",
+      "package": "TypeTheory",
+      "canonical": {
+        "name": "Lambda.pattern.app",
+        "kind": "const",
+        "dynamic_arity": false,
+        "styles": [
+          {
+            "template": {
+              "mode": "formula_inline",
+              "body": "\\mathsf{app}",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "style_name": "default",
+            "tags": []
+          }
+        ],
+        "description": "app constructor pattern label",
+        "source": {
+          "entries": [
+            "Type.rl.Expr-LC.ctor.application"
+          ],
+          "urls": []
+        },
+        "tags": []
+      },
+      "accepted_predecessors": []
     }
   ]
 }

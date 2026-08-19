@@ -7,11 +7,11 @@
     "description": "",
     "source": {
       "entries": [
-        "Type.def.Substitution-LC"
+        "Type.rmk.PropElimination"
       ],
       "urls": []
     },
-    "kind": "sub",
+    "kind": "const",
     "dynamic_arity": false,
     "styles": [
       {
@@ -23,7 +23,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "#0 denotes capture-avoiding substitution of #2 for de Bruijn index #1 in #3. Under a binder, indices and the substituted expression are shifted as required to preserve binding.",
+              "body": "Inductive propositions ordinarily eliminate freely into Prop, but elimination into a data-bearing Type universe is restricted. Empty or singleton-like propositions may receive stronger elimination principles; the exact exception set is system-dependent. The restriction prevents an arbitrary proof in impredicative Prop from being inspected to manufacture computational data.",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "#0 表示在 #3 中把 de Bruijn 指数 #1 捕获规避地替换为 #2。进入绑定子时，按保持绑定结构所需的方式调整指数并提升被替换表达式。",
+              "body": "归纳命题通常可以自由消去到 Prop，但消去到携带数据的 Type 宇宙会受到限制。空命题或近似单构造子的命题可能具有更强的消去原则；具体例外取决于所采用的类型论系统。这项限制防止检查非直谓 Prop 中的任意证明并据此制造计算数据。",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -66,6 +66,6 @@
       }
     ],
     "tags": [],
-    "name": "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding"
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.PropElimination.Explanation"
   }
 }

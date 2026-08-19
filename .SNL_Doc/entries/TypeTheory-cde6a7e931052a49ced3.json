@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.covariantFunctor",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Covariant Functor",
+        "zh-CN": "协变函子"
+      }
+    },
+    "content": {
+      "snl": "def-struct-hyp(Type.judge(@F,Type.to(Type,Type)),Type.covariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(A) → F(B)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%composition law%,%F(g ∘ f)=F(g) ∘ F(f)%)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A covariant functor sends f : A → B to F(f) : F(A) → F(B), preserving identities and composition in the same order. In positivity calculations, a covariant type constructor preserves the polarity of occurrences in its argument.",
+          "zh-CN": "协变函子把 f : A → B 映为 F(f) : F(A) → F(B)，并按相同顺序保持恒等态射与复合。在正性计算中，协变类型构造子保持其参数中各出现的极性。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

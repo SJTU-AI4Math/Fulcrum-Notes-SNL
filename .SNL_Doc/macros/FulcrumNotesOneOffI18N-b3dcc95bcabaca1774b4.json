@@ -1,0 +1,71 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumNotesOneOffI18N",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Type.rmk.predicativity"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "A predicative universe forms objects using data from previously available or lower universes; quantifying over a universe generally raises the result to a higher universe. An impredicative sort permits a definition to quantify over a collection that already contains the result sort itself. This is a formation principle: it does not by itself imply proof irrelevance, classical logic, or unrestricted elimination into data-bearing universes.",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "直谓宇宙只用已经给定或更低层宇宙中的数据构造对象；对一个宇宙量化通常会把结果提升到更高宇宙。非直谓 sort 则允许一个定义对已经包含结果 sort 自身的范围量化。这是一条形成规则；它本身并不推出证明无关性、经典逻辑，也不推出可无条件消去到携带数据的宇宙。",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        }
+      }
+    ],
+    "tags": [],
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.Predicativity.Explanation"
+  }
+}

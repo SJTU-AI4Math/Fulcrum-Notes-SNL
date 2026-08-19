@@ -75,6 +75,20 @@ def _macro(macro: object, label: str) -> None:
         _template(style["template"], f"{label}.styles[{index}].template")
 
 
+def _package_manifest(value: object, expected_id: str, label: str) -> None:
+    fields = {"format", "version", "schema_version", "id", "name", "description", "entry_ids"}
+    manifest = _required(value, fields, fields, label)
+    _require(manifest["format"] == "snl-package", f"{label}.format must be snl-package")
+    _require(type(manifest["version"]) is int and manifest["version"] == 1, f"{label}.version must be integer 1")
+    _require(type(manifest["schema_version"]) is int and manifest["schema_version"] == 2, f"{label}.schema_version must be integer 2")
+    _require(isinstance(manifest["id"], str) and manifest["id"] == expected_id, f"{label}.id must equal {expected_id}")
+    _require(isinstance(manifest["name"], str) and manifest["name"], f"{label}.name must be a nonempty string")
+    _require(isinstance(manifest["description"], str), f"{label}.description must be a string")
+    _string_list(manifest["entry_ids"], f"{label}.entry_ids")
+    _require(all(item for item in manifest["entry_ids"]), f"{label}.entry_ids contains an empty ID")
+    _require(len(manifest["entry_ids"]) == len(set(manifest["entry_ids"])), f"{label}.entry_ids contains duplicates")
+
+
 _PLAN_LIST_FIELDS = {
     "requested_entries": {"accepted_content", "accepted_packages", "after_entry_id", "content", "existing", "graph_level", "id", "kind", "package", "parent_entry_id", "parent_node_ids", "title"},
     "entry_updates": {"accepted_content_snl", "content_snl", "id"},
@@ -247,12 +261,21 @@ def validate_authorities(i18n: object, plan: object, entry_packages: object, exp
     entry_package_fields = {"version", "source_head", "packages", "assignments", "manifests"}
     entry_packages = _required(entry_packages, entry_package_fields, entry_package_fields, "Entry Package authority")
     _require(entry_packages["source_head"] == expected_source_head, "Entry Package source lease changed")
-    _require(entry_packages["version"] == 1, "unsupported Entry Package authority version")
+    _require(type(entry_packages["version"]) is int and entry_packages["version"] == 1, "unsupported Entry Package authority version")
+    for field in ("packages", "assignments", "manifests"):
+        _require(isinstance(entry_packages[field], dict), f"Entry Package authority {field} must be an object")
     for package_id, spec in entry_packages["packages"].items():
-        _required(spec, {"name", "description"}, {"name", "description"}, f"Entry Package metadata {package_id}")
+        _require(isinstance(package_id, str) and package_id, "Entry Package ID must be a nonempty string")
+        spec = _required(spec, {"name", "description"}, {"name", "description"}, f"Entry Package metadata {package_id}")
+        _require(isinstance(spec["name"], str) and spec["name"], f"Entry Package metadata {package_id}.name must be a nonempty string")
+        _require(isinstance(spec["description"], str), f"Entry Package metadata {package_id}.description must be a string")
+    for package_id, entry_ids in entry_packages["assignments"].items():
+        _require(isinstance(package_id, str) and package_id, "Entry Package assignment ID must be a nonempty string")
+        _string_list(entry_ids, f"Entry Package assignments.{package_id}")
+        _require(len(entry_ids) == len(set(entry_ids)), f"Entry Package assignments.{package_id} contains duplicates")
     for package_id, spec in entry_packages["manifests"].items():
+        _require(isinstance(package_id, str) and package_id, "Entry Package manifest ID must be a nonempty string")
         spec = _required(spec, {"accepted_predecessor", "canonical"}, {"accepted_predecessor", "canonical"}, f"Entry Package manifest authority {package_id}")
         for state, manifest in (("canonical", spec["canonical"]), ("accepted_predecessor", spec.get("accepted_predecessor"))):
             if manifest is not None:
-                manifest_fields = {"format", "version", "schema_version", "id", "name", "description", "entry_ids"}
-                _required(manifest, manifest_fields, manifest_fields, f"Entry Package manifest {package_id}.{state}")
+                _package_manifest(manifest, package_id, f"Entry Package manifest {package_id}.{state}")

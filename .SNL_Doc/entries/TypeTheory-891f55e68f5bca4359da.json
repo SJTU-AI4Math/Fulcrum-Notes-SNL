@@ -10,11 +10,21 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Constructor Info",
+        "en": "Constructor Information",
         "zh-CN": "构造子信息"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "def-struct(Type.ConstructorInfo,struct[enumerate](member[colon](%name%,`string`),member[colon](%type expression%,Type.TypeExpression)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A constructor declaration stores its name and complete dependent-function type. Leading Π-binders describe constructor arguments; after those binders are removed, the result must be an application of the inductive family being declared.",
+          "zh-CN": "构造子声明保存其名称与完整的依赖函数类型。开头的 Π-绑定子描述构造参数；去掉这些绑定子后，结果必须是当前所声明归纳类型族的一个应用。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

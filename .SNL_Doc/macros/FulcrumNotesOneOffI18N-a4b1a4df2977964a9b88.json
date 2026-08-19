@@ -1,0 +1,71 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumNotesOneOffI18N",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Type.def.strictlyPositiveConstructor"
+      ],
+      "urls": []
+    },
+    "kind": "sub",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "in every constructor argument type, #0 never occurs in a nested function domain and occurs only through type formers admitted by the strict-positivity policy",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "在每个构造参数类型中，#0 不得出现在嵌套函数的定义域中，并且只能穿过严格正性策略所认可的类型构造器",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        }
+      }
+    ],
+    "tags": [],
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.StrictPositivity.Condition"
+  }
+}

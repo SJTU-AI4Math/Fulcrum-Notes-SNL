@@ -37,8 +37,8 @@ I18N = strict_json_loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(en
 ENTRY_PACKAGE_PLAN = strict_json_loads((ROOT / "scripts/fulcrum-entry-packages.json").read_text(encoding="utf-8"))
 EXPECTED_SOURCE_HEAD = "d3a3785e1d1ec1114e48eb2180f9a8ddd7a548f0"
 validate_authorities(I18N, PLAN, ENTRY_PACKAGE_PLAN, EXPECTED_SOURCE_HEAD)
-EXPECTED_ENTRIES = 498  # latest TypeTheory notes plus managed inductive entries
-EXPECTED_MACROS = 442  # includes nine package-scoped one-off I18N helper Macros
+EXPECTED_ENTRIES = 508  # latest TypeTheory notes plus managed inductive entries
+EXPECTED_MACROS = 465  # includes structured pattern-matching and lambda-shift terminology
 EXPECTED_PLACEHOLDERS = {
     "Type.def.iota-reduction": {
         "title": {"en": "$\\iota$-reduction", "zh-CN": "$\\iota$-归约"},
@@ -77,6 +77,34 @@ def validate_macro_envelope(envelope: dict, path: Path, *, require_schema_versio
     assert isinstance(envelope["macro"], dict), f"invalid Macro envelope payload: {path}"
 
 
+def validate_entry_envelope(envelope: dict, path: Path) -> None:
+    legacy_fields = {"format", "version", "package", "entry"}
+    current_fields = legacy_fields | {"schema_version"}
+    assert isinstance(envelope, dict) and set(envelope) in (legacy_fields, current_fields), f"invalid Entry envelope fields: {path}"
+    assert envelope["format"] == "snl-entry", f"invalid Entry envelope format: {path}"
+    assert type(envelope["version"]) is int and envelope["version"] == 1, f"invalid Entry envelope version: {path}"
+    if "schema_version" in envelope:
+        assert type(envelope["schema_version"]) is int and envelope["schema_version"] == 1, f"invalid Entry envelope schema version: {path}"
+    assert isinstance(envelope["package"], str) and envelope["package"], f"invalid Entry envelope package: {path}"
+    assert isinstance(envelope["entry"], dict), f"invalid Entry envelope payload: {path}"
+    assert envelope["entry"].get("package") == envelope["package"], f"Entry envelope/payload package mismatch: {path}"
+
+
+def validate_package_manifest(manifest: dict, path: Path, expected_id: str | None = None) -> None:
+    fields = {"format", "version", "schema_version", "id", "name", "description", "entry_ids"}
+    assert isinstance(manifest, dict) and set(manifest) == fields, f"invalid Package manifest fields: {path}"
+    assert manifest["format"] == "snl-package", f"invalid Package manifest format: {path}"
+    assert type(manifest["version"]) is int and manifest["version"] == 1, f"invalid Package manifest version: {path}"
+    assert type(manifest["schema_version"]) is int and manifest["schema_version"] == 2, f"invalid Package manifest schema version: {path}"
+    assert isinstance(manifest["id"], str) and manifest["id"], f"invalid Package manifest ID: {path}"
+    if expected_id is not None:
+        assert manifest["id"] == expected_id, f"Package manifest ID mismatch: {path}"
+    assert isinstance(manifest["name"], str) and manifest["name"], f"invalid Package manifest name: {path}"
+    assert isinstance(manifest["description"], str), f"invalid Package manifest description: {path}"
+    assert isinstance(manifest["entry_ids"], list) and all(isinstance(item, str) and item for item in manifest["entry_ids"]), f"invalid Package manifest Entry IDs: {path}"
+    assert len(manifest["entry_ids"]) == len(set(manifest["entry_ids"])), f"duplicate Package manifest Entry IDs: {path}"
+
+
 def load_entities(directory: str, key: str):
     records = {}
     paths = {}
@@ -84,6 +112,8 @@ def load_entities(directory: str, key: str):
         envelope = strict_json_loads(path.read_text(encoding="utf-8"))
         if key == "macro":
             validate_macro_envelope(envelope, path)
+        else:
+            validate_entry_envelope(envelope, path)
         record = envelope[key]
         identity = record["id"] if key == "entry" else record["name"]
         assert identity not in records, f"duplicate {key} identity: {identity}"
@@ -472,6 +502,7 @@ for inductive in PLAN["inductive_types"]:
 manifest_members = {}
 for path in sorted((DOC / "packages").glob("*.json")):
     manifest = strict_json_loads(path.read_text(encoding="utf-8"))
+    validate_package_manifest(manifest, path)
     package_id = manifest["id"]
     assert package_id in ENTRY_PACKAGE_PLAN["manifests"], f"unplanned Package registry manifest: {package_id}"
     assert manifest == ENTRY_PACKAGE_PLAN["manifests"][package_id]["canonical"], f"Entry Package manifest snapshot drift: {package_id}"
@@ -495,6 +526,7 @@ assert set(planned_entry_packages) == set(entries), "Entry Package plan must par
 for package_id, spec in ENTRY_PACKAGE_PLAN.get("packages", {}).items():
     path = DOC / "packages" / f"{package_id}-{identity_hash('package', package_id)}.json"
     manifest = strict_json_loads(path.read_text(encoding="utf-8"))
+    validate_package_manifest(manifest, path, package_id)
     assert manifest["name"] == spec["name"] and manifest["description"] == spec["description"]
 for entry_id, entry in entries.items():
     package_id = entry["package"]
@@ -672,9 +704,94 @@ assert "Type.Expr-UTLC.closed[text]" in open_expr_snl and "Type.Expr-UTLC.fvar[t
 assert "Lambda.substitution" in macros, "dedicated substitution term Macro is missing"
 subst_template = macros["Lambda.substitution"]["styles"][0]["template"]
 assert subst_template["body"] == "#0[#1 \\mapsto #2]", "substitution Macro must render a[x\\mapsto b]"
+required_pattern_macros = {
+    "Type.pattern.match",
+    "Type.pattern.branches",
+    "Type.pattern.branch",
+    "Type.pattern.constructor",
+    "Type.pattern.arguments",
+    "Type.piecewise",
+    "Type.piecewise.branch",
+    "Lambda.pattern.bvar",
+    "Lambda.pattern.lambda",
+    "Lambda.pattern.app",
+    "Lambda.shift",
+}
+assert required_pattern_macros <= macros.keys(), "structured pattern-matching terminology is incomplete"
+assert macros["Type.pattern.branches"]["dynamic_arity"] is True
+assert macros["Type.pattern.arguments"]["dynamic_arity"] is True
+pattern_match_template = macros["Type.pattern.match"]["styles"][0]["template"]
+assert pattern_match_template.get("mode") == "formula_display" and pattern_match_template.get("body") == "\\mathsf{case}_{#0}\;#1", "pattern-match Macro is not the locale-invariant cases term"
+assert entries.get("Type.def.shift-LC", {}).get("content", {}).get("snl"), "de Bruijn shift definition is missing"
+shift_snl = entries["Type.def.shift-LC"]["content"]["snl"]
+for required in ("Type.pattern.match", "Type.pattern.branch", "Type.Expr-UTLC.bvar", "Type.Expr-UTLC.lambda", "Type.Expr-UTLC.apply"):
+    assert required in shift_snl, f"shift is not recursively defined by structured pattern matching: {required}"
 substitution_snl = entries["Type.def.Substitution-LC"]["content"]["snl"]
-assert "Lambda.substitution" in substitution_snl
-assert "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding" in substitution_snl, "substitution semantics do not state capture avoidance"
+for required in ("Lambda.substitution", "Lambda.shift", "Type.pattern.match", "Type.pattern.branch", "Type.pattern.constructor"):
+    assert required in substitution_snl, f"substitution lacks structured recursive clause: {required}"
+assert "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding" not in substitution_snl, "substitution still relies on the long prose fallback"
+assert "%\\mathsf{" not in substitution_snl and "%\\mathsf{" not in shift_snl, "pattern constructor labels leak raw KaTeX commands"
+
+# Inductive declarations expose their data and both constructor-legality checks.
+required_inductive_teaching = {
+    "Type.def.inductiveInfo",
+    "Type.def.ctorInfo",
+    "Type.def.ctor-legal",
+    "Type.def.strictlyPositiveConstructor",
+    "Type.def.covariantFunctor",
+    "Type.def.contravariantFunctor",
+    "Type.rmk.constructorVariance",
+}
+assert required_inductive_teaching <= entries.keys(), "inductive declaration teaching Entries are incomplete"
+for entry_id in required_inductive_teaching:
+    markdown = entries[entry_id].get("content", {}).get("markdown", {}).get("values", {})
+    assert set(markdown) == {"en", "zh-CN"} and all(markdown.values()), f"inductive teaching Markdown is incomplete: {entry_id}"
+inductive_info_snl = entries["Type.def.inductiveInfo"]["content"].get("snl", "")
+assert "def-struct" in inductive_info_snl and "Type.DeclarationContext" in inductive_info_snl and "Type.TypeExpression" in inductive_info_snl and "Type.ConstructorInfo" in inductive_info_snl, "InductiveInfo is not represented as context/type-expression/constructor-info structure"
+constructor_info_snl = entries["Type.def.ctorInfo"]["content"].get("snl", "")
+assert "def-struct" in constructor_info_snl and "Type.TypeExpression" in constructor_info_snl, "ConstructorInfo is not represented as structured data"
+assert "Type.constructorTargets" in entries["Type.def.ctor-legal"]["content"].get("snl", ""), "constructor result-type check is missing"
+strict_snl = entries["Type.def.strictlyPositiveConstructor"]["content"].get("snl", "")
+assert "Type.strictlyPositive" in strict_snl, "strict-positivity check is missing"
+assert "FulcrumNotes.OneOffI18N.TypeTheory.StrictPositivity.Condition" in strict_snl and "%in every constructor" not in strict_snl, "strict-positivity condition is not localizable"
+strict_en = entries["Type.def.strictlyPositiveConstructor"]["content"]["markdown"]["values"]["en"]
+variance_en = entries["Type.rmk.constructorVariance"]["content"]["markdown"]["values"]["en"]
+assert "forbidden in the domain of any nested" in strict_en and "not a complete strict-positivity test" in strict_en and "((I → A) → A)" in strict_en, "strict positivity is incorrectly reduced to variance-sign parity"
+assert "sign parity does not characterize strict positivity" in variance_en and "sup : Π a : A, (B a → W A B) → W A B" in variance_en and "((W → A) → A)" in variance_en, "constructor-variance remark overstates ordinary variance"
+for macro_name in ("Type.InductiveInfo", "Type.ConstructorInfo", "Type.DeclarationContext", "Type.TypeExpression", "Type.constructorTargets", "Type.strictlyPositive", "Type.covariant", "Type.contravariant"):
+    assert macro_name in macros, f"inductive terminology Macro is missing: {macro_name}"
+
+# Impredicative Prop is contrasted with predicative universes without conflating independent principles.
+required_prop_teaching = {
+    "Type.rmk.predicativity",
+    "Type.ppt.PropImpredicativePi",
+    "Type.rmk.PropUniverseBehavior",
+    "Type.rmk.PropElimination",
+    "Type.rmk.PropProofIrrelevance",
+}
+assert required_prop_teaching <= entries.keys(), "impredicative-Prop teaching Entries are incomplete"
+for entry_id in required_prop_teaching:
+    markdown = entries[entry_id].get("content", {}).get("markdown", {}).get("values", {})
+    assert set(markdown) == {"en", "zh-CN"} and all(markdown.values()), f"Prop teaching Markdown is incomplete: {entry_id}"
+prop_pi_snl = entries["Type.ppt.PropImpredicativePi"]["content"].get("snl", "")
+assert "Type.Pi" in prop_pi_snl and prop_pi_snl.count("Proposition") >= 2, "Prop impredicative product rule is not stated"
+universe_snl = entries["Type.rmk.PropUniverseBehavior"]["content"].get("snl", "")
+universe_en = entries["Type.rmk.PropUniverseBehavior"]["content"]["markdown"]["values"]["en"]
+assert "%Lean%" in universe_snl and "Type[univ](0)" in universe_snl and "Nat.succ" in universe_snl, "Lean-specific Prop/universe level contrast is missing its system label"
+assert universe_en.startswith("In Lean, Prop : Type 0") and "Rocq/Coq" in universe_en and "portable without naming the system" in universe_en, "Prop universe numbering is stated as system-independent"
+pred_en = entries["Type.rmk.predicativity"]["content"]["markdown"]["values"]["en"]
+proof_en = entries["Type.rmk.PropProofIrrelevance"]["content"]["markdown"]["values"]["en"]
+assert "does not by itself imply proof irrelevance" in pred_en
+assert "Lean" in proof_en and "not a consequence of impredicativity" in proof_en
+temporary_low_ssi = {
+    "Type.rmk.constructorVariance": "FulcrumNotes.OneOffI18N.TypeTheory.ConstructorVariance.Explanation",
+    "Type.rmk.predicativity": "FulcrumNotes.OneOffI18N.TypeTheory.Predicativity.Explanation",
+    "Type.rmk.PropElimination": "FulcrumNotes.OneOffI18N.TypeTheory.PropElimination.Explanation",
+    "Type.rmk.PropProofIrrelevance": "FulcrumNotes.OneOffI18N.TypeTheory.PropProofIrrelevance.Explanation",
+}
+for entry_id, macro_name in temporary_low_ssi.items():
+    assert macro_name in macros, f"temporary low-SSI terminology Macro is missing: {macro_name}"
+    assert entries[entry_id]["content"].get("snl") == macro_name, f"{entry_id} does not use its temporary prose Macro"
 
 beta_single = entries["Lambda.def.beta-single"]["content"]["snl"]
 for constructor in ("Lambda.beta.contract", "Lambda.beta.lambda-congruence", "Lambda.beta.application-left-congruence", "Lambda.beta.application-right-congruence"):

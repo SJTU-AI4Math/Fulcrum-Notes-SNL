@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.strictlyPositiveConstructor",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Strict-Positivity Check",
+        "zh-CN": "严格正性检查"
+      }
+    },
+    "content": {
+      "snl": "def(Type.strictlyPositive(@I,@C),FulcrumNotes.OneOffI18N.TypeTheory.StrictPositivity.Condition(@I))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Write a constructor type as Π Δ, I p̄ t̄. The outer telescope Δ introduces constructor arguments and does not itself negate their types. Within each constructor-argument type, I is forbidden in the domain of any nested Π or arrow; checking continues through codomains and through arguments of type formers explicitly accepted as strictly positive by the positivity policy. Ordinary covariance/contravariance parity is only an intuition, not a complete strict-positivity test: ((I → A) → A) is rejected despite two variance reversals.",
+          "zh-CN": "把构造子类型写成 Π Δ, I p̄ t̄。外层望远镜 Δ 用来引入构造参数，本身不会把这些参数类型变成负位置。在每个构造参数类型内部，I 不得出现在任何嵌套 Π 或箭头的定义域中；检查沿值域继续，并可穿过正性策略明确认可为严格正的类型构造器参数。普通协变/反变的符号奇偶只提供直觉，并不能完整刻画严格正性：即使经历两次变性翻转，((I → A) → A) 仍会被拒绝。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

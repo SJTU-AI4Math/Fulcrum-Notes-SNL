@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))"
+      "snl": "def-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Lambda.substitution(a,x,b),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.bvar,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(b,Eq(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.lambda,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.substitution(t,Nat.succ(x),Lambda.shift(1,0,b)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.app,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.substitution(f,x,b),Lambda.substitution(u,x,b))))))"
     },
     "contribution_info": null,
     "pointer": null

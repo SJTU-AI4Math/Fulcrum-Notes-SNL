@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rmk.PropProofIrrelevance",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Proof Irrelevance is a Separate Principle",
+        "zh-CN": "证明无关性是独立原则"
+      }
+    },
+    "content": {
+      "snl": "FulcrumNotes.OneOffI18N.TypeTheory.PropProofIrrelevance.Explanation",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Lean builds proof irrelevance into definitional equality: any two proofs of the same proposition are treated as equal by the kernel. Other CIC-style systems may expose proof irrelevance differently or require an additional principle. In either case, proof irrelevance is not a consequence of impredicativity alone and should not be used to define impredicativity.",
+          "zh-CN": "Lean 把证明无关性内建到依定义相等中：同一命题的任意两个证明都由内核视为相等。其他 CIC 风格系统可能以不同方式提供证明无关性，或需要额外原则。无论采用哪种设计，证明无关性都不是非直谓性本身的推论，也不应被用来定义非直谓性。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

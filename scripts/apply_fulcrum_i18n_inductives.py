@@ -122,6 +122,34 @@ def validate_macro_envelope(envelope: dict, path: Path, *, require_schema_versio
     assert isinstance(envelope["macro"], dict), f"invalid Macro envelope payload: {path}"
 
 
+def validate_entry_envelope(envelope: dict, path: Path) -> None:
+    legacy_fields = {"format", "version", "package", "entry"}
+    current_fields = legacy_fields | {"schema_version"}
+    assert isinstance(envelope, dict) and set(envelope) in (legacy_fields, current_fields), f"invalid Entry envelope fields: {path}"
+    assert envelope["format"] == "snl-entry", f"invalid Entry envelope format: {path}"
+    assert type(envelope["version"]) is int and envelope["version"] == 1, f"invalid Entry envelope version: {path}"
+    if "schema_version" in envelope:
+        assert type(envelope["schema_version"]) is int and envelope["schema_version"] == 1, f"invalid Entry envelope schema version: {path}"
+    assert isinstance(envelope["package"], str) and envelope["package"], f"invalid Entry envelope package: {path}"
+    assert isinstance(envelope["entry"], dict), f"invalid Entry envelope payload: {path}"
+    assert envelope["entry"].get("package") == envelope["package"], f"Entry envelope/payload package mismatch: {path}"
+
+
+def validate_package_manifest(manifest: dict, path: Path, expected_id: str | None = None) -> None:
+    fields = {"format", "version", "schema_version", "id", "name", "description", "entry_ids"}
+    assert isinstance(manifest, dict) and set(manifest) == fields, f"invalid Package manifest fields: {path}"
+    assert manifest["format"] == "snl-package", f"invalid Package manifest format: {path}"
+    assert type(manifest["version"]) is int and manifest["version"] == 1, f"invalid Package manifest version: {path}"
+    assert type(manifest["schema_version"]) is int and manifest["schema_version"] == 2, f"invalid Package manifest schema version: {path}"
+    assert isinstance(manifest["id"], str) and manifest["id"], f"invalid Package manifest ID: {path}"
+    if expected_id is not None:
+        assert manifest["id"] == expected_id, f"Package manifest ID mismatch: {path}"
+    assert isinstance(manifest["name"], str) and manifest["name"], f"invalid Package manifest name: {path}"
+    assert isinstance(manifest["description"], str), f"invalid Package manifest description: {path}"
+    assert isinstance(manifest["entry_ids"], list) and all(isinstance(item, str) and item for item in manifest["entry_ids"]), f"invalid Package manifest Entry IDs: {path}"
+    assert len(manifest["entry_ids"]) == len(set(manifest["entry_ids"])), f"duplicate Package manifest Entry IDs: {path}"
+
+
 def load_records(directory: str, identity_key: str):
     records = {}
     paths = {}
@@ -131,6 +159,8 @@ def load_records(directory: str, identity_key: str):
         record_key = "entry" if directory == "entries" else "macro"
         if record_key == "macro":
             validate_macro_envelope(envelope, path)
+        else:
+            validate_entry_envelope(envelope, path)
         record = envelope[record_key]
         identity = record[identity_key]
         assert identity not in records
@@ -211,6 +241,7 @@ manifest_specs = entry_package_plan["manifests"]
 existing_package_manifests: dict[str, tuple[Path, dict]] = {}
 for path in sorted((DOC / "packages").glob("*.json")):
     manifest = read_json(path)
+    validate_package_manifest(manifest, path)
     package_id = manifest["id"]
     assert package_id in manifest_specs, f"unplanned Entry Package: {package_id}"
     assert package_id not in existing_package_manifests
@@ -230,7 +261,7 @@ for package_id, spec in manifest_specs.items():
 package_manifests: dict[str, tuple[Path, dict]] = {}
 for package_id, spec in manifest_specs.items():
     canonical = json.loads(json.dumps(spec["canonical"], ensure_ascii=False))
-    assert canonical["id"] == package_id and canonical["schema_version"] == 2
+    validate_package_manifest(canonical, ENTRY_PACKAGE_PLAN_PATH, package_id)
     path = DOC / "packages" / f"{package_id}-{identity_hash('package', package_id)}.json"
     package_manifests[package_id] = (path, canonical)
 
@@ -663,9 +694,17 @@ for spec in new_specs:
         continue
     if entry_id in entries:
         entry = entries[entry_id]
+        accepted_content = []
+        for predecessor in spec.get("accepted_content", []):
+            normalized_predecessor = {}
+            if "snl" in predecessor:
+                normalized_predecessor["snl"] = predecessor["snl"]
+            if "markdown" in predecessor:
+                normalized_predecessor["markdown"] = localized(predecessor["markdown"])
+            accepted_content.append(normalized_predecessor)
         assert entry["package"] in spec.get("accepted_packages", [spec["package"]])
         assert entry["kind"] in spec.get("accepted_kind", [spec["kind"]]), f"stale Entry kind: {entry_id}"
-        assert entry.get("content") in [expected_content, *spec.get("accepted_content", [])], f"unaccepted requested Entry content drift: {entry_id}"
+        assert entry.get("content") in [expected_content, *accepted_content], f"unaccepted requested Entry content drift: {entry_id}"
         entry["kind"] = spec["kind"]
         entry["title"] = localized(spec["title"])
         entry["content"] = expected_content

@@ -10,11 +10,21 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Legal Constructor",
-        "zh-CN": "合法构造子"
+        "en": "Constructor Result-Type Check",
+        "zh-CN": "构造子结果类型检查"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "def(Type.constructorTargets(@C,@I),%after removing the leading dependent-product binders from C, the head of its result is I%)",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "For a constructor c : Π Δ, R, remove the leading constructor-argument telescope Δ. The head constant of R must be the newly declared inductive family I, possibly applied to its parameters and indices. Thus c constructs an I-object rather than an unrelated type.",
+          "zh-CN": "对于构造子 c : Π Δ, R，先去掉开头的构造参数望远镜 Δ。R 的头常量必须是新声明的归纳类型族 I，它可以应用于参数和指标。因而 c 确实构造 I 的对象，而不是无关类型。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

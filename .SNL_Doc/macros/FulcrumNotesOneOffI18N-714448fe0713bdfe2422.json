@@ -1,0 +1,71 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumNotesOneOffI18N",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Type.rmk.constructorVariance"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "Covariance and contravariance explain how one type-former layer transports occurrences, but sign parity does not characterize strict positivity. Within each constructor-argument type, a recursive occurrence of I is forbidden in the domain of any nested Π or arrow; type formers preserve admissibility only in parameters explicitly accepted as strictly positive by the positivity policy. Thus sup : Π a : A, (B a → W A B) → W A B is accepted: (B a → W A B) is one outer constructor argument, and its recursive W occurs in the codomain of the inner arrow. By contrast, an argument W → A is rejected, as is the double-negative continuation ((W → A) → A).",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "协变与反变可以解释一层类型构造器如何传递出现位置，但符号翻转的奇偶不能刻画严格正性。在每个构造参数类型内部，递归出现的 I 不得位于任何嵌套 Π 或箭头的定义域中；只有正性策略明确认可为严格正的类型构造器参数才保持可接受性。因此 sup : Π a : A, (B a → W A B) → W A B 合法：B a → W A B 是一个完整的外层构造参数，而递归出现的 W 位于其内部箭头的值域。相反，参数 W → A 不合法，双重负位置的 continuation ((W → A) → A) 也仍不合法。",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        }
+      }
+    ],
+    "tags": [],
+    "name": "FulcrumNotes.OneOffI18N.TypeTheory.ConstructorVariance.Explanation"
+  }
+}

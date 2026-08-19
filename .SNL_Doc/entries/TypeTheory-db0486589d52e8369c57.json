@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.contravariantFunctor",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Contravariant Functor",
+        "zh-CN": "反变（逆变）函子"
+      }
+    },
+    "content": {
+      "snl": "def-struct-hyp(Type.judge(@F,Type.to(Type,Type)),Type.contravariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(B) → F(A)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%reversed composition law%,%F(g ∘ f)=F(f) ∘ F(g)%)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A contravariant functor sends f : A → B to F(f) : F(B) → F(A), reversing the direction of arrows and the order of composition. In positivity calculations, a contravariant type constructor reverses polarity.",
+          "zh-CN": "反变（逆变）函子把 f : A → B 映为 F(f) : F(B) → F(A)，反转箭头方向与复合次序。在正性计算中，反变类型构造子会反转极性。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

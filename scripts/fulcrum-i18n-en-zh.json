@@ -2275,21 +2275,30 @@
     },
     "Type.def.ctor-legal": {
       "title": {
-        "en": "Legal Constructor",
-        "zh-CN": "合法构造子"
-      }
+        "en": "Constructor Result-Type Check",
+        "zh-CN": "构造子结果类型检查"
+      },
+      "accepted_title_en": [
+        "Legal Constructor"
+      ]
     },
     "Type.def.ctorInfo": {
       "title": {
-        "en": "Constructor Info",
+        "en": "Constructor Information",
         "zh-CN": "构造子信息"
-      }
+      },
+      "accepted_title_en": [
+        "Constructor Info"
+      ]
     },
     "Type.def.inductiveInfo": {
       "title": {
-        "en": "Inductive Info",
+        "en": "Inductive Information",
         "zh-CN": "归纳类型信息"
-      }
+      },
+      "accepted_title_en": [
+        "Inductive Info"
+      ]
     },
     "Type.def.list": {
       "title": {

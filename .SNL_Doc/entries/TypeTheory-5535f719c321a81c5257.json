@@ -10,11 +10,21 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Inductive Info",
+        "en": "Inductive Information",
         "zh-CN": "归纳类型信息"
       }
     },
-    "content": {},
+    "content": {
+      "snl": "def-struct(Type.InductiveInfo,struct[enumerate](member[colon](%declaration context%,Type.DeclarationContext),member[colon](%type expression%,Type.TypeExpression),member[colon](%constructor declarations%,List(Type.ConstructorInfo))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "An inductive declaration records a declaration context Γ, a type expression for the new family I, and a finite list of constructor declarations cᵢ : Cᵢ. The context contains parameters and indices available to the family. Keeping each constructor type as a separate ConstructorInfo makes the result-type and strict-positivity checks local to that constructor.",
+          "zh-CN": "一个归纳声明记录声明语境 Γ、新类型族 I 的类型表达式，以及有限个构造子声明 cᵢ : Cᵢ。语境包含类型族可用的参数与指标。把每个构造子类型分别保存为 ConstructorInfo，可使结果类型检查与严格正性检查逐个构造子进行。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }
