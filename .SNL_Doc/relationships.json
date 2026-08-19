@@ -5783,6 +5783,45 @@
       }
     },
     {
+      "id": "dep.Type.def.Expr.let-UTLC.Fulcrum.def",
+      "from": "Type.def.Expr.let-UTLC",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.Expr.let-UTLC.Type.rl.Expr-LC",
+      "from": "Type.def.Expr.let-UTLC",
+      "to": "Type.rl.Expr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.Expr"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.Expr.let-UTLC.Type.rl.judge",
+      "from": "Type.def.Expr.let-UTLC",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Type.def.I-Combinator.Fulcrum.def",
       "from": "Type.def.I-Combinator",
       "to": "Fulcrum.def",
@@ -6056,6 +6095,123 @@
       }
     },
     {
+      "id": "dep.Type.def.TypeExpr-STLC.Fulcrum.def",
+      "from": "Type.def.TypeExpr-STLC",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.TypeExpr-STLC.Type.rl.fun",
+      "from": "Type.def.TypeExpr-STLC",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.TypeExpr-STLC.Type.rl.judge",
+      "from": "Type.def.TypeExpr-STLC",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.UTLC-const.Fulcrum.def",
+      "from": "Type.def.UTLC-const",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.UTLC-const.Type.rl.Expr-LC",
+      "from": "Type.def.UTLC-const",
+      "to": "Type.rl.Expr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.Expr"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.UTLC-const.Type.rl.judge",
+      "from": "Type.def.UTLC-const",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.UTLC-term.Fulcrum.def",
+      "from": "Type.def.UTLC-term",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.UTLC-term.Lambda.def.defeq",
+      "from": "Type.def.UTLC-term",
+      "to": "Lambda.def.defeq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.defeq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.UTLC-term.Type.def.LegalExpr-LC",
+      "from": "Type.def.UTLC-term",
+      "to": "Type.def.LegalExpr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.LegalExpr"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Type.def.Y-Combinator.Fulcrum.def",
       "from": "Type.def.Y-Combinator",
       "to": "Fulcrum.def",
@@ -6095,6 +6251,188 @@
       }
     },
     {
+      "id": "dep.Type.def.alpha-conversion.Lambda.def.defeq",
+      "from": "Type.def.alpha-conversion",
+      "to": "Lambda.def.defeq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.defeq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.alpha-conversion.Type.rl.Expr-LC",
+      "from": "Type.def.alpha-conversion",
+      "to": "Type.rl.Expr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.Expr"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.alpha-conversion.Type.rl.judge",
+      "from": "Type.def.alpha-conversion",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.ctx.Fulcrum.def",
+      "from": "Type.def.ctx",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.judge.app.Type.rl.Expr-LC.ctor.application",
+      "from": "Type.def.judge.app",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.judge.app.Type.rl.fun",
+      "from": "Type.def.judge.app",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.judge.app.Type.rl.judge",
+      "from": "Type.def.judge.app",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.list.Fulcrum.def",
+      "from": "Type.def.list",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.list.Type.rl.fun",
+      "from": "Type.def.list",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.list.Type.rl.judge",
+      "from": "Type.def.list",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.list.Type.rl.univ",
+      "from": "Type.def.list",
+      "to": "Type.rl.univ",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.named-lambda.Fulcrum.def",
+      "from": "Type.def.named-lambda",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.named-lambda.Type.rl.Expr-LC",
+      "from": "Type.def.named-lambda",
+      "to": "Type.rl.Expr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.Expr"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.named-lambda.Type.rl.judge",
+      "from": "Type.def.named-lambda",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Type.def.omega-Combinator.Fulcrum.def",
       "from": "Type.def.omega-Combinator",
       "to": "Fulcrum.def",
@@ -6116,6 +6454,214 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.Expr-UTLC.lambda"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.prod.Fulcrum.def",
+      "from": "Type.def.prod",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.prod.Type.def.prod.ctor.pair",
+      "from": "Type.def.prod",
+      "to": "Type.def.prod.ctor.pair",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Prod.pair"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.prod.Type.rl.fun",
+      "from": "Type.def.prod",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.prod.Type.rl.judge",
+      "from": "Type.def.prod",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.prod.Type.rl.univ",
+      "from": "Type.def.prod",
+      "to": "Type.rl.univ",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.sum.Fulcrum.def",
+      "from": "Type.def.sum",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.sum.Type.def.sum.ctor.inr",
+      "from": "Type.def.sum",
+      "to": "Type.def.sum.ctor.inr",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Sum.inr"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.sum.Type.rl.fun",
+      "from": "Type.def.sum",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.sum.Type.rl.judge",
+      "from": "Type.def.sum",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.sum.Type.rl.univ",
+      "from": "Type.def.sum",
+      "to": "Type.rl.univ",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.ppt.delta-reduction.Lambda.def.defeq",
+      "from": "Type.ppt.delta-reduction",
+      "to": "Lambda.def.defeq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.defeq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.ppt.delta-reduction.Type.def.LegalExpr-LC",
+      "from": "Type.ppt.delta-reduction",
+      "to": "Type.def.LegalExpr-LC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Lambda.LegalExpr"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.ppt.delta-reduction.Type.def.UTLC-const",
+      "from": "Type.ppt.delta-reduction",
+      "to": "Type.def.UTLC-const",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Expr.const"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.ppt.delta-reduction.Type.rl.judge",
+      "from": "Type.ppt.delta-reduction",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.ppt.judge-lam.Type.rl.fun",
+      "from": "Type.ppt.judge-lam",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.ppt.judge-lam.Type.rl.judge",
+      "from": "Type.ppt.judge-lam",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
         ],
         "isAtomic": true
       }
@@ -6467,6 +7013,19 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.Expr-UTLC.lambda"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.rmk.named-lambda.Type.rmk.deBruijnIndex",
+      "from": "Type.rmk.named-lambda",
+      "to": "Type.rmk.deBruijnIndex",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "deBruijnIndex"
         ],
         "isAtomic": true
       }

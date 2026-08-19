@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.ppt.eta-reduction",
+    "package": "TypeTheory",
+    "kind": "property",
+    "title": "$\\eta$ 规约",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

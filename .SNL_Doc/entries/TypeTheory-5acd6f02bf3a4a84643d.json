@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rmk.named-lambda",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": "绑定子命名",
+    "content": {
+      "snl": "%在之前例子中实现的 #0构造子在语义上不携带绑定子形式参数的命名，我们将表达式中的命名视为某种语法糖，因为仅需 #1足以刻画表达式语法结构。但在某些实现场景中，可能认为这种命名是绑定子正式语义的一部分，此时需要增加 #2对表达式的依定义相等进行判定。%(Type.Expr-UTLC.lambda[text],deBruijnIndex,%$\\alpha$ 转换%)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -41,7 +41,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\lambda #0 : #1.\\ #2",
+          "body": "\\lambda (#0 : #1).\\ #2",
           "typst": {
             "built_in": "",
             "synthesis": {

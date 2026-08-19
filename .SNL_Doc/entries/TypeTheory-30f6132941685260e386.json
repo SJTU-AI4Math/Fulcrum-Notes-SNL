@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.Expr.let-UTLC",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": "局部定义",
+    "content": {
+      "snl": "def-hyp-opq(list-partial(Type.judge(x,`string`),Type.judge(list-partial[formula](a,b),Lambda.Expr)),Type.judge(parentheses(let[coloneqq](x,a,b)),Lambda.Expr))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

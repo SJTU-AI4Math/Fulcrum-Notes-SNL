@@ -7,19 +7,19 @@
     "description": "",
     "source": {
       "entries": [
-        "Type.rl.fun"
+        "Type.def.prod.ctor.pair"
       ],
       "urls": []
     },
-    "kind": "rule",
+    "kind": "const",
     "dynamic_arity": false,
     "styles": [
       {
-        "style_name": "default",
+        "style_name": "pair",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0 \\to #1",
+          "body": "\\left(#0, #1\\right)",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -42,8 +42,8 @@
         "style_name": "text",
         "tags": [],
         "template": {
-          "mode": "text",
-          "body": "函数类型",
+          "mode": "formula_inline",
+          "body": "\\mathsf{pair}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -64,6 +64,6 @@
       }
     ],
     "tags": [],
-    "name": "Type.to"
+    "name": "Prod.pair"
   }
 }

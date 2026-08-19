@@ -6,9 +6,7 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [
-        "Type.rl.fun"
-      ],
+      "entries": [],
       "urls": []
     },
     "kind": "rule",
@@ -19,31 +17,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0 \\to #1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
-      },
-      {
-        "style_name": "text",
-        "tags": [],
-        "template": {
-          "mode": "text",
-          "body": "函数类型",
+          "body": "#0\\textsf{ ctx}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -64,6 +38,6 @@
       }
     ],
     "tags": [],
-    "name": "Type.to"
+    "name": "Type.ctx"
   }
 }

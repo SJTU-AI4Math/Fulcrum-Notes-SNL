@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.judge.app",
+    "package": "TypeTheory",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "应用规则生成类型判断"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(f,Type.to(A,B)),Type.judge(x,A)),Type.judge(Type.apply(f,x),B))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

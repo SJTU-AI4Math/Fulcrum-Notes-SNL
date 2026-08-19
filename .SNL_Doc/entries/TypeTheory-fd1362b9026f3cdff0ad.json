@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.ppt.judge-lam",
+    "package": "TypeTheory",
+    "kind": "property",
+    "title": "$\\lambda$-抽象规则生成的类型判断",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@e,Type.Expr),Type.ctx(@$\\Gamma$),Type.ctx-judge(list-partial[formula]($\\Gamma$,Type.judge[paren](x,A)),e,B)),Type.ctx-judge($\\Gamma$,parentheses(Type.lambda-typed[lambda](@x,A,e)),Type.to(A,B)))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

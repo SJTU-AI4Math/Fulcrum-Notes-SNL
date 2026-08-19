@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "BasicOperators",
   "macro": {
     "description": "",
@@ -59,6 +60,30 @@
               "text": ""
             }
           }
+        }
+      },
+      {
+        "style_name": "coloneqq",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\coloneqq #1; #2",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
         }
       }
     ],

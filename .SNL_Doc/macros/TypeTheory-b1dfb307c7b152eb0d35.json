@@ -19,7 +19,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0\\ #1",
+          "body": "#0#1",
           "typst": {
             "built_in": "",
             "synthesis": {
