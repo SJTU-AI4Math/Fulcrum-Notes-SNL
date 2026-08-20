@@ -2,12 +2,13 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "SetTheory",
+  "package": "BasicOperators",
   "macro": {
-    "description": "满映射（性质）",
+    "description": "",
     "source": {
       "entries": [
-        "Set.def.surjective"
+        "Logic.def.eq",
+        "Logic.def.neg"
       ],
       "urls": []
     },
@@ -19,7 +20,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0\\text{ 是满射}",
+          "body": "#0 \\neq #1",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,6 +41,6 @@
       }
     ],
     "tags": [],
-    "name": "Set.surjective"
+    "name": "Neq"
   }
 }

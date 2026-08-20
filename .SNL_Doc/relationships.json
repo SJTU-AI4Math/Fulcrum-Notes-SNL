@@ -4847,6 +4847,58 @@
       }
     },
     {
+      "id": "dep.Set.def.bijective.Fulcrum.def",
+      "from": "Set.def.bijective",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.bijective.Logic.def.and",
+      "from": "Set.def.bijective",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.bijective.Set.def.injective",
+      "from": "Set.def.bijective",
+      "to": "Set.def.injective",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.injective"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.bijective.Set.def.surjective",
+      "from": "Set.def.bijective",
+      "to": "Set.def.surjective",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.surjective"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.def.codomain.Fulcrum.def",
       "from": "Set.def.codomain",
       "to": "Fulcrum.def",
@@ -4933,6 +4985,19 @@
         "generator": "macro-source-scan",
         "macros": [
           "Set.sep"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.domain.Fulcrum.def",
+      "from": "Set.def.domain",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
         ],
         "isAtomic": true
       }
@@ -5239,6 +5304,123 @@
     {
       "id": "dep.Set.def.imageAsApplyed.Type.rl.judge",
       "from": "Set.def.imageAsApplyed",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.injective.Fulcrum.def",
+      "from": "Set.def.injective",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.injective.Logic.def.eq",
+      "from": "Set.def.injective",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Neq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.injective.Logic.def.forall",
+      "from": "Set.def.injective",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.injective.Logic.def.implies",
+      "from": "Set.def.injective",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.injective.Logic.def.neg",
+      "from": "Set.def.injective",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Neq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.injective.Set.def.domain",
+      "from": "Set.def.injective",
+      "to": "Set.def.domain",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.domain"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.injective.Set.def.mem",
+      "from": "Set.def.injective",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.injective.Type.rl.Expr-LC.ctor.application",
+      "from": "Set.def.injective",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.injective.Type.rl.judge",
+      "from": "Set.def.injective",
       "to": "Type.rl.judge",
       "label": "depends",
       "metadata": {
@@ -5702,6 +5884,19 @@
           "Logic.and"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.homeomorphism.Set.def.bijective",
+      "from": "Topology.def.homeomorphism",
+      "to": "Set.def.bijective",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.bijective"
+        ],
+        "isAtomic": true
       }
     },
     {

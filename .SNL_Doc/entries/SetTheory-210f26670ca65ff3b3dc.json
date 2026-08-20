@@ -11,7 +11,7 @@
       "default_language": "en",
       "values": {
         "en": "T, S, A, B, D",
-        "zh-CN": "T, A, B"
+        "zh-CN": "T, S, A, B, D"
       }
     },
     "content": {},

@@ -9,7 +9,7 @@
     "kind": "context",
     "title": "$D$",
     "content": {
-      "snl": "Type.judge(@D, @S)"
+      "snl": "Type.judge(@D, S@Set.ctxt.S)"
     },
     "contribution_info": null,
     "pointer": null

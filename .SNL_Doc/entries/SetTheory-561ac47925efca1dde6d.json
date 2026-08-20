@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.injective",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "单映射/单射",
+    "content": {
+      "snl": "def(\r\n    Set.injective(f@Set.ctxt.f),\r\n    Logic.forall(\r\n        list-partial(Type.judge(@x_1, S@Set.ctxt.S), Type.judge(@x_2, S@Set.ctxt.S)),\r\n        Logic.implies(list-partial(\r\n            Set.mem(x_1, Set.domain(f@Set.ctxt.f)),\r\n            Set.mem(x_2, Set.domain(f@Set.ctxt.f)),\r\n            Neq(x_1, x_2)\r\n            ),\r\n            Neq(Type.apply(f@Set.ctxt.f, x_1), Type.apply(f@Set.ctxt.f, x_2))\r\n        )\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

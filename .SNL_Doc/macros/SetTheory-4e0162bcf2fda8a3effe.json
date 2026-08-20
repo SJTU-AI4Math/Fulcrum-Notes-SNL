@@ -4,10 +4,10 @@
   "schema_version": 1,
   "package": "SetTheory",
   "macro": {
-    "description": "满映射（性质）",
+    "description": "映射的定义域",
     "source": {
       "entries": [
-        "Set.def.surjective"
+        "Set.def.domain"
       ],
       "urls": []
     },
@@ -19,7 +19,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0\\text{ 是满射}",
+          "body": "\\operatorname{dom}#0",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,6 +40,6 @@
       }
     ],
     "tags": [],
-    "name": "Set.surjective"
+    "name": "Set.domain"
   }
 }

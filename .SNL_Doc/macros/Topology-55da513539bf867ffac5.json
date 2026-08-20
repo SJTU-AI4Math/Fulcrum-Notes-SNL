@@ -2,24 +2,25 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "SetTheory",
+  "package": "Topology",
   "macro": {
-    "description": "满映射（性质）",
+    "description": "Predicate: f is a continuous map",
     "source": {
       "entries": [
-        "Set.def.surjective"
+        "Topology.def.continuousMap"
       ],
       "urls": []
     },
     "kind": "const",
     "dynamic_arity": false,
+    "tags": [],
     "styles": [
       {
         "style_name": "default",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0\\text{ 是满射}",
+          "body": "#0\\text{ 是连续映射}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -39,7 +40,6 @@
         }
       }
     ],
-    "tags": [],
-    "name": "Set.surjective"
+    "name": "Topology.continuity"
   }
 }

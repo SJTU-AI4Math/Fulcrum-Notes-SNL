@@ -209,6 +209,20 @@
       "props": {
         "entryId": "Set.def.surjective"
       }
+    },
+    {
+      "id": "n_10",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.injective"
+      }
+    },
+    {
+      "id": "n_11",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.bijective"
+      }
     }
   ],
   "relationships": [
@@ -355,6 +369,16 @@
     {
       "from": "n_1",
       "to": "n_9",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_10",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_11",
       "label": "branch"
     }
   ]
