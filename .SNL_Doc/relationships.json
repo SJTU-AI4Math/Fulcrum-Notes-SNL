@@ -6290,6 +6290,84 @@
       }
     },
     {
+      "id": "dep.Topology.def.openSet.Fulcrum.def",
+      "from": "Topology.def.openSet",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.openSet.Set.def.mem",
+      "from": "Topology.def.openSet",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.openSet.Set.def.set",
+      "from": "Topology.def.openSet",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openSet.Type.rl.judge",
+      "from": "Topology.def.openSet",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.topologicalSpace.Fulcrum.def",
+      "from": "Topology.def.topologicalSpace",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.topologicalSpace.Topology.def.topology",
+      "from": "Topology.def.topologicalSpace",
+      "to": "Topology.def.topology",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.topology"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Type.cxmp.Bad.Fulcrum.def",
       "from": "Type.cxmp.Bad",
       "to": "Fulcrum.def",
