@@ -1,0 +1,69 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "macro": {
+    "description": "映射的值域/像",
+    "source": {
+      "entries": [
+        "Set.def.image"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "op_im",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{im}#0",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "op_ran",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{ran}#0",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      }
+    ],
+    "tags": [],
+    "name": "Set.im"
+  }
+}

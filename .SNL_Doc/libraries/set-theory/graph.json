@@ -146,6 +146,69 @@
       "props": {
         "entryId": "Set.def.symmetric_difference"
       }
+    },
+    {
+      "id": "n_1",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.subsec.map"
+      }
+    },
+    {
+      "id": "n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.ctxt.S"
+      }
+    },
+    {
+      "id": "n_3",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.domain"
+      }
+    },
+    {
+      "id": "n_4",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.codomain"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.image"
+      }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.ctxt.D"
+      }
+    },
+    {
+      "id": "n_7",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.ctxt.f"
+      }
+    },
+    {
+      "id": "n_8",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.imageAsApplyed"
+      }
+    },
+    {
+      "id": "n_9",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.surjective"
+      }
     }
   ],
   "relationships": [
@@ -162,6 +225,16 @@
     {
       "from": "n_ctx1",
       "to": "n_ctxAB",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx1",
+      "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx1",
+      "to": "n_6",
       "label": "branch"
     },
     {
@@ -210,6 +283,11 @@
       "label": "branch"
     },
     {
+      "from": "n_sec",
+      "to": "n_1",
+      "label": "branch"
+    },
+    {
       "from": "n_sub_rel",
       "to": "n_subset",
       "label": "branch"
@@ -247,6 +325,36 @@
     {
       "from": "n_sub_ops",
       "to": "n_symdiff",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_7",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_3",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_4",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_8",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_9",
       "label": "branch"
     }
   ]

@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "entry": {
     "id": "Topology.def.homeomorphism",
@@ -10,7 +11,7 @@
       "default_language": "en",
       "values": {
         "en": "Homeomorphism",
-        "zh-CN": "同胚"
+        "zh-CN": "同胚映射"
       }
     },
     "content": {

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.codomain",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "余定义域/陪域/到域/达域",
+    "content": {
+      "snl": "def(Set.codomain(f@Set.ctxt.f), A@Set.ctxt.AB)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

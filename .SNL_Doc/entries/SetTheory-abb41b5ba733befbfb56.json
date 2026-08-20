@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.ctxt.D",
+    "package": "SetTheory",
+    "kind": "context",
+    "title": "$D$",
+    "content": {
+      "snl": "Type.judge(@D, @S)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "entry": {
     "id": "Topology.def.mapConvergence",
@@ -14,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@y,Y@Topology.ctxt.Y),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.mapConvergence(f,x,y),Topology.mapLimit(x,f,y))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.judge(@x, X@Topology.ctxt.X),\r\n        Type.judge(@y, Y@Topology.ctxt.Y),\r\n        Type.judge(@x_0, X@Topology.ctxt.X),\r\n        Type.judge(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y)),\r\n        Type.judge(@τ_X, Set(Set(X@Topology.ctxt.X))),\r\n        Type.judge(@τ_Y, Set(Set(Y@Topology.ctxt.Y)))\r\n    ),\r\n    Topology.mapConvergence(f, x, y),\r\n    Topology.mapLimit(x, x_0, f, y)\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

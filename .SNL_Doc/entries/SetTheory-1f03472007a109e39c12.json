@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.domain",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "定义域",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

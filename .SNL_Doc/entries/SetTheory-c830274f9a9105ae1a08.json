@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.subsec.map",
+    "package": "SetTheory",
+    "kind": "subsection",
+    "title": "集合间的映射",
+    "content": {},
+    "contribution_info": "Dedicatia(Temporary)",
+    "pointer": null
+  }
+}

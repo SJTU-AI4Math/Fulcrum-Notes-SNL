@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "macro": {
+    "description": "集合间的映射的余定义域/陪域记号",
+    "source": {
+      "entries": [
+        "Set.def.codomain"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{codom}#0",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      }
+    ],
+    "tags": [],
+    "name": "Set.codomain"
+  }
+}

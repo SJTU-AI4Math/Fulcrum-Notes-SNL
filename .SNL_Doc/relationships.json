@@ -4782,6 +4782,84 @@
       }
     },
     {
+      "id": "dep.Set.ctxt.D.Type.rl.judge",
+      "from": "Set.ctxt.D",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.ctxt.S.Type.rl.judge",
+      "from": "Set.ctxt.S",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.ctxt.S.Type.rl.univ",
+      "from": "Set.ctxt.S",
+      "to": "Type.rl.univ",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.ctxt.f.Type.rl.fun",
+      "from": "Set.ctxt.f",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.ctxt.f.Type.rl.judge",
+      "from": "Set.ctxt.f",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.codomain.Fulcrum.def",
+      "from": "Set.def.codomain",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.def.compl.Set.def.nmem",
       "from": "Set.def.compl",
       "to": "Set.def.nmem",
@@ -4974,6 +5052,201 @@
           "Set.subset"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.image.Fulcrum.def",
+      "from": "Set.def.image",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.image.Logic.def.eq",
+      "from": "Set.def.image",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.image.Logic.def.exists",
+      "from": "Set.def.image",
+      "to": "Logic.def.exists",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.exists"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.image.Set.def.sep",
+      "from": "Set.def.image",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.image.Type.rl.Expr-LC.ctor.application",
+      "from": "Set.def.image",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.image.Type.rl.judge",
+      "from": "Set.def.image",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.imageAsApplyed.Fulcrum.def",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.imageAsApplyed.Logic.def.and",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.imageAsApplyed.Logic.def.eq",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.imageAsApplyed.Logic.def.exists",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Logic.def.exists",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.exists"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.imageAsApplyed.Set.def.mem",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.imageAsApplyed.Set.def.sep",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.imageAsApplyed.Set.def.set",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.imageAsApplyed.Type.rl.Expr-LC.ctor.application",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.imageAsApplyed.Type.rl.judge",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
       }
     },
     {
@@ -5172,6 +5445,45 @@
       }
     },
     {
+      "id": "dep.Set.def.surjective.Fulcrum.def",
+      "from": "Set.def.surjective",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.surjective.Logic.def.eq",
+      "from": "Set.def.surjective",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.surjective.Set.def.imageAsApplyed",
+      "from": "Set.def.surjective",
+      "to": "Set.def.imageAsApplyed",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.fun"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.def.symmetric_difference.Set.def.diff",
       "from": "Set.def.symmetric_difference",
       "to": "Set.def.diff",
@@ -5286,6 +5598,500 @@
           "Set.sep"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.continuityAtPoint.Fulcrum.def",
+      "from": "Topology.def.continuityAtPoint",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.continuityAtPoint.Set.def.set",
+      "from": "Topology.def.continuityAtPoint",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.continuityAtPoint.Topology.def.mapLimit",
+      "from": "Topology.def.continuityAtPoint",
+      "to": "Topology.def.mapLimit",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.mapLimit"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.continuityAtPoint.Type.rl.Expr-LC.ctor.application",
+      "from": "Topology.def.continuityAtPoint",
+      "to": "Type.rl.Expr-LC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.continuityAtPoint.Type.rl.fun",
+      "from": "Topology.def.continuityAtPoint",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.continuityAtPoint.Type.rl.judge",
+      "from": "Topology.def.continuityAtPoint",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.homeomorphism.Fulcrum.def",
+      "from": "Topology.def.homeomorphism",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.homeomorphism.Logic.def.and",
+      "from": "Topology.def.homeomorphism",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.homeomorphism.Set.def.set",
+      "from": "Topology.def.homeomorphism",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.homeomorphism.Topology.def.continuousMap",
+      "from": "Topology.def.homeomorphism",
+      "to": "Topology.def.continuousMap",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.continuousMap"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.homeomorphism.Topology.def.openMap",
+      "from": "Topology.def.homeomorphism",
+      "to": "Topology.def.openMap",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.openMap"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.homeomorphism.Type.rl.fun",
+      "from": "Topology.def.homeomorphism",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.homeomorphism.Type.rl.judge",
+      "from": "Topology.def.homeomorphism",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapConvergence.Fulcrum.def",
+      "from": "Topology.def.mapConvergence",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapConvergence.Set.def.set",
+      "from": "Topology.def.mapConvergence",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapConvergence.Topology.def.mapLimit",
+      "from": "Topology.def.mapConvergence",
+      "to": "Topology.def.mapLimit",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.mapLimit"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapConvergence.Type.rl.fun",
+      "from": "Topology.def.mapConvergence",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapConvergence.Type.rl.judge",
+      "from": "Topology.def.mapConvergence",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Fulcrum.def",
+      "from": "Topology.def.mapLimit",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Logic.def.and",
+      "from": "Topology.def.mapLimit",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Logic.def.exists",
+      "from": "Topology.def.mapLimit",
+      "to": "Logic.def.exists",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.exists"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Logic.def.forall",
+      "from": "Topology.def.mapLimit",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Logic.def.implies",
+      "from": "Topology.def.mapLimit",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Set.def.imageAsApplyed",
+      "from": "Topology.def.mapLimit",
+      "to": "Set.def.imageAsApplyed",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.fun"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Set.def.mem",
+      "from": "Topology.def.mapLimit",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Set.def.set",
+      "from": "Topology.def.mapLimit",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Set.def.subset",
+      "from": "Topology.def.mapLimit",
+      "to": "Set.def.subset",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.subset"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Topology.def.deletedNeighborhood",
+      "from": "Topology.def.mapLimit",
+      "to": "Topology.def.deletedNeighborhood",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.deletedNeighborhood"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Type.rl.fun",
+      "from": "Topology.def.mapLimit",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.mapLimit.Type.rl.judge",
+      "from": "Topology.def.mapLimit",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openMap.Fulcrum.def",
+      "from": "Topology.def.openMap",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openMap.Logic.def.forall",
+      "from": "Topology.def.openMap",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openMap.Logic.def.implies",
+      "from": "Topology.def.openMap",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.openMap.Set.def.imageAsApplyed",
+      "from": "Topology.def.openMap",
+      "to": "Set.def.imageAsApplyed",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.fun"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.openMap.Set.def.mem",
+      "from": "Topology.def.openMap",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openMap.Set.def.set",
+      "from": "Topology.def.openMap",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openMap.Type.rl.fun",
+      "from": "Topology.def.openMap",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openMap.Type.rl.judge",
+      "from": "Topology.def.openMap",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
       }
     },
     {
