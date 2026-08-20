@@ -30,6 +30,8 @@
     "Lambda.ppt.defeq-equivalence",
     "Lambda.ppt.HNF-is-WHNF",
     "Lambda.ppt.NF-is-HNF",
+    "Logic.axm.em",
+    "Type.axm.ProofIrrelevance",
     "Type.cxmp.Bad",
     "Type.cxmp.noHNF",
     "Type.cxmp.vector-index-not-defeq",
@@ -72,6 +74,7 @@
     "Type.def.inductiveInfo",
     "Type.def.Iota-Combinator",
     "Type.def.iota-reduction",
+    "Type.def.IP-rec",
     "Type.def.K-Combinator",
     "Type.def.LegalExpr-LC",
     "Type.def.list",
@@ -178,6 +181,7 @@
     "Type.subsec.TypeSystem",
     "Type.subsec.universe",
     "Type.subsec.UTLC-design",
+    "Type.thm.GirardParadox",
     "Type.thm.SKI-complete"
   ]
 }

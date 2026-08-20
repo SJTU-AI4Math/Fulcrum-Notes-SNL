@@ -3676,6 +3676,58 @@
       }
     },
     {
+      "id": "dep.Logic.axm.em.Logic.def.neg",
+      "from": "Logic.axm.em",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Logic.axm.em.Logic.def.or",
+      "from": "Logic.axm.em",
+      "to": "Logic.def.or",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.or"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Logic.axm.em.Logic.def.proposition",
+      "from": "Logic.axm.em",
+      "to": "Logic.def.proposition",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Proposition"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Logic.axm.em.Type.rl.judge",
+      "from": "Logic.axm.em",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Logic.ctxt.PQ.Logic.def.proposition",
       "from": "Logic.ctxt.PQ",
       "to": "Logic.def.proposition",
@@ -5289,6 +5341,45 @@
       }
     },
     {
+      "id": "dep.Type.axm.ProofIrrelevance.Logic.def.eq",
+      "from": "Type.axm.ProofIrrelevance",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.axm.ProofIrrelevance.Logic.def.proposition",
+      "from": "Type.axm.ProofIrrelevance",
+      "to": "Logic.def.proposition",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Proposition"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.axm.ProofIrrelevance.Type.rl.judge",
+      "from": "Type.axm.ProofIrrelevance",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Type.cxmp.Bad.Fulcrum.def",
       "from": "Type.cxmp.Bad",
       "to": "Fulcrum.def",
@@ -6134,6 +6225,58 @@
       }
     },
     {
+      "id": "dep.Type.def.inductiveInfo.Fulcrum.def",
+      "from": "Type.def.inductiveInfo",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.inductiveInfo.Type.def.ctorInfo",
+      "from": "Type.def.inductiveInfo",
+      "to": "Type.def.ctorInfo",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.ConstructorInfo"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.inductiveInfo.Type.def.list",
+      "from": "Type.def.inductiveInfo",
+      "to": "Type.def.list",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "List"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.inductiveInfo.Type.rl.judge",
+      "from": "Type.def.inductiveInfo",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Type.def.list.Type.def.list.ctor.cons",
       "from": "Type.def.list",
       "to": "Type.def.list.ctor.cons",
@@ -6792,6 +6935,45 @@
         "generator": "macro-source-scan",
         "macros": [
           "deBruijnIndex"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.thm.GirardParadox.Logic.def.false",
+      "from": "Type.thm.GirardParadox",
+      "to": "Logic.def.false",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.false"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.thm.GirardParadox.Type.def.ctx",
+      "from": "Type.thm.GirardParadox",
+      "to": "Type.def.ctx",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.ctx"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.thm.GirardParadox.Type.rl.judge",
+      "from": "Type.thm.GirardParadox",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
         ],
         "isAtomic": true
       }

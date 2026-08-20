@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.axm.ProofIrrelevance",
+    "package": "TypeTheory",
+    "kind": "axiom",
+    "title": "证明无关性",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@P,Proposition),Type.judge(list-partial[formula](@h_1,@h_2),P)),Eq(h_1,h_2))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

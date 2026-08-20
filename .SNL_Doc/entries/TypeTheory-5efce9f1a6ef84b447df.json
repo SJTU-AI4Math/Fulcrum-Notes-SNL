@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.thm.GirardParadox",
+    "package": "TypeTheory",
+    "kind": "theorem",
+    "title": "Girard 悖论",
+    "content": {
+      "snl": "thm-hyp(list-partial(Type.judge(@$\\mathcal{U}$,Type.Expr),Type.ctx-judge(@$\\Gamma$,$\\mathcal{U}$,$\\mathcal{U}$)),Logic.false)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

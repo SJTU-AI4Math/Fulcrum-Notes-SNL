@@ -57,11 +57,11 @@
       }
     },
     {
-      "id": "n_6",
+      "id": "n_92",
       "label": "Entry",
       "props": {
-        "entryId": "Type.sec.CIC",
-        "counterId": "41a2a398-9174-4ba0-b6ad-24ab613f44ae"
+        "entryId": "Type.def.IP-rec",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
@@ -889,11 +889,11 @@
       }
     },
     {
-      "id": "n_67",
+      "id": "n_6",
       "label": "Entry",
       "props": {
-        "entryId": "Type.subsec.ImpredicativeProposition",
-        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
+        "entryId": "Type.sec.CIC",
+        "counterId": "41a2a398-9174-4ba0-b6ad-24ab613f44ae"
       }
     },
     {
@@ -1396,6 +1396,43 @@
       "label": "Entry",
       "props": {
         "entryId": "Type.ppt.pi-judge"
+      }
+    },
+    {
+      "id": "n_67",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.ImpredicativeProposition",
+        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
+      }
+    },
+    {
+      "id": "n_93",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.axm.ProofIrrelevance"
+      }
+    },
+    {
+      "id": "n_94",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.thm.GirardParadox",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "n_95",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.Girard"
+      }
+    },
+    {
+      "id": "n_96",
+      "label": "Entry",
+      "props": {
+        "entryId": "Logic.axm.em"
       }
     }
   ],
@@ -2046,11 +2083,6 @@
       "label": "branch"
     },
     {
-      "from": "n_8",
-      "to": "n_67",
-      "label": "branch"
-    },
-    {
       "from": "n_sub_4b375342d840",
       "to": "n_sub_50788dc3f963",
       "label": "branch"
@@ -2127,7 +2159,7 @@
     },
     {
       "from": "n_66",
-      "to": "n_5",
+      "to": "n_94",
       "label": "branch"
     },
     {
@@ -2252,12 +2284,42 @@
     },
     {
       "from": "n_67",
+      "to": "n_92",
+      "label": "branch"
+    },
+    {
+      "from": "n_92",
       "to": "n_sub_ed0fc8ded5b4",
       "label": "branch"
     },
     {
       "from": "n_67",
+      "to": "n_93",
+      "label": "branch"
+    },
+    {
+      "from": "n_93",
       "to": "n_sub_46f14a0f6ad4",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "n_67",
+      "label": "branch"
+    },
+    {
+      "from": "n_66",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "n_94",
+      "to": "n_95",
+      "label": "branch"
+    },
+    {
+      "from": "n_51",
+      "to": "n_96",
       "label": "branch"
     }
   ]
