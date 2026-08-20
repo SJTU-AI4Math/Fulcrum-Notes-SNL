@@ -20,5 +20,6 @@
     "contribution_info": null,
     "pointer": null,
     "package": "Topology"
-  }
+  },
+  "schema_version": 1
 }

@@ -384,10 +384,10 @@
     "receipt": {
       "legacy_backup_present": true,
       "legacy_entries_present": true,
-      "entry_count": 238,
+      "entry_count": 498,
       "macro_package_count": 14,
       "macro_count": 360,
-      "entries_digest": "dcfa877802f054eb6afb3e98847e6a4155c139249a1ba16305cf5e687abb29e1",
+      "entries_digest": "f47ca90d3600c1bd3f4c858b5fe8b801e89bdc6fd79d05a20c2a3c736a856656",
       "macro_packages_digest": "891e7596fba31cd031d9ec712e86613941105674d6850f2a14725ca7e22b0638"
     }
   }
