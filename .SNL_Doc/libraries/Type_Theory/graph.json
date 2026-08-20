@@ -1390,6 +1390,13 @@
         "entryId": "Type.rmk.PropProofIrrelevance",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
+    },
+    {
+      "id": "n_91",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.ppt.pi-judge"
+      }
     }
   ],
   "relationships": [
@@ -2035,12 +2042,12 @@
     },
     {
       "from": "n_8",
-      "to": "n_67",
+      "to": "n_65",
       "label": "branch"
     },
     {
       "from": "n_8",
-      "to": "n_65",
+      "to": "n_67",
       "label": "branch"
     },
     {
@@ -2111,6 +2118,11 @@
     {
       "from": "n_65",
       "to": "n_9",
+      "label": "branch"
+    },
+    {
+      "from": "n_65",
+      "to": "n_91",
       "label": "branch"
     },
     {

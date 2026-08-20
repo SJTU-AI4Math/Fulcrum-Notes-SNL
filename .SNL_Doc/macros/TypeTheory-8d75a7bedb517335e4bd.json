@@ -4,7 +4,6 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
-    "name": "Lambda.pattern.app",
     "kind": "const",
     "dynamic_arity": false,
     "styles": [
@@ -40,6 +39,7 @@
       ],
       "urls": []
     },
-    "tags": []
+    "tags": [],
+    "name": "Lambda.pattern.app"
   }
 }

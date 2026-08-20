@@ -7187,6 +7187,45 @@
       }
     },
     {
+      "id": "dep.Type.ppt.pi-judge.Type.rl.judge",
+      "from": "Type.ppt.pi-judge",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.ppt.pi-judge.Type.rl.pi",
+      "from": "Type.ppt.pi-judge",
+      "to": "Type.rl.pi",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.Pi"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.ppt.pi-judge.Type.rl.univ",
+      "from": "Type.ppt.pi-judge",
+      "to": "Type.rl.univ",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Type.rl.Expr-LC.Type.def.nat",
       "from": "Type.rl.Expr-LC",
       "to": "Type.def.nat",
