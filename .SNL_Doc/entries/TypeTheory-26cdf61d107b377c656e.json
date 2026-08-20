@@ -7,9 +7,24 @@
     "id": "Type.axm.ProofIrrelevance",
     "package": "TypeTheory",
     "kind": "axiom",
-    "title": "证明无关性",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Proof Irrelevance",
+        "zh-CN": "证明无关性"
+      }
+    },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@P,Proposition),Type.judge(list-partial[formula](@h_1,@h_2),P)),Eq(h_1,h_2))"
+      "snl": "thm-hyp(list-partial(Type.judge(Type.emptyContext,@P,Proposition),Type.judge(Type.emptyContext,@h_1,P),Type.judge(Type.emptyContext,@h_2,P)),Eq(h_1,h_2))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Proof irrelevance asserts that any two proofs h₁ and h₂ of the same proposition P are equal. Here it is presented explicitly as an axiom. Lean builds proof irrelevance into its kernel; other CIC-style systems may require a separate principle. It does not follow from impredicativity alone.",
+          "zh-CN": "证明无关性断言：同一命题 P 的任意两个证明 h₁ 与 h₂ 都相等。此处将它明确表述为一条公理。Lean 将证明无关性内建于内核中；其他 CIC 风格系统可能需要额外原则。证明无关性并不能仅由非直谓性推出。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null

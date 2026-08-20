@@ -47,7 +47,7 @@ observed_doc_manifest = {
     for path in sorted(DOC.rglob("*")) if path.is_file()
 }
 assert observed_doc_manifest == DOC_MANIFEST["canonical_files"], "complete canonical .SNL_Doc manifest drift"
-EXPECTED_ENTRIES = 524  # latest TypeTheory notes plus managed inductive entries
+EXPECTED_ENTRIES = 528  # latest TypeTheory notes plus managed inductive entries
 EXPECTED_MACROS = 482  # includes structured pattern-matching and lambda-shift terminology
 EXPECTED_PLACEHOLDERS = {
     "Type.def.iota-reduction": {
@@ -286,10 +286,11 @@ for entry in entries.values():
     snl = ((entry.get("content") or {}).get("snl") or "")
     for name in semantic_counts:
         semantic_counts[name] += len(call_pattern(name).findall(snl))
-assert semantic_counts == {"Type.judge": 15, "Type.annotation": 379, "Type.declaration": 32, "Syntax.hasCategory": 22, "Syntax.constructor": 12}, semantic_counts
+assert semantic_counts == {"Type.judge": 20, "Type.annotation": 379, "Type.declaration": 32, "Syntax.hasCategory": 23, "Syntax.constructor": 12}, semantic_counts
 object_judgement_entries = {
     "Type.rl.judge", "Type.rl.fun", "Type.rl.pi", "Type.ppt.pi-judge",
     "Type.ppt.PropImpredicativePi", "Type.rmk.PropUniverseBehavior", "Type.rl.judge",
+    "Type.axm.ProofIrrelevance", "Type.thm.GirardParadox", "Logic.axm.em",
 }
 actual_object_judgement_entries = {
     entry_id for entry_id, entry in entries.items()
@@ -557,6 +558,9 @@ for spec in PLAN["requested_entries"]:
         expected_content["markdown"] = {"type": "i18n", "default_language": "en", "values": content_spec["markdown"]}
     assert entry.get("content") == expected_content, f"wrong requested Entry content: {spec['id']}"
     assert i18n_values(entry["title"], f"requested Entry {spec['id']} title") == spec["title"]
+    if "schema_version" in spec:
+        envelope = strict_json_loads(entry_paths[spec["id"]].read_text(encoding="utf-8"))
+        assert envelope.get("schema_version") == spec["schema_version"], f"wrong requested Entry envelope schema: {spec['id']}"
 
 for update in PLAN.get("entry_updates", []):
     entry = entries.get(update["id"])
@@ -736,6 +740,30 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
         seen.add(node_id)
         stack.extend(outgoing[node_id])
     assert seen == node_id_set, f"cycle or unreachable graph node in {graph_path}: {sorted(node_id_set - seen)}"
+
+    # Explicit adoption controls are exact graph authority, not placement hints.
+    for spec in PLAN["requested_entries"]:
+        if not ({"schema_version", "graph_node_id", "replace_parent"} & set(spec)):
+            continue
+        matching_nodes = [node for node in nodes if node.get("props", {}).get("entryId") == spec["id"]]
+        if not matching_nodes:
+            continue
+        if "graph_node_id" in spec:
+            assert len(matching_nodes) == 1 and matching_nodes[0]["id"] == spec["graph_node_id"], f"pinned graph node drift: {spec['id']}"
+        if spec.get("replace_parent"):
+            child_node_ids = {node["id"] for node in matching_nodes}
+            incoming = [rel for rel in relationships if rel.get("to") in child_node_ids and rel.get("label") == "branch"]
+            by_node_id = {node["id"]: node for node in nodes}
+            parent_entries = {by_node_id[rel["from"]].get("props", {}).get("entryId") for rel in incoming}
+            assert parent_entries == {spec["parent_entry_id"]} and len(incoming) == len(matching_nodes), f"noncanonical parent for {spec['id']}: {sorted(parent_entries)}"
+        expected_counter_ids = set()
+        counter_stack = counters[:]
+        while counter_stack:
+            counter = counter_stack.pop()
+            if str(counter.get("name", "")).casefold() == spec["graph_level"].casefold():
+                expected_counter_ids.add(counter["id"])
+            counter_stack.extend(counter.get("children", []))
+        assert len(expected_counter_ids) == 1 and all(node.get("props", {}).get("counterId") in expected_counter_ids for node in matching_nodes), f"requested Entry counter drift: {spec['id']}"
 
 # Explicit counter repairs hold on every occurrence of the adopted Entry.
 for repair in PLAN.get("graph_counter_repairs", []):

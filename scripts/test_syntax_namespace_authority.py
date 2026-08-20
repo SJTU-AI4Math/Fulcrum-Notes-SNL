@@ -72,6 +72,22 @@ def main() -> None:
     finally:
         shutil.rmtree(path)
 
+    # An adopted manual Entry remains load-bearing in the semantic authority.
+    path = predecessor_sandbox()
+    try:
+        plan_path = path / "scripts" / "fulcrum-inductive-subentries.json"
+        value = json.loads(plan_path.read_text())
+        value["requested_entries"] = [item for item in value["requested_entries"] if item["id"] != "Type.axm.ProofIrrelevance"]
+        plan_path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+        first = run(path, "python3", "scripts/apply_syntax_namespace.py")
+        assert first.returncode == 0, first.stdout + first.stderr
+        before = tree_digest(path / ".SNL_Doc")
+        second = run(path, "python3", "scripts/apply_fulcrum_i18n_inductives.py")
+        assert second.returncode != 0, "deleted adopted requested Entry was accepted"
+        assert tree_digest(path / ".SNL_Doc") == before, "deleted adopted requested Entry mutated the filesystem before rejection"
+    finally:
+        shutil.rmtree(path)
+
     # Valid canonical replay is byte-idempotent across the complete two-stage pipeline.
     path = sandbox()
     try:
@@ -178,7 +194,7 @@ def main() -> None:
     optimized = run(ROOT, "python3", "-O", "scripts/apply_syntax_namespace.py")
     assert optimized.returncode != 0 and "must run without Python optimization" in (optimized.stdout + optimized.stderr)
 
-    print(json.dumps({"status": "PASS", "idempotent_rounds": 2, "mutation_probes": 9, "pristine_replay": True, "python_O_rejected": True}))
+    print(json.dumps({"status": "PASS", "idempotent_rounds": 2, "mutation_probes": 10, "pristine_replay": True, "python_O_rejected": True}))
 
 
 if __name__ == "__main__":

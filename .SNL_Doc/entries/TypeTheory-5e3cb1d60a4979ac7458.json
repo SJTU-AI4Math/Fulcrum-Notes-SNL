@@ -7,9 +7,24 @@
     "id": "Logic.axm.em",
     "package": "TypeTheory",
     "kind": "axiom",
-    "title": "排中律",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Law of Excluded Middle",
+        "zh-CN": "排中律"
+      }
+    },
     "content": {
-      "snl": "thm-hyp(Type.judge(@P,Proposition),Logic.or(P,Logic.neg(P)))"
+      "snl": "thm-hyp(Type.judge(Type.emptyContext,@P,Proposition),Logic.or(P,Logic.neg(P)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The law of excluded middle asserts P ∨ ¬P for every proposition P. It is a classical axiom: it is not derivable in intuitionistic dependent type theory and is not a consequence of an impredicative Prop.",
+          "zh-CN": "排中律断言每个命题 P 都满足 P ∨ ¬P。它是一条经典逻辑公理：在直觉主义依赖类型论中不可导出，也不能由非直谓 Prop 本身推出。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null

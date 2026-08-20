@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-struct(Type.InductiveInfo,struct[enumerate](Type.judge(%语境%,%一族类型声明%),Type.judge(%被声明类型表达式%,Type.Expr),Type.judge(%诸构造子声明%,List(Type.ConstructorInfo))))",
+      "snl": "def-struct(Type.InductiveInfo,struct[enumerate](member[colon](%declaration context%,Type.DeclarationContext),member[colon](%type expression%,Type.TypeExpression),member[colon](%constructor declarations%,List(Type.ConstructorInfo))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

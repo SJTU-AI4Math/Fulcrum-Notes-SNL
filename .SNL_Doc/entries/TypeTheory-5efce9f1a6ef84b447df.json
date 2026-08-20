@@ -7,9 +7,24 @@
     "id": "Type.thm.GirardParadox",
     "package": "TypeTheory",
     "kind": "theorem",
-    "title": "Girard 悖论",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Girard's Paradox",
+        "zh-CN": "Girard 悖论"
+      }
+    },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@$\\mathcal{U}$,Type.Expr),Type.ctx-judge(@$\\Gamma$,$\\mathcal{U}$,$\\mathcal{U}$)),Logic.false)"
+      "snl": "thm-hyp(list-partial(Syntax.hasCategory(@$\\mathcal{U}$,Type.TypeExpression),Type.judge(Type.emptyContext,$\\mathcal{U}$,$\\mathcal{U}$)),Logic.false)",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "In a dependent type theory with the dependent-product closure required by Girard's diagonal construction, allowing a universe 𝒰 to inhabit itself makes the theory inconsistent; in particular, False is derivable. Bare self-membership without the required product structure is not by itself the theorem. A predicative hierarchy avoids the cycle by placing Type u in Type (u+1).",
+          "zh-CN": "在具备 Girard 对角构造所需依赖积闭包的依赖类型论中，若允许宇宙 𝒰 属于自身，则该理论不一致；特别地，可以推出 False。若缺少所需的依赖积结构，仅有自身归属并不足以得到该定理。直谓宇宙层级通过令 Type u 属于 Type (u+1) 来避免这一循环。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null

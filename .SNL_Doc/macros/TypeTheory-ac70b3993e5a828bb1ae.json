@@ -18,8 +18,8 @@
         "style_name": "default",
         "tags": [],
         "template": {
-          "mode": "text",
-          "body": "构造子信息",
+          "mode": "formula_inline",
+          "body": "\\mathsf{ConstructorInfo}",
           "typst": {
             "built_in": "",
             "synthesis": {

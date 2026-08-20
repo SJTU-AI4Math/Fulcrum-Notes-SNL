@@ -57,11 +57,11 @@
       }
     },
     {
-      "id": "n_92",
+      "id": "n_6",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.IP-rec",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+        "entryId": "Type.sec.CIC",
+        "counterId": "41a2a398-9174-4ba0-b6ad-24ab613f44ae"
       }
     },
     {
@@ -889,11 +889,11 @@
       }
     },
     {
-      "id": "n_6",
+      "id": "n_67",
       "label": "Entry",
       "props": {
-        "entryId": "Type.sec.CIC",
-        "counterId": "41a2a398-9174-4ba0-b6ad-24ab613f44ae"
+        "entryId": "Type.subsec.ImpredicativeProposition",
+        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
       }
     },
     {
@@ -1372,7 +1372,7 @@
       "label": "Entry",
       "props": {
         "entryId": "Type.rmk.PropElimination",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
     {
@@ -1380,7 +1380,7 @@
       "label": "Entry",
       "props": {
         "entryId": "Type.rmk.PropProofIrrelevance",
-        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
     {
@@ -1391,18 +1391,19 @@
       }
     },
     {
-      "id": "n_67",
+      "id": "n_92",
       "label": "Entry",
       "props": {
-        "entryId": "Type.subsec.ImpredicativeProposition",
-        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
+        "entryId": "Type.def.IP-rec",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
       "id": "n_93",
       "label": "Entry",
       "props": {
-        "entryId": "Type.axm.ProofIrrelevance"
+        "entryId": "Type.axm.ProofIrrelevance",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
     {
@@ -1414,17 +1415,11 @@
       }
     },
     {
-      "id": "n_95",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.rmk.Girard"
-      }
-    },
-    {
       "id": "n_96",
       "label": "Entry",
       "props": {
-        "entryId": "Logic.axm.em"
+        "entryId": "Logic.axm.em",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     }
   ],
@@ -1840,6 +1835,21 @@
       "label": "branch"
     },
     {
+      "from": "n_51",
+      "to": "n_84",
+      "label": "branch"
+    },
+    {
+      "from": "n_51",
+      "to": "n_85",
+      "label": "branch"
+    },
+    {
+      "from": "n_51",
+      "to": "n_96",
+      "label": "branch"
+    },
+    {
       "from": "n_21",
       "to": "n_59",
       "label": "branch"
@@ -2075,6 +2085,11 @@
       "label": "branch"
     },
     {
+      "from": "n_8",
+      "to": "n_67",
+      "label": "branch"
+    },
+    {
       "from": "n_sub_4b375342d840",
       "to": "n_sub_50788dc3f963",
       "label": "branch"
@@ -2155,6 +2170,11 @@
       "label": "branch"
     },
     {
+      "from": "n_66",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
       "from": "n_74",
       "to": "n_76",
       "label": "branch"
@@ -2182,16 +2202,6 @@
     {
       "from": "n_16",
       "to": "n_1",
-      "label": "branch"
-    },
-    {
-      "from": "n_51",
-      "to": "n_84",
-      "label": "branch"
-    },
-    {
-      "from": "n_51",
-      "to": "n_85",
       "label": "branch"
     },
     {
@@ -2275,38 +2285,18 @@
       "label": "branch"
     },
     {
-      "from": "n_92",
-      "to": "n_sub_ed0fc8ded5b4",
-      "label": "branch"
-    },
-    {
       "from": "n_67",
       "to": "n_93",
       "label": "branch"
     },
     {
+      "from": "n_92",
+      "to": "n_sub_ed0fc8ded5b4",
+      "label": "branch"
+    },
+    {
       "from": "n_93",
       "to": "n_sub_46f14a0f6ad4",
-      "label": "branch"
-    },
-    {
-      "from": "n_6",
-      "to": "n_67",
-      "label": "branch"
-    },
-    {
-      "from": "n_66",
-      "to": "n_5",
-      "label": "branch"
-    },
-    {
-      "from": "n_94",
-      "to": "n_95",
-      "label": "branch"
-    },
-    {
-      "from": "n_51",
-      "to": "n_96",
       "label": "branch"
     }
   ]

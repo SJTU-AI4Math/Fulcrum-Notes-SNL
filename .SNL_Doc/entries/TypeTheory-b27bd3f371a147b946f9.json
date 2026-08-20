@@ -7,8 +7,24 @@
     "id": "Type.def.IP-rec",
     "package": "TypeTheory",
     "kind": "definition",
-    "title": "非直谓命题类型消去子",
-    "content": {},
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Impredicative Proposition Eliminator",
+        "zh-CN": "非直谓命题类型消去子"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "This entry names the elimination principle associated with an impredicative proposition sort. Its exact type is system-dependent: elimination into Prop is generally available, while elimination into data-bearing Type universes is restricted, with only system-specific empty or singleton-like exceptions. No unrestricted recursor into Type is asserted here.",
+          "zh-CN": "本条目指称与非直谓命题 sort 相联系的消去原则。其确切类型取决于具体系统：通常可以消去到 Prop，而消去到携带数据的 Type 宇宙会受到限制，仅可能存在依系统而定的空命题或近似单构造子例外。此处不主张存在可无条件消去到 Type 的递归子。"
+        }
+      }
+    },
     "contribution_info": null,
     "pointer": null
   }

@@ -90,7 +90,7 @@ def _package_manifest(value: object, expected_id: str, label: str) -> None:
 
 
 _PLAN_LIST_FIELDS = {
-    "requested_entries": {"accepted_content", "accepted_packages", "after_entry_id", "content", "existing", "graph_level", "id", "kind", "package", "parent_entry_id", "parent_node_ids", "title"},
+    "requested_entries": {"accepted_content", "accepted_packages", "accepted_titles", "after_entry_id", "content", "existing", "graph_level", "graph_node_id", "id", "kind", "package", "parent_entry_id", "parent_node_ids", "replace_parent", "schema_version", "title"},
     "entry_updates": {"accepted_content_snl", "content_snl", "id"},
     "inductive_types": {"accepted_packages", "constructors", "existing", "ordered_children", "package", "parent_entry_id", "recursor"},
     "graph_references": {"after_entry_id", "entry_id", "graph_level", "parent_entry_id"},
@@ -208,6 +208,22 @@ def validate_authorities(i18n: object, plan: object, entry_packages: object, exp
 
     for index, spec in enumerate(plan["requested_entries"]):
         _locale_projection(spec["title"], f"requested_entries[{index}].title")
+        if "schema_version" in spec:
+            _require(type(spec["schema_version"]) is int and spec["schema_version"] == 1, f"requested_entries[{index}].schema_version must be integer 1")
+        if "graph_node_id" in spec:
+            _require(isinstance(spec["graph_node_id"], str) and spec["graph_node_id"], f"requested_entries[{index}].graph_node_id must be a nonempty string")
+        if "replace_parent" in spec:
+            _require(type(spec["replace_parent"]) is bool, f"requested_entries[{index}].replace_parent must be a boolean")
+        if "accepted_titles" in spec:
+            _require(isinstance(spec["accepted_titles"], list), f"requested_entries[{index}].accepted_titles must be a list")
+            for predecessor_index, predecessor in enumerate(spec["accepted_titles"]):
+                label = f"requested_entries[{index}].accepted_titles[{predecessor_index}]"
+                if isinstance(predecessor, str):
+                    _require(bool(predecessor), f"{label} must be nonempty")
+                else:
+                    predecessor = _required(predecessor, {"type", "default_language", "values"}, {"type", "default_language", "values"}, label)
+                    _require(predecessor["type"] == "i18n" and predecessor["default_language"] in {"en", "zh-CN"}, f"{label} has invalid metadata")
+                    _locale_projection(predecessor["values"], f"{label}.values")
         content = _known(spec.get("content", {}), {"snl", "markdown"}, f"requested_entries[{index}].content")
         if "markdown" in content:
             _locale_projection(content["markdown"], f"requested_entries[{index}].content.markdown")
@@ -219,6 +235,8 @@ def validate_authorities(i18n: object, plan: object, entry_packages: object, exp
                     _require(isinstance(predecessor["snl"], str), f"requested_entries[{index}].accepted_content[{predecessor_index}].snl must be a string")
                 if "markdown" in predecessor:
                     _locale_projection(predecessor["markdown"], f"requested_entries[{index}].accepted_content[{predecessor_index}].markdown")
+    pinned_graph_node_ids = [spec["graph_node_id"] for spec in plan["requested_entries"] if "graph_node_id" in spec]
+    _require(len(pinned_graph_node_ids) == len(set(pinned_graph_node_ids)), "requested_entries graph_node_id values must be unique")
     for index, inductive in enumerate(plan["inductive_types"]):
         for child_kind, children in (("constructors", inductive["constructors"]), ("recursor", [inductive["recursor"]])):
             for child_index, child in enumerate(children):
@@ -275,7 +293,11 @@ def validate_authorities(i18n: object, plan: object, entry_packages: object, exp
         _require(len(entry_ids) == len(set(entry_ids)), f"Entry Package assignments.{package_id} contains duplicates")
     for package_id, spec in entry_packages["manifests"].items():
         _require(isinstance(package_id, str) and package_id, "Entry Package manifest ID must be a nonempty string")
-        spec = _required(spec, {"accepted_predecessor", "canonical"}, {"accepted_predecessor", "canonical"}, f"Entry Package manifest authority {package_id}")
+        spec = _required(spec, {"accepted_predecessor", "canonical"}, {"accepted_parallel_predecessors", "accepted_predecessor", "canonical"}, f"Entry Package manifest authority {package_id}")
         for state, manifest in (("canonical", spec["canonical"]), ("accepted_predecessor", spec.get("accepted_predecessor"))):
             if manifest is not None:
                 _package_manifest(manifest, package_id, f"Entry Package manifest {package_id}.{state}")
+        parallel = spec.get("accepted_parallel_predecessors", [])
+        _require(isinstance(parallel, list), f"Entry Package manifest {package_id}.accepted_parallel_predecessors must be a list")
+        for predecessor_index, manifest in enumerate(parallel):
+            _package_manifest(manifest, package_id, f"Entry Package manifest {package_id}.accepted_parallel_predecessors[{predecessor_index}]")

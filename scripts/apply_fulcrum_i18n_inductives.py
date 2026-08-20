@@ -299,7 +299,7 @@ for path in sorted((DOC / "packages").glob("*.json")):
     assert package_id in manifest_specs, f"unplanned Entry Package: {package_id}"
     assert package_id not in existing_package_manifests
     assert path == DOC / "packages" / f"{package_id}-{identity_hash('package', package_id)}.json"
-    accepted = [manifest_specs[package_id]["canonical"]]
+    accepted = [manifest_specs[package_id]["canonical"], *manifest_specs[package_id].get("accepted_parallel_predecessors", [])]
     predecessor = manifest_specs[package_id].get("accepted_predecessor")
     if predecessor is not None:
         accepted.append(predecessor)
@@ -757,10 +757,17 @@ for spec in new_specs:
             accepted_content.append(normalized_predecessor)
         assert entry["package"] in spec.get("accepted_packages", [spec["package"]])
         assert entry["kind"] in spec.get("accepted_kind", [spec["kind"]]), f"stale Entry kind: {entry_id}"
+        if "accepted_titles" in spec:
+            assert entry.get("title") in [localized(spec["title"]), *spec["accepted_titles"]], f"unaccepted requested Entry title drift: {entry_id}"
         assert entry.get("content") in [expected_content, *accepted_content], f"unaccepted requested Entry content drift: {entry_id}"
         entry["kind"] = spec["kind"]
         entry["title"] = localized(spec["title"])
         entry["content"] = expected_content
+        if "schema_version" in spec:
+            entry_envelopes[entry_id] = {
+                "format": "snl-entry", "version": 1, "schema_version": spec["schema_version"],
+                "package": entry_envelopes[entry_id]["package"], "entry": entry,
+            }
         continue
     package_id = spec["package"]
     entry = {
@@ -773,6 +780,8 @@ for spec in new_specs:
         "pointer": None
     }
     envelope = {"format": "snl-entry", "version": 1, "package": package_id, "entry": entry}
+    if "schema_version" in spec:
+        envelope = {"format": "snl-entry", "version": 1, "schema_version": spec["schema_version"], "package": package_id, "entry": entry}
     path = DOC / "entries" / f"{package_id}-{identity_hash('entry', package_id, entry_id)}.json"
     entries[entry_id] = entry
     entry_paths[entry_id] = path
@@ -862,11 +871,11 @@ generated_child_ids = {
 immediate_requested = [spec for spec in plan["requested_entries"] if spec.get("after_entry_id") not in generated_child_ids]
 deferred_requested = [spec for spec in plan["requested_entries"] if spec.get("after_entry_id") in generated_child_ids]
 relations = [
-    (spec["parent_entry_id"], spec["id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"))
+    (spec["parent_entry_id"], spec["id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"), spec.get("graph_node_id"), spec.get("replace_parent", False))
     for spec in immediate_requested
 ]
 relations.extend(
-    (spec["parent_entry_id"], spec["entry_id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"))
+    (spec["parent_entry_id"], spec["entry_id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"), None, False)
     for spec in plan.get("graph_references", [])
 )
 for inductive in plan["inductive_types"]:
@@ -874,14 +883,14 @@ for inductive in plan["inductive_types"]:
     relations.extend(
         (
             inductive["parent_entry_id"], child["id"], "subentry", None,
-            children[index - 1]["id"] if inductive.get("ordered_children") and index else None
+            children[index - 1]["id"] if inductive.get("ordered_children") and index else None, None, False
         )
         for index, child in enumerate(children)
     )
     if not inductive.get("existing"):
         managed_new_entry_ids.update(child["id"] for child in children if not child.get("reuse"))
 relations.extend(
-    (spec["parent_entry_id"], spec["id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"))
+    (spec["parent_entry_id"], spec["id"], spec["graph_level"], spec.get("parent_node_ids"), spec.get("after_entry_id"), spec.get("graph_node_id"), spec.get("replace_parent", False))
     for spec in deferred_requested
 )
 
@@ -898,8 +907,11 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
     }
     if detached_entry_ids:
         detached_node_ids = {node["id"] for node in nodes if node.get("props", {}).get("entryId") in detached_entry_ids}
-        assert not detached_node_ids, f"detached graph entries unexpectedly present in {graph_path}: {sorted(detached_node_ids)}"
-    for parent_entry_id, child_entry_id, level, allowed_parent_node_ids, after_entry_id in relations:
+        if detached_node_ids:
+            nodes[:] = [node for node in nodes if node["id"] not in detached_node_ids]
+            relationships[:] = [rel for rel in relationships if rel.get("from") not in detached_node_ids and rel.get("to") not in detached_node_ids]
+            changed = True
+    for parent_entry_id, child_entry_id, level, allowed_parent_node_ids, after_entry_id, pinned_graph_node_id, replace_parent in relations:
         if child_entry_id in detached_entry_ids:
             continue
         if after_entry_id in detached_entry_ids:
@@ -929,10 +941,19 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
         if allowed_parent_node_ids is not None and not parent_nodes:
             continue
         assert parent_nodes, f"selected parent node missing for {parent_entry_id} -> {child_entry_id} in {graph_path}"
+        if replace_parent and child_nodes:
+            child_node_ids = {node["id"] for node in child_nodes}
+            canonical_parent_node_ids = {node["id"] for node in parent_nodes}
+            filtered = [rel for rel in relationships if not (
+                rel.get("to") in child_node_ids and rel.get("label") == "branch" and rel.get("from") not in canonical_parent_node_ids
+            )]
+            if filtered != relationships:
+                relationships[:] = filtered
+                changed = True
         if not child_nodes:
             counter_id = ensure_counter(graph_path.parent / "counters.json", level)
             child_node = {
-                "id": node_id_for(child_entry_id),
+                "id": pinned_graph_node_id or node_id_for(child_entry_id),
                 "label": "Entry",
                 "props": {"entryId": child_entry_id, "counterId": counter_id}
             }
@@ -940,6 +961,8 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
             nodes.append(child_node)
             child_nodes = [child_node]
             changed = True
+        if pinned_graph_node_id is not None:
+            assert len(child_nodes) == 1 and child_nodes[0]["id"] == pinned_graph_node_id, f"pinned graph node drift for {child_entry_id} in {graph_path}"
         expected_counter_id = ensure_counter(graph_path.parent / "counters.json", level)
         for child_node in child_nodes:
             props = child_node.setdefault("props", {})

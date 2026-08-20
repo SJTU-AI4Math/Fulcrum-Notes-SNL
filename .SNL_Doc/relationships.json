@@ -3672,6 +3672,19 @@
         "macros": [
           "Type.to"
         ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Logic.axm.em.Fulcrum.thm",
+      "from": "Logic.axm.em",
+      "to": "Fulcrum.thm",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "thm-hyp"
+        ],
         "isAtomic": true
       }
     },
@@ -3712,6 +3725,19 @@
           "Proposition"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Logic.axm.em.Type.def.ctx",
+      "from": "Logic.axm.em",
+      "to": "Type.def.ctx",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.emptyContext"
+        ],
+        "isAtomic": true
       }
     },
     {
@@ -5848,45 +5874,6 @@
       }
     },
     {
-      "id": "dep.Type.axm.ProofIrrelevance.Logic.def.eq",
-      "from": "Type.axm.ProofIrrelevance",
-      "to": "Logic.def.eq",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Eq"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Type.axm.ProofIrrelevance.Logic.def.proposition",
-      "from": "Type.axm.ProofIrrelevance",
-      "to": "Logic.def.proposition",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Proposition"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Type.axm.ProofIrrelevance.Type.rl.judge",
-      "from": "Type.axm.ProofIrrelevance",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
       "id": "dep.Syntax.def.expression-STLC.Syntax.def.signatureFragment",
       "from": "Syntax.def.expression-STLC",
       "to": "Syntax.def.signatureFragment",
@@ -6624,6 +6611,71 @@
         "generator": "macro-source-scan",
         "macros": [
           "Topology.topology"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.axm.ProofIrrelevance.Fulcrum.thm",
+      "from": "Type.axm.ProofIrrelevance",
+      "to": "Fulcrum.thm",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "thm-hyp"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.axm.ProofIrrelevance.Logic.def.eq",
+      "from": "Type.axm.ProofIrrelevance",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.axm.ProofIrrelevance.Logic.def.proposition",
+      "from": "Type.axm.ProofIrrelevance",
+      "to": "Logic.def.proposition",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Proposition"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.axm.ProofIrrelevance.Type.def.ctx",
+      "from": "Type.axm.ProofIrrelevance",
+      "to": "Type.def.ctx",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.emptyContext"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.axm.ProofIrrelevance.Type.rl.judge",
+      "from": "Type.axm.ProofIrrelevance",
+      "to": "Type.rl.judge",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.judge"
         ],
         "isAtomic": true
       }
@@ -7448,19 +7500,6 @@
       }
     },
     {
-      "id": "dep.Type.def.inductiveInfo.Fulcrum.def",
-      "from": "Type.def.inductiveInfo",
-      "to": "Fulcrum.def",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "def"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
       "id": "dep.Type.def.inductiveInfo.Type.def.ctorInfo",
       "from": "Type.def.inductiveInfo",
       "to": "Type.def.ctorInfo",
@@ -7484,19 +7523,6 @@
           "List"
         ],
         "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Type.def.inductiveInfo.Type.rl.judge",
-      "from": "Type.def.inductiveInfo",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": false
       }
     },
     {
@@ -8124,6 +8150,19 @@
       }
     },
     {
+      "id": "dep.Type.thm.GirardParadox.Fulcrum.thm",
+      "from": "Type.thm.GirardParadox",
+      "to": "Fulcrum.thm",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "thm-hyp"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Type.thm.GirardParadox.Logic.def.false",
       "from": "Type.thm.GirardParadox",
       "to": "Logic.def.false",
@@ -8137,6 +8176,19 @@
       }
     },
     {
+      "id": "dep.Type.thm.GirardParadox.Syntax.def.signatureFragment",
+      "from": "Type.thm.GirardParadox",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.hasCategory"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Type.thm.GirardParadox.Type.def.ctx",
       "from": "Type.thm.GirardParadox",
       "to": "Type.def.ctx",
@@ -8144,7 +8196,20 @@
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.ctx"
+          "Type.emptyContext"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.thm.GirardParadox.Type.def.inductiveInfo",
+      "from": "Type.thm.GirardParadox",
+      "to": "Type.def.inductiveInfo",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.TypeExpression"
         ],
         "isAtomic": true
       }

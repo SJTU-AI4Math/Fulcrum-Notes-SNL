@@ -677,12 +677,20 @@
       "graph_level": "entry",
       "existing": true,
       "accepted_content": [
-        {}
+        {},
+        {
+          "snl": "def-struct(Type.InductiveInfo,struct[enumerate](Type.judge(%语境%,%一族类型声明%),Type.judge(%被声明类型表达式%,Type.Expr),Type.judge(%诸构造子声明%,List(Type.ConstructorInfo))))",
+          "markdown": {
+            "en": "An inductive declaration records a declaration context Γ, a type expression for the new family I, and a finite list of constructor declarations cᵢ : Cᵢ. The context contains parameters and indices available to the family. Keeping each constructor type as a separate ConstructorInfo makes the result-type and strict-positivity checks local to that constructor.",
+            "zh-CN": "一个归纳声明记录声明语境 Γ、新类型族 I 的类型表达式，以及有限个构造子声明 cᵢ : Cᵢ。语境包含类型族可用的参数与指标。把每个构造子类型分别保存为 ConstructorInfo，可使结果类型检查与严格正性检查逐个构造子进行。"
+          }
+        }
       ],
       "accepted_packages": [
         "TypeTheory"
       ],
-      "after_entry_id": null
+      "after_entry_id": null,
+      "schema_version": 1
     },
     {
       "id": "Type.def.ctorInfo",
@@ -933,6 +941,122 @@
       ]
     },
     {
+      "id": "Type.def.IP-rec",
+      "package": "TypeTheory",
+      "kind": "definition",
+      "title": {
+        "en": "Impredicative Proposition Eliminator",
+        "zh-CN": "非直谓命题类型消去子"
+      },
+      "content": {
+        "markdown": {
+          "en": "This entry names the elimination principle associated with an impredicative proposition sort. Its exact type is system-dependent: elimination into Prop is generally available, while elimination into data-bearing Type universes is restricted, with only system-specific empty or singleton-like exceptions. No unrestricted recursor into Type is asserted here.",
+          "zh-CN": "本条目指称与非直谓命题 sort 相联系的消去原则。其确切类型取决于具体系统：通常可以消去到 Prop，而消去到携带数据的 Type 宇宙会受到限制，仅可能存在依系统而定的空命题或近似单构造子例外。此处不主张存在可无条件消去到 Type 的递归子。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
+      "graph_level": "entry",
+      "after_entry_id": "Type.rmk.PropUniverseBehavior",
+      "accepted_content": [
+        {}
+      ],
+      "accepted_titles": [
+        "非直谓命题类型消去子"
+      ],
+      "schema_version": 1,
+      "graph_node_id": "n_92",
+      "replace_parent": true
+    },
+    {
+      "id": "Type.axm.ProofIrrelevance",
+      "package": "TypeTheory",
+      "kind": "axiom",
+      "title": {
+        "en": "Proof Irrelevance",
+        "zh-CN": "证明无关性"
+      },
+      "content": {
+        "snl": "thm-hyp(list-partial(Type.judge(Type.emptyContext,@P,Proposition),Type.judge(Type.emptyContext,@h_1,P),Type.judge(Type.emptyContext,@h_2,P)),Eq(h_1,h_2))",
+        "markdown": {
+          "en": "Proof irrelevance asserts that any two proofs h₁ and h₂ of the same proposition P are equal. Here it is presented explicitly as an axiom. Lean builds proof irrelevance into its kernel; other CIC-style systems may require a separate principle. It does not follow from impredicativity alone.",
+          "zh-CN": "证明无关性断言：同一命题 P 的任意两个证明 h₁ 与 h₂ 都相等。此处将它明确表述为一条公理。Lean 将证明无关性内建于内核中；其他 CIC 风格系统可能需要额外原则。证明无关性并不能仅由非直谓性推出。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
+      "graph_level": "entry",
+      "after_entry_id": "Type.def.IP-rec",
+      "accepted_content": [
+        {
+          "snl": "thm-hyp(list-partial(Type.judge(@P,Proposition),Type.judge(list-partial[formula](@h_1,@h_2),P)),Eq(h_1,h_2))"
+        }
+      ],
+      "accepted_titles": [
+        "证明无关性"
+      ],
+      "schema_version": 1,
+      "graph_node_id": "n_93",
+      "replace_parent": true
+    },
+    {
+      "id": "Type.thm.GirardParadox",
+      "package": "TypeTheory",
+      "kind": "theorem",
+      "title": {
+        "en": "Girard's Paradox",
+        "zh-CN": "Girard 悖论"
+      },
+      "content": {
+        "snl": "thm-hyp(list-partial(Syntax.hasCategory(@$\\mathcal{U}$,Type.TypeExpression),Type.judge(Type.emptyContext,$\\mathcal{U}$,$\\mathcal{U}$)),Logic.false)",
+        "markdown": {
+          "en": "In a dependent type theory with the dependent-product closure required by Girard's diagonal construction, allowing a universe 𝒰 to inhabit itself makes the theory inconsistent; in particular, False is derivable. Bare self-membership without the required product structure is not by itself the theorem. A predicative hierarchy avoids the cycle by placing Type u in Type (u+1).",
+          "zh-CN": "在具备 Girard 对角构造所需依赖积闭包的依赖类型论中，若允许宇宙 𝒰 属于自身，则该理论不一致；特别地，可以推出 False。若缺少所需的依赖积结构，仅有自身归属并不足以得到该定理。直谓宇宙层级通过令 Type u 属于 Type (u+1) 来避免这一循环。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.universe",
+      "graph_level": "entry",
+      "accepted_content": [
+        {
+          "snl": "thm-hyp(list-partial(Type.judge(@$\\mathcal{U}$,Type.Expr),Type.ctx-judge(@$\\Gamma$,$\\mathcal{U}$,$\\mathcal{U}$)),Logic.false)"
+        }
+      ],
+      "accepted_titles": [
+        "Girard 悖论"
+      ],
+      "schema_version": 1,
+      "graph_node_id": "n_94",
+      "replace_parent": true
+    },
+    {
+      "id": "Logic.axm.em",
+      "package": "TypeTheory",
+      "kind": "axiom",
+      "title": {
+        "en": "Law of Excluded Middle",
+        "zh-CN": "排中律"
+      },
+      "content": {
+        "snl": "thm-hyp(Type.judge(Type.emptyContext,@P,Proposition),Logic.or(P,Logic.neg(P)))",
+        "markdown": {
+          "en": "The law of excluded middle asserts P ∨ ¬P for every proposition P. It is a classical axiom: it is not derivable in intuitionistic dependent type theory and is not a consequence of an impredicative Prop.",
+          "zh-CN": "排中律断言每个命题 P 都满足 P ∨ ¬P。它是一条经典逻辑公理：在直觉主义依赖类型论中不可导出，也不能由非直谓 Prop 本身推出。"
+        }
+      },
+      "parent_entry_id": "Type.subsec.Curry-Howard",
+      "graph_level": "entry",
+      "after_entry_id": "Logic.def.implies",
+      "accepted_content": [
+        {
+          "snl": "thm-hyp(Type.judge(@P,Proposition),Logic.or(P,Logic.neg(P)))"
+        }
+      ],
+      "accepted_titles": [
+        "排中律"
+      ],
+      "schema_version": 1,
+      "graph_node_id": "n_96",
+      "replace_parent": true
+    },
+    {
       "id": "Type.rmk.PropElimination",
       "package": "TypeTheory",
       "kind": "remark",
@@ -947,9 +1071,8 @@
         },
         "snl": "FulcrumNotes.OneOffI18N.TypeTheory.PropElimination.Explanation"
       },
-      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
-      "graph_level": "entry",
-      "after_entry_id": "Type.rmk.PropUniverseBehavior",
+      "parent_entry_id": "Type.def.IP-rec",
+      "graph_level": "subentry",
       "accepted_content": [
         {
           "markdown": {
@@ -957,7 +1080,8 @@
             "zh-CN": "归纳命题通常可以自由消去到 Prop，但消去到携带数据的 Type 宇宙会受到限制。空命题或近似单构造子的命题可能具有更强的消去原则；具体例外取决于所采用的类型论系统。这项限制防止检查非直谓 Prop 中的任意证明并据此制造计算数据。"
           }
         }
-      ]
+      ],
+      "replace_parent": true
     },
     {
       "id": "Type.rmk.PropProofIrrelevance",
@@ -974,9 +1098,8 @@
         },
         "snl": "FulcrumNotes.OneOffI18N.TypeTheory.PropProofIrrelevance.Explanation"
       },
-      "parent_entry_id": "Type.subsec.ImpredicativeProposition",
-      "graph_level": "entry",
-      "after_entry_id": "Type.rmk.PropElimination",
+      "parent_entry_id": "Type.axm.ProofIrrelevance",
+      "graph_level": "subentry",
       "accepted_content": [
         {
           "markdown": {
@@ -984,7 +1107,8 @@
             "zh-CN": "Lean 把证明无关性内建到依定义相等中：同一命题的任意两个证明都由内核视为相等。其他 CIC 风格系统可能以不同方式提供证明无关性，或需要额外原则。无论采用哪种设计，证明无关性都不是非直谓性本身的推论，也不应被用来定义非直谓性。"
           }
         }
-      ]
+      ],
+      "replace_parent": true
     }
   ],
   "entry_updates": [
@@ -1788,8 +1912,24 @@
         "Type.rmk.predicativity",
         "Type.ppt.PropImpredicativePi",
         "Type.rmk.PropUniverseBehavior",
-        "Type.rmk.PropElimination",
-        "Type.rmk.PropProofIrrelevance"
+        "Type.def.IP-rec",
+        "Type.axm.ProofIrrelevance"
+      ]
+    },
+    {
+      "parent_entry_id": "Type.subsec.universe",
+      "entry_ids": [
+        "Type.thm.GirardParadox",
+        "Type.rl.univ"
+      ]
+    },
+    {
+      "parent_entry_id": "Type.subsec.Curry-Howard",
+      "entry_ids": [
+        "Logic.def.and",
+        "Logic.def.or",
+        "Logic.def.implies",
+        "Logic.axm.em"
       ]
     }
   ],
@@ -2365,7 +2505,12 @@
     "Syntax.def.typeExpression-STLC",
     "Type.subsec.type-inference",
     "Type.def.ctx",
-    "Type.ppt.judge-lam"
+    "Type.ppt.judge-lam",
+    "Type.def.inductiveInfo",
+    "Type.def.IP-rec",
+    "Type.axm.ProofIrrelevance",
+    "Type.thm.GirardParadox",
+    "Logic.axm.em"
   ],
   "graph_counter_repairs": [
     {
@@ -4574,7 +4719,8 @@
         "Logic.def.or.ctor.left",
         "Logic.def.or.ctor.right",
         "Logic.def.or.recursor",
-        "Syntax.def.expression-UTLC.recursor"
+        "Syntax.def.expression-UTLC.recursor",
+        "Type.rmk.Girard"
       ]
     }
   ],
@@ -6277,7 +6423,73 @@
         "tags": [],
         "name": "Type.InductiveInfo"
       },
-      "accepted_predecessors": []
+      "accepted_predecessors": [
+        {
+          "description": "Inductive declaration information",
+          "source": {
+            "entries": [
+              "Type.def.inductiveInfo"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "type": "i18n",
+                "default_language": "en",
+                "values": {
+                  "en": {
+                    "mode": "text",
+                    "body": "Inductive Type Info",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  },
+                  "zh-CN": {
+                    "mode": "text",
+                    "body": "归纳类型信息",
+                    "typst": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "latex": {
+                      "built_in": "",
+                      "synthesis": {
+                        "mode": "formula",
+                        "macro": ""
+                      }
+                    },
+                    "markdown": "",
+                    "text": ""
+                  }
+                }
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.InductiveInfo"
+        }
+      ]
     },
     {
       "name": "Type.ConstructorInfo",
@@ -6321,7 +6533,47 @@
         "tags": [],
         "name": "Type.ConstructorInfo"
       },
-      "accepted_predecessors": []
+      "accepted_predecessors": [
+        {
+          "description": "Constructor declaration information",
+          "source": {
+            "entries": [
+              "Type.def.ctorInfo"
+            ],
+            "urls": []
+          },
+          "kind": "const",
+          "dynamic_arity": false,
+          "styles": [
+            {
+              "style_name": "default",
+              "tags": [],
+              "template": {
+                "mode": "text",
+                "body": "构造子信息",
+                "typst": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "latex": {
+                  "built_in": "",
+                  "synthesis": {
+                    "mode": "formula",
+                    "macro": ""
+                  }
+                },
+                "markdown": "",
+                "text": ""
+              }
+            }
+          ],
+          "tags": [],
+          "name": "Type.ConstructorInfo"
+        }
+      ]
     },
     {
       "name": "Type.DeclarationContext",
