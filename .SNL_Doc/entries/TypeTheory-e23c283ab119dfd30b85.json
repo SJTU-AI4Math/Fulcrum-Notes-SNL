@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.rmk.signatureFragment",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Fragments Are Not Datatype Definitions",
+        "zh-CN": "签名片段不是数据类型定义"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Only the UTLC expression Entry in this library gives a complete inductive definition. Entries for other calculi are incremental presentations over assumed carriers.",
+          "zh-CN": "本 Library 中只有 UTLC 表达式条目给出完整归纳定义；其他演算的条目都是在假定载体上的增量描述。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

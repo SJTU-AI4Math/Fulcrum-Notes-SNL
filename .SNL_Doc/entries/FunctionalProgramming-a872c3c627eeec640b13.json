@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(@T,Type.to(Type.to(Type,Type),Type.to(Type,Type)))"
+      "snl": "Type.annotation(@T,Type.to(Type.to(Type,Type),Type.to(Type,Type)))"
     },
     "contribution_info": null,
     "pointer": null,

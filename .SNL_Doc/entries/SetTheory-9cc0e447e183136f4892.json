@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(list-partial(@A,@B),Set(T@Set.ctxt.T))"
+      "snl": "Type.annotation(list-partial(@A,@B),Set(T@Set.ctxt.T))"
     },
     "contribution_info": null,
     "pointer": null,

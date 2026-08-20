@@ -7,9 +7,16 @@
     "id": "Set.def.image",
     "package": "SetTheory",
     "kind": "definition",
-    "title": "映射的值域/像",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Range / Image",
+        "zh-CN": "映射的值域/像"
+      }
+    },
     "content": {
-      "snl": "def(Set.im(f@Set.ctxt.f), Set.sep(\r\n    Type.judge(@y, T@Set.ctxt.T),\r\n    Logic.exists-typed(\r\n        @x,\r\n        S@Set.ctxt.S,\r\n        Eq(Type.apply(f@Set.ctxt.f, x), y)\r\n    )\r\n))"
+      "snl": "def(Set.im(f@Set.ctxt.f), Set.sep(\r\n    Type.annotation(@y, T@Set.ctxt.T),\r\n    Logic.exists-typed(\r\n        @x,\r\n        S@Set.ctxt.S,\r\n        Eq(Type.apply(f@Set.ctxt.f, x), y)\r\n    )\r\n))"
     },
     "contribution_info": null,
     "pointer": null

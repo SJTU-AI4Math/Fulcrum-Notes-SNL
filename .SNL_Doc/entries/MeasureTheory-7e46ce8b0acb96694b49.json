@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(@$\\Sigma$,Set(Set(X)))"
+      "snl": "Type.annotation(@$\\Sigma$,Set(Set(X)))"
     },
     "contribution_info": null,
     "pointer": null,

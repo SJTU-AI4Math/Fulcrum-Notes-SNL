@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@K,Set(S@Topology.ctxt.S)),Type.judge(@C,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Logic.and(Topology.compact(K),Logic.and(Set.subset(C,K),Set.mem(Set.compl[sup](C,S@Topology.ctxt.S),τ))),Topology.compact(C)))"
+      "snl": "thm-hyp(list-partial(Type.annotation(@K,Set(S@Topology.ctxt.S)),Type.annotation(@C,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Logic.and(Topology.compact(K),Logic.and(Set.subset(C,K),Set.mem(Set.compl[sup](C,S@Topology.ctxt.S),τ))),Topology.compact(C)))"
     },
     "contribution_info": null,
     "pointer": null,

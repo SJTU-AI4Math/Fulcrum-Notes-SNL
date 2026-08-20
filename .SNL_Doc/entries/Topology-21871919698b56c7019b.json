@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@x_n,Type.to(Nat,S@Topology.ctxt.S)),Type.judge(@x,S@Topology.ctxt.S),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.seqLimit(x_n,x),Logic.forall-typed(@U,Set(S@Topology.ctxt.S),Logic.implies(Topology.neighborhood(U,x),Logic.exists-typed(@N,Nat,Logic.forall-typed(@n,Nat,Logic.implies(Logic.and(Logic.forall-typed(@k,Nat,Logic.true),Logic.true),Set.mem(Type.apply(x_n,n),U)))))))"
+      "snl": "def-hyp(list-partial(Type.annotation(@x_n,Type.to(Nat,S@Topology.ctxt.S)),Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.seqLimit(x_n,x),Logic.forall-typed(@U,Set(S@Topology.ctxt.S),Logic.implies(Topology.neighborhood(U,x),Logic.exists-typed(@N,Nat,Logic.forall-typed(@n,Nat,Logic.implies(Logic.and(Logic.forall-typed(@k,Nat,Logic.true),Logic.true),Set.mem(Type.apply(x_n,n),U)))))))"
     },
     "contribution_info": null,
     "pointer": null,

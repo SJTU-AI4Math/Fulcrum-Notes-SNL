@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Lambda.Omega,Lambda.apply(Lambda.omega,Lambda.omega))"
+      "snl": "def(Lambda.Omega,Syntax.apply-UTLC(Lambda.omega,Lambda.omega))"
     },
     "contribution_info": null,
     "pointer": null

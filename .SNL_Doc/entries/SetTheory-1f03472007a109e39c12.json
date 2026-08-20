@@ -7,7 +7,14 @@
     "id": "Set.def.domain",
     "package": "SetTheory",
     "kind": "definition",
-    "title": "定义域",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Domain",
+        "zh-CN": "定义域"
+      }
+    },
     "content": {
       "snl": "def(Set.domain(f@Set.ctxt.f), D@Set.ctxt.D)"
     },

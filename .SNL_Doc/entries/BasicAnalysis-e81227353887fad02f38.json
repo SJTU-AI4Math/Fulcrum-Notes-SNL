@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(list-partial(@F, @G), Analysis.PFun), Type.judge(@x, Real)), Analysis.equivInfinitesimal(F, G, x), Logic.and(Analysis.infinitesimal(F, x), Logic.and(Analysis.infinitesimal(G, x), Analysis.funLim(Div.div(F, G), @y, x, $1$))))",
+      "snl": "def-hyp(list-partial(Type.annotation(list-partial(@F, @G), Analysis.PFun), Type.annotation(@x, Real)), Analysis.equivInfinitesimal(F, G, x), Logic.and(Analysis.infinitesimal(F, x), Logic.and(Analysis.infinitesimal(G, x), Analysis.funLim(Div.div(F, G), @y, x, $1$))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

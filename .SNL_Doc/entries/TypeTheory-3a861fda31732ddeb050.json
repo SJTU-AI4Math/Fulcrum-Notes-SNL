@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.rmk.freeVariableOpenExpression-UTLC",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Free Variables and Openness",
+        "zh-CN": "自由变量与开放性"
+      }
+    },
+    "content": {
+      "snl": "Syntax.OneOffI18N.FreeVariable.OpenExpression(Syntax.Expr-UTLC.fvar(@x),Syntax.OpenExpr-UTLC)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.contAt(F, x), Logic.and(Set.mem(x, Analysis.domain(F)), Analysis.funLim(F, @y, x, Type.apply(Analysis.map(F), x))))",
+      "snl": "def-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real)), Analysis.contAt(F, x), Logic.and(Set.mem(x, Analysis.domain(F)), Analysis.funLim(F, @y, x, Type.apply(Analysis.map(F), x))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

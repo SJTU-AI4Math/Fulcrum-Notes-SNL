@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.annotation",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Metalinguistic Type Annotation",
+        "zh-CN": "元语言类型标注"
+      }
+    },
+    "content": {
+      "snl": "def-hyp-opq(Type.annotation(@x,@A),Type.annotation(x,A))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The colon annotation classifies an ordinary metalinguistic parameter. It is not an object-language typing derivation or a constructor declaration.",
+          "zh-CN": "冒号标注用于分类普通元语言参数，不是对象语言中的类型推导或构造子声明。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

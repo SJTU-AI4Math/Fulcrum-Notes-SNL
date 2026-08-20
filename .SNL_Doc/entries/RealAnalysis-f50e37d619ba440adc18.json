@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(@D, Set($\\mathbb{R}$))"
+      "snl": "Type.annotation(@D, Set($\\mathbb{R}$))"
     },
     "contribution_info": null,
     "pointer": null,

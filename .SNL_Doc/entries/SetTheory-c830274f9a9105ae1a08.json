@@ -7,7 +7,14 @@
     "id": "Set.subsec.map",
     "package": "SetTheory",
     "kind": "subsection",
-    "title": "集合间的映射",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Maps Between Sets",
+        "zh-CN": "集合间的映射"
+      }
+    },
     "content": {},
     "contribution_info": "Dedicatia(Temporary)",
     "pointer": null

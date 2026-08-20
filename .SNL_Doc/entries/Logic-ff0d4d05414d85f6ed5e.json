@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(list-partial(@p,@q),Proposition)"
+      "snl": "Type.annotation(list-partial(@p,@q),Proposition)"
     },
     "contribution_info": null,
     "pointer": null,

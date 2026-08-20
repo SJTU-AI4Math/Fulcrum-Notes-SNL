@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(@G,Type)"
+      "snl": "Type.annotation(@G,Type)"
     },
     "contribution_info": null,
     "pointer": null,

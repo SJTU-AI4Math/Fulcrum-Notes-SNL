@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.judge(@x,A),FP.statement(Eq(FP.pure(FP.Identity,x),x),%, and %,Eq(FP.map(FP.Identity,x,@f),Type.apply(f,x)),%, and %,Eq(FP.flatten(FP.Identity,x),x)))"
+      "snl": "thm-hyp(Type.annotation(@x,A),FP.statement(Eq(FP.pure(FP.Identity,x),x),%, and %,Eq(FP.map(FP.Identity,x,@f),Type.apply(f,x)),%, and %,Eq(FP.flatten(FP.Identity,x),x)))"
     },
     "contribution_info": null,
     "pointer": null,

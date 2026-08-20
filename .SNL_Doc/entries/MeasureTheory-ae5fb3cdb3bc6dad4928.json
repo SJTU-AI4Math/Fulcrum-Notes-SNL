@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@T,Set(Set(X@Measure.ctxt.X))),Measure.Borel(X@Measure.ctxt.X),Measure.generatedSigma(T))"
+      "snl": "def-hyp(Type.annotation(@T,Set(Set(X@Measure.ctxt.X))),Measure.Borel(X@Measure.ctxt.X),Measure.generatedSigma(T))"
     },
     "contribution_info": null,
     "pointer": null,

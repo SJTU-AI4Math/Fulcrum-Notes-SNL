@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@B,Set(Set(S@Topology.ctxt.S))),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topologicalBasis(B,τ),Logic.and(Set.subset(B,τ),Eq(Topology.generatedTopology(B),τ)))"
+      "snl": "def-hyp(list-partial(Type.annotation(@B,Set(Set(S@Topology.ctxt.S))),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topologicalBasis(B,τ),Logic.and(Set.subset(B,τ),Eq(Topology.generatedTopology(B),τ)))"
     },
     "contribution_info": null,
     "pointer": null,

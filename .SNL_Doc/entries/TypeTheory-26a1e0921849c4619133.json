@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.def.openExpression-UTLC.ctor.application",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Open Application Constructor",
+        "zh-CN": "开应用构造子"
+      }
+    },
+    "content": {
+      "snl": "def-hyp-opq(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.OpenExpr-UTLC),Syntax.Expr-UTLC.apply(a,b))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

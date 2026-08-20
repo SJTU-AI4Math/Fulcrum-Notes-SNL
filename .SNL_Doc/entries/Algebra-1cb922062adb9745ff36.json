@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@H,Set(G@Algebra.ctxt.G)), Algebra.Subgroup, Algebra.Group)"
+      "snl": "def-hyp(Type.annotation(@H,Set(G@Algebra.ctxt.G)), Algebra.Subgroup, Algebra.Group)"
     },
     "contribution_info": null,
     "pointer": null,

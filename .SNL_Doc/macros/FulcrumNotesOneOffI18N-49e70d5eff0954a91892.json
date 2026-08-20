@@ -1,0 +1,71 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumNotesOneOffI18N",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Syntax.rmk.deBruijnIndex"
+      ],
+      "urls": []
+    },
+    "kind": "sub",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "The natural-number argument of #0 is called #1 and indicates how many #2 scopes to escape outward.\nFor example, in #3, the inner \\#0 refers to $z$, \\#1 to $y$, and \\#2 to $x$; the outer \\#0 refers to $y$",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        }
+      }
+    ],
+    "tags": [],
+    "name": "Syntax.OneOffI18N.DeBruijnIndex.Explanation"
+  }
+}

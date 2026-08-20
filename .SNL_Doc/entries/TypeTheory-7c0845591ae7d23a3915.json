@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.eta(a,b)),Lambda.defeq(a,b))"
+      "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Lambda.eta(a,b)),Lambda.defeq(a,b))"
     },
     "contribution_info": null,
     "pointer": null

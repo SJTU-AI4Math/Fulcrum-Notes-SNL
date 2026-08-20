@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@x, Real)), Analysis.funLimVal(F, @y, x), Analysis.funLimVal(F, @y, x))",
+      "snl": "def-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real)), Analysis.funLimVal(F, @y, x), Analysis.funLimVal(F, @y, x))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

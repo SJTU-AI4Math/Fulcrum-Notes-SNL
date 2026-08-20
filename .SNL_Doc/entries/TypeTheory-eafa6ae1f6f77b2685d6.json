@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.def.expression-UTLC.ctor.boundVariable",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Bound Variable",
+        "zh-CN": "受束变元"
+      }
+    },
+    "content": {
+      "snl": "def-hyp-opq(Type.annotation(@n,Nat),Syntax.Expr-UTLC.bvar(n))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

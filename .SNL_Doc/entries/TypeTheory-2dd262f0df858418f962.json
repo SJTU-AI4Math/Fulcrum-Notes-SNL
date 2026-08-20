@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.def.expression-UTLC",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Closed Expression (Untyped $\\lambda$-Calculus)",
+        "zh-CN": "闭表达式（无类型 $\\lambda$-演算）"
+      }
+    },
+    "content": {
+      "snl": "def-inductive(Syntax.Expr-UTLC,ctors(Syntax.constructor(Syntax.Expr-UTLC.lambda[text],Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC)),Syntax.constructor(Syntax.Expr-UTLC.apply[text],Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC))),Syntax.constructor(Syntax.Expr-UTLC.bvar[text],Type.to(Nat,Syntax.Expr-UTLC))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

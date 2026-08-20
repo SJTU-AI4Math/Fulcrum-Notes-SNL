@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@S,Type),Topology.trivialTopology,Topology.topology(Set.sep-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.or(Eq(U,Set.emptyset[slim]),Eq(U,S@Topology.ctxt.S))),S@Topology.ctxt.S))"
+      "snl": "def-hyp(Type.annotation(@S,Type),Topology.trivialTopology,Topology.topology(Set.sep-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.or(Eq(U,Set.emptyset[slim]),Eq(U,S@Topology.ctxt.S))),S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null,

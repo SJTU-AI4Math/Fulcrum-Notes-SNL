@@ -11,11 +11,11 @@
       "default_language": "en",
       "values": {
         "en": "Homeomorphism",
-        "zh-CN": "同胚映射"
+        "zh-CN": "同胚"
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.judge(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y)),\r\n        Type.judge(@τ_X, Set(Set(X@Topology.ctxt.X))),\r\n        Type.judge(@τ_Y, Set(Set(Y@Topology.ctxt.Y)))\r\n    ),\r\n    Topology.homeomorphism(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y),\r\n    Logic.and(Logic.and(Topology.continuousMap(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y), Topology.openMap(f)), Set.bijective(f))\r\n)"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y)),\r\n        Type.annotation(@τ_X, Set(Set(X@Topology.ctxt.X))),\r\n        Type.annotation(@τ_Y, Set(Set(Y@Topology.ctxt.Y)))\r\n    ),\r\n    Topology.homeomorphism(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y),\r\n    Logic.and(Logic.and(Topology.continuousMap(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y), Topology.openMap(f)), Set.bijective(f))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.T0(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Logic.neg(Eq(x,y)),Logic.or(Logic.exists-typed(@U,Set(S@Topology.ctxt.S),Logic.and(Topology.neighborhood(U,x),Logic.neg(Set.mem(y,U)))),Logic.exists-typed(@V,Set(S@Topology.ctxt.S),Logic.and(Topology.neighborhood(V,y),Logic.neg(Set.mem(x,V)))))))))"
+      "snl": "def-hyp(list-partial(Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.T0(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Logic.neg(Eq(x,y)),Logic.or(Logic.exists-typed(@U,Set(S@Topology.ctxt.S),Logic.and(Topology.neighborhood(U,x),Logic.neg(Set.mem(y,U)))),Logic.exists-typed(@V,Set(S@Topology.ctxt.S),Logic.and(Topology.neighborhood(V,y),Logic.neg(Set.mem(x,V)))))))))"
     },
     "contribution_info": null,
     "pointer": null,

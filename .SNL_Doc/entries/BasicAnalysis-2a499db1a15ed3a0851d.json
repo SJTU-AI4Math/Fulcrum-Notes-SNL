@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@A, Analysis.Seq), Analysis.seqConv(A)), Analysis.bounded(A))",
+      "snl": "thm-hyp(list-partial(Type.annotation(@A, Analysis.Seq), Analysis.seqConv(A)), Analysis.bounded(A))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

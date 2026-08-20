@@ -7,9 +7,16 @@
     "id": "Set.ctxt.D",
     "package": "SetTheory",
     "kind": "context",
-    "title": "$D$",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$D$",
+        "zh-CN": "$D$"
+      }
+    },
     "content": {
-      "snl": "Type.judge(@D, S@Set.ctxt.S)"
+      "snl": "Type.annotation(@D, S@Set.ctxt.S)"
     },
     "contribution_info": null,
     "pointer": null

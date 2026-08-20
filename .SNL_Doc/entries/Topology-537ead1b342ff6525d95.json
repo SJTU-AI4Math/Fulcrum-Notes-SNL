@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X)))"
+      "snl": "Type.annotation(@τ_X,Set(Set(X@Topology.ctxt.X)))"
     },
     "contribution_info": null,
     "pointer": null,

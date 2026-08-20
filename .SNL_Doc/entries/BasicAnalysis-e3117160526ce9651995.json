@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @y), Real), Type.judge(@N, Nat), $#0 < #1$(y, x)), Logic.exists-typed(@z, Real, Logic.and(Set.mem(z, Ioo(y, x)), Eq(Type.apply(Analysis.map(F), y), Add.add(Type.apply(Analysis.map(Analysis.taylorPoly(F, x, N)), y), Div.div(Mul.mul(Type.apply(Analysis.map(Analysis.nthDiff($#0 + 1$(N), F)), z), Power(Sub.sub(y, x), $#0 + 1$(N))), $\\left(#0 + 1\\right)!$(N)))))))",
+      "snl": "thm-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(list-partial(@x, @y), Real), Type.annotation(@N, Nat), $#0 < #1$(y, x)), Logic.exists-typed(@z, Real, Logic.and(Set.mem(z, Ioo(y, x)), Eq(Type.apply(Analysis.map(F), y), Add.add(Type.apply(Analysis.map(Analysis.taylorPoly(F, x, N)), y), Div.div(Mul.mul(Type.apply(Analysis.map(Analysis.nthDiff($#0 + 1$(N), F)), z), Power(Sub.sub(y, x), $#0 + 1$(N))), $\\left(#0 + 1\\right)!$(N)))))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

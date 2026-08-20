@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-struct-hyp(Type.judge(@F,Type.to(Type,Type)),Type.covariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(A) → F(B)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%composition law%,%F(g ∘ f)=F(g) ∘ F(f)%)))",
+      "snl": "def-struct-hyp(Type.annotation(@F,Type.to(Type,Type)),Type.covariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(A) → F(B)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%composition law%,%F(g ∘ f)=F(g) ∘ F(f)%)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

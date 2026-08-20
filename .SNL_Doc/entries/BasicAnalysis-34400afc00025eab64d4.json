@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def(Type.judge(@A, Analysis.Seq), Analysis.mkSeq(Analysis.map(A), Analysis.init(A), Analysis.final(A)))",
+      "snl": "def(Type.annotation(@A, Analysis.Seq), Analysis.mkSeq(Analysis.map(A), Analysis.init(A), Analysis.final(A)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

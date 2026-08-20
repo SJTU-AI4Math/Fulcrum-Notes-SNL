@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.sec.syntax",
+    "package": "TypeTheory",
+    "kind": "section",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Syntax",
+        "zh-CN": "语法"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Syntactic carriers and constructor signatures live at the metalanguage level. They are distinct from object-language typing judgements.",
+          "zh-CN": "语法载体与构造子签名属于元语言层，必须与对象语言的类型判断分开。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

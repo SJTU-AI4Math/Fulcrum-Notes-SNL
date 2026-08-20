@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(list-partial(@A,@B),Sigma@Measure.ctxt.Sigma)"
+      "snl": "Type.annotation(list-partial(@A,@B),Sigma@Measure.ctxt.Sigma)"
     },
     "contribution_info": null,
     "pointer": null,

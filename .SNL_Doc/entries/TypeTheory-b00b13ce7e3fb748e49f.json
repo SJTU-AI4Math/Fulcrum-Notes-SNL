@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.rmk.namedBinderPresentation-UTLC",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Names for Binders",
+        "zh-CN": "绑定子命名"
+      }
+    },
+    "content": {
+      "snl": "Syntax.OneOffI18N.NamedBinder.SemanticStatus(Syntax.Expr-UTLC.lambda[text](,),deBruijnIndex)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

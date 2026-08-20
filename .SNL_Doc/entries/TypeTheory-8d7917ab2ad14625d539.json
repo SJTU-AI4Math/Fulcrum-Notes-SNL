@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.def.namedBinderPresentation-UTLC",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Named-Binder Presentation of $\\lambda$-Abstraction",
+        "zh-CN": "$\\lambda$-抽象的绑定子命名"
+      }
+    },
+    "content": {
+      "snl": "def-hyp-opq(list-partial(Syntax.hasCategory(a,Syntax.Expr-UTLC),Type.annotation(x,`string`)),Syntax.Expr-UTLC.lambda(x,a))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

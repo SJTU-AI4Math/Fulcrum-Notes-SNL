@@ -7,7 +7,14 @@
     "id": "Set.def.bijective",
     "package": "SetTheory",
     "kind": "definition",
-    "title": "一一映射/双射",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Bijective Map / Bijection",
+        "zh-CN": "一一映射/双射"
+      }
+    },
     "content": {
       "snl": "def(\r\n    Set.bijective(f@Set.ctxt.f),\r\n    Logic.and(\r\n        Set.injective(f@Set.ctxt.f),\r\n        Set.surjective(f@Set.ctxt.f)\r\n    )\r\n)"
     },

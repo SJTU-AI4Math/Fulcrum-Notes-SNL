@@ -21,7 +21,7 @@ DOC = ROOT / ".SNL_Doc"
 I18N_PATH = ROOT / "scripts/fulcrum-i18n-en-zh.json"
 PLAN_PATH = ROOT / "scripts/fulcrum-inductive-subentries.json"
 ENTRY_PACKAGE_PLAN_PATH = ROOT / "scripts/fulcrum-entry-packages.json"
-EXPECTED_SOURCE_HEAD = "d3a3785e1d1ec1114e48eb2180f9a8ddd7a548f0"
+EXPECTED_SOURCE_HEAD = "bc09e62e7217ae4b65357eb46e8ad8487bb4ae24"
 PREFLIGHT_ONLY = os.environ.get("FULCRUM_APPLY_PREFLIGHT_ONLY") == "1"
 _VIRTUAL_JSON: dict[Path, object] = {}
 _VIRTUAL_DELETED: set[Path] = set()
@@ -150,6 +150,58 @@ def validate_package_manifest(manifest: dict, path: Path, expected_id: str | Non
     assert len(manifest["entry_ids"]) == len(set(manifest["entry_ids"])), f"duplicate Package manifest Entry IDs: {path}"
 
 
+def validate_closed_auxiliary_schemas(macros: dict[str, dict]) -> None:
+    # This mutating executable is independently invocable. Reject unknown
+    # graph, relationship, and provenance fields before any staged or real write.
+    for name, macro_record in macros.items():
+        source = macro_record.get("source")
+        assert isinstance(source, dict) and set(source) == {"entries", "urls"}, f"invalid Macro source fields: {name}"
+        for field in ("entries", "urls"):
+            values = source[field]
+            assert isinstance(values, list) and all(isinstance(value, str) and value for value in values), f"invalid Macro source {field}: {name}"
+            assert len(values) == len(set(values)), f"duplicate Macro source {field}: {name}"
+
+    for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
+        graph = read_json(graph_path)
+        assert isinstance(graph, dict) and set(graph) == {"nodes", "relationships"}, f"invalid graph fields: {graph_path}"
+        assert isinstance(graph["nodes"], list) and isinstance(graph["relationships"], list), f"invalid graph lists: {graph_path}"
+        node_ids: set[str] = set()
+        for node in graph["nodes"]:
+            assert isinstance(node, dict) and set(node) == {"id", "label", "props"}, f"invalid graph node fields: {graph_path}"
+            assert isinstance(node["id"], str) and node["id"] and node["id"] not in node_ids, f"invalid graph node ID: {graph_path}"
+            node_ids.add(node["id"])
+            assert node["label"] == "Entry", f"invalid graph node label: {graph_path}"
+            props = node["props"]
+            assert isinstance(props, dict) and set(props) in ({"entryId"}, {"entryId", "counterId"}), f"invalid graph node props: {graph_path}"
+            assert isinstance(props["entryId"], str) and props["entryId"], f"invalid graph Entry ID: {graph_path}"
+            if "counterId" in props:
+                assert isinstance(props["counterId"], str) and props["counterId"], f"invalid graph counter ID: {graph_path}"
+        for relation in graph["relationships"]:
+            assert isinstance(relation, dict) and set(relation) == {"from", "to", "label"}, f"invalid graph relationship fields: {graph_path}"
+            assert relation["from"] in node_ids and relation["to"] in node_ids and relation["label"] == "branch", f"invalid graph relationship: {graph_path}"
+
+    relationship_path = DOC / "relationships.json"
+    data = read_json(relationship_path)
+    assert isinstance(data, dict) and set(data) == {"version", "relationships"}, "invalid relationships document fields"
+    assert type(data["version"]) is int and data["version"] == 1 and isinstance(data["relationships"], list), "invalid relationships document"
+    relation_ids: set[str] = set()
+    for relation in data["relationships"]:
+        assert isinstance(relation, dict) and set(relation) == {"id", "from", "to", "label", "metadata"}, "invalid relationship fields"
+        for field in ("id", "from", "to", "label"):
+            assert isinstance(relation[field], str) and relation[field], f"invalid relationship {field}"
+        assert relation["id"] not in relation_ids, f"duplicate relationship ID: {relation['id']}"
+        relation_ids.add(relation["id"])
+        metadata = relation["metadata"]
+        assert isinstance(metadata, dict), f"invalid relationship metadata: {relation['id']}"
+        allowed_metadata = ({"generator", "isAtomic", "macros"}, {"generator", "isAtomic", "postfixes"})
+        assert set(metadata) in allowed_metadata, f"invalid relationship metadata fields: {relation['id']}"
+        assert metadata["generator"] == "macro-source-scan" and type(metadata["isAtomic"]) is bool, f"invalid relationship metadata: {relation['id']}"
+        witness_field = "macros" if "macros" in metadata else "postfixes"
+        witnesses = metadata[witness_field]
+        assert isinstance(witnesses, list) and witnesses and all(isinstance(value, str) and value for value in witnesses), f"invalid relationship witnesses: {relation['id']}"
+        assert len(witnesses) == len(set(witnesses)), f"duplicate relationship witnesses: {relation['id']}"
+
+
 def load_records(directory: str, identity_key: str):
     records = {}
     paths = {}
@@ -232,6 +284,7 @@ entry_package_plan = read_json(ENTRY_PACKAGE_PLAN_PATH)
 validate_authorities(i18n, plan, entry_package_plan, EXPECTED_SOURCE_HEAD)
 entries, entry_paths, entry_envelopes = load_records("entries", "id")
 macros, macro_paths, macro_envelopes = load_records("macros", "name")
+validate_closed_auxiliary_schemas(macros)
 
 # Preflight complete Package manifests before the first filesystem mutation.
 # Each manifest must be one of two fully pinned states: the exact predecessor
@@ -854,6 +907,9 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
         all_parent_nodes = [node for node in nodes if node.get("props", {}).get("entryId") == parent_entry_id]
         if not all_parent_nodes:
             continue
+        if allowed_parent_node_ids is not None and not any(node["id"] in set(allowed_parent_node_ids) for node in all_parent_nodes):
+            # This is a different Library reusing the same Entry identities.
+            continue
         child_nodes = [node for node in nodes if node.get("props", {}).get("entryId") == child_entry_id]
         if allowed_parent_node_ids is not None and child_nodes:
             allowed = set(allowed_parent_node_ids)
@@ -867,6 +923,11 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
                 relationships[:] = filtered
                 changed = True
         parent_nodes = all_parent_nodes if allowed_parent_node_ids is None else [node for node in all_parent_nodes if node["id"] in set(allowed_parent_node_ids)]
+        # The same Entry may be reused by a summary Library with different node
+        # identities and hierarchy. A node-id-scoped repair belongs only to the
+        # graph containing one of its explicitly leased parent nodes.
+        if allowed_parent_node_ids is not None and not parent_nodes:
+            continue
         assert parent_nodes, f"selected parent node missing for {parent_entry_id} -> {child_entry_id} in {graph_path}"
         if not child_nodes:
             counter_id = ensure_counter(graph_path.parent / "counters.json", level)
@@ -927,7 +988,7 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
                 child_entry_id = by_node_id[rel["to"]].get("props", {}).get("entryId")
                 by_entry.setdefault(child_entry_id, []).append(rel)
             expected_order = order_spec["entry_ids"]
-            assert all(len(by_entry.get(entry_id, [])) == 1 for entry_id in expected_order), f"ordered child missing or duplicated under {order_spec['parent_entry_id']}"
+            assert all(len(by_entry.get(entry_id, [])) == 1 for entry_id in expected_order), f"ordered child missing or duplicated under {order_spec['parent_entry_id']} in {graph_path}: {[(entry_id, len(by_entry.get(entry_id, []))) for entry_id in expected_order]}"
             ordered = [by_entry[entry_id][0] for entry_id in expected_order]
             ordered_ids = set(expected_order)
             trailing = [rel for rel in branch_rels if by_node_id[rel["to"]].get("props", {}).get("entryId") not in ordered_ids]

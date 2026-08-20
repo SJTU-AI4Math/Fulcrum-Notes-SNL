@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@S,Type),Topology.orderTopology,Topology.topologicalSpace(S@Topology.ctxt.S,Topology.orderTopology))"
+      "snl": "def-hyp(Type.annotation(@S,Type),Topology.orderTopology,Topology.topologicalSpace(S@Topology.ctxt.S,Topology.orderTopology))"
     },
     "contribution_info": null,
     "pointer": null,

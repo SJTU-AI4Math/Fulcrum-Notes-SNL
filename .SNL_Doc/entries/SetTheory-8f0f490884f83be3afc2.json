@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp[predicate](list-partial(Type.judge(@x,T@Set.ctxt.T),Type.judge(A@Set.ctxt.AB,Set(T@Set.ctxt.T))),Set.nmem(x,A@Set.ctxt.AB),Logic.neg(Set.mem(x,A@Set.ctxt.AB)))"
+      "snl": "def-hyp[predicate](list-partial(Type.annotation(@x,T@Set.ctxt.T),Type.annotation(A@Set.ctxt.AB,Set(T@Set.ctxt.T))),Set.nmem(x,A@Set.ctxt.AB),Logic.neg(Set.mem(x,A@Set.ctxt.AB)))"
     },
     "contribution_info": null,
     "pointer": null,

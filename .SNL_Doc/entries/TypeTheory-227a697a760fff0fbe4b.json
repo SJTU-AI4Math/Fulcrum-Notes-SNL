@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.def.shift-UTLC",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "de Bruijn Index Shift",
+        "zh-CN": "de Bruijn 指数提升"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(Syntax.hasCategory(@a,Syntax.Expr-UTLC),Type.annotation(list-partial[formula](@d,@c),Nat)),Syntax.shift-UTLC(d,c,a),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.boundVariable,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,c)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Add.add(k,d)),Logic.neg(Lt(k,c))))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.lambda,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.shift-UTLC(d,Nat.succ(c),t))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.application,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.shift-UTLC(d,c,f),Syntax.shift-UTLC(d,c,u))))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The shift ↑ᵈ_c a increases every bound-variable index k ≥ c by d. Crossing a binder raises the cutoff from c to c+1; application is traversed componentwise. This operation is the lift used when substitution crosses a binder.",
+          "zh-CN": "提升 ↑ᵈ_c a 把每个满足 k ≥ c 的受束变元指数增加 d。穿过绑定子时，截断值由 c 增至 c+1；应用的两部分分别递归处理。替换穿过绑定子时用它提升被代入项。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

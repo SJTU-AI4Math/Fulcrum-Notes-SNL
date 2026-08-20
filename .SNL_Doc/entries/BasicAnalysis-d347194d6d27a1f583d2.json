@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@A, Analysis.Seq), Type.judge(list-partial(@L, @M), Real), Analysis.seqLim(A, L), Analysis.seqLim(A, M)), Eq(L, M))",
+      "snl": "thm-hyp(list-partial(Type.annotation(@A, Analysis.Seq), Type.annotation(list-partial(@L, @M), Real), Analysis.seqLim(A, L), Analysis.seqLim(A, M)), Eq(L, M))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

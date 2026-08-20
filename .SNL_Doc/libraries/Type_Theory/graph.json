@@ -76,7 +76,7 @@
       "id": "n_10",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.lambda-typed",
+        "entryId": "Syntax.def.expression-STLC.ctor.lambdaAbstraction",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -84,7 +84,7 @@
       "id": "n_11",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.Expr-STLC",
+        "entryId": "Syntax.def.expression-STLC",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -100,7 +100,7 @@
       "id": "n_13",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.Expr-LC",
+        "entryId": "Syntax.def.expression-UTLC",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -252,7 +252,7 @@
       "id": "n_35",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.LegalExpr-LC",
+        "entryId": "Syntax.def.legalExpression-UTLC",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -260,7 +260,7 @@
       "id": "n_36",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.Substitution-LC",
+        "entryId": "Syntax.def.substitution-UTLC",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -380,7 +380,7 @@
       "id": "n_48",
       "label": "Entry",
       "props": {
-        "entryId": "Type.subsec.patternMatching",
+        "entryId": "Syntax.subsec.patternMatching",
         "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
       }
     },
@@ -764,7 +764,7 @@
       "id": "n_sub_50d85e06a8b4",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.Expr-LC.ctor.application",
+        "entryId": "Syntax.def.expression-UTLC.ctor.application",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -772,7 +772,7 @@
       "id": "n_sub_871cb6341c3d",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.Expr-LC.ctor.bound-variable",
+        "entryId": "Syntax.def.expression-UTLC.ctor.boundVariable",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -780,7 +780,7 @@
       "id": "n_sub_37901b2e9ebe",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+        "entryId": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -788,7 +788,7 @@
       "id": "n_sub_c47dba5171ce",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.Expr-STLC.ctor.application",
+        "entryId": "Syntax.def.expression-STLC.ctor.application",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -796,7 +796,7 @@
       "id": "n_sub_075410891138",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.Expr-STLC.ctor.bound-variable",
+        "entryId": "Syntax.def.expression-STLC.ctor.boundVariable",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -804,7 +804,7 @@
       "id": "n_sub_6466cd52513b",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.Expr-STLC.ctor.function-type",
+        "entryId": "Syntax.def.expression-STLC.ctor.functionType",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -812,7 +812,7 @@
       "id": "n_sub_30dc9e4de970",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rl.Expr-STLC.recursor",
+        "entryId": "Syntax.rmk.expressionSTLCNoRecursor",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -852,7 +852,7 @@
       "id": "n_62",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rmk.Expr-LC.lambda",
+        "entryId": "Syntax.rmk.lambdaNotation-UTLC",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -860,7 +860,7 @@
       "id": "n_63",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rmk.deBruijnIndex",
+        "entryId": "Syntax.rmk.deBruijnIndex",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -868,7 +868,7 @@
       "id": "n_64",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rmk.Expr-LC.apply",
+        "entryId": "Syntax.rmk.applicationNotation-UTLC",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -924,7 +924,7 @@
       "id": "n_69",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.named-lambda",
+        "entryId": "Syntax.def.namedBinderPresentation-UTLC",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -1132,7 +1132,7 @@
       "id": "n_82",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.type-expression-stlc",
+        "entryId": "Syntax.def.typeExpression-STLC",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -1172,7 +1172,7 @@
       "id": "n_87",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rmk.named-lambda"
+        "entryId": "Syntax.rmk.namedBinderPresentation-UTLC"
       }
     },
     {
@@ -1211,7 +1211,7 @@
       "id": "n_sub_d07d04aadc00",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.freeVariable",
+        "entryId": "Syntax.def.openExpression-UTLC",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -1219,7 +1219,7 @@
       "id": "n_sub_2722ad8c8869",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rmk.freeVariableOpenExpression",
+        "entryId": "Syntax.rmk.freeVariableOpenExpression-UTLC",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -1227,7 +1227,7 @@
       "id": "n_sub_30dda0e5febf",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.freeVariable.ctor.closedExpression",
+        "entryId": "Syntax.def.openExpression-UTLC.ctor.closedExpression",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -1235,7 +1235,7 @@
       "id": "n_sub_4e810c9fa110",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.freeVariable.ctor.freeVariable",
+        "entryId": "Syntax.def.openExpression-UTLC.ctor.freeVariable",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -1243,7 +1243,7 @@
       "id": "n_sub_68adad8b9eae",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.freeVariable.ctor.lambdaAbstraction",
+        "entryId": "Syntax.def.openExpression-UTLC.ctor.lambdaAbstraction",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -1251,15 +1251,7 @@
       "id": "n_sub_6acf006c37dd",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.freeVariable.ctor.application",
-        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
-      }
-    },
-    {
-      "id": "n_sub_763bb96f8755",
-      "label": "Entry",
-      "props": {
-        "entryId": "Type.def.freeVariable.recursor",
+        "entryId": "Syntax.def.openExpression-UTLC.ctor.application",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -1307,7 +1299,7 @@
       "id": "n_sub_d43d04419608",
       "label": "Entry",
       "props": {
-        "entryId": "Type.rmk.closedExpression",
+        "entryId": "Syntax.rmk.closedExpression-UTLC",
         "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
       }
     },
@@ -1315,7 +1307,7 @@
       "id": "n_sub_b7c155a6462b",
       "label": "Entry",
       "props": {
-        "entryId": "Type.def.shift-LC",
+        "entryId": "Syntax.def.shift-UTLC",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
     },
@@ -2198,11 +2190,6 @@
     {
       "from": "n_sub_d07d04aadc00",
       "to": "n_sub_6acf006c37dd",
-      "label": "branch"
-    },
-    {
-      "from": "n_sub_d07d04aadc00",
-      "to": "n_sub_763bb96f8755",
       "label": "branch"
     },
     {

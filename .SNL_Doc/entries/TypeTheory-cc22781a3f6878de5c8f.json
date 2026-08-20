@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(list-partial(Type.judge(@T,Type(@u)),Type.judge(@P,Type.to(T,Type(@v)))),Type.judge(Type.Pi(@x,T,Type.apply(P,x)),Type))"
+      "snl": "def-hyp-opq(list-partial(Type.judge(@Γ,@T,Type[univ](@u)),Type.judge(Type.contextExtend(Γ,@x,T),@B,Type[univ](@v))),Type.judge(Γ,Type.Pi(@x,T,B),Type[univ](\\max(u,v))))"
     },
     "contribution_info": null,
     "pointer": null

@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(list-partial(@x, @delta), Real), $#0 > 0$(delta)), list-partial(Analysis.nbh(x, delta), Analysis.nbhDel(x, delta)), Logic.and(Eq(Analysis.nbh(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1$(x, delta, y))), Eq(Analysis.nbhDel(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1 \\land #2 \\ne #0$(x, delta, y)))))",
+      "snl": "def-hyp(list-partial(Type.annotation(list-partial(@x, @delta), Real), $#0 > 0$(delta)), list-partial(Analysis.nbh(x, delta), Analysis.nbhDel(x, delta)), Logic.and(Eq(Analysis.nbh(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1$(x, delta, y))), Eq(Analysis.nbhDel(x, delta), Set.sep-typed(@y, Real, $#0 - #1 < #2 \\land #2 < #0 + #1 \\land #2 \\ne #0$(x, delta, y)))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

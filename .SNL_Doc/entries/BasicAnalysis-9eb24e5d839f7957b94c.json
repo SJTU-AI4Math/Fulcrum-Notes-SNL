@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@f,Type.to(Real,Real)),Type.judge(@f_1,Type.to(Real,Real)),Type.judge(@f_2,Type.to(Real,Real)),Type.judge(list-partial(@x_0,@x),Real),Logic.neg(Eq(x_0,x)),Analysis.isDeriv(f,f_1),Analysis.isDeriv(f_1,f_2)),Logic.exists-typed(@xi,Real,Logic.and(Set.mem(xi,Ioo(min-binary(x_0,x),max-binary(x_0,x))),Eq(Type.apply(f,x),Add.finite(Type.apply(f,x_0),Mul.mul(Type.apply(f_1,x_0),parentheses(Sub.sub(x,x_0))),Mul.mul(Div.div(Type.apply(f_2,xi),2),Power(parentheses(Sub.sub(x,x_0)),2)))))))",
+      "snl": "thm-hyp(list-partial(Type.annotation(@f,Type.to(Real,Real)),Type.annotation(@f_1,Type.to(Real,Real)),Type.annotation(@f_2,Type.to(Real,Real)),Type.annotation(list-partial(@x_0,@x),Real),Logic.neg(Eq(x_0,x)),Analysis.isDeriv(f,f_1),Analysis.isDeriv(f_1,f_2)),Logic.exists-typed(@xi,Real,Logic.and(Set.mem(xi,Ioo(min-binary(x_0,x),max-binary(x_0,x))),Eq(Type.apply(f,x),Add.finite(Type.apply(f,x_0),Mul.mul(Type.apply(f_1,x_0),parentheses(Sub.sub(x,x_0))),Mul.mul(Div.div(Type.apply(f_2,xi),2),Power(parentheses(Sub.sub(x,x_0)),2)))))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

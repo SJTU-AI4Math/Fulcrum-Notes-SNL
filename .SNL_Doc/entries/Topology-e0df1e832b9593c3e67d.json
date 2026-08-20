@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@R,Type),Topology.usualTopology,Topology.topologicalSpace(R,Topology.usualTopology))"
+      "snl": "def-hyp(Type.annotation(@R,Type),Topology.usualTopology,Topology.topologicalSpace(R,Topology.usualTopology))"
     },
     "contribution_info": null,
     "pointer": null,

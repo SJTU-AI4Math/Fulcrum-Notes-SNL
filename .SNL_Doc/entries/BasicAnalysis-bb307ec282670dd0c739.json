@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def(Type.judge(@F, Analysis.PFun), Analysis.mkPFun(Analysis.map(F), Analysis.domain(F)))",
+      "snl": "def(Type.annotation(@F, Analysis.PFun), Analysis.mkPFun(Analysis.map(F), Analysis.domain(F)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

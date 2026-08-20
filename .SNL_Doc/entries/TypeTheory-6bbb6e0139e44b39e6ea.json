@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive(%Bad%,ctors(Type.judge(%mk%,Type.to(parentheses(Type.to(%Bad%,Logic.false)),%Bad%))))"
+      "snl": "def-inductive(%Bad%,ctors(Type.declaration(%mk%,Type.to(parentheses(Type.to(%Bad%,Logic.false)),%Bad%))))"
     },
     "contribution_info": null,
     "pointer": null

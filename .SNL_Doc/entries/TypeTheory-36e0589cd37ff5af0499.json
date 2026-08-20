@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(list-partial[formula](@A,@B,@C),Type),Type.judge(@f,Type.to(Type.prod(A,B),C))),Type.Curry(f),Type.lambda-typed(@x,A,Type.lambda-typed(@y,B,Type.apply[none](f,Type.pair(x,y)))))"
+      "snl": "def-hyp(list-partial(Type.annotation(list-partial[formula](@A,@B,@C),Type),Type.annotation(@f,Type.to(Type.prod(A,B),C))),Type.Curry(f),Type.lambda-typed(@x,A,Type.lambda-typed(@y,B,Type.apply[none](f,Type.pair(x,y)))))"
     },
     "contribution_info": null,
     "pointer": null

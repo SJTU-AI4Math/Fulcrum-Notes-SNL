@@ -7,7 +7,14 @@
     "id": "Set.def.surjective",
     "package": "SetTheory",
     "kind": "definition",
-    "title": "满映射",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Surjective Map",
+        "zh-CN": "满映射"
+      }
+    },
     "content": {
       "snl": "def(Set.surjective(f@Set.ctxt.f), Eq(Set.fun(f@Set.ctxt.f, D@Set.ctxt.D), A@Set.ctxt.AB))"
     },

@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(@I, Set(Real))), Analysis.contOn(F, I), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, I), Analysis.contAt(F, x))))",
+      "snl": "def-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(@I, Set(Real))), Analysis.contOn(F, I), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, I), Analysis.contAt(F, x))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

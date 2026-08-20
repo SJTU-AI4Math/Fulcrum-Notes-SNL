@@ -1718,9 +1718,22 @@
       }
     },
     {
+      "id": "dep.FP.def.flatten.Type.def.annotation",
+      "from": "FP.def.flatten",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.FP.def.flatten.Type.rl.Expr-LC.ctor.application",
       "from": "FP.def.flatten",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -1733,25 +1746,12 @@
     {
       "id": "dep.FP.def.flatten.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "FP.def.flatten",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.FP.def.flatten.Type.rl.judge",
-      "from": "FP.def.flatten",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -1902,9 +1902,22 @@
       }
     },
     {
+      "id": "dep.FP.def.map.Type.def.annotation",
+      "from": "FP.def.map",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.FP.def.map.Type.rl.Expr-LC.ctor.application",
       "from": "FP.def.map",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -1917,12 +1930,12 @@
     {
       "id": "dep.FP.def.map.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "FP.def.map",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -1936,19 +1949,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.FP.def.map.Type.rl.judge",
-      "from": "FP.def.map",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -2150,9 +2150,22 @@
       }
     },
     {
+      "id": "dep.FP.prop.associativity.Type.def.annotation",
+      "from": "FP.prop.associativity",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.FP.prop.associativity.Type.rl.Expr-LC.ctor.application",
       "from": "FP.prop.associativity",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -2165,12 +2178,12 @@
     {
       "id": "dep.FP.prop.associativity.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "FP.prop.associativity",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -2184,19 +2197,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.FP.prop.associativity.Type.rl.judge",
-      "from": "FP.prop.associativity",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -2491,29 +2491,29 @@
       }
     },
     {
-      "id": "dep.FP.prop.listMonad.Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "id": "dep.FP.prop.listMonad.Type.def.annotation",
       "from": "FP.prop.listMonad",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Type.annotation"
         ],
-        "isAtomic": true
+        "isAtomic": false
       }
     },
     {
-      "id": "dep.FP.prop.listMonad.Type.rl.judge",
+      "id": "dep.FP.prop.listMonad.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "FP.prop.listMonad",
-      "to": "Type.rl.judge",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC.lambda"
         ],
-        "isAtomic": false
+        "isAtomic": true
       }
     },
     {
@@ -2595,9 +2595,22 @@
       }
     },
     {
+      "id": "dep.FP.prop.rightIdentity.Type.def.annotation",
+      "from": "FP.prop.rightIdentity",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.FP.prop.rightIdentity.Type.rl.Expr-LC.ctor.application",
       "from": "FP.prop.rightIdentity",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -2610,25 +2623,12 @@
     {
       "id": "dep.FP.prop.rightIdentity.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "FP.prop.rightIdentity",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.FP.prop.rightIdentity.Type.rl.judge",
-      "from": "FP.prop.rightIdentity",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -2739,9 +2739,22 @@
       }
     },
     {
+      "id": "dep.FP.prop.transformerLiftBind.Type.def.annotation",
+      "from": "FP.prop.transformerLiftBind",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.FP.prop.transformerLiftBind.Type.rl.Expr-LC.ctor.application",
       "from": "FP.prop.transformerLiftBind",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -2754,12 +2767,12 @@
     {
       "id": "dep.FP.prop.transformerLiftBind.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "FP.prop.transformerLiftBind",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -2773,19 +2786,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.FP.prop.transformerLiftBind.Type.rl.judge",
-      "from": "FP.prop.transformerLiftBind",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -2898,7 +2898,7 @@
     {
       "id": "dep.Lambda.def.beta-single.Type.def.LegalExpr-LC",
       "from": "Lambda.def.beta-single",
-      "to": "Type.def.LegalExpr-LC",
+      "to": "Syntax.def.legalExpression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -2909,16 +2909,16 @@
       }
     },
     {
-      "id": "dep.Lambda.def.beta-single.Type.rl.judge",
+      "id": "dep.Lambda.def.beta-single.Type.def.declaration",
       "from": "Lambda.def.beta-single",
-      "to": "Type.rl.judge",
+      "to": "Type.def.declaration",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Type.declaration"
         ],
-        "isAtomic": false
+        "isAtomic": true
       }
     },
     {
@@ -2937,7 +2937,7 @@
     {
       "id": "dep.Lambda.def.beta.Type.def.LegalExpr-LC",
       "from": "Lambda.def.beta",
-      "to": "Type.def.LegalExpr-LC",
+      "to": "Syntax.def.legalExpression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -2950,7 +2950,7 @@
     {
       "id": "dep.Lambda.def.beta.Type.rl.Expr-LC",
       "from": "Lambda.def.beta",
-      "to": "Type.rl.Expr-LC",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -3132,25 +3132,38 @@
     {
       "id": "dep.Lambda.def.defeq.Type.def.LegalExpr-LC",
       "from": "Lambda.def.defeq",
-      "to": "Type.def.LegalExpr-LC",
+      "to": "Syntax.def.legalExpression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.LegalExpr"
+          "Syntax.LegalExpr-UTLC"
         ],
         "isAtomic": false
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.Type.rl.Expr-LC.ctor.application",
+      "id": "dep.Lambda.def.defeq.Type.def.declaration",
       "from": "Lambda.def.defeq",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Type.def.declaration",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.apply"
+          "Type.declaration"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.Type.rl.Expr-LC.ctor.application",
+      "from": "Lambda.def.defeq",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.Expr-UTLC.apply"
         ],
         "isAtomic": false
       }
@@ -3158,12 +3171,12 @@
     {
       "id": "dep.Lambda.def.defeq.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Lambda.def.defeq",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -3177,19 +3190,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Lambda.def.defeq.Type.rl.judge",
-      "from": "Lambda.def.defeq",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -3221,14 +3221,27 @@
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.application-congruence.Type.rl.Expr-LC",
+      "id": "dep.Lambda.def.defeq.ctor.application-congruence.Syntax.def.signatureFragment",
       "from": "Lambda.def.defeq.ctor.application-congruence",
-      "to": "Type.rl.Expr-LC",
+      "to": "Syntax.def.signatureFragment",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.hasCategory"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.ctor.application-congruence.Type.rl.Expr-LC",
+      "from": "Lambda.def.defeq.ctor.application-congruence",
+      "to": "Syntax.def.expression-UTLC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": false
       }
@@ -3236,25 +3249,12 @@
     {
       "id": "dep.Lambda.def.defeq.ctor.application-congruence.Type.rl.Expr-LC.ctor.application",
       "from": "Lambda.def.defeq.ctor.application-congruence",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.apply"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Lambda.def.defeq.ctor.application-congruence.Type.rl.judge",
-      "from": "Lambda.def.defeq.ctor.application-congruence",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC.apply"
         ],
         "isAtomic": false
       }
@@ -3299,27 +3299,27 @@
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.beta-reduction.Type.rl.Expr-LC",
+      "id": "dep.Lambda.def.defeq.ctor.beta-reduction.Syntax.def.signatureFragment",
       "from": "Lambda.def.defeq.ctor.beta-reduction",
-      "to": "Type.rl.Expr-LC",
+      "to": "Syntax.def.signatureFragment",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.hasCategory"
         ],
         "isAtomic": false
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.beta-reduction.Type.rl.judge",
+      "id": "dep.Lambda.def.defeq.ctor.beta-reduction.Type.rl.Expr-LC",
       "from": "Lambda.def.defeq.ctor.beta-reduction",
-      "to": "Type.rl.judge",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": false
       }
@@ -3364,27 +3364,27 @@
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.eta-reduction.Type.rl.Expr-LC",
+      "id": "dep.Lambda.def.defeq.ctor.eta-reduction.Syntax.def.signatureFragment",
       "from": "Lambda.def.defeq.ctor.eta-reduction",
-      "to": "Type.rl.Expr-LC",
+      "to": "Syntax.def.signatureFragment",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.hasCategory"
         ],
         "isAtomic": false
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.eta-reduction.Type.rl.judge",
+      "id": "dep.Lambda.def.defeq.ctor.eta-reduction.Type.rl.Expr-LC",
       "from": "Lambda.def.defeq.ctor.eta-reduction",
-      "to": "Type.rl.judge",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": false
       }
@@ -3416,14 +3416,27 @@
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.lambda-congruence.Type.rl.Expr-LC",
+      "id": "dep.Lambda.def.defeq.ctor.lambda-congruence.Syntax.def.signatureFragment",
       "from": "Lambda.def.defeq.ctor.lambda-congruence",
-      "to": "Type.rl.Expr-LC",
+      "to": "Syntax.def.signatureFragment",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.hasCategory"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.defeq.ctor.lambda-congruence.Type.rl.Expr-LC",
+      "from": "Lambda.def.defeq.ctor.lambda-congruence",
+      "to": "Syntax.def.expression-UTLC",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": false
       }
@@ -3431,25 +3444,12 @@
     {
       "id": "dep.Lambda.def.defeq.ctor.lambda-congruence.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Lambda.def.defeq.ctor.lambda-congruence",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Lambda.def.defeq.ctor.lambda-congruence.Type.rl.judge",
-      "from": "Lambda.def.defeq.ctor.lambda-congruence",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -3481,27 +3481,27 @@
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.reflexivity.Type.rl.Expr-LC",
+      "id": "dep.Lambda.def.defeq.ctor.reflexivity.Syntax.def.signatureFragment",
       "from": "Lambda.def.defeq.ctor.reflexivity",
-      "to": "Type.rl.Expr-LC",
+      "to": "Syntax.def.signatureFragment",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.hasCategory"
         ],
         "isAtomic": false
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.reflexivity.Type.rl.judge",
+      "id": "dep.Lambda.def.defeq.ctor.reflexivity.Type.rl.Expr-LC",
       "from": "Lambda.def.defeq.ctor.reflexivity",
-      "to": "Type.rl.judge",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": false
       }
@@ -3533,27 +3533,27 @@
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.symmetry.Type.rl.Expr-LC",
+      "id": "dep.Lambda.def.defeq.ctor.symmetry.Syntax.def.signatureFragment",
       "from": "Lambda.def.defeq.ctor.symmetry",
-      "to": "Type.rl.Expr-LC",
+      "to": "Syntax.def.signatureFragment",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.hasCategory"
         ],
         "isAtomic": false
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.symmetry.Type.rl.judge",
+      "id": "dep.Lambda.def.defeq.ctor.symmetry.Type.rl.Expr-LC",
       "from": "Lambda.def.defeq.ctor.symmetry",
-      "to": "Type.rl.judge",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": false
       }
@@ -3585,27 +3585,40 @@
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.transitivity.Type.rl.Expr-LC",
+      "id": "dep.Lambda.def.defeq.ctor.transitivity.Syntax.def.signatureFragment",
       "from": "Lambda.def.defeq.ctor.transitivity",
-      "to": "Type.rl.Expr-LC",
+      "to": "Syntax.def.signatureFragment",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.hasCategory"
         ],
         "isAtomic": false
       }
     },
     {
-      "id": "dep.Lambda.def.defeq.ctor.transitivity.Type.rl.judge",
+      "id": "dep.Lambda.def.defeq.ctor.transitivity.Type.rl.Expr-LC",
       "from": "Lambda.def.defeq.ctor.transitivity",
-      "to": "Type.rl.judge",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Lambda.def.eta.Syntax.def.signatureFragment",
+      "from": "Lambda.def.eta",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.hasCategory"
         ],
         "isAtomic": false
       }
@@ -3613,12 +3626,12 @@
     {
       "id": "dep.Lambda.def.eta.Type.def.LegalExpr-LC",
       "from": "Lambda.def.eta",
-      "to": "Type.def.LegalExpr-LC",
+      "to": "Syntax.def.legalExpression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.LegalExpr"
+          "Syntax.LegalExpr-UTLC"
         ],
         "isAtomic": true
       }
@@ -3626,12 +3639,12 @@
     {
       "id": "dep.Lambda.def.eta.Type.rl.Expr-LC.ctor.application",
       "from": "Lambda.def.eta",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.apply"
+          "Syntax.Expr-UTLC.apply"
         ],
         "isAtomic": false
       }
@@ -3639,12 +3652,12 @@
     {
       "id": "dep.Lambda.def.eta.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Lambda.def.eta",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -3658,19 +3671,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Lambda.def.eta.Type.rl.judge",
-      "from": "Lambda.def.eta",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -3715,14 +3715,27 @@
       }
     },
     {
-      "id": "dep.Logic.def.eq.Type.rl.judge",
+      "id": "dep.Logic.def.eq.Type.def.annotation",
       "from": "Logic.def.eq",
-      "to": "Type.rl.judge",
+      "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Logic.def.eq.Type.def.declaration",
+      "from": "Logic.def.eq",
+      "to": "Type.def.declaration",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.declaration"
         ],
         "isAtomic": true
       }
@@ -4782,27 +4795,27 @@
       }
     },
     {
-      "id": "dep.Set.ctxt.D.Type.rl.judge",
+      "id": "dep.Set.ctxt.D.Type.def.annotation",
       "from": "Set.ctxt.D",
-      "to": "Type.rl.judge",
+      "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Type.annotation"
         ],
         "isAtomic": true
       }
     },
     {
-      "id": "dep.Set.ctxt.S.Type.rl.judge",
+      "id": "dep.Set.ctxt.S.Type.def.annotation",
       "from": "Set.ctxt.S",
-      "to": "Type.rl.judge",
+      "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Type.annotation"
         ],
         "isAtomic": true
       }
@@ -4821,6 +4834,19 @@
       }
     },
     {
+      "id": "dep.Set.ctxt.f.Type.def.annotation",
+      "from": "Set.ctxt.f",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.ctxt.f.Type.rl.fun",
       "from": "Set.ctxt.f",
       "to": "Type.rl.fun",
@@ -4829,19 +4855,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Set.ctxt.f.Type.rl.judge",
-      "from": "Set.ctxt.f",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": true
       }
@@ -5172,9 +5185,22 @@
       }
     },
     {
+      "id": "dep.Set.def.image.Type.def.annotation",
+      "from": "Set.def.image",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.def.image.Type.rl.Expr-LC.ctor.application",
       "from": "Set.def.image",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -5182,19 +5208,6 @@
           "Type.apply"
         ],
         "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Set.def.image.Type.rl.judge",
-      "from": "Set.def.image",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": false
       }
     },
     {
@@ -5289,9 +5302,22 @@
       }
     },
     {
+      "id": "dep.Set.def.imageAsApplyed.Type.def.annotation",
+      "from": "Set.def.imageAsApplyed",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.def.imageAsApplyed.Type.rl.Expr-LC.ctor.application",
       "from": "Set.def.imageAsApplyed",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -5299,19 +5325,6 @@
           "Type.apply"
         ],
         "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Set.def.imageAsApplyed.Type.rl.judge",
-      "from": "Set.def.imageAsApplyed",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": false
       }
     },
     {
@@ -5406,9 +5419,22 @@
       }
     },
     {
+      "id": "dep.Set.def.injective.Type.def.annotation",
+      "from": "Set.def.injective",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.def.injective.Type.rl.Expr-LC.ctor.application",
       "from": "Set.def.injective",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -5416,19 +5442,6 @@
           "Type.apply"
         ],
         "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Set.def.injective.Type.rl.judge",
-      "from": "Set.def.injective",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": false
       }
     },
     {
@@ -5783,6 +5796,163 @@
       }
     },
     {
+      "id": "dep.Syntax.def.expression-STLC.Syntax.def.signatureFragment",
+      "from": "Syntax.def.expression-STLC",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.constructor"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Syntax.def.expression-UTLC.Syntax.def.signatureFragment",
+      "from": "Syntax.def.expression-UTLC",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.constructor"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Syntax.def.expression-UTLC.ctor.application.Syntax.def.signatureFragment",
+      "from": "Syntax.def.expression-UTLC.ctor.application",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.hasCategory"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Syntax.def.expression-UTLC.ctor.boundVariable.Type.def.annotation",
+      "from": "Syntax.def.expression-UTLC.ctor.boundVariable",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Syntax.def.expression-UTLC.ctor.lambdaAbstraction.Syntax.def.signatureFragment",
+      "from": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.hasCategory"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Syntax.def.legalExpression-UTLC.Syntax.def.signatureFragment",
+      "from": "Syntax.def.legalExpression-UTLC",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.hasCategory"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Syntax.def.namedBinderPresentation-UTLC.Syntax.def.signatureFragment",
+      "from": "Syntax.def.namedBinderPresentation-UTLC",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.hasCategory"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Syntax.def.namedBinderPresentation-UTLC.Type.def.annotation",
+      "from": "Syntax.def.namedBinderPresentation-UTLC",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Syntax.def.substitution-UTLC.Syntax.def.signatureFragment",
+      "from": "Syntax.def.substitution-UTLC",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.hasCategory"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Syntax.def.substitution-UTLC.Type.def.annotation",
+      "from": "Syntax.def.substitution-UTLC",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Syntax.def.typeExpression-STLC.Syntax.def.signatureFragment",
+      "from": "Syntax.def.typeExpression-STLC",
+      "to": "Syntax.def.signatureFragment",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Syntax.constructor",
+          "Syntax.signatureFragment"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Syntax.def.typeExpression-STLC.Type.rl.fun",
+      "from": "Syntax.def.typeExpression-STLC",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Topology.def.continuityAtPoint.Fulcrum.def",
       "from": "Topology.def.continuityAtPoint",
       "to": "Fulcrum.def",
@@ -5822,9 +5992,22 @@
       }
     },
     {
+      "id": "dep.Topology.def.continuityAtPoint.Type.def.annotation",
+      "from": "Topology.def.continuityAtPoint",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Topology.def.continuityAtPoint.Type.rl.Expr-LC.ctor.application",
       "from": "Topology.def.continuityAtPoint",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -5843,19 +6026,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Topology.def.continuityAtPoint.Type.rl.judge",
-      "from": "Topology.def.continuityAtPoint",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -5939,6 +6109,19 @@
       }
     },
     {
+      "id": "dep.Topology.def.homeomorphism.Type.def.annotation",
+      "from": "Topology.def.homeomorphism",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Topology.def.homeomorphism.Type.rl.fun",
       "from": "Topology.def.homeomorphism",
       "to": "Type.rl.fun",
@@ -5947,19 +6130,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Topology.def.homeomorphism.Type.rl.judge",
-      "from": "Topology.def.homeomorphism",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -6004,6 +6174,19 @@
       }
     },
     {
+      "id": "dep.Topology.def.mapConvergence.Type.def.annotation",
+      "from": "Topology.def.mapConvergence",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Topology.def.mapConvergence.Type.rl.fun",
       "from": "Topology.def.mapConvergence",
       "to": "Type.rl.fun",
@@ -6012,19 +6195,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Topology.def.mapConvergence.Type.rl.judge",
-      "from": "Topology.def.mapConvergence",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -6160,6 +6330,19 @@
       }
     },
     {
+      "id": "dep.Topology.def.mapLimit.Type.def.annotation",
+      "from": "Topology.def.mapLimit",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Topology.def.mapLimit.Type.rl.fun",
       "from": "Topology.def.mapLimit",
       "to": "Type.rl.fun",
@@ -6168,19 +6351,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Topology.def.mapLimit.Type.rl.judge",
-      "from": "Topology.def.mapLimit",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -6264,6 +6434,19 @@
       }
     },
     {
+      "id": "dep.Topology.def.openMap.Type.def.annotation",
+      "from": "Topology.def.openMap",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Topology.def.openMap.Type.rl.fun",
       "from": "Topology.def.openMap",
       "to": "Type.rl.fun",
@@ -6272,19 +6455,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Topology.def.openMap.Type.rl.judge",
-      "from": "Topology.def.openMap",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -6329,14 +6499,14 @@
       }
     },
     {
-      "id": "dep.Topology.def.openSet.Type.rl.judge",
+      "id": "dep.Topology.def.openSet.Type.def.annotation",
       "from": "Topology.def.openSet",
-      "to": "Type.rl.judge",
+      "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.judge"
+          "Type.annotation"
         ],
         "isAtomic": true
       }
@@ -6394,6 +6564,19 @@
       }
     },
     {
+      "id": "dep.Type.cxmp.Bad.Type.def.declaration",
+      "from": "Type.cxmp.Bad",
+      "to": "Type.def.declaration",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.declaration"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Type.cxmp.Bad.Type.rl.fun",
       "from": "Type.cxmp.Bad",
       "to": "Type.rl.fun",
@@ -6402,19 +6585,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Type.cxmp.Bad.Type.rl.judge",
-      "from": "Type.cxmp.Bad",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": true
       }
@@ -6435,12 +6605,12 @@
     {
       "id": "dep.Type.def.Church-Add.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-Add",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6461,12 +6631,12 @@
     {
       "id": "dep.Type.def.Church-And.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-And",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6487,12 +6657,12 @@
     {
       "id": "dep.Type.def.Church-False.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-False",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6513,12 +6683,12 @@
     {
       "id": "dep.Type.def.Church-Mul.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-Mul",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6537,6 +6707,19 @@
       }
     },
     {
+      "id": "dep.Type.def.Church-Nat.Type.def.annotation",
+      "from": "Type.def.Church-Nat",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Type.def.Church-Nat.Type.def.nat",
       "from": "Type.def.Church-Nat",
       "to": "Type.def.nat",
@@ -6552,27 +6735,14 @@
     {
       "id": "dep.Type.def.Church-Nat.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-Nat",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Type.def.Church-Nat.Type.rl.judge",
-      "from": "Type.def.Church-Nat",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": false
       }
     },
     {
@@ -6591,12 +6761,12 @@
     {
       "id": "dep.Type.def.Church-Not.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-Not",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6617,12 +6787,12 @@
     {
       "id": "dep.Type.def.Church-One.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-One",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6643,12 +6813,12 @@
     {
       "id": "dep.Type.def.Church-Or.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-Or",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6669,12 +6839,12 @@
     {
       "id": "dep.Type.def.Church-Succ.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-Succ",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6695,12 +6865,12 @@
     {
       "id": "dep.Type.def.Church-True.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-True",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6721,12 +6891,12 @@
     {
       "id": "dep.Type.def.Church-Two.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-Two",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6747,12 +6917,12 @@
     {
       "id": "dep.Type.def.Church-Zero.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Church-Zero",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6768,6 +6938,19 @@
           "def-hyp"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.Currying.Type.def.annotation",
+      "from": "Type.def.Currying",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
       }
     },
     {
@@ -6812,7 +6995,7 @@
     {
       "id": "dep.Type.def.Currying.Type.rl.Expr-LC.ctor.application",
       "from": "Type.def.Currying",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -6831,19 +7014,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Type.def.Currying.Type.rl.judge",
-      "from": "Type.def.Currying",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -6877,12 +7047,12 @@
     {
       "id": "dep.Type.def.I-Combinator.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.I-Combinator",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
@@ -6929,12 +7099,12 @@
     {
       "id": "dep.Type.def.Iota-Combinator.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Iota-Combinator",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -6955,19 +7125,19 @@
     {
       "id": "dep.Type.def.K-Combinator.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.K-Combinator",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Type.def.LegalExpr-LC.Fulcrum.def",
-      "from": "Type.def.LegalExpr-LC",
+      "from": "Syntax.def.legalExpression-UTLC",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -6980,7 +7150,7 @@
     },
     {
       "id": "dep.Type.def.LegalExpr-LC.Set.def.sep",
-      "from": "Type.def.LegalExpr-LC",
+      "from": "Syntax.def.legalExpression-UTLC",
       "to": "Set.def.sep",
       "label": "depends",
       "metadata": {
@@ -6993,47 +7163,34 @@
     },
     {
       "id": "dep.Type.def.LegalExpr-LC.Type.rl.Expr-LC",
-      "from": "Type.def.LegalExpr-LC",
-      "to": "Type.rl.Expr-LC",
+      "from": "Syntax.def.legalExpression-UTLC",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Type.def.LegalExpr-LC.Type.rl.Expr-LC.ctor.lambda-abstraction",
-      "from": "Type.def.LegalExpr-LC",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "from": "Syntax.def.legalExpression-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Type.def.LegalExpr-LC.Type.rl.judge",
-      "from": "Type.def.LegalExpr-LC",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Type.def.LegalExpr-LC.Type.rmk.deBruijnIndex",
-      "from": "Type.def.LegalExpr-LC",
-      "to": "Type.rmk.deBruijnIndex",
+      "from": "Syntax.def.legalExpression-UTLC",
+      "to": "Syntax.rmk.deBruijnIndex",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -7059,7 +7216,7 @@
     {
       "id": "dep.Type.def.Omega-Big.Type.rl.Expr-LC.ctor.application",
       "from": "Type.def.Omega-Big",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -7085,20 +7242,20 @@
     {
       "id": "dep.Type.def.S-Combinator.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.S-Combinator",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Type.def.Substitution-LC.Type.def.LegalExpr-LC",
-      "from": "Type.def.Substitution-LC",
-      "to": "Type.def.LegalExpr-LC",
+      "from": "Syntax.def.substitution-UTLC",
+      "to": "Syntax.def.legalExpression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -7110,26 +7267,13 @@
     },
     {
       "id": "dep.Type.def.Substitution-LC.Type.rl.Expr-LC",
-      "from": "Type.def.Substitution-LC",
-      "to": "Type.rl.Expr-LC",
+      "from": "Syntax.def.substitution-UTLC",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
           "Lambda.Expr"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Type.def.Substitution-LC.Type.rl.judge",
-      "from": "Type.def.Substitution-LC",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": false
       }
@@ -7163,12 +7307,12 @@
     {
       "id": "dep.Type.def.UTLC-term.Type.def.LegalExpr-LC",
       "from": "Type.def.UTLC-term",
-      "to": "Type.def.LegalExpr-LC",
+      "to": "Syntax.def.legalExpression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.LegalExpr"
+          "Syntax.LegalExpr-UTLC"
         ],
         "isAtomic": false
       }
@@ -7189,12 +7333,12 @@
     {
       "id": "dep.Type.def.Y-Combinator.Type.rl.Expr-LC.ctor.application",
       "from": "Type.def.Y-Combinator",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.apply"
+          "Syntax.Expr-UTLC.apply"
         ],
         "isAtomic": false
       }
@@ -7202,14 +7346,40 @@
     {
       "id": "dep.Type.def.Y-Combinator.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.Y-Combinator",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Type.def.list.Type.def.annotation",
+      "from": "Type.def.list",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.list.Type.def.declaration",
+      "from": "Type.def.list",
+      "to": "Type.def.declaration",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.declaration"
+        ],
+        "isAtomic": true
       }
     },
     {
@@ -7252,19 +7422,6 @@
       }
     },
     {
-      "id": "dep.Type.def.list.Type.rl.judge",
-      "from": "Type.def.list",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
       "id": "dep.Type.def.list.Type.rl.univ",
       "from": "Type.def.list",
       "to": "Type.rl.univ",
@@ -7279,39 +7436,26 @@
     },
     {
       "id": "dep.Type.def.named-lambda.Type.rl.Expr-LC",
-      "from": "Type.def.named-lambda",
-      "to": "Type.rl.Expr-LC",
+      "from": "Syntax.def.namedBinderPresentation-UTLC",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Type.def.named-lambda.Type.rl.Expr-LC.ctor.lambda-abstraction",
-      "from": "Type.def.named-lambda",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "from": "Syntax.def.namedBinderPresentation-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Type.def.named-lambda.Type.rl.judge",
-      "from": "Type.def.named-lambda",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
@@ -7332,12 +7476,38 @@
     {
       "id": "dep.Type.def.omega-Combinator.Type.rl.Expr-LC.ctor.lambda-abstraction",
       "from": "Type.def.omega-Combinator",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.prod.Type.def.annotation",
+      "from": "Type.def.prod",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.prod.Type.def.declaration",
+      "from": "Type.def.prod",
+      "to": "Type.def.declaration",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.declaration"
         ],
         "isAtomic": true
       }
@@ -7369,19 +7539,6 @@
       }
     },
     {
-      "id": "dep.Type.def.prod.Type.rl.judge",
-      "from": "Type.def.prod",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
       "id": "dep.Type.def.prod.Type.rl.univ",
       "from": "Type.def.prod",
       "to": "Type.rl.univ",
@@ -7390,6 +7547,32 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.sum.Type.def.annotation",
+      "from": "Type.def.sum",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Type.def.sum.Type.def.declaration",
+      "from": "Type.def.sum",
+      "to": "Type.def.declaration",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.declaration"
         ],
         "isAtomic": true
       }
@@ -7429,19 +7612,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Type.def.sum.Type.rl.judge",
-      "from": "Type.def.sum",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": true
       }
@@ -7500,7 +7670,7 @@
     },
     {
       "id": "dep.Type.rl.Expr-LC.Type.def.nat",
-      "from": "Type.rl.Expr-LC",
+      "from": "Syntax.def.expression-UTLC",
       "to": "Type.def.nat",
       "label": "depends",
       "metadata": {
@@ -7513,46 +7683,46 @@
     },
     {
       "id": "dep.Type.rl.Expr-LC.Type.rl.Expr-LC.ctor.application",
-      "from": "Type.rl.Expr-LC",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "from": "Syntax.def.expression-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.apply"
+          "Syntax.Expr-UTLC.apply"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Type.rl.Expr-LC.Type.rl.Expr-LC.ctor.bound-variable",
-      "from": "Type.rl.Expr-LC",
-      "to": "Type.rl.Expr-LC.ctor.bound-variable",
+      "from": "Syntax.def.expression-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.boundVariable",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.bvar"
+          "Syntax.Expr-UTLC.bvar"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Type.rl.Expr-LC.Type.rl.Expr-LC.ctor.lambda-abstraction",
-      "from": "Type.rl.Expr-LC",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "from": "Syntax.def.expression-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Type.rl.Expr-LC.Type.rl.fun",
-      "from": "Type.rl.Expr-LC",
+      "from": "Syntax.def.expression-UTLC",
       "to": "Type.rl.fun",
       "label": "depends",
       "metadata": {
@@ -7564,47 +7734,21 @@
       }
     },
     {
-      "id": "dep.Type.rl.Expr-LC.Type.rl.judge",
-      "from": "Type.rl.Expr-LC",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
       "id": "dep.Type.rl.Expr-LC.ctor.application.Type.rl.Expr-LC",
-      "from": "Type.rl.Expr-LC.ctor.application",
-      "to": "Type.rl.Expr-LC",
+      "from": "Syntax.def.expression-UTLC.ctor.application",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": true
       }
     },
     {
-      "id": "dep.Type.rl.Expr-LC.ctor.application.Type.rl.judge",
-      "from": "Type.rl.Expr-LC.ctor.application",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
       "id": "dep.Type.rl.Expr-LC.ctor.bound-variable.Type.def.nat",
-      "from": "Type.rl.Expr-LC.ctor.bound-variable",
+      "from": "Syntax.def.expression-UTLC.ctor.boundVariable",
       "to": "Type.def.nat",
       "label": "depends",
       "metadata": {
@@ -7616,47 +7760,21 @@
       }
     },
     {
-      "id": "dep.Type.rl.Expr-LC.ctor.bound-variable.Type.rl.judge",
-      "from": "Type.rl.Expr-LC.ctor.bound-variable",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
       "id": "dep.Type.rl.Expr-LC.ctor.lambda-abstraction.Type.rl.Expr-LC",
-      "from": "Type.rl.Expr-LC.ctor.lambda-abstraction",
-      "to": "Type.rl.Expr-LC",
+      "from": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
+      "to": "Syntax.def.expression-UTLC",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Lambda.Expr"
+          "Syntax.Expr-UTLC"
         ],
         "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Type.rl.Expr-LC.ctor.lambda-abstraction.Type.rl.judge",
-      "from": "Type.rl.Expr-LC.ctor.lambda-abstraction",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
-        ],
-        "isAtomic": false
       }
     },
     {
       "id": "dep.Type.rl.Expr-STLC.Fulcrum.def",
-      "from": "Type.rl.Expr-STLC",
+      "from": "Syntax.def.expression-STLC",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -7669,7 +7787,7 @@
     },
     {
       "id": "dep.Type.rl.Expr-STLC.Type.def.nat",
-      "from": "Type.rl.Expr-STLC",
+      "from": "Syntax.def.expression-STLC",
       "to": "Type.def.nat",
       "label": "depends",
       "metadata": {
@@ -7682,26 +7800,13 @@
     },
     {
       "id": "dep.Type.rl.Expr-STLC.Type.rl.fun",
-      "from": "Type.rl.Expr-STLC",
+      "from": "Syntax.def.expression-STLC",
       "to": "Type.rl.fun",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
           "Type.to"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
-      "id": "dep.Type.rl.Expr-STLC.Type.rl.judge",
-      "from": "Type.rl.Expr-STLC",
-      "to": "Type.rl.judge",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type.judge"
         ],
         "isAtomic": true
       }
@@ -7760,34 +7865,34 @@
     },
     {
       "id": "dep.Type.rmk.Expr-LC.apply.Type.rl.Expr-LC.ctor.application",
-      "from": "Type.rmk.Expr-LC.apply",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "from": "Syntax.rmk.applicationNotation-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.apply"
+          "Syntax.Expr-UTLC.apply"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Type.rmk.Expr-LC.apply.Type.rl.Expr-LC.ctor.lambda-abstraction",
-      "from": "Type.rmk.Expr-LC.apply",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "from": "Syntax.rmk.applicationNotation-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Type.rmk.Expr-LC.lambda.Type.rl.Expr-LC.ctor.application",
-      "from": "Type.rmk.Expr-LC.lambda",
-      "to": "Type.rl.Expr-LC.ctor.application",
+      "from": "Syntax.rmk.lambdaNotation-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -7799,21 +7904,21 @@
     },
     {
       "id": "dep.Type.rmk.Expr-LC.lambda.Type.rl.Expr-LC.ctor.lambda-abstraction",
-      "from": "Type.rmk.Expr-LC.lambda",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "from": "Syntax.rmk.lambdaNotation-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Type.rmk.Expr-LC.lambda.Type.rmk.deBruijnIndex",
-      "from": "Type.rmk.Expr-LC.lambda",
-      "to": "Type.rmk.deBruijnIndex",
+      "from": "Syntax.rmk.lambdaNotation-UTLC",
+      "to": "Syntax.rmk.deBruijnIndex",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -7825,47 +7930,47 @@
     },
     {
       "id": "dep.Type.rmk.deBruijnIndex.Type.rl.Expr-LC.ctor.bound-variable",
-      "from": "Type.rmk.deBruijnIndex",
-      "to": "Type.rl.Expr-LC.ctor.bound-variable",
+      "from": "Syntax.rmk.deBruijnIndex",
+      "to": "Syntax.def.expression-UTLC.ctor.boundVariable",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.bvar"
+          "Syntax.Expr-UTLC.bvar"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Type.rmk.deBruijnIndex.Type.rl.Expr-LC.ctor.lambda-abstraction",
-      "from": "Type.rmk.deBruijnIndex",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "from": "Syntax.rmk.deBruijnIndex",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Type.rmk.named-lambda.Type.rl.Expr-LC.ctor.lambda-abstraction",
-      "from": "Type.rmk.named-lambda",
-      "to": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "from": "Syntax.rmk.namedBinderPresentation-UTLC",
+      "to": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Type.Expr-UTLC.lambda"
+          "Syntax.Expr-UTLC.lambda"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Type.rmk.named-lambda.Type.rmk.deBruijnIndex",
-      "from": "Type.rmk.named-lambda",
-      "to": "Type.rmk.deBruijnIndex",
+      "from": "Syntax.rmk.namedBinderPresentation-UTLC",
+      "to": "Syntax.rmk.deBruijnIndex",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",

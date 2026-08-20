@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(X@Topology.ctxt.X)),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@g,Type.to(Y@Topology.ctxt.Y,Type)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y))),Type.judge(@τ_Z,Set(Set(Type)))),Logic.implies(Logic.and(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Topology.continuousMap(g,Set.sep-typed(@y,Y@Topology.ctxt.Y,Set.mem(Type.apply(f,y),E)),Type)),Topology.continuousMap(Type.apply(g,f),E,Type)))"
+      "snl": "thm-hyp(list-partial(Type.annotation(@E,Set(X@Topology.ctxt.X)),Type.annotation(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.annotation(@g,Type.to(Y@Topology.ctxt.Y,Type)),Type.annotation(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.annotation(@τ_Y,Set(Set(Y@Topology.ctxt.Y))),Type.annotation(@τ_Z,Set(Set(Type)))),Logic.implies(Logic.and(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Topology.continuousMap(g,Set.sep-typed(@y,Y@Topology.ctxt.Y,Set.mem(Type.apply(f,y),E)),Type)),Topology.continuousMap(Type.apply(g,f),E,Type)))"
     },
     "contribution_info": null,
     "pointer": null,
