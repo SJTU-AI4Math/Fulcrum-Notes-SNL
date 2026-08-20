@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "SetTheory",
   "entry": {
     "id": "Set.ctxt.1",
@@ -9,8 +10,8 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "T, A, B",
-        "zh-CN": "T, A, B"
+        "en": "T, S, A, B, D",
+        "zh-CN": "T, S, A, B, D"
       }
     },
     "content": {},

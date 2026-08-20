@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.def.signatureFragment",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Syntax-Signature Fragment",
+        "zh-CN": "语法签名片段"
+      }
+    },
+    "content": {
+      "snl": "def-hyp-opq(Syntax.hasCategory(@Expr,Syntax.SyntacticCategory),Syntax.signatureFragment(Expr,ctors(Syntax.constructor(@c,Type.to(Expr,Expr)))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Assume the target syntactic category has already been defined. A fragment records only the constructors introduced here; it is non-exhaustive and does not determine a recursor.",
+          "zh-CN": "假设目标语法范畴已经定义。签名片段只记录此处新介绍的构造子；它并不穷尽构造子，也不能据此生成递归子。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

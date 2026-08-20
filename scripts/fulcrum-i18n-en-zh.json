@@ -1,5 +1,5 @@
 {
-  "source_head": "d3a3785e1d1ec1114e48eb2180f9a8ddd7a548f0",
+  "source_head": "bc09e62e7217ae4b65357eb46e8ad8487bb4ae24",
   "entries": {
     "Algebra.ctxt.1": {
       "title": {
@@ -1465,8 +1465,8 @@
     },
     "Set.ctxt.1": {
       "title": {
-        "en": "T, A, B",
-        "zh-CN": "T, A, B"
+        "en": "T, S, A, B, D",
+        "zh-CN": "T, S, A, B, D"
       }
     },
     "Set.ctxt.AB": {
@@ -2227,7 +2227,7 @@
         "K Combinator"
       ]
     },
-    "Type.def.LegalExpr-LC": {
+    "Syntax.def.legalExpression-UTLC": {
       "title": {
         "en": "Legal Expression (Untyped $\\lambda$-Calculus)",
         "zh-CN": "合法表达式（无类型 $\\lambda$-演算）"
@@ -2261,7 +2261,7 @@
         "Sigma Type"
       ]
     },
-    "Type.def.Substitution-LC": {
+    "Syntax.def.substitution-UTLC": {
       "title": {
         "en": "Substitution",
         "zh-CN": "替换"
@@ -2372,7 +2372,7 @@
         "zh-CN": "$\\iota$ 的表达式"
       }
     },
-    "Type.rl.Expr-LC": {
+    "Syntax.def.expression-UTLC": {
       "title": {
         "en": "Closed Expression (Untyped $\\lambda$-Calculus)",
         "zh-CN": "闭表达式（无类型 $\\lambda$-演算）"
@@ -2395,7 +2395,7 @@
         }
       ]
     },
-    "Type.rl.Expr-STLC": {
+    "Syntax.def.expression-STLC": {
       "title": {
         "en": "Expression",
         "zh-CN": "表达式"
@@ -2413,7 +2413,7 @@
         "zh-CN": "类型判断"
       }
     },
-    "Type.rl.lambda-typed": {
+    "Syntax.def.expression-STLC.ctor.lambdaAbstraction": {
       "title": {
         "en": "$\\lambda$-Abstraction Constructor (Typed)",
         "zh-CN": "$\\lambda$-抽象构造子（有类型）"
@@ -2500,7 +2500,7 @@
         "zh-CN": "归纳类型"
       }
     },
-    "Type.subsec.patternMatching": {
+    "Syntax.subsec.patternMatching": {
       "title": {
         "en": "Pattern Matching",
         "zh-CN": "模式匹配"
@@ -2762,7 +2762,7 @@
         }
       ]
     },
-    "Type.def.named-lambda": {
+    "Syntax.def.namedBinderPresentation-UTLC": {
       "title": {
         "en": "Named-Binder Presentation of $\\lambda$-Abstraction",
         "zh-CN": "$\\lambda$-抽象的绑定子命名"
@@ -2885,7 +2885,7 @@
         }
       ]
     },
-    "Type.rmk.named-lambda": {
+    "Syntax.rmk.namedBinderPresentation-UTLC": {
       "title": {
         "en": "Names for Binders",
         "zh-CN": "绑定子命名"
@@ -2894,7 +2894,7 @@
         "绑定子命名"
       ]
     },
-    "Type.def.type-expression-stlc": {
+    "Syntax.def.typeExpression-STLC": {
       "title": {
         "en": "Type Expressions",
         "zh-CN": "类型表达式"
@@ -2929,6 +2929,114 @@
         "en": "Typing Rule for $\\lambda$-Abstraction",
         "zh-CN": "$\\lambda$-抽象的类型判断规则"
       }
+    },
+    "Type.ppt.pi-judge": {
+      "title": {
+        "en": "Universe Level of $\\Pi$-Types",
+        "zh-CN": "$\\Pi$ 类型的宇宙层级"
+      },
+      "accepted_title_en": [
+        "$\\Pi$ 类型的宇宙层级"
+      ]
+    },
+    "Set.def.domain": {
+      "title": {
+        "en": "Domain",
+        "zh-CN": "定义域"
+      },
+      "accepted_title_en": [
+        "定义域"
+      ]
+    },
+    "Set.def.injective": {
+      "title": {
+        "en": "Injective Map / Injection",
+        "zh-CN": "单映射/单射"
+      },
+      "accepted_title_en": [
+        "单映射/单射"
+      ]
+    },
+    "Set.ctxt.D": {
+      "title": {
+        "en": "$D$",
+        "zh-CN": "$D$"
+      },
+      "accepted_title_en": [
+        "$D$"
+      ]
+    },
+    "Set.subsec.map": {
+      "title": {
+        "en": "Maps Between Sets",
+        "zh-CN": "集合间的映射"
+      },
+      "accepted_title_en": [
+        "集合间的映射"
+      ]
+    },
+    "Set.def.bijective": {
+      "title": {
+        "en": "Bijective Map / Bijection",
+        "zh-CN": "一一映射/双射"
+      },
+      "accepted_title_en": [
+        "一一映射/双射"
+      ]
+    },
+    "Set.def.imageAsApplyed": {
+      "title": {
+        "en": "Image of a Map",
+        "zh-CN": "映射的像集"
+      },
+      "accepted_title_en": [
+        "映射的像集"
+      ]
+    },
+    "Set.ctxt.f": {
+      "title": {
+        "en": "$f$",
+        "zh-CN": "$f$"
+      },
+      "accepted_title_en": [
+        "$f$"
+      ]
+    },
+    "Set.def.surjective": {
+      "title": {
+        "en": "Surjective Map",
+        "zh-CN": "满映射"
+      },
+      "accepted_title_en": [
+        "满映射"
+      ]
+    },
+    "Set.def.image": {
+      "title": {
+        "en": "Range / Image",
+        "zh-CN": "映射的值域/像"
+      },
+      "accepted_title_en": [
+        "映射的值域/像"
+      ]
+    },
+    "Set.def.codomain": {
+      "title": {
+        "en": "Codomain",
+        "zh-CN": "余定义域/陪域/到域/达域"
+      },
+      "accepted_title_en": [
+        "余定义域/陪域/到域/达域"
+      ]
+    },
+    "Set.ctxt.S": {
+      "title": {
+        "en": "$S$",
+        "zh-CN": "$S$"
+      },
+      "accepted_title_en": [
+        "$S$"
+      ]
     }
   },
   "styles": {
@@ -3826,30 +3934,7 @@
         "text": ""
       }
     },
-    "Type.Expr::default": {
-      "en": "Expression",
-      "zh-CN": "表达式",
-      "template_envelope": {
-        "mode": "text",
-        "typst": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "latex": {
-          "built_in": "",
-          "synthesis": {
-            "mode": "formula",
-            "macro": ""
-          }
-        },
-        "markdown": "",
-        "text": ""
-      }
-    },
-    "Type.Term::default": {
+    "Syntax.Term::default": {
       "en": "Term",
       "zh-CN": "项",
       "template_envelope": {
@@ -3895,7 +3980,7 @@
         "text": ""
       }
     },
-    "Type.judge::be": {
+    "Type.annotation::be": {
       "en": "#0 be #1",
       "zh-CN": "#0 是 #1",
       "template_envelope": {
@@ -3918,7 +4003,7 @@
         "text": ""
       }
     },
-    "Type.judge::be-a": {
+    "Type.annotation::be-a": {
       "en": "#0 be a #1",
       "zh-CN": "#0 是一个 #1",
       "template_envelope": {
@@ -3941,7 +4026,7 @@
         "text": ""
       }
     },
-    "Type.judge::be-an": {
+    "Type.annotation::be-an": {
       "en": "#0 be an #1",
       "zh-CN": "#0 是一个 #1",
       "template_envelope": {
@@ -4754,7 +4839,7 @@
         "text": ""
       }
     },
-    "Type.Expr-UTLC.bvar::text": {
+    "Syntax.Expr-UTLC.bvar::text": {
       "en": "Bound Variable",
       "zh-CN": "受束变元",
       "template_envelope": {
@@ -4777,7 +4862,7 @@
         "text": ""
       }
     },
-    "Type.Expr-UTLC.apply::text": {
+    "Syntax.Expr-UTLC.apply::text": {
       "en": "$\\lambda$-Application",
       "zh-CN": "$\\lambda$-应用",
       "template_envelope": {
@@ -4800,7 +4885,7 @@
         "text": ""
       }
     },
-    "Type.Expr-UTLC.lambda::text": {
+    "Syntax.Expr-UTLC.lambda::text": {
       "en": "$\\lambda$-Abstraction",
       "zh-CN": "$\\lambda$-抽象",
       "template_envelope": {
@@ -4878,6 +4963,29 @@
       "accepted_body": [
         "$\\lambda$-项"
       ],
+      "template_envelope": {
+        "mode": "text",
+        "typst": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "latex": {
+          "built_in": "",
+          "synthesis": {
+            "mode": "formula",
+            "macro": ""
+          }
+        },
+        "markdown": "",
+        "text": ""
+      }
+    },
+    "Syntax.Expr::text": {
+      "en": "Expression",
+      "zh-CN": "表达式",
       "template_envelope": {
         "mode": "text",
         "typst": {

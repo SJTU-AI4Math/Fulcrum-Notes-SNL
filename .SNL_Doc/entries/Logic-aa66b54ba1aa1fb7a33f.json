@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-struct[prop](Logic.and(p,q),struct(Type.judge(%left%,p),Type.judge(%right%,q)))"
+      "snl": "def-struct[prop](Logic.and(p,q),struct(Type.declaration(%left%,p),Type.declaration(%right%,q)))"
     },
     "contribution_info": null,
     "pointer": null,

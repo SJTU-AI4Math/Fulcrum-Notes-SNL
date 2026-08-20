@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@x,Type.apply(M,A)),FP.lift(T,M,x),%the canonical embedding into the transformed monad%)"
+      "snl": "def-hyp(Type.annotation(@x,Type.apply(M,A)),FP.lift(T,M,x),%the canonical embedding into the transformed monad%)"
     },
     "contribution_info": null,
     "pointer": null,

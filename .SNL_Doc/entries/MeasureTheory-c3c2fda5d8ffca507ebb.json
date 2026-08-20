@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(@mu,Type.to(Sigma@Measure.ctxt.Sigma,ENNReal))"
+      "snl": "Type.annotation(@mu,Type.to(Sigma@Measure.ctxt.Sigma,ENNReal))"
     },
     "contribution_info": null,
     "pointer": null,

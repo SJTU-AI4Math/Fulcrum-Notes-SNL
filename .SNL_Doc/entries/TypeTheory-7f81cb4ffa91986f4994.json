@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.def.openExpression-UTLC.ctor.freeVariable",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Free Variable Constructor",
+        "zh-CN": "自由变量构造子"
+      }
+    },
+    "content": {
+      "snl": "def-hyp-opq(Type.annotation(@x,`string`),Syntax.Expr-UTLC.fvar(x))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

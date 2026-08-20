@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Church.succ,Type.Expr-UTLC.lambda(list-partial[none](@n,@f,@x),Lambda.apply(f,parentheses(Lambda.apply(n,f,x)))))"
+      "snl": "def(Church.succ,Syntax.Expr-UTLC.lambda(list-partial[none](@n,@f,@x),Syntax.apply-UTLC(f,parentheses(Syntax.apply-UTLC(n,f,x)))))"
     },
     "contribution_info": null,
     "pointer": null

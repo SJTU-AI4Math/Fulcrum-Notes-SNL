@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "entry": {
     "id": "Topology.def.topologicalSpace",
@@ -14,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@S,Type),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topologicalSpace(S@Topology.ctxt.S,τ),Topology.topology(τ,S@Topology.ctxt.S))"
+      "snl": "def[predicate](Topology.topologicalSpace(S@Topology.ctxt.S,τ@Topology.ctxt.tau),Topology.topology(τ@Topology.ctxt.tau,S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@S,Type),Topology.discreteTopology,Topology.topology(Set.powerset(S@Topology.ctxt.S),S@Topology.ctxt.S))"
+      "snl": "def-hyp(Type.annotation(@S,Type),Topology.discreteTopology,Topology.topology(Set.powerset(S@Topology.ctxt.S),S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null,

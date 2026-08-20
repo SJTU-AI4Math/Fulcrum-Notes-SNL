@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.judge(@E,Measure.LebesgueSets($\\mathbb{R}$)),%Lebesgue measure is invariant under translations of E%)"
+      "snl": "thm-hyp(Type.annotation(@E,Measure.LebesgueSets($\\mathbb{R}$)),%Lebesgue measure is invariant under translations of E%)"
     },
     "contribution_info": null,
     "pointer": null,

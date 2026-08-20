@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@X,Type), Algebra.Sym, Algebra.Group)"
+      "snl": "def-hyp(Type.annotation(@X,Type), Algebra.Sym, Algebra.Group)"
     },
     "contribution_info": null,
     "pointer": null,

@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.true)"
+      "snl": "thm-hyp(list-partial(Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.true)"
     },
     "contribution_info": null,
     "pointer": null,

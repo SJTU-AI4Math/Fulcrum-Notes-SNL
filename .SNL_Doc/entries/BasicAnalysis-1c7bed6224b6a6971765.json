@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@F, Analysis.PFun), Type.judge(list-partial(@x, @L), Real)), Analysis.funLim(F, @y, x, L), Logic.and(Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Set.subset(Analysis.nbhDel(x, delta), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Analysis.nbhDel(x, delta)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
+      "snl": "def-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(list-partial(@x, @L), Real)), Analysis.funLim(F, @y, x, L), Logic.and(Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Set.subset(Analysis.nbhDel(x, delta), Analysis.domain(F)))), Logic.forall-typed(@epsilon, Real, Logic.implies($#0 > 0$(epsilon), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Analysis.nbhDel(x, delta)), Set.mem(Type.apply(Analysis.map(F), y), Analysis.nbh(L, epsilon))))))))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

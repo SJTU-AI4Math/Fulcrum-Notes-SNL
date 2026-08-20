@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpIso, Logic.and(Algebra.GrpMono,Algebra.GrpEpi))"
+      "snl": "def-hyp(list-partial(Type.annotation(@H,Type),Type.annotation(@dotH,Type.to(H,Type.to(H,H))),Type.annotation(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpIso, Logic.and(Algebra.GrpMono,Algebra.GrpEpi))"
     },
     "contribution_info": null,
     "pointer": null,

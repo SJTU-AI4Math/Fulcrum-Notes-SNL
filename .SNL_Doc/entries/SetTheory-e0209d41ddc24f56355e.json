@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.imageAsApplyed",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Image of a Map",
+        "zh-CN": "映射的像集"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(Type.annotation(@E, Set(T@Set.ctxt.T)), Set.fun(f@Set.ctxt.f, E), Set.sep-typed(\r\n    @y,\r\n    T@Set.ctxt.T,\r\n    Logic.exists-typed(\r\n        @x,\r\n        S@Set.ctxt.S,\r\n        Logic.and(Set.mem(x, E), Eq(Type.apply(f@Set.ctxt.f, x), y))\r\n    )\r\n))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

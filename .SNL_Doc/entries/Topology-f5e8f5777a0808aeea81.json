@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.compact(A),Topology.countablyCompact(A)))"
+      "snl": "thm-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.compact(A),Topology.countablyCompact(A)))"
     },
     "contribution_info": null,
     "pointer": null,

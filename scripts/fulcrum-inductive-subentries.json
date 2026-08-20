@@ -60,8 +60,13 @@
       "graph_level": "entry",
       "existing": true,
       "content": {
-        "snl": "def-inductive[prop](Lambda.eta(@$\\cdot$,@$\\cdot$),ctors(Type.to(Type.judge[paren](@f,Lambda.LegalExpr),parentheses(Lambda.eta(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.apply(f,x)),f)))))"
-      }
+        "snl": "def-inductive[prop](Lambda.eta(@$\\cdot$,@$\\cdot$),ctors(Type.to(Syntax.hasCategory[paren](@f,Syntax.LegalExpr-UTLC),parentheses(Lambda.eta(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.apply(f,x)),f)))))"
+      },
+      "accepted_content": [
+        {
+          "snl": "def-inductive[prop](Lambda.eta(@$\\cdot$,@$\\cdot$),ctors(Type.to(Type.annotation[paren](@f,Syntax.LegalExpr-UTLC),parentheses(Lambda.eta(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.apply(f,x)),f)))))"
+        }
+      ]
     },
     {
       "id": "Type.def.Y-Combinator",
@@ -72,7 +77,7 @@
         "zh-CN": "$Y$ 组合子"
       },
       "content": {
-        "snl": "def($Y$,Type.Expr-UTLC.lambda(@f,Type.Expr-UTLC.apply($\\left(#0\\right)$(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.apply(f,Type.Expr-UTLC.apply(x,x)))),$\\left(#0\\right)$(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.apply(f,Type.Expr-UTLC.apply(x,x)))))))"
+        "snl": "def($Y$,Syntax.Expr-UTLC.lambda(@f,Syntax.Expr-UTLC.apply($\\left(#0\\right)$(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.apply(f,Syntax.Expr-UTLC.apply(x,x)))),$\\left(#0\\right)$(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.apply(f,Syntax.Expr-UTLC.apply(x,x)))))))"
       },
       "parent_entry_id": "Type.subsec.combinators",
       "parent_node_ids": [
@@ -282,11 +287,16 @@
         "zh-CN": "列表"
       },
       "content": {
-        "snl": "def-inductive-hyp(Type.judge(@$\\alpha$,Type),List($\\alpha$),ctors(Type.judge(List.nil,List($\\alpha$)),Type.judge(List.cons,Type.to($\\alpha$,Type.to(List($\\alpha$),List($\\alpha$))))))"
+        "snl": "def-inductive-hyp(Type.annotation(@$\\alpha$,Type),List($\\alpha$),ctors(Type.declaration(List.nil,List($\\alpha$)),Type.declaration(List.cons,Type.to($\\alpha$,Type.to(List($\\alpha$),List($\\alpha$))))))"
       },
       "parent_entry_id": "Type.subsec.inductive-types",
       "graph_level": "entry",
-      "existing": true
+      "existing": true,
+      "accepted_content": [
+        {
+          "snl": "def-inductive-hyp(Type.annotation(@$\\alpha$,Type),List($\\alpha$),ctors(Type.annotation(List.nil,List($\\alpha$)),Type.annotation(List.cons,Type.to($\\alpha$,Type.to(List($\\alpha$),List($\\alpha$))))))"
+        }
+      ]
     },
     {
       "id": "Type.def.prod",
@@ -297,11 +307,16 @@
         "zh-CN": "积类型"
       },
       "content": {
-        "snl": "def-inductive-hyp(Type.judge(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.judge(Prod.pair[text],Type.to(A,Type.to(B,Type.prod(A,B))))))"
+        "snl": "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.declaration(Prod.pair[text],Type.to(A,Type.to(B,Type.prod(A,B))))))"
       },
       "parent_entry_id": "Type.subsec.inductive-types",
       "graph_level": "entry",
-      "existing": true
+      "existing": true,
+      "accepted_content": [
+        {
+          "snl": "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.annotation(Prod.pair[text],Type.to(A,Type.to(B,Type.prod(A,B))))))"
+        }
+      ]
     },
     {
       "id": "Type.def.sum",
@@ -312,11 +327,16 @@
         "zh-CN": "和类型"
       },
       "content": {
-        "snl": "def-inductive-hyp(Type.judge(list-partial[formula](@A,@B),Type),Type.Sum(A,B),ctors(Type.judge(Sum.inl,Type.to(A,Type.Sum(A,B))),Type.judge(Sum.inr,Type.to(B,Type.Sum(A,B)))))"
+        "snl": "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.Sum(A,B),ctors(Type.declaration(Sum.inl,Type.to(A,Type.Sum(A,B))),Type.declaration(Sum.inr,Type.to(B,Type.Sum(A,B)))))"
       },
       "parent_entry_id": "Type.subsec.inductive-types",
       "graph_level": "entry",
-      "existing": true
+      "existing": true,
+      "accepted_content": [
+        {
+          "snl": "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.Sum(A,B),ctors(Type.annotation(Sum.inl,Type.to(A,Type.Sum(A,B))),Type.annotation(Sum.inr,Type.to(B,Type.Sum(A,B)))))"
+        }
+      ]
     },
     {
       "id": "Type.def.Sigma",
@@ -418,7 +438,7 @@
       "existing": true
     },
     {
-      "id": "Type.rmk.Expr-LC.lambda",
+      "id": "Syntax.rmk.lambdaNotation-UTLC",
       "package": "TypeTheory",
       "kind": "remark",
       "title": {
@@ -426,9 +446,9 @@
         "zh-CN": "$\\lambda$-抽象记号习惯"
       },
       "content": {
-        "snl": "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.NamedBinder(Type.Expr-UTLC.lambda[text](,),deBruijnIndex,Type.Expr-UTLC.lambda(@x,P(x))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.MultipleBinders(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.Shadowing(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@x,x))))"
+        "snl": "list-partial[enumerate](Syntax.OneOffI18N.LambdaNotation.NamedBinder(Syntax.Expr-UTLC.lambda[text](,),deBruijnIndex,Syntax.Expr-UTLC.lambda(@x,P(x))),Syntax.OneOffI18N.LambdaNotation.MultipleBinders(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),Syntax.OneOffI18N.LambdaNotation.Shadowing(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@x,x))))"
       },
-      "parent_entry_id": "Type.rl.Expr-LC.ctor.lambda-abstraction",
+      "parent_entry_id": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
       "parent_node_ids": [
         "n_sub_37901b2e9ebe"
       ],
@@ -436,7 +456,7 @@
       "existing": true
     },
     {
-      "id": "Type.rmk.Expr-LC.apply",
+      "id": "Syntax.rmk.applicationNotation-UTLC",
       "package": "TypeTheory",
       "kind": "remark",
       "title": {
@@ -444,9 +464,9 @@
         "zh-CN": "$\\lambda$-应用记号习惯"
       },
       "content": {
-        "snl": "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative(Type.Expr-UTLC.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply(parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda(Type.Expr-UTLC.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))"
+        "snl": "list-partial[enumerate](Syntax.OneOffI18N.ApplicationNotation.LeftAssociative(Syntax.Expr-UTLC.apply[text](,),Syntax.apply-UTLC(x,y,z,w),Syntax.apply-UTLC(parentheses(Syntax.apply-UTLC(parentheses(Syntax.apply-UTLC(x,y)),z)),w)),Syntax.OneOffI18N.ApplicationNotation.PrecedenceOverLambda(Syntax.Expr-UTLC.apply[text](,),Syntax.Expr-UTLC.lambda[text](,),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Syntax.apply-UTLC(x,y)),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Syntax.apply-UTLC(x,y)))))"
       },
-      "parent_entry_id": "Type.rl.Expr-LC.ctor.application",
+      "parent_entry_id": "Syntax.def.expression-UTLC.ctor.application",
       "parent_node_ids": [
         "n_sub_50d85e06a8b4"
       ],
@@ -454,7 +474,7 @@
       "existing": true
     },
     {
-      "id": "Type.rmk.deBruijnIndex",
+      "id": "Syntax.rmk.deBruijnIndex",
       "package": "TypeTheory",
       "kind": "remark",
       "title": {
@@ -462,9 +482,9 @@
         "zh-CN": "de Bruijn 指数"
       },
       "content": {
-        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.DeBruijnIndex.Explanation(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0),Type.Expr-UTLC.bvar(1),Type.Expr-UTLC.bvar(2)))),Type.Expr-UTLC.bvar(0)))))"
+        "snl": "Syntax.OneOffI18N.DeBruijnIndex.Explanation(%bvar%,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,),Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Syntax.apply-UTLC(parentheses(Syntax.Expr-UTLC.lambda(@z,Syntax.apply-UTLC(Syntax.Expr-UTLC.bvar(0),Syntax.Expr-UTLC.bvar(1),Syntax.Expr-UTLC.bvar(2)))),Syntax.Expr-UTLC.bvar(0)))))"
       },
-      "parent_entry_id": "Type.rl.Expr-LC.ctor.bound-variable",
+      "parent_entry_id": "Syntax.def.expression-UTLC.ctor.boundVariable",
       "parent_node_ids": [
         "n_sub_871cb6341c3d"
       ],
@@ -489,22 +509,28 @@
       "accepted_content": [
         {},
         {
-          "snl": "thm-hyp(list-partial(Type.ctx(@$\\Gamma$),Type.ctx-judge($\\Gamma$,f,Type.to(A,B)),Type.ctx-judge($\\Gamma$,x,A)),Type.ctx-judge($\\Gamma$,Type.apply(f,x),B))"
+          "snl": "thm-hyp(list-partial(Type.ctx(@$\\Gamma$),Type.judge($\\Gamma$,f,Type.to(A,B)),Type.judge($\\Gamma$,x,A)),Type.judge($\\Gamma$,Type.apply(f,x),B))"
         },
         {
-          "snl": "thm-hyp(list-partial(Type.judge(f,Type.to(A,B)),Type.judge(x,A)),Type.judge(Type.apply(f,x),B))"
+          "snl": "thm-hyp(list-partial(Type.annotation(f,Type.to(A,B)),Type.annotation(x,A)),Type.annotation(Type.apply(f,x),B))"
         }
       ]
     },
     {
-      "id": "Type.def.type-expression-stlc",
+      "id": "Syntax.def.typeExpression-STLC",
       "package": "TypeTheory",
       "kind": "definition",
       "title": {
         "en": "Type Expressions",
         "zh-CN": "类型表达式"
       },
-      "content": {},
+      "content": {
+        "snl": "Syntax.signatureFragment(Syntax.TypeExpr,ctors(Syntax.constructor(%function type%,Type.to(Syntax.TypeExpr,Type.to(Syntax.TypeExpr,Syntax.TypeExpr)))))",
+        "markdown": {
+          "en": "Assume the STLC type-expression carrier is already available; only the function-type constructor is introduced here.",
+          "zh-CN": "假设 STLC 类型表达式载体已经给定；此处只介绍函数类型构造子。"
+        }
+      },
       "parent_entry_id": "Type.subsec.TypeSystem",
       "parent_node_ids": [
         "n_16"
@@ -514,10 +540,10 @@
       "accepted_content": [
         {},
         {
-          "snl": "def-inductive(Type.TypeExpr,ctors(Type.judge(@$\\iota$,Type.TypeExpr),Type.judge(Type.to[text],Type.to(Type.TypeExpr,Type.to(Type.TypeExpr,Type.TypeExpr)))))"
+          "snl": "def-inductive(Syntax.TypeExpr,ctors(Type.annotation(@$\\iota$,Syntax.TypeExpr),Type.annotation(Type.to[text],Type.to(Syntax.TypeExpr,Type.to(Syntax.TypeExpr,Syntax.TypeExpr)))))"
         },
         {
-          "snl": "def-inductive-hyp(Type.ctx(@$\\Gamma$),Type.TypeExpr,ctors(Type.judge(Type.to[text],Type.to(Type.TypeExpr,Type.to(Type.TypeExpr,Type.TypeExpr)))))"
+          "snl": "def-inductive-hyp(Type.ctx(@$\\Gamma$),Syntax.TypeExpr,ctors(Type.annotation(Type.to[text],Type.to(Syntax.TypeExpr,Type.to(Syntax.TypeExpr,Syntax.TypeExpr)))))"
         }
       ]
     },
@@ -539,7 +565,7 @@
       "graph_level": "entry"
     },
     {
-      "id": "Type.rmk.closedExpression",
+      "id": "Syntax.rmk.closedExpression-UTLC",
       "package": "TypeTheory",
       "kind": "remark",
       "title": {
@@ -547,14 +573,14 @@
         "zh-CN": "闭表达式与开表达式"
       },
       "content": {
-        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.ClosedExpression.GlobalAvailability(Lambda.Expr,Lambda.OpenExpr,Type.Expr-UTLC.fvar[text])"
+        "snl": "Syntax.OneOffI18N.ClosedExpression.GlobalAvailability(Syntax.Expr-UTLC,Syntax.OpenExpr-UTLC,Syntax.Expr-UTLC.fvar[text])"
       },
-      "parent_entry_id": "Type.rl.Expr-LC",
+      "parent_entry_id": "Syntax.def.expression-UTLC",
       "graph_level": "subentry",
-      "after_entry_id": "Type.rl.Expr-LC.ctor.bound-variable"
+      "after_entry_id": "Syntax.def.expression-UTLC.ctor.boundVariable"
     },
     {
-      "id": "Type.def.freeVariable",
+      "id": "Syntax.def.openExpression-UTLC",
       "package": "TypeTheory",
       "kind": "definition",
       "title": {
@@ -562,19 +588,22 @@
         "zh-CN": "自由变量与开表达式"
       },
       "content": {
-        "snl": "def-inductive(Lambda.OpenExpr,ctors(Type.judge(Type.Expr-UTLC.closed[text],Type.to(Lambda.Expr,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.fvar[text],Type.to(`string`,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.lambda[text],Type.to(Lambda.OpenExpr,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.apply[text],Type.to(Lambda.OpenExpr,Type.to(Lambda.OpenExpr,Lambda.OpenExpr)))))"
+        "snl": "Syntax.signatureFragment(Syntax.OpenExpr-UTLC,ctors(Syntax.constructor(Syntax.Expr-UTLC.closed[text],Type.to(Syntax.Expr-UTLC,Syntax.OpenExpr-UTLC)),Syntax.constructor(Syntax.Expr-UTLC.fvar[text],Type.to(`string`,Syntax.OpenExpr-UTLC)),Syntax.constructor(Syntax.Expr-UTLC.lambda[text],Type.to(Syntax.OpenExpr-UTLC,Syntax.OpenExpr-UTLC)),Syntax.constructor(Syntax.Expr-UTLC.apply[text],Type.to(Syntax.OpenExpr-UTLC,Type.to(Syntax.OpenExpr-UTLC,Syntax.OpenExpr-UTLC)))))"
       },
       "parent_entry_id": "Type.subsec.UTLC-design",
       "graph_level": "entry",
       "after_entry_id": "Type.def.alpha-conversion",
       "accepted_content": [
         {
-          "snl": "def-inductive(Lambda.OpenExpr,ctors(Type.judge(Type.Expr-UTLC.closed,Type.to(Lambda.Expr,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.fvar,Type.to(`string`,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.lambda[text],Type.to(Lambda.OpenExpr,Lambda.OpenExpr)),Type.judge(Type.Expr-UTLC.apply[text],Type.to(Lambda.OpenExpr,Type.to(Lambda.OpenExpr,Lambda.OpenExpr)))))"
+          "snl": "def-inductive(Syntax.OpenExpr-UTLC,ctors(Type.annotation(Syntax.Expr-UTLC.closed,Type.to(Syntax.Expr-UTLC,Syntax.OpenExpr-UTLC)),Type.annotation(Syntax.Expr-UTLC.fvar,Type.to(`string`,Syntax.OpenExpr-UTLC)),Type.annotation(Syntax.Expr-UTLC.lambda[text],Type.to(Syntax.OpenExpr-UTLC,Syntax.OpenExpr-UTLC)),Type.annotation(Syntax.Expr-UTLC.apply[text],Type.to(Syntax.OpenExpr-UTLC,Type.to(Syntax.OpenExpr-UTLC,Syntax.OpenExpr-UTLC)))))"
+        },
+        {
+          "snl": "def-inductive(Syntax.OpenExpr-UTLC,ctors(Type.annotation(Syntax.Expr-UTLC.closed[text],Type.to(Syntax.Expr-UTLC,Syntax.OpenExpr-UTLC)),Type.annotation(Syntax.Expr-UTLC.fvar[text],Type.to(`string`,Syntax.OpenExpr-UTLC)),Type.annotation(Syntax.Expr-UTLC.lambda[text],Type.to(Syntax.OpenExpr-UTLC,Syntax.OpenExpr-UTLC)),Type.annotation(Syntax.Expr-UTLC.apply[text],Type.to(Syntax.OpenExpr-UTLC,Type.to(Syntax.OpenExpr-UTLC,Syntax.OpenExpr-UTLC)))))"
         }
       ]
     },
     {
-      "id": "Type.rmk.freeVariableOpenExpression",
+      "id": "Syntax.rmk.freeVariableOpenExpression-UTLC",
       "package": "TypeTheory",
       "kind": "remark",
       "title": {
@@ -582,13 +611,13 @@
         "zh-CN": "自由变量与开放性"
       },
       "content": {
-        "snl": "FulcrumNotes.OneOffI18N.TypeTheory.FreeVariable.OpenExpression(Type.Expr-UTLC.fvar(@x),Lambda.OpenExpr)"
+        "snl": "Syntax.OneOffI18N.FreeVariable.OpenExpression(Syntax.Expr-UTLC.fvar(@x),Syntax.OpenExpr-UTLC)"
       },
-      "parent_entry_id": "Type.def.freeVariable",
+      "parent_entry_id": "Syntax.def.openExpression-UTLC",
       "graph_level": "subentry"
     },
     {
-      "id": "Type.def.shift-LC",
+      "id": "Syntax.def.shift-UTLC",
       "package": "TypeTheory",
       "kind": "definition",
       "title": {
@@ -596,7 +625,7 @@
         "zh-CN": "de Bruijn 指数提升"
       },
       "content": {
-        "snl": "def-hyp(list-partial(Type.judge(@a,Lambda.Expr),Type.judge(list-partial[formula](@d,@c),Nat)),Lambda.shift(d,c,a),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.bvar,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,c)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Add.add(k,d)),Logic.neg(Lt(k,c))))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.lambda,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.shift(d,Nat.succ(c),t))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.app,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.shift(d,c,f),Lambda.shift(d,c,u))))))",
+        "snl": "def-hyp(list-partial(Syntax.hasCategory(@a,Syntax.Expr-UTLC),Type.annotation(list-partial[formula](@d,@c),Nat)),Syntax.shift-UTLC(d,c,a),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.boundVariable,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,c)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Add.add(k,d)),Logic.neg(Lt(k,c))))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.lambda,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.shift-UTLC(d,Nat.succ(c),t))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.application,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.shift-UTLC(d,c,f),Syntax.shift-UTLC(d,c,u))))))",
         "markdown": {
           "en": "The shift ↑ᵈ_c a increases every bound-variable index k ≥ c by d. Crossing a binder raises the cutoff from c to c+1; application is traversed componentwise. This operation is the lift used when substitution crosses a binder.",
           "zh-CN": "提升 ↑ᵈ_c a 把每个满足 k ≥ c 的受束变元指数增加 d。穿过绑定子时，截断值由 c 增至 c+1；应用的两部分分别递归处理。替换穿过绑定子时用它提升被代入项。"
@@ -604,10 +633,24 @@
       },
       "parent_entry_id": "Type.subsec.basics",
       "graph_level": "entry",
-      "after_entry_id": "Type.def.LegalExpr-LC",
+      "after_entry_id": "Syntax.def.legalExpression-UTLC",
       "accepted_content": [
         {
-          "snl": "def-hyp(list-partial(Type.judge(@a,Lambda.Expr),Type.judge(list-partial[formula](@d,@c),Nat)),Lambda.shift(d,c,a),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(%\\mathsf{bvar}%,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,c)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Add.add(k,d)),Logic.neg(Lt(k,c))))),Type.pattern.branch(Type.pattern.constructor(%\\mathsf{lambda}%,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.shift(d,Nat.succ(c),t))),Type.pattern.branch(Type.pattern.constructor(%\\mathsf{app}%,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.shift(d,c,f),Lambda.shift(d,c,u))))))",
+          "snl": "def-hyp(list-partial(Type.annotation(@a,Syntax.Expr-UTLC),Type.annotation(list-partial[formula](@d,@c),Nat)),Syntax.shift-UTLC(d,c,a),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(%\\mathsf{bvar}%,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,c)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Add.add(k,d)),Logic.neg(Lt(k,c))))),Syntax.pattern.branch(Syntax.pattern.constructor(%\\mathsf{lambda}%,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.shift-UTLC(d,Nat.succ(c),t))),Syntax.pattern.branch(Syntax.pattern.constructor(%\\mathsf{app}%,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.shift-UTLC(d,c,f),Syntax.shift-UTLC(d,c,u))))))",
+          "markdown": {
+            "en": "The shift ↑ᵈ_c a increases every bound-variable index k ≥ c by d. Crossing a binder raises the cutoff from c to c+1; application is traversed componentwise. This operation is the lift used when substitution crosses a binder.",
+            "zh-CN": "提升 ↑ᵈ_c a 把每个满足 k ≥ c 的受束变元指数增加 d。穿过绑定子时，截断值由 c 增至 c+1；应用的两部分分别递归处理。替换穿过绑定子时用它提升被代入项。"
+          }
+        },
+        {
+          "snl": "def-hyp(list-partial(Type.annotation(@a,Syntax.Expr-UTLC),Type.annotation(list-partial[formula](@d,@c),Nat)),Syntax.shift-UTLC(d,c,a),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.boundVariable,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,c)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Add.add(k,d)),Logic.neg(Lt(k,c))))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.lambda,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.shift-UTLC(d,Nat.succ(c),t))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.application,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.shift-UTLC(d,c,f),Syntax.shift-UTLC(d,c,u))))))",
+          "markdown": {
+            "en": "The shift ↑ᵈ_c a increases every bound-variable index k ≥ c by d. Crossing a binder raises the cutoff from c to c+1; application is traversed componentwise. This operation is the lift used when substitution crosses a binder.",
+            "zh-CN": "提升 ↑ᵈ_c a 把每个满足 k ≥ c 的受束变元指数增加 d。穿过绑定子时，截断值由 c 增至 c+1；应用的两部分分别递归处理。替换穿过绑定子时用它提升被代入项。"
+          }
+        },
+        {
+          "snl": "def-hyp(list-partial(Syntax.hasCategory(@a,Syntax.Expr-UTLC),Syntax.hasCategory(list-partial[formula](@d,@c),Nat)),Syntax.shift-UTLC(d,c,a),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.boundVariable,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,c)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Add.add(k,d)),Logic.neg(Lt(k,c))))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.lambda,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.shift-UTLC(d,Nat.succ(c),t))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.application,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.shift-UTLC(d,c,f),Syntax.shift-UTLC(d,c,u))))))",
           "markdown": {
             "en": "The shift ↑ᵈ_c a increases every bound-variable index k ≥ c by d. Crossing a binder raises the cutoff from c to c+1; application is traversed componentwise. This operation is the lift used when substitution crosses a binder.",
             "zh-CN": "提升 ↑ᵈ_c a 把每个满足 k ≥ c 的受束变元指数增加 d。穿过绑定子时，截断值由 c 增至 c+1；应用的两部分分别递归处理。替换穿过绑定子时用它提升被代入项。"
@@ -737,7 +780,7 @@
         "zh-CN": "协变函子"
       },
       "content": {
-        "snl": "def-struct-hyp(Type.judge(@F,Type.to(Type,Type)),Type.covariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(A) → F(B)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%composition law%,%F(g ∘ f)=F(g) ∘ F(f)%)))",
+        "snl": "def-struct-hyp(Type.annotation(@F,Type.to(Type,Type)),Type.covariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(A) → F(B)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%composition law%,%F(g ∘ f)=F(g) ∘ F(f)%)))",
         "markdown": {
           "en": "A covariant functor sends f : A → B to F(f) : F(A) → F(B), preserving identities and composition in the same order. In positivity calculations, a covariant type constructor preserves the polarity of occurrences in its argument.",
           "zh-CN": "协变函子把 f : A → B 映为 F(f) : F(A) → F(B)，并按相同顺序保持恒等态射与复合。在正性计算中，协变类型构造子保持其参数中各出现的极性。"
@@ -756,7 +799,7 @@
         "zh-CN": "反变（逆变）函子"
       },
       "content": {
-        "snl": "def-struct-hyp(Type.judge(@F,Type.to(Type,Type)),Type.contravariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(B) → F(A)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%reversed composition law%,%F(g ∘ f)=F(f) ∘ F(g)%)))",
+        "snl": "def-struct-hyp(Type.annotation(@F,Type.to(Type,Type)),Type.contravariant(F),struct[enumerate](member[colon](%map%,%for every f : A → B, a map F(f) : F(B) → F(A)% ),member[colon](%identity law%,%F(id_A)=id_{F(A)}%),member[colon](%reversed composition law%,%F(g ∘ f)=F(f) ∘ F(g)%)))",
         "markdown": {
           "en": "A contravariant functor sends f : A → B to F(f) : F(B) → F(A), reversing the direction of arrows and the order of composition. In positivity calculations, a contravariant type constructor reverses polarity.",
           "zh-CN": "反变（逆变）函子把 f : A → B 映为 F(f) : F(B) → F(A)，反转箭头方向与复合次序。在正性计算中，反变类型构造子会反转极性。"
@@ -835,7 +878,7 @@
         "zh-CN": "落入 Prop 的非直谓依赖积"
       },
       "content": {
-        "snl": "thm-hyp(list-partial(Type.judge(@A,Type[univ](@u)),Type.judge(@P,Type.to(A,Proposition))),Type.judge(Type.Pi(@x,A,Type.apply(P,x)),Proposition))",
+        "snl": "thm-hyp(list-partial(Type.judge(@Γ,@A,Type[univ](@u)),Type.judge(Type.contextExtend(Γ,@x,A),@P,Proposition)),Type.judge(Γ,Type.Pi(@x,A,P),Proposition))",
         "markdown": {
           "en": "In a CIC-style impredicative Prop, if A lives in any universe and P : A → Prop, then Π x : A, P x is again a proposition. The quantified domain may therefore be much larger than Prop. This does not assert Prop : Prop; Prop itself still has a type in the ordinary universe hierarchy.",
           "zh-CN": "在 CIC 风格的非直谓 Prop 中，若 A 位于任意宇宙且 P : A → Prop，则 Π x : A, P x 仍然是命题。因此被量化的定义域可以远大于 Prop。这并不声称 Prop : Prop；Prop 自身仍在通常的宇宙层级中拥有类型。"
@@ -843,7 +886,16 @@
       },
       "parent_entry_id": "Type.subsec.ImpredicativeProposition",
       "graph_level": "entry",
-      "after_entry_id": "Type.rmk.predicativity"
+      "after_entry_id": "Type.rmk.predicativity",
+      "accepted_content": [
+        {
+          "snl": "thm-hyp(list-partial(Type.annotation(@A,Type[univ](@u)),Type.annotation(@P,Type.to(A,Proposition))),Type.annotation(Type.Pi(@x,A,Type.apply(P,x)),Proposition))",
+          "markdown": {
+            "en": "In a CIC-style impredicative Prop, if A lives in any universe and P : A → Prop, then Π x : A, P x is again a proposition. The quantified domain may therefore be much larger than Prop. This does not assert Prop : Prop; Prop itself still has a type in the ordinary universe hierarchy.",
+            "zh-CN": "在 CIC 风格的非直谓 Prop 中，若 A 位于任意宇宙且 P : A → Prop，则 Π x : A, P x 仍然是命题。因此被量化的定义域可以远大于 Prop。这并不声称 Prop : Prop；Prop 自身仍在通常的宇宙层级中拥有类型。"
+          }
+        }
+      ]
     },
     {
       "id": "Type.rmk.PropUniverseBehavior",
@@ -854,7 +906,7 @@
         "zh-CN": "Prop 与宇宙层级"
       },
       "content": {
-        "snl": "list-partial[none](%Lean%,Type.judge(Proposition,Type[univ](0)),Type.judge(Type[univ](@u),Type[univ](Nat.succ(u))))",
+        "snl": "list-partial[none](%Lean%,Type.judge(Type.emptyContext,Proposition,Type[univ](0)),Type.judge(Type.emptyContext,Type[univ](@u),Type[univ](Nat.succ(u))))",
         "markdown": {
           "en": "In Lean, Prop : Type 0 and Type u : Type (u+1). Rocq/Coq and abstract CIC presentations use different sort and universe-index conventions, so no numeric universe level for Prop is portable without naming the system. In both Lean and CIC-style systems with impredicative Prop, Π x : A, P x : Prop for an arbitrary universe-level domain A; Prop is not itself a proposition.",
           "zh-CN": "在 Lean 中，Prop : Type 0，且 Type u : Type (u+1)。Rocq/Coq 与抽象 CIC 表述采用不同的 sort 与宇宙编号约定，因此若不指明系统，就不能把 Prop 的某个数值宇宙层级当作通用结论。在 Lean 以及采用非直谓 Prop 的 CIC 风格系统中，对任意宇宙层级的定义域 A，Π x : A, P x 仍属于 Prop；Prop 自身并不是一个命题。"
@@ -865,10 +917,17 @@
       "after_entry_id": "Type.ppt.PropImpredicativePi",
       "accepted_content": [
         {
-          "snl": "list-partial[none](Type.judge(Proposition,Type[univ](0)),Type.judge(Type[univ](@u),Type[univ](Nat.succ(u))))",
+          "snl": "list-partial[none](Type.annotation(Proposition,Type[univ](0)),Type.annotation(Type[univ](@u),Type[univ](Nat.succ(u))))",
           "markdown": {
             "en": "Prop : Type 0, while Type u : Type (u+1). A dependent product whose codomain lies in Type generally lives at a universe level determined by both domain and codomain. By contrast, an impredicative product whose codomain lies in Prop remains in Prop, regardless of the domain universe. Prop is not itself a proposition.",
             "zh-CN": "Prop : Type 0，而 Type u : Type (u+1)。值域位于 Type 的依赖积，其宇宙层级通常同时由定义域和值域决定；相反，值域位于 Prop 的非直谓依赖积仍留在 Prop 中，不受定义域宇宙层级影响。Prop 自身并不是一个命题。"
+          }
+        },
+        {
+          "snl": "list-partial[none](%Lean%,Type.annotation(Proposition,Type[univ](0)),Type.annotation(Type[univ](@u),Type[univ](Nat.succ(u))))",
+          "markdown": {
+            "en": "In Lean, Prop : Type 0 and Type u : Type (u+1). Rocq/Coq and abstract CIC presentations use different sort and universe-index conventions, so no numeric universe level for Prop is portable without naming the system. In both Lean and CIC-style systems with impredicative Prop, Π x : A, P x : Prop for an arbitrary universe-level domain A; Prop is not itself a proposition.",
+            "zh-CN": "在 Lean 中，Prop : Type 0，且 Type u : Type (u+1)。Rocq/Coq 与抽象 CIC 表述采用不同的 sort 与宇宙编号约定，因此若不指明系统，就不能把 Prop 的某个数值宇宙层级当作通用结论。在 Lean 以及采用非直谓 Prop 的 CIC 风格系统中，对任意宇宙层级的定义域 A，Π x : A, P x 仍属于 Prop；Prop 自身并不是一个命题。"
           }
         }
       ]
@@ -932,115 +991,78 @@
     {
       "id": "Lambda.def.defeq",
       "accepted_content_snl": [
-        "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Lambda Extentionality%,),Type.judge(%Application Extensionality%,)))",
-        "def-inductive-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.LegalExpr(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.judge(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,),Type.judge(%Abstraction Extensionality%,),Type.judge(%Application Extensionality%,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-ext,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(%Application Extensionality%,),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(%Application Congruence%,),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,),Type.judge(Lambda.defeq.refl,),Type.judge(Lambda.defeq.symm,),Type.judge(Lambda.defeq.trans,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,),Type.judge(Lambda.defeq.refl,),Type.judge(Lambda.defeq.symm,),Type.judge(Lambda.defeq.trans,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-ext,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(%Application Extensionality%,),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(%Application Congruence%,),Type.judge(%Reflexivity%,),Type.judge(%Symmetry%,),Type.judge(%Transitivity%,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,),Type.judge(Lambda.defeq.refl,),Type.judge(Lambda.defeq.symm,),Type.judge(Lambda.defeq.trans,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,),Type.judge(Lambda.defeq.refl,),Type.judge(Lambda.defeq.symm,),Type.judge(Lambda.defeq.trans,)))",
-        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Lambda.Expr,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b))))),Type.judge(Lambda.defeq.refl,Logic.forall-typed(@a,Lambda.Expr,Lambda.defeq(a,a))),Type.judge(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.judge(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Lambda.Expr,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))",
-        "def-inductive[prop](Type.judge(Lambda.defeq(@$\\cdot$,@$\\cdot$),Type.to(Lambda.LegalExpr,Type.to(Lambda.LegalExpr,Proposition))),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Lambda.LegalExpr,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b))))),Type.judge(Lambda.defeq.refl,Logic.forall-typed(@a,Lambda.LegalExpr,Lambda.defeq(a,a))),Type.judge(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.judge(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Lambda.LegalExpr,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))"
+        "def-inductive-hyp(list-partial(Type.annotation(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.annotation(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(%Lambda Extentionality%,),Type.annotation(%Application Extensionality%,)))",
+        "def-inductive-hyp(list-partial(Type.annotation(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC(list-partial[formula](a,b))),Lambda.defeq(a,b),ctors(Type.annotation(%$\\beta$-reduction%,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(%Reflexivity%,),Type.annotation(%Symmetry%,),Type.annotation(%Transitivity%,),Type.annotation(%Abstraction Extensionality%,),Type.annotation(%Application Extensionality%,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-ext,Logic.forall-typed(list-partial[formula](a,b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.annotation(%Application Extensionality%,),Type.annotation(%Reflexivity%,),Type.annotation(%Symmetry%,),Type.annotation(%Transitivity%,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.annotation(%Application Congruence%,),Type.annotation(%Reflexivity%,),Type.annotation(%Symmetry%,),Type.annotation(%Transitivity%,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.annotation(Lambda.defeq.app-cong,),Type.annotation(Lambda.defeq.refl,),Type.annotation(Lambda.defeq.symm,),Type.annotation(Lambda.defeq.trans,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.lambda(@$ $,a),Type.lambda(@$ $,b))))),Type.annotation(Lambda.defeq.app-cong,),Type.annotation(Lambda.defeq.refl,),Type.annotation(Lambda.defeq.symm,),Type.annotation(Lambda.defeq.trans,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-ext,Logic.forall-typed(list-partial[formula](a,b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.annotation(%Application Extensionality%,),Type.annotation(%Reflexivity%,),Type.annotation(%Symmetry%,),Type.annotation(%Transitivity%,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.annotation(%Application Congruence%,),Type.annotation(%Reflexivity%,),Type.annotation(%Symmetry%,),Type.annotation(%Transitivity%,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.annotation(Lambda.defeq.app-cong,),Type.annotation(Lambda.defeq.refl,),Type.annotation(Lambda.defeq.symm,),Type.annotation(Lambda.defeq.trans,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](a,b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.annotation(Lambda.defeq.app-cong,),Type.annotation(Lambda.defeq.refl,),Type.annotation(Lambda.defeq.symm,),Type.annotation(Lambda.defeq.trans,)))",
+        "def-inductive[prop](Lambda.defeq(@$\\cdot$,@$\\cdot$),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.annotation(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Syntax.Expr-UTLC,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(g,b))))),Type.annotation(Lambda.defeq.refl,Logic.forall-typed(@a,Syntax.Expr-UTLC,Lambda.defeq(a,a))),Type.annotation(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.annotation(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Syntax.Expr-UTLC,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))",
+        "def-inductive[prop](Type.annotation(Lambda.defeq(@$\\cdot$,@$\\cdot$),Type.to(Syntax.LegalExpr-UTLC,Type.to(Syntax.LegalExpr-UTLC,Proposition))),ctors(Type.annotation(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.annotation(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.annotation(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Syntax.LegalExpr-UTLC,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(g,b))))),Type.annotation(Lambda.defeq.refl,Logic.forall-typed(@a,Syntax.LegalExpr-UTLC,Lambda.defeq(a,a))),Type.annotation(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.annotation(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Syntax.LegalExpr-UTLC,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))",
+        "def-inductive[prop](Type.declaration(Lambda.defeq(@$\\cdot$,@$\\cdot$),Type.to(Syntax.LegalExpr-UTLC,Type.to(Syntax.LegalExpr-UTLC,Proposition))),ctors(Type.declaration(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.declaration(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.declaration(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.declaration(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Syntax.LegalExpr-UTLC,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(g,b))))),Type.declaration(Lambda.defeq.refl,Logic.forall-typed(@a,Syntax.LegalExpr-UTLC,Lambda.defeq(a,a))),Type.declaration(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.declaration(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Syntax.LegalExpr-UTLC,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))"
       ],
-      "content_snl": "def-inductive[prop](Type.judge(Lambda.defeq(@$\\cdot$,@$\\cdot$),Type.to(Lambda.LegalExpr,Type.to(Lambda.LegalExpr,Proposition))),ctors(Type.judge(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.judge(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(Lambda.defeq(a,b),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Lambda.LegalExpr,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b))))),Type.judge(Lambda.defeq.refl,Logic.forall-typed(@a,Lambda.LegalExpr,Lambda.defeq(a,a))),Type.judge(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.LegalExpr,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.judge(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Lambda.LegalExpr,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))"
+      "content_snl": "def-inductive[prop](Type.declaration(Lambda.defeq(@$\\cdot$,@$\\cdot$),Type.to(Syntax.LegalExpr-UTLC,Type.to(Syntax.LegalExpr-UTLC,Proposition))),ctors(Type.declaration(Lambda.defeq.beta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(parentheses(Lambda.beta-closure(a,b)),Lambda.defeq(a,b)))),Type.declaration(Lambda.defeq.eta,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(parentheses(Lambda.eta(a,b)),Lambda.defeq(a,b)))),Type.declaration(Lambda.defeq.lam-cong,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.declaration(Lambda.defeq.app-cong,Logic.forall-typed(list-partial[formula](@f,@g,@a,@b),Syntax.LegalExpr-UTLC,Type.to(Logic.and(Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(g,b))))),Type.declaration(Lambda.defeq.refl,Logic.forall-typed(@a,Syntax.LegalExpr-UTLC,Lambda.defeq(a,a))),Type.declaration(Lambda.defeq.symm,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.LegalExpr-UTLC,Type.to(Lambda.defeq(a,b),Lambda.defeq(b,a)))),Type.declaration(Lambda.defeq.trans,Logic.forall-typed(list-partial[formula](@a,@b,@c),Syntax.LegalExpr-UTLC,Type.to(Logic.and(Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))))))"
     },
     {
-      "id": "Type.rl.Expr-LC",
+      "id": "Syntax.def.expression-UTLC",
       "accepted_content_snl": [
-        "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(%Application%,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(%Binded variable%,Type.to(Nat,Lambda.Expr))))",
-        "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(Type.Expr-UTLC.apply,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(Type.Expr-UTLC.bvar,Type.to(Nat,Lambda.Expr))))",
-        "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda,Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(Type.Expr-UTLC.apply,Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(Type.Expr-UTLC.bvar[text],Type.to(Nat,Lambda.Expr))))",
-        "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda[text],Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(Type.Expr-UTLC.apply[text],Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(Type.Expr-UTLC.bvar[text],Type.to(Nat,Lambda.Expr))))"
+        "def-inductive(Syntax.Expr-UTLC,ctors(Type.annotation(Syntax.Expr-UTLC.lambda,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC)),Type.annotation(%Application%,Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC))),Type.annotation(%Binded variable%,Type.to(Nat,Syntax.Expr-UTLC))))",
+        "def-inductive(Syntax.Expr-UTLC,ctors(Type.annotation(Syntax.Expr-UTLC.lambda,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC)),Type.annotation(Syntax.Expr-UTLC.apply,Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC))),Type.annotation(Syntax.Expr-UTLC.bvar,Type.to(Nat,Syntax.Expr-UTLC))))",
+        "def-inductive(Syntax.Expr-UTLC,ctors(Type.annotation(Syntax.Expr-UTLC.lambda,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC)),Type.annotation(Syntax.Expr-UTLC.apply,Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC))),Type.annotation(Syntax.Expr-UTLC.bvar[text],Type.to(Nat,Syntax.Expr-UTLC))))",
+        "def-inductive(Syntax.Expr-UTLC,ctors(Type.annotation(Syntax.Expr-UTLC.lambda[text],Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC)),Type.annotation(Syntax.Expr-UTLC.apply[text],Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC))),Type.annotation(Syntax.Expr-UTLC.bvar[text],Type.to(Nat,Syntax.Expr-UTLC))))",
+        "def-inductive(Syntax.Expr-UTLC,ctors(Syntax.constructor(Syntax.Expr-UTLC.lambda[text],Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC)),Syntax.constructor(Syntax.Expr-UTLC.apply[text],Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC))),Syntax.constructor(Syntax.Expr-UTLC.bvar[text],Type.to(Nat,Syntax.Expr-UTLC))))"
       ],
-      "content_snl": "def-inductive(Lambda.Expr,ctors(Type.judge(Type.Expr-UTLC.lambda[text],Type.to(Lambda.Expr,Lambda.Expr)),Type.judge(Type.Expr-UTLC.apply[text],Type.to(Lambda.Expr,Type.to(Lambda.Expr,Lambda.Expr))),Type.judge(Type.Expr-UTLC.bvar[text],Type.to(Nat,Lambda.Expr))))"
+      "content_snl": "def-inductive(Syntax.Expr-UTLC,ctors(Syntax.constructor(Syntax.Expr-UTLC.lambda[text],Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC)),Syntax.constructor(Syntax.Expr-UTLC.apply[text],Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC))),Syntax.constructor(Syntax.Expr-UTLC.bvar[text],Type.to(Nat,Syntax.Expr-UTLC))))"
     },
     {
-      "id": "Type.def.LegalExpr-LC",
+      "id": "Syntax.def.legalExpression-UTLC",
       "accepted_content_snl": [
-        "def-hyp-opq(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr(e))",
-        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda)))",
-        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))",
-        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
+        "def-hyp-opq(Type.annotation(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC(e))",
+        "def-hyp(Type.annotation(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Syntax.Expr-UTLC.lambda)))",
+        "def-hyp(Type.annotation(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,))))",
+        "def-hyp(Type.annotation(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,Syntax.OneOffI18N.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,))))",
+        "def-hyp(Syntax.hasCategory(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,Syntax.OneOffI18N.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,))))"
       ],
-      "content_snl": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
+      "content_snl": "def-hyp(Syntax.hasCategory(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,Syntax.OneOffI18N.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,))))"
     },
     {
-      "id": "Type.def.Substitution-LC",
+      "id": "Syntax.def.substitution-UTLC",
       "accepted_content_snl": [
-        "def-hyp-opq(list-partial(Type.judge(list-partial(@a,@b),Lambda.Expr),Lambda.LegalExpr[are](list-partial(a,b))),)",
-        "def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr))",
-        "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))",
-        "list-partial[none](def-hyp-opq(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Type.judge(Lambda.substitution(a,x,b),Lambda.Expr)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Lambda.substitution(a,x,b),x,b,a))",
-        "def-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Lambda.substitution(a,x,b),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(%\\mathsf{bvar}%,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(b,Eq(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Type.pattern.branch(Type.pattern.constructor(%\\mathsf{lambda}%,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.substitution(t,Nat.succ(x),Lambda.shift(1,0,b)))),Type.pattern.branch(Type.pattern.constructor(%\\mathsf{app}%,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.substitution(f,x,b),Lambda.substitution(u,x,b))))))",
-        "def-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Lambda.substitution(a,x,b),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.bvar,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(b,Eq(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.lambda,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.substitution(t,Nat.succ(x),Lambda.shift(1,0,b)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.app,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.substitution(f,x,b),Lambda.substitution(u,x,b))))))"
+        "def-hyp-opq(list-partial(Type.annotation(list-partial(@a,@b),Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC[are](list-partial(a,b))),)",
+        "def-hyp-opq(list-partial(Type.annotation(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Type.annotation(@x,Nat)),Type.annotation(Syntax.substitution-UTLC(a,x,b),Syntax.Expr-UTLC))",
+        "list-partial[none](def-hyp-opq(list-partial(Type.annotation(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Type.annotation(@x,Nat)),Type.annotation(Syntax.substitution-UTLC(a,x,b),Syntax.Expr-UTLC)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Syntax.substitution-UTLC(a,x,b),x,b,a))",
+        "list-partial[none](def-hyp-opq(list-partial(Type.annotation(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Type.annotation(@x,Nat)),Type.annotation(Syntax.substitution-UTLC(a,x,b),Syntax.Expr-UTLC)),FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding(Syntax.substitution-UTLC(a,x,b),x,b,a))",
+        "def-hyp(list-partial(Type.annotation(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Type.annotation(@x,Nat)),Syntax.substitution-UTLC(a,x,b),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(%\\mathsf{bvar}%,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(b,Eq(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Syntax.pattern.branch(Syntax.pattern.constructor(%\\mathsf{lambda}%,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.substitution-UTLC(t,Nat.succ(x),Syntax.shift-UTLC(1,0,b)))),Syntax.pattern.branch(Syntax.pattern.constructor(%\\mathsf{app}%,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.substitution-UTLC(f,x,b),Syntax.substitution-UTLC(u,x,b))))))",
+        "def-hyp(list-partial(Type.annotation(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Type.annotation(@x,Nat)),Syntax.substitution-UTLC(a,x,b),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.boundVariable,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(b,Eq(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.lambda,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.substitution-UTLC(t,Nat.succ(x),Syntax.shift-UTLC(1,0,b)))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.application,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.substitution-UTLC(f,x,b),Syntax.substitution-UTLC(u,x,b))))))",
+        "def-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Syntax.hasCategory(@x,Nat)),Syntax.substitution-UTLC(a,x,b),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.boundVariable,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(b,Eq(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.lambda,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.substitution-UTLC(t,Nat.succ(x),Syntax.shift-UTLC(1,0,b)))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.application,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.substitution-UTLC(f,x,b),Syntax.substitution-UTLC(u,x,b))))))",
+        "def-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Type.annotation(@x,Nat)),Syntax.substitution-UTLC(a,x,b),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.boundVariable,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(b,Eq(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.lambda,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.substitution-UTLC(t,Nat.succ(x),Syntax.shift-UTLC(1,0,b)))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.application,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.substitution-UTLC(f,x,b),Syntax.substitution-UTLC(u,x,b))))))"
       ],
-      "content_snl": "def-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.judge(@x,Nat)),Lambda.substitution(a,x,b),Type.pattern.match(a,Type.pattern.branches(Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.bvar,Type.pattern.arguments(@k)),Type.piecewise(Type.piecewise.branch(b,Eq(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](k),Lt(k,x)),Type.piecewise.branch(Type.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.lambda,Type.pattern.arguments(@t)),Type.Expr-UTLC.lambda(@$ $ ,Lambda.substitution(t,Nat.succ(x),Lambda.shift(1,0,b)))),Type.pattern.branch(Type.pattern.constructor(Lambda.pattern.app,Type.pattern.arguments(@f,@u)),Type.Expr-UTLC.apply(Lambda.substitution(f,x,b),Lambda.substitution(u,x,b))))))"
+      "content_snl": "def-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Type.annotation(@x,Nat)),Syntax.substitution-UTLC(a,x,b),Syntax.pattern.match(a,Syntax.pattern.branches(Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.boundVariable,Syntax.pattern.arguments(@k)),Syntax.piecewise(Syntax.piecewise.branch(b,Eq(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](k),Lt(k,x)),Syntax.piecewise.branch(Syntax.Expr-UTLC.bvar[hash](Sub.sub(k,1)),Gt(k,x)))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.lambda,Syntax.pattern.arguments(@t)),Syntax.Expr-UTLC.lambda(@$ $ ,Syntax.substitution-UTLC(t,Nat.succ(x),Syntax.shift-UTLC(1,0,b)))),Syntax.pattern.branch(Syntax.pattern.constructor(Syntax.pattern.UTLC.application,Syntax.pattern.arguments(@f,@u)),Syntax.Expr-UTLC.apply(Syntax.substitution-UTLC(f,x,b),Syntax.substitution-UTLC(u,x,b))))))"
     },
     {
       "id": "Lambda.def.beta-single",
       "accepted_content_snl": [
-        "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.LegalExpr)),\r\n    Lambda.beta(a, b)\r\n)",
-        "def-hyp-opq(\r\n    list-partial(Type.judge(list-partial(@a, @b), Lambda.Expr), Lambda.LegalExpr[are](list-partial[formula](a, b))),\r\n    Lambda.beta(a, b)\r\n)",
-        "def-inductive[prop](Type.judge(Lambda.beta(@$\\cdot$,@$\\cdot$),Type.to(Lambda.Expr,Type.to(Lambda.Expr,Proposition))),ctors(Type.judge(Lambda.beta.contract,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Lambda.beta(Type.Expr-UTLC.apply(parentheses(Type.Expr-UTLC.lambda(@$ $,a)),b),Lambda.substitution(a,0,b)))),Type.judge(Lambda.beta.lambda-congruence,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.beta.application-left-congruence,Logic.forall-typed(list-partial[formula](@f,@g,@a),Lambda.Expr,Type.to(Lambda.beta(f,g),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,a))))),Type.judge(Lambda.beta.application-right-congruence,Logic.forall-typed(list-partial[formula](@f,@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(f,b)))))))"
+        "def-hyp-opq(\r\n    list-partial(Type.annotation(list-partial(@a, @b), Syntax.LegalExpr-UTLC)),\r\n    Lambda.beta(a, b)\r\n)",
+        "def-hyp-opq(\r\n    list-partial(Type.annotation(list-partial(@a, @b), Syntax.Expr-UTLC), Syntax.LegalExpr-UTLC[are](list-partial[formula](a, b))),\r\n    Lambda.beta(a, b)\r\n)",
+        "def-inductive[prop](Type.annotation(Lambda.beta(@$\\cdot$,@$\\cdot$),Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Proposition))),ctors(Type.annotation(Lambda.beta.contract,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Lambda.beta(Syntax.Expr-UTLC.apply(parentheses(Syntax.Expr-UTLC.lambda(@$ $,a)),b),Syntax.substitution-UTLC(a,0,b)))),Type.annotation(Lambda.beta.lambda-congruence,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(Lambda.beta(a,b),Lambda.beta(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.annotation(Lambda.beta.application-left-congruence,Logic.forall-typed(list-partial[formula](@f,@g,@a),Syntax.Expr-UTLC,Type.to(Lambda.beta(f,g),Lambda.beta(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(g,a))))),Type.annotation(Lambda.beta.application-right-congruence,Logic.forall-typed(list-partial[formula](@f,@a,@b),Syntax.Expr-UTLC,Type.to(Lambda.beta(a,b),Lambda.beta(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(f,b)))))))",
+        "def-inductive[prop](Type.declaration(Lambda.beta(@$\\cdot$,@$\\cdot$),Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Proposition))),ctors(Type.declaration(Lambda.beta.contract,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Lambda.beta(Syntax.Expr-UTLC.apply(parentheses(Syntax.Expr-UTLC.lambda(@$ $,a)),b),Syntax.substitution-UTLC(a,0,b)))),Type.declaration(Lambda.beta.lambda-congruence,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(Lambda.beta(a,b),Lambda.beta(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.declaration(Lambda.beta.application-left-congruence,Logic.forall-typed(list-partial[formula](@f,@g,@a),Syntax.Expr-UTLC,Type.to(Lambda.beta(f,g),Lambda.beta(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(g,a))))),Type.declaration(Lambda.beta.application-right-congruence,Logic.forall-typed(list-partial[formula](@f,@a,@b),Syntax.Expr-UTLC,Type.to(Lambda.beta(a,b),Lambda.beta(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(f,b)))))))"
       ],
-      "content_snl": "def-inductive[prop](Type.judge(Lambda.beta(@$\\cdot$,@$\\cdot$),Type.to(Lambda.Expr,Type.to(Lambda.Expr,Proposition))),ctors(Type.judge(Lambda.beta.contract,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Lambda.beta(Type.Expr-UTLC.apply(parentheses(Type.Expr-UTLC.lambda(@$ $,a)),b),Lambda.substitution(a,0,b)))),Type.judge(Lambda.beta.lambda-congruence,Logic.forall-typed(list-partial[formula](@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b))))),Type.judge(Lambda.beta.application-left-congruence,Logic.forall-typed(list-partial[formula](@f,@g,@a),Lambda.Expr,Type.to(Lambda.beta(f,g),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,a))))),Type.judge(Lambda.beta.application-right-congruence,Logic.forall-typed(list-partial[formula](@f,@a,@b),Lambda.Expr,Type.to(Lambda.beta(a,b),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(f,b)))))))"
+      "content_snl": "def-inductive[prop](Type.declaration(Lambda.beta(@$\\cdot$,@$\\cdot$),Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Proposition))),ctors(Type.declaration(Lambda.beta.contract,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Lambda.beta(Syntax.Expr-UTLC.apply(parentheses(Syntax.Expr-UTLC.lambda(@$ $,a)),b),Syntax.substitution-UTLC(a,0,b)))),Type.declaration(Lambda.beta.lambda-congruence,Logic.forall-typed(list-partial[formula](@a,@b),Syntax.Expr-UTLC,Type.to(Lambda.beta(a,b),Lambda.beta(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b))))),Type.declaration(Lambda.beta.application-left-congruence,Logic.forall-typed(list-partial[formula](@f,@g,@a),Syntax.Expr-UTLC,Type.to(Lambda.beta(f,g),Lambda.beta(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(g,a))))),Type.declaration(Lambda.beta.application-right-congruence,Logic.forall-typed(list-partial[formula](@f,@a,@b),Syntax.Expr-UTLC,Type.to(Lambda.beta(a,b),Lambda.beta(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(f,b)))))))"
     },
     {
       "id": "Lambda.def.beta",
       "accepted_content_snl": [
-        "def-hyp-opq(list-partial(Type.judge(list-partial(@a,@b),Lambda.Expr),Lambda.LegalExpr[are](list-partial[formula](a,b))),Lambda.beta-closure(a,b))",
+        "def-hyp-opq(list-partial(Type.annotation(list-partial(@a,@b),Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC[are](list-partial[formula](a,b))),Lambda.beta-closure(a,b))",
         "def(Lambda.beta-closure(@a,@b),Relation.transitiveClosure(Lambda.betaRelation,a,b))"
       ],
       "content_snl": "def(Lambda.beta-closure(@a,@b),Relation.transitiveClosure(Lambda.betaRelation,a,b))"
     }
   ],
   "inductive_types": [
-    {
-      "parent_entry_id": "Type.rl.Expr-STLC",
-      "package": "TypeTheory",
-      "constructors": [
-        {
-          "id": "Type.rl.lambda-typed",
-          "reuse": true,
-          "title": {
-            "en": "$\\lambda$-Abstraction Constructor (Typed)",
-            "zh-CN": "$\\lambda$-抽象构造子（有类型）"
-          }
-        },
-        {
-          "id": "Type.rl.Expr-STLC.ctor.bound-variable",
-          "title": {
-            "en": "Bound Variable Constructor (Typed)",
-            "zh-CN": "约束变量构造子（有类型）"
-          }
-        },
-        {
-          "id": "Type.rl.Expr-STLC.ctor.application",
-          "title": {
-            "en": "Application Constructor (Typed)",
-            "zh-CN": "应用构造子（有类型）"
-          }
-        },
-        {
-          "id": "Type.rl.Expr-STLC.ctor.function-type",
-          "title": {
-            "en": "Function Type Constructor",
-            "zh-CN": "函数类型构造子"
-          }
-        }
-      ],
-      "recursor": {
-        "id": "Type.rl.Expr-STLC.recursor",
-        "title": {
-          "en": "Typed Expression Recursor",
-          "zh-CN": "有类型表达式递归子"
-        }
-      },
-      "existing": true
-    },
     {
       "parent_entry_id": "Logic.def.true",
       "package": "Logic",
@@ -1208,53 +1230,6 @@
       ]
     },
     {
-      "parent_entry_id": "Type.rl.Expr-LC",
-      "package": "TypeTheory",
-      "constructors": [
-        {
-          "id": "Type.rl.Expr-LC.ctor.lambda-abstraction",
-          "kind": "definition",
-          "title": {
-            "en": "$\\lambda$-Abstraction",
-            "zh-CN": "$\\lambda$-抽象"
-          },
-          "content": {
-            "snl": "def-hyp-opq(Type.judge(@a,Lambda.Expr),Type.Expr-UTLC.lambda(@$ $,@a))"
-          }
-        },
-        {
-          "id": "Type.rl.Expr-LC.ctor.application",
-          "kind": "definition",
-          "title": {
-            "en": "Application",
-            "zh-CN": "应用"
-          },
-          "content": {
-            "snl": "def-hyp-opq(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Type.Expr-UTLC.apply(a,b))"
-          }
-        },
-        {
-          "id": "Type.rl.Expr-LC.ctor.bound-variable",
-          "kind": "definition",
-          "title": {
-            "en": "Bound Variable",
-            "zh-CN": "受束变元"
-          },
-          "content": {
-            "snl": "def-hyp-opq(Type.judge(@n,Nat),Type.Expr-UTLC.bvar(n))"
-          }
-        }
-      ],
-      "recursor": {
-        "id": "Type.rl.Expr-LC.recursor",
-        "title": {
-          "en": "Untyped Expression Recursor",
-          "zh-CN": "无类型表达式递归子"
-        }
-      },
-      "existing": true
-    },
-    {
       "parent_entry_id": "Logic.def.eq",
       "package": "Logic",
       "constructors": [
@@ -1295,7 +1270,7 @@
             "property"
           ],
           "content": {
-            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.beta-closure(a,b)),Lambda.defeq(a,b))"
+            "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Lambda.beta-closure(a,b)),Lambda.defeq(a,b))"
           }
         },
         {
@@ -1310,7 +1285,7 @@
             "property"
           ],
           "content": {
-            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.eta(a,b)),Lambda.defeq(a,b))"
+            "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Lambda.eta(a,b)),Lambda.defeq(a,b))"
           }
         },
         {
@@ -1325,7 +1300,7 @@
             "property"
           ],
           "content": {
-            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b)))"
+            "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Lambda.defeq(a,b)),Lambda.defeq(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b)))"
           }
         },
         {
@@ -1340,7 +1315,7 @@
             "property"
           ],
           "content": {
-            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@f,@g,@a,@b),Lambda.Expr),Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,b)))"
+            "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@f,@g,@a,@b),Syntax.Expr-UTLC),Lambda.defeq(f,g),Lambda.defeq(a,b)),Lambda.defeq(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(g,b)))"
           }
         },
         {
@@ -1355,7 +1330,7 @@
             "property"
           ],
           "content": {
-            "snl": "thm-hyp(Type.judge(@a,Lambda.Expr),Lambda.defeq(a,a))"
+            "snl": "thm-hyp(Syntax.hasCategory(@a,Syntax.Expr-UTLC),Lambda.defeq(a,a))"
           }
         },
         {
@@ -1370,7 +1345,7 @@
             "property"
           ],
           "content": {
-            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.defeq(a,b)),Lambda.defeq(b,a))"
+            "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Lambda.defeq(a,b)),Lambda.defeq(b,a))"
           }
         },
         {
@@ -1385,7 +1360,7 @@
             "property"
           ],
           "content": {
-            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b,@c),Lambda.Expr),Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))"
+            "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b,@c),Syntax.Expr-UTLC),Lambda.defeq(a,b),Lambda.defeq(b,c)),Lambda.defeq(a,c))"
           }
         }
       ],
@@ -1646,61 +1621,6 @@
       "existing": false
     },
     {
-      "parent_entry_id": "Type.def.freeVariable",
-      "package": "TypeTheory",
-      "constructors": [
-        {
-          "id": "Type.def.freeVariable.ctor.closedExpression",
-          "title": {
-            "en": "Closed-expression Embedding",
-            "zh-CN": "闭表达式嵌入构造子"
-          },
-          "content": {
-            "snl": "def-hyp-opq(Type.judge(@a,Lambda.Expr),Type.Expr-UTLC.closed(a))"
-          }
-        },
-        {
-          "id": "Type.def.freeVariable.ctor.freeVariable",
-          "title": {
-            "en": "Free Variable Constructor",
-            "zh-CN": "自由变量构造子"
-          },
-          "content": {
-            "snl": "def-hyp-opq(Type.judge(@x,`string`),Type.Expr-UTLC.fvar(x))"
-          }
-        },
-        {
-          "id": "Type.def.freeVariable.ctor.lambdaAbstraction",
-          "title": {
-            "en": "Open $\\lambda$-Abstraction Constructor",
-            "zh-CN": "开 $\\lambda$-抽象构造子"
-          },
-          "content": {
-            "snl": "def-hyp-opq(Type.judge(@a,Lambda.OpenExpr),Type.Expr-UTLC.lambda(@$ $,@a))"
-          }
-        },
-        {
-          "id": "Type.def.freeVariable.ctor.application",
-          "title": {
-            "en": "Open Application Constructor",
-            "zh-CN": "开应用构造子"
-          },
-          "content": {
-            "snl": "def-hyp-opq(Type.judge(list-partial[formula](@a,@b),Lambda.OpenExpr),Type.Expr-UTLC.apply(a,b))"
-          }
-        }
-      ],
-      "recursor": {
-        "id": "Type.def.freeVariable.recursor",
-        "title": {
-          "en": "Open Expression Recursor",
-          "zh-CN": "开表达式递归子"
-        }
-      },
-      "ordered_children": true,
-      "existing": false
-    },
-    {
       "parent_entry_id": "Lambda.def.beta-single",
       "package": "TypeTheory",
       "constructors": [
@@ -1712,7 +1632,7 @@
           },
           "kind": "property",
           "content": {
-            "snl": "thm-hyp(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.beta(Type.Expr-UTLC.apply(parentheses(Type.Expr-UTLC.lambda(@$ $,a)),b),Lambda.substitution(a,0,b)))"
+            "snl": "thm-hyp(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Lambda.beta(Syntax.Expr-UTLC.apply(parentheses(Syntax.Expr-UTLC.lambda(@$ $,a)),b),Syntax.substitution-UTLC(a,0,b)))"
           }
         },
         {
@@ -1723,7 +1643,7 @@
           },
           "kind": "property",
           "content": {
-            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@a,@b),Lambda.Expr),Lambda.beta(a,b)),Lambda.beta(Type.Expr-UTLC.lambda(@$ $,a),Type.Expr-UTLC.lambda(@$ $,b)))"
+            "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Lambda.beta(a,b)),Lambda.beta(Syntax.Expr-UTLC.lambda(@$ $,a),Syntax.Expr-UTLC.lambda(@$ $,b)))"
           }
         },
         {
@@ -1734,7 +1654,7 @@
           },
           "kind": "property",
           "content": {
-            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@f,@g,@a),Lambda.Expr),Lambda.beta(f,g)),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(g,a)))"
+            "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@f,@g,@a),Syntax.Expr-UTLC),Lambda.beta(f,g)),Lambda.beta(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(g,a)))"
           }
         },
         {
@@ -1745,7 +1665,7 @@
           },
           "kind": "property",
           "content": {
-            "snl": "thm-hyp(list-partial(Type.judge(list-partial[formula](@f,@a,@b),Lambda.Expr),Lambda.beta(a,b)),Lambda.beta(Type.Expr-UTLC.apply(f,a),Type.Expr-UTLC.apply(f,b)))"
+            "snl": "thm-hyp(list-partial(Syntax.hasCategory(list-partial[formula](@f,@a,@b),Syntax.Expr-UTLC),Lambda.beta(a,b)),Lambda.beta(Syntax.Expr-UTLC.apply(f,a),Syntax.Expr-UTLC.apply(f,b)))"
           }
         }
       ],
@@ -1811,14 +1731,13 @@
       ]
     },
     {
-      "parent_entry_id": "Type.def.freeVariable",
+      "parent_entry_id": "Syntax.def.openExpression-UTLC",
       "entry_ids": [
-        "Type.def.freeVariable.ctor.closedExpression",
-        "Type.def.freeVariable.ctor.freeVariable",
-        "Type.def.freeVariable.ctor.lambdaAbstraction",
-        "Type.def.freeVariable.ctor.application",
-        "Type.def.freeVariable.recursor",
-        "Type.rmk.freeVariableOpenExpression"
+        "Syntax.def.openExpression-UTLC.ctor.closedExpression",
+        "Syntax.def.openExpression-UTLC.ctor.freeVariable",
+        "Syntax.def.openExpression-UTLC.ctor.lambdaAbstraction",
+        "Syntax.def.openExpression-UTLC.ctor.application",
+        "Syntax.rmk.freeVariableOpenExpression-UTLC"
       ]
     },
     {
@@ -1834,10 +1753,10 @@
     {
       "parent_entry_id": "Type.subsec.basics",
       "entry_ids": [
-        "Type.rl.Expr-LC",
-        "Type.def.LegalExpr-LC",
-        "Type.def.shift-LC",
-        "Type.def.Substitution-LC",
+        "Syntax.def.expression-UTLC",
+        "Syntax.def.legalExpression-UTLC",
+        "Syntax.def.shift-UTLC",
+        "Syntax.def.substitution-UTLC",
         "Lambda.def.beta-single",
         "Lambda.def.beta",
         "Lambda.def.NF",
@@ -1951,11 +1870,11 @@
     {
       "concept": "syntax expression",
       "primary_library": "Type_Theory",
-      "entry_id": "Type.rl.Expr-LC",
+      "entry_id": "Syntax.def.expression-UTLC",
       "secondary_entries": [
         {
           "library": "Type_Theory",
-          "entry_id": "Type.rl.Expr-STLC",
+          "entry_id": "Syntax.def.expression-STLC",
           "role": "typed syntax variant"
         }
       ]
@@ -2011,46 +1930,46 @@
       ]
     },
     {
-      "name": "Type.Expr-UTLC.lambda",
+      "name": "Syntax.Expr-UTLC.lambda",
       "accepted_entries": [
         [],
         [
-          "Type.rl.Expr-LC"
+          "Syntax.def.expression-UTLC"
         ],
         [
-          "Type.rl.Expr-LC.ctor.lambda-abstraction"
+          "Syntax.def.expression-UTLC.ctor.lambdaAbstraction"
         ]
       ],
       "entries": [
-        "Type.rl.Expr-LC.ctor.lambda-abstraction"
+        "Syntax.def.expression-UTLC.ctor.lambdaAbstraction"
       ]
     },
     {
-      "name": "Type.Expr-UTLC.apply",
+      "name": "Syntax.Expr-UTLC.apply",
       "accepted_entries": [
         [],
         [],
         [
-          "Type.rl.Expr-LC.ctor.application"
+          "Syntax.def.expression-UTLC.ctor.application"
         ]
       ],
       "entries": [
-        "Type.rl.Expr-LC.ctor.application"
+        "Syntax.def.expression-UTLC.ctor.application"
       ]
     },
     {
-      "name": "Type.Expr-UTLC.bvar",
+      "name": "Syntax.Expr-UTLC.bvar",
       "accepted_entries": [
         [],
         [
-          "Type.rl.Expr-LC.ctor.bound-variable"
+          "Syntax.def.expression-UTLC.ctor.boundVariable"
         ],
         [
-          "Type.rl.Expr-LC.ctor.bound-variable"
+          "Syntax.def.expression-UTLC.ctor.boundVariable"
         ]
       ],
       "entries": [
-        "Type.rl.Expr-LC.ctor.bound-variable"
+        "Syntax.def.expression-UTLC.ctor.boundVariable"
       ]
     },
     {
@@ -2058,14 +1977,14 @@
       "accepted_entries": [
         [],
         [
-          "Type.rl.Expr-LC.ctor.application"
+          "Syntax.def.expression-UTLC.ctor.application"
         ],
         [
-          "Type.rl.Expr-LC.ctor.application"
+          "Syntax.def.expression-UTLC.ctor.application"
         ]
       ],
       "entries": [
-        "Type.rl.Expr-LC.ctor.application"
+        "Syntax.def.expression-UTLC.ctor.application"
       ]
     },
     {
@@ -2073,14 +1992,14 @@
       "accepted_entries": [
         [],
         [
-          "Type.rmk.deBruijnIndex"
+          "Syntax.rmk.deBruijnIndex"
         ],
         [
-          "Type.rmk.deBruijnIndex"
+          "Syntax.rmk.deBruijnIndex"
         ]
       ],
       "entries": [
-        "Type.rmk.deBruijnIndex"
+        "Syntax.rmk.deBruijnIndex"
       ]
     },
     {
@@ -2238,7 +2157,7 @@
       ]
     },
     {
-      "name": "Type.ctx-judge",
+      "name": "Type.judge",
       "accepted_entries": [
         [],
         [
@@ -2250,18 +2169,18 @@
       ]
     },
     {
-      "name": "Type.TypeExpr",
+      "name": "Syntax.TypeExpr",
       "accepted_entries": [
         [],
         [
           "Type.def.TypeExpr-STLC"
         ],
         [
-          "Type.def.type-expression-stlc"
+          "Syntax.def.typeExpression-STLC"
         ]
       ],
       "entries": [
-        "Type.def.type-expression-stlc"
+        "Syntax.def.typeExpression-STLC"
       ]
     },
     {
@@ -2291,33 +2210,33 @@
       ]
     },
     {
-      "name": "Type.Expr-UTLC.closed",
+      "name": "Syntax.Expr-UTLC.closed",
       "accepted_entries": [
         [],
         [
-          "Type.def.freeVariable"
+          "Syntax.def.openExpression-UTLC"
         ],
         [
-          "Type.def.freeVariable.ctor.closedExpression"
+          "Syntax.def.openExpression-UTLC.ctor.closedExpression"
         ]
       ],
       "entries": [
-        "Type.def.freeVariable.ctor.closedExpression"
+        "Syntax.def.openExpression-UTLC.ctor.closedExpression"
       ]
     },
     {
-      "name": "Type.Expr-UTLC.fvar",
+      "name": "Syntax.Expr-UTLC.fvar",
       "accepted_entries": [
         [],
         [
-          "Type.def.freeVariable"
+          "Syntax.def.openExpression-UTLC"
         ],
         [
-          "Type.def.freeVariable.ctor.freeVariable"
+          "Syntax.def.openExpression-UTLC.ctor.freeVariable"
         ]
       ],
       "entries": [
-        "Type.def.freeVariable.ctor.freeVariable"
+        "Syntax.def.openExpression-UTLC.ctor.freeVariable"
       ]
     },
     {
@@ -2419,31 +2338,31 @@
     "Type.def.I-Combinator",
     "Type.def.Iota-Combinator",
     "Type.def.K-Combinator",
-    "Type.def.LegalExpr-LC",
+    "Syntax.def.legalExpression-UTLC",
     "Type.def.S-Combinator",
     "Type.def.Y-Combinator",
     "Type.def.omega-Combinator",
-    "Type.rl.Expr-LC",
-    "Type.rl.Expr-LC.ctor.application",
-    "Type.rl.Expr-LC.ctor.bound-variable",
-    "Type.rl.Expr-LC.ctor.lambda-abstraction",
-    "Type.rmk.Expr-LC.apply",
-    "Type.rmk.Expr-LC.lambda",
-    "Type.rmk.deBruijnIndex",
+    "Syntax.def.expression-UTLC",
+    "Syntax.def.expression-UTLC.ctor.application",
+    "Syntax.def.expression-UTLC.ctor.boundVariable",
+    "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
+    "Syntax.rmk.applicationNotation-UTLC",
+    "Syntax.rmk.lambdaNotation-UTLC",
+    "Syntax.rmk.deBruijnIndex",
     "Type.def.Currying",
     "Type.def.alpha-conversion",
     "Type.def.UTLC-const",
-    "Type.def.named-lambda",
+    "Syntax.def.namedBinderPresentation-UTLC",
     "Type.def.list",
     "Type.def.prod",
     "Type.def.sum",
     "Type.def.UTLC-term",
     "Type.ppt.delta-reduction",
-    "Type.rmk.named-lambda",
+    "Syntax.rmk.namedBinderPresentation-UTLC",
     "Type.ppt.zeta-reduction",
     "Type.def.utlc-let-expression",
     "Type.ppt.judge-app",
-    "Type.def.type-expression-stlc",
+    "Syntax.def.typeExpression-STLC",
     "Type.subsec.type-inference",
     "Type.def.ctx",
     "Type.ppt.judge-lam"
@@ -2562,9 +2481,9 @@
       }
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative",
+      "name": "Syntax.OneOffI18N.ApplicationNotation.LeftAssociative",
       "package": "FulcrumNotesOneOffI18N",
-      "source_entry_id": "Type.rmk.Expr-LC.apply",
+      "source_entry_id": "Syntax.rmk.applicationNotation-UTLC",
       "kind": "sub",
       "style_name": "default",
       "body": {
@@ -2576,9 +2495,9 @@
       ]
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda",
+      "name": "Syntax.OneOffI18N.ApplicationNotation.PrecedenceOverLambda",
       "package": "FulcrumNotesOneOffI18N",
-      "source_entry_id": "Type.rmk.Expr-LC.apply",
+      "source_entry_id": "Syntax.rmk.applicationNotation-UTLC",
       "kind": "sub",
       "style_name": "default",
       "body": {
@@ -2590,9 +2509,9 @@
       ]
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve",
+      "name": "Syntax.OneOffI18N.LegalExpression.BoundVariablesResolve",
       "package": "FulcrumNotesOneOffI18N",
-      "source_entry_id": "Type.def.LegalExpr-LC",
+      "source_entry_id": "Syntax.def.legalExpression-UTLC",
       "kind": "sub",
       "style_name": "default",
       "body": {
@@ -2604,9 +2523,9 @@
       ]
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.DeBruijnIndex.Explanation",
+      "name": "Syntax.OneOffI18N.DeBruijnIndex.Explanation",
       "package": "FulcrumNotesOneOffI18N",
-      "source_entry_id": "Type.rmk.deBruijnIndex",
+      "source_entry_id": "Syntax.rmk.deBruijnIndex",
       "kind": "sub",
       "style_name": "default",
       "body": {
@@ -2618,9 +2537,9 @@
       ]
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.NamedBinder",
+      "name": "Syntax.OneOffI18N.LambdaNotation.NamedBinder",
       "package": "FulcrumNotesOneOffI18N",
-      "source_entry_id": "Type.rmk.Expr-LC.lambda",
+      "source_entry_id": "Syntax.rmk.lambdaNotation-UTLC",
       "kind": "sub",
       "style_name": "default",
       "body": {
@@ -2632,9 +2551,9 @@
       ]
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.MultipleBinders",
+      "name": "Syntax.OneOffI18N.LambdaNotation.MultipleBinders",
       "package": "FulcrumNotesOneOffI18N",
-      "source_entry_id": "Type.rmk.Expr-LC.lambda",
+      "source_entry_id": "Syntax.rmk.lambdaNotation-UTLC",
       "kind": "sub",
       "style_name": "default",
       "body": {
@@ -2646,9 +2565,9 @@
       ]
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.Shadowing",
+      "name": "Syntax.OneOffI18N.LambdaNotation.Shadowing",
       "package": "FulcrumNotesOneOffI18N",
-      "source_entry_id": "Type.rmk.Expr-LC.lambda",
+      "source_entry_id": "Syntax.rmk.lambdaNotation-UTLC",
       "kind": "sub",
       "style_name": "default",
       "body": {
@@ -2660,9 +2579,9 @@
       ]
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.NamedBinder.SemanticStatus",
+      "name": "Syntax.OneOffI18N.NamedBinder.SemanticStatus",
       "package": "FulcrumNotesOneOffI18N",
-      "source_entry_id": "Type.rmk.named-lambda",
+      "source_entry_id": "Syntax.rmk.namedBinderPresentation-UTLC",
       "kind": "sub",
       "style_name": "default",
       "body": {
@@ -2671,11 +2590,11 @@
       }
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.ClosedExpression.GlobalAvailability",
+      "name": "Syntax.OneOffI18N.ClosedExpression.GlobalAvailability",
       "package": "FulcrumNotesOneOffI18N",
       "kind": "sub",
       "style_name": "default",
-      "source_entry_id": "Type.rmk.closedExpression",
+      "source_entry_id": "Syntax.rmk.closedExpression-UTLC",
       "body": {
         "en": "An expression in #0 is directly available in the global setting and, once its bound indices are well scoped, is legal without a free-variable context. An expression in #1 containing #2 is called an open expression.",
         "zh-CN": "#0 中的表达式可以直接在全局语境下使用；只要受束指数作用域良构，其合法性就不依赖自由变量语境。#1 中含有 #2 的表达式称为开表达式。"
@@ -2691,11 +2610,11 @@
       }
     },
     {
-      "name": "FulcrumNotes.OneOffI18N.TypeTheory.FreeVariable.OpenExpression",
+      "name": "Syntax.OneOffI18N.FreeVariable.OpenExpression",
       "package": "FulcrumNotesOneOffI18N",
       "kind": "sub",
       "style_name": "default",
-      "source_entry_id": "Type.rmk.freeVariableOpenExpression",
+      "source_entry_id": "Syntax.rmk.freeVariableOpenExpression-UTLC",
       "body": {
         "en": "#0 records a free name. de Bruijn binders do not bind it, so an ambient context must resolve that name. An expression in #1 is open exactly when it contains at least one free-variable node.",
         "zh-CN": "#0 记录一个自由名称；de Bruijn 绑定子不会约束它，因此必须由外围语境解释该名称。#1 中的表达式恰在含有至少一个自由变量节点时称为开表达式。"
@@ -2804,7 +2723,7 @@
     },
     {
       "old_id": "Type.def.TypeExpr-STLC",
-      "new_id": "Type.def.type-expression-stlc",
+      "new_id": "Syntax.def.typeExpression-STLC",
       "package": "TypeTheory"
     },
     {
@@ -2816,7 +2735,7 @@
   "macro_merges": [
     {
       "source_name": "Type.lambda",
-      "target_name": "Type.Expr-UTLC.lambda",
+      "target_name": "Syntax.Expr-UTLC.lambda",
       "package": "TypeTheory",
       "target_text_style_from": "default",
       "target_text_style_name": "text",
@@ -2835,7 +2754,7 @@
         "description": "Untyped lambda abstraction",
         "source": {
           "entries": [
-            "Type.rl.Expr-LC.ctor.lambda-abstraction"
+            "Syntax.def.expression-UTLC.ctor.lambdaAbstraction"
           ],
           "urls": []
         },
@@ -2922,7 +2841,7 @@
         "description": "",
         "source": {
           "entries": [
-            "Type.rl.Expr-LC.ctor.lambda-abstraction"
+            "Syntax.def.expression-UTLC.ctor.lambdaAbstraction"
           ],
           "urls": []
         },
@@ -2981,21 +2900,21 @@
           }
         ],
         "tags": [],
-        "name": "Type.Expr-UTLC.lambda"
+        "name": "Syntax.Expr-UTLC.lambda"
       }
     }
   ],
   "snl_macro_rewrites": [
     {
       "old_name": "Type.lambda",
-      "new_name": "Type.Expr-UTLC.lambda"
+      "new_name": "Syntax.Expr-UTLC.lambda"
     }
   ],
   "macro_style_updates": [
     {
-      "name": "Type.Expr-UTLC.apply",
+      "name": "Syntax.Expr-UTLC.apply",
       "package": "TypeTheory",
-      "source_entry_id": "Type.rl.Expr-LC.ctor.application",
+      "source_entry_id": "Syntax.def.expression-UTLC.ctor.application",
       "accepted_style_names": [
         "default"
       ],
@@ -3014,13 +2933,13 @@
   ],
   "macro_snapshot_updates": [
     {
-      "name": "Lambda.apply",
+      "name": "Syntax.apply-UTLC",
       "accepted_predecessors": [
         {
           "description": "",
           "source": {
             "entries": [
-              "Type.rl.Expr-LC.ctor.application"
+              "Syntax.def.expression-UTLC.ctor.application"
             ],
             "urls": []
           },
@@ -3103,7 +3022,7 @@
             }
           ],
           "tags": [],
-          "name": "Lambda.apply"
+          "name": "Syntax.apply-UTLC"
         }
       ],
       "canonical": {
@@ -3142,7 +3061,7 @@
           }
         ],
         "tags": [],
-        "name": "Lambda.apply"
+        "name": "Syntax.apply-UTLC"
       }
     },
     {
@@ -4412,136 +4331,144 @@
   ],
   "entry_snl_updates": [
     {
-      "id": "Type.rmk.Expr-LC.apply",
+      "id": "Syntax.rmk.applicationNotation-UTLC",
       "accepted_predecessors": [
-        "list-partial[enumerate](%#0规定为左结合的。#1 应解释为 #2%(Lambda.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply[text](parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),%运算优先级上#0较 #1结合更加紧密。#2 应解释为 #3%(Lambda.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))",
-        "list-partial[enumerate](\r\n    %#0规定为左结合的。#1 应解释为 #2%(\r\n        Lambda.apply,\r\n        Lambda.apply(x, y, z, w),\r\n        Lambda.apply(\r\n            parentheses(\r\n                Lambda.apply(\r\n                    parentheses(Lambda.apply(x, y)),\r\n                    z\r\n                )\r\n            ),\r\n            w\r\n        )\r\n    ),\r\n    %运算优先级上 #0较 #1结合更加紧密。#2 应解释为 #3%(Lambda.apply, Type.Expr-UTLC.lambda, Type.Expr-UTLC.lambda(list-partial[none](@x, @y), Lambda.apply(x, y)),Type.Expr-UTLC.lambda(list-partial[none](@x, @y), parentheses(Lambda.apply(x, y))))\r\n)",
-        "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative(Type.Expr-UTLC.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply(parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda(Type.Expr-UTLC.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))"
+        "list-partial[enumerate](%#0规定为左结合的。#1 应解释为 #2%(Syntax.apply-UTLC[text](,),Syntax.apply-UTLC(x,y,z,w),Syntax.apply-UTLC[text](parentheses(Syntax.apply-UTLC(parentheses(Syntax.apply-UTLC(x,y)),z)),w)),%运算优先级上#0较 #1结合更加紧密。#2 应解释为 #3%(Syntax.apply-UTLC[text](,),Syntax.Expr-UTLC.lambda[text](,),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Syntax.apply-UTLC(x,y)),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Syntax.apply-UTLC(x,y)))))",
+        "list-partial[enumerate](\r\n    %#0规定为左结合的。#1 应解释为 #2%(\r\n        Syntax.apply-UTLC,\r\n        Syntax.apply-UTLC(x, y, z, w),\r\n        Syntax.apply-UTLC(\r\n            parentheses(\r\n                Syntax.apply-UTLC(\r\n                    parentheses(Syntax.apply-UTLC(x, y)),\r\n                    z\r\n                )\r\n            ),\r\n            w\r\n        )\r\n    ),\r\n    %运算优先级上 #0较 #1结合更加紧密。#2 应解释为 #3%(Syntax.apply-UTLC, Syntax.Expr-UTLC.lambda, Syntax.Expr-UTLC.lambda(list-partial[none](@x, @y), Syntax.apply-UTLC(x, y)),Syntax.Expr-UTLC.lambda(list-partial[none](@x, @y), parentheses(Syntax.apply-UTLC(x, y))))\r\n)",
+        "list-partial[enumerate](Syntax.OneOffI18N.ApplicationNotation.LeftAssociative(Syntax.Expr-UTLC.apply[text](,),Syntax.apply-UTLC(x,y,z,w),Syntax.apply-UTLC(parentheses(Syntax.apply-UTLC(parentheses(Syntax.apply-UTLC(x,y)),z)),w)),Syntax.OneOffI18N.ApplicationNotation.PrecedenceOverLambda(Syntax.Expr-UTLC.apply[text](,),Syntax.Expr-UTLC.lambda[text](,),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Syntax.apply-UTLC(x,y)),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Syntax.apply-UTLC(x,y)))))"
       ],
-      "canonical": "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.LeftAssociative(Type.Expr-UTLC.apply[text](,),Lambda.apply(x,y,z,w),Lambda.apply(parentheses(Lambda.apply(parentheses(Lambda.apply(x,y)),z)),w)),FulcrumNotes.OneOffI18N.TypeTheory.ApplicationNotation.PrecedenceOverLambda(Type.Expr-UTLC.apply[text](,),Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Lambda.apply(x,y)),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Lambda.apply(x,y)))))"
+      "canonical": "list-partial[enumerate](Syntax.OneOffI18N.ApplicationNotation.LeftAssociative(Syntax.Expr-UTLC.apply[text](,),Syntax.apply-UTLC(x,y,z,w),Syntax.apply-UTLC(parentheses(Syntax.apply-UTLC(parentheses(Syntax.apply-UTLC(x,y)),z)),w)),Syntax.OneOffI18N.ApplicationNotation.PrecedenceOverLambda(Syntax.Expr-UTLC.apply[text](,),Syntax.Expr-UTLC.lambda[text](,),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Syntax.apply-UTLC(x,y)),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Syntax.apply-UTLC(x,y)))))"
     },
     {
-      "id": "Type.def.LegalExpr-LC",
+      "id": "Syntax.def.legalExpression-UTLC",
       "accepted_predecessors": [
-        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))",
-        "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
+        "def-hyp(Type.annotation(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,%#0 中所有 #1均可指称到合法的 #2语法节点%(e,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,))))",
+        "def-hyp(Type.annotation(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,Syntax.OneOffI18N.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,))))"
       ],
-      "canonical": "def-hyp(Type.judge(@e,Lambda.Expr),Lambda.LegalExpr,Set.sep-typed(@e,Lambda.Expr,FulcrumNotes.OneOffI18N.TypeTheory.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Type.Expr-UTLC.lambda[text](,))))"
+      "canonical": "def-hyp(Syntax.hasCategory(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,Syntax.OneOffI18N.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,))))"
     },
     {
-      "id": "Type.rmk.deBruijnIndex",
+      "id": "Syntax.rmk.deBruijnIndex",
       "accepted_predecessors": [
-        "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\r\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$%(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0),Type.Expr-UTLC.bvar(1),Type.Expr-UTLC.bvar(2)))),Type.Expr-UTLC.bvar(0)))))",
-        "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\r\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$%(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda,Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0@#z),Type.Expr-UTLC.bvar(1@#y),Type.Expr-UTLC.bvar(2@#x)))),Type.Expr-UTLC.bvar(0@#y)))))",
-        "FulcrumNotes.OneOffI18N.TypeTheory.DeBruijnIndex.Explanation(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0),Type.Expr-UTLC.bvar(1),Type.Expr-UTLC.bvar(2)))),Type.Expr-UTLC.bvar(0)))))"
+        "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\r\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$%(%bvar%,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,),Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Syntax.apply-UTLC(parentheses(Syntax.Expr-UTLC.lambda(@z,Syntax.apply-UTLC(Syntax.Expr-UTLC.bvar(0),Syntax.Expr-UTLC.bvar(1),Syntax.Expr-UTLC.bvar(2)))),Syntax.Expr-UTLC.bvar(0)))))",
+        "%#0 的自然数参数命名为 #1，指涉所需向外逃脱的 #2层数。\r\n例如式 #3 中，内层 \\#0 指涉 $z$，\\#1 指涉 $y$，\\#2 指涉 $x$；外层 \\#0 指涉 $y$%(%bvar%,deBruijnIndex,Syntax.Expr-UTLC.lambda,Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Syntax.apply-UTLC(parentheses(Syntax.Expr-UTLC.lambda(@z,Syntax.apply-UTLC(Syntax.Expr-UTLC.bvar(0@#z),Syntax.Expr-UTLC.bvar(1@#y),Syntax.Expr-UTLC.bvar(2@#x)))),Syntax.Expr-UTLC.bvar(0@#y)))))",
+        "Syntax.OneOffI18N.DeBruijnIndex.Explanation(%bvar%,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,),Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Syntax.apply-UTLC(parentheses(Syntax.Expr-UTLC.lambda(@z,Syntax.apply-UTLC(Syntax.Expr-UTLC.bvar(0),Syntax.Expr-UTLC.bvar(1),Syntax.Expr-UTLC.bvar(2)))),Syntax.Expr-UTLC.bvar(0)))))"
       ],
-      "canonical": "FulcrumNotes.OneOffI18N.TypeTheory.DeBruijnIndex.Explanation(%bvar%,deBruijnIndex,Type.Expr-UTLC.lambda[text](,),Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Lambda.apply(parentheses(Type.Expr-UTLC.lambda(@z,Lambda.apply(Type.Expr-UTLC.bvar(0),Type.Expr-UTLC.bvar(1),Type.Expr-UTLC.bvar(2)))),Type.Expr-UTLC.bvar(0)))))"
+      "canonical": "Syntax.OneOffI18N.DeBruijnIndex.Explanation(%bvar%,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,),Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Syntax.apply-UTLC(parentheses(Syntax.Expr-UTLC.lambda(@z,Syntax.apply-UTLC(Syntax.Expr-UTLC.bvar(0),Syntax.Expr-UTLC.bvar(1),Syntax.Expr-UTLC.bvar(2)))),Syntax.Expr-UTLC.bvar(0)))))"
     },
     {
-      "id": "Type.rmk.Expr-LC.lambda",
+      "id": "Syntax.rmk.lambdaNotation-UTLC",
       "accepted_predecessors": [
-        "list-partial[enumerate](%通常将 #0表达式根据 #1的指涉关系记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda[text](,),deBruijnIndex,Type.Expr-UTLC.lambda(@x,P(x))),%将形如 #0 的多元函数记作 #1。%(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),%在记号上，若形式参数名称发生重复，受束变元应视为指涉最内层的形式参数。如表达式 #0 中的 $x$ 应视为指涉较晚出现的形式参数 $x$。%(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@x,x))))",
-        "list-partial[enumerate](\r\n    %通常将 #0表达式根据 #1记作形如 #2 的表达式。%(Type.Expr-UTLC.lambda, deBruijnIndex ,Type.Expr-UTLC.lambda(@x, P(x)),),\r\n    %将形如 #0 的多元函数记作 #1%(\r\n        Type.Expr-UTLC.lambda(\r\n            @x,\r\n            Type.Expr-UTLC.lambda(@y, Type.apply(P(x), y))\r\n        ),\r\n        Type.Expr-UTLC.lambda(list-partial[none](@x, @y), Type.apply(P(x), y))\r\n    )\r\n)",
-        "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.NamedBinder(Type.Expr-UTLC.lambda[text](,),deBruijnIndex,Type.Expr-UTLC.lambda(@x,P(x))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.MultipleBinders(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.Shadowing(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@x,x))))"
+        "list-partial[enumerate](%通常将 #0表达式根据 #1的指涉关系记作形如 #2 的表达式。%(Syntax.Expr-UTLC.lambda[text](,),deBruijnIndex,Syntax.Expr-UTLC.lambda(@x,P(x))),%将形如 #0 的多元函数记作 #1。%(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),%在记号上，若形式参数名称发生重复，受束变元应视为指涉最内层的形式参数。如表达式 #0 中的 $x$ 应视为指涉较晚出现的形式参数 $x$。%(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@x,x))))",
+        "list-partial[enumerate](\r\n    %通常将 #0表达式根据 #1记作形如 #2 的表达式。%(Syntax.Expr-UTLC.lambda, deBruijnIndex ,Syntax.Expr-UTLC.lambda(@x, P(x)),),\r\n    %将形如 #0 的多元函数记作 #1%(\r\n        Syntax.Expr-UTLC.lambda(\r\n            @x,\r\n            Syntax.Expr-UTLC.lambda(@y, Type.apply(P(x), y))\r\n        ),\r\n        Syntax.Expr-UTLC.lambda(list-partial[none](@x, @y), Type.apply(P(x), y))\r\n    )\r\n)",
+        "list-partial[enumerate](Syntax.OneOffI18N.LambdaNotation.NamedBinder(Syntax.Expr-UTLC.lambda[text](,),deBruijnIndex,Syntax.Expr-UTLC.lambda(@x,P(x))),Syntax.OneOffI18N.LambdaNotation.MultipleBinders(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),Syntax.OneOffI18N.LambdaNotation.Shadowing(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@x,x))))"
       ],
-      "canonical": "list-partial[enumerate](FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.NamedBinder(Type.Expr-UTLC.lambda[text](,),deBruijnIndex,Type.Expr-UTLC.lambda(@x,P(x))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.MultipleBinders(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Type.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),FulcrumNotes.OneOffI18N.TypeTheory.LambdaNotation.Shadowing(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.lambda(@x,x))))"
+      "canonical": "list-partial[enumerate](Syntax.OneOffI18N.LambdaNotation.NamedBinder(Syntax.Expr-UTLC.lambda[text](,),deBruijnIndex,Syntax.Expr-UTLC.lambda(@x,P(x))),Syntax.OneOffI18N.LambdaNotation.MultipleBinders(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),Syntax.OneOffI18N.LambdaNotation.Shadowing(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@x,x))))"
     },
     {
       "id": "Type.def.Church-Two",
       "accepted_predecessors": [
-        "def(Church.two,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,Lambda.apply(f,x))))"
+        "def(Church.two,Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),Syntax.apply-UTLC(f,Syntax.apply-UTLC(f,x))))"
       ],
-      "canonical": "def(Church.two,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,parentheses(Lambda.apply(f,x)))))"
+      "canonical": "def(Church.two,Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),Syntax.apply-UTLC(f,parentheses(Syntax.apply-UTLC(f,x)))))"
     },
     {
       "id": "Type.def.Church-Succ",
       "accepted_predecessors": [
-        "def(Church.succ,Type.Expr-UTLC.lambda(list-partial[none](@n,@f,@x),Lambda.apply(f,Lambda.apply(n,f,x))))"
+        "def(Church.succ,Syntax.Expr-UTLC.lambda(list-partial[none](@n,@f,@x),Syntax.apply-UTLC(f,Syntax.apply-UTLC(n,f,x))))"
       ],
-      "canonical": "def(Church.succ,Type.Expr-UTLC.lambda(list-partial[none](@n,@f,@x),Lambda.apply(f,parentheses(Lambda.apply(n,f,x)))))"
+      "canonical": "def(Church.succ,Syntax.Expr-UTLC.lambda(list-partial[none](@n,@f,@x),Syntax.apply-UTLC(f,parentheses(Syntax.apply-UTLC(n,f,x)))))"
     },
     {
       "id": "Type.def.Church-Add",
       "accepted_predecessors": [
-        "def(Church.add,Type.Expr-UTLC.lambda(list-partial[none](@m,@n,@f,@x),Lambda.apply(m,f,Lambda.apply(n,f,x))))"
+        "def(Church.add,Syntax.Expr-UTLC.lambda(list-partial[none](@m,@n,@f,@x),Syntax.apply-UTLC(m,f,Syntax.apply-UTLC(n,f,x))))"
       ],
-      "canonical": "def(Church.add,Type.Expr-UTLC.lambda(list-partial[none](@m,@n,@f,@x),Lambda.apply(m,f,parentheses(Lambda.apply(n,f,x)))))"
+      "canonical": "def(Church.add,Syntax.Expr-UTLC.lambda(list-partial[none](@m,@n,@f,@x),Syntax.apply-UTLC(m,f,parentheses(Syntax.apply-UTLC(n,f,x)))))"
     },
     {
       "id": "Type.def.Church-Mul",
       "accepted_predecessors": [
-        "def(Church.mul,Type.Expr-UTLC.lambda(list-partial[none](@m,@n,@f),Lambda.apply(m,Lambda.apply(n,f))))"
+        "def(Church.mul,Syntax.Expr-UTLC.lambda(list-partial[none](@m,@n,@f),Syntax.apply-UTLC(m,Syntax.apply-UTLC(n,f))))"
       ],
-      "canonical": "def(Church.mul,Type.Expr-UTLC.lambda(list-partial[none](@m,@n,@f),Lambda.apply(m,parentheses(Lambda.apply(n,f)))))"
+      "canonical": "def(Church.mul,Syntax.Expr-UTLC.lambda(list-partial[none](@m,@n,@f),Syntax.apply-UTLC(m,parentheses(Syntax.apply-UTLC(n,f)))))"
     },
     {
       "id": "Type.def.Church-Nat",
       "accepted_predecessors": [
-        "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.Expr-UTLC.lambda[maspto](1,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Type.Expr-UTLC.lambda[maspto](Nat.succ(@m),Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,m,f,x))))))",
-        "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.Expr-UTLC.lambda[maspto](1,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Type.Expr-UTLC.lambda[maspto](Nat.succ(@m),Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,parentheses(Lambda.apply(Church.Nat(m),f,x))))))))"
+        "def-hyp(Type.annotation(@n,Nat),Church.Nat(n),match(n,cases(Syntax.Expr-UTLC.lambda[maspto](1,Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Syntax.Expr-UTLC.lambda[maspto](Nat.succ(@m),Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),Syntax.apply-UTLC(f,m,f,x))))))",
+        "def-hyp(Type.annotation(@n,Nat),Church.Nat(n),match(n,cases(Syntax.Expr-UTLC.lambda[maspto](1,Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Syntax.Expr-UTLC.lambda[maspto](Nat.succ(@m),Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),Syntax.apply-UTLC(f,parentheses(Syntax.apply-UTLC(Church.Nat(m),f,x))))))))"
       ],
-      "canonical": "def-hyp(Type.judge(@n,Nat),Church.Nat(n),match(n,cases(Type.Expr-UTLC.lambda[maspto](0,Type.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Type.Expr-UTLC.lambda[maspto](Nat.succ(@m),Type.Expr-UTLC.lambda(list-partial[none](@f,@x),Lambda.apply(f,parentheses(Lambda.apply(Church.Nat(m),f,x))))))))"
+      "canonical": "def-hyp(Type.annotation(@n,Nat),Church.Nat(n),match(n,cases(Syntax.Expr-UTLC.lambda[maspto](0,Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Syntax.Expr-UTLC.lambda[maspto](Nat.succ(@m),Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),Syntax.apply-UTLC(f,parentheses(Syntax.apply-UTLC(Church.Nat(m),f,x))))))))"
     },
     {
       "id": "Type.def.alpha-conversion",
       "accepted_predecessors": [
-        "thm-hyp(list-partial(Type.judge(a,Lambda.Expr),Type.judge(list-partial[formula](x,y),`string`)),Lambda.defeq(Type.Expr-UTLC.lambda(x,a),Type.Expr-UTLC.lambda(y,a)))"
+        "thm-hyp(list-partial(Type.annotation(a,Syntax.Expr-UTLC),Type.annotation(list-partial[formula](x,y),`string`)),Lambda.defeq(Syntax.Expr-UTLC.lambda(x,a),Syntax.Expr-UTLC.lambda(y,a)))"
       ],
       "canonical": null
     },
     {
       "id": "Type.def.UTLC-const",
       "accepted_predecessors": [
-        "def-hyp-opq(Type.judge(@x,`string`),Type.judge(x,Lambda.Expr))"
+        "def-hyp-opq(Type.annotation(@x,`string`),Type.annotation(x,Syntax.Expr-UTLC))"
       ],
       "canonical": null
     },
     {
-      "id": "Type.def.named-lambda",
-      "accepted_predecessors": [],
-      "canonical": "def-hyp-opq(list-partial(Type.judge(a,Lambda.Expr),Type.judge(x,`string`)),Type.Expr-UTLC.lambda(x,a))"
+      "id": "Syntax.def.namedBinderPresentation-UTLC",
+      "accepted_predecessors": [
+        "def-hyp-opq(list-partial(Type.annotation(a,Syntax.Expr-UTLC),Type.annotation(x,`string`)),Syntax.Expr-UTLC.lambda(x,a))",
+        "def-hyp-opq(list-partial(Syntax.hasCategory(a,Syntax.Expr-UTLC),Syntax.hasCategory(x,`string`)),Syntax.Expr-UTLC.lambda(x,a))"
+      ],
+      "canonical": "def-hyp-opq(list-partial(Syntax.hasCategory(a,Syntax.Expr-UTLC),Type.annotation(x,`string`)),Syntax.Expr-UTLC.lambda(x,a))"
     },
     {
       "id": "Type.def.list",
-      "accepted_predecessors": [],
-      "canonical": "def-inductive-hyp(Type.judge(@$\\alpha$,Type),List($\\alpha$),ctors(Type.judge(List.nil,List($\\alpha$)),Type.judge(List.cons,Type.to($\\alpha$,Type.to(List($\\alpha$),List($\\alpha$))))))"
+      "accepted_predecessors": [
+        "def-inductive-hyp(Type.annotation(@$\\alpha$,Type),List($\\alpha$),ctors(Type.annotation(List.nil,List($\\alpha$)),Type.annotation(List.cons,Type.to($\\alpha$,Type.to(List($\\alpha$),List($\\alpha$))))))"
+      ],
+      "canonical": "def-inductive-hyp(Type.annotation(@$\\alpha$,Type),List($\\alpha$),ctors(Type.declaration(List.nil,List($\\alpha$)),Type.declaration(List.cons,Type.to($\\alpha$,Type.to(List($\\alpha$),List($\\alpha$))))))"
     },
     {
       "id": "Type.def.prod",
       "accepted_predecessors": [
-        "def-inductive-hyp(Type.judge(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.judge(Prod.pair[text],Type.to(A,Type.to(B,Set.Prod(A,B))))))"
+        "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.annotation(Prod.pair[text],Type.to(A,Type.to(B,Set.Prod(A,B))))))",
+        "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.annotation(Prod.pair[text],Type.to(A,Type.to(B,Type.prod(A,B))))))"
       ],
-      "canonical": "def-inductive-hyp(Type.judge(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.judge(Prod.pair[text],Type.to(A,Type.to(B,Type.prod(A,B))))))"
+      "canonical": "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.declaration(Prod.pair[text],Type.to(A,Type.to(B,Type.prod(A,B))))))"
     },
     {
       "id": "Type.def.sum",
-      "accepted_predecessors": [],
-      "canonical": "def-inductive-hyp(Type.judge(list-partial[formula](@A,@B),Type),Type.Sum(A,B),ctors(Type.judge(Sum.inl,Type.to(A,Type.Sum(A,B))),Type.judge(Sum.inr,Type.to(B,Type.Sum(A,B)))))"
+      "accepted_predecessors": [
+        "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.Sum(A,B),ctors(Type.annotation(Sum.inl,Type.to(A,Type.Sum(A,B))),Type.annotation(Sum.inr,Type.to(B,Type.Sum(A,B)))))"
+      ],
+      "canonical": "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.Sum(A,B),ctors(Type.declaration(Sum.inl,Type.to(A,Type.Sum(A,B))),Type.declaration(Sum.inr,Type.to(B,Type.Sum(A,B)))))"
     },
     {
       "id": "Type.def.UTLC-term",
       "accepted_predecessors": [],
-      "canonical": "def(Lambda.Term,Type.Quotient(Lambda.LegalExpr,Lambda.defeq(@$ $,@$ $)))"
+      "canonical": "def(Lambda.Term,Type.Quotient(Syntax.LegalExpr-UTLC,Lambda.defeq(@$ $,@$ $)))"
     },
     {
       "id": "Type.ppt.delta-reduction",
       "accepted_predecessors": [
-        "thm-hyp(list-partial(Type.judge(@x,`string`),Type.judge(@a,Lambda.LegalExpr),%在语境中名为 #0 的常量被定义为 #1%(x,a)),Lambda.defeq(Expr.const(x),a))",
-        "thm-hyp(list-partial(Type.judge(@x,`string`),Type.judge(@a,Lambda.LegalExpr),FulcrumNotes.OneOffI18N.TypeTheory.DeltaReduction.ConstantDefinition(x,a)),Lambda.defeq(Expr.const(x),a))"
+        "thm-hyp(list-partial(Type.annotation(@x,`string`),Type.annotation(@a,Syntax.LegalExpr-UTLC),%在语境中名为 #0 的常量被定义为 #1%(x,a)),Lambda.defeq(Expr.const(x),a))",
+        "thm-hyp(list-partial(Type.annotation(@x,`string`),Type.annotation(@a,Syntax.LegalExpr-UTLC),FulcrumNotes.OneOffI18N.TypeTheory.DeltaReduction.ConstantDefinition(x,a)),Lambda.defeq(Expr.const(x),a))"
       ],
       "canonical": null
     },
     {
-      "id": "Type.rmk.named-lambda",
+      "id": "Syntax.rmk.namedBinderPresentation-UTLC",
       "accepted_predecessors": [
-        "%在之前例子中实现的 #0构造子在语义上不携带绑定子形式参数的命名，我们将表达式中的命名视为某种语法糖，因为仅需 #1足以刻画表达式语法结构。但在某些实现场景中，可能认为这种命名是绑定子正式语义的一部分，此时需要增加 #2对表达式的依定义相等进行判定。%(Type.Expr-UTLC.lambda[text],deBruijnIndex,%$\\alpha$ 转换%)"
+        "%在之前例子中实现的 #0构造子在语义上不携带绑定子形式参数的命名，我们将表达式中的命名视为某种语法糖，因为仅需 #1足以刻画表达式语法结构。但在某些实现场景中，可能认为这种命名是绑定子正式语义的一部分，此时需要增加 #2对表达式的依定义相等进行判定。%(Syntax.Expr-UTLC.lambda[text],deBruijnIndex,%$\\alpha$ 转换%)"
       ],
-      "canonical": "FulcrumNotes.OneOffI18N.TypeTheory.NamedBinder.SemanticStatus(Type.Expr-UTLC.lambda[text](,),deBruijnIndex)"
+      "canonical": "Syntax.OneOffI18N.NamedBinder.SemanticStatus(Syntax.Expr-UTLC.lambda[text](,),deBruijnIndex)"
     },
     {
       "id": "Type.def.utlc-let-expression",
       "accepted_predecessors": [
-        "def-hyp-opq(list-partial(Type.judge(x,`string`),Type.judge(list-partial[formula](a,b),Lambda.Expr)),Type.judge(parentheses(let[coloneqq](x,a,b)),Lambda.Expr))"
+        "def-hyp-opq(list-partial(Type.annotation(x,`string`),Type.annotation(list-partial[formula](a,b),Syntax.Expr-UTLC)),Type.annotation(parentheses(let[coloneqq](x,a,b)),Syntax.Expr-UTLC))"
       ],
       "canonical": null
     },
@@ -4555,7 +4482,7 @@
     {
       "id": "Type.ppt.judge-lam",
       "accepted_predecessors": [
-        "thm-hyp(list-partial(Type.judge(@e,Type.Expr),Type.ctx(@$\\Gamma$),Type.ctx-judge(list-partial[formula]($\\Gamma$,Type.judge[paren](x,A)),e,B)),Type.ctx-judge($\\Gamma$,parentheses(Type.lambda-typed[lambda](@x,A,e)),Type.to(A,B)))"
+        "thm-hyp(list-partial(Type.annotation(@e,Syntax.Expr),Type.ctx(@$\\Gamma$),Type.judge(list-partial[formula]($\\Gamma$,Type.annotation[paren](x,A)),e,B)),Type.judge($\\Gamma$,parentheses(Type.lambda-typed[lambda](@x,A,e)),Type.to(A,B)))"
       ],
       "canonical": null
     }
@@ -4568,7 +4495,7 @@
   ],
   "entry_markdown_removals": [
     {
-      "id": "Type.def.named-lambda",
+      "id": "Syntax.def.namedBinderPresentation-UTLC",
       "accepted_markdown": [
         null,
         {
@@ -4647,7 +4574,7 @@
         "Logic.def.or.ctor.left",
         "Logic.def.or.ctor.right",
         "Logic.def.or.recursor",
-        "Type.rl.Expr-LC.recursor"
+        "Syntax.def.expression-UTLC.recursor"
       ]
     }
   ],
@@ -4731,7 +4658,7 @@
           "description": "",
           "source": {
             "entries": [
-              "Type.def.Substitution-LC"
+              "Syntax.def.substitution-UTLC"
             ],
             "urls": []
           },
@@ -4841,13 +4768,13 @@
       "accepted_predecessors": []
     },
     {
-      "name": "Lambda.OpenExpr",
+      "name": "Syntax.OpenExpr-UTLC",
       "package": "TypeTheory",
       "canonical": {
         "description": "Untyped lambda expressions admitting free variables",
         "source": {
           "entries": [
-            "Type.def.freeVariable"
+            "Syntax.def.openExpression-UTLC"
           ],
           "urls": []
         },
@@ -4880,18 +4807,18 @@
           }
         ],
         "tags": [],
-        "name": "Lambda.OpenExpr"
+        "name": "Syntax.OpenExpr-UTLC"
       },
       "accepted_predecessors": []
     },
     {
-      "name": "Type.Expr-UTLC.fvar",
+      "name": "Syntax.Expr-UTLC.fvar",
       "package": "TypeTheory",
       "canonical": {
         "description": "Free-variable constructor",
         "source": {
           "entries": [
-            "Type.def.freeVariable.ctor.freeVariable"
+            "Syntax.def.openExpression-UTLC.ctor.freeVariable"
           ],
           "urls": []
         },
@@ -4974,14 +4901,14 @@
           }
         ],
         "tags": [],
-        "name": "Type.Expr-UTLC.fvar"
+        "name": "Syntax.Expr-UTLC.fvar"
       },
       "accepted_predecessors": [
         {
           "description": "Free-variable constructor",
           "source": {
             "entries": [
-              "Type.def.freeVariable"
+              "Syntax.def.openExpression-UTLC"
             ],
             "urls": []
           },
@@ -5064,13 +4991,13 @@
             }
           ],
           "tags": [],
-          "name": "Type.Expr-UTLC.fvar"
+          "name": "Syntax.Expr-UTLC.fvar"
         },
         {
           "description": "Free-variable constructor",
           "source": {
             "entries": [
-              "Type.def.freeVariable"
+              "Syntax.def.openExpression-UTLC"
             ],
             "urls": []
           },
@@ -5153,18 +5080,18 @@
             }
           ],
           "tags": [],
-          "name": "Type.Expr-UTLC.fvar"
+          "name": "Syntax.Expr-UTLC.fvar"
         }
       ]
     },
     {
-      "name": "Type.Expr-UTLC.closed",
+      "name": "Syntax.Expr-UTLC.closed",
       "package": "TypeTheory",
       "canonical": {
         "description": "Embedding of a closed expression into the open-expression syntax",
         "source": {
           "entries": [
-            "Type.def.freeVariable.ctor.closedExpression"
+            "Syntax.def.openExpression-UTLC.ctor.closedExpression"
           ],
           "urls": []
         },
@@ -5247,14 +5174,14 @@
           }
         ],
         "tags": [],
-        "name": "Type.Expr-UTLC.closed"
+        "name": "Syntax.Expr-UTLC.closed"
       },
       "accepted_predecessors": [
         {
           "description": "Embedding of a closed expression into the open-expression syntax",
           "source": {
             "entries": [
-              "Type.def.freeVariable"
+              "Syntax.def.openExpression-UTLC"
             ],
             "urls": []
           },
@@ -5287,13 +5214,13 @@
             }
           ],
           "tags": [],
-          "name": "Type.Expr-UTLC.closed"
+          "name": "Syntax.Expr-UTLC.closed"
         },
         {
           "description": "Embedding of a closed expression into the open-expression syntax",
           "source": {
             "entries": [
-              "Type.def.freeVariable"
+              "Syntax.def.openExpression-UTLC"
             ],
             "urls": []
           },
@@ -5376,18 +5303,18 @@
             }
           ],
           "tags": [],
-          "name": "Type.Expr-UTLC.closed"
+          "name": "Syntax.Expr-UTLC.closed"
         }
       ]
     },
     {
-      "name": "Lambda.substitution",
+      "name": "Syntax.substitution-UTLC",
       "package": "TypeTheory",
       "canonical": {
         "description": "Capture-avoiding substitution",
         "source": {
           "entries": [
-            "Type.def.Substitution-LC"
+            "Syntax.def.substitution-UTLC"
           ],
           "urls": []
         },
@@ -5420,7 +5347,7 @@
           }
         ],
         "tags": [],
-        "name": "Lambda.substitution"
+        "name": "Syntax.substitution-UTLC"
       },
       "accepted_predecessors": []
     },
@@ -5849,13 +5776,13 @@
       ]
     },
     {
-      "name": "Type.pattern.match",
+      "name": "Syntax.pattern.match",
       "package": "TypeTheory",
       "canonical": {
         "description": "Structured pattern match",
         "source": {
           "entries": [
-            "Type.subsec.patternMatching"
+            "Syntax.subsec.patternMatching"
           ],
           "urls": []
         },
@@ -5888,14 +5815,14 @@
           }
         ],
         "tags": [],
-        "name": "Type.pattern.match"
+        "name": "Syntax.pattern.match"
       },
       "accepted_predecessors": [
         {
           "description": "Structured pattern match",
           "source": {
             "entries": [
-              "Type.subsec.patternMatching"
+              "Syntax.subsec.patternMatching"
             ],
             "urls": []
           },
@@ -5928,13 +5855,13 @@
             }
           ],
           "tags": [],
-          "name": "Type.pattern.match"
+          "name": "Syntax.pattern.match"
         },
         {
           "description": "Structured pattern match",
           "source": {
             "entries": [
-              "Type.subsec.patternMatching"
+              "Syntax.subsec.patternMatching"
             ],
             "urls": []
           },
@@ -5993,18 +5920,18 @@
             }
           ],
           "tags": [],
-          "name": "Type.pattern.match"
+          "name": "Syntax.pattern.match"
         }
       ]
     },
     {
-      "name": "Type.pattern.branches",
+      "name": "Syntax.pattern.branches",
       "package": "TypeTheory",
       "canonical": {
         "description": "Pattern-match branch collection",
         "source": {
           "entries": [
-            "Type.subsec.patternMatching"
+            "Syntax.subsec.patternMatching"
           ],
           "urls": []
         },
@@ -6038,18 +5965,18 @@
           }
         ],
         "tags": [],
-        "name": "Type.pattern.branches"
+        "name": "Syntax.pattern.branches"
       },
       "accepted_predecessors": []
     },
     {
-      "name": "Type.pattern.branch",
+      "name": "Syntax.pattern.branch",
       "package": "TypeTheory",
       "canonical": {
         "description": "Pattern-match branch",
         "source": {
           "entries": [
-            "Type.subsec.patternMatching"
+            "Syntax.subsec.patternMatching"
           ],
           "urls": []
         },
@@ -6082,18 +6009,18 @@
           }
         ],
         "tags": [],
-        "name": "Type.pattern.branch"
+        "name": "Syntax.pattern.branch"
       },
       "accepted_predecessors": []
     },
     {
-      "name": "Type.pattern.constructor",
+      "name": "Syntax.pattern.constructor",
       "package": "TypeTheory",
       "canonical": {
         "description": "Constructor pattern",
         "source": {
           "entries": [
-            "Type.subsec.patternMatching"
+            "Syntax.subsec.patternMatching"
           ],
           "urls": []
         },
@@ -6126,18 +6053,18 @@
           }
         ],
         "tags": [],
-        "name": "Type.pattern.constructor"
+        "name": "Syntax.pattern.constructor"
       },
       "accepted_predecessors": []
     },
     {
-      "name": "Type.pattern.arguments",
+      "name": "Syntax.pattern.arguments",
       "package": "TypeTheory",
       "canonical": {
         "description": "Constructor-pattern arguments",
         "source": {
           "entries": [
-            "Type.subsec.patternMatching"
+            "Syntax.subsec.patternMatching"
           ],
           "urls": []
         },
@@ -6171,18 +6098,18 @@
           }
         ],
         "tags": [],
-        "name": "Type.pattern.arguments"
+        "name": "Syntax.pattern.arguments"
       },
       "accepted_predecessors": []
     },
     {
-      "name": "Type.piecewise",
+      "name": "Syntax.piecewise",
       "package": "TypeTheory",
       "canonical": {
         "description": "Piecewise expression",
         "source": {
           "entries": [
-            "Type.subsec.patternMatching"
+            "Syntax.subsec.patternMatching"
           ],
           "urls": []
         },
@@ -6216,18 +6143,18 @@
           }
         ],
         "tags": [],
-        "name": "Type.piecewise"
+        "name": "Syntax.piecewise"
       },
       "accepted_predecessors": []
     },
     {
-      "name": "Type.piecewise.branch",
+      "name": "Syntax.piecewise.branch",
       "package": "TypeTheory",
       "canonical": {
         "description": "Piecewise branch",
         "source": {
           "entries": [
-            "Type.subsec.patternMatching"
+            "Syntax.subsec.patternMatching"
           ],
           "urls": []
         },
@@ -6260,18 +6187,18 @@
           }
         ],
         "tags": [],
-        "name": "Type.piecewise.branch"
+        "name": "Syntax.piecewise.branch"
       },
       "accepted_predecessors": []
     },
     {
-      "name": "Lambda.shift",
+      "name": "Syntax.shift-UTLC",
       "package": "TypeTheory",
       "canonical": {
         "description": "de Bruijn index shift",
         "source": {
           "entries": [
-            "Type.def.shift-LC"
+            "Syntax.def.shift-UTLC"
           ],
           "urls": []
         },
@@ -6304,7 +6231,7 @@
           }
         ],
         "tags": [],
-        "name": "Lambda.shift"
+        "name": "Syntax.shift-UTLC"
       },
       "accepted_predecessors": []
     },
@@ -6661,10 +6588,10 @@
       "accepted_predecessors": []
     },
     {
-      "name": "Lambda.pattern.bvar",
+      "name": "Syntax.pattern.UTLC.boundVariable",
       "package": "TypeTheory",
       "canonical": {
-        "name": "Lambda.pattern.bvar",
+        "name": "Syntax.pattern.UTLC.boundVariable",
         "kind": "const",
         "dynamic_arity": false,
         "styles": [
@@ -6696,7 +6623,7 @@
         "description": "bvar constructor pattern label",
         "source": {
           "entries": [
-            "Type.rl.Expr-LC.ctor.bound-variable"
+            "Syntax.def.expression-UTLC.ctor.boundVariable"
           ],
           "urls": []
         },
@@ -6705,10 +6632,10 @@
       "accepted_predecessors": []
     },
     {
-      "name": "Lambda.pattern.lambda",
+      "name": "Syntax.pattern.UTLC.lambda",
       "package": "TypeTheory",
       "canonical": {
-        "name": "Lambda.pattern.lambda",
+        "name": "Syntax.pattern.UTLC.lambda",
         "kind": "const",
         "dynamic_arity": false,
         "styles": [
@@ -6740,7 +6667,7 @@
         "description": "lambda constructor pattern label",
         "source": {
           "entries": [
-            "Type.rl.Expr-LC.ctor.lambda-abstraction"
+            "Syntax.def.expression-UTLC.ctor.lambdaAbstraction"
           ],
           "urls": []
         },
@@ -6749,10 +6676,10 @@
       "accepted_predecessors": []
     },
     {
-      "name": "Lambda.pattern.app",
+      "name": "Syntax.pattern.UTLC.application",
       "package": "TypeTheory",
       "canonical": {
-        "name": "Lambda.pattern.app",
+        "name": "Syntax.pattern.UTLC.application",
         "kind": "const",
         "dynamic_arity": false,
         "styles": [
@@ -6784,7 +6711,7 @@
         "description": "app constructor pattern label",
         "source": {
           "entries": [
-            "Type.rl.Expr-LC.ctor.application"
+            "Syntax.def.expression-UTLC.ctor.application"
           ],
           "urls": []
         },

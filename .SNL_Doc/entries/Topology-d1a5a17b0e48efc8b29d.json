@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y))"
+      "snl": "Type.annotation(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@f, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.measurable(f), Logic.forall-typed(@c, EReal, RealAnalysis.measurable(Set.sep-typed(@x, D@real-analysis.ctxt.D, Eq(Add.add(f(x), Logic.neg(c)), $0$)))))"
+      "snl": "def-hyp(Type.annotation(@f, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.measurable(f), Logic.forall-typed(@c, EReal, RealAnalysis.measurable(Set.sep-typed(@x, D@real-analysis.ctxt.D, Eq(Add.add(f(x), Logic.neg(c)), $0$)))))"
     },
     "contribution_info": null,
     "pointer": null,

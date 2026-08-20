@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@E,Set(Set(S@Topology.ctxt.S))),Type.judge(@S,Type)),Topology.heineBorel)"
+      "snl": "thm-hyp(list-partial(Type.annotation(@E,Set(Set(S@Topology.ctxt.S))),Type.annotation(@S,Type)),Topology.heineBorel)"
     },
     "contribution_info": null,
     "pointer": null,

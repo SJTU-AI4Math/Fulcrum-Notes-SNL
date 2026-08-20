@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "entry": {
     "id": "Topology.def.continuityAtPoint",
@@ -14,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.continuous(f,x),Topology.mapLimit(x,f,Type.apply(f,x)))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, X@Topology.ctxt.X),\r\n        Type.annotation(@x_0, X@Topology.ctxt.X),\r\n        Type.annotation(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y)),\r\n        Type.annotation(@τ_X, Set(Set(X@Topology.ctxt.X))),\r\n        Type.annotation(@τ_Y, Set(Set(Y@Topology.ctxt.Y)))\r\n    ),\r\n    Topology.continuous(f, x_0),\r\n    Topology.mapLimit(x, x_0, f, Type.apply(f, x_0))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

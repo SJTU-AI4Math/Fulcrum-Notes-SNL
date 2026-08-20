@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-struct-hyp(list-partial(Type.judge(@C,Set(Set(Set(S@Topology.ctxt.S)))),Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.openCover(C,A),struct(member[colon](%开集族%,Logic.forall-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.implies(Set.mem(U,C),Set.mem(U,τ)))),member[colon](%覆盖性%,Set.subset(A,Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(U,C),Set.mem(x,U))))))))"
+      "snl": "def-struct-hyp(list-partial(Type.annotation(@C,Set(Set(Set(S@Topology.ctxt.S)))),Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.openCover(C,A),struct(member[colon](%开集族%,Logic.forall-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.implies(Set.mem(U,C),Set.mem(U,τ)))),member[colon](%覆盖性%,Set.subset(A,Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(U,C),Set.mem(x,U))))))))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "entry": {
     "id": "Topology.def.mapLimit",
@@ -14,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@x,X@Topology.ctxt.X),Type.judge(@y,Y@Topology.ctxt.Y),Type.judge(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.judge(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.judge(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.mapLimit(x,f,y),Logic.forall-typed(@V,Set(Y@Topology.ctxt.Y),Logic.implies(Set.mem(V,τ_Y),Logic.and(Set.mem(y,V),Logic.exists-typed(@U,Set(X@Topology.ctxt.X),Logic.and(Logic.and(Set.mem(U,τ_X),Set.mem(x,U)),Set.subset(Set.sep-typed(@t,X@Topology.ctxt.X,Logic.and(Set.mem(t,Set.diff(U,Set.sep-typed(@z,X@Topology.ctxt.X,Eq(z,x)))),Set.mem(Type.apply(f,t),V))),V)))))))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, X@Topology.ctxt.X),\r\n        Type.annotation(@y, Y@Topology.ctxt.Y),\r\n        Type.annotation(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y)),\r\n        Type.annotation(@τ_X, Set(Set(X@Topology.ctxt.X))),\r\n        Type.annotation(@τ_Y, Set(Set(Y@Topology.ctxt.Y))),\r\n        Type.annotation(@x_0, X@Topology.ctxt.X)\r\n    ),\r\n    Topology.mapLimit(x, x_0, f, y),\r\n    Logic.forall-typed(\r\n        @V,\r\n        Set(Y@Topology.ctxt.Y),\r\n        Logic.implies(\r\n            Set.mem(V, τ_Y),\r\n            Logic.and(\r\n                Set.mem(y, V),\r\n                Logic.exists-typed(\r\n                    @U,\r\n                    Set(X@Topology.ctxt.X),\r\n                    Logic.and(\r\n                        Topology.deletedNeighborhood(U, x_0),\r\n                        Set.subset(\r\n                            Set.fun(f, U),\r\n                            V\r\n                        )\r\n                    )\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

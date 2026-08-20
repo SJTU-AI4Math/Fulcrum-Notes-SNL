@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def($Y$,Type.Expr-UTLC.lambda(@f,Type.Expr-UTLC.apply($\\left(#0\\right)$(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.apply(f,Type.Expr-UTLC.apply(x,x)))),$\\left(#0\\right)$(Type.Expr-UTLC.lambda(@x,Type.Expr-UTLC.apply(f,Type.Expr-UTLC.apply(x,x)))))))"
+      "snl": "def($Y$,Syntax.Expr-UTLC.lambda(@f,Syntax.Expr-UTLC.apply($\\left(#0\\right)$(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.apply(f,Syntax.Expr-UTLC.apply(x,x)))),$\\left(#0\\right)$(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.apply(f,Syntax.Expr-UTLC.apply(x,x)))))))"
     },
     "contribution_info": null,
     "pointer": null

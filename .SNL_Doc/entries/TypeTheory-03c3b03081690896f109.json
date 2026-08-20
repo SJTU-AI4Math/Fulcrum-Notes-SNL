@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.rmk.lambdaNotation-UTLC",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$\\lambda$-Abstraction Notation Conventions",
+        "zh-CN": "$\\lambda$-抽象记号习惯"
+      }
+    },
+    "content": {
+      "snl": "list-partial[enumerate](Syntax.OneOffI18N.LambdaNotation.NamedBinder(Syntax.Expr-UTLC.lambda[text](,),deBruijnIndex,Syntax.Expr-UTLC.lambda(@x,P(x))),Syntax.OneOffI18N.LambdaNotation.MultipleBinders(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),Syntax.OneOffI18N.LambdaNotation.Shadowing(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@x,x))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

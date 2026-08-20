@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(@$\\cdot$,Type.to(G@Algebra.ctxt.G,Type.to(G@Algebra.ctxt.G,G@Algebra.ctxt.G)))"
+      "snl": "Type.annotation(@$\\cdot$,Type.to(G@Algebra.ctxt.G,Type.to(G@Algebra.ctxt.G,G@Algebra.ctxt.G)))"
     },
     "contribution_info": null,
     "pointer": null,

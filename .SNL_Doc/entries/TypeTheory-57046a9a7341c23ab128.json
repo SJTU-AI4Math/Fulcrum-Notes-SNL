@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.def.declaration",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Signature Declaration",
+        "zh-CN": "签名声明"
+      }
+    },
+    "content": {
+      "snl": "def-hyp-opq(Type.annotation(@c,@T),Type.declaration(c,T))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A declaration records the signature of an object constant, inductive constructor, or relation constructor. It is not a typing derivation.",
+          "zh-CN": "签名声明记录对象常量、归纳构造子或关系构造子的签名，不是类型推导。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

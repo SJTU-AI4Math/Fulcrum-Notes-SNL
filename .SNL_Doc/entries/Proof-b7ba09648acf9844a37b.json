@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@a,Real),Gt(a,0),Type.judge(@f,Type.to(Real,Real)),Analysis.isContinuousOn(Analysis.deriv2(f),Icc(neg(a),a)),Eq(Type.apply(f,0),0)),Logic.exists-typed(@$\\xi$,Real,Logic.and(Set.mem($\\xi$,Ioo(neg(a),a)),Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Power(a,2))))))"
+      "snl": "thm-hyp(list-partial(Type.annotation(@a,Real),Gt(a,0),Type.annotation(@f,Type.to(Real,Real)),Analysis.isContinuousOn(Analysis.deriv2(f),Icc(neg(a),a)),Eq(Type.apply(f,0),0)),Logic.exists-typed(@$\\xi$,Real,Logic.and(Set.mem($\\xi$,Ioo(neg(a),a)),Eq(Type.apply(Analysis.deriv2(f),$\\xi$),Div.div(Add.add(Type.apply(f,a),Type.apply(f,neg(a))),Power(a,2))))))"
     },
     "contribution_info": null,
     "pointer": null,

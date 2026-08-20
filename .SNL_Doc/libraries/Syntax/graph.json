@@ -1,0 +1,351 @@
+{
+  "nodes": [
+    {
+      "id": "syntax_n_1",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.sec.syntax"
+      }
+    },
+    {
+      "id": "syntax_n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.signatureFragment"
+      }
+    },
+    {
+      "id": "syntax_n_3",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.rmk.signatureFragment"
+      }
+    },
+    {
+      "id": "syntax_n_4",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-UTLC"
+      }
+    },
+    {
+      "id": "syntax_n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction"
+      }
+    },
+    {
+      "id": "syntax_n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-UTLC.ctor.application"
+      }
+    },
+    {
+      "id": "syntax_n_7",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-UTLC.ctor.boundVariable"
+      }
+    },
+    {
+      "id": "syntax_n_8",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-UTLC.recursor"
+      }
+    },
+    {
+      "id": "syntax_n_9",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.rmk.lambdaNotation-UTLC"
+      }
+    },
+    {
+      "id": "syntax_n_10",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.rmk.applicationNotation-UTLC"
+      }
+    },
+    {
+      "id": "syntax_n_11",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.rmk.deBruijnIndex"
+      }
+    },
+    {
+      "id": "syntax_n_12",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.rmk.closedExpression-UTLC",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "syntax_n_13",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.legalExpression-UTLC"
+      }
+    },
+    {
+      "id": "syntax_n_14",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.shift-UTLC"
+      }
+    },
+    {
+      "id": "syntax_n_15",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.substitution-UTLC"
+      }
+    },
+    {
+      "id": "syntax_n_16",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.openExpression-UTLC"
+      }
+    },
+    {
+      "id": "syntax_n_17",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.openExpression-UTLC.ctor.closedExpression"
+      }
+    },
+    {
+      "id": "syntax_n_18",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.openExpression-UTLC.ctor.freeVariable"
+      }
+    },
+    {
+      "id": "syntax_n_19",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.openExpression-UTLC.ctor.lambdaAbstraction"
+      }
+    },
+    {
+      "id": "syntax_n_20",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.openExpression-UTLC.ctor.application"
+      }
+    },
+    {
+      "id": "syntax_n_21",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.rmk.freeVariableOpenExpression-UTLC",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "syntax_n_22",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-STLC"
+      }
+    },
+    {
+      "id": "syntax_n_23",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-STLC.ctor.lambdaAbstraction"
+      }
+    },
+    {
+      "id": "syntax_n_24",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-STLC.ctor.application"
+      }
+    },
+    {
+      "id": "syntax_n_25",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-STLC.ctor.boundVariable"
+      }
+    },
+    {
+      "id": "syntax_n_26",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.typeExpression-STLC"
+      }
+    },
+    {
+      "id": "syntax_n_27",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.def.expression-STLC.ctor.functionType"
+      }
+    },
+    {
+      "id": "syntax_n_28",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.rmk.expressionSTLCNoRecursor"
+      }
+    },
+    {
+      "id": "syntax_n_29",
+      "label": "Entry",
+      "props": {
+        "entryId": "Syntax.subsec.patternMatching"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "syntax_n_1",
+      "to": "syntax_n_4",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_1",
+      "to": "syntax_n_16",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_1",
+      "to": "syntax_n_22",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_1",
+      "to": "syntax_n_29",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_1",
+      "to": "syntax_n_2",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_1",
+      "to": "syntax_n_3",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_5",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_6",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_7",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_12",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_8",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_9",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_10",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_11",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_13",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_14",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_4",
+      "to": "syntax_n_15",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_16",
+      "to": "syntax_n_17",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_16",
+      "to": "syntax_n_18",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_16",
+      "to": "syntax_n_19",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_16",
+      "to": "syntax_n_20",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_16",
+      "to": "syntax_n_21",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_22",
+      "to": "syntax_n_23",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_22",
+      "to": "syntax_n_24",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_22",
+      "to": "syntax_n_25",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_22",
+      "to": "syntax_n_26",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_22",
+      "to": "syntax_n_27",
+      "label": "branch"
+    },
+    {
+      "from": "syntax_n_22",
+      "to": "syntax_n_28",
+      "label": "branch"
+    }
+  ]
+}

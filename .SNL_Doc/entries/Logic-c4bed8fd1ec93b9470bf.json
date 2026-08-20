@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive[prop](Logic.true,ctors(Type.judge(%true%,Logic.true)))"
+      "snl": "def-inductive[prop](Logic.true,ctors(Type.declaration(%true%,Logic.true)))"
     },
     "contribution_info": null,
     "pointer": null,

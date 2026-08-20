@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@Sigma1,Set(Set(X@Measure.ctxt.X))),Type.judge(@Sigma2,Set(Set(X@Measure.ctxt.X))),Measure.SigmaAlgebra(Sigma1),Measure.SigmaAlgebra(Sigma2)),Measure.SigmaAlgebra(Measure.sigmaIntersection(Sigma1,Sigma2)))"
+      "snl": "thm-hyp(list-partial(Type.annotation(@Sigma1,Set(Set(X@Measure.ctxt.X))),Type.annotation(@Sigma2,Set(Set(X@Measure.ctxt.X))),Measure.SigmaAlgebra(Sigma1),Measure.SigmaAlgebra(Sigma2)),Measure.SigmaAlgebra(Measure.sigmaIntersection(Sigma1,Sigma2)))"
     },
     "contribution_info": null,
     "pointer": null,

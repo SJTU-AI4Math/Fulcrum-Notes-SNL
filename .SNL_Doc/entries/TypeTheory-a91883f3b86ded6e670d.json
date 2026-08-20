@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.def.expression-UTLC.ctor.application",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Application",
+        "zh-CN": "应用"
+      }
+    },
+    "content": {
+      "snl": "def-hyp-opq(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Syntax.Expr-UTLC.apply(a,b))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

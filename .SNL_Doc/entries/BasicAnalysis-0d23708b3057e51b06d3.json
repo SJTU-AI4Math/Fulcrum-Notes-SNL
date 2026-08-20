@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(list-partial(@F, @G), Analysis.PFun), Analysis.comp(F, G), Analysis.mkPFun($F.\\mathrm{map} \\circ G.\\mathrm{map}$, Set.inter(Analysis.domain(G), Set.sep-typed(@x, Analysis.domain(G), Set.mem(Type.apply(Analysis.map(G), x), Analysis.domain(F))))))",
+      "snl": "def-hyp(Type.annotation(list-partial(@F, @G), Analysis.PFun), Analysis.comp(F, G), Analysis.mkPFun($F.\\mathrm{map} \\circ G.\\mathrm{map}$, Set.inter(Analysis.domain(G), Set.sep-typed(@x, Analysis.domain(G), Set.mem(Type.apply(Analysis.map(G), x), Analysis.domain(F))))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

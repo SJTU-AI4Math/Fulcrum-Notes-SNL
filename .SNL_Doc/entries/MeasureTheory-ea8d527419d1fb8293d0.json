@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.judge(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal)),Measure.SigmaAlgebra(Measure.LebesgueSets($\\mathbb{R}$)))"
+      "snl": "thm-hyp(Type.annotation(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal)),Measure.SigmaAlgebra(Measure.LebesgueSets($\\mathbb{R}$)))"
     },
     "contribution_info": null,
     "pointer": null,

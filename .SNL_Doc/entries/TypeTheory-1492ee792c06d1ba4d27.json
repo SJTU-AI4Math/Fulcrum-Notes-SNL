@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.def.expression-STLC",
+    "package": "TypeTheory",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Expression",
+        "zh-CN": "表达式"
+      }
+    },
+    "content": {
+      "snl": "Syntax.signatureFragment(Syntax.Expr,ctors(Syntax.constructor(%typed lambda%,Type.to(Syntax.TypeExpr,Type.to(Syntax.Expr,Syntax.Expr))),Syntax.constructor(%bound variable%,Type.to(Nat,Syntax.Expr)),Syntax.constructor(%application%,Type.to(Syntax.Expr,Type.to(Syntax.Expr,Syntax.Expr)))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Assume the STLC expression carrier is already available. This Entry records only the term constructors used here and is not an exhaustive datatype declaration.",
+          "zh-CN": "假设 STLC 表达式载体已经给定。本条目只记录此处使用的项构造子，不是穷尽的数据类型声明。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "macro": {
+    "description": "满映射（记号）",
+    "source": {
+      "entries": [
+        "Set.def.surjective"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "arrow",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 : #1 \\twoheadrightarrow #2",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      }
+    ],
+    "tags": [],
+    "name": "Set.surj"
+  }
+}

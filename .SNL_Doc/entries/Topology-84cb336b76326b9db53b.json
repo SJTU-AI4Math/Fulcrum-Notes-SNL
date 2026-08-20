@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@S,Type),Topology.sierpinski,Topology.topologicalSpace(S,Topology.sierpinski))"
+      "snl": "def-hyp(Type.annotation(@S,Type),Topology.sierpinski,Topology.topologicalSpace(S,Topology.sierpinski))"
     },
     "contribution_info": null,
     "pointer": null,

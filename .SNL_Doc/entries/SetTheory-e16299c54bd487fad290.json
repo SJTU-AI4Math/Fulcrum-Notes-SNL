@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.ctxt.f",
+    "package": "SetTheory",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$f$",
+        "zh-CN": "$f$"
+      }
+    },
+    "content": {
+      "snl": "Type.annotation(@f,Type.to(D@Set.ctxt.D ,A@Set.ctxt.AB))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

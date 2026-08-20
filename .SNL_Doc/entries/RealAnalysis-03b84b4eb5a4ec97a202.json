@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@phi, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.simple(phi), Logic.and(RealAnalysis.measurable(phi), Logic.neg(Logic.iff($|\\phi(D)|$, $\\infty$))))"
+      "snl": "def-hyp(Type.annotation(@phi, Type.to(D@real-analysis.ctxt.D, EReal)), RealAnalysis.simple(phi), Logic.and(RealAnalysis.measurable(phi), Logic.neg(Logic.iff($|\\phi(D)|$, $\\infty$))))"
     },
     "contribution_info": null,
     "pointer": null,

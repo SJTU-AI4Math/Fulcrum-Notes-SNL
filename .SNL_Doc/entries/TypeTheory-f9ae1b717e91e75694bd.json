@@ -7,9 +7,16 @@
     "id": "Type.ppt.pi-judge",
     "package": "TypeTheory",
     "kind": "property",
-    "title": "$\\Pi$ 类型的宇宙层级",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Universe Level of $\\Pi$-Types",
+        "zh-CN": "$\\Pi$ 类型的宇宙层级"
+      }
+    },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@T,Type[univ](@u)),Type.judge(e,Type.Expr)),Type.judge(Type.Pi(@x,T,e),Type[univ](Add.add(1,\\max(u,v)))))"
+      "snl": "thm-hyp(list-partial(Type.judge(@Γ,@T,Type[univ](@u)),Type.judge(Type.contextExtend(Γ,@x,T),@e,Type[univ](@v))),Type.judge(Γ,Type.Pi(@x,T,e),Type[univ](\\max(u,v))))"
     },
     "contribution_info": null,
     "pointer": null

@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.judge(@f,Type.to(A,B)),Eq(FP.map(M,x,f),FP.bind(M,x,Type.Expr-UTLC.lambda(@a,FP.pure(M,Type.apply(f,a))))))"
+      "snl": "thm-hyp(Type.annotation(@f,Type.to(A,B)),Eq(FP.map(M,x,f),FP.bind(M,x,Syntax.Expr-UTLC.lambda(@a,FP.pure(M,Type.apply(f,a))))))"
     },
     "contribution_info": null,
     "pointer": null,

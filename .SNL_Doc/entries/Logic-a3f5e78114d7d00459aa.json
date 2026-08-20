@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.judge(@p,Proposition),Logic.implies(Logic.false,p))"
+      "snl": "thm-hyp(Type.annotation(@p,Proposition),Logic.implies(Logic.false,p))"
     },
     "contribution_info": null,
     "pointer": null,

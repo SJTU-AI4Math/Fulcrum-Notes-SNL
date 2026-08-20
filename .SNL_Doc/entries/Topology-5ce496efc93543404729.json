@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@A,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.nowhereDense(A),Eq(Topology.interior(Topology.closure(A)),Set.emptyset[slim]))"
+      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.nowhereDense(A),Eq(Topology.interior(Topology.closure(A)),Set.emptyset[slim]))"
     },
     "contribution_info": null,
     "pointer": null,

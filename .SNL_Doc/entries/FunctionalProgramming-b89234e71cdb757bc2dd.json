@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@a,A),Type.judge(@f,Type.to(A,Type.apply(M,B)))),Eq(FP.bind(M,FP.pure(M,a),f),Type.apply(f,a)))"
+      "snl": "thm-hyp(list-partial(Type.annotation(@a,A),Type.annotation(@f,Type.to(A,Type.apply(M,B)))),Eq(FP.bind(M,FP.pure(M,a),f),Type.apply(f,a)))"
     },
     "contribution_info": null,
     "pointer": null,

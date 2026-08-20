@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.judge(@a,T@Logic.ctxt.T), Logic.forall-typed(@a,T@Logic.ctxt.T,Eq(a,a)), Logic.true)"
+      "snl": "def-hyp(Type.annotation(@a,T@Logic.ctxt.T), Logic.forall-typed(@a,T@Logic.ctxt.T,Eq(a,a)), Logic.true)"
     },
     "contribution_info": null,
     "pointer": null,

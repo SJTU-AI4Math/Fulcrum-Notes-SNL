@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "entry": {
     "id": "Topology.def.openSet",
@@ -14,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@U,Set(S@Topology.ctxt.S)),Type.judge(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.openSet(U,τ),Set.mem(U,τ))"
+      "snl": "def-hyp[predicate](Type.annotation(@U,Set(S@Topology.ctxt.S)),Topology.openSet(U,τ@Topology.ctxt.tau),Set.mem(U,τ@Topology.ctxt.tau))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -35,10 +35,20 @@ DOC = ROOT / ".SNL_Doc"
 PLAN = strict_json_loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
 I18N = strict_json_loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
 ENTRY_PACKAGE_PLAN = strict_json_loads((ROOT / "scripts/fulcrum-entry-packages.json").read_text(encoding="utf-8"))
-EXPECTED_SOURCE_HEAD = "d3a3785e1d1ec1114e48eb2180f9a8ddd7a548f0"
+EXPECTED_SOURCE_HEAD = "bc09e62e7217ae4b65357eb46e8ad8487bb4ae24"
 validate_authorities(I18N, PLAN, ENTRY_PACKAGE_PLAN, EXPECTED_SOURCE_HEAD)
-EXPECTED_ENTRIES = 508  # latest TypeTheory notes plus managed inductive entries
-EXPECTED_MACROS = 465  # includes structured pattern-matching and lambda-shift terminology
+DOC_MANIFEST = strict_json_loads((ROOT / "scripts/fulcrum-doc-manifest.json").read_text(encoding="utf-8"))
+assert set(DOC_MANIFEST) == {"version", "source_commit", "source_files", "canonical_files"}
+assert type(DOC_MANIFEST["version"]) is int and DOC_MANIFEST["version"] == 1
+assert DOC_MANIFEST["source_commit"] == EXPECTED_SOURCE_HEAD
+assert DOC_MANIFEST["canonical_files"], "canonical .SNL_Doc manifest is missing"
+observed_doc_manifest = {
+    path.relative_to(ROOT).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+    for path in sorted(DOC.rglob("*")) if path.is_file()
+}
+assert observed_doc_manifest == DOC_MANIFEST["canonical_files"], "complete canonical .SNL_Doc manifest drift"
+EXPECTED_ENTRIES = 524  # latest TypeTheory notes plus managed inductive entries
+EXPECTED_MACROS = 482  # includes structured pattern-matching and lambda-shift terminology
 EXPECTED_PLACEHOLDERS = {
     "Type.def.iota-reduction": {
         "title": {"en": "$\\iota$-reduction", "zh-CN": "$\\iota$-归约"},
@@ -210,11 +220,100 @@ assert macro_kinds["partial"]["coloring"]["dark"] == {"stroke": "inherit", "back
 entries, entry_paths = load_entities("entries", "entry")
 macros, macro_paths = load_entities("macros", "macro")
 
+# Syntax namespace and judgement-layer authority. This is independent of the
+# applicator: canonical entity payload hashes, namespace closure, graph reuse,
+# and the exact object-language notation are checked from disk.
+syntax_authority = strict_json_loads((ROOT / "scripts" / "fulcrum-syntax-migration.json").read_text(encoding="utf-8"))
+assert set(syntax_authority) == {"version", "source_head", "entry_renames", "macro_renames", "accepted_predecessor_hashes", "canonical_hashes"}
+assert type(syntax_authority["version"]) is int and syntax_authority["version"] == 1
+for old_id in syntax_authority["entry_renames"]:
+    assert old_id not in entries, f"retired Syntax Entry remains: {old_id}"
+retired_macro_names = set(syntax_authority["macro_renames"]) - set(syntax_authority["macro_renames"].values())
+for old_name in retired_macro_names:
+    assert old_name not in macros, f"retired Syntax Macro remains: {old_name}"
+def _payload_hash(value):
+    raw = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(raw.encode()).hexdigest()
+for entry_id, expected in syntax_authority["canonical_hashes"]["entries"].items():
+    assert entry_id in entries and _payload_hash(entries[entry_id]) == expected, f"canonical Syntax Entry drift: {entry_id}"
+for macro_name, expected in syntax_authority["canonical_hashes"]["macros"].items():
+    assert macro_name in macros and _payload_hash(macros[macro_name]) == expected, f"canonical Syntax Macro drift: {macro_name}"
+
+def _template_bodies(value):
+    if isinstance(value, dict):
+        if isinstance(value.get("body"), str):
+            yield value["body"]
+        for child in value.values():
+            yield from _template_bodies(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from _template_bodies(child)
+
+assert "#0 \\vdash #1 : #2" in set(_template_bodies(macros["Type.judge"]["styles"])), "object judgement must render Γ ⊢ t : T"
+assert "#0 : #1" in set(_template_bodies(macros["Type.annotation"]["styles"])), "metalinguistic annotation rendering drift"
+assert "#0 : #1" in set(_template_bodies(macros["Type.declaration"]["styles"])), "signature declaration rendering drift"
+assert "\\cdot" in set(_template_bodies(macros["Type.emptyContext"]["styles"])), "empty context must be the empty telescope"
+assert "\\varnothing" not in set(_template_bodies(macros["Type.emptyContext"]["styles"])), "empty context must not be a set"
+role_authority = strict_json_loads((ROOT / "scripts" / "type-judgement-role-plan.json").read_text(encoding="utf-8"))
+assert set(role_authority) == {"version", "source_commit", "total_predecessor_calls", "role_counts", "entries"}
+assert type(role_authority["version"]) is int and role_authority["version"] == 1
+assert role_authority["source_commit"] == EXPECTED_SOURCE_HEAD
+assert type(role_authority["total_predecessor_calls"]) is int and role_authority["total_predecessor_calls"] == 455
+assert role_authority["role_counts"] == {"syntax": 22, "syntax_constructor": 11, "annotation": 376, "declaration": 31, "object": 15}
+assert sum(len(spec["calls"]) for spec in role_authority["entries"].values()) == 455
+for entry_id, spec in role_authority["entries"].items():
+    assert set(spec) == {"source_snl_sha256", "source_package", "calls"}
+    assert [call["path"] for call in spec["calls"]] == [f"preorder/{index}" for index in range(len(spec["calls"]))]
+    assert all(set(call) == {"path", "role"} and call["role"] in role_authority["role_counts"] for call in spec["calls"])
+role_sequence_replaced_entries = {
+    "Syntax.def.expression-UTLC", "Syntax.def.openExpression-UTLC", "Syntax.def.expression-STLC", "Syntax.def.typeExpression-STLC",
+    "Type.rl.fun", "Type.rl.pi", "Type.ppt.PropImpredicativePi", "Type.ppt.pi-judge", "Type.rmk.PropUniverseBehavior", "Type.rl.judge",
+}
+canonical_role_macros = {"syntax": "Syntax.hasCategory", "syntax_constructor": "Syntax.constructor", "annotation": "Type.annotation", "declaration": "Type.declaration", "object": "Type.judge"}
+call_pattern = lambda name: re.compile(rf"(?<![A-Za-z0-9_.-]){re.escape(name)}(?=\s*(?:\[[^\]]*\])?\s*\()")
+for source_entry_id, spec in role_authority["entries"].items():
+    canonical_entry_id = syntax_authority["entry_renames"].get(source_entry_id, source_entry_id)
+    if canonical_entry_id in role_sequence_replaced_entries:
+        assert canonical_entry_id in syntax_authority["canonical_hashes"]["entries"]
+        continue
+    snl = ((entries[canonical_entry_id].get("content") or {}).get("snl") or "")
+    observed = []
+    for role, macro_name in canonical_role_macros.items():
+        observed.extend((match.start(), role) for match in call_pattern(macro_name).finditer(snl))
+    assert [role for _, role in sorted(observed)] == [call["role"] for call in spec["calls"]], f"canonical judgement-role drift: {canonical_entry_id}"
+semantic_counts = {name: 0 for name in ("Type.judge", "Type.annotation", "Type.declaration", "Syntax.hasCategory", "Syntax.constructor")}
+for entry in entries.values():
+    snl = ((entry.get("content") or {}).get("snl") or "")
+    for name in semantic_counts:
+        semantic_counts[name] += len(call_pattern(name).findall(snl))
+assert semantic_counts == {"Type.judge": 15, "Type.annotation": 379, "Type.declaration": 32, "Syntax.hasCategory": 22, "Syntax.constructor": 12}, semantic_counts
+object_judgement_entries = {
+    "Type.rl.judge", "Type.rl.fun", "Type.rl.pi", "Type.ppt.pi-judge",
+    "Type.ppt.PropImpredicativePi", "Type.rmk.PropUniverseBehavior", "Type.rl.judge",
+}
+actual_object_judgement_entries = {
+    entry_id for entry_id, entry in entries.items()
+    if "Type.judge(" in ((entry.get("content") or {}).get("snl") or "")
+}
+assert actual_object_judgement_entries == object_judgement_entries, f"object judgement escaped its semantic layer: {sorted(actual_object_judgement_entries)}"
+for entry_id in object_judgement_entries:
+    snl = entries[entry_id]["content"]["snl"]
+    assert "Type.annotation(" not in snl, f"object judgement mixed with metadata annotation: {entry_id}"
+assert entries["Syntax.def.expression-UTLC"]["content"]["snl"].startswith("def-inductive(")
+for entry_id in ("Syntax.def.openExpression-UTLC", "Syntax.def.expression-STLC", "Syntax.def.typeExpression-STLC"):
+    snl = entries[entry_id]["content"]["snl"]
+    assert "Syntax.signatureFragment(" in snl and "def-inductive(" not in snl, f"non-UTLC syntax presented as exhaustive: {entry_id}"
+syntax_graph = strict_json_loads((DOC / "libraries" / "Syntax" / "graph.json").read_text(encoding="utf-8"))
+syntax_graph_ids = [node["props"]["entryId"] for node in syntax_graph["nodes"]]
+assert len(syntax_graph_ids) == 29 and len(set(syntax_graph_ids)) == 29
+assert set(syntax_graph_ids) <= set(entries)
+assert {"Syntax.sec.syntax", "Syntax.def.expression-UTLC", "Syntax.def.openExpression-UTLC", "Syntax.def.expression-STLC", "Syntax.subsec.patternMatching"} <= set(syntax_graph_ids)
+
 # Regression gate for the latest Type-Theory authoring batch.
 assert "Type.ppt.eta-reduction" not in entries, "zeta-reduction Entry is still mislabeled eta"
 assert "Type.ppt.zeta-reduction" in entries, "missing zeta-reduction Entry"
 for entry_id in (
-    "Type.def.named-lambda", "Type.def.list", "Type.def.prod", "Type.def.sum", "Type.def.UTLC-term",
+    "Syntax.def.namedBinderPresentation-UTLC", "Type.def.list", "Type.def.prod", "Type.def.sum", "Type.def.UTLC-term",
 ):
     content = entries[entry_id].get("content") or {}
     assert "snl" in content and "markdown" not in content, f"structured Entry retains draft Markdown: {entry_id}"
@@ -229,19 +328,19 @@ for entry_id in restored_teaching_entries:
     content = entries[entry_id].get("content") or {}
     assert "snl" not in content, f"restored teaching text must not revive unsupported formalization: {entry_id}"
     i18n_values(content.get("markdown"), f"restored teaching Markdown {entry_id}")
-unsupported_placeholders = ("Type.def.type-expression-stlc", "Type.def.ctx", "Type.ppt.judge-app", "Type.ppt.judge-lam")
+unsupported_placeholders = ("Type.def.ctx", "Type.ppt.judge-app", "Type.ppt.judge-lam")
 for entry_id in unsupported_placeholders:
     assert entries[entry_id].get("content") == {}, f"unsupported formalization must remain an honest placeholder: {entry_id}"
 for entry_id in (
     "Type.ppt.delta-reduction", "Type.def.utlc-let-expression", "Type.ppt.zeta-reduction",
-    "Type.ppt.judge-app", "Type.rmk.named-lambda", "Type.def.type-expression-stlc",
+    "Type.ppt.judge-app", "Syntax.rmk.namedBinderPresentation-UTLC", "Syntax.def.typeExpression-STLC",
     "Type.subsec.type-inference", "Type.def.ctx", "Type.ppt.judge-lam",
 ):
     i18n_values(entries[entry_id]["title"], f"Entry {entry_id} title")
 assert macros["Sum.inl"]["source"]["entries"] == ["Type.def.sum.ctor.inl"]
 assert macros["Sum.inr"]["source"]["entries"] == ["Type.def.sum.ctor.inr"]
 assert "FulcrumNotes.OneOffI18N.TypeTheory.DeltaReduction.ConstantDefinition" not in macros, "orphaned delta-reduction prose Macro remains"
-assert "FulcrumNotes.OneOffI18N.TypeTheory.NamedBinder.SemanticStatus" in macros, "missing named-binder semantic-status Macro"
+assert "Syntax.OneOffI18N.NamedBinder.SemanticStatus" in macros, "missing named-binder semantic-status Macro"
 for macro_name, style_name in (("Type.to", "text"), ("Lambda.Term", "default")):
     style = next(style for style in macros[macro_name]["styles"] if style["style_name"] == style_name)
     template = style["template"]
@@ -273,7 +372,7 @@ for package_id in PLAN.get("retired_macro_packages", []):
     assert package_id not in config.get("active_macro_packages", []), f"retired Macro Package remains active: {package_id}"
 assert I18N.get("source_head") == EXPECTED_SOURCE_HEAD, "I18n map source lease changed"
 assert ENTRY_PACKAGE_PLAN.get("source_head") == EXPECTED_SOURCE_HEAD, "Entry Package source lease changed"
-assert len(I18N.get("entries", {})) == 404, "I18n Entry mapping coverage changed"
+assert len(I18N.get("entries", {})) == 416, "I18n Entry mapping coverage changed"
 assert len(I18N.get("styles", {})) == 89, "I18n Macro-style mapping coverage changed"
 
 # Macro identity migrations are complete, canonical, and have no stale alias.
@@ -327,6 +426,18 @@ assert dependency_scope <= set(entries)
 relationship_data = strict_json_loads((DOC / "relationships.json").read_text(encoding="utf-8"))
 relationships = relationship_data.get("relationships", [])
 assert len({rel["id"] for rel in relationships}) == len(relationships), "duplicate pool relationship id"
+
+# Relationship witnesses must follow the same per-occurrence role migration.
+relationship_rows = relationships
+for source_entry_id, spec in role_authority["entries"].items():
+    entry_id = syntax_authority["entry_renames"].get(source_entry_id, source_entry_id)
+    roles = {call["role"] for call in spec["calls"]}
+    for relation in relationship_rows:
+        if relation["from"] == entry_id and "Type.judge" in relation["metadata"].get("macros", []):
+            assert "object" in roles, (entry_id, relation)
+open_set_relations = [relation for relation in relationship_rows if relation["from"] == "Topology.def.openSet"]
+assert any(relation["to"] == "Type.def.annotation" and "Type.annotation" in relation["metadata"]["macros"] for relation in open_set_relations)
+assert not any(relation["to"] == "Type.rl.judge" and "Type.judge" in relation["metadata"]["macros"] for relation in open_set_relations)
 auto_scope = [rel for rel in relationships if rel.get("from") in dependency_scope and rel.get("label") == "depends" and isinstance(rel.get("metadata"), dict) and rel["metadata"].get("generator") == "macro-source-scan"]
 actual_dependencies = {(rel["from"], rel["to"]): tuple(rel["metadata"].get("macros", [])) for rel in auto_scope}
 assert len(actual_dependencies) == len(auto_scope), "duplicate managed dependency edge"
@@ -410,9 +521,9 @@ for key, projection in I18N["styles"].items():
 # Requested Entries have exactly the planned content and graph placement.
 planned_requests = {spec["id"]: spec for spec in PLAN["requested_entries"]}
 PARALLEL_REMARKS = {
-    "Type.rmk.Expr-LC.lambda": "Type.rl.Expr-LC.ctor.lambda-abstraction",
-    "Type.rmk.Expr-LC.apply": "Type.rl.Expr-LC.ctor.application",
-    "Type.rmk.deBruijnIndex": "Type.rl.Expr-LC.ctor.bound-variable",
+    "Syntax.rmk.lambdaNotation-UTLC": "Syntax.def.expression-UTLC.ctor.lambdaAbstraction",
+    "Syntax.rmk.applicationNotation-UTLC": "Syntax.def.expression-UTLC.ctor.application",
+    "Syntax.rmk.deBruijnIndex": "Syntax.def.expression-UTLC.ctor.boundVariable",
 }
 for entry_id, parent_id in PARALLEL_REMARKS.items():
     spec = planned_requests.get(entry_id)
@@ -692,42 +803,42 @@ assert "Mathematician.alonzoChurch" in macros, "Alonzo Church term Macro is miss
 assert macros["Mathematician.alonzoChurch"]["source"]["entries"] == ["Mathematician.ctxt.alonzoChurch"]
 assert macros["Church.or"]["source"]["entries"] == ["Type.def.Church-Or"], "Church.or provenance is stale"
 
-closed_expr = entries["Type.rl.Expr-LC"]
+closed_expr = entries["Syntax.def.expression-UTLC"]
 assert closed_expr["title"]["values"] == {"en": "Closed Expression (Untyped $\\lambda$-Calculus)", "zh-CN": "闭表达式（无类型 $\\lambda$-演算）"}
-for entry_id in ("Type.rmk.closedExpression", "Type.def.freeVariable", "Type.rmk.freeVariableOpenExpression"):
+for entry_id in ("Syntax.rmk.closedExpression-UTLC", "Syntax.def.openExpression-UTLC", "Syntax.rmk.freeVariableOpenExpression-UTLC"):
     assert entry_id in entries, f"missing closed/open-expression Entry: {entry_id}"
-assert "Lambda.OpenExpr" in macros and "Type.Expr-UTLC.fvar" in macros, "open-expression notation is incomplete"
-assert macros["Type.Expr-UTLC.fvar"]["source"]["entries"] == ["Type.def.freeVariable.ctor.freeVariable"]
-open_expr_snl = entries["Type.def.freeVariable"]["content"]["snl"]
-assert "Type.Expr-UTLC.closed[text]" in open_expr_snl and "Type.Expr-UTLC.fvar[text]" in open_expr_snl, "open-expression constructor labels expose empty term slots"
+assert "Syntax.OpenExpr-UTLC" in macros and "Syntax.Expr-UTLC.fvar" in macros, "open-expression notation is incomplete"
+assert macros["Syntax.Expr-UTLC.fvar"]["source"]["entries"] == ["Syntax.def.openExpression-UTLC.ctor.freeVariable"]
+open_expr_snl = entries["Syntax.def.openExpression-UTLC"]["content"]["snl"]
+assert "Syntax.Expr-UTLC.closed[text]" in open_expr_snl and "Syntax.Expr-UTLC.fvar[text]" in open_expr_snl, "open-expression constructor labels expose empty term slots"
 
-assert "Lambda.substitution" in macros, "dedicated substitution term Macro is missing"
-subst_template = macros["Lambda.substitution"]["styles"][0]["template"]
+assert "Syntax.substitution-UTLC" in macros, "dedicated substitution term Macro is missing"
+subst_template = macros["Syntax.substitution-UTLC"]["styles"][0]["template"]
 assert subst_template["body"] == "#0[#1 \\mapsto #2]", "substitution Macro must render a[x\\mapsto b]"
 required_pattern_macros = {
-    "Type.pattern.match",
-    "Type.pattern.branches",
-    "Type.pattern.branch",
-    "Type.pattern.constructor",
-    "Type.pattern.arguments",
-    "Type.piecewise",
-    "Type.piecewise.branch",
-    "Lambda.pattern.bvar",
-    "Lambda.pattern.lambda",
-    "Lambda.pattern.app",
-    "Lambda.shift",
+    "Syntax.pattern.match",
+    "Syntax.pattern.branches",
+    "Syntax.pattern.branch",
+    "Syntax.pattern.constructor",
+    "Syntax.pattern.arguments",
+    "Syntax.piecewise",
+    "Syntax.piecewise.branch",
+    "Syntax.pattern.UTLC.boundVariable",
+    "Syntax.pattern.UTLC.lambda",
+    "Syntax.pattern.UTLC.application",
+    "Syntax.shift-UTLC",
 }
 assert required_pattern_macros <= macros.keys(), "structured pattern-matching terminology is incomplete"
-assert macros["Type.pattern.branches"]["dynamic_arity"] is True
-assert macros["Type.pattern.arguments"]["dynamic_arity"] is True
-pattern_match_template = macros["Type.pattern.match"]["styles"][0]["template"]
+assert macros["Syntax.pattern.branches"]["dynamic_arity"] is True
+assert macros["Syntax.pattern.arguments"]["dynamic_arity"] is True
+pattern_match_template = macros["Syntax.pattern.match"]["styles"][0]["template"]
 assert pattern_match_template.get("mode") == "formula_display" and pattern_match_template.get("body") == "\\mathsf{case}_{#0}\;#1", "pattern-match Macro is not the locale-invariant cases term"
-assert entries.get("Type.def.shift-LC", {}).get("content", {}).get("snl"), "de Bruijn shift definition is missing"
-shift_snl = entries["Type.def.shift-LC"]["content"]["snl"]
-for required in ("Type.pattern.match", "Type.pattern.branch", "Type.Expr-UTLC.bvar", "Type.Expr-UTLC.lambda", "Type.Expr-UTLC.apply"):
+assert entries.get("Syntax.def.shift-UTLC", {}).get("content", {}).get("snl"), "de Bruijn shift definition is missing"
+shift_snl = entries["Syntax.def.shift-UTLC"]["content"]["snl"]
+for required in ("Syntax.pattern.match", "Syntax.pattern.branch", "Syntax.Expr-UTLC.bvar", "Syntax.Expr-UTLC.lambda", "Syntax.Expr-UTLC.apply"):
     assert required in shift_snl, f"shift is not recursively defined by structured pattern matching: {required}"
-substitution_snl = entries["Type.def.Substitution-LC"]["content"]["snl"]
-for required in ("Lambda.substitution", "Lambda.shift", "Type.pattern.match", "Type.pattern.branch", "Type.pattern.constructor"):
+substitution_snl = entries["Syntax.def.substitution-UTLC"]["content"]["snl"]
+for required in ("Syntax.substitution-UTLC", "Syntax.shift-UTLC", "Syntax.pattern.match", "Syntax.pattern.branch", "Syntax.pattern.constructor"):
     assert required in substitution_snl, f"substitution lacks structured recursive clause: {required}"
 assert "FulcrumNotes.OneOffI18N.TypeTheory.Substitution.CaptureAvoiding" not in substitution_snl, "substitution still relies on the long prose fallback"
 assert "%\\mathsf{" not in substitution_snl and "%\\mathsf{" not in shift_snl, "pattern constructor labels leak raw KaTeX commands"
@@ -797,16 +908,15 @@ beta_single = entries["Lambda.def.beta-single"]["content"]["snl"]
 for constructor in ("Lambda.beta.contract", "Lambda.beta.lambda-congruence", "Lambda.beta.application-left-congruence", "Lambda.beta.application-right-congruence"):
     assert constructor in beta_single, f"single-step beta reduction lacks {constructor}"
 assert "Lambda.beta.application-congruence" not in beta_single, "application congruence was not split into one-side steps"
-assert "Lambda.substitution" in beta_single, "beta contraction does not use substitution"
+assert "Syntax.substitution-UTLC" in beta_single, "beta contraction does not use substitution"
 assert "Relation.transitiveClosure" in entries["Lambda.def.beta"]["content"]["snl"], "multi-step beta reduction is not defined by transitive closure"
 assert "Relation.transitiveClosure" in macros and "Lambda.betaRelation" in macros, "transitive-closure terminology is incomplete"
 
 expected_open_children = {
-    "Type.def.freeVariable.ctor.closedExpression",
-    "Type.def.freeVariable.ctor.freeVariable",
-    "Type.def.freeVariable.ctor.lambdaAbstraction",
-    "Type.def.freeVariable.ctor.application",
-    "Type.def.freeVariable.recursor",
+    "Syntax.def.openExpression-UTLC.ctor.closedExpression",
+    "Syntax.def.openExpression-UTLC.ctor.freeVariable",
+    "Syntax.def.openExpression-UTLC.ctor.lambdaAbstraction",
+    "Syntax.def.openExpression-UTLC.ctor.application",
 }
 expected_beta_children = {
     "Lambda.def.beta-single.ctor.betaContraction",
@@ -815,9 +925,10 @@ expected_beta_children = {
     "Lambda.def.beta-single.ctor.applicationArgumentCongruence",
     "Lambda.def.beta-single.recursor",
 }
-assert expected_open_children <= entries.keys(), "open-expression constructor/recursor Entries are incomplete"
+assert expected_open_children <= entries.keys(), "open-expression fragment constructor Entries are incomplete"
+assert "Syntax.def.openExpression-UTLC.recursor" not in entries, "non-exhaustive open-expression fragment must not expose a recursor"
 assert expected_beta_children <= entries.keys(), "single-step beta constructor/recursor Entries are incomplete"
-for constructor_id in (expected_open_children | expected_beta_children) - {"Type.def.freeVariable.recursor", "Lambda.def.beta-single.recursor"}:
+for constructor_id in (expected_open_children | expected_beta_children) - {"Lambda.def.beta-single.recursor"}:
     assert entries[constructor_id].get("content", {}).get("snl"), f"constructor Entry lacks its actual signature: {constructor_id}"
 
 for restored_id in ("Type.def.UTLC-const", "Type.ppt.delta-reduction", "Type.def.utlc-let-expression", "Type.ppt.zeta-reduction"):

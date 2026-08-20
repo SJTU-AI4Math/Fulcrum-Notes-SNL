@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.judge(@H,Type),Type.judge(@dotH,Type.to(H,Type.to(H,H))),Type.judge(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpEpi, Logic.and(Algebra.GrpHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
+      "snl": "def-hyp(list-partial(Type.annotation(@H,Type),Type.annotation(@dotH,Type.to(H,Type.to(H,H))),Type.annotation(@f,Type.to(G@Algebra.ctxt.G,H))), Algebra.GrpEpi, Logic.and(Algebra.GrpHom,Logic.forall-typed(@y,H,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(Type.apply[paren](f,x),y)))))"
     },
     "contribution_info": null,
     "pointer": null,

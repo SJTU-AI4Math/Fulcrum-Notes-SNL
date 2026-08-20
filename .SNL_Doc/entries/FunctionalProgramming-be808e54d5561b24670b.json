@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.judge(@x,FP.Identity(A)),Eq(FP.bind(FP.Identity,x,@f),Type.apply(f,x)))"
+      "snl": "thm-hyp(Type.annotation(@x,FP.Identity(A)),Eq(FP.bind(FP.Identity,x,@f),Type.apply(f,x)))"
     },
     "contribution_info": null,
     "pointer": null,

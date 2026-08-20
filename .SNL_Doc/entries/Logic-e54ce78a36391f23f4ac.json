@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "Type.judge(P,Type.to(T,Proposition))"
+      "snl": "Type.annotation(P,Type.to(T,Proposition))"
     },
     "contribution_info": null,
     "pointer": null,

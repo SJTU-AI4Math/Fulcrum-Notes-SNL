@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive-hyp(Type.judge(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.judge(Prod.pair[text],Type.to(A,Type.to(B,Type.prod(A,B))))))"
+      "snl": "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.prod(A,B),ctors(Type.declaration(Prod.pair[text],Type.to(A,Type.to(B,Type.prod(A,B))))))"
     },
     "contribution_info": null,
     "pointer": null

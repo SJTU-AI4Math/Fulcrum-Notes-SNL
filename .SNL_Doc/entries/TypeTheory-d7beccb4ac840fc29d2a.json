@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Syntax.rmk.applicationNotation-UTLC",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "$\\lambda$-Application Notation Conventions",
+        "zh-CN": "$\\lambda$-应用记号习惯"
+      }
+    },
+    "content": {
+      "snl": "list-partial[enumerate](Syntax.OneOffI18N.ApplicationNotation.LeftAssociative(Syntax.Expr-UTLC.apply[text](,),Syntax.apply-UTLC(x,y,z,w),Syntax.apply-UTLC(parentheses(Syntax.apply-UTLC(parentheses(Syntax.apply-UTLC(x,y)),z)),w)),Syntax.OneOffI18N.ApplicationNotation.PrecedenceOverLambda(Syntax.Expr-UTLC.apply[text](,),Syntax.Expr-UTLC.lambda[text](,),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Syntax.apply-UTLC(x,y)),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),parentheses(Syntax.apply-UTLC(x,y)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}
