@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "macro": {
     "description": "Predicate: U is open in (S, tau)",
@@ -20,6 +21,54 @@
         "template": {
           "mode": "formula_inline",
           "body": "#0\\in #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0\\text{ 是 }#1\\text{ 拓扑下的开集}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "predicate",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0\\text{ 是开集}",
           "typst": {
             "built_in": "",
             "synthesis": {

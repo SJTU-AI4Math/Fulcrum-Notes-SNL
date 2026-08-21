@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp[predicate](Type.annotation(@U,Set(S@Topology.ctxt.S)),Topology.openSet(U,τ@Topology.ctxt.tau),Set.mem(U,τ@Topology.ctxt.tau))"
+      "snl": "def-hyp[predicate](Type.annotation(@U,Set(T@Set.ctxt.T)),Topology.openSet[text](U,τ@Topology.ctxt.tau),Set.mem(U,τ@Topology.ctxt.tau))"
     },
     "contribution_info": null,
     "pointer": null,

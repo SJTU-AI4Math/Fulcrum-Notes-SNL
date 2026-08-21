@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.ctxt.tauS",
+    "package": "Topology",
+    "kind": "context",
+    "title": "从下文开始，约定 $\\tau$ 是 $S$ 上的拓扑",
+    "content": {
+      "snl": "Topology.topology(τ@Topology.ctxt.tau, S@Topology.ctxt.S)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

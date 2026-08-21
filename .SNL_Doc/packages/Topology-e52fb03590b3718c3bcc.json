@@ -11,6 +11,7 @@
     "Topology.ctxt.map",
     "Topology.ctxt.S",
     "Topology.ctxt.tau",
+    "Topology.ctxt.tauS",
     "Topology.ctxt.tauX",
     "Topology.ctxt.tauY",
     "Topology.ctxt.X",

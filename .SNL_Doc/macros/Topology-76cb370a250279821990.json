@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "macro": {
     "description": "Predicate: U is closed in (S, tau)",
@@ -15,11 +16,59 @@
     "tags": [],
     "styles": [
       {
-        "style_name": "default",
+        "style_name": "notation",
         "tags": [],
         "template": {
           "mode": "formula_inline",
           "body": "#2\\setminus #0\\in #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0\\text{ 是拓扑空间 }(#2, #1)\\text{ 的闭集}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "predicate",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0\\text{ 是闭集}",
           "typst": {
             "built_in": "",
             "synthesis": {

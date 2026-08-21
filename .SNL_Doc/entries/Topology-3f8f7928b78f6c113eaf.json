@@ -14,7 +14,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.Nbr(x),Set.sep-typed(@U,Set(S@Topology.ctxt.S),Topology.neighborhood(U,x)))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.Nbr(x),\r\n    Set.sep-typed(@U, Set(T@Set.ctxt.T), Topology.neighborhood(U, x))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
