@@ -88,6 +88,38 @@ def main() -> None:
     finally:
         shutil.rmtree(path)
 
+    # The post-06fb Topology addition remains load-bearing in its own semantic
+    # authority rather than surviving as carried-through current data.
+    path = predecessor_sandbox()
+    try:
+        topology_path = path / "scripts" / "fulcrum-topology-adoption.json"
+        value = json.loads(topology_path.read_text())
+        value["entries"] = [item for item in value["entries"] if item["id"] != "Topology.ctxt.tauS"]
+        topology_path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+        first = run(path, "python3", "scripts/apply_syntax_namespace.py")
+        assert first.returncode == 0, first.stdout + first.stderr
+        before = tree_digest(path / ".SNL_Doc")
+        second = run(path, "python3", "scripts/apply_fulcrum_i18n_inductives.py")
+        assert second.returncode != 0, "deleted adopted Topology Entry was accepted"
+        assert tree_digest(path / ".SNL_Doc") == before, "deleted Topology authority mutated the filesystem before rejection"
+    finally:
+        shutil.rmtree(path)
+
+    # Canonical Topology payload authority must be checked independently of the
+    # complete byte manifest; mutating authority alone cannot stay green.
+    path = sandbox()
+    try:
+        topology_path = path / "scripts" / "fulcrum-topology-adoption.json"
+        value = json.loads(topology_path.read_text())
+        value["entries"][0]["canonical"]["title"]["values"]["en"] = "BROKEN AUTHORITY TITLE"
+        topology_path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+        before = tree_digest(path / ".SNL_Doc")
+        result = run(path, "python3", "scripts/verify_fulcrum_i18n_inductives.py")
+        assert result.returncode != 0, "mutated canonical Topology payload authority was blessed by the byte manifest"
+        assert tree_digest(path / ".SNL_Doc") == before, "Topology verifier mutation changed document bytes"
+    finally:
+        shutil.rmtree(path)
+
     # Valid canonical replay is byte-idempotent across the complete two-stage pipeline.
     path = sandbox()
     try:
@@ -194,7 +226,7 @@ def main() -> None:
     optimized = run(ROOT, "python3", "-O", "scripts/apply_syntax_namespace.py")
     assert optimized.returncode != 0 and "must run without Python optimization" in (optimized.stdout + optimized.stderr)
 
-    print(json.dumps({"status": "PASS", "idempotent_rounds": 2, "mutation_probes": 10, "pristine_replay": True, "python_O_rejected": True}))
+    print(json.dumps({"status": "PASS", "idempotent_rounds": 2, "mutation_probes": 11, "pristine_replay": True, "python_O_rejected": True}))
 
 
 if __name__ == "__main__":

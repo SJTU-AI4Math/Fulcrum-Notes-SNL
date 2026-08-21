@@ -349,6 +349,8 @@ def main() -> None:
         assert payload_hash(macros[macro_name]) == expected, f"leased Macro drift: {macro_name}"
 
     role_authority = load(ROOT / "scripts" / "type-judgement-role-plan.json")
+    topology_authority = load(ROOT / "scripts" / "fulcrum-topology-adoption.json")
+    assert topology_authority["source_head"] == authority["source_head"]
     assert set(role_authority) == {"version", "source_commit", "total_predecessor_calls", "role_counts", "entries"}
     assert type(role_authority["version"]) is int and role_authority["version"] == 1
     assert role_authority["source_commit"] == authority["source_head"]
@@ -707,7 +709,7 @@ def main() -> None:
     object_snl = [entries[eid]["content"]["snl"] for eid in object_updates] + [entries["Type.rl.judge"]["content"]["snl"]]
     assert all("Type.judge(" in snl for snl in object_snl)
     assert all("Type.annotation(" not in snl for snl in object_snl)
-    role_sequence_replaced_entries = {
+    role_sequence_replaced_entries = set(topology_authority["canonical_judgement_roles"]) | {
         "Syntax.def.expression-UTLC", "Syntax.def.openExpression-UTLC", "Syntax.def.expression-STLC", "Syntax.def.typeExpression-STLC",
         *object_updates.keys(), "Type.rl.judge",
     }
@@ -718,7 +720,8 @@ def main() -> None:
     for source_entry_id, lease in role_authority["entries"].items():
         canonical_entry_id = ENTRY_RENAMES.get(source_entry_id, source_entry_id)
         if canonical_entry_id in role_sequence_replaced_entries:
-            assert canonical_entry_id in authority["canonical_hashes"]["entries"]
+            if canonical_entry_id not in topology_authority["canonical_judgement_roles"]:
+                assert canonical_entry_id in authority["canonical_hashes"]["entries"]
             continue
         snl = (entries[canonical_entry_id].get("content") or {}).get("snl") or ""
         observed = []
@@ -727,6 +730,13 @@ def main() -> None:
         observed_roles = [role for _, role in sorted(observed)]
         expected_roles = [call["role"] for call in lease["calls"]]
         assert observed_roles == expected_roles, f"canonical judgement-role drift: {canonical_entry_id}: {observed_roles} != {expected_roles}"
+    if "Topology.ctxt.tauS" in entries:
+        for entry_id, expected_roles in topology_authority["canonical_judgement_roles"].items():
+            snl = (entries[entry_id].get("content") or {}).get("snl") or ""
+            observed = []
+            for role, macro_name in canonical_role_macros.items():
+                observed.extend((position, role) for position in macro_call_positions(snl, macro_name))
+            assert [role for _, role in sorted(observed)] == expected_roles, f"canonical Topology judgement-role drift: {entry_id}"
 
     semantic_counts = {name: 0 for name in ["Type.judge", "Type.annotation", "Type.declaration", "Syntax.hasCategory", "Syntax.constructor"]}
     judgement_entries: set[str] = set()
@@ -742,6 +752,7 @@ def main() -> None:
     accepted_semantic_counts = [
         {"Type.judge": 15, "Type.annotation": 379, "Type.declaration": 32, "Syntax.hasCategory": 22, "Syntax.constructor": 12},
         {"Type.judge": 20, "Type.annotation": 379, "Type.declaration": 32, "Syntax.hasCategory": 23, "Syntax.constructor": 12},
+        {"Type.judge": 20, "Type.annotation": 358, "Type.declaration": 32, "Syntax.hasCategory": 23, "Syntax.constructor": 12},
     ]
     assert semantic_counts in accepted_semantic_counts, semantic_counts
     expected_object_entries = {

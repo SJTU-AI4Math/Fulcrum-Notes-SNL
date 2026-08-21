@@ -1,6 +1,7 @@
 {
   "format": "snl-entry",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "entry": {
     "id": "Topology.ctxt.tauX",
@@ -19,6 +20,5 @@
     "contribution_info": null,
     "pointer": null,
     "package": "Topology"
-  },
-  "schema_version": 1
+  }
 }

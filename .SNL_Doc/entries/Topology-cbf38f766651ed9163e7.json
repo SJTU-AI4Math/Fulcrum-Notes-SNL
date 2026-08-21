@@ -7,7 +7,14 @@
     "id": "Topology.ctxt.tauS",
     "package": "Topology",
     "kind": "context",
-    "title": "从下文开始，约定 $\\tau$ 是 $S$ 上的拓扑",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "From here on, $\\tau$ is a topology on $S$",
+        "zh-CN": "从下文开始，约定 $\\tau$ 是 $S$ 上的拓扑"
+      }
+    },
     "content": {
       "snl": "Topology.topology(τ@Topology.ctxt.tau, S@Topology.ctxt.S)"
     },

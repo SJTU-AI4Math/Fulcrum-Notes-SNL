@@ -1802,7 +1802,7 @@
     "Topology.def.nowhereDense": {
       "title": {
         "en": "Nowhere Dense Set",
-        "zh-CN": "无处稠密集"
+        "zh-CN": "无处稠密集/稀疏集/疏朗集"
       }
     },
     "Topology.def.openCover": {
@@ -1832,7 +1832,7 @@
     "Topology.def.perfectSet": {
       "title": {
         "en": "Perfect Set",
-        "zh-CN": "完全集"
+        "zh-CN": "完全集/完美集"
       }
     },
     "Topology.def.productTopology": {
@@ -3037,6 +3037,12 @@
       "accepted_title_en": [
         "$S$"
       ]
+    },
+    "Topology.ctxt.tauS": {
+      "title": {
+        "en": "From here on, $\\tau$ is a topology on $S$",
+        "zh-CN": "从下文开始，约定 $\\tau$ 是 $S$ 上的拓扑"
+      }
     }
   },
   "styles": {

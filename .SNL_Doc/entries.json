@@ -1481,7 +1481,7 @@
       }
     },
     "content": {
-      "snl": "Type.annotation(@S,Type)"
+      "snl": "Type.annotation(@S,Set(T@Set.ctxt.T))"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1499,11 +1499,29 @@
       }
     },
     "content": {
-      "snl": "Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))"
+      "snl": "list-partial(Type.annotation(@τ,Set(Set(T@Set.ctxt.T))), Set.subset(τ@Topology.ctxt.tau, Set.powerset(S@Topology.ctxt.S)))"
     },
     "contribution_info": null,
     "pointer": null,
     "package": "Topology"
+  },
+  {
+    "id": "Topology.ctxt.tauS",
+    "package": "Topology",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "From here on, $\\tau$ is a topology on $S$",
+        "zh-CN": "从下文开始，约定 $\\tau$ 是 $S$ 上的拓扑"
+      }
+    },
+    "content": {
+      "snl": "Topology.topology(τ@Topology.ctxt.tau, S@Topology.ctxt.S)"
+    },
+    "contribution_info": null,
+    "pointer": null
   },
   {
     "id": "Topology.subsec.basicConcepts",
@@ -1569,7 +1587,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp[predicate](Type.annotation(@U,Set(S@Topology.ctxt.S)),Topology.openSet(U,τ@Topology.ctxt.tau),Set.mem(U,τ@Topology.ctxt.tau))"
+      "snl": "def-hyp[predicate](Type.annotation(@U,Set(T@Set.ctxt.T)),Topology.openSet[text](U,τ@Topology.ctxt.tau),Set.mem(U,τ@Topology.ctxt.tau))"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1587,7 +1605,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@U,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.closedSet(U,τ,S@Topology.ctxt.S),Set.mem(Set.compl[sup](U,S@Topology.ctxt.S),τ))"
+      "snl": "def-hyp(Type.annotation(@U,Set(T@Set.ctxt.T)),Topology.closedSet[text](U,τ@Topology.ctxt.tau,S@Topology.ctxt.S),Set.mem(Set.compl[sup](U,S@Topology.ctxt.S),τ))"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1605,7 +1623,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@U,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.neighborhood(U,x),Logic.exists-typed(@O,Set(Set(S@Topology.ctxt.S)),Logic.and(Logic.and(Set.mem(O,τ),Set.mem(x,O)),Set.subset(O,U))))"
+      "snl": "def-hyp[predicate](\r\n    list-partial(\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S),\r\n        Type.annotation(@U, Set(T@Set.ctxt.T))\r\n    ),\r\n    Topology.neighborhood(U, x),\r\n    Logic.exists-typed(\r\n        @O,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.and(Logic.and(Set.mem(O, τ@Topology.ctxt.tau), Set.mem(x, O)), Set.subset(O, U))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1623,7 +1641,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.Nbr(x),Set.sep-typed(@U,Set(S@Topology.ctxt.S),Topology.neighborhood(U,x)))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.Nbr(x),\r\n    Set.sep-typed(@U, Set(T@Set.ctxt.T), Topology.neighborhood(U, x))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1641,7 +1659,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.interior(A),Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@O,Set(Set(S@Topology.ctxt.S)),Logic.and(Logic.and(Set.mem(O,τ),Set.subset(O,A)),Set.mem(x,O)))))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n        Set.subset(A, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.interior(A),\r\n    Set.sep-typed(\r\n        @x,\r\n        T@Set.ctxt.T,\r\n        Logic.exists-typed(\r\n            @O,\r\n            Set(T@Set.ctxt.T),\r\n            Logic.and(Logic.and(Set.mem(O, τ@Topology.ctxt.tau), Set.subset(O, A)), Set.mem(x, O))\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1695,7 +1713,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.closure(A),Set.sep-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@F,Set(Set(S@Topology.ctxt.S)),Logic.implies(Logic.and(Set.mem(Set.compl[sup](F,S@Topology.ctxt.S),τ),Set.subset(A,F)),Set.mem(x,F)))))"
+      "snl": "def-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.closure(A),\r\n    Set.sep-typed(\r\n        @x,\r\n        S@Topology.ctxt.S,\r\n        Logic.forall-typed(\r\n            @F,\r\n            Set(T@Set.ctxt.T),\r\n            Logic.implies(\r\n                Logic.and(Topology.closedSet(F, τ@Topology.ctxt.tau, S@Topology.ctxt.S), Set.subset(A, F)),\r\n                Set.mem(x, F)\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1749,7 +1767,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.closurePoint(x,A),Logic.forall-typed(@U,Set(S@Topology.ctxt.S),Logic.implies(Topology.neighborhood(U,x),Logic.neg(Set.mem(Set.inter(U,A),Set.emptyset[slim])))))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n        Type.annotation(@x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.closurePoint(x, A),\r\n    Logic.forall-typed(\r\n        @U,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.implies(\r\n            Topology.neighborhood(U, x),\r\n            Neq(Set.inter(U, A), Set.emptyset)\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1785,7 +1803,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@B,Set(Set(S@Topology.ctxt.S))),Type.annotation(@S,Type)),Topology.generatedTopology(B),Set.sep-typed(@U,Set(S@Topology.ctxt.S),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.implies(Set.mem(x,U),Logic.exists-typed(@B2,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(B2,B),Logic.and(Set.mem(x,B2),Set.subset(B2,U))))))))"
+      "snl": "def-hyp(\r\n    list-partial(Type.annotation(@$\\mathcal{B}$, Set(Set(T@Set.ctxt.T))), Set.subset($\\mathcal{B}$, Set.powerset(S@Topology.ctxt.S))),\r\n    Topology.generatedTopology($\\mathcal{B}$),\r\n    Set.sep-typed(\r\n        @U,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.forall-typed(\r\n            @x,\r\n            T@Set.ctxt.T,\r\n            Logic.implies(\r\n                Set.mem(x, U),\r\n                Logic.exists-typed(\r\n                    @B_2,\r\n                    Set(T@Set.ctxt.T),\r\n                    Logic.and(Set.mem(B_2, $\\mathcal{B}$), Logic.and(Set.mem(x, B_2), Set.subset(B_2, U)))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1803,7 +1821,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@B,Set(Set(S@Topology.ctxt.S))),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.topologicalBasis(B,τ),Logic.and(Set.subset(B,τ),Eq(Topology.generatedTopology(B),τ)))"
+      "snl": "def-hyp[predicate](\r\n    Type.annotation(@B, Set(Set(T@Set.ctxt.T))),\r\n    Topology.topologicalBasis(B, τ@Topology.ctxt.tau),\r\n    Logic.and(Set.subset(B, τ@Topology.ctxt.tau), Eq(Topology.generatedTopology(B), τ@Topology.ctxt.tau))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1873,7 +1891,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@U,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.deletedNeighborhood(U,x),Logic.and(Topology.neighborhood(Set.union(U,Set.sep-typed(@y,S@Topology.ctxt.S,Eq(y,x))),x),Logic.neg(Set.mem(x,U))))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S),\r\n        Type.annotation(@U, Set(T@Set.ctxt.T)),\r\n        Set.subset(U, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.deletedNeighborhood(U, x),\r\n    Logic.and(\r\n        Topology.neighborhood(\r\n            Set.union(U, Set.sep-typed(@y, T@Set.ctxt.T, Eq(y, x))),\r\n            x\r\n        ),\r\n        Logic.neg(Set.mem(x, U))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1891,7 +1909,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.limitPoint(x,A),Logic.forall-typed(@U,Set(S@Topology.ctxt.S),Logic.implies(Topology.deletedNeighborhood(U,x),Logic.neg(Set.mem(Set.inter(U,A),Set.emptyset[slim])))))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.limitPoint(x, A),\r\n    Logic.forall-typed(\r\n        @U,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.implies(\r\n            Topology.deletedNeighborhood(U, x),\r\n            Neq(Set.inter(U, A), Set.emptyset)\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1909,7 +1927,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.derivedSet(A),Set.sep-typed(@x,S@Topology.ctxt.S,Topology.limitPoint(x,A)))"
+      "snl": "def-hyp(Type.annotation(@A, Set(T@Set.ctxt.T)), Topology.derivedSet(A), Set.sep-typed(@x, T@Set.ctxt.T, Topology.limitPoint(x, A)))"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1927,7 +1945,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.isolatedPoint(x,A),Logic.and(Set.mem(x,A),Logic.neg(Set.mem(x,Topology.derivedSet(A)))))"
+      "snl": "def-hyp[predicate](\r\n    list-partial(\r\n        Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.isolatedPoint(x, A),\r\n    Logic.and(\r\n        Set.mem(x, A),\r\n        Logic.neg(Set.mem(x, Topology.derivedSet(A)))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1981,7 +1999,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.dense(A,S@Topology.ctxt.S),Eq(Topology.closure(A),S@Topology.ctxt.S))"
+      "snl": "def-hyp[predicate](Type.annotation(@A,Set(T@Set.ctxt.T)),Topology.dense(A,S@Topology.ctxt.S),Eq(Topology.closure(A),S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null,
@@ -1995,11 +2013,11 @@
       "default_language": "en",
       "values": {
         "en": "Nowhere Dense Set",
-        "zh-CN": "无处稠密集"
+        "zh-CN": "无处稠密集/稀疏集/疏朗集"
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.nowhereDense(A),Eq(Topology.interior(Topology.closure(A)),Set.emptyset[slim]))"
+      "snl": "def-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.nowhereDense(A),\r\n    Eq(Topology.interior(Topology.closure(A)), Set.emptyset)\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -2031,11 +2049,11 @@
       "default_language": "en",
       "values": {
         "en": "Perfect Set",
-        "zh-CN": "完全集"
+        "zh-CN": "完全集/完美集"
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.perfect(A),Eq(Topology.derivedSet(A),A))"
+      "snl": "def-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.perfect(A),\r\n    Eq(Topology.derivedSet(A), A)\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -2123,7 +2141,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.connected(A),Logic.neg(Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.exists-typed(@V,Set(Set(S@Topology.ctxt.S)),Logic.and(Logic.and(Set.mem(U,τ),Set.mem(V,τ)),Logic.and(Logic.and(Set.subset(U,A),Set.subset(V,A)),Logic.and(Logic.and(Logic.neg(Set.mem(U,Set.emptyset[slim])),Logic.neg(Set.mem(V,Set.emptyset[slim]))),Logic.and(Eq(Set.inter(U,V),Set.emptyset[slim]),Eq(A,Set.union(U,V))))))))))"
+      "snl": "def-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.connected(A),\r\n    Logic.neg(\r\n        Logic.exists-typed(\r\n            @U,\r\n            Set(T@Set.ctxt.T),\r\n            Logic.exists-typed(\r\n                @V,\r\n                Set(T@Set.ctxt.T),\r\n                Logic.and(\r\n                    Logic.and(Set.mem(U, τ@Topology.ctxt.tau), Set.mem(V, τ@Topology.ctxt.tau)),\r\n                    Logic.and(\r\n                        Logic.and(Set.subset(U, A), Set.subset(V, A)),\r\n                        Logic.and(\r\n                            Logic.and(Logic.neg(Set.mem(U, Set.emptyset[slim])), Logic.neg(Set.mem(V, Set.emptyset[slim]))),\r\n                            Logic.and(Eq(Set.inter(U, V), Set.emptyset[slim]), Eq(A, Set.union(U, V)))\r\n                        )\r\n                    )\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -2143,7 +2161,7 @@
     "content": {
       "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.pathConnected(A),Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Logic.and(Set.mem(x,A),Set.mem(y,A)),Logic.exists-typed(@f,Type.to(Set.inter(Set.sep-typed(@t,Type,Logic.and(Logic.true,Logic.true)),Set.sep-typed(@t,Type,Logic.true)),S@Topology.ctxt.S),Logic.true)))))"
     },
-    "contribution_info": null,
+    "contribution_info": "先放着，将来再改",
     "pointer": null,
     "package": "Topology"
   },
@@ -2193,7 +2211,7 @@
       }
     },
     "content": {
-      "snl": "def-struct-hyp(list-partial(Type.annotation(@C,Set(Set(Set(S@Topology.ctxt.S)))),Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.openCover(C,A),struct(member[colon](%开集族%,Logic.forall-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.implies(Set.mem(U,C),Set.mem(U,τ)))),member[colon](%覆盖性%,Set.subset(A,Set.sep-typed(@x,S@Topology.ctxt.S,Logic.exists-typed(@U,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(U,C),Set.mem(x,U))))))))"
+      "snl": "def-struct-hyp(\r\n    list-partial(\r\n        Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n        Type.annotation(\r\n            @$\\mathcal{C}$,\r\n            Set(Set(T@Set.ctxt.T))\r\n        ),\r\n        Set.subset(A, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.openCover($\\mathcal{C}$, A),\r\n    struct(\r\n        member[colon](\r\n            %开集族%,\r\n            Set.subset($\\mathcal{C}$, τ@Topology.ctxt.tau)\r\n        ),\r\n        member[colon](\r\n            %覆盖性%,\r\n            Set.subset(\r\n                A,\r\n                Set.sep-typed(\r\n                    @x,\r\n                    T@Set.ctxt.T,\r\n                    Logic.exists-typed(@U, Set(T@Set.ctxt.T), Logic.and(Set.mem(U, $\\mathcal{C}$), Set.mem(x, U)))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -2211,7 +2229,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.compact(A),Logic.forall-typed(@C,Set(Set(Set(S@Topology.ctxt.S))),Logic.implies(Topology.openCover(C,A),Logic.exists-typed(@F,Set(Set(Set(S@Topology.ctxt.S))),Logic.and(Set.subset(F,C),Logic.and(Set.subset(F,A),Topology.openCover(F,A)))))))"
+      "snl": "def-hyp[predicate](\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.compact(A),\r\n    Logic.forall-typed(\r\n        @C,\r\n        Set(Set(T@Set.ctxt.T)),\r\n        Logic.implies(\r\n            Topology.openCover(C, A),\r\n            Logic.exists-typed(\r\n                @F,\r\n                Set(Set(T@Set.ctxt.T)),\r\n                Logic.and(Set.subset(F, C), Logic.and(Topology.openCover(F, A), %势有限（将来用 `card` 替换）%))\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -2229,7 +2247,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.countablyCompact(A),Logic.forall-typed(@C,Set(Set(Set(S@Topology.ctxt.S))),Logic.implies(Logic.and(Topology.openCover(C,A),Logic.true),Logic.exists-typed(@F,Set(Set(Set(S@Topology.ctxt.S))),Logic.and(Set.subset(F,C),Topology.openCover(F,A))))))"
+      "snl": "def-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.countablyCompact(A),\r\n    Logic.forall-typed(\r\n        @C,\r\n        Set(Set(T@Set.ctxt.T)),\r\n        Logic.implies(\r\n            Topology.openCover(C, A),\r\n            Logic.exists-typed(\r\n                @F,\r\n                Set(Set(T@Set.ctxt.T)),\r\n                Logic.and(Set.subset(F, C), Logic.and(Topology.openCover(F, A), %具有可数势（未来用 `card` 替换）%))\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
@@ -2599,7 +2617,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, X@Topology.ctxt.X),\r\n        Type.annotation(@x_0, X@Topology.ctxt.X),\r\n        Type.annotation(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y)),\r\n        Type.annotation(@τ_X, Set(Set(X@Topology.ctxt.X))),\r\n        Type.annotation(@τ_Y, Set(Set(Y@Topology.ctxt.Y)))\r\n    ),\r\n    Topology.continuous(f, x_0),\r\n    Topology.mapLimit(x, x_0, f, Type.apply(f, x_0))\r\n)"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, X@Topology.ctxt.X),\r\n        Type.annotation(@x_0, X@Topology.ctxt.X),\r\n        Type.annotation(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y))\r\n    ),\r\n    Topology.continuous(f, x_0),\r\n    Topology.mapLimit(x, x_0, f, Type.apply(f, x_0))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

@@ -10,7 +10,7 @@ import re
 import subprocess
 from pathlib import Path
 
-from fulcrum_authority_validation import validate_authorities
+from fulcrum_authority_validation import validate_authorities, validate_topology_authority
 
 
 def _strict_object(pairs):
@@ -35,8 +35,10 @@ DOC = ROOT / ".SNL_Doc"
 PLAN = strict_json_loads((ROOT / "scripts/fulcrum-inductive-subentries.json").read_text(encoding="utf-8"))
 I18N = strict_json_loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
 ENTRY_PACKAGE_PLAN = strict_json_loads((ROOT / "scripts/fulcrum-entry-packages.json").read_text(encoding="utf-8"))
+TOPOLOGY_AUTHORITY = strict_json_loads((ROOT / "scripts/fulcrum-topology-adoption.json").read_text(encoding="utf-8"))
 EXPECTED_SOURCE_HEAD = "bc09e62e7217ae4b65357eb46e8ad8487bb4ae24"
 validate_authorities(I18N, PLAN, ENTRY_PACKAGE_PLAN, EXPECTED_SOURCE_HEAD)
+validate_topology_authority(TOPOLOGY_AUTHORITY, EXPECTED_SOURCE_HEAD)
 DOC_MANIFEST = strict_json_loads((ROOT / "scripts/fulcrum-doc-manifest.json").read_text(encoding="utf-8"))
 assert set(DOC_MANIFEST) == {"version", "source_commit", "source_files", "canonical_files"}
 assert type(DOC_MANIFEST["version"]) is int and DOC_MANIFEST["version"] == 1
@@ -47,8 +49,8 @@ observed_doc_manifest = {
     for path in sorted(DOC.rglob("*")) if path.is_file()
 }
 assert observed_doc_manifest == DOC_MANIFEST["canonical_files"], "complete canonical .SNL_Doc manifest drift"
-EXPECTED_ENTRIES = 528  # latest TypeTheory notes plus managed inductive entries
-EXPECTED_MACROS = 482  # includes structured pattern-matching and lambda-shift terminology
+EXPECTED_ENTRIES = 529  # latest TypeTheory notes plus managed inductive entries
+EXPECTED_MACROS = 484  # includes structured pattern-matching and lambda-shift terminology
 EXPECTED_PLACEHOLDERS = {
     "Type.def.iota-reduction": {
         "title": {"en": "$\\iota$-reduction", "zh-CN": "$\\iota$-归约"},
@@ -220,6 +222,14 @@ assert macro_kinds["partial"]["coloring"]["dark"] == {"stroke": "inherit", "back
 entries, entry_paths = load_entities("entries", "entry")
 macros, macro_paths = load_entities("macros", "macro")
 
+# The semantic adoption authority is independently load-bearing: the complete
+# byte manifest cannot bless a live payload that disagrees with its canonical
+# Entry/Macro source record.
+for spec in TOPOLOGY_AUTHORITY["entries"]:
+    assert entries.get(spec["id"]) == spec["canonical"], f"canonical Topology Entry authority drift: {spec['id']}"
+for spec in TOPOLOGY_AUTHORITY["macros"]:
+    assert macros.get(spec["name"]) == spec["canonical"], f"canonical Topology Macro authority drift: {spec['name']}"
+
 # Syntax namespace and judgement-layer authority. This is independent of the
 # applicator: canonical entity payload hashes, namespace closure, graph reuse,
 # and the exact object-language notation are checked from disk.
@@ -265,7 +275,7 @@ for entry_id, spec in role_authority["entries"].items():
     assert set(spec) == {"source_snl_sha256", "source_package", "calls"}
     assert [call["path"] for call in spec["calls"]] == [f"preorder/{index}" for index in range(len(spec["calls"]))]
     assert all(set(call) == {"path", "role"} and call["role"] in role_authority["role_counts"] for call in spec["calls"])
-role_sequence_replaced_entries = {
+role_sequence_replaced_entries = set(TOPOLOGY_AUTHORITY["canonical_judgement_roles"]) | {
     "Syntax.def.expression-UTLC", "Syntax.def.openExpression-UTLC", "Syntax.def.expression-STLC", "Syntax.def.typeExpression-STLC",
     "Type.rl.fun", "Type.rl.pi", "Type.ppt.PropImpredicativePi", "Type.ppt.pi-judge", "Type.rmk.PropUniverseBehavior", "Type.rl.judge",
 }
@@ -274,19 +284,26 @@ call_pattern = lambda name: re.compile(rf"(?<![A-Za-z0-9_.-]){re.escape(name)}(?
 for source_entry_id, spec in role_authority["entries"].items():
     canonical_entry_id = syntax_authority["entry_renames"].get(source_entry_id, source_entry_id)
     if canonical_entry_id in role_sequence_replaced_entries:
-        assert canonical_entry_id in syntax_authority["canonical_hashes"]["entries"]
+        if canonical_entry_id not in TOPOLOGY_AUTHORITY["canonical_judgement_roles"]:
+            assert canonical_entry_id in syntax_authority["canonical_hashes"]["entries"]
         continue
     snl = ((entries[canonical_entry_id].get("content") or {}).get("snl") or "")
     observed = []
     for role, macro_name in canonical_role_macros.items():
         observed.extend((match.start(), role) for match in call_pattern(macro_name).finditer(snl))
     assert [role for _, role in sorted(observed)] == [call["role"] for call in spec["calls"]], f"canonical judgement-role drift: {canonical_entry_id}"
+for entry_id, expected_roles in TOPOLOGY_AUTHORITY["canonical_judgement_roles"].items():
+    snl = ((entries[entry_id].get("content") or {}).get("snl") or "")
+    observed = []
+    for role, macro_name in canonical_role_macros.items():
+        observed.extend((match.start(), role) for match in call_pattern(macro_name).finditer(snl))
+    assert [role for _, role in sorted(observed)] == expected_roles, f"canonical Topology judgement-role drift: {entry_id}"
 semantic_counts = {name: 0 for name in ("Type.judge", "Type.annotation", "Type.declaration", "Syntax.hasCategory", "Syntax.constructor")}
 for entry in entries.values():
     snl = ((entry.get("content") or {}).get("snl") or "")
     for name in semantic_counts:
         semantic_counts[name] += len(call_pattern(name).findall(snl))
-assert semantic_counts == {"Type.judge": 20, "Type.annotation": 379, "Type.declaration": 32, "Syntax.hasCategory": 23, "Syntax.constructor": 12}, semantic_counts
+assert semantic_counts == {"Type.judge": 20, "Type.annotation": 358, "Type.declaration": 32, "Syntax.hasCategory": 23, "Syntax.constructor": 12}, semantic_counts
 object_judgement_entries = {
     "Type.rl.judge", "Type.rl.fun", "Type.rl.pi", "Type.ppt.pi-judge",
     "Type.ppt.PropImpredicativePi", "Type.rmk.PropUniverseBehavior", "Type.rl.judge",
@@ -373,7 +390,7 @@ for package_id in PLAN.get("retired_macro_packages", []):
     assert package_id not in config.get("active_macro_packages", []), f"retired Macro Package remains active: {package_id}"
 assert I18N.get("source_head") == EXPECTED_SOURCE_HEAD, "I18n map source lease changed"
 assert ENTRY_PACKAGE_PLAN.get("source_head") == EXPECTED_SOURCE_HEAD, "Entry Package source lease changed"
-assert len(I18N.get("entries", {})) == 416, "I18n Entry mapping coverage changed"
+assert len(I18N.get("entries", {})) == 417, "I18n Entry mapping coverage changed"
 assert len(I18N.get("styles", {})) == 89, "I18n Macro-style mapping coverage changed"
 
 # Macro identity migrations are complete, canonical, and have no stale alias.

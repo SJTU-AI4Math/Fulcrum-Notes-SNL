@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import hashlib
+import json
+
 
 def _require(condition: bool, message: str) -> None:
     if not condition:
@@ -35,7 +38,7 @@ def _template(template: object, label: str) -> None:
         template = _required(template, {"type", "default_language", "values"}, {"type", "default_language", "values"}, label)
     else:
         required = {"mode", "body", "typst", "latex", "markdown", "text"}
-        template = _required(template, required, required | {"separator"}, label)
+        template = _required(template, required, required | {"separator", "block_template_name"}, label)
     if template.get("type") == "i18n":
         _require(template["type"] == "i18n" and template["default_language"] in {"en", "zh-CN"}, f"{label} has invalid I18N metadata")
         values = _required(template["values"], {"en", "zh-CN"}, {"en", "zh-CN"}, f"{label}.values")
@@ -43,6 +46,8 @@ def _template(template: object, label: str) -> None:
         for locale, projection in values.items():
             _template(projection, f"{label}.values.{locale}")
         return
+    if "block_template_name" in template:
+        _require(template["mode"] == "block" and isinstance(template["block_template_name"], str) and template["block_template_name"], f"{label}.block_template_name is invalid")
     for backend in ("typst", "latex"):
         backend_spec = _required(template[backend], {"built_in", "synthesis"}, {"built_in", "synthesis"}, f"{label}.{backend}")
         _required(backend_spec["synthesis"], {"mode", "macro"}, {"mode", "macro"}, f"{label}.{backend}.synthesis")
@@ -301,3 +306,75 @@ def validate_authorities(i18n: object, plan: object, entry_packages: object, exp
         _require(isinstance(parallel, list), f"Entry Package manifest {package_id}.accepted_parallel_predecessors must be a list")
         for predecessor_index, manifest in enumerate(parallel):
             _package_manifest(manifest, package_id, f"Entry Package manifest {package_id}.accepted_parallel_predecessors[{predecessor_index}]")
+
+
+def validate_topology_authority(value: object, expected_source_head: str) -> None:
+    fields = {
+        "version", "source_head", "package", "entry_envelope_schema_version",
+        "aggregate_topology_entry_ids", "accepted_aggregate_topology_entry_ids", "entries", "macros", "graph_operations",
+        "relationship_scope", "canonical_judgement_roles",
+    }
+    value = _required(value, fields, fields, "Topology authority")
+    _require(type(value["version"]) is int and value["version"] == 1, "unsupported Topology authority version")
+    _require(value["source_head"] == expected_source_head, "Topology source lease changed")
+    _require(value["package"] == "Topology", "Topology authority package changed")
+    _require(type(value["entry_envelope_schema_version"]) is int and value["entry_envelope_schema_version"] == 1, "Topology Entry envelope schema must be integer 1")
+    for field in ("aggregate_topology_entry_ids", "accepted_aggregate_topology_entry_ids", "relationship_scope"):
+        _string_list(value[field], f"Topology authority {field}")
+        _require(len(value[field]) == len(set(value[field])), f"Topology authority {field} contains duplicates")
+        _require(all(item.startswith("Topology.") for item in value[field]), f"Topology authority {field} escaped the Topology namespace")
+    _require(set(value["aggregate_topology_entry_ids"]) == set(value["relationship_scope"]), "Topology aggregate membership and relationship scope must cover the same canonical Entry set")
+    _require(set(value["accepted_aggregate_topology_entry_ids"]) < set(value["aggregate_topology_entry_ids"]), "Topology predecessor aggregate must be a proper subset of canonical membership")
+
+    _require(isinstance(value["entries"], list) and value["entries"], "Topology authority entries must be a nonempty list")
+    entry_ids = []
+    for index, spec in enumerate(value["entries"]):
+        label = f"Topology authority entries[{index}]"
+        spec = _required(spec, {"id", "canonical", "accepted_predecessor_sha256", "accepted_absent"}, {"id", "canonical", "accepted_predecessor_sha256", "accepted_absent"}, label)
+        _require(isinstance(spec["id"], str) and spec["id"].startswith("Topology."), f"{label}.id is invalid")
+        entry = _required(spec["canonical"], {"id", "package", "kind", "title", "content", "contribution_info", "pointer"}, {"id", "package", "kind", "title", "content", "contribution_info", "pointer"}, f"{label}.canonical")
+        _require(entry["id"] == spec["id"] and entry["package"] == "Topology", f"{label} canonical identity/package mismatch")
+        _require(isinstance(entry["kind"], str) and entry["kind"], f"{label} canonical kind is invalid")
+        title = _required(entry["title"], {"type", "default_language", "values"}, {"type", "default_language", "values"}, f"{label}.canonical.title")
+        _require(title["type"] == "i18n" and title["default_language"] in {"en", "zh-CN"}, f"{label} title metadata is invalid")
+        _locale_projection(title["values"], f"{label}.canonical.title.values")
+        content = _known(entry["content"], {"snl", "markdown"}, f"{label}.canonical.content")
+        if "snl" in content:
+            _require(isinstance(content["snl"], str), f"{label} SNL must be a string")
+        if "markdown" in content:
+            markdown = _required(content["markdown"], {"type", "default_language", "values"}, {"type", "default_language", "values"}, f"{label}.canonical.content.markdown")
+            _require(markdown["type"] == "i18n" and markdown["default_language"] in {"en", "zh-CN"}, f"{label} Markdown metadata is invalid")
+            _locale_projection(markdown["values"], f"{label}.canonical.content.markdown.values")
+        _require(entry["contribution_info"] is None or isinstance(entry["contribution_info"], (str, dict)), f"{label} contribution_info is invalid")
+        _require(entry["pointer"] is None or isinstance(entry["pointer"], dict), f"{label} pointer is invalid")
+        _string_list(spec["accepted_predecessor_sha256"], f"{label}.accepted_predecessor_sha256")
+        _require(len(spec["accepted_predecessor_sha256"]) == len(set(spec["accepted_predecessor_sha256"])), f"{label} has duplicate predecessor hashes")
+        _require(all(len(digest) == 64 and all(char in "0123456789abcdef" for char in digest) for digest in spec["accepted_predecessor_sha256"]), f"{label} has an invalid predecessor hash")
+        _require(type(spec["accepted_absent"]) is bool, f"{label}.accepted_absent must be a boolean")
+        entry_ids.append(spec["id"])
+    _require(len(entry_ids) == len(set(entry_ids)) and "Topology.ctxt.tauS" in entry_ids, "Topology authority Entry identities are incomplete or duplicated")
+    roles = _required(value["canonical_judgement_roles"], set(entry_ids), set(entry_ids), "Topology canonical judgement roles")
+    allowed_roles = {"syntax", "syntax_constructor", "annotation", "declaration", "object"}
+    for entry_id, sequence in roles.items():
+        _require(isinstance(sequence, list) and all(role in allowed_roles for role in sequence), f"Topology canonical judgement roles are invalid: {entry_id}")
+
+    _require(isinstance(value["macros"], list) and value["macros"], "Topology authority macros must be a nonempty list")
+    macro_names = []
+    for index, spec in enumerate(value["macros"]):
+        label = f"Topology authority macros[{index}]"
+        spec = _required(spec, {"name", "package", "canonical", "accepted_predecessor_sha256", "accepted_absent"}, {"name", "package", "canonical", "accepted_predecessor_sha256", "accepted_absent"}, label)
+        _require(isinstance(spec["name"], str) and spec["name"], f"{label}.name is invalid")
+        _require(spec["package"] in {"Topology", "FulcrumsMathNotes"}, f"{label}.package is invalid")
+        _macro(spec["canonical"], f"{label}.canonical")
+        _require(spec["canonical"]["name"] == spec["name"], f"{label} canonical name mismatch")
+        _string_list(spec["accepted_predecessor_sha256"], f"{label}.accepted_predecessor_sha256")
+        _require(all(len(digest) == 64 and all(char in "0123456789abcdef" for char in digest) for digest in spec["accepted_predecessor_sha256"]), f"{label} has an invalid predecessor hash")
+        _require(type(spec["accepted_absent"]) is bool, f"{label}.accepted_absent must be a boolean")
+        macro_names.append(spec["name"])
+    _require(len(macro_names) == len(set(macro_names)), "Topology authority Macro identities are duplicated")
+
+    _require(isinstance(value["graph_operations"], list) and value["graph_operations"], "Topology graph operations must be a nonempty list")
+    for index, operation in enumerate(value["graph_operations"]):
+        operation = _required(operation, {"library", "entry_id", "parent_entry_id", "after_entry_id"}, {"library", "entry_id", "parent_entry_id", "after_entry_id"}, f"Topology graph_operations[{index}]")
+        _require(all(isinstance(operation[field], str) and operation[field] for field in ("library", "entry_id", "parent_entry_id")), f"Topology graph_operations[{index}] has invalid identities")
+        _require(operation["after_entry_id"] is None or isinstance(operation["after_entry_id"], str), f"Topology graph_operations[{index}].after_entry_id is invalid")

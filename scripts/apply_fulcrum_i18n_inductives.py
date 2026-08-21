@@ -14,13 +14,14 @@ import sys
 import uuid
 from pathlib import Path
 
-from fulcrum_authority_validation import validate_authorities
+from fulcrum_authority_validation import validate_authorities, validate_topology_authority
 
 ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / ".SNL_Doc"
 I18N_PATH = ROOT / "scripts/fulcrum-i18n-en-zh.json"
 PLAN_PATH = ROOT / "scripts/fulcrum-inductive-subentries.json"
 ENTRY_PACKAGE_PLAN_PATH = ROOT / "scripts/fulcrum-entry-packages.json"
+TOPOLOGY_AUTHORITY_PATH = ROOT / "scripts/fulcrum-topology-adoption.json"
 EXPECTED_SOURCE_HEAD = "bc09e62e7217ae4b65357eb46e8ad8487bb4ae24"
 PREFLIGHT_ONLY = os.environ.get("FULCRUM_APPLY_PREFLIGHT_ONLY") == "1"
 _VIRTUAL_JSON: dict[Path, object] = {}
@@ -279,12 +280,78 @@ if not PREFLIGHT_ONLY:
 i18n = read_json(I18N_PATH)
 plan = read_json(PLAN_PATH)
 entry_package_plan = read_json(ENTRY_PACKAGE_PLAN_PATH)
+topology_authority = read_json(TOPOLOGY_AUTHORITY_PATH)
 
 
 validate_authorities(i18n, plan, entry_package_plan, EXPECTED_SOURCE_HEAD)
+validate_topology_authority(topology_authority, EXPECTED_SOURCE_HEAD)
 entries, entry_paths, entry_envelopes = load_records("entries", "id")
 macros, macro_paths, macro_envelopes = load_records("macros", "name")
 validate_closed_auxiliary_schemas(macros)
+
+
+def canonical_payload_hash(value) -> str:
+    raw = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
+
+
+# Adopt the post-06fb Topology semantics from explicit payload authority.  The
+# legacy aggregate, Library graph, and pool relationships are regenerated below
+# and are deliberately not accepted as parallel authored sources.
+for spec in topology_authority["entries"]:
+    entry_id = spec["id"]
+    canonical = copy.deepcopy(spec["canonical"])
+    if entry_id in entries:
+        current = entries[entry_id]
+        assert current == canonical or canonical_payload_hash(current) in spec["accepted_predecessor_sha256"], f"unaccepted Topology Entry predecessor: {entry_id}"
+    else:
+        assert spec["accepted_absent"], f"missing Topology Entry: {entry_id}"
+        entry_paths[entry_id] = DOC / "entries" / f"Topology-{identity_hash('entry', 'Topology', entry_id)}.json"
+    entries[entry_id] = canonical
+
+for spec in topology_authority["macros"]:
+    name = spec["name"]
+    package_id = spec["package"]
+    canonical = copy.deepcopy(spec["canonical"])
+    if name in macros:
+        current = macros[name]
+        assert current == canonical or canonical_payload_hash(current) in spec["accepted_predecessor_sha256"], f"unaccepted Topology Macro predecessor: {name}"
+    else:
+        assert spec["accepted_absent"], f"missing Topology Macro: {name}"
+        macro_paths[name] = DOC / "macros" / f"{package_id}-{identity_hash('macro', package_id, name)}.json"
+    macros[name] = canonical
+    macro_envelopes[name] = {
+        "format": "snl-macro", "version": 1,
+        "schema_version": 1, "package": package_id, "macro": canonical,
+    }
+
+# Every Topology Entry uses the exact current envelope schema and key order.
+for entry_id, entry in entries.items():
+    if entry_id.startswith("Topology."):
+        assert entry["package"] == topology_authority["package"]
+        entry_envelopes[entry_id] = {
+            "format": "snl-entry", "version": 1,
+            "schema_version": topology_authority["entry_envelope_schema_version"],
+            "package": "Topology", "entry": entry,
+        }
+
+# The legacy aggregate is a projection over its leased member IDs, not authored
+# authority.  Rebuild its Topology slice from canonical per-entity payloads.
+aggregate_path = DOC / "entries.json"
+aggregate_entries = read_json(aggregate_path)
+assert isinstance(aggregate_entries, list)
+topology_indices = [index for index, entry in enumerate(aggregate_entries) if isinstance(entry, dict) and str(entry.get("id", "")).startswith("Topology.")]
+assert topology_indices and topology_indices == list(range(topology_indices[0], topology_indices[-1] + 1)), "Topology aggregate slice is not contiguous"
+observed_aggregate_topology_ids = [aggregate_entries[index]["id"] for index in topology_indices]
+assert observed_aggregate_topology_ids in (topology_authority["accepted_aggregate_topology_entry_ids"], topology_authority["aggregate_topology_entry_ids"]), "Topology aggregate membership/order drift"
+first, last = topology_indices[0], topology_indices[-1]
+aggregate_entries = aggregate_entries[:first] + [entries[entry_id] for entry_id in topology_authority["aggregate_topology_entry_ids"]] + aggregate_entries[last + 1:]
+write_json(aggregate_path, aggregate_entries)
+config_path = DOC / "config.json"
+config = read_json(config_path)
+config["entity_storage"]["receipt"]["entries_digest"] = hashlib.sha256(
+    json.dumps(aggregate_entries, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+).hexdigest()
 
 # Preflight complete Package manifests before the first filesystem mutation.
 # Each manifest must be one of two fully pinned states: the exact predecessor
@@ -383,8 +450,6 @@ for removal in plan.get("entry_markdown_removals", []):
 # Macro ownership and Entry membership are independent. The Extension currently
 # requires every active Macro Package to have a shared package-registry manifest;
 # an empty entry_ids list records that this Macro Package owns no Entries.
-config_path = DOC / "config.json"
-config = read_json(config_path)
 active_macro_packages = config.get("active_macro_packages", [])
 assert isinstance(active_macro_packages, list) and len(active_macro_packages) == len(set(active_macro_packages))
 retired_macro_packages = set(plan.get("retired_macro_packages", []))
@@ -859,6 +924,17 @@ for macro_name, envelope in macro_envelopes.items():
     write_json(macro_paths[macro_name], envelope)
 for _, (path, manifest) in sorted(package_manifests.items()):
     write_json(path, manifest)
+# Rebuild the legacy aggregate after all Entry localization/semantic passes so
+# pristine and canonical inputs cannot preserve different stale projections.
+aggregate_entries = read_json(aggregate_path)
+topology_indices = [index for index, entry in enumerate(aggregate_entries) if isinstance(entry, dict) and str(entry.get("id", "")).startswith("Topology.")]
+assert topology_indices and topology_indices == list(range(topology_indices[0], topology_indices[-1] + 1))
+first, last = topology_indices[0], topology_indices[-1]
+aggregate_entries = aggregate_entries[:first] + [entries[entry_id] for entry_id in topology_authority["aggregate_topology_entry_ids"]] + aggregate_entries[last + 1:]
+write_json(aggregate_path, aggregate_entries)
+config["entity_storage"]["receipt"]["entries_digest"] = hashlib.sha256(
+    json.dumps(aggregate_entries, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+).hexdigest()
 write_json(config_path, config)
 
 # Attach requested Entries and inductive subentries to every Library occurrence of their parent.
@@ -899,6 +975,33 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
     nodes = graph.setdefault("nodes", [])
     relationships = graph.setdefault("relationships", [])
     changed = False
+    by_entry = {}
+    for node in nodes:
+        by_entry.setdefault(node.get("props", {}).get("entryId"), []).append(node["id"])
+    for operation in topology_authority["graph_operations"]:
+        if operation["library"] != graph_path.parent.name:
+            continue
+        parent_ids = by_entry.get(operation["parent_entry_id"], [])
+        child_ids = by_entry.get(operation["entry_id"], [])
+        assert len(parent_ids) == len(child_ids) == 1, f"Topology graph operation endpoint missing or ambiguous: {operation}"
+        parent_id, child_id = parent_ids[0], child_ids[0]
+        incoming = [relation for relation in relationships if relation.get("label") == "branch" and relation.get("to") == child_id]
+        assert len(incoming) == 1, f"Topology graph child must have exactly one parent: {operation['entry_id']}"
+        relation = incoming[0]
+        relationships.remove(relation)
+        relation["from"] = parent_id
+        after_entry_id = operation["after_entry_id"]
+        if after_entry_id is None:
+            indices = [index for index, item in enumerate(relationships) if item.get("label") == "branch" and item.get("from") == parent_id]
+            insert_at = indices[0] if indices else len(relationships)
+        else:
+            after_ids = by_entry.get(after_entry_id, [])
+            assert len(after_ids) == 1, f"Topology graph placement anchor missing or ambiguous: {after_entry_id}"
+            matches = [index for index, item in enumerate(relationships) if item.get("label") == "branch" and item.get("from") == parent_id and item.get("to") == after_ids[0]]
+            assert len(matches) == 1, f"Topology graph placement relation missing or ambiguous: {after_entry_id}"
+            insert_at = matches[0] + 1
+        relationships.insert(insert_at, relation)
+        changed = True
     detached_entry_ids = {
         entry_id
         for spec in plan.get("graph_detachments", [])
@@ -1023,6 +1126,12 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
             if relationships != before:
                 changed = True
 
+    if any(operation["library"] == graph_path.parent.name for operation in topology_authority["graph_operations"]):
+        before = relationships[:]
+        node_rank = {node["id"]: index for index, node in enumerate(nodes)}
+        relationships.sort(key=lambda relation: node_rank[relation["from"]])
+        if relationships != before:
+            changed = True
     if changed:
         write_json(graph_path, graph)
 
@@ -1079,7 +1188,7 @@ def extract_snl_macro_names(snl: str) -> list[str]:
 
 
 def reconcile_dependency_slice() -> None:
-    scope = set(plan.get("dependency_scope_entries", []))
+    scope = set(plan.get("dependency_scope_entries", [])) | set(topology_authority["relationship_scope"])
     if not scope:
         return
     assert scope <= set(entries), f"dependency scope references unknown Entries: {sorted(scope - set(entries))}"
