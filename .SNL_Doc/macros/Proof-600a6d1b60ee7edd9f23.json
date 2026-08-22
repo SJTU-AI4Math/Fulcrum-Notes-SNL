@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "分类讨论 — case analysis. First child states the basis of the split; the rest are the cases.",

@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "「我们断言 x 就是所要找的对象, 下面我们证明 P」— the atomic form of a 构造 step.",

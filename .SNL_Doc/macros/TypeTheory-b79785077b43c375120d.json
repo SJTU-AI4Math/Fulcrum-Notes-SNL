@@ -4,6 +4,7 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
+    "name": "Lambda.defeq.beta",
     "description": "",
     "source": {
       "entries": [
@@ -23,7 +24,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "$\\beta$-reduction",
+              "body": "β-reduction",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +44,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "$\\beta$-归约",
+              "body": "β-归约",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -65,7 +66,6 @@
         }
       }
     ],
-    "tags": [],
-    "name": "Lambda.defeq.beta"
+    "tags": []
   }
 }

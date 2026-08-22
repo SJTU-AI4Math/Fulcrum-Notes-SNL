@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "BasicAnalysis",
   "macro": {
     "description": "One past the last index of a sequence's window; absent for an infinite sequence.",

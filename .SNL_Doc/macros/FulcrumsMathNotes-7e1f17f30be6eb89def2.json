@@ -13,7 +13,7 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "style_name": "localized-default",
+        "style_name": "localized_default",
         "tags": [],
         "template": {
           "type": "i18n",

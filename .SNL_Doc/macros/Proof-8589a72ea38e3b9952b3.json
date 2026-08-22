@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "Tactic step 「传递性」. Chain relations by transitivity. Block mode so the renderer can put the tactic label in its own column (Mitar's `step-tag`); the label is derived from the macro name and is never stored in the tree. Dynamic arity: the children are the step's prose run, which may interleave text with citation nodes.",

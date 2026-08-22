@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "FunctionalProgramming",
   "macro": {
     "description": "Identity type constructor",

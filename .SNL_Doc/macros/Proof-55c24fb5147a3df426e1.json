@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "目标分解 — decompose a goal into independent subgoals; children are the subgoals.",

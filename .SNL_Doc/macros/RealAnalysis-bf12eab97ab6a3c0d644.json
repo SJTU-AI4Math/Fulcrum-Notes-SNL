@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "RealAnalysis",
   "macro": {
     "description": "Bounded variation predicate",

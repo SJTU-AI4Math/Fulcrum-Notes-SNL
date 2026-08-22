@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "「两边同除以 d 即得 C」— the atomic form of a 移项 step.",

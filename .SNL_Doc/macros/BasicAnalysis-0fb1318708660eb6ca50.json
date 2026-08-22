@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "BasicAnalysis",
   "macro": {
     "description": "Function limit predicate (epsilon-delta) at a finite point.",

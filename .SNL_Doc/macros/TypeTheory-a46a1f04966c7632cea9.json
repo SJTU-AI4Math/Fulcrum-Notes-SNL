@@ -4,6 +4,7 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
+    "name": "Lambda.Term",
     "description": "",
     "source": {
       "entries": [
@@ -23,7 +24,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "$\\lambda$-Term",
+              "body": "λ-Term",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +44,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "$\\lambda$-项",
+              "body": "λ-项",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -65,7 +66,6 @@
         }
       }
     ],
-    "tags": [],
-    "name": "Lambda.Term"
+    "tags": []
   }
 }

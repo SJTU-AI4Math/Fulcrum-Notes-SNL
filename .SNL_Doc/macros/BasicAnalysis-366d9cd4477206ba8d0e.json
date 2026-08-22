@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "BasicAnalysis",
   "macro": {
     "description": "The type of domain-carrying real functions: a total map paired with its domain.",

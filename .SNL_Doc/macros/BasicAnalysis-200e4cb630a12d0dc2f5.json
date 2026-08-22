@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "BasicAnalysis",
   "macro": {
     "description": "Derivative predicate: the value is the limit of the difference quotient.",

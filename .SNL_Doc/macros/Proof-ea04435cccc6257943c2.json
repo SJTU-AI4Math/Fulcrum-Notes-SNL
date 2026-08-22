@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "Collapsible goal block labelled 「子目标」. First child is the statement (the always-visible summary); the remaining children justify it.",

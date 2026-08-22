@@ -4,6 +4,7 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
+    "name": "Syntax.Expr-UTLC.apply",
     "description": "Untyped lambda application",
     "source": {
       "entries": [
@@ -47,7 +48,7 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "$\\lambda$-应用",
+              "body": "λ-应用",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -67,7 +68,7 @@
             },
             "en": {
               "mode": "text",
-              "body": "$\\lambda$-Application",
+              "body": "λ-Application",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -89,7 +90,6 @@
         }
       }
     ],
-    "tags": [],
-    "name": "Syntax.Expr-UTLC.apply"
+    "tags": []
   }
 }

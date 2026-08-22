@@ -340,13 +340,18 @@ def main() -> None:
     else:
         assert manifest["canonical_files"], "canonical .SNL_Doc manifest is missing"
         assert observed_doc_files == manifest["canonical_files"], "complete canonical .SNL_Doc manifest drift"
+    repair_authority = load(ROOT / "scripts" / "toolkit-topology-repair.json")
+    repaired_macro_hashes = repair_authority["repaired_macro_hashes"]
     lease_group = authority["accepted_predecessor_hashes"] if predecessor_mode else authority["canonical_hashes"]
     for entry_id, expected in lease_group["entries"].items():
         assert entry_id in entries, f"missing leased Entry: {entry_id}"
         assert payload_hash(entries[entry_id]) == expected, f"leased Entry drift: {entry_id}"
     for macro_name, expected in lease_group["macros"].items():
         assert macro_name in macros, f"missing leased Macro: {macro_name}"
-        assert payload_hash(macros[macro_name]) == expected, f"leased Macro drift: {macro_name}"
+        accepted_hashes = {expected}
+        if not predecessor_mode and macro_name in repaired_macro_hashes:
+            accepted_hashes.add(repaired_macro_hashes[macro_name])
+        assert payload_hash(macros[macro_name]) in accepted_hashes, f"leased Macro drift: {macro_name}"
 
     role_authority = load(ROOT / "scripts" / "type-judgement-role-plan.json")
     topology_authority = load(ROOT / "scripts" / "fulcrum-topology-adoption.json")
@@ -479,8 +484,8 @@ def main() -> None:
         "Syntax.constructor": macro("Syntax.constructor", "rule", "#0 : #1", "Syntax.def.signatureFragment"),
         "Syntax.signatureFragment": i18n_macro(
             "Syntax.signatureFragment",
-            "Assuming #0 is already defined, record the following newly introduced constructors (non-exhaustive):\\n#1",
-            "假设 #0 已经定义，记录以下新介绍的构造子（非穷尽）：\\n#1",
+            "Assuming #0 is already defined, record the following newly introduced constructors (non-exhaustive):\n#1",
+            "假设 #0 已经定义，记录以下新介绍的构造子（非穷尽）：\n#1",
             "Syntax.def.signatureFragment"),
         "Type.declaration": macro("Type.declaration", "rule", "#0 : #1", "Type.def.declaration"),
         "Type.contextExtend": macro("Type.contextExtend", "rule", "#0, #1 : #2", "Type.def.ctx"),
@@ -777,7 +782,10 @@ def main() -> None:
     for entry_id, expected in authority["canonical_hashes"]["entries"].items():
         assert payload_hash(entries[entry_id]) == expected, f"canonical Entry drift after migration: {entry_id}"
     for macro_name, expected in authority["canonical_hashes"]["macros"].items():
-        assert payload_hash(macros[macro_name]) == expected, f"canonical Macro drift after migration: {macro_name}"
+        accepted_hashes = {expected}
+        if not predecessor_mode and macro_name in repaired_macro_hashes:
+            accepted_hashes.add(repaired_macro_hashes[macro_name])
+        assert payload_hash(macros[macro_name]) in accepted_hashes, f"canonical Macro drift after migration: {macro_name}"
 
     # Final in-memory envelopes and canonical paths.
     target_files: dict[Path, str] = {}

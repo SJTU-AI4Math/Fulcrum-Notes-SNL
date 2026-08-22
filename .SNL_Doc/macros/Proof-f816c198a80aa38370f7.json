@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "「对 X 应用 THM 可知 C」— the object, the cited theorem, and the consequence as three children. This is the atomic form of a 解构 step.",

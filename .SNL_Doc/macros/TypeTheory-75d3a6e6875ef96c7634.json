@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
     "description": "",
@@ -62,7 +63,7 @@
         }
       },
       {
-        "style_name": "be-a",
+        "style_name": "be_a",
         "tags": [],
         "template": {
           "type": "i18n",
@@ -112,7 +113,7 @@
         }
       },
       {
-        "style_name": "be-an",
+        "style_name": "be_an",
         "tags": [],
         "template": {
           "type": "i18n",

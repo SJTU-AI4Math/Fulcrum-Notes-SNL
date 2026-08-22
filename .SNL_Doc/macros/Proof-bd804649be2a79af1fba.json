@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "「存在 x 使得 P」— the witness introduced by a 解构 step and the property it satisfies.",

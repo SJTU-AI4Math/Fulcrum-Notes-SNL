@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "FulcrumsMathNotes",
   "macro": {
     "description": "One branch of a case split. First child is the case hypothesis (summary); the rest is the argument for that branch.",

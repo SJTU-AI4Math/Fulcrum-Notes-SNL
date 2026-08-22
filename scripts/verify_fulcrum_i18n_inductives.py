@@ -36,6 +36,7 @@ PLAN = strict_json_loads((ROOT / "scripts/fulcrum-inductive-subentries.json").re
 I18N = strict_json_loads((ROOT / "scripts/fulcrum-i18n-en-zh.json").read_text(encoding="utf-8"))
 ENTRY_PACKAGE_PLAN = strict_json_loads((ROOT / "scripts/fulcrum-entry-packages.json").read_text(encoding="utf-8"))
 TOPOLOGY_AUTHORITY = strict_json_loads((ROOT / "scripts/fulcrum-topology-adoption.json").read_text(encoding="utf-8"))
+TOOLKIT_REPAIR = strict_json_loads((ROOT / "scripts/toolkit-topology-repair.json").read_text(encoding="utf-8"))
 EXPECTED_SOURCE_HEAD = "bc09e62e7217ae4b65357eb46e8ad8487bb4ae24"
 validate_authorities(I18N, PLAN, ENTRY_PACKAGE_PLAN, EXPECTED_SOURCE_HEAD)
 validate_topology_authority(TOPOLOGY_AUTHORITY, EXPECTED_SOURCE_HEAD)
@@ -214,10 +215,10 @@ assert set(entry_kinds) == set(EXPECTED_DARK_ENTRY_STROKES), "Fulcrum Entry Kind
 for kind_id, stroke in EXPECTED_DARK_ENTRY_STROKES.items():
     assert entry_kinds[kind_id]["coloring"]["dark"] == {"stroke": stroke, "background": "#313131"}, f"dark Entry palette drift: {kind_id}"
 macro_kinds = {kind["id"]: kind for kind in config["macro_kinds"]}
-assert set(macro_kinds) == set(EXPECTED_DARK_MACRO_STROKES) | {"partial"}, "Fulcrum Macro Kind catalog or transparent exception changed"
+assert set(macro_kinds) == set(EXPECTED_DARK_MACRO_STROKES) | {"sub"}, "Fulcrum Macro Kind catalog or transparent exception changed"
 for kind_id, stroke in EXPECTED_DARK_MACRO_STROKES.items():
     assert macro_kinds[kind_id]["coloring"]["dark"] == {"stroke": stroke, "background": "#313131"}, f"dark Macro palette drift: {kind_id}"
-assert macro_kinds["partial"]["coloring"]["dark"] == {"stroke": "inherit", "background": "transparent"}
+assert macro_kinds["sub"]["coloring"]["dark"] == {"stroke": "inherit", "background": "transparent"}
 
 entries, entry_paths = load_entities("entries", "entry")
 macros, macro_paths = load_entities("macros", "macro")
@@ -247,7 +248,8 @@ def _payload_hash(value):
 for entry_id, expected in syntax_authority["canonical_hashes"]["entries"].items():
     assert entry_id in entries and _payload_hash(entries[entry_id]) == expected, f"canonical Syntax Entry drift: {entry_id}"
 for macro_name, expected in syntax_authority["canonical_hashes"]["macros"].items():
-    assert macro_name in macros and _payload_hash(macros[macro_name]) == expected, f"canonical Syntax Macro drift: {macro_name}"
+    final_expected = TOOLKIT_REPAIR["repaired_macro_hashes"].get(macro_name, expected)
+    assert macro_name in macros and _payload_hash(macros[macro_name]) == final_expected, f"canonical Syntax Macro drift: {macro_name}"
 
 def _template_bodies(value):
     if isinstance(value, dict):
@@ -414,7 +416,11 @@ for merge in PLAN.get("macro_merges", []):
     canonical_macro["kind"] = source_snapshot["kind"]
     canonical_macro["dynamic_arity"] = source_snapshot["dynamic_arity"]
     canonical_macro["styles"] = [*json.loads(json.dumps(source_snapshot["styles"], ensure_ascii=False)), text_style]
-    assert target == canonical_macro, f"merged Macro snapshot drift: {merge['target_name']}"
+    repaired_hash = TOOLKIT_REPAIR["repaired_macro_hashes"].get(merge["target_name"])
+    if repaired_hash is None:
+        assert target == canonical_macro, f"merged Macro snapshot drift: {merge['target_name']}"
+    else:
+        assert _payload_hash(target) == repaired_hash, f"merged Macro repaired snapshot drift: {merge['target_name']}"
 for update in PLAN.get("macro_style_updates", []):
     macro = macros.get(update["name"])
     assert macro is not None

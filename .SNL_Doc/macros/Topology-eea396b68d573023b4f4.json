@@ -1,8 +1,10 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Topology",
   "macro": {
+    "name": "Topology.mapLimit",
     "description": "Notation: limit of map f at x is y",
     "source": {
       "entries": [
@@ -19,7 +21,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\lim_{#0\\to#1}#2(#0)=#3",
+          "body": "\\lim_{#0\\to #1}#2(#0)=#3",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -38,7 +40,6 @@
           "text": ""
         }
       }
-    ],
-    "name": "Topology.mapLimit"
+    ]
   }
 }

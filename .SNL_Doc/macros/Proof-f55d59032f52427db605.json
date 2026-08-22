@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "「A ⟹ B」as a step body: premise and conclusion are separate children, so each is addressable instead of buried in one string. The arrow is a literal character: a text-mode template is not a math environment, so `$…$` in it would be text and the linter's KaTeX check rejects it.",

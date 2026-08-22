@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "计算 — a calculation chain. First child is the opening term; each later child is a Proof.calc.rel carrying one relation and the term it reaches.",

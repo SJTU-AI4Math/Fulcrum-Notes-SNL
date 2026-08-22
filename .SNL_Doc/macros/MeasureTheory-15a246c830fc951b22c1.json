@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "MeasureTheory",
   "macro": {
     "description": "Measure predicate on a sigma-algebra",

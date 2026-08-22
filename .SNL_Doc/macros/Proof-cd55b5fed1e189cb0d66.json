@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "「由于 X P,」— the ground an inference rests on, as a subject node plus the property asserted of it, so the subject stays addressable.",

@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "A citation of a named result; its child carries an `@entryId` postfix so the reference resolves to a real entry.",

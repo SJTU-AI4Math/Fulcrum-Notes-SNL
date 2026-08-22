@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "BasicAnalysis",
   "macro": {
     "description": "Value form: the limit as a partial value (absent when the limit does not exist). Companion to the predicate macro of the same family.",

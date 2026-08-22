@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "FulcrumsMathNotes",
   "macro": {
     "description": "One step of a proof. Arity 1 by design: a justification is a cross-entry reference node inside the step's own prose, not a second child — all styles of a fixed-arity macro must agree on their placeholders.",

@@ -344,9 +344,9 @@
       }
     },
     {
-      "id": "partial",
-      "name": "Partial",
-      "description": "Helper subtree that is NOT a complete syntactic node — e.g. a matrix.row inside a Matrix macro. Rendered with no visual frame, and hover feedback skips over it to its parent macro. Use for implementation-only intermediate macros that shouldn't attract user attention.",
+      "id": "sub",
+      "name": "Subtree",
+      "description": "Helper subtree that is not a complete syntactic node and should not attract independent interaction.",
       "coloring": {
         "light": {
           "stroke": "inherit",
@@ -384,7 +384,7 @@
     "receipt": {
       "legacy_backup_present": true,
       "legacy_entries_present": true,
-      "entry_count": 238,
+      "entry_count": 239,
       "macro_package_count": 14,
       "macro_count": 360,
       "entries_digest": "d2674b8277eebbb019cb551b8ba3dc9ee18b0f865f23d85ef52e48a1fae9c57f",

@@ -278,6 +278,8 @@ if not PREFLIGHT_ONLY:
 
 
 i18n = read_json(I18N_PATH)
+toolkit_repair = read_json(ROOT / "scripts/toolkit-topology-repair.json")
+style_rename_predecessors = toolkit_repair["style_renames"]
 plan = read_json(PLAN_PATH)
 entry_package_plan = read_json(ENTRY_PACKAGE_PLAN_PATH)
 topology_authority = read_json(TOPOLOGY_AUTHORITY_PATH)
@@ -574,7 +576,9 @@ for merge in plan.get("macro_merges", []):
         retired_macro_paths.append(source_path)
         del macros[source_name], macro_paths[source_name], macro_envelopes[source_name]
     else:
-        assert target == canonical_macro, f"canonical Macro merge drift: {target_name}"
+        repaired_hash = toolkit_repair["repaired_macro_hashes"].get(target_name)
+        target_hash = hashlib.sha256(json.dumps(target, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        assert target == canonical_macro or target_hash == repaired_hash, f"canonical Macro merge drift: {target_name}"
     canonical_path = DOC / "macros" / f"{package_id}-{identity_hash('macro', package_id, target_name)}.json"
     assert target_path == canonical_path, f"noncanonical Macro merge target path: {target_name}"
 
@@ -746,7 +750,11 @@ for entry_id, projection in i18n["entries"].items():
 for key, projection in i18n["styles"].items():
     macro_name, style_name = key.split("::", 1)
     assert macro_name in macros, f"I18n map references unknown Macro {macro_name}"
-    styles = [style for style in macros[macro_name]["styles"] if style["style_name"] == style_name]
+    accepted_style_names = {style_name} | {
+        old_name for old_name, new_name in style_rename_predecessors.items()
+        if new_name == style_name
+    }
+    styles = [style for style in macros[macro_name]["styles"] if style["style_name"] in accepted_style_names]
     assert len(styles) == 1, f"style identity is not unique: {key}"
     style = styles[0]
     template = style["template"]
@@ -1088,6 +1096,57 @@ for graph_path in sorted((DOC / "libraries").glob("*/graph.json")):
             elif relation not in relationships:
                 relationships.append(relation)
                 changed = True
+
+    deduplicated_relationships = []
+    for relation in relationships:
+        if relation not in deduplicated_relationships:
+            deduplicated_relationships.append(relation)
+    if deduplicated_relationships != relationships:
+        relationships[:] = deduplicated_relationships
+        changed = True
+
+    # A canonical Entry may occur more than once in one Library. Generated
+    # constructor/recursor children need one graph node per parent occurrence;
+    # sharing one child node would create an invalid multi-parent DAG node.
+    node_by_id = {node["id"]: node for node in nodes}
+    for child_node in list(nodes):
+        child_node_id = child_node["id"]
+        incoming = [
+            relation for relation in relationships
+            if relation.get("label") == "branch" and relation.get("to") == child_node_id
+        ]
+        if len(incoming) <= 1:
+            continue
+        parent_entry_ids = {
+            node_by_id[relation["from"]].get("props", {}).get("entryId")
+            for relation in incoming
+        }
+        assert len(parent_entry_ids) == 1, f"ambiguous multi-parent Entry node: {child_node_id}"
+        for relation in incoming[1:]:
+            duplicate_id = node_id_for(f'{child_node["props"]["entryId"]}@{relation["from"]}')
+            duplicate = {
+                "id": duplicate_id,
+                "label": child_node["label"],
+                "props": dict(child_node["props"]),
+            }
+            existing = next((node for node in nodes if node["id"] == duplicate_id), None)
+            if existing is None:
+                nodes.append(duplicate)
+                node_by_id[duplicate_id] = duplicate
+                changed = True
+            else:
+                assert existing == duplicate, f"duplicate graph node drift: {duplicate_id}"
+            relation["to"] = duplicate_id
+            changed = True
+
+    deduplicated_relationships = []
+    for relation in relationships:
+        if relation not in deduplicated_relationships:
+            deduplicated_relationships.append(relation)
+    if deduplicated_relationships != relationships:
+        relationships[:] = deduplicated_relationships
+        changed = True
+
     # Repair counters on explicitly adopted pre-existing graph nodes.
     for repair in plan.get("graph_counter_repairs", []):
         repair_nodes = [node for node in nodes if node.get("props", {}).get("entryId") == repair["entry_id"]]

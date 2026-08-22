@@ -330,6 +330,30 @@
         "entryId": "FP.def.option.recursor",
         "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
       }
+    },
+    {
+      "id": "n_sub_e983b1caa3a3",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.option.ctor.none",
+        "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
+      }
+    },
+    {
+      "id": "n_sub_891c9abe9c64",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.option.ctor.some",
+        "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
+      }
+    },
+    {
+      "id": "n_sub_5c4ce485418e",
+      "label": "Entry",
+      "props": {
+        "entryId": "FP.def.option.recursor",
+        "counterId": "6b5acf2e-1c43-5150-a600-13275539320e"
+      }
     }
   ],
   "relationships": [
@@ -530,7 +554,7 @@
     },
     {
       "from": "n_2",
-      "to": "n_sub_7ceccf0e7730",
+      "to": "n_sub_e983b1caa3a3",
       "label": "branch"
     },
     {
@@ -540,7 +564,7 @@
     },
     {
       "from": "n_2",
-      "to": "n_sub_1e3de98859ea",
+      "to": "n_sub_891c9abe9c64",
       "label": "branch"
     },
     {
@@ -550,7 +574,7 @@
     },
     {
       "from": "n_2",
-      "to": "n_sub_6d34f114caee",
+      "to": "n_sub_5c4ce485418e",
       "label": "branch"
     }
   ]

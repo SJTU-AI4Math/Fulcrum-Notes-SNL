@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Tactics",
   "macro": {
     "description": "Close the current goal with the supplied structured derivation.",

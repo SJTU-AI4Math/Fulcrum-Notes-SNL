@@ -4009,7 +4009,7 @@
         "text": ""
       }
     },
-    "Type.annotation::be-a": {
+    "Type.annotation::be_a": {
       "en": "#0 be a #1",
       "zh-CN": "#0 是一个 #1",
       "template_envelope": {
@@ -4032,7 +4032,7 @@
         "text": ""
       }
     },
-    "Type.annotation::be-an": {
+    "Type.annotation::be_an": {
       "en": "#0 be an #1",
       "zh-CN": "#0 是一个 #1",
       "template_envelope": {
@@ -4124,7 +4124,7 @@
         "text": ""
       }
     },
-    "def-hyp::中文": {
+    "def-hyp::zh_CN": {
       "en": "Let #0, define “#1” to be #2. ",
       "zh-CN": "设 #0，定义【#1】为 #2。",
       "template_envelope": {
@@ -4147,7 +4147,7 @@
         "text": ""
       }
     },
-    "def-hyp::谓词": {
+    "def-hyp::predicate_zh_CN": {
       "en": "Let #0, define “#1” if and only if #2. ",
       "zh-CN": "设 #0，定义【#1】当且仅当 #2。",
       "template_envelope": {
@@ -4216,7 +4216,7 @@
         "text": ""
       }
     },
-    "def-struct-hyp::中文": {
+    "def-struct-hyp::zh_CN": {
       "en": "Let #0, define structure “#1” consisting of the following data:\n#2",
       "zh-CN": "设#0，定义结构体【#1】包含以下信息:\n#2",
       "template_envelope": {
@@ -4285,7 +4285,7 @@
         "text": ""
       }
     },
-    "def-struct::中文": {
+    "def-struct::zh_CN": {
       "en": "Define structure “#0” consisting of the following data:\n#1",
       "zh-CN": "定义结构体【#0】包含以下信息：\n#1",
       "template_envelope": {
@@ -4308,7 +4308,7 @@
         "text": ""
       }
     },
-    "def-struct::谓词": {
+    "def-struct::predicate_zh_CN": {
       "en": "Define “#0” if and only if all following data are provided:\n#1",
       "zh-CN": "定义【#0】当且仅当可提供以下所有信息：\n#1",
       "template_envelope": {
@@ -4423,7 +4423,7 @@
         "text": ""
       }
     },
-    "def::中文": {
+    "def::zh_CN": {
       "en": "Define “#0” to be #1. ",
       "zh-CN": "定义【#0】为 #1。",
       "template_envelope": {
@@ -4538,7 +4538,7 @@
         "text": ""
       }
     },
-    "match::中文": {
+    "match::zh_CN": {
       "en": "match #0 by cases, if #0 is #1",
       "zh-CN": "对 #0 进行模式匹配：若 #0 为 #1",
       "template_envelope": {
@@ -4653,7 +4653,7 @@
         "text": ""
       }
     },
-    "def-hyp-opq::localized-default": {
+    "def-hyp-opq::localized_default": {
       "en": "Let #0, define “#1”.",
       "zh-CN": "设 #0，定义【#1】。",
       "template_envelope": {
@@ -4700,8 +4700,8 @@
       }
     },
     "Lambda.defeq.beta::default": {
-      "en": "$\\beta$-reduction",
-      "zh-CN": "$\\beta$-归约",
+      "en": "β-reduction",
+      "zh-CN": "β-归约",
       "template_envelope": {
         "mode": "text",
         "typst": {
@@ -4720,14 +4720,19 @@
         },
         "markdown": "",
         "text": ""
-      }
+      },
+      "accepted_en": [
+        "$\\beta$-reduction",
+        "β-reduction"
+      ]
     },
     "Lambda.defeq.lam-cong::default": {
-      "en": "$\\lambda$-Abstraction Congruence",
-      "zh-CN": "$\\lambda$-抽象相容性",
+      "en": "λ-Abstraction Congruence",
+      "zh-CN": "λ-抽象相容性",
       "accepted_en": [
         "$\\lambda$-Abstraction Extensionality",
-        "$\\lambda$-Abstraction Congruence"
+        "$\\lambda$-Abstraction Congruence",
+        "λ-Abstraction Congruence"
       ],
       "accepted_body": [
         "$\\lambda$-Abstraction Extensionality",
@@ -4869,8 +4874,8 @@
       }
     },
     "Syntax.Expr-UTLC.apply::text": {
-      "en": "$\\lambda$-Application",
-      "zh-CN": "$\\lambda$-应用",
+      "en": "λ-Application",
+      "zh-CN": "λ-应用",
       "template_envelope": {
         "mode": "text",
         "typst": {
@@ -4889,11 +4894,15 @@
         },
         "markdown": "",
         "text": ""
-      }
+      },
+      "accepted_en": [
+        "$\\lambda$-Application",
+        "λ-Application"
+      ]
     },
     "Syntax.Expr-UTLC.lambda::text": {
-      "en": "$\\lambda$-Abstraction",
-      "zh-CN": "$\\lambda$-抽象",
+      "en": "λ-Abstraction",
+      "zh-CN": "λ-抽象",
       "template_envelope": {
         "mode": "text",
         "typst": {
@@ -4912,11 +4921,15 @@
         },
         "markdown": "",
         "text": ""
-      }
+      },
+      "accepted_en": [
+        "$\\lambda$-Abstraction",
+        "λ-Abstraction"
+      ]
     },
     "Lambda.defeq.eta::default": {
-      "en": "$\\eta$-reduction",
-      "zh-CN": "$\\eta$-归约",
+      "en": "η-reduction",
+      "zh-CN": "η-归约",
       "template_envelope": {
         "mode": "text",
         "typst": {
@@ -4935,7 +4948,11 @@
         },
         "markdown": "",
         "text": ""
-      }
+      },
+      "accepted_en": [
+        "$\\eta$-reduction",
+        "η-reduction"
+      ]
     },
     "Type.to::text": {
       "en": "Function Type",
@@ -4964,8 +4981,8 @@
       }
     },
     "Lambda.Term::default": {
-      "en": "$\\lambda$-Term",
-      "zh-CN": "$\\lambda$-项",
+      "en": "λ-Term",
+      "zh-CN": "λ-项",
       "accepted_body": [
         "$\\lambda$-项"
       ],
@@ -4987,7 +5004,11 @@
         },
         "markdown": "",
         "text": ""
-      }
+      },
+      "accepted_en": [
+        "$\\lambda$-Term",
+        "λ-Term"
+      ]
     },
     "Syntax.Expr::text": {
       "en": "Expression",

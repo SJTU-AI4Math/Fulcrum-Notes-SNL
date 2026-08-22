@@ -64,7 +64,9 @@ def main() -> None:
         for command in (
             ("python3", "scripts/apply_syntax_namespace.py"),
             ("python3", "scripts/apply_fulcrum_i18n_inductives.py"),
+            ("python3", "scripts/apply_toolkit_topology_repair.py"),
             ("python3", "scripts/verify_fulcrum_i18n_inductives.py"),
+            ("python3", "scripts/verify_toolkit_topology.py"),
         ):
             result = run(path, *command)
             assert result.returncode == 0, result.stdout + result.stderr
@@ -120,7 +122,10 @@ def main() -> None:
     finally:
         shutil.rmtree(path)
 
-    # Valid canonical replay is byte-idempotent across the complete two-stage pipeline.
+    # Valid canonical replay is byte-stable across the complete pipeline. The
+    # owning topology migration is deliberately one-shot and refuses an already
+    # canonical tree without writing; the standalone verifier supplies the
+    # fixed-point check.
     path = sandbox()
     try:
         baseline = tree_digest(path / ".SNL_Doc")
@@ -128,11 +133,19 @@ def main() -> None:
             for command in (
                 ("python3", "scripts/apply_syntax_namespace.py"),
                 ("python3", "scripts/apply_fulcrum_i18n_inductives.py"),
+                ("python3", "scripts/apply_toolkit_topology_repair.py"),
                 ("python3", "scripts/verify_fulcrum_i18n_inductives.py"),
+                ("python3", "scripts/verify_toolkit_topology.py"),
             ):
                 result = run(path, *command)
-                assert result.returncode == 0, result.stdout + result.stderr
-                assert tree_digest(path / ".SNL_Doc") == baseline, f"{command[1]} is not independently byte-idempotent"
+                output = result.stdout + result.stderr
+                topology_refusal = (
+                    command[1] == "scripts/apply_toolkit_topology_repair.py"
+                    and result.returncode != 0
+                    and "already canonical; no migration was performed" in output
+                )
+                assert result.returncode == 0 or topology_refusal, output
+                assert tree_digest(path / ".SNL_Doc") == baseline, f"{command[1]} changed a canonical tree"
             assert tree_digest(path / ".SNL_Doc") == baseline
     finally:
         shutil.rmtree(path)

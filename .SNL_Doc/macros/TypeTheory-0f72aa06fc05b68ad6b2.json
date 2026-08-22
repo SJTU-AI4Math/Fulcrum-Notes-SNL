@@ -4,6 +4,7 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
+    "name": "Syntax.signatureFragment",
     "description": "Non-exhaustive syntax-signature fragment",
     "source": {
       "entries": [
@@ -23,7 +24,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "Assuming #0 is already defined, record the following newly introduced constructors (non-exhaustive):\\n#1",
+              "body": "Assuming #0 is already defined, record the following newly introduced constructors (non-exhaustive):\n#1",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,7 +44,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "假设 #0 已经定义，记录以下新介绍的构造子（非穷尽）：\\n#1",
+              "body": "假设 #0 已经定义，记录以下新介绍的构造子（非穷尽）：\n#1",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -65,7 +66,6 @@
         }
       }
     ],
-    "tags": [],
-    "name": "Syntax.signatureFragment"
+    "tags": []
   }
 }

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive[prop](Lambda.eta(@$\\cdot$,@$\\cdot$),ctors(Type.to(Syntax.hasCategory[paren](@f,Syntax.LegalExpr-UTLC),parentheses(Lambda.eta(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.apply(f,x)),f)))))"
+      "snl": "def-inductive[prop](Lambda.eta(@$\\cdot$,@$\\cdot$),ctors(Type.to(Syntax.hasCategory(@f,Syntax.LegalExpr-UTLC),parentheses(Lambda.eta(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.apply(f,x)),f)))))"
     },
     "contribution_info": null,
     "pointer": null

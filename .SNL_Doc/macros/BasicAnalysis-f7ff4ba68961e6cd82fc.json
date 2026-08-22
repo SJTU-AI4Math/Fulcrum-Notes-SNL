@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "BasicAnalysis",
   "macro": {
     "description": "Continuity on a closed interval: interior continuity plus one-sided continuity at the endpoints.",

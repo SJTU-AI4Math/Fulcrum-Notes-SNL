@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "FulcrumsMathNotes",
   "macro": {
     "description": "Collapsible block: the first child is the always-visible summary, the remaining children fold behind a toggle. Renders as a plain block wherever the consumer has not registered a 'collapsible' block renderer.",

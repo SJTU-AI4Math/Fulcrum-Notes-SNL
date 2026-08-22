@@ -4,6 +4,7 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
+    "name": "Syntax.Expr-UTLC.lambda",
     "description": "Untyped lambda abstraction",
     "source": {
       "entries": [
@@ -95,7 +96,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "$\\lambda$-Abstraction",
+              "body": "λ-Abstraction",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -115,7 +116,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "$\\lambda$-抽象",
+              "body": "λ-抽象",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -137,7 +138,6 @@
         }
       }
     ],
-    "tags": [],
-    "name": "Syntax.Expr-UTLC.lambda"
+    "tags": []
   }
 }

@@ -1,6 +1,7 @@
 {
   "format": "snl-macro",
   "version": 1,
+  "schema_version": 1,
   "package": "Proof",
   "macro": {
     "description": "One link of a calculation chain: a relation symbol plus its right-hand side. Keeping them separate is what lets a renderer align relations in a column.",

@@ -1575,11 +1575,6 @@
       "label": "branch"
     },
     {
-      "from": "n_34",
-      "to": "n_sub_4be10367a6cb",
-      "label": "branch"
-    },
-    {
       "from": "n_3",
       "to": "n_34",
       "label": "branch"
