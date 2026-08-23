@@ -4,10 +4,10 @@
   "schema_version": 1,
   "package": "Topology",
   "macro": {
-    "description": "Predicate: f is a continuous map on E",
+    "description": "Predicate: sequence x_n converges to x as n goes to infinity",
     "source": {
       "entries": [
-        "Topology.def.continuousMap"
+        "Topology.def.seqConvergence"
       ],
       "urls": []
     },
@@ -20,7 +20,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0\\in\\operatorname{C}(#1,#2)",
+          "body": "#1\\xrightarrow{#0 \\to\\infty} #2",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -44,7 +44,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0\\text{ 是 }#1\\text{ 到 }#2\\text{ 的连续映射}",
+          "body": "#1 \\to #2 \\text{ as }#0\\to\\infty",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -64,6 +64,6 @@
         }
       }
     ],
-    "name": "Topology.continuousMap"
+    "name": "Topology.seqConv"
   }
 }

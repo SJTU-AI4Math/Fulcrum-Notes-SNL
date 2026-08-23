@@ -26,6 +26,7 @@
     "Set.def.mem",
     "Set.def.nmem",
     "Set.def.powerset",
+    "Set.def.preimage",
     "Set.def.sep",
     "Set.def.set",
     "Set.def.subset",

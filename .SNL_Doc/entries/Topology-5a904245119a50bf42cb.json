@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.iff(Set.mem(x,Topology.interior(A)),Topology.neighborhood(A,x)))"
+      "snl": "thm-hyp(\r\n    list-partial(\r\n        Type.annotation(@A, Set(S@Set.ctxt.T)),\r\n        Type.annotation(@x, T@Set.ctxt.T)\r\n    ),\r\n    Logic.iff(Set.mem(x, Topology.interior(A)), Topology.neighborhood(A, x))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

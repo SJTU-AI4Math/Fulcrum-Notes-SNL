@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.annotation(@x,X@Topology.ctxt.X),Type.annotation(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.annotation(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.annotation(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.iff(Topology.continuous(f,x),Logic.forall-typed(@V,Set(Y@Topology.ctxt.Y),Logic.implies(Topology.neighborhood(V,Type.apply(f,x)),Logic.exists-typed(@U,Set(X@Topology.ctxt.X),Logic.and(Topology.neighborhood(U,x),Set.subset(Set.sep-typed(@t,X@Topology.ctxt.X,Set.mem(Type.apply(f,t),V)),U)))))))"
+      "snl": "thm-hyp(\r\n    Type.annotation(@x, X@Topology.ctxt.X),\r\n    Logic.iff(\r\n        Topology.continuous(f@Topology.ctxt.f, x),\r\n        Logic.forall-typed(\r\n            @V,\r\n            Set(B@Topology.ctxt.AB),\r\n            Logic.implies(\r\n                Topology.neighborhood(V, Type.apply(f@Topology.ctxt.f, x)),\r\n                Logic.exists-typed(\r\n                    @U,\r\n                    Set(A@Topology.ctxt.AB),\r\n                    Logic.and(\r\n                        Topology.neighborhood(U, x),\r\n                        Set.subset(\r\n                            Set.sep-typed(@t, A@Topology.ctxt.AB, Set.mem(Type.apply(f@Topology.ctxt.f, t), V)),\r\n                            U\r\n                        )\r\n                    )\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

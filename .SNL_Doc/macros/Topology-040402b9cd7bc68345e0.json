@@ -4,7 +4,7 @@
   "schema_version": 1,
   "package": "Topology",
   "macro": {
-    "description": "Predicate: sequence x_n converges to x",
+    "description": "Predicate: sequence x_n converges to x (Legacy)",
     "source": {
       "entries": [
         "Topology.def.seqConvergence"

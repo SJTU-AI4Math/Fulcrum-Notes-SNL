@@ -4,7 +4,6 @@
   "schema_version": 1,
   "package": "Topology",
   "macro": {
-    "name": "Topology.mapLimit",
     "description": "Notation: limit of map f at x is y",
     "source": {
       "entries": [
@@ -40,6 +39,7 @@
           "text": ""
         }
       }
-    ]
+    ],
+    "name": "Topology.mapLimit"
   }
 }

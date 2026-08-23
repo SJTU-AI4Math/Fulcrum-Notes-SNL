@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y)),\r\n        Type.annotation(@τ_X, Set(Set(X@Topology.ctxt.X))),\r\n        Type.annotation(@τ_Y, Set(Set(Y@Topology.ctxt.Y)))\r\n    ),\r\n    Topology.openMap(f),\r\n    Logic.forall-typed(\r\n        @U,\r\n        Set(X@Topology.ctxt.X),\r\n        Logic.implies(\r\n            Set.mem(U, τ_X),\r\n            Set.mem(\r\n                Set.fun(f, U),\r\n                τ_Y\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "def(\r\n    Topology.openMap(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y),\r\n    Logic.forall-typed(\r\n        @U,\r\n        Set(A@Topology.ctxt.AB),\r\n        Logic.implies(\r\n            Topology.openSet(U, τ_X),\r\n            Topology.openSet(\r\n                Set.fun(f, U),\r\n                τ_Y\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

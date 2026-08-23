@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, X@Topology.ctxt.X),\r\n        Type.annotation(@y, Y@Topology.ctxt.Y),\r\n        Type.annotation(@x_0, X@Topology.ctxt.X),\r\n        Type.annotation(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y)),\r\n        Type.annotation(@τ_X, Set(Set(X@Topology.ctxt.X))),\r\n        Type.annotation(@τ_Y, Set(Set(Y@Topology.ctxt.Y)))\r\n    ),\r\n    Topology.mapConvergence(f, x, y),\r\n    Topology.mapLimit(x, x_0, f, y)\r\n)"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, X@Topology.ctxt.X),\r\n        Type.annotation(@y, Y@Topology.ctxt.Y),\r\n        Type.annotation(@x_0, X@Topology.ctxt.X)\r\n    ),\r\n    Topology.mapConvergence(f@Topology.ctxt.f, x_0, y),\r\n    Topology.mapLimit(x, x_0, f@Topology.ctxt.f, y)\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

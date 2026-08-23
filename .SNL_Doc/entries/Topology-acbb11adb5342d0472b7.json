@@ -8,10 +8,9 @@
     "kind": "subsection",
     "title": {
       "type": "i18n",
-      "default_language": "en",
+      "default_language": "zh-CN",
       "values": {
-        "en": "Separation Axioms",
-        "zh-CN": "分离公理"
+        "zh-CN": "分离性质"
       }
     },
     "content": {},

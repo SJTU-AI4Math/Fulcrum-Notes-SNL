@@ -11,7 +11,7 @@
       "default_language": "en",
       "values": {
         "en": "Self-Dense Set",
-        "zh-CN": "自密集"
+        "zh-CN": "自稠密集/自密集"
       }
     },
     "content": {

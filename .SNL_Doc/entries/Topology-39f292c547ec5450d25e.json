@@ -17,7 +17,7 @@
     "content": {
       "snl": "def-hyp(list-partial(Type.annotation(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.annotation(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.annotation(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Topology.lipschitz(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y),Logic.true)"
     },
-    "contribution_info": null,
+    "contribution_info": "待相关依赖建设完成后再补全",
     "pointer": null,
     "package": "Topology"
   }

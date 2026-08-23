@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "Type.annotation(@D, S@Set.ctxt.S)"
+      "snl": "Type.annotation(@D, Set(S@Set.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null

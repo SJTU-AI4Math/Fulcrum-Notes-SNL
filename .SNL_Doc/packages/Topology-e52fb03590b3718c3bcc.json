@@ -7,6 +7,7 @@
   "schema_version": 2,
   "entry_ids": [
     "Topology.ctxt.1",
+    "Topology.ctxt.AB",
     "Topology.ctxt.f",
     "Topology.ctxt.map",
     "Topology.ctxt.S",
@@ -86,6 +87,7 @@
     "Topology.prop.T1Equivalent",
     "Topology.sec.continuousMap",
     "Topology.sec.topology",
+    "Topology.sec.topologyProperty",
     "Topology.subsec.basicConcepts",
     "Topology.subsec.compactness",
     "Topology.subsec.connectedness",

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@x_n,Type.to(Nat,S@Topology.ctxt.S)),Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.seqLimit(x_n,x),Logic.forall-typed(@U,Set(S@Topology.ctxt.S),Logic.implies(Topology.neighborhood(U,x),Logic.exists-typed(@N,Nat,Logic.forall-typed(@n,Nat,Logic.implies(Logic.and(Logic.forall-typed(@k,Nat,Logic.true),Logic.true),Set.mem(Type.apply(x_n,n),U)))))))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@n, Nat),\r\n        Type.annotation(@x_n, Type.to(Nat, S@Topology.ctxt.S)),\r\n        Type.annotation(@x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.seqLimit(n, x_n, x),\r\n    Logic.forall-typed(\r\n        @U,\r\n        Set(S@Topology.ctxt.S),\r\n        Logic.implies(\r\n            Topology.neighborhood(U, x),\r\n            Logic.exists-typed(\r\n                @N,\r\n                Nat,\r\n                Logic.forall-typed(\r\n                    @k,\r\n                    Nat,\r\n                    Logic.implies(Le(N, k), Set.mem(Type.apply(x_n, n), U))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.annotation(@K,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.implies(Topology.T2(S@Topology.ctxt.S),Logic.implies(Topology.compact(K),Set.mem(Set.compl[sup](K,S@Topology.ctxt.S),τ))))"
+      "snl": "thm-hyp(\r\n    list-partial(\r\n        Type.annotation(@K, Set(T@Set.ctxt.T)),\r\n        Set.subset(K, S@Topology.ctxt.S),\r\n        Topology.T2(S@Topology.ctxt.S)\r\n    ),\r\n    Logic.implies(\r\n        Topology.compact(K), Topology.openSet(Set.compl(K, S@Topology.ctxt.S), τ@Topology.ctxt.tau)\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

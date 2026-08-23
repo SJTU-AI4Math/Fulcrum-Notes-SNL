@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S),\r\n        Type.annotation(@U, Set(T@Set.ctxt.T)),\r\n        Set.subset(U, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.deletedNeighborhood(U, x),\r\n    Logic.and(\r\n        Topology.neighborhood(\r\n            Set.union(U, Set.sep-typed(@y, T@Set.ctxt.T, Eq(y, x))),\r\n            x\r\n        ),\r\n        Logic.neg(Set.mem(x, U))\r\n    )\r\n)"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S),\r\n        Type.annotation(@U, Set(T@Set.ctxt.T)),\r\n        Set.subset(U, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.deletedNeighborhood(U, x),\r\n    Logic.and(\r\n        Topology.neighborhood(\r\n            Set.union(U, Set.sep-typed(@y, T@Set.ctxt.T, Eq(y, x))),\r\n            x\r\n        ),\r\n        Set.nmem(x, U)\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

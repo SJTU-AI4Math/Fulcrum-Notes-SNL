@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "Type.annotation(@Y,Type)"
+      "snl": "Type.annotation(@Y,B@Topology.ctxt.AB)"
     },
     "contribution_info": null,
     "pointer": null,

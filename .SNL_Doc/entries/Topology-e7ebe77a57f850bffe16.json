@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@X,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.subspaceTopology(X),Set.sep-typed(@U,Set(X),Logic.exists-typed(@V,Set(Set(S@Topology.ctxt.S)),Logic.and(Set.mem(V,τ),Eq(U,Set.inter(V,X))))))"
+      "snl": "def-hyp(\r\n    Type.annotation(@X, Set(T@Set.ctxt.T)),\r\n    Topology.subspaceTopology(X),\r\n    Set.sep-typed(\r\n        @U,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.exists-typed(\r\n            @V,\r\n            Set(T@Set.ctxt.T),\r\n            Logic.and(Set.mem(V, τ@Topology.ctxt.tau), Eq(U, Set.inter(V, X)))\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

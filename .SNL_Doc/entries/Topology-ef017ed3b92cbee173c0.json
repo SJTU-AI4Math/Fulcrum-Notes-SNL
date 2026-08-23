@@ -4,14 +4,14 @@
   "schema_version": 1,
   "package": "Topology",
   "entry": {
-    "id": "Topology.ctxt.f",
+    "id": "Topology.ctxt.AB",
+    "package": "Topology",
     "kind": "context",
-    "title": "$f$",
+    "title": "Type $A,B$",
     "content": {
-      "snl": "Type.annotation(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y))"
+      "snl": "list-partial(Type.annotation(@A, Type), Type.annotation(@B, Type))"
     },
     "contribution_info": null,
-    "pointer": null,
-    "package": "Topology"
+    "pointer": null
   }
 }

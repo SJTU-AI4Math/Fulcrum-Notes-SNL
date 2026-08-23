@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "Type.annotation(@τ_X,Set(Set(X@Topology.ctxt.X)))"
+      "snl": "Logic.and(Type.annotation(@τ_X,Set(X@Topology.ctxt.X)), Topology.topology(τ_X, X@Topology.ctxt.X))"
     },
     "contribution_info": null,
     "pointer": null,

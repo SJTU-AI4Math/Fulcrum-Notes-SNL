@@ -20,7 +20,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0\\text{ 是开映射}",
+          "body": "#0\\text{ 是 }#1\\text{ 到 }#2\\text{ 的开映射}",
           "typst": {
             "built_in": "",
             "synthesis": {

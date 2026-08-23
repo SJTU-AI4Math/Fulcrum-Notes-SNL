@@ -15,9 +15,9 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@X,Type),Type.annotation(@τ_X,Set(Set(X))),Type.annotation(@Y,Type),Type.annotation(@τ_Y,Set(Set(Y)))),Topology.productTopology,Set.sep-typed(@U,Set(Set.Prod(X,Y)),Logic.forall-typed(@p,Set.Prod(X,Y),Logic.implies(Set.mem(p,U),Logic.exists-typed(@U_X,Set(Set(X)),Logic.exists-typed(@U_Y,Set(Set(Y)),Logic.and(Logic.and(Set.mem(U_X,τ_X),Set.mem(U_Y,τ_Y)),Logic.and(Set.mem(p,Set.Prod(U_X,U_Y)),Set.subset(Set.Prod(U_X,U_Y),U)))))))))"
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@A, Type),\r\n        Type.annotation(@B, Type),\r\n        Type.annotation(@X, Set(A)),\r\n        Type.annotation(@τ_X, Set(Set(A))),\r\n        Type.annotation(@Y, Set(B)),\r\n        Type.annotation(@τ_Y, Set(Set(B))),\r\n        Topology.topology(X, τ_X),\r\n        Topology.topology(Y, τ_Y)\r\n    ),\r\n    Topology.productTopology,\r\n    Set.sep-typed(\r\n        @U,\r\n        Set(Set.Prod(A, B)),\r\n        Logic.forall-typed(\r\n            @p,\r\n            Set.Prod(A, B),\r\n            Logic.implies(\r\n                Set.mem(p, U),\r\n                Logic.exists-typed(\r\n                    @U_X,\r\n                    Set(A),\r\n                    Logic.exists-typed(\r\n                        @U_Y,\r\n                        Set(B),\r\n                        Logic.and(\r\n                            Logic.and(Set.mem(U_X, τ_X), Set.mem(U_Y, τ_Y)),\r\n                            Logic.and(Set.mem(p, Set.Prod(U_X, U_Y)), Set.subset(Set.Prod(U_X, U_Y), U))\r\n                        )\r\n                    )\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
-    "contribution_info": null,
+    "contribution_info": "待修改：此处的积类型与积集合需要其他定义",
     "pointer": null,
     "package": "Topology"
   }

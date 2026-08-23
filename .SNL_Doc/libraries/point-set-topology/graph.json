@@ -442,13 +442,6 @@
       }
     },
     {
-      "id": "n_63",
-      "label": "Entry",
-      "props": {
-        "entryId": "Topology.subsec.separation"
-      }
-    },
-    {
       "id": "n_64",
       "label": "Entry",
       "props": {
@@ -554,66 +547,94 @@
       }
     },
     {
-      "id": "n_79",
+      "id": "n_88",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.tauS"
+      }
+    },
+    {
+      "id": "n_89",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.ctxt.T"
+      }
+    },
+    {
+      "id": "n_90",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.AB"
+      }
+    },
+    {
+      "id": "n_91",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.sec.topologyProperty"
+      }
+    },
+    {
+      "id": "n_92",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.separation"
+      }
+    },
+    {
+      "id": "n_93",
       "label": "Entry",
       "props": {
         "entryId": "Topology.def.T0"
       }
     },
     {
-      "id": "n_80",
+      "id": "n_94",
       "label": "Entry",
       "props": {
         "entryId": "Topology.def.T1"
       }
     },
     {
-      "id": "n_81",
+      "id": "n_95",
       "label": "Entry",
       "props": {
         "entryId": "Topology.def.T2"
       }
     },
     {
-      "id": "n_82",
+      "id": "n_79",
       "label": "Entry",
       "props": {
         "entryId": "Topology.example.sierpinskiSpace"
       }
     },
     {
-      "id": "n_83",
+      "id": "n_82",
       "label": "Entry",
       "props": {
         "entryId": "Topology.prop.T1Equivalent"
       }
     },
     {
-      "id": "n_84",
+      "id": "n_80",
       "label": "Entry",
       "props": {
         "entryId": "Topology.prop.limitUniqueInT2"
       }
     },
     {
-      "id": "n_85",
+      "id": "n_83",
       "label": "Entry",
       "props": {
         "entryId": "Topology.prop.compactClosedInT2"
       }
     },
     {
-      "id": "n_86",
+      "id": "n_96",
       "label": "Entry",
       "props": {
         "entryId": "Topology.prop.nestedCompactInT2"
-      }
-    },
-    {
-      "id": "n_87",
-      "label": "Entry",
-      "props": {
-        "entryId": "Topology.prop.continuousPreservesConvergenceInT2"
       }
     }
   ],
@@ -645,12 +666,12 @@
     },
     {
       "from": "n_1",
-      "to": "n_2",
+      "to": "n_89",
       "label": "branch"
     },
     {
       "from": "n_1",
-      "to": "n_3",
+      "to": "n_2",
       "label": "branch"
     },
     {
@@ -661,6 +682,11 @@
     {
       "from": "n_4",
       "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_88",
       "label": "branch"
     },
     {
@@ -899,8 +925,8 @@
       "label": "branch"
     },
     {
-      "from": "n_54",
-      "to": "n_63",
+      "from": "n_55",
+      "to": "n_90",
       "label": "branch"
     },
     {
@@ -921,11 +947,6 @@
     {
       "from": "n_55",
       "to": "n_59",
-      "label": "branch"
-    },
-    {
-      "from": "n_55",
-      "to": "n_60",
       "label": "branch"
     },
     {
@@ -1004,48 +1025,58 @@
       "label": "branch"
     },
     {
-      "from": "n_63",
+      "from": "n_1",
+      "to": "n_3",
+      "label": "branch"
+    },
+    {
+      "from": "n_55",
+      "to": "n_60",
+      "label": "branch"
+    },
+    {
+      "from": "n_91",
+      "to": "n_92",
+      "label": "branch"
+    },
+    {
+      "from": "n_92",
+      "to": "n_93",
+      "label": "branch"
+    },
+    {
+      "from": "n_92",
+      "to": "n_94",
+      "label": "branch"
+    },
+    {
+      "from": "n_92",
+      "to": "n_95",
+      "label": "branch"
+    },
+    {
+      "from": "n_92",
       "to": "n_79",
       "label": "branch"
     },
     {
-      "from": "n_63",
-      "to": "n_80",
-      "label": "branch"
-    },
-    {
-      "from": "n_63",
-      "to": "n_81",
-      "label": "branch"
-    },
-    {
-      "from": "n_63",
+      "from": "n_94",
       "to": "n_82",
       "label": "branch"
     },
     {
-      "from": "n_80",
+      "from": "n_95",
+      "to": "n_80",
+      "label": "branch"
+    },
+    {
+      "from": "n_95",
       "to": "n_83",
       "label": "branch"
     },
     {
-      "from": "n_81",
-      "to": "n_84",
-      "label": "branch"
-    },
-    {
-      "from": "n_81",
-      "to": "n_85",
-      "label": "branch"
-    },
-    {
-      "from": "n_81",
-      "to": "n_86",
-      "label": "branch"
-    },
-    {
-      "from": "n_81",
-      "to": "n_87",
+      "from": "n_95",
+      "to": "n_96",
       "label": "branch"
     }
   ]
