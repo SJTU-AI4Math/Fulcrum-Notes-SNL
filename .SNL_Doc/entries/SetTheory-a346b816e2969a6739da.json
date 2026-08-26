@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.fun_graph",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "映射的图像",
+    "content": {
+      "snl": "def(\r\n    Set.map.graph(f@Set.ctxt.f),\r\n    Set.sep-typed(\r\n        Type.pair(@x, @y),\r\n        Type.prod(Set.domain(f@Set.ctxt.f), Set.codomain(f@Set.ctxt.f)),\r\n        Eq(y, Type.apply(f@Set.ctxt.f, x))\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

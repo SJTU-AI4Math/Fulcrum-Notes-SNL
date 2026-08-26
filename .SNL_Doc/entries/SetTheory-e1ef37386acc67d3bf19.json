@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Set.surjective(f@Set.ctxt.f), Eq(Set.fun(f@Set.ctxt.f, D@Set.ctxt.D), A@Set.ctxt.AB))"
+      "snl": "def(Set.surjective(f@Set.ctxt.f), Eq(Set.map.image(f@Set.ctxt.f, D@Set.ctxt.D), A@Set.ctxt.AB))"
     },
     "contribution_info": null,
     "pointer": null

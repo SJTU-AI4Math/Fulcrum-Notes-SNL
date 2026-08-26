@@ -4,10 +4,10 @@
   "schema_version": 1,
   "package": "SetTheory",
   "macro": {
-    "description": "",
+    "description": "映射的像集",
     "source": {
       "entries": [
-        "Set.def.preimage"
+        "Set.def.imageAsApplyed"
       ],
       "urls": []
     },
@@ -19,7 +19,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0^{-1}(#1)",
+          "body": "#0(#1)",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,6 +40,6 @@
       }
     ],
     "tags": [],
-    "name": "Set.preim"
+    "name": "Set.map.image"
   }
 }

@@ -2,12 +2,12 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "SetTheory",
+  "package": "Topology",
   "macro": {
-    "description": "",
+    "description": "Predicate: (S, tau) is a T3 space",
     "source": {
       "entries": [
-        "Set.def.cartesian_prod"
+        "Topology.def.T3"
       ],
       "urls": []
     },
@@ -20,7 +20,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0 \\times #1",
+          "body": "#0\\text{ 是 }T_3\\text{ 空间}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,6 +40,6 @@
         }
       }
     ],
-    "name": "Set.Prod"
+    "name": "Topology.T3"
   }
 }

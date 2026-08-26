@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.def.neighborhoodBasis",
+    "package": "Topology",
+    "kind": "definition",
+    "title": "邻域基",
+    "content": {
+      "snl": "def-hyp[predicate](\r\n    Type.annotation(@x, S@Topology.ctxt.S), \r\n    Topology.neighborhoodBasis(x),\r\n    Logic.forall-typed(\r\n        @U, \r\n        Set(S@Topology.ctxt.S),\r\n        Logic.implies(\r\n            Set.mem(U, Topology.Nbr(x)),\r\n            Logic.exists-typed(\r\n                @V, \r\n                Set(S@Topology.ctxt.S),\r\n                Logic.and(Set.mem(V, Topology.neighborhoodBasis(x)), Set.subset(V, U))\r\n            )\r\n        )\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -2,25 +2,24 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "SetTheory",
+  "package": "Topology",
   "macro": {
     "description": "",
     "source": {
       "entries": [
-        "Set.def.cartesian_prod"
+        "Topology.def.neighborhoodBasis"
       ],
       "urls": []
     },
     "kind": "const",
     "dynamic_arity": false,
-    "tags": [],
     "styles": [
       {
         "style_name": "default",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0 \\times #1",
+          "body": "\\mathcal{B}_{#0}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,6 +39,7 @@
         }
       }
     ],
-    "name": "Set.Prod"
+    "tags": [],
+    "name": "Topology.neighborhoodBasis"
   }
 }

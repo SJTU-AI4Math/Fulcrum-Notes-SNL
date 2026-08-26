@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.inv",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "映射的逆映射",
+    "content": {
+      "snl": "def-hyp[predicate](\r\n    Type.annotation(@g, Type.to(Set.im(f@Set.ctxt.f), Set.domain(f@Set.ctxt.f))),\r\n    Eq(g, Set.inv(f)),\r\n    Eq(\r\n        Set.map.graph(g), \r\n        Set.sep-typed(Type.pair(@y, @x), Type.prod(Set.im(f@Set.ctxt.f), Set.domain(f@Set.ctxt.f)), Eq(y, Type.apply(f@Set.ctxt.f, x)))\r\n    )\r\n)"
+    },
+    "contribution_info": "Dedicatia",
+    "pointer": null
+  }
+}

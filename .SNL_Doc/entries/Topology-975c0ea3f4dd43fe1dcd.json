@@ -1,0 +1,23 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.prop.T0IfT1",
+    "package": "Topology",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "T1 蕴含 T0"
+      }
+    },
+    "content": {
+      "snl": "Logic.implies(Topology.T1(S@Topology.ctxt.S), Topology.T0(S@Topology.ctxt.S))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

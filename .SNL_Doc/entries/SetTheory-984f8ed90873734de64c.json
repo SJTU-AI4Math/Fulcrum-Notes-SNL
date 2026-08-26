@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.prop.inverse",
+    "package": "SetTheory",
+    "kind": "property",
+    "title": "逆映射的像是原像",
+    "content": {
+      "snl": "thm-hyp(\r\n    Logic.and(Type.annotation(@x, Set.domain(f@Set.ctxt.f)), Type.annotation(@y, Set.im(f@Set.ctxt.f))),\r\n    Logic.iff(Eq(Type.apply(f@Set.ctxt.f, x), y), Eq(Type.apply(Set.inv(f@Set.ctxt.f), y), x))\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

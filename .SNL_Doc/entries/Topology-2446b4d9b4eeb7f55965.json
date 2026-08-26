@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Logic.true)"
+      "snl": "thm-hyp(\r\n    list-partial(Topology.T2(S@Topology.ctxt.S), Type.annotation(@n, Nat), Type.annotation(@x_1, S@Topology.ctxt.S), Type.annotation(@x_2, S@Topology.ctxt.S)),\r\n    Logic.forall-typed(\r\n        @x_n,\r\n        Type.to(Nat, S@Topology.ctxt.S),\r\n        Logic.implies(Logic.and(Topology.seqConv(n, x_n, x_1), Topology.seqConv(n, x_n, x_2)), Eq(x_1, x_2))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

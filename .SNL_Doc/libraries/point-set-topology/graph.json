@@ -636,6 +636,48 @@
       "props": {
         "entryId": "Topology.prop.nestedCompactInT2"
       }
+    },
+    {
+      "id": "n_63",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.T3"
+      }
+    },
+    {
+      "id": "n_81",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.T2IfT3UnderT1"
+      }
+    },
+    {
+      "id": "n_84",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.T1IfT2"
+      }
+    },
+    {
+      "id": "n_85",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.T0IfT1"
+      }
+    },
+    {
+      "id": "n_86",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.countability"
+      }
+    },
+    {
+      "id": "n_87",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.neighborhoodBasis"
+      }
     }
   ],
   "relationships": [
@@ -1040,6 +1082,11 @@
       "label": "branch"
     },
     {
+      "from": "n_91",
+      "to": "n_86",
+      "label": "branch"
+    },
+    {
       "from": "n_92",
       "to": "n_93",
       "label": "branch"
@@ -1056,12 +1103,22 @@
     },
     {
       "from": "n_92",
+      "to": "n_63",
+      "label": "branch"
+    },
+    {
+      "from": "n_92",
       "to": "n_79",
       "label": "branch"
     },
     {
       "from": "n_94",
       "to": "n_82",
+      "label": "branch"
+    },
+    {
+      "from": "n_94",
+      "to": "n_85",
       "label": "branch"
     },
     {
@@ -1077,6 +1134,21 @@
     {
       "from": "n_95",
       "to": "n_96",
+      "label": "branch"
+    },
+    {
+      "from": "n_95",
+      "to": "n_84",
+      "label": "branch"
+    },
+    {
+      "from": "n_63",
+      "to": "n_81",
+      "label": "branch"
+    },
+    {
+      "from": "n_86",
+      "to": "n_87",
       "label": "branch"
     }
   ]
