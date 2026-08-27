@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.thm.cantor",
+    "package": "SetTheory",
+    "kind": "theorem",
+    "title": "Cantor's Power Set",
+    "content": {
+      "snl": "thm-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Neq(Set.card(A), Set.card(Set.powerset(A)))\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

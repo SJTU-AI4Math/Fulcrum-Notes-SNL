@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.def.T4",
+    "package": "Topology",
+    "kind": "definition",
+    "title": "T4 空间",
+    "content": {
+      "snl": "def[predicate](\r\n    Topology.T4(S@Topology.ctxt.S),\r\n    Logic.forall-typed(\r\n        @F,\r\n        Set(S@Topology.ctxt.S),\r\n        Logic.forall-typed(\r\n            @E,\r\n            Set(S@Topology.ctxt.S),\r\n            Logic.implies(\r\n                Logic.and(Topology.closedSet[text](F, τ@Topology.ctxt.tau, S@Topology.ctxt.S), Topology.closedSet[text](E, τ@Topology.ctxt.tau, S@Topology.ctxt.S)),\r\n                Logic.exists-typed(\r\n                    @U,\r\n                    Set(S@Topology.ctxt.S),\r\n                    Logic.exists-typed(\r\n                        @V,\r\n                        Set(S@Topology.ctxt.S),\r\n                        Logic.and(\r\n                            Logic.and(Set.mem(U, τ@Topology.ctxt.tau), Set.mem(V, τ@Topology.ctxt.tau)), \r\n                            Logic.and(\r\n                                Neq(Set.inter(U, V), Set.emptyset), \r\n                                Logic.and(Set.subset(F, U), Set.subset(E, V))\r\n                            )\r\n                        )\r\n                    )\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

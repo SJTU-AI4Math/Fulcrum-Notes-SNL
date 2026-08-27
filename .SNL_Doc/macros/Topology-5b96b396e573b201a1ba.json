@@ -2,12 +2,12 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "BasicOperators",
+  "package": "Topology",
   "macro": {
-    "description": "Natural numbers",
+    "description": "Predicate: (S, tau) is a T4 space",
     "source": {
       "entries": [
-        "Type.def.nat"
+        "Topology.def.T4"
       ],
       "urls": []
     },
@@ -20,31 +20,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathbb{N}",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
-      },
-      {
-        "style_name": "operator",
-        "tags": [],
-        "template": {
-          "mode": "formula_inline",
-          "body": "\\mathrm{Nat}",
+          "body": "#0\\text{ 是 }T_4\\text{ 空间}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -64,6 +40,6 @@
         }
       }
     ],
-    "name": "Nat"
+    "name": "Topology.T4"
   }
 }

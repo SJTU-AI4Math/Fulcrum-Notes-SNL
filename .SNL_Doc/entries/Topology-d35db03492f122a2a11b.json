@@ -6,7 +6,7 @@
   "entry": {
     "id": "Topology.prop.T2IfT3UnderT1",
     "package": "Topology",
-    "kind": "section",
+    "kind": "property",
     "title": "在 T1 的条件下 T3 蕴含 T2",
     "content": {
       "snl": "thm-hyp(\r\n    Topology.T1(S@Topology.ctxt.S), \r\n    Logic.implies(Topology.T3(S@Topology.ctxt.S), Topology.T2(S@Topology.ctxt.S))\r\n)"

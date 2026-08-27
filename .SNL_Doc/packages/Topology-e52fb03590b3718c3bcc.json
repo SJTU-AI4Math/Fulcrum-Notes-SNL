@@ -18,6 +18,8 @@
     "Topology.ctxt.X",
     "Topology.ctxt.Y",
     "Topology.def.boundary",
+    "Topology.def.C1",
+    "Topology.def.C2",
     "Topology.def.closedSet",
     "Topology.def.closure",
     "Topology.def.closurePoint",
@@ -49,6 +51,7 @@
     "Topology.def.perfectSet",
     "Topology.def.productTopology",
     "Topology.def.selfDense",
+    "Topology.def.separable",
     "Topology.def.seqConvergence",
     "Topology.def.seqLimit",
     "Topology.def.sequentialCompactness",
@@ -57,6 +60,7 @@
     "Topology.def.T1",
     "Topology.def.T2",
     "Topology.def.T3",
+    "Topology.def.T4",
     "Topology.def.topologicalBasis",
     "Topology.def.topologicalSpace",
     "Topology.def.topology",
@@ -102,6 +106,8 @@
     "Topology.subsec.limit",
     "Topology.subsec.mapLimit",
     "Topology.subsec.separation",
-    "Topology.thm.heineBorel"
+    "Topology.thm.heineBorel",
+    "Topology.thm.lindelof",
+    "Topology.thm.T4Urysohn"
   ]
 }

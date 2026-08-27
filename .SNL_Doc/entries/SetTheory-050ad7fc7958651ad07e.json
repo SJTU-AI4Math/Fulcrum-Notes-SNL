@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.remark.countability",
+    "package": "SetTheory",
+    "kind": "remark",
+    "title": "Remaining to be extended",
+    "content": {
+      "snl": "%先不通过基数来定义可数的概念，以便后续（测度论、拓扑学等）引用。集合的基数的定义要依赖集合的序数，集合的序数的定义要依赖序结构等，均留待日后补全。%"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

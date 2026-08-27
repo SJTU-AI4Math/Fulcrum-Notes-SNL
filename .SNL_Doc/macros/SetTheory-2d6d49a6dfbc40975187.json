@@ -2,25 +2,22 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "BasicOperators",
+  "package": "SetTheory",
   "macro": {
-    "description": "Natural numbers",
+    "description": "集合的基数/势",
     "source": {
-      "entries": [
-        "Type.def.nat"
-      ],
+      "entries": [],
       "urls": []
     },
     "kind": "const",
     "dynamic_arity": false,
-    "tags": [],
     "styles": [
       {
-        "style_name": "default",
+        "style_name": "op_card",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathbb{N}",
+          "body": "\\operatorname{card}#0",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,11 +37,11 @@
         }
       },
       {
-        "style_name": "operator",
+        "style_name": "vert",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathrm{Nat}",
+          "body": "\\left\\lvert #0 \\right\\rvert",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -64,6 +61,7 @@
         }
       }
     ],
-    "name": "Nat"
+    "tags": [],
+    "name": "Set.card"
   }
 }

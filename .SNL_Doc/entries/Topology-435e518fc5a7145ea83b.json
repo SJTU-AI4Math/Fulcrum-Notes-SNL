@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.def.C2",
+    "package": "Topology",
+    "kind": "definition",
+    "title": "第二可数空间 / C2 空间 / 完全可分空间",
+    "content": {
+      "snl": "def[predicate](\r\n    Topology.C2(S@Topology.ctxt.S),\r\n    Logic.exists-typed(\r\n        @U,\r\n        Set(Set(T@Set.ctxt.T)),\r\n        Logic.and(Topology.topologicalBasis(U, S@Topology.ctxt.S), Set.countable(U))\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

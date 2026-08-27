@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.cardinality",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "集合等势",
+    "content": {
+      "snl": "def[predicate](\r\n    Eq(Set.card(A@Set.ctxt.AB), Set.card(B@Set.ctxt.AB)),\r\n    Logic.exists-typed(\r\n        @f,\r\n        Type.to(A@Set.ctxt.AB, B@Set.ctxt.AB),\r\n        Set.bijective(f)\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

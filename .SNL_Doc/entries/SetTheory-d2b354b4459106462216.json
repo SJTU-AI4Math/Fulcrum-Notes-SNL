@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.relation",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "二元关系",
+    "content": {
+      "snl": "def(\r\n    Rl(A@Set.ctxt.AB, B@Set.ctxt.AB),\r\n    Type.to(Type.prod(A@Set.ctxt.AB, B@Set.ctxt.AB), Proposition)\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

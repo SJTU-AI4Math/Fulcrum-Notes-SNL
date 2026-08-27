@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.thm.lindelof",
+    "package": "Topology",
+    "kind": "theorem",
+    "title": "林德洛夫定理",
+    "content": {
+      "snl": "Logic.implies(Logic.and(Topology.C2(S@Topology.ctxt.S), Topology.T3(S@Topology.ctxt.S)), Topology.T4(S@Topology.ctxt.S))\r\n"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

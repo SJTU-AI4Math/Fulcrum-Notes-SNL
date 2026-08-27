@@ -223,6 +223,41 @@
       "props": {
         "entryId": "Set.def.bijective"
       }
+    },
+    {
+      "id": "n_12",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.subsec.ordinal"
+      }
+    },
+    {
+      "id": "n_13",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.subsec.cardinal"
+      }
+    },
+    {
+      "id": "n_14",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.cardinality"
+      }
+    },
+    {
+      "id": "n_15",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.remark.countability"
+      }
+    },
+    {
+      "id": "n_16",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.countable"
+      }
     }
   ],
   "relationships": [
@@ -299,6 +334,16 @@
     {
       "from": "n_sec",
       "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_12",
+      "label": "branch"
+    },
+    {
+      "from": "n_sec",
+      "to": "n_13",
       "label": "branch"
     },
     {
@@ -379,6 +424,21 @@
     {
       "from": "n_1",
       "to": "n_11",
+      "label": "branch"
+    },
+    {
+      "from": "n_13",
+      "to": "n_14",
+      "label": "branch"
+    },
+    {
+      "from": "n_13",
+      "to": "n_15",
+      "label": "branch"
+    },
+    {
+      "from": "n_13",
+      "to": "n_16",
       "label": "branch"
     }
   ]

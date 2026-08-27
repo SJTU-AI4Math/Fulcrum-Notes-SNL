@@ -678,6 +678,41 @@
       "props": {
         "entryId": "Topology.def.neighborhoodBasis"
       }
+    },
+    {
+      "id": "n_97",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.C1"
+      }
+    },
+    {
+      "id": "n_98",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.C2"
+      }
+    },
+    {
+      "id": "n_99",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.separable"
+      }
+    },
+    {
+      "id": "n_100",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.T4"
+      }
+    },
+    {
+      "id": "n_101",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.thm.lindelof"
+      }
     }
   ],
   "relationships": [
@@ -1108,6 +1143,11 @@
     },
     {
       "from": "n_92",
+      "to": "n_100",
+      "label": "branch"
+    },
+    {
+      "from": "n_92",
       "to": "n_79",
       "label": "branch"
     },
@@ -1149,6 +1189,26 @@
     {
       "from": "n_86",
       "to": "n_87",
+      "label": "branch"
+    },
+    {
+      "from": "n_86",
+      "to": "n_97",
+      "label": "branch"
+    },
+    {
+      "from": "n_86",
+      "to": "n_99",
+      "label": "branch"
+    },
+    {
+      "from": "n_86",
+      "to": "n_98",
+      "label": "branch"
+    },
+    {
+      "from": "n_86",
+      "to": "n_101",
       "label": "branch"
     }
   ]

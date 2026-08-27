@@ -2,25 +2,24 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "BasicOperators",
+  "package": "SetTheory",
   "macro": {
-    "description": "Natural numbers",
+    "description": "全序/线性序集合（性质）",
     "source": {
       "entries": [
-        "Type.def.nat"
+        "Set.def.order.linear"
       ],
       "urls": []
     },
     "kind": "const",
     "dynamic_arity": false,
-    "tags": [],
     "styles": [
       {
         "style_name": "default",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathbb{N}",
+          "body": "(#0, #1)\\text{ 是全序集合}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,11 +39,11 @@
         }
       },
       {
-        "style_name": "operator",
+        "style_name": "variant",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathrm{Nat}",
+          "body": "#1\\text{ 是 }#0\\text{ 上的全序关系}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -64,6 +63,7 @@
         }
       }
     ],
-    "name": "Nat"
+    "tags": [],
+    "name": "Set.order.linear"
   }
 }

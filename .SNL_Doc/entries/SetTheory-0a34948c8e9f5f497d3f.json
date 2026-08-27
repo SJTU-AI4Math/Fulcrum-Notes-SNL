@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.order.linear",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "全序集合/线性序集合",
+    "content": {
+      "snl": "def-struct-hyp(\r\n    list-partial(Type.annotation(@P, Set(T)), Type.annotation(@$\\lt$, Rl(P, P))),\r\n    Set.order.linear(P, $\\lt$),\r\n    struct(\r\n        Set.order.partial(P, $\\lt$),\r\n        Logic.forall-typed(@p, P, Logic.forall-typed(@q, P, Logic.or(Eq(p, q), Logic.or(Rl.apply($\\lt$, p, q), Rl.apply($\\lt$, q, p)))))\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

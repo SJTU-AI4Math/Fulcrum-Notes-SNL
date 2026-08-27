@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.countablyCompact(A),\r\n    Logic.forall-typed(\r\n        @C,\r\n        Set(Set(T@Set.ctxt.T)),\r\n        Logic.implies(\r\n            Topology.openCover(C, A),\r\n            Logic.exists-typed(\r\n                @F,\r\n                Set(Set(T@Set.ctxt.T)),\r\n                Logic.and(Set.subset(F, C), Logic.and(Topology.openCover(F, A), %具有可数势（未来用 `card` 替换）%))\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "def-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.countablyCompact(A),\r\n    Logic.forall-typed(\r\n        @C,\r\n        Set(Set(T@Set.ctxt.T)),\r\n        Logic.implies(\r\n            Topology.openCover(C, A),\r\n            Logic.exists-typed(\r\n                @F,\r\n                Set(Set(T@Set.ctxt.T)),\r\n                Logic.and(Set.subset(F, C), Logic.and(Topology.openCover(F, A), Set.countable(F)))\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,
