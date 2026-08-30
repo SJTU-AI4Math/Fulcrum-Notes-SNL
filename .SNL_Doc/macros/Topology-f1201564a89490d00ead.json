@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "Predicate: d is a metric on S",
+    "source": {
+      "entries": [
+        "Topology.def.metric"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0\\text{ 是 }#1\\text{ 上的度量}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      }
+    ],
+    "name": "Topology.metric"
+  }
+}

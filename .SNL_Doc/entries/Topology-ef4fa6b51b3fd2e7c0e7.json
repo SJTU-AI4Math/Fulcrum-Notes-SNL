@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.prop.metricOfT4",
+    "package": "Topology",
+    "kind": "property",
+    "title": "度量空间总是 T4 空间",
+    "content": {
+      "snl": "Logic.implies(\r\n    Topology.ms(S@Topology.ctxt.S, d@Topology.def.metric),\r\n    Topology.T4(S@Topology.ctxt.S)\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

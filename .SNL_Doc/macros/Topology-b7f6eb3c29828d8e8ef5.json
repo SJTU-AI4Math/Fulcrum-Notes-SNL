@@ -1,0 +1,69 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Topology.def.openBall"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "B",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "B(#0, #1)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "U",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "U(#0, #1)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      }
+    ],
+    "tags": [],
+    "name": "Topology.openBall"
+  }
+}

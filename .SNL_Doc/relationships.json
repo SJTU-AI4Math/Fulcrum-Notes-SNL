@@ -8464,6 +8464,136 @@
       }
     },
     {
+      "id": "dep.Topology.def.bounded.Fulcrum.def",
+      "from": "Topology.def.bounded",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.bounded.Logic.def.exists",
+      "from": "Topology.def.bounded",
+      "to": "Logic.def.exists",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.exists"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.bounded.Logic.def.forall",
+      "from": "Topology.def.bounded",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.bounded.Real.real",
+      "from": "Topology.def.bounded",
+      "to": "Real.real",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "PReal"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.bounded.Set.def.set",
+      "from": "Topology.def.bounded",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.bounded.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Topology.def.bounded",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.bounded.Topology.def.metricSpace",
+      "from": "Topology.def.bounded",
+      "to": "Topology.def.metricSpace",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.ms"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.bounded.Type.def.annotation",
+      "from": "Topology.def.bounded",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.bounded.Type.def.prod",
+      "from": "Topology.def.bounded",
+      "to": "Type.def.prod",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.prod"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.bounded.Type.def.prod.ctor.pair",
+      "from": "Topology.def.bounded",
+      "to": "Type.def.prod.ctor.pair",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.pair"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Topology.def.closedSet.Fulcrum.def",
       "from": "Topology.def.closedSet",
       "to": "Fulcrum.def",
@@ -10492,6 +10622,214 @@
       }
     },
     {
+      "id": "dep.Topology.def.metric.Fulcrum.def",
+      "from": "Topology.def.metric",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.metric.Logic.def.eq",
+      "from": "Topology.def.metric",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.metric.Logic.def.forall",
+      "from": "Topology.def.metric",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.metric.Logic.def.iff",
+      "from": "Topology.def.metric",
+      "to": "Logic.def.iff",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.iff"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.metric.Real.real",
+      "from": "Topology.def.metric",
+      "to": "Real.real",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Real"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.metric.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Topology.def.metric",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.metric.Type.def.annotation",
+      "from": "Topology.def.metric",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.metric.Type.def.prod",
+      "from": "Topology.def.metric",
+      "to": "Type.def.prod",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.prod"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.metric.Type.def.prod.ctor.pair",
+      "from": "Topology.def.metric",
+      "to": "Type.def.prod.ctor.pair",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.pair"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.metric.Type.rl.fun",
+      "from": "Topology.def.metric",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.metricSpace.Fulcrum.def",
+      "from": "Topology.def.metricSpace",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.metricSpace.Real.real",
+      "from": "Topology.def.metricSpace",
+      "to": "Real.real",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Real"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.metricSpace.Topology.def.metric",
+      "from": "Topology.def.metricSpace",
+      "to": "Topology.def.metric",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.metric"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.metricSpace.Type.def.annotation",
+      "from": "Topology.def.metricSpace",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.metricSpace.Type.def.prod",
+      "from": "Topology.def.metricSpace",
+      "to": "Type.def.prod",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.prod"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.metricSpace.Type.rl.fun",
+      "from": "Topology.def.metricSpace",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Topology.def.neighborhood.Fulcrum.def",
       "from": "Topology.def.neighborhood",
       "to": "Fulcrum.def",
@@ -10877,6 +11215,97 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openBall.Fulcrum.def",
+      "from": "Topology.def.openBall",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openBall.Real.real",
+      "from": "Topology.def.openBall",
+      "to": "Real.real",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "PReal"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openBall.Set.def.sep",
+      "from": "Topology.def.openBall",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.openBall.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Topology.def.openBall",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openBall.Topology.def.metricSpace",
+      "from": "Topology.def.openBall",
+      "to": "Topology.def.metricSpace",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.ms"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.openBall.Type.def.annotation",
+      "from": "Topology.def.openBall",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.openBall.Type.def.prod.ctor.pair",
+      "from": "Topology.def.openBall",
+      "to": "Type.def.prod.ctor.pair",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.pair"
         ],
         "isAtomic": false
       }
@@ -12191,7 +12620,7 @@
         "macros": [
           "def"
         ],
-        "isAtomic": true
+        "isAtomic": false
       }
     },
     {
@@ -14275,19 +14704,6 @@
       }
     },
     {
-      "id": "dep.Topology.prop.continuousPreservesConvergenceInT2.Fulcrum.thm",
-      "from": "Topology.prop.continuousPreservesConvergenceInT2",
-      "to": "Fulcrum.thm",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "thm-hyp"
-        ],
-        "isAtomic": true
-      }
-    },
-    {
       "id": "dep.Topology.prop.continuousPreservesConvergenceInT2.Logic.def.and",
       "from": "Topology.prop.continuousPreservesConvergenceInT2",
       "to": "Logic.def.and",
@@ -14309,19 +14725,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Logic.implies"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Topology.prop.continuousPreservesConvergenceInT2.Set.def.set",
-      "from": "Topology.prop.continuousPreservesConvergenceInT2",
-      "to": "Set.def.set",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Set"
         ],
         "isAtomic": false
       }
@@ -14938,6 +15341,201 @@
       }
     },
     {
+      "id": "dep.Topology.prop.metricOfT2.Logic.def.implies",
+      "from": "Topology.prop.metricOfT2",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfT2.Topology.def.T2",
+      "from": "Topology.prop.metricOfT2",
+      "to": "Topology.def.T2",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.T2"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfT2.Topology.def.metricSpace",
+      "from": "Topology.prop.metricOfT2",
+      "to": "Topology.def.metricSpace",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.ms"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfT4.Logic.def.implies",
+      "from": "Topology.prop.metricOfT4",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfT4.Topology.def.T4",
+      "from": "Topology.prop.metricOfT4",
+      "to": "Topology.def.T4",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.T4"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfT4.Topology.def.metricSpace",
+      "from": "Topology.prop.metricOfT4",
+      "to": "Topology.def.metricSpace",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.ms"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfTopology.Logic.def.exists",
+      "from": "Topology.prop.metricOfTopology",
+      "to": "Logic.def.exists",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.exists"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfTopology.Logic.def.forall",
+      "from": "Topology.prop.metricOfTopology",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfTopology.Real.real",
+      "from": "Topology.prop.metricOfTopology",
+      "to": "Real.real",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "PReal"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfTopology.Set.def.sep",
+      "from": "Topology.prop.metricOfTopology",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfTopology.Set.def.set",
+      "from": "Topology.prop.metricOfTopology",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfTopology.Set.def.subset",
+      "from": "Topology.prop.metricOfTopology",
+      "to": "Set.def.subset",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.subset"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfTopology.Topology.def.metricSpace",
+      "from": "Topology.prop.metricOfTopology",
+      "to": "Topology.def.metricSpace",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.ms"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfTopology.Topology.def.openBall",
+      "from": "Topology.prop.metricOfTopology",
+      "to": "Topology.def.openBall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.openBall"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.metricOfTopology.Topology.def.topology",
+      "from": "Topology.prop.metricOfTopology",
+      "to": "Topology.def.topology",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.topology"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Topology.prop.nestedCompactInT2.Fulcrum.thm",
       "from": "Topology.prop.nestedCompactInT2",
       "to": "Fulcrum.thm",
@@ -15013,6 +15611,84 @@
           "Type.to"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.openBallOfNeighborhood.Real.real",
+      "from": "Topology.prop.openBallOfNeighborhood",
+      "to": "Real.real",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "PReal"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.openBallOfNeighborhood.Set.def.mem",
+      "from": "Topology.prop.openBallOfNeighborhood",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.openBallOfNeighborhood.Topology.def.metricSpace",
+      "from": "Topology.prop.openBallOfNeighborhood",
+      "to": "Topology.def.metricSpace",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.ms"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.openBallOfNeighborhood.Topology.def.neighborhoodFamily",
+      "from": "Topology.prop.openBallOfNeighborhood",
+      "to": "Topology.def.neighborhoodFamily",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.Nbr"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.openBallOfNeighborhood.Topology.def.openBall",
+      "from": "Topology.prop.openBallOfNeighborhood",
+      "to": "Topology.def.openBall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.openBall"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.openBallOfNeighborhood.Type.def.annotation",
+      "from": "Topology.prop.openBallOfNeighborhood",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
       }
     },
     {

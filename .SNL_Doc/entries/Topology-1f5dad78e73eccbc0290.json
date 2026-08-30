@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.def.metricSpace",
+    "package": "Topology",
+    "kind": "definition",
+    "title": "度量空间",
+    "content": {
+      "snl": "def-hyp[predicate](\r\n    Type.annotation(@d, Type.to(Type.prod(S@Topology.ctxt.S, S@Topology.ctxt.S), Real)), \r\n    Topology.ms(S@Topology.ctxt.S, d),\r\n    Topology.metric(d, S@Topology.ctxt.S)\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

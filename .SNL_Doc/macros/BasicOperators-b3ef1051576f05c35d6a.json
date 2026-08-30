@@ -2,25 +2,24 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "Topology",
+  "package": "BasicOperators",
   "macro": {
-    "description": "Predicate: (S, tau) is a topological space",
+    "description": "Positive Real Numbers",
     "source": {
       "entries": [
-        "Topology.def.topologicalSpace"
+        "Real.real"
       ],
       "urls": []
     },
     "kind": "const",
     "dynamic_arity": false,
-    "tags": [],
     "styles": [
       {
         "style_name": "default",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "(#0,#1)\\text{ 是拓扑空间}",
+          "body": "\\mathbb{R}_+",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -40,6 +39,7 @@
         }
       }
     ],
-    "name": "Topology.topologicalSpace"
+    "tags": [],
+    "name": "PReal"
   }
 }

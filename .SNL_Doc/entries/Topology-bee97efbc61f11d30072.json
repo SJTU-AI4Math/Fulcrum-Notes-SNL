@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.def.metric",
+    "package": "Topology",
+    "kind": "definition",
+    "title": "度量",
+    "content": {
+      "snl": "def-struct-hyp(\r\n    Type.annotation(@d, Type.to(Type.prod(S@Topology.ctxt.S, S@Topology.ctxt.S), Real)),\r\n    Topology.metric(d, S@Topology.ctxt.S),\r\n    struct(\r\n        member[colon](%非负性%, Logic.forall-typed(Type.pair(@x, @y), Type.prod(S@Topology.ctxt.S, S@Topology.ctxt.S), Le(0, Type.apply(d, Type.pair(x,y))))),\r\n        member[colon](%正定性%, Logic.forall-typed(Type.pair(@x, @y), Type.prod(S@Topology.ctxt.S, S@Topology.ctxt.S), Logic.iff(Eq(0, Type.apply(d, Type.pair(x,y))), Eq(x, y)))),\r\n        member[colon](%对称性%, Logic.forall-typed(@x, S@Topology.ctxt.S, Logic.forall-typed(@y, S@Topology.ctxt.S, Eq(Type.apply(d, Type.pair(x, y)), Type.apply(d, Type.pair(y, x)))))),\r\n        member[colon](\r\n            %次可加性 / 三角不等式%, Logic.forall-typed(\r\n                @x, \r\n                S@Topology.ctxt.S, \r\n                Logic.forall-typed(\r\n                    @y, \r\n                    S@Topology.ctxt.S, \r\n                    Logic.forall-typed(\r\n                        @z, \r\n                        S@Topology.ctxt.S,\r\n                        Le(Type.apply(d, Type.pair(x, z)), Add.add(Type.apply(d, Type.pair(x, y)), Type.apply(d, Type.pair(y, z))))\r\n                    )\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

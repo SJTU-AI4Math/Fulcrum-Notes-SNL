@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def[predicate](Topology.topologicalSpace(S@Topology.ctxt.S,τ@Topology.ctxt.tau),Topology.topology(τ@Topology.ctxt.tau,S@Topology.ctxt.S))"
+      "snl": "def[predicate](Topology.ts(S@Topology.ctxt.S,τ@Topology.ctxt.tau),Topology.topology(τ@Topology.ctxt.tau,S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null,

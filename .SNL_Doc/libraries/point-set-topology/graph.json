@@ -713,6 +713,76 @@
       "props": {
         "entryId": "Topology.thm.lindelof"
       }
+    },
+    {
+      "id": "n_102",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.sec.metric"
+      }
+    },
+    {
+      "id": "n_103",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.basicConceptsMetric"
+      }
+    },
+    {
+      "id": "n_104",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.metric"
+      }
+    },
+    {
+      "id": "n_105",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.metricSpace"
+      }
+    },
+    {
+      "id": "n_106",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.openBall"
+      }
+    },
+    {
+      "id": "n_107",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.metricOfTopology"
+      }
+    },
+    {
+      "id": "n_108",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.openBallOfNeighborhood"
+      }
+    },
+    {
+      "id": "n_109",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.metricOfT2"
+      }
+    },
+    {
+      "id": "n_110",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.metricOfT4"
+      }
+    },
+    {
+      "id": "n_111",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.bounded"
+      }
     }
   ],
   "relationships": [
@@ -1209,6 +1279,51 @@
     {
       "from": "n_86",
       "to": "n_101",
+      "label": "branch"
+    },
+    {
+      "from": "n_102",
+      "to": "n_103",
+      "label": "branch"
+    },
+    {
+      "from": "n_103",
+      "to": "n_104",
+      "label": "branch"
+    },
+    {
+      "from": "n_103",
+      "to": "n_105",
+      "label": "branch"
+    },
+    {
+      "from": "n_103",
+      "to": "n_106",
+      "label": "branch"
+    },
+    {
+      "from": "n_103",
+      "to": "n_111",
+      "label": "branch"
+    },
+    {
+      "from": "n_106",
+      "to": "n_107",
+      "label": "branch"
+    },
+    {
+      "from": "n_106",
+      "to": "n_108",
+      "label": "branch"
+    },
+    {
+      "from": "n_106",
+      "to": "n_109",
+      "label": "branch"
+    },
+    {
+      "from": "n_106",
+      "to": "n_110",
       "label": "branch"
     }
   ]
