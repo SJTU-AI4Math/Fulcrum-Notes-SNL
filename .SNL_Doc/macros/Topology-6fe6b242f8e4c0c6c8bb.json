@@ -2,15 +2,24 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "TypeTheory",
+  "package": "Topology",
   "macro": {
+    "description": "",
+    "source": {
+      "entries": [
+        "Topology.def.diameter"
+      ],
+      "urls": []
+    },
     "kind": "const",
     "dynamic_arity": false,
     "styles": [
       {
+        "style_name": "op",
+        "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathsf{lambda}",
+          "body": "\\operatorname{diam}#0",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -27,19 +36,10 @@
           },
           "markdown": "",
           "text": ""
-        },
-        "style_name": "default",
-        "tags": []
+        }
       }
     ],
-    "description": "lambda constructor pattern label",
-    "source": {
-      "entries": [
-        "Syntax.def.expression-UTLC.ctor.lambdaAbstraction"
-      ],
-      "urls": []
-    },
     "tags": [],
-    "name": "Syntax.pattern.UTLC.lambda"
+    "name": "Topology.diam"
   }
 }

@@ -4860,6 +4860,281 @@
       }
     },
     {
+      "id": "dep.Order.ctxt.T.Type.def.annotation",
+      "from": "Order.ctxt.T",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.ctxt.T.Type.rl.univ",
+      "from": "Order.ctxt.T",
+      "to": "Type.rl.univ",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.linearOrder.Fulcrum.def",
+      "from": "Order.def.linearOrder",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Order.def.linearOrder.Logic.def.eq",
+      "from": "Order.def.linearOrder",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.linearOrder.Logic.def.forall",
+      "from": "Order.def.linearOrder",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Order.def.linearOrder.Logic.def.or",
+      "from": "Order.def.linearOrder",
+      "to": "Logic.def.or",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.or"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.linearOrder.Order.def.partialOrder",
+      "from": "Order.def.linearOrder",
+      "to": "Order.def.partialOrder",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Order.partial"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.linearOrder.Set.def.relation",
+      "from": "Order.def.linearOrder",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl",
+          "Rl.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Order.def.linearOrder.Type.def.annotation",
+      "from": "Order.def.linearOrder",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Order.def.maximal.Fulcrum.def",
+      "from": "Order.def.maximal",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Order.def.maximal.Logic.def.forall",
+      "from": "Order.def.maximal",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.maximal.Logic.def.neg",
+      "from": "Order.def.maximal",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.maximal.Set.def.relation",
+      "from": "Order.def.maximal",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.maximal.Type.def.annotation",
+      "from": "Order.def.maximal",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Order.def.partialOrder.Fulcrum.def",
+      "from": "Order.def.partialOrder",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Order.def.partialOrder.Logic.def.and",
+      "from": "Order.def.partialOrder",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.partialOrder.Logic.def.forall",
+      "from": "Order.def.partialOrder",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.partialOrder.Logic.def.implies",
+      "from": "Order.def.partialOrder",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.partialOrder.Logic.def.neg",
+      "from": "Order.def.partialOrder",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.partialOrder.Set.def.relation",
+      "from": "Order.def.partialOrder",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl",
+          "Rl.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Order.def.partialOrder.Type.def.annotation",
+      "from": "Order.def.partialOrder",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Set.ctxt.AB.Set.def.set",
       "from": "Set.ctxt.AB",
       "to": "Set.def.set",
@@ -6108,6 +6383,462 @@
       }
     },
     {
+      "id": "dep.Set.def.order.greatest.Fulcrum.def",
+      "from": "Set.def.order.greatest",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.greatest.Logic.def.and",
+      "from": "Set.def.order.greatest",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.greatest.Logic.def.eq",
+      "from": "Set.def.order.greatest",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.greatest.Logic.def.forall",
+      "from": "Set.def.order.greatest",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.greatest.Logic.def.or",
+      "from": "Set.def.order.greatest",
+      "to": "Logic.def.or",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.or"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.greatest.Set.def.mem",
+      "from": "Set.def.order.greatest",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.greatest.Set.def.relation",
+      "from": "Set.def.order.greatest",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.greatest.Set.def.set",
+      "from": "Set.def.order.greatest",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.greatest.Type.def.annotation",
+      "from": "Set.def.order.greatest",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.infimum.Fulcrum.def",
+      "from": "Set.def.order.infimum",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.infimum.Logic.def.eq",
+      "from": "Set.def.order.infimum",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.infimum.Set.def.order.greatest",
+      "from": "Set.def.order.infimum",
+      "to": "Set.def.order.greatest",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.greatest"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.infimum.Set.def.order.supremum",
+      "from": "Set.def.order.infimum",
+      "to": "Set.def.order.supremum",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.inf"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.infimum.Set.def.order.upperBound",
+      "from": "Set.def.order.infimum",
+      "to": "Set.def.order.upperBound",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.lowerBound"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.infimum.Set.def.sep",
+      "from": "Set.def.order.infimum",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.infimum.Set.def.set",
+      "from": "Set.def.order.infimum",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.infimum.Type.def.annotation",
+      "from": "Set.def.order.infimum",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.isomorphism.Fulcrum.def",
+      "from": "Set.def.order.isomorphism",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.isomorphism.Logic.def.forall",
+      "from": "Set.def.order.isomorphism",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.isomorphism.Logic.def.iff",
+      "from": "Set.def.order.isomorphism",
+      "to": "Logic.def.iff",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.iff"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.isomorphism.Set.def.order.partial",
+      "from": "Set.def.order.isomorphism",
+      "to": "Set.def.order.partial",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.partial"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.isomorphism.Set.def.relation",
+      "from": "Set.def.order.isomorphism",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl",
+          "Rl.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.isomorphism.Set.def.set",
+      "from": "Set.def.order.isomorphism",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.isomorphism.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Set.def.order.isomorphism",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.isomorphism.Type.def.annotation",
+      "from": "Set.def.order.isomorphism",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.isomorphism.Type.rl.fun",
+      "from": "Set.def.order.isomorphism",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.least.Fulcrum.def",
+      "from": "Set.def.order.least",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.least.Logic.def.and",
+      "from": "Set.def.order.least",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.least.Logic.def.eq",
+      "from": "Set.def.order.least",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.least.Logic.def.forall",
+      "from": "Set.def.order.least",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.least.Logic.def.or",
+      "from": "Set.def.order.least",
+      "to": "Logic.def.or",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.or"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.least.Set.def.mem",
+      "from": "Set.def.order.least",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.least.Set.def.relation",
+      "from": "Set.def.order.least",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.least.Set.def.set",
+      "from": "Set.def.order.least",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.least.Type.def.annotation",
+      "from": "Set.def.order.least",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Set.def.order.linear.Fulcrum.def",
       "from": "Set.def.order.linear",
       "to": "Fulcrum.def",
@@ -6213,6 +6944,462 @@
       }
     },
     {
+      "id": "dep.Set.def.order.lowerBound.Fulcrum.def",
+      "from": "Set.def.order.lowerBound",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.lowerBound.Logic.def.eq",
+      "from": "Set.def.order.lowerBound",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.lowerBound.Logic.def.forall",
+      "from": "Set.def.order.lowerBound",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.lowerBound.Logic.def.or",
+      "from": "Set.def.order.lowerBound",
+      "to": "Logic.def.or",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.or"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.lowerBound.Set.def.order.upperBound",
+      "from": "Set.def.order.lowerBound",
+      "to": "Set.def.order.upperBound",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.lowerBound"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.lowerBound.Set.def.relation",
+      "from": "Set.def.order.lowerBound",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.lowerBound.Set.def.set",
+      "from": "Set.def.order.lowerBound",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.lowerBound.Type.def.annotation",
+      "from": "Set.def.order.lowerBound",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.maximal.Fulcrum.def",
+      "from": "Set.def.order.maximal",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.maximal.Logic.def.and",
+      "from": "Set.def.order.maximal",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.maximal.Logic.def.eq",
+      "from": "Set.def.order.maximal",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.maximal.Logic.def.forall",
+      "from": "Set.def.order.maximal",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.maximal.Logic.def.neg",
+      "from": "Set.def.order.maximal",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.maximal.Set.def.mem",
+      "from": "Set.def.order.maximal",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.maximal.Set.def.relation",
+      "from": "Set.def.order.maximal",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.maximal.Set.def.set",
+      "from": "Set.def.order.maximal",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.maximal.Type.def.annotation",
+      "from": "Set.def.order.maximal",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.minimal.Fulcrum.def",
+      "from": "Set.def.order.minimal",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.minimal.Logic.def.and",
+      "from": "Set.def.order.minimal",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.minimal.Logic.def.eq",
+      "from": "Set.def.order.minimal",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.minimal.Logic.def.forall",
+      "from": "Set.def.order.minimal",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.minimal.Logic.def.neg",
+      "from": "Set.def.order.minimal",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.neg"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.minimal.Set.def.mem",
+      "from": "Set.def.order.minimal",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.minimal.Set.def.relation",
+      "from": "Set.def.order.minimal",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.minimal.Set.def.set",
+      "from": "Set.def.order.minimal",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.minimal.Type.def.annotation",
+      "from": "Set.def.order.minimal",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.orderIsomorphism.Fulcrum.def",
+      "from": "Set.def.order.orderIsomorphism",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.orderIsomorphism.Logic.def.forall",
+      "from": "Set.def.order.orderIsomorphism",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.orderIsomorphism.Logic.def.iff",
+      "from": "Set.def.order.orderIsomorphism",
+      "to": "Logic.def.iff",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.iff"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.orderIsomorphism.Set.def.order.partial",
+      "from": "Set.def.order.orderIsomorphism",
+      "to": "Set.def.order.partial",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.partial"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.orderIsomorphism.Set.def.relation",
+      "from": "Set.def.order.orderIsomorphism",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl",
+          "Rl.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.orderIsomorphism.Set.def.set",
+      "from": "Set.def.order.orderIsomorphism",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.orderIsomorphism.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Set.def.order.orderIsomorphism",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.orderIsomorphism.Type.def.annotation",
+      "from": "Set.def.order.orderIsomorphism",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.orderIsomorphism.Type.rl.fun",
+      "from": "Set.def.order.orderIsomorphism",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Set.def.order.partial.Fulcrum.def",
       "from": "Set.def.order.partial",
       "to": "Fulcrum.def",
@@ -6307,6 +7494,188 @@
     {
       "id": "dep.Set.def.order.partial.Type.def.annotation",
       "from": "Set.def.order.partial",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.supremum.Fulcrum.def",
+      "from": "Set.def.order.supremum",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.supremum.Logic.def.eq",
+      "from": "Set.def.order.supremum",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.supremum.Set.def.order.least",
+      "from": "Set.def.order.supremum",
+      "to": "Set.def.order.least",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.least"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.supremum.Set.def.order.upperBound",
+      "from": "Set.def.order.supremum",
+      "to": "Set.def.order.upperBound",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.upperBound"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.supremum.Set.def.sep",
+      "from": "Set.def.order.supremum",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.supremum.Set.def.set",
+      "from": "Set.def.order.supremum",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.supremum.Type.def.annotation",
+      "from": "Set.def.order.supremum",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.upperBound.Fulcrum.def",
+      "from": "Set.def.order.upperBound",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.upperBound.Logic.def.eq",
+      "from": "Set.def.order.upperBound",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.upperBound.Logic.def.forall",
+      "from": "Set.def.order.upperBound",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.order.upperBound.Logic.def.or",
+      "from": "Set.def.order.upperBound",
+      "to": "Logic.def.or",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.or"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.upperBound.Set.def.relation",
+      "from": "Set.def.order.upperBound",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.upperBound.Set.def.set",
+      "from": "Set.def.order.upperBound",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.order.upperBound.Type.def.annotation",
+      "from": "Set.def.order.upperBound",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -9746,6 +11115,149 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Fulcrum.def",
+      "from": "Topology.def.diameter",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Logic.def.and",
+      "from": "Topology.def.diameter",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Set.def.mem",
+      "from": "Topology.def.diameter",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Set.def.order.supremum",
+      "from": "Topology.def.diameter",
+      "to": "Set.def.order.supremum",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.sup"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Set.def.sep",
+      "from": "Topology.def.diameter",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Set.def.set",
+      "from": "Topology.def.diameter",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Topology.def.diameter",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Topology.def.metricSpace",
+      "from": "Topology.def.diameter",
+      "to": "Topology.def.metricSpace",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.ms"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Type.def.annotation",
+      "from": "Topology.def.diameter",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Type.def.prod",
+      "from": "Topology.def.diameter",
+      "to": "Type.def.prod",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.prod"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.diameter.Type.def.prod.ctor.pair",
+      "from": "Topology.def.diameter",
+      "to": "Type.def.prod.ctor.pair",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.pair"
         ],
         "isAtomic": false
       }
@@ -13744,6 +15256,84 @@
     {
       "id": "dep.Topology.prop.closureClosed.Type.def.annotation",
       "from": "Topology.prop.closureClosed",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.closureDiameter.Logic.def.eq",
+      "from": "Topology.prop.closureDiameter",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.closureDiameter.Set.def.set",
+      "from": "Topology.prop.closureDiameter",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.closureDiameter.Topology.def.closure",
+      "from": "Topology.prop.closureDiameter",
+      "to": "Topology.def.closure",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.closure"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.closureDiameter.Topology.def.diameter",
+      "from": "Topology.prop.closureDiameter",
+      "to": "Topology.def.diameter",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.diam"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Topology.prop.closureDiameter.Topology.def.metricSpace",
+      "from": "Topology.prop.closureDiameter",
+      "to": "Topology.def.metricSpace",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Topology.ms"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.prop.closureDiameter.Type.def.annotation",
+      "from": "Topology.prop.closureDiameter",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {

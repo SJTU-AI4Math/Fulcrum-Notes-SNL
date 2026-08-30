@@ -783,6 +783,20 @@
       "props": {
         "entryId": "Topology.def.bounded"
       }
+    },
+    {
+      "id": "n_112",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.def.diameter"
+      }
+    },
+    {
+      "id": "n_113",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prop.closureDiameter"
+      }
     }
   ],
   "relationships": [
@@ -1307,6 +1321,11 @@
       "label": "branch"
     },
     {
+      "from": "n_103",
+      "to": "n_112",
+      "label": "branch"
+    },
+    {
       "from": "n_106",
       "to": "n_107",
       "label": "branch"
@@ -1324,6 +1343,11 @@
     {
       "from": "n_106",
       "to": "n_110",
+      "label": "branch"
+    },
+    {
+      "from": "n_112",
+      "to": "n_113",
       "label": "branch"
     }
   ]

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "OrderTheory",
+  "entry": {
+    "id": "Order.def.linearOrder",
+    "package": "OrderTheory",
+    "kind": "definition",
+    "title": "全序关系 / 线性序关系",
+    "content": {
+      "snl": "def-struct-hyp(\r\n    Type.annotation(@$\\lt$, Rl(T@Order.ctxt.T, T@Order.ctxt.T)),\r\n    Order.linear(T@Order.ctxt.T, $\\lt$),\r\n    struct(\r\n        Order.partial(T@Order.ctxt.T, $\\lt$),\r\n        Logic.forall-typed(@p, T@Order.ctxt.T, Logic.forall-typed(@q, T@Order.ctxt.T, Logic.or(Eq(p, q), Logic.or(Rl.apply($\\lt$, p, q), Rl.apply($\\lt$, q, p)))))\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

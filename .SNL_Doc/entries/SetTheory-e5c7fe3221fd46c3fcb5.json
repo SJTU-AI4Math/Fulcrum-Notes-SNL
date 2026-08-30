@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.order.lowerBound",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "下界",
+    "content": {
+      "snl": "def-hyp[predicate](\r\n    list-partial(Type.annotation(@X, Set(P@Set.def.order.partial)), Type.annotation(@a, P@Set.def.order.partial)),\r\n    Set.order.lowerBound(a, X),\r\n    Logic.forall-typed(@x, X, Logic.or(Rl.apply($\\lt$@Set.def.order.partial, a, x), Eq(a, x)))\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

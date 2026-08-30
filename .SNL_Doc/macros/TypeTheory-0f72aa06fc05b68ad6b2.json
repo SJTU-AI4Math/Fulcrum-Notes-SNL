@@ -4,7 +4,6 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
-    "name": "Syntax.signatureFragment",
     "description": "Non-exhaustive syntax-signature fragment",
     "source": {
       "entries": [
@@ -66,6 +65,7 @@
         }
       }
     ],
-    "tags": []
+    "tags": [],
+    "name": "Syntax.signatureFragment"
   }
 }

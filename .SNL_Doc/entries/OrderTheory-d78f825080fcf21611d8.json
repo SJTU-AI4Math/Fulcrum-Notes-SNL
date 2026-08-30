@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "OrderTheory",
+  "entry": {
+    "id": "Order.def.maximal",
+    "package": "OrderTheory",
+    "kind": "definition",
+    "title": "最大元",
+    "content": {
+      "snl": "def-hyp[predicate](\r\n    Type.annotation(@a, S@Order.ctxt.S),\r\n    Order.maximal(a, S@Order.ctxt.S, T@Order.ctxt.T),\r\n    Logic.forall-typed(@x, S@Order.ctxt.S, Logic.neg(Rl.apply($\\lt$@Order.def.partialOrder, a, x)))\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

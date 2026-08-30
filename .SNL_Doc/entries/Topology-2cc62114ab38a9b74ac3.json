@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.prop.closureDiameter",
+    "package": "Topology",
+    "kind": "property",
+    "title": "闭包不改变直径",
+    "content": {
+      "snl": "thm-hyp(\r\n    list-partial(Topology.ms(S@Topology.ctxt.S, d@Topology.def.metric), Type.annotation(@A, Set(S@Topology.ctxt.S))),\r\n    Eq(Topology.diam(A), Topology.diam(Topology.closure(A)))\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

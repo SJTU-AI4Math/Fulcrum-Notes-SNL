@@ -2,15 +2,24 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "TypeTheory",
+  "package": "SetTheory",
   "macro": {
+    "description": "按序同构映射",
+    "source": {
+      "entries": [
+        "Set.def.order.isomorphism"
+      ],
+      "urls": []
+    },
     "kind": "const",
     "dynamic_arity": false,
     "styles": [
       {
+        "style_name": "default",
+        "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathsf{lambda}",
+          "body": "#0: #1 \\xrightarrow{\\sim} #2",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -27,19 +36,10 @@
           },
           "markdown": "",
           "text": ""
-        },
-        "style_name": "default",
-        "tags": []
+        }
       }
     ],
-    "description": "lambda constructor pattern label",
-    "source": {
-      "entries": [
-        "Syntax.def.expression-UTLC.ctor.lambdaAbstraction"
-      ],
-      "urls": []
-    },
     "tags": [],
-    "name": "Syntax.pattern.UTLC.lambda"
+    "name": "Set.order.isomorphism"
   }
 }

@@ -364,18 +364,19 @@
     "BasicAnalysis",
     "BasicOperators",
     "BasicTheorems",
+    "FulcrumNotesOneOffI18N",
     "FulcrumsMathNotes",
     "FunctionalProgramming",
     "Logic",
+    "MathematicianTerms",
     "MeasureTheory",
+    "OrderTheory",
     "Proof",
     "RealAnalysis",
     "SetTheory",
     "Tactics",
-    "TypeTheory",
     "Topology",
-    "FulcrumNotesOneOffI18N",
-    "MathematicianTerms"
+    "TypeTheory"
   ],
   "entity_storage": {
     "version": 1,

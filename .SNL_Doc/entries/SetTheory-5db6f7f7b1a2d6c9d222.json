@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.def.order.maximal",
+    "package": "SetTheory",
+    "kind": "definition",
+    "title": "最大元",
+    "content": {
+      "snl": "def-hyp[predicate](\r\n    list-partial(Type.annotation(@X, Set(P@Set.def.order.partial)), Type.annotation(@a, P@Set.def.order.partial)),\r\n    Eq(a, Set.order.max(X, P@Set.def.order.partial)),\r\n    Logic.and(\r\n        Set.mem(a, X),\r\n        Logic.forall-typed(@x, X, Logic.neg(Rl.apply($\\lt$@Set.def.order.partial, a, x)))\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

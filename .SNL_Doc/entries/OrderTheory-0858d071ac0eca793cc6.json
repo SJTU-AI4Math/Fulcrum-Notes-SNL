@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "OrderTheory",
+  "entry": {
+    "id": "Order.sec.order",
+    "package": "OrderTheory",
+    "kind": "section",
+    "title": "序结构",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -4,7 +4,6 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
-    "name": "Syntax.Expr-UTLC.apply",
     "description": "Untyped lambda application",
     "source": {
       "entries": [
@@ -90,6 +89,7 @@
         }
       }
     ],
-    "tags": []
+    "tags": [],
+    "name": "Syntax.Expr-UTLC.apply"
   }
 }

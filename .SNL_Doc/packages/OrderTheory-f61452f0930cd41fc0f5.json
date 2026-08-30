@@ -1,0 +1,17 @@
+{
+  "format": "snl-package",
+  "version": 1,
+  "schema_version": 2,
+  "id": "OrderTheory",
+  "name": "OrderTheory",
+  "description": "Order Theory based on Type Theory. If sets are needed, use namespace `Set.order`. ",
+  "entry_ids": [
+    "Order.ctxt.S",
+    "Order.ctxt.T",
+    "Order.def.linearOrder",
+    "Order.def.maximal",
+    "Order.def.partialOrder",
+    "Order.sec.order",
+    "Order.subsec.orderBasic"
+  ]
+}

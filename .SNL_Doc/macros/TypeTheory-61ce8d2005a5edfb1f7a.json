@@ -4,7 +4,6 @@
   "schema_version": 1,
   "package": "TypeTheory",
   "macro": {
-    "name": "Syntax.Expr-UTLC.lambda",
     "description": "Untyped lambda abstraction",
     "source": {
       "entries": [
@@ -138,6 +137,7 @@
         }
       }
     ],
-    "tags": []
+    "tags": [],
+    "name": "Syntax.Expr-UTLC.lambda"
   }
 }
