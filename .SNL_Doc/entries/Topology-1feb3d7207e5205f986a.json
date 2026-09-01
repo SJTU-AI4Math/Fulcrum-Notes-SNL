@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp[predicate](\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.compact(A),\r\n    Logic.forall-typed(\r\n        @C,\r\n        Set(Set(T@Set.ctxt.T)),\r\n        Logic.implies(\r\n            Topology.openCover(C, A),\r\n            Logic.exists-typed(\r\n                @F,\r\n                Set(Set(T@Set.ctxt.T)),\r\n                Logic.and(Set.subset(F, C), Logic.and(Topology.openCover(F, A), %势有限（将来用 `card` 替换）%))\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "def-hyp[predicate](\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.compact(A),\r\n    Logic.forall-typed(\r\n        @C,\r\n        Set(Set(T@Set.ctxt.T)),\r\n        Logic.implies(\r\n            Topology.openCover(C, A),\r\n            Logic.exists-typed(\r\n                @F,\r\n                Set(Set(T@Set.ctxt.T)),\r\n                Logic.and(Set.subset(F, C), Logic.and(Topology.openCover(F, A), Set.finite(F)))\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

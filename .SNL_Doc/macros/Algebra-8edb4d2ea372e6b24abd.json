@@ -2,26 +2,26 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "BasicOperators",
+  "package": "Algebra",
   "macro": {
-    "description": "Natural numbers",
+    "description": "The identity of monoid, unital semiring, unital ring ,etc.",
     "source": {
       "entries": [
-        "Type.def.nat",
-        "Set.example.nat"
+        "Algebra.def.identity",
+        "Algebra.def.monoid",
+        "Algebra.def.ring.unital"
       ],
       "urls": []
     },
     "kind": "const",
     "dynamic_arity": false,
-    "tags": [],
     "styles": [
       {
-        "style_name": "default",
+        "style_name": "1",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathbb{N}",
+          "body": "1_{#0}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -41,11 +41,35 @@
         }
       },
       {
-        "style_name": "operator",
+        "style_name": "id",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathrm{Nat}",
+          "body": "\\mathrm{id}_{#0}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "Id",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathrm{Id}_{#0}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -65,6 +89,7 @@
         }
       }
     ],
-    "name": "Nat"
+    "tags": [],
+    "name": "Algebra.Id"
   }
 }

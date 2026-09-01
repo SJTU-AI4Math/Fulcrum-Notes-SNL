@@ -4,7 +4,7 @@
   "schema_version": 1,
   "package": "SetTheory",
   "macro": {
-    "description": "",
+    "description": "Binary Relation on Type #0 and Type #1",
     "source": {
       "entries": [
         "Set.def.relation"

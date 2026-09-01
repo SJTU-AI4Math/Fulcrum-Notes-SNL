@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@H,Set(G@Algebra.ctxt.G)), Algebra.Subgroup, Algebra.Group)"
+      "snl": "def-hyp[predicate](Type.annotation(@H,Set(G@Algebra.ctxt.G)), Algebra.Subgroup(H, G@Algebra.ctxt.G), Algebra.Group(H, $\\cdot$@Algebra.ctxt.mul))"
     },
     "contribution_info": null,
     "pointer": null,

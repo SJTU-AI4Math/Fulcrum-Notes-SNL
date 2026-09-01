@@ -38,6 +38,30 @@
           "markdown": "",
           "text": ""
         }
+      },
+      {
+        "style_name": "single",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\in",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
     "name": "Set.mem"

@@ -6,7 +6,9 @@
   "macro": {
     "description": "",
     "source": {
-      "entries": [],
+      "entries": [
+        "Algebra.example.nat.add"
+      ],
       "urls": []
     },
     "kind": "const",
@@ -17,6 +19,30 @@
         "template": {
           "mode": "formula_inline",
           "body": "#0 + #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "single",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "+",
           "typst": {
             "built_in": "",
             "synthesis": {

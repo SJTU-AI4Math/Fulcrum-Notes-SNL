@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.sec.real",
+    "package": "BasicAnalysis",
+    "kind": "section",
+    "title": "实数的构造（实验性）",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

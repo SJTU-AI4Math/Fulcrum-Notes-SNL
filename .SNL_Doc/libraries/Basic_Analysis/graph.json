@@ -405,6 +405,27 @@
       "props": {
         "entryId": "BasicAnalysis.proof.rolle"
       }
+    },
+    {
+      "id": "n_59",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.sec.real"
+      }
+    },
+    {
+      "id": "n_60",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.subsec.real.preliminary"
+      }
+    },
+    {
+      "id": "n_61",
+      "label": "Entry",
+      "props": {
+        "entryId": "BasicAnalysis.rmk.real.planning"
+      }
     }
   ],
   "relationships": [
@@ -666,6 +687,16 @@
     {
       "from": "n_47",
       "to": "n_58",
+      "label": "branch"
+    },
+    {
+      "from": "n_59",
+      "to": "n_61",
+      "label": "branch"
+    },
+    {
+      "from": "n_59",
+      "to": "n_60",
       "label": "branch"
     }
   ]

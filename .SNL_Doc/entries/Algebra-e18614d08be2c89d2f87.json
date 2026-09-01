@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.def.ring",
+    "package": "Algebra",
+    "kind": "definition",
+    "title": "环",
+    "content": {
+      "snl": "def-struct(\r\n    Algebra.Ring(\r\n        R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring\r\n    ),\r\n    struct(\r\n        Algebra.Abelian(R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring),\r\n        Algebra.Semigroup(R@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring),\r\n        Logic.forall-typed(\r\n            list-partial(@a, @b, @c),\r\n            R@Algebra.ctxt.ring,\r\n            Logic.and(\r\n                Eq(\r\n                    Bop.apply($\\cdot$@Algebra.ctxt.ring, a, Bop.apply[paren]($+$@Algebra.ctxt.ring, b, c)),\r\n                    Bop.apply($+$@Algebra.ctxt.ring, Bop.apply($\\cdot$@Algebra.ctxt.ring, a, b), Bop.apply($\\cdot$@Algebra.ctxt.ring, a, c))\r\n                ),\r\n                Eq(\r\n                    Bop.apply($\\cdot$@Algebra.ctxt.ring, Bop.apply[paren]($+$@Algebra.ctxt.ring, a, b), c),\r\n                    Bop.apply($+$@Algebra.ctxt.ring, Bop.apply($\\cdot$@Algebra.ctxt.ring, a, c), Bop.apply($\\cdot$@Algebra.ctxt.ring, b, c))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

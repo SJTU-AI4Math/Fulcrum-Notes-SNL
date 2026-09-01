@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.rmk.real.planning",
+    "package": "BasicAnalysis",
+    "kind": "remark",
+    "title": "Planning",
+    "content": {
+      "markdown": "首先从 $\\mathbb{N}$ 的集合表示出发, 利用集合的包含关系得到 $\\mathbb{N}$ 的序结构, 然后构建加法运算（交换幺半群）. 利用交换幺半群的群化, 得到 $\\mathbb{Z}$ 的群结构, 重复该操作可以构建乘法运算, 得到 $\\mathbb{Z}$ 的环结构, 然后构建整环的分式域, 得到 $\\mathbb{Q}$ 的代数结构, 构造时, 序关系继承下来, 得到 $\\mathbb{Q}$ 是有序域.\r\n\r\n构建 $\\mathbb{Q}$ 上的域结构和序结构后, 根据 Dedekind 切割得到 $\\mathbb{R}$ 的序结构, 令代数运算继承于 $\\mathbb{Q}$, 这就可以建立3个序相关的连续性公理, 即确界原理、单调有界收敛定理、闭区间套定理. 有了 $\\mathbb{R}$ 上的序结构和代数运算, 度量便可被定义. 利用度量空间, 可以证明第4个连续性公理（Cauchy 收敛准则）. 令度量诱导拓扑得到 $\\mathbb{R}$ 的拓扑结构, 进而证明剩余拓扑相关的连续性公理, 即序列紧性定理、紧致性定理. 由此便完成 $\\mathbb{R}$ 的全部构造工作.\r\n"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

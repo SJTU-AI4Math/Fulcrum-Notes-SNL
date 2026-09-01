@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.prop.int.abelian",
+    "package": "Algebra",
+    "kind": "property",
+    "title": "整数及其加法是交换群",
+    "content": {
+      "snl": "Algebra.Abelian(Int, Add.add[single])"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -258,6 +258,111 @@
       "props": {
         "entryId": "Set.def.countable"
       }
+    },
+    {
+      "id": "n_17",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.preimage"
+      }
+    },
+    {
+      "id": "n_18",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.inv"
+      }
+    },
+    {
+      "id": "n_19",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.fun_graph"
+      }
+    },
+    {
+      "id": "n_20",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.prop.inverse"
+      }
+    },
+    {
+      "id": "n_21",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.partial"
+      }
+    },
+    {
+      "id": "n_22",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.maximal"
+      }
+    },
+    {
+      "id": "n_23",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.minimal"
+      }
+    },
+    {
+      "id": "n_24",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.greatest"
+      }
+    },
+    {
+      "id": "n_25",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.least"
+      }
+    },
+    {
+      "id": "n_26",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.upperBound"
+      }
+    },
+    {
+      "id": "n_27",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.lowerBound"
+      }
+    },
+    {
+      "id": "n_28",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.supremum"
+      }
+    },
+    {
+      "id": "n_29",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.infimum"
+      }
+    },
+    {
+      "id": "n_30",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.def.order.linear"
+      }
+    },
+    {
+      "id": "n_31",
+      "label": "Entry",
+      "props": {
+        "entryId": "Set.example.Nat"
+      }
     }
   ],
   "relationships": [
@@ -408,6 +513,11 @@
     },
     {
       "from": "n_1",
+      "to": "n_19",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
       "to": "n_8",
       "label": "branch"
     },
@@ -427,8 +537,28 @@
       "label": "branch"
     },
     {
+      "from": "n_1",
+      "to": "n_17",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_18",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_20",
+      "label": "branch"
+    },
+    {
       "from": "n_13",
       "to": "n_14",
+      "label": "branch"
+    },
+    {
+      "from": "n_13",
+      "to": "n_31",
       "label": "branch"
     },
     {
@@ -439,6 +569,56 @@
     {
       "from": "n_13",
       "to": "n_16",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_21",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_30",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_22",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_23",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_24",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_25",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_26",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_27",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_28",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_29",
       "label": "branch"
     }
   ]

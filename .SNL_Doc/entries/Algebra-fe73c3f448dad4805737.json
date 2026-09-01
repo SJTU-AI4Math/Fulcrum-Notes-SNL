@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.example.nat.add",
+    "package": "Algebra",
+    "kind": "example",
+    "title": "自然数加法的递归定义",
+    "content": {
+      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@a, Nat),\r\n        Type.annotation(@b, Nat)\r\n    ),\r\n    Add.add(a, b),\r\n    by-cases(\r\n        b,\r\n        struct(\r\n            member[colon](\r\n                Eq(b, %zero%@Set.example.nat), Type.lambda-typed(a, Nat, a)\r\n            ),\r\n            member[colon](\r\n                Logic.exists-typed(@n, Nat, Eq(b, Type.apply(%succ%@Set.example.nat, n))),\r\n                Type.apply(%succ%@Set.example.nat, Add.add(a, n))\r\n            )\r\n        )\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

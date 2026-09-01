@@ -2,50 +2,24 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "BasicOperators",
+  "package": "Algebra",
   "macro": {
-    "description": "Natural numbers",
+    "description": "交换群的恒等元",
     "source": {
       "entries": [
-        "Type.def.nat",
-        "Set.example.nat"
+        "Algebra.def.abelian"
       ],
       "urls": []
     },
     "kind": "const",
     "dynamic_arity": false,
-    "tags": [],
     "styles": [
       {
         "style_name": "default",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathbb{N}",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
-        }
-      },
-      {
-        "style_name": "operator",
-        "tags": [],
-        "template": {
-          "mode": "formula_inline",
-          "body": "\\mathrm{Nat}",
+          "body": "0_{#0}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -65,6 +39,7 @@
         }
       }
     ],
-    "name": "Nat"
+    "tags": [],
+    "name": "Algebra.Zero"
   }
 }

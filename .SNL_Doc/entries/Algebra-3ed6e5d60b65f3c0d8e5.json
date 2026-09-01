@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.prop.nat.monoid",
+    "package": "Algebra",
+    "kind": "property",
+    "title": "自然数及其加法是幺半群",
+    "content": {
+      "snl": "Algebra.CommMonoid(Nat, Add.add[single])"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -188,6 +188,62 @@
       "props": {
         "entryId": "Algebra.def.stabilizer"
       }
+    },
+    {
+      "id": "n_1",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.sec.ringTheory"
+      }
+    },
+    {
+      "id": "n_2",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.subsec.ringDefinitions"
+      }
+    },
+    {
+      "id": "n_3",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.ring"
+      }
+    },
+    {
+      "id": "n_4",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.ring.unital"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.ring.commutative"
+      }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.ring.divisible"
+      }
+    },
+    {
+      "id": "n_7",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.integral"
+      }
+    },
+    {
+      "id": "n_8",
+      "label": "Entry",
+      "props": {
+        "entryId": "Algebra.def.field"
+      }
     }
   ],
   "relationships": [
@@ -319,6 +375,41 @@
     {
       "from": "n_action",
       "to": "n_stab",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_3",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_4",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_7",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_6",
+      "label": "branch"
+    },
+    {
+      "from": "n_2",
+      "to": "n_8",
       "label": "branch"
     }
   ]

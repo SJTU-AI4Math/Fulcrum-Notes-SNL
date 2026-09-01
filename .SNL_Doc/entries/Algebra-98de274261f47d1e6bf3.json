@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.def.abelian",
+    "package": "Algebra",
+    "kind": "definition",
+    "title": "Abelian Group / Commutative Group",
+    "content": {
+      "snl": "def-struct(\r\n    Algebra.Abelian(G@Algebra.ctxt.G, $\\cdot$@Algebra.ctxt.mul),\r\n    struct(\r\n        Algebra.Group(G@Algebra.ctxt.G, $\\cdot$@Algebra.ctxt.mul),\r\n        Logic.forall-typed(\r\n            @a,\r\n            G@Algebra.ctxt.G,\r\n            Logic.forall-typed(\r\n                @b,\r\n                G@Algebra.ctxt.G,\r\n                Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, a, b), Bop.apply($\\cdot$@Algebra.ctxt.mul, b, a))\r\n            )\r\n        )\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

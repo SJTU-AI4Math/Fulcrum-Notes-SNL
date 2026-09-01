@@ -4,12 +4,9 @@
   "schema_version": 1,
   "package": "BasicOperators",
   "macro": {
-    "description": "Natural numbers",
+    "description": "Integers",
     "source": {
-      "entries": [
-        "Type.def.nat",
-        "Set.example.nat"
-      ],
+      "entries": [],
       "urls": []
     },
     "kind": "const",
@@ -21,7 +18,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathbb{N}",
+          "body": "\\mathbb{Z}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -45,7 +42,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathrm{Nat}",
+          "body": "\\mathrm{Int}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -65,6 +62,6 @@
         }
       }
     ],
-    "name": "Nat"
+    "name": "Int"
   }
 }

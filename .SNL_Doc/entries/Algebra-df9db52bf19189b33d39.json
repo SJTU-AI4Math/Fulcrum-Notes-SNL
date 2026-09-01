@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Algebra.prop.inverseUnique",
+    "package": "Algebra",
+    "kind": "property",
+    "title": "逆元的唯一性",
+    "content": {
+      "snl": "Logic.forall-typed(\r\n    @a,\r\n    G@Algebra.ctxt.G,\r\n    Logic.implies(\r\n        Logic.exists-typed(\r\n            list-partial(@b_1, @b_2),\r\n            G@Algebra.ctxt.G,\r\n            Logic.and(\r\n                Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, a, b_1), Algebra.Id(G@Algebra.ctxt.G)),\r\n                Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, a, b_2), Algebra.Id(G@Algebra.ctxt.G)),\r\n            )\r\n        ),\r\n        Eq(b_1, b_2)\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

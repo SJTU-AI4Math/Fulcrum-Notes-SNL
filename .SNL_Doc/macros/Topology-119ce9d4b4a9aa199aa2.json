@@ -20,7 +20,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\tau_{\\text{disc}}",
+          "body": "\\tau_{\\text{discr}}(#0)",
           "typst": {
             "built_in": "",
             "synthesis": {

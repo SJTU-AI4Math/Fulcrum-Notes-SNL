@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.example.nat",
+    "package": "SetTheory",
+    "kind": "example",
+    "title": "自然数的集合表示",
+    "content": {
+      "snl": "def-inductive(\r\n    Nat,\r\n    struct(\r\n        member[colon](@%zero%, Set.emptyset),\r\n        member[colon](@%succ%, Type.lambda-typed(@A, Nat, Set.union(A, Set.enum(A))))\r\n    )\r\n)"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

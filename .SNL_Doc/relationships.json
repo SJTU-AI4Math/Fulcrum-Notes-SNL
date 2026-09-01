@@ -951,6 +951,97 @@
       }
     },
     {
+      "id": "dep.Algebra.ctxt.ring.Type.def.annotation",
+      "from": "Algebra.ctxt.ring",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.ctxt.ring.Type.rl.univ",
+      "from": "Algebra.ctxt.ring",
+      "to": "Type.rl.univ",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.abelian.Algebra.def.group",
+      "from": "Algebra.def.abelian",
+      "to": "Algebra.def.group",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Group"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.abelian.Fulcrum.def",
+      "from": "Algebra.def.abelian",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.abelian.Logic.def.eq",
+      "from": "Algebra.def.abelian",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.abelian.Logic.def.forall",
+      "from": "Algebra.def.abelian",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.abelian.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.abelian",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Algebra.def.cycle.Logic.def.true",
       "from": "Algebra.def.cycle",
       "to": "Logic.def.true",
@@ -961,6 +1052,59 @@
           "Logic.true"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.field.Algebra.def.abelian",
+      "from": "Algebra.def.field",
+      "to": "Algebra.def.abelian",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Abelian"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.field.Algebra.def.ring",
+      "from": "Algebra.def.field",
+      "to": "Algebra.def.ring",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Field",
+          "Algebra.Ring"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.field.Fulcrum.def",
+      "from": "Algebra.def.field",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.group.Fulcrum.def",
+      "from": "Algebra.def.group",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
       }
     },
     {
@@ -1013,6 +1157,19 @@
           "Logic.forall"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.group.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.group",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": true
       }
     },
     {
@@ -1263,6 +1420,110 @@
       }
     },
     {
+      "id": "dep.Algebra.def.identity.Algebra.def.monoid",
+      "from": "Algebra.def.identity",
+      "to": "Algebra.def.monoid",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Monoid"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.identity.Algebra.def.ring.unital",
+      "from": "Algebra.def.identity",
+      "to": "Algebra.def.ring.unital",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Id"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.identity.Fulcrum.def",
+      "from": "Algebra.def.identity",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.identity.Logic.def.and",
+      "from": "Algebra.def.identity",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.identity.Logic.def.eq",
+      "from": "Algebra.def.identity",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.identity.Logic.def.forall",
+      "from": "Algebra.def.identity",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.identity.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.identity",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.identity.Type.def.annotation",
+      "from": "Algebra.def.identity",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Algebra.def.image.Logic.def.eq",
       "from": "Algebra.def.image",
       "to": "Logic.def.eq",
@@ -1302,6 +1563,136 @@
       }
     },
     {
+      "id": "dep.Algebra.def.integral.Algebra.def.abelian",
+      "from": "Algebra.def.integral",
+      "to": "Algebra.def.abelian",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Zero"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.integral.Algebra.def.ring.commutative",
+      "from": "Algebra.def.integral",
+      "to": "Algebra.def.ring.commutative",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.CommRing"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.integral.Algebra.def.ring.unital",
+      "from": "Algebra.def.integral",
+      "to": "Algebra.def.ring.unital",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.UnitalRing"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.integral.Fulcrum.def",
+      "from": "Algebra.def.integral",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.integral.Logic.def.and",
+      "from": "Algebra.def.integral",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.integral.Logic.def.eq",
+      "from": "Algebra.def.integral",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Neq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.integral.Logic.def.forall",
+      "from": "Algebra.def.integral",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.integral.Logic.def.implies",
+      "from": "Algebra.def.integral",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.integral.Logic.def.neg",
+      "from": "Algebra.def.integral",
+      "to": "Logic.def.neg",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Neq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.integral.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.integral",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Algebra.def.kernel.Logic.def.eq",
       "from": "Algebra.def.kernel",
       "to": "Logic.def.eq",
@@ -1325,6 +1716,19 @@
           "Set.sep"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.monoid.Fulcrum.def",
+      "from": "Algebra.def.monoid",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
       }
     },
     {
@@ -1375,6 +1779,84 @@
         "generator": "macro-source-scan",
         "macros": [
           "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.monoid.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.monoid",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.monoid.commutative.Algebra.def.monoid",
+      "from": "Algebra.def.monoid.commutative",
+      "to": "Algebra.def.monoid",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Monoid"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.monoid.commutative.Fulcrum.def",
+      "from": "Algebra.def.monoid.commutative",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.monoid.commutative.Logic.def.eq",
+      "from": "Algebra.def.monoid.commutative",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.monoid.commutative.Logic.def.forall",
+      "from": "Algebra.def.monoid.commutative",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.monoid.commutative.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.monoid.commutative",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
         ],
         "isAtomic": false
       }
@@ -1484,6 +1966,305 @@
       }
     },
     {
+      "id": "dep.Algebra.def.ring.Algebra.def.abelian",
+      "from": "Algebra.def.ring",
+      "to": "Algebra.def.abelian",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Abelian"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.Algebra.def.semigroup",
+      "from": "Algebra.def.ring",
+      "to": "Algebra.def.semigroup",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Semigroup"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.Fulcrum.def",
+      "from": "Algebra.def.ring",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.Logic.def.and",
+      "from": "Algebra.def.ring",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.Logic.def.eq",
+      "from": "Algebra.def.ring",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.Logic.def.forall",
+      "from": "Algebra.def.ring",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.ring",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.commutative.Algebra.def.ring",
+      "from": "Algebra.def.ring.commutative",
+      "to": "Algebra.def.ring",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Ring"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.commutative.Fulcrum.def",
+      "from": "Algebra.def.ring.commutative",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.commutative.Logic.def.eq",
+      "from": "Algebra.def.ring.commutative",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.commutative.Logic.def.forall",
+      "from": "Algebra.def.ring.commutative",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.commutative.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.ring.commutative",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.divisible.Algebra.def.group",
+      "from": "Algebra.def.ring.divisible",
+      "to": "Algebra.def.group",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Group"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.divisible.Algebra.def.ring",
+      "from": "Algebra.def.ring.divisible",
+      "to": "Algebra.def.ring",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Ring"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.divisible.Fulcrum.def",
+      "from": "Algebra.def.ring.divisible",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.unital.Algebra.def.abelian",
+      "from": "Algebra.def.ring.unital",
+      "to": "Algebra.def.abelian",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Abelian"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.unital.Algebra.def.monoid",
+      "from": "Algebra.def.ring.unital",
+      "to": "Algebra.def.monoid",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Monoid"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.unital.Fulcrum.def",
+      "from": "Algebra.def.ring.unital",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.unital.Logic.def.and",
+      "from": "Algebra.def.ring.unital",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.unital.Logic.def.eq",
+      "from": "Algebra.def.ring.unital",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.unital.Logic.def.forall",
+      "from": "Algebra.def.ring.unital",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.ring.unital.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.ring.unital",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.semigroup.Fulcrum.def",
+      "from": "Algebra.def.semigroup",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Algebra.def.semigroup.Logic.def.eq",
       "from": "Algebra.def.semigroup",
       "to": "Logic.def.eq",
@@ -1507,6 +2288,19 @@
           "Logic.forall"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.def.semigroup.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.def.semigroup",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": true
       }
     },
     {
@@ -1549,6 +2343,19 @@
       }
     },
     {
+      "id": "dep.Algebra.def.subgroup.Fulcrum.def",
+      "from": "Algebra.def.subgroup",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Algebra.def.subgroup.Set.def.set",
       "from": "Algebra.def.subgroup",
       "to": "Set.def.set",
@@ -1559,6 +2366,19 @@
           "Set"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.def.subgroup.Type.def.annotation",
+      "from": "Algebra.def.subgroup",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
       }
     },
     {
@@ -1585,6 +2405,97 @@
           "Logic.true"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.example.nat.add.Fulcrum.def",
+      "from": "Algebra.example.nat.add",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.example.nat.add.Logic.def.eq",
+      "from": "Algebra.example.nat.add",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.example.nat.add.Logic.def.exists",
+      "from": "Algebra.example.nat.add",
+      "to": "Logic.def.exists",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.exists"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.example.nat.add.Set.example.nat",
+      "from": "Algebra.example.nat.add",
+      "to": "Set.example.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.example.nat.add.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.example.nat.add",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.example.nat.add.Type.def.annotation",
+      "from": "Algebra.example.nat.add",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.example.nat.add.Type.def.nat",
+      "from": "Algebra.example.nat.add",
+      "to": "Type.def.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": false
       }
     },
     {
@@ -1627,16 +2538,394 @@
       }
     },
     {
-      "id": "dep.Algebra.prop.identityUnique.Logic.def.true",
+      "id": "dep.Algebra.prop.identityUnique.Syntax.def.expression-UTLC.ctor.application",
       "from": "Algebra.prop.identityUnique",
-      "to": "Logic.def.true",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Logic.true"
+          "Bop.apply"
         ],
         "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.identityUnique.Type.def.annotation",
+      "from": "Algebra.prop.identityUnique",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.int.abelian.Algebra.def.abelian",
+      "from": "Algebra.prop.int.abelian",
+      "to": "Algebra.def.abelian",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Abelian"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.int.abelian.Algebra.example.nat.add",
+      "from": "Algebra.prop.int.abelian",
+      "to": "Algebra.example.nat.add",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Add.add"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.inverseUnique.Algebra.def.identity",
+      "from": "Algebra.prop.inverseUnique",
+      "to": "Algebra.def.identity",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Id"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.inverseUnique.Algebra.def.monoid",
+      "from": "Algebra.prop.inverseUnique",
+      "to": "Algebra.def.monoid",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Id"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.inverseUnique.Algebra.def.ring.unital",
+      "from": "Algebra.prop.inverseUnique",
+      "to": "Algebra.def.ring.unital",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Id"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.inverseUnique.Logic.def.and",
+      "from": "Algebra.prop.inverseUnique",
+      "to": "Logic.def.and",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.and"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.inverseUnique.Logic.def.eq",
+      "from": "Algebra.prop.inverseUnique",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.inverseUnique.Logic.def.exists",
+      "from": "Algebra.prop.inverseUnique",
+      "to": "Logic.def.exists",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.exists"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.inverseUnique.Logic.def.forall",
+      "from": "Algebra.prop.inverseUnique",
+      "to": "Logic.def.forall",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.forall"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.inverseUnique.Logic.def.implies",
+      "from": "Algebra.prop.inverseUnique",
+      "to": "Logic.def.implies",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.implies"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.inverseUnique.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.prop.inverseUnique",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.nat.monoid.Algebra.def.monoid.commutative",
+      "from": "Algebra.prop.nat.monoid",
+      "to": "Algebra.def.monoid.commutative",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.CommMonoid"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.nat.monoid.Algebra.example.nat.add",
+      "from": "Algebra.prop.nat.monoid",
+      "to": "Algebra.example.nat.add",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Add.add"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.nat.monoid.Set.example.nat",
+      "from": "Algebra.prop.nat.monoid",
+      "to": "Set.example.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.prop.nat.monoid.Type.def.nat",
+      "from": "Algebra.prop.nat.monoid",
+      "to": "Type.def.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.remark.ring.mulPrioritized.Algebra.def.ring",
+      "from": "Algebra.remark.ring.mulPrioritized",
+      "to": "Algebra.def.ring",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Ring"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.remark.ring.mulPrioritized.Logic.def.eq",
+      "from": "Algebra.remark.ring.mulPrioritized",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.remark.ring.mulPrioritized.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.remark.ring.mulPrioritized",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Algebra.def.abelian",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Algebra.def.abelian",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.Abelian"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Algebra.def.monoid.commutative",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Algebra.def.monoid.commutative",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Algebra.CommMonoid"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Fulcrum.def",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Logic.def.eq",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Logic.def.exists",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Logic.def.exists",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.exists"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Set.def.relation",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Set.def.relation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Rl",
+          "Rl.apply"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Syntax.def.expression-UTLC.ctor.application",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Syntax.def.expression-UTLC.ctor.application",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Bop.apply"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Type.def.annotation",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Type.def.prod",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Type.def.prod",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.prod"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Algebra.thm.grothendieckGroup.Type.def.prod.ctor.pair",
+      "from": "Algebra.thm.grothendieckGroup",
+      "to": "Type.def.prod.ctor.pair",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.pair"
+        ],
+        "isAtomic": false
       }
     },
     {
@@ -5733,6 +7022,110 @@
       }
     },
     {
+      "id": "dep.Set.def.finite.Fulcrum.def",
+      "from": "Set.def.finite",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.finite.Logic.def.exists",
+      "from": "Set.def.finite",
+      "to": "Logic.def.exists",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.exists"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.finite.Set.def.bijective",
+      "from": "Set.def.finite",
+      "to": "Set.def.bijective",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.bijective"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.finite.Set.def.set",
+      "from": "Set.def.finite",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.finite.Set.example.nat",
+      "from": "Set.def.finite",
+      "to": "Set.example.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.def.finite.Type.def.annotation",
+      "from": "Set.def.finite",
+      "to": "Type.def.annotation",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.finite.Type.def.nat",
+      "from": "Set.def.finite",
+      "to": "Type.def.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.def.finite.Type.rl.fun",
+      "from": "Set.def.finite",
+      "to": "Type.rl.fun",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Type.to"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
       "id": "dep.Set.def.fun_graph.Fulcrum.def",
       "from": "Set.def.fun_graph",
       "to": "Fulcrum.def",
@@ -8103,6 +9496,162 @@
       }
     },
     {
+      "id": "dep.Set.example.Nat.Fulcrum.def",
+      "from": "Set.example.Nat",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.example.Nat.Logic.def.eq",
+      "from": "Set.example.Nat",
+      "to": "Logic.def.eq",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Eq"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.example.Nat.Logic.def.or",
+      "from": "Set.example.Nat",
+      "to": "Logic.def.or",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Logic.or"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.example.Nat.Set.def.emptyset",
+      "from": "Set.example.Nat",
+      "to": "Set.def.emptyset",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.emptyset"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.example.Nat.Set.def.mem",
+      "from": "Set.example.Nat",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.example.Nat.Set.def.sep",
+      "from": "Set.example.Nat",
+      "to": "Set.def.sep",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.sep"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.example.Nat.Type.def.nat",
+      "from": "Set.example.Nat",
+      "to": "Type.def.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.example.nat.Fulcrum.def",
+      "from": "Set.example.nat",
+      "to": "Fulcrum.def",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "def"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.example.nat.Set.def.emptyset",
+      "from": "Set.example.nat",
+      "to": "Set.def.emptyset",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.emptyset"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.example.nat.Set.def.set",
+      "from": "Set.example.nat",
+      "to": "Set.def.set",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.enum"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.example.nat.Set.def.union",
+      "from": "Set.example.nat",
+      "to": "Set.def.union",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.union"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.example.nat.Type.def.nat",
+      "from": "Set.example.nat",
+      "to": "Type.def.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
       "id": "dep.Set.preimageSet.Fulcrum.def",
       "from": "Set.preimageSet",
       "to": "Fulcrum.def",
@@ -8293,6 +9842,58 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.annotation"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.prop.nat.linearOrder.Set.def.mem",
+      "from": "Set.prop.nat.linearOrder",
+      "to": "Set.def.mem",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.mem"
+        ],
+        "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Set.prop.nat.linearOrder.Set.def.order.linear",
+      "from": "Set.prop.nat.linearOrder",
+      "to": "Set.def.order.linear",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.order.linear"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.prop.nat.linearOrder.Set.example.nat",
+      "from": "Set.prop.nat.linearOrder",
+      "to": "Set.example.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
+        ],
+        "isAtomic": true
+      }
+    },
+    {
+      "id": "dep.Set.prop.nat.linearOrder.Type.def.nat",
+      "from": "Set.prop.nat.linearOrder",
+      "to": "Type.def.nat",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Nat"
         ],
         "isAtomic": false
       }
@@ -10295,9 +11896,9 @@
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "def-hyp"
+          "def"
         ],
-        "isAtomic": true
+        "isAtomic": false
       }
     },
     {
@@ -10321,7 +11922,7 @@
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Logic.exists-typed"
+          "Logic.exists"
         ],
         "isAtomic": false
       }
@@ -10334,7 +11935,7 @@
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Logic.forall-typed"
+          "Logic.forall"
         ],
         "isAtomic": false
       }
@@ -10350,6 +11951,19 @@
           "Logic.implies"
         ],
         "isAtomic": false
+      }
+    },
+    {
+      "id": "dep.Topology.def.compactness.Set.def.finite",
+      "from": "Topology.def.compactness",
+      "to": "Set.def.finite",
+      "label": "depends",
+      "metadata": {
+        "generator": "macro-source-scan",
+        "macros": [
+          "Set.finite"
+        ],
+        "isAtomic": true
       }
     },
     {
@@ -14325,9 +15939,9 @@
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "def-hyp"
+          "def"
         ],
-        "isAtomic": true
+        "isAtomic": false
       }
     },
     {
@@ -14494,7 +16108,7 @@
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "def-hyp"
+          "def"
         ],
         "isAtomic": false
       }
@@ -14546,7 +16160,7 @@
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Set.sep-typed"
+          "Set.sep"
         ],
         "isAtomic": false
       }
@@ -14586,19 +16200,6 @@
         "generator": "macro-source-scan",
         "macros": [
           "Type.annotation"
-        ],
-        "isAtomic": false
-      }
-    },
-    {
-      "id": "dep.Topology.example.trivialTopology.Type.rl.univ",
-      "from": "Topology.example.trivialTopology",
-      "to": "Type.rl.univ",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "macros": [
-          "Type"
         ],
         "isAtomic": false
       }

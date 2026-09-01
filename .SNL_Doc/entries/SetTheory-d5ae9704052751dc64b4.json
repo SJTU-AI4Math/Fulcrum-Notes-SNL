@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "SetTheory",
+  "entry": {
+    "id": "Set.prop.nat.linearOrder",
+    "package": "SetTheory",
+    "kind": "property",
+    "title": "自然数具有线性序结构",
+    "content": {
+      "snl": "Set.order.linear(Nat, Set.mem[single])"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

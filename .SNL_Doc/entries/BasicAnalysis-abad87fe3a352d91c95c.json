@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "BasicAnalysis",
+  "entry": {
+    "id": "BasicAnalysis.subsec.real.preliminary",
+    "package": "BasicAnalysis",
+    "kind": "subsection",
+    "title": "Preliminary",
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

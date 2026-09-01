@@ -20,7 +20,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\tau_{\\text{triv}}",
+          "body": "\\tau_{\\text{triv}}(#0)",
           "typst": {
             "built_in": "",
             "synthesis": {
