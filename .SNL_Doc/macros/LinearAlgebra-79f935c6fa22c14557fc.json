@@ -25,7 +25,7 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "#2 是 #1 的加法逆元",
+              "body": "#0 是 #1 的加法逆元",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -45,7 +45,7 @@
             },
             "en": {
               "mode": "text",
-              "body": "#2 is an additive inverse of #1",
+              "body": "#0 is an additive inverse of #1",
               "typst": {
                 "built_in": "",
                 "synthesis": {

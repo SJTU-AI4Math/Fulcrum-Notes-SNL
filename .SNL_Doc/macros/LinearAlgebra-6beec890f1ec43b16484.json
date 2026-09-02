@@ -21,7 +21,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\exists i\\in \\operatorname{Fin}(#2),\\;#1(i)\\ne 0_{#0}",
+          "body": "\\exists i\\in [#2],\\;#1(i)\\ne 0_{#0}",
           "typst": {
             "built_in": "",
             "synthesis": {

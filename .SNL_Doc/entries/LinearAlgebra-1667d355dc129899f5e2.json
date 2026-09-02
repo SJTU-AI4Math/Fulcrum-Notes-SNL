@@ -16,13 +16,13 @@
       }
     },
     "content": {
-      "snl": "def-hyp(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), LA.Vector(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, @v), Type.annotation(v, V@LinearAlgebra.ctxt.vectorSpace))",
+      "snl": "def-hyp(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), LA.Vector(@v, V@LinearAlgebra.ctxt.vectorSpace), Type.annotation(v, V@LinearAlgebra.ctxt.vectorSpace))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "线性空间 V 的元素称为向量。",
-          "en": "An element of a vector space V is called a vector."
+          "zh-CN": "线性空间 $V$ 的元素称为向量。",
+          "en": "An element of a vector space $V$ is called a vector."
         }
       }
     },

@@ -21,7 +21,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\sum_{i\\in \\operatorname{Fin}(#3)} #1(i)\\,#2(i)=\\mathbf{0}_{#0}",
+          "body": "\\sum_{i\\in [#3]} #1(i)\\,#2(i)=\\mathbf{0}_{#0}",
           "typst": {
             "built_in": "",
             "synthesis": {

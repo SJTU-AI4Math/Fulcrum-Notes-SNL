@@ -5,7 +5,7 @@
   "package": "LinearAlgebra",
   "macro": {
     "name": "LA.Smul",
-    "description": "scalar multiplication with an explicit operation",
+    "description": "scalar multiplication",
     "source": {
       "entries": [
         "LinearAlgebra.def.vectorSpace"
@@ -21,7 +21,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#1 #0 #2",
+          "body": "#0 \\cdot #1",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -45,7 +45,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "(#1 #0 #2)",
+          "body": "(#0 \\cdot #1)",
           "typst": {
             "built_in": "",
             "synthesis": {

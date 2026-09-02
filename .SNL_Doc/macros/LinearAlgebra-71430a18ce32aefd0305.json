@@ -4,11 +4,11 @@
   "schema_version": 1,
   "package": "LinearAlgebra",
   "macro": {
-    "name": "LA.ZeroVector",
-    "description": "zero-vector predicate",
+    "name": "LA.Field",
+    "description": "field predicate",
     "source": {
       "entries": [
-        "LinearAlgebra.def.zeroVector"
+        "Algebra.def.field"
       ],
       "urls": []
     },
@@ -25,7 +25,7 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "#1 是 #0 的零向量",
+              "body": "#0 是域",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -45,7 +45,7 @@
             },
             "en": {
               "mode": "text",
-              "body": "#1 is the zero vector of #0",
+              "body": "#0 is a field",
               "typst": {
                 "built_in": "",
                 "synthesis": {

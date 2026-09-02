@@ -4,196 +4,224 @@
       "id": "n01",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.sec.vectors"
+        "entryId": "LinearAlgebra.sec.vectors",
+        "counterId": "la-section"
       }
     },
     {
       "id": "n02",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.subsec.vectorSpace"
+        "entryId": "LinearAlgebra.subsec.vectorSpace",
+        "counterId": "la-subsection"
       }
     },
     {
       "id": "n03",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.ctxt.vectorSpace"
+        "entryId": "LinearAlgebra.ctxt.vectorSpace",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n04",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.def.vectorSpace"
+        "entryId": "LinearAlgebra.def.vectorSpace",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n05",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.def.vector"
+        "entryId": "LinearAlgebra.def.vector",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n06",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.def.zeroVector"
+        "entryId": "LinearAlgebra.def.zeroVector",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n07",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.def.additiveInverse"
+        "entryId": "LinearAlgebra.def.additiveInverse",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n08",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.zeroUnique"
+        "entryId": "LinearAlgebra.prop.zeroUnique",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n09",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.inverseUnique"
+        "entryId": "LinearAlgebra.prop.inverseUnique",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n10",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.addCancel"
+        "entryId": "LinearAlgebra.prop.addCancel",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n11",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.zeroSmul"
+        "entryId": "LinearAlgebra.prop.zeroSmul",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n12",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.smulZero"
+        "entryId": "LinearAlgebra.prop.smulZero",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n13",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.negOneSmul"
+        "entryId": "LinearAlgebra.prop.negOneSmul",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n14",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.smulEqZero"
+        "entryId": "LinearAlgebra.prop.smulEqZero",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n15",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.subsec.linearRelations"
+        "entryId": "LinearAlgebra.subsec.linearRelations",
+        "counterId": "la-subsection"
       }
     },
     {
       "id": "n16",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.ctxt.finiteFamily"
+        "entryId": "LinearAlgebra.ctxt.finiteFamily",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n17",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.def.linearRepresentation"
+        "entryId": "LinearAlgebra.def.linearRepresentation",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n18",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.def.linearRelation"
+        "entryId": "LinearAlgebra.def.linearRelation",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n19",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.def.linearlyDependent"
+        "entryId": "LinearAlgebra.def.linearlyDependent",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n20",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.def.linearlyIndependent"
+        "entryId": "LinearAlgebra.def.linearlyIndependent",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n21",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.dependentIffNontrivialRelation"
+        "entryId": "LinearAlgebra.prop.dependentIffNontrivialRelation",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n22",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.dependentIffRepresentableByOthers"
+        "entryId": "LinearAlgebra.prop.dependentIffRepresentableByOthers",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n23",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.independentIffUniqueRepresentation"
+        "entryId": "LinearAlgebra.prop.independentIffUniqueRepresentation",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n24",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.subfamilyIndependent"
+        "entryId": "LinearAlgebra.prop.subfamilyIndependent",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n25",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.superfamilyDependent"
+        "entryId": "LinearAlgebra.prop.superfamilyDependent",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n26",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.prop.singletonIndependent"
+        "entryId": "LinearAlgebra.prop.singletonIndependent",
+        "counterId": "la-entry"
       }
     },
     {
       "id": "n27",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.example.containsZero"
+        "entryId": "LinearAlgebra.example.containsZero",
+        "counterId": "la-example"
       }
     },
     {
       "id": "n28",
       "label": "Entry",
       "props": {
-        "entryId": "LinearAlgebra.example.repeatedVector"
+        "entryId": "LinearAlgebra.example.repeatedVector",
+        "counterId": "la-example"
       }
     }
   ],

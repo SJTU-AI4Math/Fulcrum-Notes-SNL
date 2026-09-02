@@ -4,24 +4,22 @@
   "schema_version": 1,
   "package": "LinearAlgebra",
   "macro": {
-    "name": "LA.Fin",
-    "description": "finite index set",
+    "name": "LA.ContextList",
+    "description": "multiline Context declaration list",
     "source": {
-      "entries": [
-        "LinearAlgebra.ctxt.finiteFamily"
-      ],
+      "entries": [],
       "urls": []
     },
-    "kind": "const",
-    "dynamic_arity": false,
+    "kind": "sub",
+    "dynamic_arity": true,
     "tags": [],
     "styles": [
       {
         "style_name": "default",
         "tags": [],
         "template": {
-          "mode": "formula_inline",
-          "body": "[#0]",
+          "mode": "block",
+          "body": "#*",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -37,7 +35,9 @@
             }
           },
           "markdown": "",
-          "text": ""
+          "text": "",
+          "separator": "\\n",
+          "block_template_name": "enumerate"
         }
       }
     ]

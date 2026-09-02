@@ -16,13 +16,13 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Eq(LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, $0$, v), LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)))",
+      "snl": "thm-hyp(list-partial(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Eq(LA.Smul($0$, v), LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "0·v = 0。",
-          "en": "0·v = 0."
+          "zh-CN": "$0\\cdot v=\\mathbf{0}_V$。",
+          "en": "$0\\cdot v=\\mathbf{0}_V$."
         }
       }
     },

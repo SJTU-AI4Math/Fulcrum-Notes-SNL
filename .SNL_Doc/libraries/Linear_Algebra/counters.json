@@ -8,18 +8,18 @@
         {
           "id": "la-subsection",
           "name": "subsection",
-          "numbering": "1",
+          "numbering": ".1",
           "children": [
             {
               "id": "la-entry",
               "name": "entry",
-              "numbering": "1",
+              "numbering": ".1",
               "children": []
             },
             {
               "id": "la-example",
               "name": "example",
-              "numbering": "1",
+              "numbering": ".E1",
               "children": []
             }
           ]

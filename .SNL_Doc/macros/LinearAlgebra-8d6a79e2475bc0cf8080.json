@@ -25,7 +25,7 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "(#1, #2, #3) 是 #0 上的线性空间",
+              "body": "#0 是 #1 上的线性空间",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -45,7 +45,7 @@
             },
             "en": {
               "mode": "text",
-              "body": "(#1, #2, #3) is a vector space over #0",
+              "body": "#0 is a vector space over #1",
               "typst": {
                 "built_in": "",
                 "synthesis": {

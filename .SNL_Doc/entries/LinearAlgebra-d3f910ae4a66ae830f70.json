@@ -16,13 +16,13 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(list-partial(@a,@b,@c), V@LinearAlgebra.ctxt.vectorSpace), Eq(LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, a, c), LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, b, c))), Eq(a, b))",
+      "snl": "thm-hyp(list-partial(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(list-partial(@a,@b,@c), V@LinearAlgebra.ctxt.vectorSpace), Eq(LA.Add(a, c), LA.Add(b, c))), Eq(a, b))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "若 a + c = b + c，则 a = b。",
-          "en": "If a + c = b + c, then a = b."
+          "zh-CN": "若 $a+c=b+c$，则 $a=b$。",
+          "en": "If $a+c=b+c$, then $a=b$."
         }
       }
     },

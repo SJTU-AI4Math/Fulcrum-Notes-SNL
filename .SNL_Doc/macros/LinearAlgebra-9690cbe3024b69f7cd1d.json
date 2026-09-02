@@ -25,7 +25,7 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "#2(#4) 可由删去第 #4 项后的族在 #0 上的 #1 中线性表示",
+              "body": "#0(#2) 可由删去第 #2 项后的族线性表示",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -45,7 +45,7 @@
             },
             "en": {
               "mode": "text",
-              "body": "#2(#4) is represented by the remaining family in #1 over #0",
+              "body": "#0(#2) is represented by the family with position #2 removed",
               "typst": {
                 "built_in": "",
                 "synthesis": {

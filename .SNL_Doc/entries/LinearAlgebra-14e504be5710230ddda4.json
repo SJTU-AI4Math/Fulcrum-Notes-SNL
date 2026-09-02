@@ -16,13 +16,13 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Logic.iff(LA.LinearlyIndependent(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, LA.Singleton(v), $1$), Neq(v, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace))))",
+      "snl": "thm-hyp(list-partial(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Logic.iff(LA.LinearlyIndependent(LA.Singleton(v), V@LinearAlgebra.ctxt.vectorSpace), Neq(v, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace))))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "单元素向量族 {v} 线性无关当且仅当 v ≠ 0。",
-          "en": "The singleton family {v} is independent iff v ≠ 0."
+          "zh-CN": "单元素向量族 $\\{v\\}$ 线性无关当且仅当 $v\\ne\\mathbf{0}_V$。",
+          "en": "The singleton family $\\{v\\}$ is independent iff $v\\ne\\mathbf{0}_V$."
         }
       }
     },

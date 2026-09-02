@@ -16,13 +16,13 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(list-partial(\n  LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@alpha@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace)),\n  Type.annotation(@beta@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace)\n), LA.HasRepeat(alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily)), LA.LinearlyDependent(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily))",
+      "snl": "thm-hyp(list-partial(list-partial(\n  LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@$\\alpha$@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace))\n), LA.HasRepeat($\\alpha$@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily)), LA.LinearlyDependent($\\alpha$@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "任何含两个相同向量出现的有限向量族都线性相关：对应系数取 1 与 -1。",
-          "en": "Every finite family with two equal occurrences is dependent: use coefficients 1 and -1 at those positions."
+          "zh-CN": "任何含两个相同向量出现的有限向量族都线性相关：对应系数取 $1$ 与 $-1$。",
+          "en": "Every finite family with two equal occurrences is dependent: use coefficients $1$ and $-1$ at those positions."
         }
       }
     },

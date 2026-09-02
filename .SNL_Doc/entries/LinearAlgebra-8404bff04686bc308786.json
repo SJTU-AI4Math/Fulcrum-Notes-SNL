@@ -16,13 +16,13 @@
       }
     },
     "content": {
-      "snl": "def-hyp(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), LA.ZeroVector(V@LinearAlgebra.ctxt.vectorSpace, @z), Eq(z, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)))",
+      "snl": "def-hyp(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@z, V@LinearAlgebra.ctxt.vectorSpace), LA.Zero(V@LinearAlgebra.ctxt.vectorSpace))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "零向量是线性空间结构所指定的加法恒等元 0。",
-          "en": "The zero vector is the additive identity 0 specified by the vector-space structure."
+          "zh-CN": "零向量是线性空间结构所指定的加法恒等元 $\\mathbf{0}_V$。",
+          "en": "The zero vector is the additive identity $\\mathbf{0}_V$ specified by the vector-space structure."
         }
       }
     },

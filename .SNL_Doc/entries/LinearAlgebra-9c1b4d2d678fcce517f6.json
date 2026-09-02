@@ -16,13 +16,13 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(\n  LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@alpha@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace)),\n  Type.annotation(@beta@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace)\n), Logic.iff(LA.LinearlyIndependent(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily), LA.UniqueRepresentation(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily)))",
+      "snl": "thm-hyp(list-partial(\n  LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@$\\alpha$@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace))\n), Logic.iff(LA.LinearlyIndependent($\\alpha$@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace), LA.UniqueRepresentation($\\alpha$@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace)))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "α 线性无关当且仅当每个可由 α 表示的向量具有唯一系数族。",
-          "en": "α is independent iff every represented vector has a unique coefficient family."
+          "zh-CN": "$\\alpha$ 线性无关当且仅当每个可由 $\\alpha$ 表示的向量具有唯一系数族。",
+          "en": "$\\alpha$ is independent iff every represented vector has a unique coefficient family."
         }
       }
     },

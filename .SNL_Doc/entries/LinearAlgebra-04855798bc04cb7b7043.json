@@ -16,13 +16,13 @@
       }
     },
     "content": {
-      "snl": "list-partial(\n  LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n, Nat),\n  Type.annotation(@alpha, Type.to(LA.Fin(n), V@LinearAlgebra.ctxt.vectorSpace)),\n  Type.annotation(@beta, V@LinearAlgebra.ctxt.vectorSpace)\n)",
+      "snl": "LA.ContextList(\n  LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n, Nat),\n  Type.annotation(@$\\alpha$, Type.to(LA.Fin(n), V@LinearAlgebra.ctxt.vectorSpace))\n)",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "约定 n : Nat，α : Fin n → V，β : V。",
-          "en": "Fix n : Nat, a finite family α : Fin n → V, and β : V."
+          "zh-CN": "约定 $n:\\mathbb{N}$ 与有限向量族 $\\alpha:[n]\\to V$。",
+          "en": "Fix $n:\\mathbb{N}$ and a finite vector family $\\alpha:[n]\\to V$."
         }
       }
     },

@@ -20,8 +20,8 @@
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "以有限指标族 α : Fin n → V 统一表达线性表示、线性关系、线性相关与线性无关。",
-          "en": "Uses a finite indexed family α : Fin n → V to formulate linear representation, linear relations, dependence, and independence."
+          "zh-CN": "以有限指标族 $\\alpha:[n]\\to V$ 统一表达线性表示、线性关系、线性相关与线性无关。",
+          "en": "Uses a finite indexed family $\\alpha:[n]\\to V$ to formulate linear representation, linear relations, dependence, and independence."
         }
       }
     },

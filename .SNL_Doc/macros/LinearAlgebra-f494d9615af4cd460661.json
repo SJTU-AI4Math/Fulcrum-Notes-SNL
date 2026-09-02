@@ -5,7 +5,7 @@
   "package": "LinearAlgebra",
   "macro": {
     "name": "LA.Add",
-    "description": "vector addition with an explicit operation",
+    "description": "vector addition",
     "source": {
       "entries": [
         "LinearAlgebra.def.vectorSpace"
@@ -21,7 +21,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#1 #0 #2",
+          "body": "#0 + #1",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -45,7 +45,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "(#1 #0 #2)",
+          "body": "(#0 + #1)",
           "typst": {
             "built_in": "",
             "synthesis": {

@@ -25,7 +25,7 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "长度为 #3 的有限族 #2 在 #0 上的 #1 中线性无关",
+              "body": "#0 在 #1 中线性无关",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -45,7 +45,7 @@
             },
             "en": {
               "mode": "text",
-              "body": "the length-#3 finite family #2 is linearly independent in #1 over #0",
+              "body": "#0 is linearly independent in #1",
               "typst": {
                 "built_in": "",
                 "synthesis": {

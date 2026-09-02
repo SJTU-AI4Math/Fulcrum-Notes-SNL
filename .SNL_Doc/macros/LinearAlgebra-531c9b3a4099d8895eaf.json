@@ -25,7 +25,7 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "长度为 #4 的有限族 #2 在 #0 上的 #1 中线性表示 #3",
+              "body": "#0 可由 #1 线性表示",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -45,7 +45,7 @@
             },
             "en": {
               "mode": "text",
-              "body": "the length-#4 finite family #2 linearly represents #3 in #1 over #0",
+              "body": "#0 is linearly represented by #1",
               "typst": {
                 "built_in": "",
                 "synthesis": {
