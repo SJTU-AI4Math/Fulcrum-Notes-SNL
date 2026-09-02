@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.prop.subfamilyIndependent",
+    "package": "LinearAlgebra",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "线性无关对子族封闭",
+        "en": "Independence Is Closed under Subfamilies"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(list-partial(\n  LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@alpha@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace)),\n  Type.annotation(@beta@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace)\n), Type.annotation(@m, Nat), Type.annotation(@gamma, Type.to(LA.Fin(m), V@LinearAlgebra.ctxt.vectorSpace)), LA.LinearlyIndependent(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily), LA.Subfamily(gamma, m, alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily)), LA.LinearlyIndependent(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, gamma, m))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "线性无关族的任意子族仍线性无关。",
+          "en": "Every subfamily of an independent family is independent."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

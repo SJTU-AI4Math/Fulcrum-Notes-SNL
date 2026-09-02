@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.prop.zeroUnique",
+    "package": "LinearAlgebra",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "零向量的唯一性",
+        "en": "Uniqueness of the Zero Vector"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), Logic.forall-typed(list-partial(@z_1,@z_2), V@LinearAlgebra.ctxt.vectorSpace, Logic.implies(Logic.and(LA.ZeroVector(V@LinearAlgebra.ctxt.vectorSpace, z_1), LA.ZeroVector(V@LinearAlgebra.ctxt.vectorSpace, z_2)), Eq(z_1, z_2))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "线性空间的零向量唯一。",
+          "en": "A vector space has a unique zero vector."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

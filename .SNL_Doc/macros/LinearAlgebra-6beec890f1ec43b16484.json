@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "macro": {
+    "name": "LA.Nontrivial",
+    "description": "nontrivial coefficient family",
+    "source": {
+      "entries": [
+        "LinearAlgebra.def.linearlyDependent"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\exists i\\in \\operatorname{Fin}(#2),\\;#1(i)\\ne 0_{#0}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      }
+    ]
+  }
+}

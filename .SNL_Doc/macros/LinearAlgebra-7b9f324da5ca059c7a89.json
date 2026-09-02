@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "macro": {
+    "name": "LA.LinearRelation",
+    "description": "linear-relation predicate",
+    "source": {
+      "entries": [
+        "LinearAlgebra.def.linearRelation"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\sum_{i\\in \\operatorname{Fin}(#3)} #1(i)\\,#2(i)=\\mathbf{0}_{#0}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      }
+    ]
+  }
+}

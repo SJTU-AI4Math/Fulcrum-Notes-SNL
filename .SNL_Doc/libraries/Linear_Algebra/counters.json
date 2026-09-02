@@ -1,0 +1,30 @@
+{
+  "counters": [
+    {
+      "id": "la-section",
+      "name": "section",
+      "numbering": "1",
+      "children": [
+        {
+          "id": "la-subsection",
+          "name": "subsection",
+          "numbering": "1",
+          "children": [
+            {
+              "id": "la-entry",
+              "name": "entry",
+              "numbering": "1",
+              "children": []
+            },
+            {
+              "id": "la-example",
+              "name": "example",
+              "numbering": "1",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

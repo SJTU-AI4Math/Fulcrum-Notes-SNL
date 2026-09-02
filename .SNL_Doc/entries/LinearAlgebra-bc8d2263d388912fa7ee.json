@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.subsec.vectorSpace",
+    "package": "LinearAlgebra",
+    "kind": "subsection",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "向量和线性空间",
+        "en": "Vectors and Linear Spaces"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "线性空间的八条公理及其最基本推论。",
+          "en": "The eight vector-space axioms and their first consequences."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "macro": {
+    "name": "LA.HasRepeat",
+    "description": "repeated occurrence predicate",
+    "source": {
+      "entries": [
+        "LinearAlgebra.example.repeatedVector"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "zh-CN",
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "长度为 #1 的有限族 #0 含有两个相同的出现",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            },
+            "en": {
+              "mode": "text",
+              "body": "the finite family #0 of length #1 has two equal occurrences",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": ""
+            }
+          }
+        }
+      }
+    ]
+  }
+}

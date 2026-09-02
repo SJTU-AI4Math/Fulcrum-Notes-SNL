@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.subsec.linearRelations",
+    "package": "LinearAlgebra",
+    "kind": "subsection",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "向量的线性关系",
+        "en": "Linear Relations among Vectors"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "以有限指标族 α : Fin n → V 统一表达线性表示、线性关系、线性相关与线性无关。",
+          "en": "Uses a finite indexed family α : Fin n → V to formulate linear representation, linear relations, dependence, and independence."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

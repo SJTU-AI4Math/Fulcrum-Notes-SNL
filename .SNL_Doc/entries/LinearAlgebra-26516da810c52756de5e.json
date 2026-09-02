@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.prop.negOneSmul",
+    "package": "LinearAlgebra",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "负一标量作用",
+        "en": "Multiplication by Negative One"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Eq(LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, $-1$, v), LA.Neg(v)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "(-1)·v = -v。",
+          "en": "(-1)·v = -v."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

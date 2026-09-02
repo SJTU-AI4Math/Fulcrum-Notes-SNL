@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.def.vectorSpace",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "线性空间",
+        "en": "Vector Space"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(\n  Algebra.Field(K@LinearAlgebra.ctxt.vectorSpace, $+_K$@LinearAlgebra.ctxt.vectorSpace, $\\cdot_K$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@V@LinearAlgebra.ctxt.vectorSpace, Type),\n  Type.annotation(@$+$@LinearAlgebra.ctxt.vectorSpace, Type.to(V@LinearAlgebra.ctxt.vectorSpace, Type.to(V@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace))),\n  Type.annotation(@$\\cdot$@LinearAlgebra.ctxt.vectorSpace, Type.to(K@LinearAlgebra.ctxt.vectorSpace, Type.to(V@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace)))\n), LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), struct[enumerate](\n  member[colon](LA.Law.addCommutative, Logic.forall-typed(list-partial(@a, @b), V@LinearAlgebra.ctxt.vectorSpace, Eq(LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, a, b), LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, b, a)))),\n  member[colon](LA.Law.addAssociative, Logic.forall-typed(list-partial(@a, @b, @c), V@LinearAlgebra.ctxt.vectorSpace, Eq(LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, a, LA.Add[paren]($+$@LinearAlgebra.ctxt.vectorSpace, b, c)), LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, LA.Add[paren]($+$@LinearAlgebra.ctxt.vectorSpace, a, b), c)))),\n  member[colon](LA.Law.addIdentity, Logic.forall-typed(@a, V@LinearAlgebra.ctxt.vectorSpace, Eq(LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, a, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)), a))),\n  member[colon](LA.Law.addInverse, Logic.forall-typed(@a, V@LinearAlgebra.ctxt.vectorSpace, Logic.exists-typed(@b, V@LinearAlgebra.ctxt.vectorSpace, Eq(LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, a, b), LA.Zero(V@LinearAlgebra.ctxt.vectorSpace))))),\n  member[colon](LA.Law.smulAssociative, Logic.forall-typed(list-partial(@k, @l), K@LinearAlgebra.ctxt.vectorSpace, Logic.forall-typed(@a, V@LinearAlgebra.ctxt.vectorSpace, Eq(LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, k, LA.Smul[paren]($\\cdot$@LinearAlgebra.ctxt.vectorSpace, l, a)), LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, parentheses(Algebra.mul[juxt](k,l)), a))))),\n  member[colon](LA.Law.smulDistribVector, Logic.forall-typed(@k, K@LinearAlgebra.ctxt.vectorSpace, Logic.forall-typed(list-partial(@a, @b), V@LinearAlgebra.ctxt.vectorSpace, Eq(LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, k, LA.Add[paren]($+$@LinearAlgebra.ctxt.vectorSpace, a, b)), LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, k, a), LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, k, b)))))),\n  member[colon](LA.Law.smulDistribScalar, Logic.forall-typed(list-partial(@k, @l), K@LinearAlgebra.ctxt.vectorSpace, Logic.forall-typed(@a, V@LinearAlgebra.ctxt.vectorSpace, Eq(LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, parentheses(Add.add(k,l)), a), LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, k, a), LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, l, a)))))),\n  member[colon](LA.Law.smulIdentity, Logic.forall-typed(@a, V@LinearAlgebra.ctxt.vectorSpace, Eq(LA.Smul($\\cdot$@LinearAlgebra.ctxt.vectorSpace, $1$, a), a)))\n))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "K 上的线性空间是带加法与数乘的类型 V，满足加法交换群公理、数乘结合律、两条分配律及 1·v = v。",
+          "en": "A vector space over K is a type V with addition and scalar multiplication satisfying the additive-commutative-group axioms, scalar associativity, both distributive laws, and 1·v = v."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

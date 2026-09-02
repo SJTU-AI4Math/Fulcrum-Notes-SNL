@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.prop.singletonIndependent",
+    "package": "LinearAlgebra",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "单元素族判据",
+        "en": "Singleton Independence Criterion"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Logic.iff(LA.LinearlyIndependent(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, LA.Singleton(v), $1$), Neq(v, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "单元素向量族 {v} 线性无关当且仅当 v ≠ 0。",
+          "en": "The singleton family {v} is independent iff v ≠ 0."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

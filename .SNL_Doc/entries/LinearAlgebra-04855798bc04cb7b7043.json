@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.ctxt.finiteFamily",
+    "package": "LinearAlgebra",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "有限向量族上下文",
+        "en": "Finite Vector-Family Context"
+      }
+    },
+    "content": {
+      "snl": "list-partial(\n  LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n, Nat),\n  Type.annotation(@alpha, Type.to(LA.Fin(n), V@LinearAlgebra.ctxt.vectorSpace)),\n  Type.annotation(@beta, V@LinearAlgebra.ctxt.vectorSpace)\n)",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "约定 n : Nat，α : Fin n → V，β : V。",
+          "en": "Fix n : Nat, a finite family α : Fin n → V, and β : V."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

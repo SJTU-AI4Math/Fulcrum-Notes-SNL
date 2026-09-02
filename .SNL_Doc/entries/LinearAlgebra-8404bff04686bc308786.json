@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.def.zeroVector",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "零向量",
+        "en": "Zero Vector"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), LA.ZeroVector(V@LinearAlgebra.ctxt.vectorSpace, @z), Eq(z, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "零向量是线性空间结构所指定的加法恒等元 0。",
+          "en": "The zero vector is the additive identity 0 specified by the vector-space structure."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

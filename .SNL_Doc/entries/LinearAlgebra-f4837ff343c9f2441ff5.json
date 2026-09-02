@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.def.linearlyIndependent",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "线性无关",
+        "en": "Linear Independence"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(\n  LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@alpha@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace)),\n  Type.annotation(@beta@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace)\n), LA.LinearlyIndependent(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily), Logic.forall-typed(@k, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), K@LinearAlgebra.ctxt.vectorSpace), Logic.implies(LA.LinearRelation(V@LinearAlgebra.ctxt.vectorSpace, k, alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily), Logic.forall-typed(@i, LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), Eq(Type.apply(k,i), $0$)))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "有限向量族线性无关，当且仅当它的每个线性关系都是平凡关系。",
+          "en": "A finite vector family is linearly independent iff every linear relation on it is trivial."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

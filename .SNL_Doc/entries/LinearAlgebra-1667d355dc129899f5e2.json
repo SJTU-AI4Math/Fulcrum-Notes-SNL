@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.def.vector",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "向量",
+        "en": "Vector"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), LA.Vector(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, @v), Type.annotation(v, V@LinearAlgebra.ctxt.vectorSpace))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "线性空间 V 的元素称为向量。",
+          "en": "An element of a vector space V is called a vector."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

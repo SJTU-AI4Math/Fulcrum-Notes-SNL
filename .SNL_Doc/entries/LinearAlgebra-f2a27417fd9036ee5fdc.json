@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.ctxt.vectorSpace",
+    "package": "LinearAlgebra",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "线性空间上下文",
+        "en": "Vector-Space Context"
+      }
+    },
+    "content": {
+      "snl": "list-partial(\n  Type.annotation(@K, Type),\n  Type.annotation(@$+_K$, Type.to(K, Type.to(K, K))),\n  Type.annotation(@$\\cdot_K$, Type.to(K, Type.to(K, K))),\n  Algebra.Field(K, $+_K$, $\\cdot_K$),\n  Type.annotation(@V, Type),\n  Type.annotation(@$+$, Type.to(V, Type.to(V, V))),\n  Type.annotation(@$\\cdot$, Type.to(K, Type.to(V, V)))\n)",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "约定 K 为域，V 为类型，+ : V → V → V，· : K → V → V。",
+          "en": "Fix a field K, a type V, addition + : V → V → V, and scalar multiplication · : K → V → V."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

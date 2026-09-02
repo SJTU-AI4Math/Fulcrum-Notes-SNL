@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.def.additiveInverse",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "加法逆元",
+        "en": "Additive Inverse"
+      }
+    },
+    "content": {
+      "snl": "def-hyp(list-partial(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), LA.AdditiveInverse(V@LinearAlgebra.ctxt.vectorSpace, v, @w), Eq(LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, v, w), LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "w 是 v 的加法逆元，当且仅当 v + w = 0。",
+          "en": "w is an additive inverse of v exactly when v + w = 0."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

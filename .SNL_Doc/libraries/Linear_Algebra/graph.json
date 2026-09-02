@@ -1,0 +1,337 @@
+{
+  "nodes": [
+    {
+      "id": "n01",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.sec.vectors"
+      }
+    },
+    {
+      "id": "n02",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.subsec.vectorSpace"
+      }
+    },
+    {
+      "id": "n03",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.ctxt.vectorSpace"
+      }
+    },
+    {
+      "id": "n04",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.def.vectorSpace"
+      }
+    },
+    {
+      "id": "n05",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.def.vector"
+      }
+    },
+    {
+      "id": "n06",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.def.zeroVector"
+      }
+    },
+    {
+      "id": "n07",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.def.additiveInverse"
+      }
+    },
+    {
+      "id": "n08",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.zeroUnique"
+      }
+    },
+    {
+      "id": "n09",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.inverseUnique"
+      }
+    },
+    {
+      "id": "n10",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.addCancel"
+      }
+    },
+    {
+      "id": "n11",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.zeroSmul"
+      }
+    },
+    {
+      "id": "n12",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.smulZero"
+      }
+    },
+    {
+      "id": "n13",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.negOneSmul"
+      }
+    },
+    {
+      "id": "n14",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.smulEqZero"
+      }
+    },
+    {
+      "id": "n15",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.subsec.linearRelations"
+      }
+    },
+    {
+      "id": "n16",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.ctxt.finiteFamily"
+      }
+    },
+    {
+      "id": "n17",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.def.linearRepresentation"
+      }
+    },
+    {
+      "id": "n18",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.def.linearRelation"
+      }
+    },
+    {
+      "id": "n19",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.def.linearlyDependent"
+      }
+    },
+    {
+      "id": "n20",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.def.linearlyIndependent"
+      }
+    },
+    {
+      "id": "n21",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.dependentIffNontrivialRelation"
+      }
+    },
+    {
+      "id": "n22",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.dependentIffRepresentableByOthers"
+      }
+    },
+    {
+      "id": "n23",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.independentIffUniqueRepresentation"
+      }
+    },
+    {
+      "id": "n24",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.subfamilyIndependent"
+      }
+    },
+    {
+      "id": "n25",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.superfamilyDependent"
+      }
+    },
+    {
+      "id": "n26",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.prop.singletonIndependent"
+      }
+    },
+    {
+      "id": "n27",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.example.containsZero"
+      }
+    },
+    {
+      "id": "n28",
+      "label": "Entry",
+      "props": {
+        "entryId": "LinearAlgebra.example.repeatedVector"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n01",
+      "to": "n02",
+      "label": "branch"
+    },
+    {
+      "from": "n01",
+      "to": "n15",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n03",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n04",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n05",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n06",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n07",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n08",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n09",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n10",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n11",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n12",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n13",
+      "label": "branch"
+    },
+    {
+      "from": "n02",
+      "to": "n14",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n16",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n17",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n18",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n19",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n20",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n21",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n22",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n23",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n24",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n25",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n26",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n27",
+      "label": "branch"
+    },
+    {
+      "from": "n15",
+      "to": "n28",
+      "label": "branch"
+    }
+  ]
+}

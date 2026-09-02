@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.prop.dependentIffRepresentableByOthers",
+    "package": "LinearAlgebra",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "可由其余向量表示判据",
+        "en": "Representation by the Remaining Vectors"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(\n  LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@alpha@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace)),\n  Type.annotation(@beta@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace)\n), Logic.iff(LA.LinearlyDependent(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily), Logic.exists-typed(@i, LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), LA.RepresentableByOthers(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, alpha@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily, i))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "α 线性相关当且仅当其中某一向量可由其余向量线性表示。",
+          "en": "α is dependent iff one member is linearly represented by the remaining members."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.sec.vectors",
+    "package": "LinearAlgebra",
+    "kind": "section",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "向量和线性空间",
+        "en": "Vectors and Linear Spaces"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "从域上的线性空间出发，介绍向量、零向量、加法逆元及有限向量族的线性关系。",
+          "en": "Introduces vector spaces over a field, vectors, zero and additive inverses, then linear relations in finite vector families."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.prop.addCancel",
+    "package": "LinearAlgebra",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "加法消去律",
+        "en": "Additive Cancellation"
+      }
+    },
+    "content": {
+      "snl": "thm-hyp(list-partial(LA.VectorSpace(K@LinearAlgebra.ctxt.vectorSpace, V@LinearAlgebra.ctxt.vectorSpace, $+$@LinearAlgebra.ctxt.vectorSpace, $\\cdot$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(list-partial(@a,@b,@c), V@LinearAlgebra.ctxt.vectorSpace), Eq(LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, a, c), LA.Add($+$@LinearAlgebra.ctxt.vectorSpace, b, c))), Eq(a, b))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "若 a + c = b + c，则 a = b。",
+          "en": "If a + c = b + c, then a = b."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}
