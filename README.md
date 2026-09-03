@@ -7,7 +7,7 @@ This repository stores the canonical Fulcrum SNL workspace in `.SNL_Doc/` and pr
 - Lean `v4.28.0`
 - Mathlib `v4.28.0`
 - Paperproof pinned to commit `69401f7d9348699e1532194734b5dda0771278b7`
-- SNL4Lean as the Git submodule `vendor/SNL4Lean`, pinned to commit `27b02bd10c9a67d8ea43bfea730f9f3b008479fd`
+- SNL4Lean as the Git submodule `Lean4/SNL4Lean`, pinned to commit `27b02bd10c9a67d8ea43bfea730f9f3b008479fd`
 
 ## Clone
 

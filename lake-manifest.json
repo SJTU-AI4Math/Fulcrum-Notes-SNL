@@ -6,7 +6,7 @@
    "name": "SNL4Lean",
    "manifestFile": "lake-manifest.json",
    "inherited": false,
-   "dir": "vendor/SNL4Lean",
+   "dir": "Lean4/SNL4Lean",
    "configFile": "lakefile.toml"},
   {"url": "https://github.com/Paper-Proof/paperproof.git",
    "type": "git",
