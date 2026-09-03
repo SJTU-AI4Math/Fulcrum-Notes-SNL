@@ -18,7 +18,11 @@
       "snl": "def[predicateDisplay](\r\n    Algebra.Semigroup(G@Algebra.ctxt.G, $\\cdot$@Algebra.ctxt.mul),\r\n    struct[enumerate](\r\n        member[colon](\r\n            %Associativity%,\r\n            Logic.forall-typed[paren](\r\n                list-partial(@x, @y, @z),\r\n                G@Algebra.ctxt.G,\r\n                Eq(\r\n                    Bop.apply($\\cdot$@Algebra.ctxt.mul, Bop.apply[paren]($\\cdot$@Algebra.ctxt.mul, x, y), z),\r\n                    Bop.apply($\\cdot$@Algebra.ctxt.mul, x, Bop.apply[paren]($\\cdot$@Algebra.ctxt.mul, y, z))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
-    "pointer": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Algebra/Group/Defs.lean",
+      "mode": "regex",
+      "pattern": "class Semigroup"
+    },
     "package": "Algebra"
   }
 }
