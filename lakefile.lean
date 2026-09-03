@@ -10,5 +10,4 @@ require Paperproof from git "https://github.com/Paper-Proof/paperproof.git" @ "6
 require SNL4Lean from "Lean4/SNL4Lean"
 
 @[default_target]
-lean_lib «FulcrumNotesSNL» where
-  srcDir := "Lean4"
+lean_lib «FulcrumNotesSNL»

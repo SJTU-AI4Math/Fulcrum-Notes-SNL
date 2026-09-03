@@ -9,16 +9,14 @@ This repository stores the canonical Fulcrum SNL workspace in `.SNL_Doc/` and pr
 - Paperproof pinned to commit `69401f7d9348699e1532194734b5dda0771278b7`
 - SNL4Lean as the Git submodule `Lean4/SNL4Lean`, pinned to commit `65014d939378a55f7116d7ffec654d2685ba9353`
 
-Lean sources use one fixed, module-valid hierarchy. Do not introduce spaces or
-ad-hoc roots beneath `Lean4/`:
+Lean sources keep the repository's shallow authored layout. `Basic Algebra` is a
+direct child of `Lean4/`; do not reorganize it into a namespace-shaped directory:
 
 ```text
 Lean4/
-├── FulcrumNotesSNL.lean
-├── FulcrumNotesSNL/
+├── Basic Algebra/
 │   ├── BasicAlgebra.lean
-│   └── BasicAlgebra/
-│       └── TermMacros.lean
+│   └── term_macros.lean
 └── SNL4Lean/                  # pinned Git submodule
 ```
 
@@ -45,7 +43,7 @@ Access to the SNL4Lean repository is required when cloning its submodule.
 ```bash
 lake update
 lake exe cache get
-lake build FulcrumNotesSNL
+lake env lean 'Lean4/Basic Algebra/BasicAlgebra.lean'
 ```
 
 `lake-manifest.json` and the SNL4Lean gitlink pin the resolved dependency graph. Do not commit `.lake/` build artifacts.
