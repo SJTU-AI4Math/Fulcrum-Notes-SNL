@@ -1,0 +1,3 @@
+[submodule "vendor/SNL4Lean"]
+	path = vendor/SNL4Lean
+	url = git@github.com:SJTU-AI4Math/SNL4Lean.git
