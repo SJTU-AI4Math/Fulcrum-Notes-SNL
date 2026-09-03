@@ -7,7 +7,7 @@ This repository stores the canonical Fulcrum SNL workspace in `.SNL_Doc/` and pr
 - Lean `v4.28.0`
 - Mathlib `v4.28.0`
 - Paperproof pinned to commit `69401f7d9348699e1532194734b5dda0771278b7`
-- SNL4Lean as the Git submodule `Lean4/SNL4Lean`, pinned to commit `1176f5fb49c41e8a6dfb8839ad368f07b1e42829`
+- SNL4Lean as the Git submodule `Lean4/SNL4Lean`, pinned to commit `65014d939378a55f7116d7ffec654d2685ba9353`
 
 Lean sources use one fixed, module-valid hierarchy. Do not introduce spaces or
 ad-hoc roots beneath `Lean4/`:
@@ -22,12 +22,13 @@ Lean4/
 └── SNL4Lean/                  # pinned Git submodule
 ```
 
-`BasicAlgebra.lean` enables `snl.macroWorkspaceFallback`: Widget Macro lookup
-uses the position-bound Lean environment first, this repository's `.SNL_Doc`
-second, and SNL-Basics' `fvar` rendering only after both sources miss. The
-`Algebra.def.semigroup` Pointer stays attached to Semigroup's real declaration
-in the pinned Mathlib checkout, using an anchored declaration regex rather than
-a local `#print` occurrence.
+Widget Macro lookup uses the position-bound Lean environment. A miss is returned
+in an always-object RPC envelope and uses SNL-Basics' native presentation
+fallback; explicit Lean node kinds remain intact. Project-root `.SNL_Doc`
+lookup is deliberately disabled until it can reuse a fully validated and
+symlink-confined canonical topology reader. The `Algebra.def.semigroup` Pointer
+stays attached to Semigroup's real declaration in the pinned Mathlib checkout,
+using an anchored declaration regex rather than a local `#print` occurrence.
 
 ## Clone
 
