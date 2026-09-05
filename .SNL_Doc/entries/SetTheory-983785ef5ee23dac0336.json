@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "下确界",
     "content": {
-      "snl": "def-hyp[predicate](\r\n    list-partial(Type.annotation(@X, Set(P@Set.def.order.partial)), Type.annotation(@a, P@Set.def.order.partial)),\r\n    Eq(a, Set.order.inf(X, P@Set.def.order.partial)),\r\n    Set.order.greatest[simple](a, Set.sep-typed(@b, P@Set.def.order.partial, Set.order.lowerBound(b, X)))\r\n)"
+      "snl": "def-hyp[predicate](\r\n    __list__(Type.annotation(@X, Set(P@Set.def.order.partial)), Type.annotation(@a, P@Set.def.order.partial)),\r\n    Eq(a, Set.order.inf(X, P@Set.def.order.partial)),\r\n    Set.order.greatest[simple](a, Set.sep-typed(@b, P@Set.def.order.partial, Set.order.lowerBound(b, X)))\r\n)"
     },
     "contribution_info": null,
     "pointer": null

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(Type.annotation(@$\\mathcal{B}$, Set(Set(T@Set.ctxt.T))), Set.subset($\\mathcal{B}$, Set.powerset(S@Topology.ctxt.S))),\r\n    Topology.generatedTopology($\\mathcal{B}$),\r\n    Set.sep-typed(\r\n        @U,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.forall-typed(\r\n            @x,\r\n            T@Set.ctxt.T,\r\n            Logic.implies(\r\n                Set.mem(x, U),\r\n                Logic.exists-typed(\r\n                    @B_2,\r\n                    Set(T@Set.ctxt.T),\r\n                    Logic.and(Set.mem(B_2, $\\mathcal{B}$), Logic.and(Set.mem(x, B_2), Set.subset(B_2, U)))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "def-hyp(\r\n    __list__(Type.annotation(@$\\mathcal{B}$, Set(Set(T@Set.ctxt.T))), Set.subset($\\mathcal{B}$, Set.powerset(S@Topology.ctxt.S))),\r\n    Topology.generatedTopology($\\mathcal{B}$),\r\n    Set.sep-typed(\r\n        @U,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.forall-typed(\r\n            @x,\r\n            T@Set.ctxt.T,\r\n            Logic.implies(\r\n                Set.mem(x, U),\r\n                Logic.exists-typed(\r\n                    @B_2,\r\n                    Set(T@Set.ctxt.T),\r\n                    Logic.and(Set.mem(B_2, $\\mathcal{B}$), Logic.and(Set.mem(x, B_2), Set.subset(B_2, U)))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

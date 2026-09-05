@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive(FP.List(A),struct[enumerate](member[colon](FP.nil,FP.List(A)),member[colon](FP.cons,Type.to(A,Type.to(FP.List(A),FP.List(A))))))"
+      "snl": "def-inductive(FP.List(A),__enum__[enumerate](member[colon](FP.nil,FP.List(A)),member[colon](FP.cons,Type.to(A,Type.to(FP.List(A),FP.List(A))))))"
     },
     "contribution_info": null,
     "pointer": null,

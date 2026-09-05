@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "恒等元 / 单位元",
     "content": {
-      "snl": "def-hyp[predicate](\r\n    list-partial(\r\n        Algebra.Monoid(G@Algebra.ctxt.G, $\\cdot$@Algebra.ctxt.mul),\r\n        Type.annotation(@e, G@Algebra.ctxt.G)\r\n    ),\r\n    Eq(e, Algebra.Id(G)),\r\n    Logic.and(\r\n        Logic.forall-typed(@a, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, e, a), a)),\r\n        Logic.forall-typed(@a, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, a, e), a))\r\n    )\r\n)"
+      "snl": "def-hyp[predicate](\r\n    __list__(\r\n        Algebra.Monoid(G@Algebra.ctxt.G, $\\cdot$@Algebra.ctxt.mul),\r\n        Type.annotation(@e, G@Algebra.ctxt.G)\r\n    ),\r\n    Eq(e, Algebra.Id(G)),\r\n    Logic.and(\r\n        Logic.forall-typed(@a, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, e, a), a)),\r\n        Logic.forall-typed(@a, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, a, e), a))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null

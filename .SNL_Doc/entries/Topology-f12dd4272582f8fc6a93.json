@@ -9,7 +9,7 @@
     "kind": "property",
     "title": "度量空间中的开球是邻域",
     "content": {
-      "snl": "thm-hyp(\r\n    list-partial(Topology.ms(S@Topology.ctxt.S, d@Topology.def.metric), Type.annotation(@$\\delta$, PReal), Type.annotation(@x, S@Topology.ctxt.S)),\r\n    Set.mem(Topology.openBall(x, $\\delta$), Topology.Nbr(x))\r\n)"
+      "snl": "thm-hyp(\r\n    __list__(Topology.ms(S@Topology.ctxt.S, d@Topology.def.metric), Type.annotation(@$\\delta$, PReal), Type.annotation(@x, S@Topology.ctxt.S)),\r\n    Set.mem(Topology.openBall(x, $\\delta$), Topology.Nbr(x))\r\n)"
     },
     "contribution_info": null,
     "pointer": null

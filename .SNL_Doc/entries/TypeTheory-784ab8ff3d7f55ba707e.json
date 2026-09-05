@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Church.and,Syntax.Expr-UTLC.lambda(list-partial[none](@p,@q),Syntax.apply-UTLC(p,q,p)))"
+      "snl": "def(Church.and,Syntax.Expr-UTLC.lambda(__list__[none](@p,@q),Syntax.apply-UTLC(p,q,p)))"
     },
     "contribution_info": null,
     "pointer": null

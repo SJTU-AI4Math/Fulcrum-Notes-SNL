@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "直径",
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(Topology.ms(S@Topology.ctxt.S, d@Topology.def.metric), Type.annotation(@A, Set(S@Topology.ctxt.S))),\r\n    Topology.diam(A),\r\n    Set.order.sup(Type.apply(d@Topology.def.metric, Type.pair(@x, @y)), Set.sep-typed(Type.pair(x, y), Type.prod(S@Topology.ctxt.S, S@Topology.ctxt.S), Logic.and(Set.mem(x, A), Set.mem(y, A))))\r\n)"
+      "snl": "def-hyp(\r\n    __list__(Topology.ms(S@Topology.ctxt.S, d@Topology.def.metric), Type.annotation(@A, Set(S@Topology.ctxt.S))),\r\n    Topology.diam(A),\r\n    Set.order.sup(Type.apply(d@Topology.def.metric, Type.pair(@x, @y)), Set.sep-typed(Type.pair(x, y), Type.prod(S@Topology.ctxt.S, S@Topology.ctxt.S), Logic.and(Set.mem(x, A), Set.mem(y, A))))\r\n)"
     },
     "contribution_info": null,
     "pointer": null

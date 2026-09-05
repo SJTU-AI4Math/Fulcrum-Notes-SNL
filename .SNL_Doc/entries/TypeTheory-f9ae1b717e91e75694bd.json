@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@Γ,@T,Type[univ](@u)),Type.judge(Type.contextExtend(Γ,@x,T),@e,Type[univ](@v))),Type.judge(Γ,Type.Pi(@x,T,e),Type[univ](\\max(u,v))))"
+      "snl": "thm-hyp(__list__(Type.judge(@Γ,@T,Type[univ](@u)),Type.judge(Type.contextExtend(Γ,@x,T),@e,Type[univ](@v))),Type.judge(Γ,Type.Pi(@x,T,e),Type[univ](\\max(u,v))))"
     },
     "contribution_info": null,
     "pointer": null

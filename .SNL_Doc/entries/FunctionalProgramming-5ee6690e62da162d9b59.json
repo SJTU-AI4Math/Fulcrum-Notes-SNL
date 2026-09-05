@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "Type.annotation(list-partial[formula](@A,@B,@C),Type)"
+      "snl": "Type.annotation(__list__[formula](@A,@B,@C),Type)"
     },
     "contribution_info": null,
     "pointer": null,

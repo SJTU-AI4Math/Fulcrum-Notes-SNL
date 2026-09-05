@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-struct[prop](Logic.exists-typed(x,T,P(x)),struct(member(%Instance%,Type.declaration(x,T)),Type.declaration(%Property%,Type.apply(P,x))))"
+      "snl": "def-struct[prop](Logic.exists-typed(x,T,P(x)),__enum__(member(%Instance%,Type.declaration(x,T)),Type.declaration(%Property%,Type.apply(P,x))))"
     },
     "contribution_info": null,
     "pointer": null,

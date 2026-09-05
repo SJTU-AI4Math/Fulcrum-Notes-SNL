@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "Type.annotation(list-partial(@p,@q),Proposition)"
+      "snl": "Type.annotation(__list__(@p,@q),Proposition)"
     },
     "contribution_info": null,
     "pointer": null,

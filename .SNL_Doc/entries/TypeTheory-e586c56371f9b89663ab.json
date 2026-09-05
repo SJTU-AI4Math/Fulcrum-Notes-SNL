@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive-hyp(Type.annotation(list-partial[formula](@A,@B),Type),Type.Sum(A,B),ctors(Type.declaration(Sum.inl,Type.to(A,Type.Sum(A,B))),Type.declaration(Sum.inr,Type.to(B,Type.Sum(A,B)))))"
+      "snl": "def-inductive-hyp(Type.annotation(__list__[formula](@A,@B),Type),Type.Sum(A,B),ctors(Type.declaration(Sum.inl,Type.to(A,Type.Sum(A,B))),Type.declaration(Sum.inr,Type.to(B,Type.Sum(A,B)))))"
     },
     "contribution_info": null,
     "pointer": null

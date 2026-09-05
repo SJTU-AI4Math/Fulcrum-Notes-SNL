@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "偏序关系",
     "content": {
-      "snl": "def-struct-hyp(\r\n    Type.annotation(@$\\lt$, Rl(T@Order.ctxt.T, T@Order.ctxt.T)), \r\n    Order.partial(T@Order.ctxt.T, $\\lt$),\r\n    struct(\r\n        Logic.forall-typed(@t, T@Order.ctxt.T, Logic.neg(Rl.apply($\\lt$, t, t))),\r\n        Logic.forall-typed(@q, T@Order.ctxt.T, Logic.forall-typed(@r, T@Order.ctxt.T, Logic.forall-typed(@s, T@Order.ctxt.T, Logic.implies(Logic.and(Rl.apply($\\lt$, q, r), Rl.apply($\\lt$, r, s)), Rl.apply($\\lt$, q, s)))))\r\n    )\r\n)"
+      "snl": "def-struct-hyp(\r\n    Type.annotation(@$\\lt$, Rl(T@Order.ctxt.T, T@Order.ctxt.T)), \r\n    Order.partial(T@Order.ctxt.T, $\\lt$),\r\n    __enum__(\r\n        Logic.forall-typed(@t, T@Order.ctxt.T, Logic.neg(Rl.apply($\\lt$, t, t))),\r\n        Logic.forall-typed(@q, T@Order.ctxt.T, Logic.forall-typed(@r, T@Order.ctxt.T, Logic.forall-typed(@s, T@Order.ctxt.T, Logic.implies(Logic.and(Rl.apply($\\lt$, q, r), Rl.apply($\\lt$, r, s)), Rl.apply($\\lt$, q, s)))))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null

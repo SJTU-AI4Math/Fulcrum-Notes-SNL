@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(@Γ,@A,Type[univ](@u)),Type.judge(Type.contextExtend(Γ,@x,A),@P,Proposition)),Type.judge(Γ,Type.Pi(@x,A,P),Proposition))",
+      "snl": "thm-hyp(__list__(Type.judge(@Γ,@A,Type[univ](@u)),Type.judge(Type.contextExtend(Γ,@x,A),@P,Proposition)),Type.judge(Γ,Type.Pi(@x,A,P),Proposition))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real)), Analysis.locallyBounded(F, x), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Set.inter(Analysis.domain(F), Analysis.nbh(x, delta))), $\\left|#0\\right| < #1$(Type.apply(Analysis.map(F), y), M))))))))",
+      "snl": "def-hyp(__list__(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real)), Analysis.locallyBounded(F, x), Logic.exists-typed(@delta, Real, Logic.and($#0 > 0$(delta), Logic.exists-typed(@M, Real, Logic.and($#0 > 0$(M), Logic.forall-typed(@y, Real, Logic.implies(Set.mem(y, Set.inter(Analysis.domain(F), Analysis.nbh(x, delta))), $\\left|#0\\right| < #1$(Type.apply(Analysis.map(F), y), M))))))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

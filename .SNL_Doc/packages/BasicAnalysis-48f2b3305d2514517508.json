@@ -57,6 +57,7 @@
     "BasicAnalysis.subsec.meanValue",
     "BasicAnalysis.subsec.real.preliminary",
     "BasicAnalysis.subsec.taylor",
+    "BasicAnalysis.thm.NewtonLeibniz",
     "BasicAnalysis.thm.cauchyMVT",
     "BasicAnalysis.thm.convergentBounded",
     "BasicAnalysis.thm.extremeValue",
@@ -65,7 +66,6 @@
     "BasicAnalysis.thm.lagrangeMVT",
     "BasicAnalysis.thm.limitCongr",
     "BasicAnalysis.thm.limitUnique",
-    "BasicAnalysis.thm.NewtonLeibniz",
     "BasicAnalysis.thm.rolle",
     "BasicAnalysis.thm.taylorLagrange",
     "BasicAnalysis.thm.taylorPeano"

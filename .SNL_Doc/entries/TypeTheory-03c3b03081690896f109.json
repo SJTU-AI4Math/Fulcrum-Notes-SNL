@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "list-partial[enumerate](Syntax.OneOffI18N.LambdaNotation.NamedBinder(Syntax.Expr-UTLC.lambda[text](,),deBruijnIndex,Syntax.Expr-UTLC.lambda(@x,P(x))),Syntax.OneOffI18N.LambdaNotation.MultipleBinders(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y),Type.apply(P(x),y))),Syntax.OneOffI18N.LambdaNotation.Shadowing(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@x,x))))"
+      "snl": "__list__[enumerate](Syntax.OneOffI18N.LambdaNotation.NamedBinder(Syntax.Expr-UTLC.lambda[text](,),deBruijnIndex,Syntax.Expr-UTLC.lambda(@x,P(x))),Syntax.OneOffI18N.LambdaNotation.MultipleBinders(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@y,Type.apply(P(x),y))),Syntax.Expr-UTLC.lambda(__list__[none](@x,@y),Type.apply(P(x),y))),Syntax.OneOffI18N.LambdaNotation.Shadowing(Syntax.Expr-UTLC.lambda(@x,Syntax.Expr-UTLC.lambda(@x,x))))"
     },
     "contribution_info": null,
     "pointer": null

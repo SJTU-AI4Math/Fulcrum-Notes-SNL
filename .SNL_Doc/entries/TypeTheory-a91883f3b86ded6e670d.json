@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Syntax.Expr-UTLC.apply(a,b))"
+      "snl": "def-hyp-opq(Syntax.hasCategory(__list__[formula](@a,@b),Syntax.Expr-UTLC),Syntax.Expr-UTLC.apply(a,b))"
     },
     "contribution_info": null,
     "pointer": null

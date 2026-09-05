@@ -1,0 +1,45 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "BasicMacros",
+  "macro": {
+    "description": "Table container.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "sub",
+    "dynamic_arity": true,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "block",
+          "body": "#*",
+          "separator": "",
+          "block_template_name": "table",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      }
+    ],
+    "tags": [],
+    "name": "__table__"
+  }
+}

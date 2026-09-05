@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(list-partial(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), Eq(Type.apply(Analysis.map(F), a), Type.apply(Analysis.map(F), b))), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Ioo(a, b)), Analysis.deriv(F, c, $0$))))",
+      "snl": "thm-hyp(__list__(Type.annotation(@F, Analysis.PFun), Type.annotation(__list__(@a, @b), Real), $#0 < #1$(a, b), Analysis.contOnIcc(F, a, b), Eq(Type.apply(Analysis.map(F), a), Type.apply(Analysis.map(F), b))), Logic.exists-typed(@c, Real, Logic.and(Set.mem(c, Ioo(a, b)), Analysis.deriv(F, c, $0$))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

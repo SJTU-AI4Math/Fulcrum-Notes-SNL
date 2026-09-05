@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "集合的笛卡尔积",
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(list-partial[formula](@T_1, @T_2), Type), \r\n        Type.annotation(@S_1, Set(T_1)),\r\n        Type.annotation(@S_2, Set(T_2))\r\n    ),\r\n    Set.Prod(S_1, S_2),\r\n    Set.sep-typed(\r\n        tuple-partial[inline](@x_1, @x_2),\r\n        Type.prod(T_1, T_2),\r\n        Logic.and(Set.mem(x_1, S_1), Set.mem(x_2, S_2))\r\n    )\r\n)"
+      "snl": "def-hyp(\r\n    __list__(\r\n        Type.annotation(__list__[formula](@T_1, @T_2), Type), \r\n        Type.annotation(@S_1, Set(T_1)),\r\n        Type.annotation(@S_2, Set(T_2))\r\n    ),\r\n    Set.Prod(S_1, S_2),\r\n    Set.sep-typed(\r\n        tuple-partial[inline](@x_1, @x_2),\r\n        Type.prod(T_1, T_2),\r\n        Logic.and(Set.mem(x_1, S_1), Set.mem(x_2, S_2))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null

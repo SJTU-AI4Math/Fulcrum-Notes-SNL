@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Lambda.S,Syntax.Expr-UTLC.lambda(list-partial[none](@x,@y,@z),Syntax.apply-UTLC(Syntax.apply-UTLC(x,z),parentheses(Syntax.apply-UTLC(y,z)))))"
+      "snl": "def(Lambda.S,Syntax.Expr-UTLC.lambda(__list__[none](@x,@y,@z),Syntax.apply-UTLC(Syntax.apply-UTLC(x,z),parentheses(Syntax.apply-UTLC(y,z)))))"
     },
     "contribution_info": null,
     "pointer": null

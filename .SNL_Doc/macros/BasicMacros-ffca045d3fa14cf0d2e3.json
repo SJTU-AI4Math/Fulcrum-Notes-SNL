@@ -1,0 +1,43 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "BasicMacros",
+  "macro": {
+    "description": "Promote one formula to display mode.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "sub",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_display",
+          "body": "#0",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "$$#0$$",
+          "text": ""
+        }
+      }
+    ],
+    "tags": [],
+    "name": "__display__"
+  }
+}

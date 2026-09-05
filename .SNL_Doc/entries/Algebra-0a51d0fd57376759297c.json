@@ -9,7 +9,7 @@
     "kind": "context",
     "title": "R",
     "content": {
-      "snl": "list-partial(\r\n    Type.annotation(@R, Type),\r\n    Type.annotation(@$+$, Bop(G)),\r\n    Type.annotation(@$\\cdot$, Bop(G))\r\n)"
+      "snl": "__list__(\r\n    Type.annotation(@R, Type),\r\n    Type.annotation(@$+$, Bop(G)),\r\n    Type.annotation(@$\\cdot$, Bop(G))\r\n)"
     },
     "contribution_info": null,
     "pointer": null

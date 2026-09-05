@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(\n  LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@$\\alpha$@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace))\n), Logic.iff(LA.LinearlyDependent($\\alpha$@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace), Logic.exists-typed(@k, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Logic.and(LA.LinearRelation(V@LinearAlgebra.ctxt.vectorSpace, k, $\\alpha$@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily), LA.Nontrivial($\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace, k, n@LinearAlgebra.ctxt.finiteFamily)))))",
+      "snl": "thm-hyp(__list__(\n  LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@$\\alpha$@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace))\n), Logic.iff(LA.LinearlyDependent($\\alpha$@LinearAlgebra.ctxt.finiteFamily, V@LinearAlgebra.ctxt.vectorSpace), Logic.exists-typed(@k, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Logic.and(LA.LinearRelation(V@LinearAlgebra.ctxt.vectorSpace, k, $\\alpha$@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily), LA.Nontrivial($\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace, k, n@LinearAlgebra.ctxt.finiteFamily)))))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",

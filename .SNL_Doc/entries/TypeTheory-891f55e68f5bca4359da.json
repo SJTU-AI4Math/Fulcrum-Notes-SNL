@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-struct(Type.ConstructorInfo,struct[enumerate](member[colon](%name%,`string`),member[colon](%type expression%,Type.TypeExpression)))",
+      "snl": "def-struct(Type.ConstructorInfo,__enum__[enumerate](member[colon](%name%,`string`),member[colon](%type expression%,Type.TypeExpression)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def[predicateDisplay](Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Nonnegativity%,Measure.nonnegative(mu@Measure.ctxt.mu)),member[colon](%Countable additivity%,Measure.countablyAdditive(mu@Measure.ctxt.mu))))"
+      "snl": "def[predicateDisplay](Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),__enum__[enumerate](member[colon](%Nonnegativity%,Measure.nonnegative(mu@Measure.ctxt.mu)),member[colon](%Countable additivity%,Measure.countablyAdditive(mu@Measure.ctxt.mu))))"
     },
     "contribution_info": null,
     "pointer": null,

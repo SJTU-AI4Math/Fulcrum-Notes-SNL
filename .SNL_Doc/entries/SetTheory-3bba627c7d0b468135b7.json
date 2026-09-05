@@ -9,7 +9,7 @@
     "kind": "example",
     "title": "自然数的集合表示",
     "content": {
-      "snl": "def-inductive(\r\n    Nat,\r\n    struct(\r\n        member[colon](@%zero%, Set.emptyset),\r\n        member[colon](@%succ%, Type.lambda-typed(@A, Nat, Set.union(A, Set.enum(A))))\r\n    )\r\n)"
+      "snl": "def-inductive(\r\n    Nat,\r\n    __enum__(\r\n        member[colon](@%zero%, Set.emptyset),\r\n        member[colon](@%succ%, Type.lambda-typed(@A, Nat, Set.union(A, Set.enum(A))))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null

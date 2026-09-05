@@ -8,9 +8,9 @@
   "entry_ids": [
     "Measure.ctxt.1",
     "Measure.ctxt.AB",
-    "Measure.ctxt.mu",
     "Measure.ctxt.Sigma",
     "Measure.ctxt.X",
+    "Measure.ctxt.mu",
     "Measure.def.almostEverywhere",
     "Measure.def.borel",
     "Measure.def.borelMeasure",

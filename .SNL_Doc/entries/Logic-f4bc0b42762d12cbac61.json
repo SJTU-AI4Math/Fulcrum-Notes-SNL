@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive-hyp[prop](Type.annotation[paren](list-partial(@a,@b),T@Logic.ctxt.T),Eq(a,b),ctors(Type.declaration(Eq.refl,Logic.forall(@a,Eq(a,a)))))"
+      "snl": "def-inductive-hyp[prop](Type.annotation[paren](__list__(@a,@b),T@Logic.ctxt.T),Eq(a,b),ctors(Type.declaration(Eq.refl,Logic.forall(@a,Eq(a,a)))))"
     },
     "contribution_info": null,
     "pointer": null,

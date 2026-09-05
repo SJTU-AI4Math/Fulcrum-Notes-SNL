@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-struct-hyp(Type.annotation(@R,Set(Set(X))),Measure.SetSemiring(R),struct[enumerate](member[colon](%Empty set%,Measure.containsEmpty(R)),member[colon](%Intersection closure%,Measure.interClosed(R)),member[colon](%Finite disjoint difference decomposition%,Measure.diffFiniteUnion(R))))"
+      "snl": "def-struct-hyp(Type.annotation(@R,Set(Set(X))),Measure.SetSemiring(R),__enum__[enumerate](member[colon](%Empty set%,Measure.containsEmpty(R)),member[colon](%Intersection closure%,Measure.interClosed(R)),member[colon](%Finite disjoint difference decomposition%,Measure.diffFiniteUnion(R))))"
     },
     "contribution_info": null,
     "pointer": null,

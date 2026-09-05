@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@F, Analysis.PFun), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)), list-partial(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)))",
+      "snl": "def-hyp(Type.annotation(@F, Analysis.PFun), __list__(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)), __list__(Analysis.limNegInfVal(F, @y), Analysis.limPosInfVal(F, @y), Analysis.limInfVal(F, @y)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

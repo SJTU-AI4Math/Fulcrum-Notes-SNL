@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp[display](list-partial(Type.annotation(list-partial(@a,@b),Real),$#0 > #1$(b,a),Type.annotation[paren](@f,Type.to(Icc(a,b),Real)),let(@F,quotient(parentheses(Type.to(Icc(a,b),Real)),Analysis.equiv),Analysis.rIndefInt[inline](@x,Type.apply(f,x)))),$$#0$$(Eq(Analysis.rIntIcc(a,b,@x,Type.apply(f,x)),Analysis.evalDiff(F,a,b))))"
+      "snl": "thm-hyp[display](__list__(Type.annotation(__list__(@a,@b),Real),$#0 > #1$(b,a),Type.annotation[paren](@f,Type.to(Icc(a,b),Real)),let(@F,quotient(parentheses(Type.to(Icc(a,b),Real)),Analysis.equiv),Analysis.rIndefInt[inline](@x,Type.apply(f,x)))),$$#0$$(Eq(Analysis.rIntIcc(a,b,@x,Type.apply(f,x)),Analysis.evalDiff(F,a,b))))"
     },
     "contribution_info": null,
     "pointer": null,

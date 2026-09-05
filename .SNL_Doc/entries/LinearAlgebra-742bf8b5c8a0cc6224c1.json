@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Logic.forall-typed(list-partial(@w_1,@w_2), V@LinearAlgebra.ctxt.vectorSpace, Logic.implies(Logic.and(LA.AdditiveInverse(w_1, v), LA.AdditiveInverse(w_2, v)), Eq(w_1, w_2))))",
+      "snl": "thm-hyp(__list__(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Logic.forall-typed(__list__(@w_1,@w_2), V@LinearAlgebra.ctxt.vectorSpace, Logic.implies(Logic.and(LA.AdditiveInverse(w_1, v), LA.AdditiveInverse(w_2, v)), Eq(w_1, w_2))))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",

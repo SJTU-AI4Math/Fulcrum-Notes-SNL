@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(list-partial(Syntax.hasCategory(a,Syntax.Expr-UTLC),Type.annotation(x,`string`)),Syntax.Expr-UTLC.lambda(x,a))"
+      "snl": "def-hyp-opq(__list__(Syntax.hasCategory(a,Syntax.Expr-UTLC),Type.annotation(x,`string`)),Syntax.Expr-UTLC.lambda(x,a))"
     },
     "contribution_info": null,
     "pointer": null

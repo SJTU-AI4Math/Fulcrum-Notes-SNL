@@ -362,6 +362,7 @@
   "active_macro_packages": [
     "Algebra",
     "BasicAnalysis",
+    "BasicMacros",
     "BasicOperators",
     "BasicTheorems",
     "FulcrumNotesOneOffI18N",

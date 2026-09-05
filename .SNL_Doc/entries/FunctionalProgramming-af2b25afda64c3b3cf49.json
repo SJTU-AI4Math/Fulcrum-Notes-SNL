@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-struct(FP.Monad(M),struct[enumerate](member[colon](%pure%,Type.Pi(@A,Type,Type.to(A,Type.apply(M,A)))),member[colon](%map%,Type.Pi(list-partial[formula](A,B),Type,parentheses(Type.to(parentheses(Type.to(A,B)),Type.to(A,Type.apply(M,B)))))),member[colon](%flatten%,Type.Pi(A,Type,parentheses(Type.to(Type.apply(M,Type.apply(M,A)),Type.apply(M,A)))))))"
+      "snl": "def-struct(FP.Monad(M),__enum__[enumerate](member[colon](%pure%,Type.Pi(@A,Type,Type.to(A,Type.apply(M,A)))),member[colon](%map%,Type.Pi(__list__[formula](A,B),Type,parentheses(Type.to(parentheses(Type.to(A,B)),Type.to(A,Type.apply(M,B)))))),member[colon](%flatten%,Type.Pi(A,Type,parentheses(Type.to(Type.apply(M,Type.apply(M,A)),Type.apply(M,A)))))))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Syntax.hasCategory(@$\\mathcal{U}$,Type.TypeExpression),Type.judge(Type.emptyContext,$\\mathcal{U}$,$\\mathcal{U}$)),Logic.false)",
+      "snl": "thm-hyp(__list__(Syntax.hasCategory(@$\\mathcal{U}$,Type.TypeExpression),Type.judge(Type.emptyContext,$\\mathcal{U}$,$\\mathcal{U}$)),Logic.false)",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

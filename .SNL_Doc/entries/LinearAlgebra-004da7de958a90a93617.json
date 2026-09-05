@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Logic.forall-typed(list-partial(@z_1,@z_2), V@LinearAlgebra.ctxt.vectorSpace, Logic.implies(Logic.and(Eq(z_1, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)), Eq(z_2, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace))), Eq(z_1, z_2))))",
+      "snl": "thm-hyp(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Logic.forall-typed(__list__(@z_1,@z_2), V@LinearAlgebra.ctxt.vectorSpace, Logic.implies(Logic.and(Eq(z_1, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)), Eq(z_2, LA.Zero(V@LinearAlgebra.ctxt.vectorSpace))), Eq(z_1, z_2))))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",

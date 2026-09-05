@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Eq(LA.Smul($0$, v), LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)))",
+      "snl": "thm-hyp(__list__(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Type.annotation(@v, V@LinearAlgebra.ctxt.vectorSpace)), Eq(LA.Smul($0$, v), LA.Zero(V@LinearAlgebra.ctxt.vectorSpace)))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",

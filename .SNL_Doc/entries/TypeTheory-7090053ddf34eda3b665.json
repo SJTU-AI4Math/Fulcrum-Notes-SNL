@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@n,Nat),Church.Nat(n),match(n,cases(Syntax.Expr-UTLC.lambda[maspto](0,Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),x)),Syntax.Expr-UTLC.lambda[maspto](Nat.succ(@m),Syntax.Expr-UTLC.lambda(list-partial[none](@f,@x),Syntax.apply-UTLC(f,parentheses(Syntax.apply-UTLC(Church.Nat(m),f,x))))))))"
+      "snl": "def-hyp(Type.annotation(@n,Nat),Church.Nat(n),match(n,cases(Syntax.Expr-UTLC.lambda[maspto](0,Syntax.Expr-UTLC.lambda(__list__[none](@f,@x),x)),Syntax.Expr-UTLC.lambda[maspto](Nat.succ(@m),Syntax.Expr-UTLC.lambda(__list__[none](@f,@x),Syntax.apply-UTLC(f,parentheses(Syntax.apply-UTLC(Church.Nat(m),f,x))))))))"
     },
     "contribution_info": null,
     "pointer": null

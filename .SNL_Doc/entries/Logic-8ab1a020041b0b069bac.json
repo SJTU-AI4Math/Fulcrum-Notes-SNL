@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation[paren](list-partial(@a,@b),T@Logic.ctxt.T), Logic.implies(Eq(a,b), Logic.forall-typed(@P,Type.to(T@Logic.ctxt.T,Proposition),Logic.implies(P(a),P(b)))), Logic.true)"
+      "snl": "def-hyp(Type.annotation[paren](__list__(@a,@b),T@Logic.ctxt.T), Logic.implies(Eq(a,b), Logic.forall-typed(@P,Type.to(T@Logic.ctxt.T,Proposition),Logic.implies(P(a),P(b)))), Logic.true)"
     },
     "contribution_info": null,
     "pointer": null,

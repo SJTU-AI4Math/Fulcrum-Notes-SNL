@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.boundary(A),Set.diff(Topology.closure(A),Topology.interior(A)))"
+      "snl": "def-hyp(__list__(Type.annotation(@A,Set(S@Topology.ctxt.S)),Type.annotation(@τ,Set(Set(S@Topology.ctxt.S)))),Topology.boundary(A),Set.diff(Topology.closure(A),Topology.interior(A)))"
     },
     "contribution_info": null,
     "pointer": null,

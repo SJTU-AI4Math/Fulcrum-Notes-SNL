@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def[predicateDisplay](Measure.regular(mu@Measure.ctxt.mu),struct[enumerate](member[colon](%Outer regularity%,Measure.outerRegular(mu@Measure.ctxt.mu)),member[colon](%Inner regularity%,Measure.innerRegular(mu@Measure.ctxt.mu))))"
+      "snl": "def[predicateDisplay](Measure.regular(mu@Measure.ctxt.mu),__enum__[enumerate](member[colon](%Outer regularity%,Measure.outerRegular(mu@Measure.ctxt.mu)),member[colon](%Inner regularity%,Measure.innerRegular(mu@Measure.ctxt.mu))))"
     },
     "contribution_info": null,
     "pointer": null,

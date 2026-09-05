@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial($f:\\mathbb{R}\\to\\mathbb{R}$, Proof.because($f''$, %在 $[-a,a]$ 上连续%), $f(0)=0$), Proof.obtain($\\xi\\in(-a,a)$, $f''(\\xi)=\\frac{f(a)+f(-a)}{a^{2}}$))",
+      "snl": "thm-hyp(__list__($f:\\mathbb{R}\\to\\mathbb{R}$, Proof.because($f''$, %在 $[-a,a]$ 上连续%), $f(0)=0$), Proof.obtain($\\xi\\in(-a,a)$, $f''(\\xi)=\\frac{f(a)+f(-a)}{a^{2}}$))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

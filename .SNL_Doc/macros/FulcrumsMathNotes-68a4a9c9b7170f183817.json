@@ -4,6 +4,7 @@
   "schema_version": 1,
   "package": "FulcrumsMathNotes",
   "macro": {
+    "name": "__list__",
     "description": "",
     "source": {
       "entries": [],
@@ -189,9 +190,33 @@
           "markdown": "",
           "text": ""
         }
+      },
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "text",
+          "body": "#*",
+          "separator": ", ",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
       }
     ],
-    "tags": [],
-    "name": "list-partial"
+    "tags": []
   }
 }

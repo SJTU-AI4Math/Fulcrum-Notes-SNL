@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@E, Set(X@Topology.ctxt.X)),\r\n        Type.annotation(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y))\r\n    ),\r\n    Topology.continuousMap(f, E, Y@Topology.ctxt.Y),\r\n    Logic.forall-typed(@x, X@Topology.ctxt.X, Logic.implies(Set.mem(x, E), Topology.continuous(f, x)))\r\n)"
+      "snl": "def-hyp(\r\n    __list__(\r\n        Type.annotation(@E, Set(X@Topology.ctxt.X)),\r\n        Type.annotation(@f, Type.to(X@Topology.ctxt.X, Y@Topology.ctxt.Y))\r\n    ),\r\n    Topology.continuousMap(f, E, Y@Topology.ctxt.Y),\r\n    Logic.forall-typed(@x, X@Topology.ctxt.X, Logic.implies(Set.mem(x, E), Topology.continuous(f, x)))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

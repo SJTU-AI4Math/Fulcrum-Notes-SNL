@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@muStar,Type.to(Set(X@Measure.ctxt.X),ENNReal)),Measure.OuterMeasure(muStar),struct[enumerate](member[colon](%Empty set%,Eq(Measure.outer(muStar,Set.emptyset[slim]),Measure.zero)),member[colon](%Monotonicity%,%monotone under subset inclusion%),member[colon](%Countable subadditivity%,%subadditive over countable unions%)))"
+      "snl": "def-hyp(Type.annotation(@muStar,Type.to(Set(X@Measure.ctxt.X),ENNReal)),Measure.OuterMeasure(muStar),__enum__[enumerate](member[colon](%Empty set%,Eq(Measure.outer(muStar,Set.emptyset[slim]),Measure.zero)),member[colon](%Monotonicity%,%monotone under subset inclusion%),member[colon](%Countable subadditivity%,%subadditive over countable unions%)))"
     },
     "contribution_info": null,
     "pointer": null,

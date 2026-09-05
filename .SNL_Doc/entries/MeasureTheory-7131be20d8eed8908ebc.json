@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.annotation(list-partial(@P,@Q),Type.to(X@Measure.ctxt.X,Proposition)),Logic.iff(Measure.almostEverywhere(@x,Logic.and(P(x),Q(x)),mu@Measure.ctxt.mu),Logic.and(Measure.almostEverywhere(@x,P(x),mu@Measure.ctxt.mu),Measure.almostEverywhere(@x,Q(x),mu@Measure.ctxt.mu))))"
+      "snl": "thm-hyp(Type.annotation(__list__(@P,@Q),Type.to(X@Measure.ctxt.X,Proposition)),Logic.iff(Measure.almostEverywhere(@x,Logic.and(P(x),Q(x)),mu@Measure.ctxt.mu),Logic.and(Measure.almostEverywhere(@x,P(x),mu@Measure.ctxt.mu),Measure.almostEverywhere(@x,Q(x),mu@Measure.ctxt.mu))))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.annotation[paren](list-partial(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Logic.iff(Eq(A@Set.ctxt.AB,B@Set.ctxt.AB), Logic.forall-typed(@x, T@Set.ctxt.T,parentheses(Logic.iff(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB)))),Logic.and(Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.subset(B@Set.ctxt.AB,A@Set.ctxt.AB))))"
+      "snl": "thm-hyp(Type.annotation[paren](__list__(A@Set.ctxt.AB,B@Set.ctxt.AB),Set(T@Set.ctxt.T)),Logic.iff(Eq(A@Set.ctxt.AB,B@Set.ctxt.AB), Logic.forall-typed(@x, T@Set.ctxt.T,parentheses(Logic.iff(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB)))),Logic.and(Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB),Set.subset(B@Set.ctxt.AB,A@Set.ctxt.AB))))"
     },
     "contribution_info": null,
     "pointer": null,

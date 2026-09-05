@@ -6,11 +6,11 @@
   "description": "High-school mathematics: sets, intervals, real numbers, and elementary theorems.",
   "schema_version": 2,
   "entry_ids": [
-    "HS.def.Icc",
-    "HS.def.Ioo",
     "HS.Sec.Set",
     "HS.Subsec.Intervals",
     "HS.Subsec.Real",
+    "HS.def.Icc",
+    "HS.def.Ioo",
     "Real.real"
   ]
 }

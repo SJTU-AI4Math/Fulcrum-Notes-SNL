@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real), Type.annotation(@N, Nat), $#0 > 0$(N)), Logic.exists-typed(@R, Analysis.PFun, Logic.and(Eq(F, Add.add(Analysis.taylorPoly(F, x, N), R)), Analysis.higherInfinitesimal(R, Power(Sub.sub(@y, x), N), x))))",
+      "snl": "thm-hyp(__list__(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real), Type.annotation(@N, Nat), $#0 > 0$(N)), Logic.exists-typed(@R, Analysis.PFun, Logic.and(Eq(F, Add.add(Analysis.taylorPoly(F, x, N), R)), Analysis.higherInfinitesimal(R, Power(Sub.sub(@y, x), N), x))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

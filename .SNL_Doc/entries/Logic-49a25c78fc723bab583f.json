@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive[prop](Logic.false,struct)"
+      "snl": "def-inductive[prop](Logic.false,__enum__)"
     },
     "contribution_info": null,
     "pointer": null,

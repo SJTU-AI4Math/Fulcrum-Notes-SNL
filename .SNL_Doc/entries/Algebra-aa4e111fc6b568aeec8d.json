@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-struct(\r\n    Algebra.Field(R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring),\r\n    struct(\r\n        Algebra.Ring(R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring),\r\n        Algebra.Abelian(R@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring)\r\n    )\r\n)"
+      "snl": "def-struct(\r\n    Algebra.Field(R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring),\r\n    __enum__(\r\n        Algebra.Ring(R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring),\r\n        Algebra.Abelian(R@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring)\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null

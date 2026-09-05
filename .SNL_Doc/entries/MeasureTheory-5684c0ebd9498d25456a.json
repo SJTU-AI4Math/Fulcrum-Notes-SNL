@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-struct(Measure.SigmaAlgebra($\\Sigma$),struct[enumerate](member[colon](%Whole space%,Measure.containsUniv(X,$\\Sigma$)),member[colon](%Complement closure%,Measure.complClosed($\\Sigma$,X)),member[colon](%Countable-union closure%,Measure.countableUnionClosed($\\Sigma$))))"
+      "snl": "def-struct(Measure.SigmaAlgebra($\\Sigma$),__enum__[enumerate](member[colon](%Whole space%,Measure.containsUniv(X,$\\Sigma$)),member[colon](%Complement closure%,Measure.complClosed($\\Sigma$,X)),member[colon](%Countable-union closure%,Measure.countableUnionClosed($\\Sigma$))))"
     },
     "contribution_info": null,
     "pointer": null,

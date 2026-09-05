@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(\r\n    list-partial(\r\n        Type.annotation(@e, G@Algebra.ctxt.G),\r\n        Logic.and(\r\n            Logic.forall-typed(@a, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, e, a), a)),\r\n            Logic.forall-typed(@a, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, a, e), a))\r\n        )\r\n    ),\r\n    Eq(e, Algebra.Id(G))\r\n)"
+      "snl": "thm-hyp(\r\n    __list__(\r\n        Type.annotation(@e, G@Algebra.ctxt.G),\r\n        Logic.and(\r\n            Logic.forall-typed(@a, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, e, a), a)),\r\n            Logic.forall-typed(@a, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, a, e), a))\r\n        )\r\n    ),\r\n    Eq(e, Algebra.Id(G))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

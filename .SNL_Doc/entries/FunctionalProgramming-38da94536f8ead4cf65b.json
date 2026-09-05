@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.annotation(@x,Type.apply(M,A)),Type.annotation(@f,Type.to(A,Type.apply(M,B))),Type.annotation(@g,Type.to(B,Type.apply(M,C)))),Eq(FP.bind(M,FP.bind(M,x,f),g),FP.bind(M,x,Syntax.Expr-UTLC.lambda(@a,FP.bind(M,Type.apply(f,a),g)))))"
+      "snl": "thm-hyp(__list__(Type.annotation(@x,Type.apply(M,A)),Type.annotation(@f,Type.to(A,Type.apply(M,B))),Type.annotation(@g,Type.to(B,Type.apply(M,C)))),Eq(FP.bind(M,FP.bind(M,x,f),g),FP.bind(M,x,Syntax.Expr-UTLC.lambda(@a,FP.bind(M,Type.apply(f,a),g)))))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@n, Nat),\r\n        Type.annotation(@x_n, Type.to(Nat, S@Topology.ctxt.S))\r\n    ),\r\n    Topology.sequentialCompact(x_n),\r\n    Logic.exists-typed(\r\n        @p,\r\n        Type.to(Nat, Nat),\r\n        Logic.exists-typed(@x, S@Topology.ctxt.S, Topology.seqConvergence(Type.apply(x_n, p), x))\r\n    )\r\n)"
+      "snl": "def-hyp(\r\n    __list__(\r\n        Type.annotation(@n, Nat),\r\n        Type.annotation(@x_n, Type.to(Nat, S@Topology.ctxt.S))\r\n    ),\r\n    Topology.sequentialCompact(x_n),\r\n    Logic.exists-typed(\r\n        @p,\r\n        Type.to(Nat, Nat),\r\n        Logic.exists-typed(@x, S@Topology.ctxt.S, Topology.seqConvergence(Type.apply(x_n, p), x))\r\n    )\r\n)"
     },
     "contribution_info": "待修改：需先定义保序子列的概念",
     "pointer": null,

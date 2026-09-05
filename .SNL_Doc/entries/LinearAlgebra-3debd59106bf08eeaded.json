@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(list-partial(\n  LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@$\\alpha$@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace))\n), Type.annotation(@$\\beta$, V@LinearAlgebra.ctxt.vectorSpace)), LA.LinearRepresentation($\\beta$, $\\alpha$@LinearAlgebra.ctxt.finiteFamily), Logic.exists-typed(@k, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Eq($\\beta$, LA.LinearSum(k, $\\alpha$@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily))))",
+      "snl": "def-hyp(__list__(__list__(\n  LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace),\n  Type.annotation(@n@LinearAlgebra.ctxt.finiteFamily, Nat),\n  Type.annotation(@$\\alpha$@LinearAlgebra.ctxt.finiteFamily, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), V@LinearAlgebra.ctxt.vectorSpace))\n), Type.annotation(@$\\beta$, V@LinearAlgebra.ctxt.vectorSpace)), LA.LinearRepresentation($\\beta$, $\\alpha$@LinearAlgebra.ctxt.finiteFamily), Logic.exists-typed(@k, Type.to(LA.Fin(n@LinearAlgebra.ctxt.finiteFamily), $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), Eq($\\beta$, LA.LinearSum(k, $\\alpha$@LinearAlgebra.ctxt.finiteFamily, n@LinearAlgebra.ctxt.finiteFamily))))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",

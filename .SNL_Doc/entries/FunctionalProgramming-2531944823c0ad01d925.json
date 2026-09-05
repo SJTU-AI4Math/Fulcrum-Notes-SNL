@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive(FP.Option[ques](A),struct[enumerate](member[colon](Option.none,FP.Option[ques](A)),member[colon](Option.some,Type.to(A,FP.Option[ques](A)))))"
+      "snl": "def-inductive(FP.Option[ques](A),__enum__[enumerate](member[colon](Option.none,FP.Option[ques](A)),member[colon](Option.some,Type.to(A,FP.Option[ques](A)))))"
     },
     "contribution_info": null,
     "pointer": null,

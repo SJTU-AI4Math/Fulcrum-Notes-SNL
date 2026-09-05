@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(@m, Real)), list-partial(Analysis.minPoint(F, m), Analysis.maxPoint(F, m)), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, Analysis.domain(F)), $#0 \\geqslant #1$(Type.apply(Analysis.map(F), x), Type.apply(Analysis.map(F), m)))))",
+      "snl": "def-hyp(__list__(Type.annotation(@F, Analysis.PFun), Type.annotation(@m, Real)), __list__(Analysis.minPoint(F, m), Analysis.maxPoint(F, m)), Logic.forall-typed(@x, Real, Logic.implies(Set.mem(x, Analysis.domain(F)), $#0 \\geqslant #1$(Type.apply(Analysis.map(F), x), Type.apply(Analysis.map(F), m)))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

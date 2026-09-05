@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.annotation(@g,Type.to(Real,Real)),Type.annotation(list-partial(@x_1,@x_2),Real),Analysis.isContinuousOn(g,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2)))),Logic.exists-typed(@c,Real,Logic.and(Set.mem(c,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2))),Eq(Type.apply(g,c),Div.div(Add.add(Type.apply(g,x_1),Type.apply(g,x_2)),2)))))",
+      "snl": "thm-hyp(__list__(Type.annotation(@g,Type.to(Real,Real)),Type.annotation(__list__(@x_1,@x_2),Real),Analysis.isContinuousOn(g,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2)))),Logic.exists-typed(@c,Real,Logic.and(Set.mem(c,Icc(min-binary(x_1,x_2),max-binary(x_1,x_2))),Eq(Type.apply(g,c),Div.div(Add.add(Type.apply(g,x_1),Type.apply(g,x_2)),2)))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

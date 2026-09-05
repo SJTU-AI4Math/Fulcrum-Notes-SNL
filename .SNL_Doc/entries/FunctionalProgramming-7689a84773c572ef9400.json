@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-struct(FP.OrderedMonad(M),struct[enumerate](member[colon](%order%,Type.Pi(@A,Type,FP.PartialOrder(Type.apply(M,A)))),member[colon](%pure monotone%,FP.monotone(FP.pure(M,@a))),member[colon](%bind monotone%,FP.monotone(FP.bind(M,@x,@f)))))"
+      "snl": "def-struct(FP.OrderedMonad(M),__enum__[enumerate](member[colon](%order%,Type.Pi(@A,Type,FP.PartialOrder(Type.apply(M,A)))),member[colon](%pure monotone%,FP.monotone(FP.pure(M,@a))),member[colon](%bind monotone%,FP.monotone(FP.bind(M,@x,@f)))))"
     },
     "contribution_info": null,
     "pointer": null,

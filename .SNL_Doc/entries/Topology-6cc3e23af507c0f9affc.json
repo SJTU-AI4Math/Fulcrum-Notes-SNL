@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-struct-hyp(\r\n    list-partial(\r\n        Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n        Type.annotation(\r\n            @$\\mathcal{C}$,\r\n            Set(Set(T@Set.ctxt.T))\r\n        ),\r\n        Set.subset(A, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.openCover($\\mathcal{C}$, A),\r\n    struct(\r\n        member[colon](\r\n            %开集族%,\r\n            Set.subset($\\mathcal{C}$, τ@Topology.ctxt.tau)\r\n        ),\r\n        member[colon](\r\n            %覆盖性%,\r\n            Set.subset(\r\n                A,\r\n                Set.sep-typed(\r\n                    @x,\r\n                    T@Set.ctxt.T,\r\n                    Logic.exists-typed(@U, Set(T@Set.ctxt.T), Logic.and(Set.mem(U, $\\mathcal{C}$), Set.mem(x, U)))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "def-struct-hyp(\r\n    __list__(\r\n        Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n        Type.annotation(\r\n            @$\\mathcal{C}$,\r\n            Set(Set(T@Set.ctxt.T))\r\n        ),\r\n        Set.subset(A, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.openCover($\\mathcal{C}$, A),\r\n    __enum__(\r\n        member[colon](\r\n            %开集族%,\r\n            Set.subset($\\mathcal{C}$, τ@Topology.ctxt.tau)\r\n        ),\r\n        member[colon](\r\n            %覆盖性%,\r\n            Set.subset(\r\n                A,\r\n                Set.sep-typed(\r\n                    @x,\r\n                    T@Set.ctxt.T,\r\n                    Logic.exists-typed(@U, Set(T@Set.ctxt.T), Logic.and(Set.mem(U, $\\mathcal{C}$), Set.mem(x, U)))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

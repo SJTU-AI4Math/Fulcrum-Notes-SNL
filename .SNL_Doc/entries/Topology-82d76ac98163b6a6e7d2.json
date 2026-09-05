@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp[predicate](\r\n    list-partial(\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S),\r\n        Type.annotation(@U, Set(T@Set.ctxt.T))\r\n    ),\r\n    Topology.neighborhood(U, x),\r\n    Logic.exists-typed(\r\n        @O,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.and(Logic.and(Set.mem(O, τ@Topology.ctxt.tau), Set.mem(x, O)), Set.subset(O, U))\r\n    )\r\n)"
+      "snl": "def-hyp[predicate](\r\n    __list__(\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S),\r\n        Type.annotation(@U, Set(T@Set.ctxt.T))\r\n    ),\r\n    Topology.neighborhood(U, x),\r\n    Logic.exists-typed(\r\n        @O,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.and(Logic.and(Set.mem(O, τ@Topology.ctxt.tau), Set.mem(x, O)), Set.subset(O, U))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

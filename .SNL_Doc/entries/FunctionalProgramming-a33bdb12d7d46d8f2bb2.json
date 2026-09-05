@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-struct(FP.MonadLattice(M),struct[enumerate](member[colon](%ordered monad%,FP.OrderedMonad(M)),member[colon](%lattice%,Type.Pi(@A,Type,FP.Lattice(Type.apply(M,A))))))"
+      "snl": "def-struct(FP.MonadLattice(M),__enum__[enumerate](member[colon](%ordered monad%,FP.OrderedMonad(M)),member[colon](%lattice%,Type.Pi(@A,Type,FP.Lattice(Type.apply(M,A))))))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@X,Type),Type.annotation(@r,Nat),Type.annotation[paren](list-partial(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
+      "snl": "def-hyp(__list__(Type.annotation(@X,Type),Type.annotation(@r,Nat),Type.annotation[paren](__list__(@a1,@a2),X)), Algebra.Cycle, Logic.true)"
     },
     "contribution_info": null,
     "pointer": null,

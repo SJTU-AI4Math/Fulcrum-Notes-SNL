@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@n, Nat),\r\n        Type.annotation(@x_n, Type.to(Nat, S@Topology.ctxt.S)),\r\n        Type.annotation(@x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.seqLimit(n, x_n, x),\r\n    Logic.forall-typed(\r\n        @U,\r\n        Set(S@Topology.ctxt.S),\r\n        Logic.implies(\r\n            Topology.neighborhood(U, x),\r\n            Logic.exists-typed(\r\n                @N,\r\n                Nat,\r\n                Logic.forall-typed(\r\n                    @k,\r\n                    Nat,\r\n                    Logic.implies(Le(N, k), Set.mem(Type.apply(x_n, n), U))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "def-hyp(\r\n    __list__(\r\n        Type.annotation(@n, Nat),\r\n        Type.annotation(@x_n, Type.to(Nat, S@Topology.ctxt.S)),\r\n        Type.annotation(@x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.seqLimit(n, x_n, x),\r\n    Logic.forall-typed(\r\n        @U,\r\n        Set(S@Topology.ctxt.S),\r\n        Logic.implies(\r\n            Topology.neighborhood(U, x),\r\n            Logic.exists-typed(\r\n                @N,\r\n                Nat,\r\n                Logic.forall-typed(\r\n                    @k,\r\n                    Nat,\r\n                    Logic.implies(Le(N, k), Set.mem(Type.apply(x_n, n), U))\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

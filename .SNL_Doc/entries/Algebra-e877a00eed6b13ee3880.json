@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "交换幺半群",
     "content": {
-      "snl": "def-struct(\r\n    Algebra.CommMonoid(G@Algebra.ctxt.G, $\\cdot$@Algebra.ctxt.mul),\r\n    struct(\r\n        Algebra.Monoid(G@Algebra.ctxt.G, $\\cdot$@Algebra.ctxt.mul),\r\n        Logic.forall-typed(@a, G@Algebra.ctxt.G, Logic.forall-typed(@b, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, a, b), Bop.apply($\\cdot$@Algebra.ctxt.mul, b, a))))\r\n    )\r\n)"
+      "snl": "def-struct(\r\n    Algebra.CommMonoid(G@Algebra.ctxt.G, $\\cdot$@Algebra.ctxt.mul),\r\n    __enum__(\r\n        Algebra.Monoid(G@Algebra.ctxt.G, $\\cdot$@Algebra.ctxt.mul),\r\n        Logic.forall-typed(@a, G@Algebra.ctxt.G, Logic.forall-typed(@b, G@Algebra.ctxt.G, Eq(Bop.apply($\\cdot$@Algebra.ctxt.mul, a, b), Bop.apply($\\cdot$@Algebra.ctxt.mul, b, a))))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null

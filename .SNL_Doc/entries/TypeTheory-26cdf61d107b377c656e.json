@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.judge(Type.emptyContext,@P,Proposition),Type.judge(Type.emptyContext,@h_1,P),Type.judge(Type.emptyContext,@h_2,P)),Eq(h_1,h_2))",
+      "snl": "thm-hyp(__list__(Type.judge(Type.emptyContext,@P,Proposition),Type.judge(Type.emptyContext,@h_1,P),Type.judge(Type.emptyContext,@h_2,P)),Eq(h_1,h_2))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

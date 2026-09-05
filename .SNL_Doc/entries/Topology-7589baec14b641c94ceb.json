@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Type.annotation(@x, X@Topology.ctxt.X),\r\n        Type.annotation(@x_0, X@Topology.ctxt.X)\r\n    ),\r\n    Topology.continuous(f@Topology.ctxt.f, x_0),\r\n    Topology.mapLimit(x, x_0, f@Topology.ctxt.f, Type.apply(f@Topology.ctxt.f, x_0))\r\n)"
+      "snl": "def-hyp(\r\n    __list__(\r\n        Type.annotation(@x, X@Topology.ctxt.X),\r\n        Type.annotation(@x_0, X@Topology.ctxt.X)\r\n    ),\r\n    Topology.continuous(f@Topology.ctxt.f, x_0),\r\n    Topology.mapLimit(x, x_0, f@Topology.ctxt.f, Type.apply(f@Topology.ctxt.f, x_0))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

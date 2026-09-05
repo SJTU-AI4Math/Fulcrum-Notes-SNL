@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "有界集",
     "content": {
-      "snl": "def-hyp(\r\n    list-partial(\r\n        Topology.ms(S@Topology.ctxt.S, d@Topology.def.metric),\r\n        Type.annotation(@E, Set(S@Topology.ctxt.S))\r\n    ),\r\n    Topology.bounded(E),\r\n    Logic.exists-typed(\r\n        @M, \r\n        PReal,\r\n        Logic.forall-typed(\r\n            Type.pair(@x, @y),\r\n            Type.prod(S@Topology.ctxt.S, S@Topology.ctxt.S),\r\n            Le(Type.apply(d@Topology.def.metric, Type.pair(x, y)), M)\r\n        )\r\n    )\r\n)"
+      "snl": "def-hyp(\r\n    __list__(\r\n        Topology.ms(S@Topology.ctxt.S, d@Topology.def.metric),\r\n        Type.annotation(@E, Set(S@Topology.ctxt.S))\r\n    ),\r\n    Topology.bounded(E),\r\n    Logic.exists-typed(\r\n        @M, \r\n        PReal,\r\n        Logic.forall-typed(\r\n            Type.pair(@x, @y),\r\n            Type.prod(S@Topology.ctxt.S, S@Topology.ctxt.S),\r\n            Le(Type.apply(d@Topology.def.metric, Type.pair(x, y)), M)\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null

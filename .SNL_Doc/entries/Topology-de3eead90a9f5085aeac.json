@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(Type.annotation(@E,Set(X@Topology.ctxt.X)),Type.annotation(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.annotation(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.annotation(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.implies(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Topology.compact(Set.sep-typed(@y,Y@Topology.ctxt.Y,Logic.exists-typed(@x,X@Topology.ctxt.X,Logic.and(Set.mem(x,E),Eq(Type.apply(f,x),y)))))))"
+      "snl": "thm-hyp(__list__(Type.annotation(@E,Set(X@Topology.ctxt.X)),Type.annotation(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y)),Type.annotation(@τ_X,Set(Set(X@Topology.ctxt.X))),Type.annotation(@τ_Y,Set(Set(Y@Topology.ctxt.Y)))),Logic.implies(Topology.continuousMap(f,E,Y@Topology.ctxt.Y),Topology.compact(Set.sep-typed(@y,Y@Topology.ctxt.Y,Logic.exists-typed(@x,X@Topology.ctxt.X,Logic.and(Set.mem(x,E),Eq(Type.apply(f,x),y)))))))"
     },
     "contribution_info": null,
     "pointer": null,

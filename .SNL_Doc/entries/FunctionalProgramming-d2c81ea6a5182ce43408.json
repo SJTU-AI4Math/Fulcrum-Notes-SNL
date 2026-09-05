@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(list-partial(FP.le(@x,@y),Logic.forall-typed(@a,A,FP.le(Type.apply(@f,a),Type.apply(@g,a)))),FP.le(FP.bind(M,x,f),FP.bind(M,y,g)))"
+      "snl": "thm-hyp(__list__(FP.le(@x,@y),Logic.forall-typed(@a,A,FP.le(Type.apply(@f,a),Type.apply(@g,a)))),FP.le(FP.bind(M,x,f),FP.bind(M,y,g)))"
     },
     "contribution_info": null,
     "pointer": null,

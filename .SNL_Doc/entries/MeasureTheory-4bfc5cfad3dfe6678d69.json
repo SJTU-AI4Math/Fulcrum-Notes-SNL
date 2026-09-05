@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@E,Set($\\mathbb{R}$)),Type.annotation(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal))),Measure.lebesgueMeasurable(E),Measure.caratheodory(muStar,E))"
+      "snl": "def-hyp(__list__(Type.annotation(@E,Set($\\mathbb{R}$)),Type.annotation(@muStar,Type.to(Set($\\mathbb{R}$),ENNReal))),Measure.lebesgueMeasurable(E),Measure.caratheodory(muStar,E))"
     },
     "contribution_info": null,
     "pointer": null,

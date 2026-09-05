@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-struct(Type.InductiveInfo,struct[enumerate](member[colon](%declaration context%,Type.DeclarationContext),member[colon](%type expression%,Type.TypeExpression),member[colon](%constructor declarations%,List(Type.ConstructorInfo))))",
+      "snl": "def-struct(Type.InductiveInfo,__enum__[enumerate](member[colon](%declaration context%,Type.DeclarationContext),member[colon](%type expression%,Type.TypeExpression),member[colon](%constructor declarations%,List(Type.ConstructorInfo))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

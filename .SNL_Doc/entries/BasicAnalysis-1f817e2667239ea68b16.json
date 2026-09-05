@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(list-partial(Type.annotation(@F, Analysis.PFun), Type.annotation(list-partial(@x, @D), Real)), Analysis.deriv(F, x, D), Analysis.funLim(Div.div(Sub.sub(F, Type.apply(Analysis.map(F), x)), Sub.sub(@y, x)), @y, x, D))",
+      "snl": "def-hyp(__list__(Type.annotation(@F, Analysis.PFun), Type.annotation(__list__(@x, @D), Real)), Analysis.deriv(F, x, D), Analysis.funLim(Div.div(Sub.sub(F, Type.apply(Analysis.map(F), x)), Sub.sub(@y, x)), @y, x, D))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

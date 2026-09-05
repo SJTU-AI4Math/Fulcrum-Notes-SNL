@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "list-partial[none](%Lean%,Type.judge(Type.emptyContext,Proposition,Type[univ](0)),Type.judge(Type.emptyContext,Type[univ](@u),Type[univ](Nat.succ(u))))",
+      "snl": "__list__[none](%Lean%,Type.judge(Type.emptyContext,Proposition,Type[univ](0)),Type.judge(Type.emptyContext,Type[univ](@u),Type[univ](Nat.succ(u))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

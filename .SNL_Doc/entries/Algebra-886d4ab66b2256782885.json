@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-struct(\r\n    Algebra.CommRing(R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring),\r\n    struct(\r\n        Algebra.Ring(R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring),\r\n        Logic.forall-typed(\r\n            @x, \r\n            R@Algebra.ctxt.ring,\r\n            Logic.forall-typed(\r\n                @y,\r\n                R@Algebra.ctxt.ring,\r\n                Eq(\r\n                    Bop.apply($\\cdot$, a, b),\r\n                    Bop.apply($\\cdot$, b, a)\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "def-struct(\r\n    Algebra.CommRing(R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring),\r\n    __enum__(\r\n        Algebra.Ring(R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring),\r\n        Logic.forall-typed(\r\n            @x, \r\n            R@Algebra.ctxt.ring,\r\n            Logic.forall-typed(\r\n                @y,\r\n                R@Algebra.ctxt.ring,\r\n                Eq(\r\n                    Bop.apply($\\cdot$, a, b),\r\n                    Bop.apply($\\cdot$, b, a)\r\n                )\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null

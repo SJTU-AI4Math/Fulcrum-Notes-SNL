@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp[predicate](\r\n    list-partial(\r\n        Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.isolatedPoint(x, A),\r\n    Logic.and(\r\n        Set.mem(x, A),\r\n        Logic.neg(Set.mem(x, Topology.derivedSet(A)))\r\n    )\r\n)"
+      "snl": "def-hyp[predicate](\r\n    __list__(\r\n        Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n        Type.annotation(@x, T@Set.ctxt.T),\r\n        Set.mem(x, S@Topology.ctxt.S)\r\n    ),\r\n    Topology.isolatedPoint(x, A),\r\n    Logic.and(\r\n        Set.mem(x, A),\r\n        Logic.neg(Set.mem(x, Topology.derivedSet(A)))\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

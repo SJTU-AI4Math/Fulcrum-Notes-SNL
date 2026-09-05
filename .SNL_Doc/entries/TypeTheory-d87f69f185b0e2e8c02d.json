@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Syntax.hasCategory(list-partial[formula](@a,@b),Syntax.Expr-UTLC),Lambda.beta(Syntax.Expr-UTLC.apply(parentheses(Syntax.Expr-UTLC.lambda(@$ $,a)),b),Syntax.substitution-UTLC(a,0,b)))"
+      "snl": "thm-hyp(Syntax.hasCategory(__list__[formula](@a,@b),Syntax.Expr-UTLC),Lambda.beta(Syntax.Expr-UTLC.apply(parentheses(Syntax.Expr-UTLC.lambda(@$ $,a)),b),Syntax.substitution-UTLC(a,0,b)))"
     },
     "contribution_info": null,
     "pointer": null

@@ -9,7 +9,7 @@
     "kind": "context",
     "title": "Type $A,B$",
     "content": {
-      "snl": "list-partial(Type.annotation(@A, Type), Type.annotation(@B, Type))"
+      "snl": "__list__(Type.annotation(@A, Type), Type.annotation(@B, Type))"
     },
     "contribution_info": null,
     "pointer": null
