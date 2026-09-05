@@ -2,6 +2,15 @@
 
 This repository stores the canonical Fulcrum SNL workspace in `.SNL_Doc/` and provides a Lean project for checked integrations.
 
+## Convincer prototype
+
+[Convincer](Convincer/README.md) combines ordinary Lean tactics with explicit,
+proof-relevant evidence dependencies. It produces `Convincing p`, not a proof of
+`p`, and supports `#evidence argument` for structural provenance. Run the isolated,
+serial checks with `python3 Convincer/check.py` (Windows: `python Convincer/check.py`).
+This experimental slice has not yet passed the repository's SNL admission gate;
+see its README for the existing workspace validation blocker.
+
 ## Toolchain and dependencies
 
 - Lean `v4.28.0`

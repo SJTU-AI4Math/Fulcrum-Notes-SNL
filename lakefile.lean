@@ -11,3 +11,6 @@ require SNL4Lean from "Lean4/SNL4Lean"
 
 @[default_target]
 lean_lib «FulcrumNotesSNL»
+
+-- Small standalone argument DSL; no Mathlib or SNL4Lean imports.
+lean_lib Convincer
