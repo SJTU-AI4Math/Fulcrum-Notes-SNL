@@ -31,7 +31,7 @@ def positive(path, output=None):
     result = lean(path, output)
     print(result.stdout, end="")
     print(result.stderr, end="")
-    if result.returncode != 0 or "declaration uses `sorry`" in result.stdout:
+    if result.returncode != 0 or "declaration uses `sorry`" in (result.stdout + result.stderr):
         raise SystemExit(f"FAIL: {path} (exit {result.returncode})")
     print(f"PASS: {path}")
     return result.stdout
@@ -80,7 +80,15 @@ convince bad : Nat := by exact 3
     "symbolic-report": ("""
 variable (c : Convincing True)
 #evidence c
-""", "cannot inspect this argument"),
+""", "require a closed argument"),
+    "open-proof-report": ("""
+variable (h : False)
+#evidence (show Convincing False from .proof h)
+""", "require a closed argument"),
+    "open-evidence-report": ("""
+variable (s : Evidence)
+#evidence (show Convincing False from .evidence s)
+""", "require a closed argument"),
     "opaque-report": ("""
 opaque hidden : Convincing True := .evidence ⟨"hidden", "opaque source", ""⟩
 #evidence hidden
@@ -123,6 +131,19 @@ def main():
         axiom_output = positive(axiom_probe)
         if "axioms: #[chosenTrust]" not in axiom_output:
             raise SystemExit("FAIL: custom axiom omitted from provenance report")
+        # The checker itself must reject a real Lean exit-0 sorry warning,
+        # including ordinary declarations outside the Convincer DSL.
+        warning_probe = Path(folder) / "OrdinarySorry.lean"
+        warning_probe.write_text("import Convincer\nexample : False := by sorry\n", encoding="utf-8")
+        warning_result = lean(warning_probe)
+        if warning_result.returncode != 0 or "declaration uses `sorry`" not in (warning_result.stdout + warning_result.stderr):
+            raise SystemExit("FAIL: missing real exit-0 sorry warning for checker regression")
+        try:
+            positive(warning_probe)
+        except SystemExit:
+            print("PASS: checker rejects ordinary Lean exit-0 sorry warning")
+        else:
+            raise SystemExit("FAIL: checker accepted ordinary Lean sorry")
         for name, (body, expected) in NEGATIVE.items():
             path = Path(folder) / (name + ".lean")
             path.write_text("import Convincer\n" + body, encoding="utf-8")

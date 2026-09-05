@@ -193,6 +193,8 @@ elab "#evidence " term:term : command => runTermElabM fun _ => do
   synthesizeSyntheticMVarsNoPostponing
   let e ← instantiateMVars e
   if e.hasExprMVar then throwError "Instantiate all argument parameters before querying evidence"
+  if e.hasFVar || (← inferType e).hasFVar then
+    throwError "Convincer queries require a closed argument: instantiate all parameters and discharge local assumptions."
   rejectSorry e
   let lines ← report e
   let axioms ← argumentAxioms e
