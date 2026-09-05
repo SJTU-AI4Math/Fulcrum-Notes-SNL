@@ -10,12 +10,18 @@ private inductive Pending where
   | nil
   | cons {p : Prop} (source : Convincing p) (hole : p) (tail : Pending)
 
+-- Store only the key in the local context. Putting Pending itself there lets
+-- `subst` abstract its unresolved holes into delayed metavariable applications.
+private structure Journal where
+  key : Name
+
 private def journal : TacticM (LocalDecl × Expr) := do
   for decl in (← getLCtx).decls.toArray.reverse do
     if let some decl := decl then
-      if decl.type.isConstOf ``Pending then
+      if decl.type.isConstOf ``Journal then
         if let some value := decl.value? then
-          return (decl, value)
+          let key : Name ← reduceEval (← mkAppM ``Journal.key #[value])
+          return (decl, mkMVar ⟨key⟩)
   throwError "Convincer effects are only available inside `convincing% by` or `convince ... := by`."
 
 private partial def journalTail (e : Expr) : MetaM Expr := do
@@ -44,11 +50,13 @@ private def record (source : Expr) : TacticM Expr := do
   unless ty.isAppOfArity ``Convincing 1 do
     throwError "Expected a `Convincing p` argument, got {ty}"
   let p ← staticInput scope ty.getAppArgs[0]!
-  let (hole, tail) ← head.mvarId!.withContext do
+  -- Context-rewriting tactics may instantiate the journal head to a cons.
+  -- Its open tail is the stable metavariable, not the head expression.
+  let tailGoal ← journalTail head
+  let (hole, tail) ← tailGoal.mvarId!.withContext do
     let hole ← mkFreshExprMVar p .syntheticOpaque
     let tail ← mkFreshExprMVar (mkConst ``Pending) .syntheticOpaque
     return (hole, tail)
-  let tailGoal ← journalTail head
   tailGoal.mvarId!.assign (← mkAppM ``Pending.cons #[source, hole, tail])
   return hole
 
@@ -102,7 +110,8 @@ elab "convincing% " "by " seq:tacticSeq : term <= expectedType? => do
     throwError "Expected type must be `Convincing p`"
   let p := expected.getAppArgs[0]!
   let head ← mkFreshExprMVar (mkConst ``Pending) .syntheticOpaque
-  let (proof, entries) ← withLetDecl `_convincerJournal (mkConst ``Pending) head (kind := .implDetail) fun _ => do
+  let token := mkApp (mkConst ``Journal.mk) (toExpr head.mvarId!.name)
+  let (proof, entries) ← withLetDecl `_convincerJournal (mkConst ``Journal) token (kind := .implDetail) fun _ => do
     let goal ← mkFreshExprMVar p .syntheticOpaque
     let remaining ← Tactic.run goal.mvarId! do
       withoutRecover <| evalTactic seq

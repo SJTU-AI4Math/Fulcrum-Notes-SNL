@@ -100,6 +100,32 @@ def handles : Id (Convincing (False ∧ True)) := do
 example : handles.evidenceLeaves = [firstSource] := rfl
 
 
+-- Context rewriting must not turn the effect journal into an uninspectable
+-- delayed metavariable application (regression: `subst` between two effects).
+convince afterSubst (a b : Nat) (_he : a = b) : True := by
+  evidence h : True := firstSource
+  subst a
+  evidence ht : True := secondSource
+  exact ht
+example : (afterSubst 0 0 rfl).evidenceLeaves = [firstSource, secondSource] := rfl
+
+convince afterClear : True := by
+  evidence h : True := firstSource
+  clear h
+  evidence ht : True := secondSource
+  exact ht
+example : afterClear.evidenceLeaves = [firstSource, secondSource] := rfl
+
+convince allBranches : True ∧ True := by
+  constructor
+  all_goals evidence firstSource
+example : allBranches.evidenceLeaves = [firstSource, firstSource] := rfl
+
+convince simplifyContext (P : Prop) : P := by
+  evidence h : P := firstSource
+  simp_all only
+example : (simplifyContext True).evidenceLeaves = [firstSource] := rfl
+
 #evidence combined
 #print axioms combined
 #print axioms Convincing.sound
