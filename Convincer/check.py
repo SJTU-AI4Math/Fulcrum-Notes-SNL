@@ -10,9 +10,10 @@ import re
 import subprocess
 import tempfile
 
-ROOT = Path(__file__).resolve().parent.parent
+SOURCE = Path(__file__).resolve().parent
+ROOT = SOURCE.parent
 TOOLCHAIN = (ROOT / "lean-toolchain").read_text(encoding="utf-8").strip()
-BUILD = ROOT / ".lake" / "convincer"
+BUILD = ROOT / ".lake" / "convincer-flat"
 BUILD.mkdir(parents=True, exist_ok=True)
 ENV = dict(os.environ, LEAN_PATH=str(BUILD))
 
@@ -23,7 +24,7 @@ def lean(path, output=None):
         output.parent.mkdir(parents=True, exist_ok=True)
         command += ["-o", str(output)]
     command.append(str(path))
-    return subprocess.run(command, cwd=ROOT, env=ENV, text=True,
+    return subprocess.run(command, cwd=SOURCE, env=ENV, text=True,
                           encoding="utf-8", errors="replace", capture_output=True, timeout=90)
 
 
@@ -107,14 +108,12 @@ convince bad : False := by exact incomplete
 
 
 def main():
-    for name in ["Convincer/Core", "Convincer/Elab", "Convincer"]:
-        positive(ROOT / (name + ".lean"), BUILD / (name + ".olean"))
-    tests = positive(ROOT / "Convincer/Tests.lean", BUILD / "Convincer/Tests.olean")
+    positive(SOURCE / "Convincer.lean", BUILD / "Convincer.olean")
+    tests = positive(SOURCE / "Tests.lean", BUILD / "Tests.olean")
     for fragment in ["evidence [first] : False", "evidence [second] : True",
                      "'Convincer.Tests.combined' does not depend on any axioms",
                      "'Convincer.Convincing.sound' does not depend on any axioms"]:
         assert fragment in tests, f"Missing positive receipt: {fragment}"
-    positive(ROOT / "Convince/test.lean")
     failures = []
     with tempfile.TemporaryDirectory(prefix="negative-", dir=BUILD) as folder:
         # Compile runnable README examples, not just a separately maintained copy.

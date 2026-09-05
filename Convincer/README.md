@@ -16,8 +16,8 @@ python3 Convincer/check.py
 ```
 
 Windows 使用 `python Convincer/check.py`。脚本逐个编译模块，检查公开 import、
-原实验入口、结构断言、溯源输出、公理依赖和必须失败的反例；最多启动一个 Lean。
-产物写入 `.lake/convincer/`，不会覆盖 Mathlib 或其他库的构建缓存。
+示例、结构断言、溯源输出、公理依赖和必须失败的反例；最多启动一个 Lean。
+产物写入 `.lake/convincer-flat/`，不会覆盖 Mathlib 或其他库的构建缓存。
 
 已安装整个仓库的 Lake 依赖时，也可运行有限目标 `lake build Convincer`。
 本次验证走的是上述隔离检查，不声称验证了整个仓库的 Lake/Mathlib 构建。
@@ -160,12 +160,17 @@ argument.Valid → P
 
 ## 文件
 
-- `Convincer/Core.lean`：纯数据、组合、条件可靠性和严格证明提取。
-- `Convincer/Elab.lean`：混合语法、事务化 journal、全局溯源。
-- `Convincer.lean`：公开 import。
-- `Convincer/Tests.lean`：执行的正例与结构断言。
-- `Convincer/check.py`：串行构建、溯源回执和负例门禁。
-- `Convince/test.lean`：保留原路径，替换为可运行的迁移示例。
+所有相关文件集中在一个目录，没有根目录入口或旧 `Convince/` 副本：
+
+```text
+Convincer/
+├── Convincer.lean   # 完整实现：数据、组合、tactic 语法和溯源
+├── Tests.lean      # 所有示例与回归断言
+├── check.py        # 串行检查及负例
+└── README.md       # 用法与设计边界
+```
+
+Lake 将该文件夹作为 `Convincer` 库的源码目录，因此仍使用 `import Convincer`。
 
 ## SNL 收录状态
 
