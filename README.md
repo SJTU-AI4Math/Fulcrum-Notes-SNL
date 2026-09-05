@@ -2,12 +2,14 @@
 
 This repository stores the canonical Fulcrum SNL workspace in `.SNL_Doc/` and provides a Lean project for checked integrations.
 
+The experimental [Convincer](Convincer/README.md) implementation, examples and checks are contained in `Convincer/`.
+
 ## Toolchain and dependencies
 
 - Lean `v4.28.0`
 - Mathlib `v4.28.0`
 - Paperproof pinned to commit `69401f7d9348699e1532194734b5dda0771278b7`
-- SNL4Lean as the Git submodule `Lean4/SNL4Lean`, pinned to commit `65014d939378a55f7116d7ffec654d2685ba9353`
+- SNL4Lean as the Git submodule `Lean4/SNL4Lean`, pinned to commit `1dd708a9a5328c99f59d6054258c8cd52768b536`
 
 Lean sources keep the repository's shallow authored layout. `Basic Algebra` is a
 direct child of `Lean4/`; do not reorganize it into a namespace-shaped directory:
