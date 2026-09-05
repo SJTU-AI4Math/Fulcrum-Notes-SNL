@@ -2,3 +2,4 @@ __pycache__/
 *.py[cod]
 .SNL_Doc-toolkit-repair-*/
 /.lake/
+test
