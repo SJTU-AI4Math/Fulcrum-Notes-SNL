@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Build and test the public Convincer slice serially, without fetching Mathlib.
-
-Requires Python 3.10+ and the repository's pinned Lean toolchain via elan.
-Run from any directory: python3 Convincer/check.py
-"""
+"""Serial Lean checks; native sorry warnings are allowed, as in ordinary Lean."""
 from pathlib import Path
 import os
 import re
@@ -23,8 +19,7 @@ def lean(path, output=None):
     if output:
         output.parent.mkdir(parents=True, exist_ok=True)
         command += ["-o", str(output)]
-    command.append(str(path))
-    return subprocess.run(command, cwd=SOURCE, env=ENV, text=True,
+    return subprocess.run(command + [str(path)], cwd=SOURCE, env=ENV, text=True,
                           encoding="utf-8", errors="replace", capture_output=True, timeout=90)
 
 
@@ -32,20 +27,20 @@ def positive(path, output=None):
     result = lean(path, output)
     print(result.stdout, end="")
     print(result.stderr, end="")
-    if result.returncode != 0 or "declaration uses `sorry`" in (result.stdout + result.stderr):
+    if result.returncode != 0:
         raise SystemExit(f"FAIL: {path} (exit {result.returncode})")
     print(f"PASS: {path}")
-    return result.stdout
+    return result.stdout + result.stderr
 
 
 NEGATIVE = {
-    "no-extraction": ("""
-def asserted : Convincing False := .evidence ⟨"x", "asserted", ""⟩
+    "no-extraction-without-sorry": ("""
+def asserted : Convincing False := .evidence (Evidence.of "asserted")
 example : False := by exact asserted
 """, "Type mismatch"),
     "invalid-rigid-step": ("""
 convince bad : False := by
-  evidence h : True := ⟨"x", "true", ""⟩
+  evidence h : True := "true"
   exact h
 """, "Type mismatch"),
     "unsolved-goal": ("""
@@ -53,20 +48,20 @@ convince bad : True ∧ False := by
   constructor
   · trivial
 """, "unsolved goals"),
-    "effect-outside-scope": ("""
+    "unknown-payload": ("""
 example : False := by
-  evidence ⟨"x", "not a proof", ""⟩
-""", "only available inside"),
+  evidence noSuchPayload
+""", "Unknown identifier"),
     "binder-dependent-effect": ("""
 convince bad : ∀ n : Nat, n = 0 := by
   intro n
-  evidence h : n = 0 := ⟨"x", "local", ""⟩
+  evidence h : n = 0 := "local"
   exact h
 """, "independent of tactic-local binders"),
     "proof-dependent-source": ("""
 def conditional (h : False) : Convincing True := .proof (False.elim h)
 convince bad : True := by
-  evidence h : False := ⟨"x", "false", ""⟩
+  evidence h : False := "false"
   have t ← conditional h
   exact t
 """, "independent of tactic-local binders"),
@@ -91,58 +86,37 @@ variable (s : Evidence)
 #evidence (show Convincing False from .evidence s)
 """, "require a closed argument"),
     "opaque-report": ("""
-opaque hidden : Convincing True := .evidence ⟨"hidden", "opaque source", ""⟩
+opaque hidden : Convincing True := .evidence (Evidence.of "hidden")
 #evidence hidden
 """, "cannot inspect this argument"),
-    "sorry-not-evidence": ("""
-convince bad : False := by sorry
-""", "sorryAx"),
-    "direct-term-sorry": ("""
-convince bad : False := Convincing.proof (by sorry)
-""", "sorryAx"),
-    "transitive-sorry": ("""
-theorem incomplete : False := by sorry
-convince bad : False := by exact incomplete
-""", "sorryAx"),
 }
 
 
 def main():
     positive(SOURCE / "Convincer.lean", BUILD / "Convincer.olean")
     tests = positive(SOURCE / "Tests.lean", BUILD / "Tests.olean")
-    for fragment in ["evidence [first] : False", "evidence [second] : True",
-                     "'Convincer.Tests.combined' does not depend on any axioms",
-                     "'Convincer.Convincing.sound' does not depend on any axioms"]:
-        assert fragment in tests, f"Missing positive receipt: {fragment}"
+    for fragment in [
+        "False ← \"Obvious\"", "True ← [1, 2, 3]",
+        "'Convincer.Tests.combined' does not depend on any axioms",
+        "'Convincer.Convincing.sound' does not depend on any axioms",
+        "'Convincer.Compatibility.captured' does not depend on any axioms",
+        "'Convincer.Compatibility.clearedContext' does not depend on any axioms",
+        "'Convincer.Compatibility.ordinary' depends on axioms: [sorryAx]",
+        "'Convincer.Compatibility.ordinaryCitation' depends on axioms: [sorryAx]",
+        "'Convincer.Compatibility.ordinaryData' depends on axioms: [sorryAx]",
+        "'Convincer.Compatibility.unfinished' depends on axioms: [sorryAx]",
+        "'Convincer.Compatibility.indirect' depends on axioms: [sorryAx]",
+        "declaration uses `sorry`",
+    ]:
+        if fragment not in tests:
+            raise SystemExit(f"Missing receipt: {fragment}")
     failures = []
-    with tempfile.TemporaryDirectory(prefix="negative-", dir=BUILD) as folder:
-        # Compile runnable README examples, not just a separately maintained copy.
-        blocks = re.findall(r"```lean\n(.*?)```", (ROOT / "Convincer/README.md").read_text(encoding="utf-8"), re.S)
-        runnable = [block for block in blocks if block.startswith("import ") or block.startswith("convince ")]
+    with tempfile.TemporaryDirectory(prefix="check-", dir=BUILD) as folder:
+        blocks = re.findall(r"```lean\n(.*?)```", (SOURCE / "README.md").read_text(encoding="utf-8"), re.S)
+        runnable = [b for b in blocks if b.startswith("import ") or b.startswith("convince ")]
         docs = Path(folder) / "Documentation.lean"
         docs.write_text("\n".join(runnable), encoding="utf-8")
         positive(docs)
-        # Explicit custom axioms remain visible rather than silently becoming evidence.
-        axiom_probe = Path(folder) / "AxiomReport.lean"
-        axiom_probe.write_text("import Convincer\naxiom chosenTrust : True\n"
-                               "convince trusted : True := Convincing.proof chosenTrust\n"
-                               "#evidence trusted\n", encoding="utf-8")
-        axiom_output = positive(axiom_probe)
-        if "axioms: #[chosenTrust]" not in axiom_output:
-            raise SystemExit("FAIL: custom axiom omitted from provenance report")
-        # The checker itself must reject a real Lean exit-0 sorry warning,
-        # including ordinary declarations outside the Convincer DSL.
-        warning_probe = Path(folder) / "OrdinarySorry.lean"
-        warning_probe.write_text("import Convincer\nexample : False := by sorry\n", encoding="utf-8")
-        warning_result = lean(warning_probe)
-        if warning_result.returncode != 0 or "declaration uses `sorry`" not in (warning_result.stdout + warning_result.stderr):
-            raise SystemExit("FAIL: missing real exit-0 sorry warning for checker regression")
-        try:
-            positive(warning_probe)
-        except SystemExit:
-            print("PASS: checker rejects ordinary Lean exit-0 sorry warning")
-        else:
-            raise SystemExit("FAIL: checker accepted ordinary Lean sorry")
         for name, (body, expected) in NEGATIVE.items():
             path = Path(folder) / (name + ".lean")
             path.write_text("import Convincer\n" + body, encoding="utf-8")
@@ -155,7 +129,7 @@ def main():
                 print(f"PASS: negative/{name}")
     if failures:
         raise SystemExit("Failed negative gates: " + ", ".join(failures))
-    print(f"Convincer: public import + examples + structural assertions + {len(NEGATIVE)} negative gates PASS")
+    print(f"Convincer: arbitrary payloads + evidence-only trees + shared tactics + native sorry + {len(NEGATIVE)} negative gates PASS")
 
 
 if __name__ == "__main__":

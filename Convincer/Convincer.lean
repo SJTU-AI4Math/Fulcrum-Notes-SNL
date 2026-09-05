@@ -8,19 +8,18 @@ unverified evidence leaf into a Lean proof. The applicative spine stores *both*
 inputs of every inference, so its provenance is inspectable without supplying
 any unproved proposition to a continuation.
 -/
+universe u
+
 namespace Convincer
 
-/-- Authored justification, not a kernel certificate or authenticated identity. -/
-structure Evidence where
-  id : String
-  explanation : String
-  source : String := ""
-  deriving Repr, BEq
+/-- An arbitrary typed payload, not a certificate of the claimed proposition. -/
+inductive Evidence : Type (u + 1) where
+  | of {α : Sort u} (value : α)
 
 /-- Intensional, proof-relevant arguments about propositions. -/
-inductive Convincing : Prop → Type 1 where
+inductive Convincing : Prop → Type (u + 1) where
   | proof {p : Prop} (term : p) : Convincing p
-  | evidence {p : Prop} (source : Evidence) : Convincing p
+  | evidence {p : Prop} (source : Evidence.{u}) : Convincing p
   | mp {p q : Prop} (rule : Convincing (p → q)) (premise : Convincing p) : Convincing q
   | named {p : Prop} (name : String) (argument : Convincing p) : Convincing p
 
@@ -56,7 +55,8 @@ theorem sound {p : Prop} (argument : Convincing p) : argument.Valid → p := by
   | mp _ _ ihf ihx => exact fun h => ihf h.1 (ihx h.2)
   | named _ _ ih => exact ih
 
-/-- Proof-only extraction is explicit and fails if *any* evidence leaf occurs. -/
+/-- Return an existing Lean proof only when no explicit evidence occurs.
+The returned proof may still depend on native sorry or other axioms. -/
 def checked? {p : Prop} : Convincing p → Option (PLift p)
   | .proof h => some ⟨h⟩
   | .evidence _ => none
@@ -77,7 +77,7 @@ export Convincer.Convincing (proof evidence mp named map both evidenceLeaves Val
 end Convincing
 
 namespace Evidence
-export Convincer.Evidence (mk id explanation source)
+export Convincer.Evidence (of)
 end Evidence
 
 
@@ -87,23 +87,17 @@ open Lean Meta Elab Term Tactic Command
 namespace Convincer
 
 /-- Elaboration-only journal. Its metavariable tail participates in tactic rollback. -/
-private inductive Pending where
+private inductive Pending : Type (u + 1) where
   | nil
-  | cons {p : Prop} (source : Convincing p) (hole : p) (tail : Pending)
+  | cons {p : Prop} (source : Convincing.{u} p) (hole : p) (tail : Pending)
 
--- Store only the key in the local context. Putting Pending itself there lets
--- `subst` abstract its unresolved holes into delayed metavariable applications.
-private structure Journal where
-  key : Name
-
-private def journal : TacticM (LocalDecl × Expr) := do
-  for decl in (← getLCtx).decls.toArray.reverse do
-    if let some decl := decl then
-      if decl.type.isConstOf ``Journal then
-        if let some value := decl.value? then
-          let key : Name ← reduceEval (← mkAppM ``Journal.key #[value])
-          return (decl, mkMVar ⟨key⟩)
-  throwError "Convincer effects are only available inside `convincing% by` or `convince ... := by`."
+-- The active journal key is dynamically scoped, not a hypothesis. Clearing or
+-- rewriting local declarations must never silently switch capture to sorry.
+private def journal? : TacticM (Option (LocalContext × Expr)) := do
+  let key := (← getOptions).get `convincer.journal Name.anonymous
+  if key.isAnonymous then return none
+  let head := mkMVar ⟨key⟩
+  return some ((← head.mvarId!.getDecl).lctx, head)
 
 private partial def journalTail (e : Expr) : MetaM Expr := do
   let e ← instantiateMVars e
@@ -113,30 +107,34 @@ private partial def journalTail (e : Expr) : MetaM Expr := do
   else throwError "Convincer: invalid elaboration journal"
 
 /-- Evidence inputs are static: no dependence on a local unproved witness or branch. -/
-private def staticInput (scope : LocalDecl) (e : Expr) : TacticM Expr := do
+private def staticInput (scope : LocalContext) (e : Expr) : TacticM Expr := do
   let lets := (← getLCtx).foldl (init := #[]) fun acc d =>
-    if d.index ≥ scope.index && d.isLet then acc.push d.fvarId else acc
+    if !scope.contains d.fvarId && d.isLet then acc.push d.fvarId else acc
   let e ← instantiateMVars (← zetaDeltaFVars e lets)
   if e.hasExprMVar then
     throwError "Convincer evidence must not depend on an unproved hypothesis or unresolved metavariable. Cite a closed implication instead."
   for id in (collectFVars {} e).fvarIds do
-    if (← id.getDecl).index ≥ scope.index then
+    if !scope.contains id then
       throwError "Convincer evidence must be independent of tactic-local binders. Move the parameter to the declaration or cite a closed implication."
   return e
 
 private def record (source : Expr) : TacticM Expr := do
-  let (scope, head) ← journal
-  let source ← staticInput scope source
   let ty ← whnf (← inferType source)
   unless ty.isAppOfArity ``Convincing 1 do
     throwError "Expected a `Convincing p` argument, got {ty}"
+  let some (scope, head) ← journal?
+    | return ← mkLabeledSorry ty.getAppArgs[0]! (synthetic := false) (unique := true)
+  let source ← staticInput scope source
   let p ← staticInput scope ty.getAppArgs[0]!
+  let levels := (← inferType head).constLevels!
+  unless ← isDefEq ty (mkApp (mkConst ``Convincing levels) p) do
+    throwError "Evidence sources must share a compatible Lean universe"
   -- Context-rewriting tactics may instantiate the journal head to a cons.
   -- Its open tail is the stable metavariable, not the head expression.
   let tailGoal ← journalTail head
   let (hole, tail) ← tailGoal.mvarId!.withContext do
     let hole ← mkFreshExprMVar p .syntheticOpaque
-    let tail ← mkFreshExprMVar (mkConst ``Pending) .syntheticOpaque
+    let tail ← mkFreshExprMVar (← inferType tailGoal) .syntheticOpaque
     return (hole, tail)
   tailGoal.mvarId!.assign (← mkAppM ``Pending.cons #[source, hole, tail])
   return hole
@@ -152,37 +150,31 @@ elab "have " name:ident " ← " source:term : tactic => withMainContext do
 
 /-- Create and cite an authored evidence leaf. -/
 macro "evidence " name:ident " : " p:term " := " e:term : tactic =>
-  `(tactic| have $name ← (Convincing.evidence (p := $p) $e))
+  `(tactic| have $name ← (Convincing.evidence (p := $p) (Evidence.of $e)))
 
-/-- Close the current proposition using explicit evidence, not a fabricated proof. -/
+/-- Capture evidence in Convincer; outside it, admit the goal exactly as `sorry`. -/
 elab "evidence " e:term : tactic => withMainContext do
   let p ← getMainTarget
-  let e ← Term.elabTermEnsuringType e (mkConst ``Evidence)
+  let value ← Term.elabTerm e none
   synthesizeSyntheticMVarsNoPostponing
-  let hole ← record (mkApp2 (mkConst ``Convincing.evidence) p e)
-  (← getMainGoal).assign hole
+  if (← journal?).isNone then
+    admitGoal (← getMainGoal) (synthetic := false)
+  else
+    let packet ← mkAppM ``Evidence.of #[← instantiateMVars value]
+    let source ← mkAppOptM ``Convincing.evidence #[some p, some packet]
+    let hole ← record source
+    (← getMainGoal).assign hole
   replaceMainGoal []
 
 private partial def readJournal (head : Expr) : MetaM (Array (Expr × Expr)) := do
   let head ← instantiateMVars head
   if head.isMVar then
-    head.mvarId!.assign (mkConst ``Pending.nil)
+    head.mvarId!.assign (mkConst ``Pending.nil (← inferType head).constLevels!)
     return #[]
   if head.isAppOfArity ``Pending.cons 4 then
     let args := head.getAppArgs
     return #[(args[1]!, args[2]!)] ++ (← readJournal args[3]!)
   throwError "Convincer: invalid elaboration journal"
-
-private def argumentAxioms (e : Expr) : MetaM (Array Name) := do
-  let mut result := #[]
-  for name in e.getUsedConstants do
-    for axiomName in (← collectAxioms name) do
-      if !result.contains axiomName then result := result.push axiomName
-  return result
-
-private def rejectSorry (e : Expr) : MetaM Unit := do
-  if (← argumentAxioms e).contains ``sorryAx then
-    throwError "Convincer rejects sorryAx; record an explicit Evidence instead."
 
 /-- Run ordinary Lean tactics on `p`, then discharge every effect hypothesis. -/
 elab "convincing% " "by " seq:tacticSeq : term <= expectedType? => do
@@ -190,9 +182,8 @@ elab "convincing% " "by " seq:tacticSeq : term <= expectedType? => do
   unless expected.isAppOfArity ``Convincing 1 do
     throwError "Expected type must be `Convincing p`"
   let p := expected.getAppArgs[0]!
-  let head ← mkFreshExprMVar (mkConst ``Pending) .syntheticOpaque
-  let token := mkApp (mkConst ``Journal.mk) (toExpr head.mvarId!.name)
-  let (proof, entries) ← withLetDecl `_convincerJournal (mkConst ``Journal) token (kind := .implDetail) fun _ => do
+  let head ← mkFreshExprMVar (mkConst ``Pending expected.getAppFn.constLevels!) .syntheticOpaque
+  let (proof, entries) ← withOptions (fun opts => opts.set `convincer.journal head.mvarId!.name) do
     let goal ← mkFreshExprMVar p .syntheticOpaque
     let remaining ← Tactic.run goal.mvarId! do
       withoutRecover <| evalTactic seq
@@ -213,20 +204,11 @@ elab "convincing% " "by " seq:tacticSeq : term <= expectedType? => do
     let rule ← mkLambdaFVars vars proof
     if rule.hasExprMVar then
       throwError "Convincer: unresolved metavariable in conditional proof"
-    let mut result ← mkAppM ``Convincing.proof #[rule]
+    let mut result := mkApp2 (mkConst ``Convincing.proof expected.getAppFn.constLevels!) (← inferType rule) rule
     for (source, _) in entries do
       result ← mkAppM ``Convincing.mp #[result, source]
     discard <| check result
-    rejectSorry result
     return result
-
-/-- Validate a direct argument body just as strictly as the tactic form. -/
-elab "convincing_term% " body:term : term <= expected => do
-  let e ← Term.elabTermEnsuringType body expected
-  synthesizeSyntheticMVarsNoPostponing
-  let e ← instantiateMVars e
-  rejectSorry e
-  return e
 
 /-- A declaration is data even when its displayed target is a proposition. -/
 syntax (name := convinceDecl) declModifiers "convince " declId (ppSpace bracketedBinder)*
@@ -239,13 +221,14 @@ macro_rules
   | `($mods:declModifiers convince $id:declId $[$bs:bracketedBinder]* : $p := $body) => do
     let label := Syntax.mkStrLit id.raw[0].getId.toString
     `($mods:declModifiers def $id $[$bs]* : Convincing $p :=
-      Convincing.named $label (convincing_term% $body))
+      Convincing.named $label $body)
 
-private def stringField (name : Name) (e : Expr) : MetaM String := do
-  let value ← whnf (← mkAppM name #[e])
-  return (getStringValue? value).getD (toString (← ppExpr value))
+private inductive ReportTree where
+  | node (label : String) (children : Array ReportTree)
+  deriving Inhabited
 
-private partial def report (e : Expr) (indent : String := "") : MetaM (Array String) := do
+/-- Prune rigid steps, keeping only evidence-bearing named arguments and leaves. -/
+private partial def report (e : Expr) : MetaM (Array ReportTree) := do
   withIncRecDepth do
     let ty ← whnf (← inferType e)
     unless ty.isAppOfArity ``Convincing 1 do throwError "Expected `Convincing p`"
@@ -253,22 +236,32 @@ private partial def report (e : Expr) (indent : String := "") : MetaM (Array Str
     let e ← withTransparency .all <| whnf e
     let args := e.getAppArgs
     if e.isAppOfArity ``Convincing.proof 2 then
-      return #[s!"{indent}rigid : {p}"]
+      return #[]
     if e.isAppOfArity ``Convincing.evidence 2 then
-      let source := args[1]!
-      let id ← stringField ``Evidence.id source
-      let text ← stringField ``Evidence.explanation source
-      let origin ← stringField ``Evidence.source source
-      return #[s!"{indent}evidence [{id}] : {p}", s!"{indent}  {text}", s!"{indent}  source: {origin}"]
+      let packet ← withTransparency .all <| whnf args[1]!
+      unless packet.isAppOfArity ``Evidence.of 2 do
+        throwError "Convincer cannot inspect this evidence payload: {packet}"
+      let value ← ppExpr packet.getAppArgs[1]!
+      return #[.node s!"{p} ← {value}" #[]]
     if e.isAppOfArity ``Convincing.named 3 then
+      let children ← report args[2]!
+      if children.isEmpty then return #[]
       let label := (getStringValue? args[1]!).getD (toString (← ppExpr args[1]!))
-      return #[s!"{indent}{label} : {p}"] ++ (← report args[2]! (indent ++ "  "))
+      return #[.node s!"{label} : {p}" children]
     if e.isAppOfArity ``Convincing.mp 4 then
-      return #[s!"{indent}infer : {p}"] ++ (← report args[2]! (indent ++ "  ")) ++
-        (← report args[3]! (indent ++ "  "))
+      return (← report args[2]!) ++ (← report args[3]!)
     throwError "Convincer cannot inspect this argument (opaque, symbolic, or unsupported computation): {e}"
 
-/-- Kernel-reduced structural provenance; unknown/opaque branches fail explicitly. -/
+private partial def renderForest (trees : Array ReportTree) (indent : String := "") : Array String := Id.run do
+  let mut lines := #[]
+  for i in [:trees.size] do
+    let .node label children := trees[i]!
+    let last := i + 1 == trees.size
+    lines := lines.push (indent ++ (if last then "└─ " else "├─ ") ++ label)
+    lines := lines ++ renderForest children (indent ++ (if last then "   " else "│  "))
+  return lines
+
+/-- Only explicit non-rigid evidence is listed. Use `#print axioms` for Lean trust. -/
 elab "#evidence " term:term : command => runTermElabM fun _ => do
   let e ← elabTerm term none
   synthesizeSyntheticMVarsNoPostponing
@@ -276,9 +269,7 @@ elab "#evidence " term:term : command => runTermElabM fun _ => do
   if e.hasExprMVar then throwError "Instantiate all argument parameters before querying evidence"
   if e.hasFVar || (← inferType e).hasFVar then
     throwError "Convincer queries require a closed argument: instantiate all parameters and discharge local assumptions."
-  rejectSorry e
-  let lines ← report e
-  let axioms ← argumentAxioms e
-  logInfo (String.intercalate "\n" (lines.toList ++ [s!"axioms: {axioms}"]))
+  let lines := renderForest (← report e)
+  logInfo (if lines.isEmpty then "无显式 Evidence。" else String.intercalate "\n" lines.toList)
 
 end Convincer

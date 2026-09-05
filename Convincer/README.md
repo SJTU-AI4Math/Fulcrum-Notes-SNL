@@ -1,184 +1,133 @@
-# Convincer：可追溯的条件论证
+# Convincer
 
-这是最小可运行原型，不是新的逻辑公理，也不把“说服了我”冒充“Lean 证明了”。
+把非形式化论证作为数据保存，同时让 Lean 检查其中的刚性推理。
+所有文件都在本目录：`Convincer.lean`（完整实现）、`Tests.lean`（示例和测试）、
+`check.py`（串行检查）、本说明。公开入口仍是 `import Convincer`。
 
-- `p : Prop` 是被讨论的命题。
-- `Convincing p : Type 1` 是论证数据，不受 `Prop` 的证明无关性抹除。
-- 刚性步骤必须给出真正的 Lean 证明；非形式化步骤显式记录 Evidence。
-- `#evidence argument` 递归展开依赖结构，不必相信或执行任何 Evidence。
+## 用法
 
-## 运行
+```lean
+import Convincer
 
-只需仓库钉住的 Lean 4.28.0（通过 elan）和 Python，不需要下载 Mathlib：
+convince observed : False := by
+  evidence "Obvious"
+
+convince conclusion : False ∧ True := by
+  have h ← observed
+  evidence ht : True := [1, 2, 3]
+  exact ⟨h, ht⟩
+
+#evidence conclusion
+```
+
+输出只保留非刚性来源及其命名依赖层级：
+
+```text
+└─ conclusion : False ∧ True
+   ├─ observed : False
+   │  └─ False ← "Obvious"
+   └─ True ← [1, 2, 3]
+```
+
+不显示刚性规则、`infer` 节点或公理表。没有显式 Evidence 时只显示
+“无显式 Evidence。”，**这不表示没有 `sorry` 或其他公理**。
+需要审计 Lean 的信任基础时使用原生 `#print axioms name`。
+
+## Evidence 是任意载荷，不是元数据格式
+
+`Evidence.of` 可以封装任意 `α : Sort u` 的值。字符串、数、列表、函数、
+自定义类型的值、类型本身或证明都可以，不要求 `Repr`、ID、来源字段或结构体字面量。
+组合仍遵守 Lean 的 universe 约束；不同 universe 的来源需通常的 universe 对齐。
+用户在 tactic 中直接写值，无须自己包装：
+
+```lean
+convince functionReason : False := by
+  evidence (fun n : Nat => n + 1)
+
+convince typeReason : False := by
+  evidence Nat
+```
+
+三种写法：
+
+- `evidence value`：关闭当前目标。
+- `evidence h : P := value`：引入一个有非形式化依据的前提。
+- `have h ← argument`：引用已有的 `Convincing P`。
+
+`#evidence` 按树列出这些显式引用，保留顺序、重复和成功路径上未使用的引用。
+失败后回退的 tactic 分支不会留下记录。
+
+## 普通 by 与 Convincer by
+
+两边使用同一套 tactic 语法，底层都是 Lean 原生 `TacticM`：
+
+```lean
+convince captured : False := by
+  evidence "Obvious"
+
+theorem admitted : False := by
+  evidence "Obvious"
+
+convince unfinished : False := by
+  sorry
+```
+
+但语义有意不同：
+
+- 在 `convince ... := by` / `convincing% by` 中，Evidence 会被捕获为论证数据。
+  普通 tactics 检查的是“假设这些前提成立，结论如何得出”。
+- 在普通 `by` 中，`evidence` 等效于原生 `sorry`：生成带位置的 `sorryAx`，
+  Lean 保留标准 warning。命名 Evidence 和 `have h ← argument` 也采用这个行为。
+  此时不会生成可由 `#evidence` 反查的论证对象。
+- `sorry` 在两边都保持原生语义，不被禁止，也不会被自动改成 Evidence。
+  原生错误和未解决目标仍然报错。
+
+**不能承诺完全兼容所有 tactic 及插件。** 当前验证了普通的引入/应用、
+`have`、分支、归纳、重写、简化、`subst`、`clear`、`all_goals`、`first`、
+`classical`、嵌套 tactic 和原生 `sorry`，以及同一 tactic 宏分别用于两种声明。
+其余 tactics 需要按正常方式 import；本次没有跑遍 Mathlib 或第三方 tactic 库。
+
+捕获模式还有两个明确限制：
+
+1. Evidence 的目标命题、载荷及被引用论证必须独立于当前 tactic 块新引入的
+   局部假设/分支变量。可把参数提升到声明参数，或把非形式化步骤写成闭合的
+   蕴含/全称命题。普通刚性推理没有这个限制；普通 `by` 的 sorry 式 Evidence 也没有。
+2. `Convincing` 的目标是 `Prop`。普通 `by` 的 `evidence` 可以像 `sorry` 一样
+   填充数据目标；捕获模式不支持用 Evidence 生成存在量词的未经证明的数据见证。
+
+所以，这是大部分普通证明脚本可复用的环境，不是两个语义完全相同的证明系统。
+
+## 核心与查询边界
+
+`Convincing P` 位于 `Type`，而非 proof-irrelevant 的 `Prop`。核心保留
+`proof`、`evidence`、`mp`、`named` 四种构造；改变显示不会删掉真实依赖。
+`map` / `both` 组合论证，`evidenceLeaves` 返回带原始类型和值的全部 Evidence。
+
+`argument.Valid → P` 是条件可靠性定理，不声称每份 Evidence 都正确。
+`checked?` 只在没有显式 Evidence 时返回已有的 Lean 证明项；这些项仍可能依赖
+用户写的 `sorry` 或公理，它不是额外的公理审计器。
+
+`#evidence` 只接受闭合且适当实例化的论证；开放局部假设、不能展开的 opaque
+论证和无法完成的归约会报错，而不是声称给出了完整来源。
+刚性叶子不会展开其内部定理依赖；要看某个原论证的 Evidence，应查询该论证，
+而不是它在另行证明 `Valid` 后被转换并重新包装的严格证明。
+
+这里采用静态依赖组合，不宣称有通用 `Monad Convincing`：没有真正的 `P` 时，
+不能运行任意 `P → Convincing Q` continuation 来取得完整的后续 Evidence。
+
+## 检查
+
+仓库固定 Lean 4.28.0。根目录运行：
 
 ```sh
 python3 Convincer/check.py
 ```
 
-Windows 使用 `python Convincer/check.py`。脚本逐个编译模块，检查公开 import、
-示例、结构断言、溯源输出、公理依赖和必须失败的反例；最多启动一个 Lean。
-产物写入 `.lake/convincer-flat/`，不会覆盖 Mathlib 或其他库的构建缓存。
+Windows 使用 `python Convincer/check.py`。串行检查不下载 Mathlib，产物在
+`.lake/convincer-flat/`。原生 sorry warning 在指定兼容性示例中是预期行为。
+检查同时验证：捕获模式不自动引入 `sorryAx`，普通模式确实依赖 `sorryAx`，
+核心条件可靠性定理无公理，以及精确的精简树输出和负例边界。
+已有完整 Lake 依赖时，也可使用有限目标 `lake build Convincer`。
 
-已安装整个仓库的 Lake 依赖时，也可运行有限目标 `lake build Convincer`。
-本次验证走的是上述隔离检查，不声称验证了整个仓库的 Lake/Mathlib 构建。
-
-## 最小用法
-
-```lean
-import Convincer
-
-convince observed : 1 = 2 := by
-  evidence {
-    id := "observation-1"
-    explanation := "作者的非形式化观察；这个例子故意选择假命题"
-    source := "notes:experiment-1"
-  }
-
-convince conclusion : 2 = 1 := by
-  have h ← observed
-  exact h.symm
-
-#evidence conclusion
-#print axioms conclusion
-```
-
-`h` 只在局部的**条件证明**中使用。生成的对象包含：
-
-1. `observed` 的完整论证数据；
-2. Lean 检查的刚性规则 `(1 = 2) → (2 = 1)`；
-3. 组合两者的显式节点。
-
-它没有生成 `2 = 1` 的全局证明，不能拿 `conclusion` 去证明普通 Lean 定理。
-`#print axioms conclusion` 无公理只说明“这个论证数据的构造无公理”，并不说明
-`2 = 1` 成立；必须结合 `#evidence` 看它依赖什么。
-
-## 混合语法
-
-`convince name (parameters) : P := by ...` 声明一个 `Convincing P`。
-通常的 `intro`、`have`、`constructor`、`cases`、`rw`、`simp`、`exact` 等仍然在
-普通命题目标上工作。新增操作只有：
-
-```lean
--- 引入现有论证，局部得到一个条件假设。
-have h ← otherArgument
-
--- 创建 Evidence，并引入条件假设。
-evidence h : P := { id := "e1", explanation := "理由", source := "来源" }
-
--- 用 Evidence 关闭当前命题目标。
-evidence { id := "e2", explanation := "理由", source := "来源" }
-```
-
-匿名/嵌套论证使用 `convincing% by ...`，并提供预期类型 `Convincing P`。
-直接构造形式也可用 `convince named : P := Convincing.evidence ...`。
-声明修饰符、显式和隐式参数沿用 Lean 的 `def`。
-
-如果非形式化步骤本身依赖已有前提，不要把结论单独写成“无条件事实”。
-显式声明该步骤的**条件**：
-
-```lean
-convince inferThrough (P Q : Prop) (premise : Convincing P) : Q := by
-  have hp ← premise
-  evidence step : P → Q := {
-    id := "informal-step"
-    explanation := "从 P 到 Q 的非形式化推理"
-    source := "notes:argument"
-  }
-  exact step hp
-```
-
-## 内核与数据结构
-
-`Evidence` 是小型来源记录：`id`、`explanation`、`source`。这些是作者提供的
-信息，**不是签名、认证身份或已验证外部资源**。
-
-`Convincing` 只有四种构造：
-
-- `proof h`：真正的 `h : P`；
-- `evidence e`：关于目标命题的非形式化依据；
-- `mp rule premise`：保留规则论证和前提论证，两者缺一不可；
-- `named name argument`：保留声明边界，便于递归反查。
-
-`map` 应用一个真正的 Lean 蕴含，`both` 合并两个论证。
-`evidenceLeaves` 返回有序的全部 Evidence 出现项，**不去重，也不因当前刚性
-证明没用到某个显式引用就删掉它**。这是成功构建路径的保守依赖记录，不是最小依赖集。
-失败并回退的 tactic 分支不留下记录。
-
-`argument.Valid : Prop` 表达所有 Evidence 叶子对应的命题均成立。
-内核检查的 `Convincing.sound` 只给出：
-
-```lean
-argument.Valid → P
-```
-
-因此不可能通过该接口无条件把 Evidence 转成 `P`。
-`checked? : Convincing P → Option (PLift P)` 只在整棵树没有 Evidence 时提取
-真正的证明；遇到任何 Evidence 返回 `none`。这个“无 Evidence”判断不替代公理审计。
-
-## 为什么没有强塞一个 `Monad Convincing`
-
-`do` 的核心组合依赖实际返回值。如果 `bind` 接受
-`P → Convincing Q`，而前一步只提供关于 `P` 的 Evidence，就没有真正的 `P`
-可传给 continuation。直接短路只保留第一份 Evidence，会丢失后续来源；
-把 continuation 存起来，则一般无法在不提供 `P` 的情况下求得后续完整证据树。
-
-这不是通过加日志能解决的问题。因此本原型采用**静态依赖组合（applicative 风格）**，
-不宣称实现了通用 `Monad Convincing`，也不伪造 `LawfulMonad`。
-
-混合 `by` 的 effect handler 运行在 Lean 自带的单子化 elaboration/tactic 环境中：
-记录依赖 → 生成暂时的证明洞 → 用普通 tactics 检查推理 → 将所有洞抽象成前提 →
-构造内核复核的条件规则及显式依赖树。journal 存在 Lean 的 metavariable context 中，
-因此随正常的 tactic 回退一起回退，而不是不可回退的全局 `IO.Ref`。
-
-普通 `do` 可以在 `Id`、`StateM`、`IO` 等真正的 Monad 里处理 **论证句柄**，
-再用 `map` / `both` / `mp` 组合；但不能把 `Convincing P` 解包成真正的 `P`。
-完整依赖式 effect/continuation 语义留给后续设计，不在此原型里偷偷近似。
-
-## 溯源与信任边界
-
-- `#evidence` 输出每一层的目标命题、命名论证、刚性规则、Evidence 文本和来源，
-  并列出被查询项使用的全局公理。它使用结构归约，不调用 native evaluator 执行证据。
-- `sorryAx`（包含经其他声明间接引入的 `sorry`）在 Convincer DSL 和查询中报错。
-  普通 Lean 自定义公理仍属于用户选择的信任基础，会在查询里显示；没有把它们伪装成 Evidence。
-- 内核库本身不引入 `axiom`、`sorry` 或 `unsafe`。`#evidence` 不是第三方 Lean
-  插件/恶意元编程的安全沙箱，也不是来源真实性审计。
-- 来源被设计为静态、可读的依赖。Evidence 的命题、元数据和输入论证不能依赖
-  当前 tactic 块刚引入的局部假设、分支变量或未解决的 metavariable。
-  可将数据参数提升到声明参数，或把依赖写成一个闭合的蕴含/全称命题。
-  普通严格推理仍然可以任意使用局部假设。
-- 归纳、分支推理可正常使用；在分支中引用独立的已有论证也受支持。这里没有实现
-  “依赖一个未证存在命题，取出其见证，再运行任意程序以生成下一份 Evidence”。
-- 查询遇到不能展开的 `opaque` 论证、真正依赖符号值分支的程序，或耗尽 Lean
-  归约预算时会明确失败，不把部分结果宣称成完整来源。查询只接受没有自由变量的
-  闭合论证：函数参数须实例化，局部假设须解除；不能在 `h : False` 的局部语境中
-  查询 `.proof h`，也不能拿未实例化的 `s : Evidence` 冒充完整来源。
-- 刚性叶子是已交给 Lean 的证明，不展开其内部定理依赖成为 Evidence 图。
-  例如在另行证明 `argument.Valid` 后调用 `argument.sound` 得到的是真正的 Lean
-  证明；如需审阅原论证的 Evidence，请查询原 `argument`，而非重新包装的 `.proof`。
-- 命题目标限定为 `Prop`，**论证对象**在 `Type 1`；此版本不试图生成未经验证的
-  `Nat` 等数据值。多个不同 Evidence 即使指向同一命题，也可以证明论证对象不同。
-
-## 文件
-
-所有相关文件集中在一个目录，没有根目录入口或旧 `Convince/` 副本：
-
-```text
-Convincer/
-├── Convincer.lean   # 完整实现：数据、组合、tactic 语法和溯源
-├── Tests.lean      # 所有示例与回归断言
-├── check.py        # 串行检查及负例
-└── README.md       # 用法与设计边界
-```
-
-Lake 将该文件夹作为 `Convincer` 库的源码目录，因此仍使用 `import Convincer`。
-
-## SNL 收录状态
-
-该功能在功能分支开发，`.SNL_Doc` 未修改。检查原始 `e234e87` 时，Toolkit 已报告
-`Set.def.order.orderIsomorphism`、`Set.example.Nat`、`Set.preimageSet` 的悬空关系，
-以及 `set-theory` Library 中缺失的 `Set.example.Nat` 节点。
-
-按照 `FMNeco.md`，Lean 代码正式收录还需要对应的 SNL 条目/Pointer，主分支必须通过
-`snl validate`。当前既有错误阻塞 Toolkit 写入前置门禁，所以这里交付的是**经过 Lean
-验证的功能原型**，不是已完成 SNL 收录、可以直接合入主分支的内容发布。
-未越权修复无关的集合论条目，也未将全库校验失败说成通过。
+SNL 收录仍未完成：原始工作区存在集合论条目悬空引用，未改动 `.SNL_Doc`，
+也未补齐本原型的 SNL 条目/Pointer。本分支不是已通过全库收录门禁的发布。
