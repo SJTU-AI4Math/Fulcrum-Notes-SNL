@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def[predicateDisplay](Measure.Complete(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Logic.forall-typed(@N,Sigma@Measure.ctxt.Sigma,Logic.implies(Eq(Measure.apply(mu@Measure.ctxt.mu,N),Measure.zero),Set.subset(Set.powerset(N),Sigma@Measure.ctxt.Sigma))))"
+      "snl": "def[predicateDisplay](Measure.Complete(X@Measure.ctxt.X,Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu), ,Logic.forall-typed(@N,Sigma@Measure.ctxt.Sigma,Logic.implies(Eq(Measure.apply(mu@Measure.ctxt.mu,N),Measure.zero),Set.subset(Set.powerset(N),Sigma@Measure.ctxt.Sigma))))"
     },
     "contribution_info": null,
     "pointer": null,

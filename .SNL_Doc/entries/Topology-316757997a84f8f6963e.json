@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@S, Type),def( Topology.discreteTopology(S), Topology.topology(Set.powerset(S@Topology.ctxt.S), S@Topology.ctxt.S)))"
+      "snl": "variable(Type.annotation(@S, Type),def( Topology.discreteTopology(S), , Topology.topology(Set.powerset(S@Topology.ctxt.S), S@Topology.ctxt.S)))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@x,`string`),def[declaration](Syntax.Expr-UTLC.fvar(x)))"
+      "snl": "variable(Type.annotation(@x,`string`),def(Syntax.Expr-UTLC.fvar(x), , ))"
     },
     "contribution_info": null,
     "pointer": null

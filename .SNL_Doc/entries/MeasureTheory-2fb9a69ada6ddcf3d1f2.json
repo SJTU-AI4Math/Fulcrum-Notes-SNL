@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Measure.LebesgueMeasure($\\mathbb{R}$),%the restriction of Lebesgue outer measure to the Lebesgue-measurable sets%)"
+      "snl": "def(Measure.LebesgueMeasure($\\mathbb{R}$), ,%the restriction of Lebesgue outer measure to the Lebesgue-measurable sets%)"
     },
     "contribution_info": null,
     "pointer": null,

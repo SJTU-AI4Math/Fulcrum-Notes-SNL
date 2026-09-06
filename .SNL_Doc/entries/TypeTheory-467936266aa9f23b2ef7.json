@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.ctx(@Γ),def[declaration](Type.judge(Γ,@t,@T)))"
+      "snl": "variable(Type.ctx(@Γ),def(Type.judge(Γ,@t,@T), , ))"
     },
     "contribution_info": null,
     "pointer": null

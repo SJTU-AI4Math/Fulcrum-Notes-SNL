@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@x,@A),def[declaration](Type.annotation(x,A)))",
+      "snl": "variable(Type.annotation(@x,@A),def(Type.annotation(x,A), , ))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

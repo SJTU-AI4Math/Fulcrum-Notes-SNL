@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Set.powerset(A@Set.ctxt.AB),Set.sep-typed(@t,Set(T@Set.ctxt.T),Set.subset(t,A@Set.ctxt.AB)))"
+      "snl": "def(Set.powerset(A@Set.ctxt.AB), ,Set.sep-typed(@t,Set(T@Set.ctxt.T),Set.subset(t,A@Set.ctxt.AB)))"
     },
     "contribution_info": null,
     "pointer": null,

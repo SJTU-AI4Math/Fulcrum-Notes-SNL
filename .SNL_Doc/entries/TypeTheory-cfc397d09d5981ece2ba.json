@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "variable(Syntax.hasCategory(@a,Syntax.Expr-UTLC),def[declaration](Syntax.Expr-UTLC.closed(a)))"
+      "snl": "variable(Syntax.hasCategory(@a,Syntax.Expr-UTLC),def(Syntax.Expr-UTLC.closed(a), , ))"
     },
     "contribution_info": null,
     "pointer": null

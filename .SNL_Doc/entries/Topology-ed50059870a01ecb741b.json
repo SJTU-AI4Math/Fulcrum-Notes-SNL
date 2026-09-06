@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(\r\n    Topology.homeomorphism(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y),\r\n    Logic.and(Logic.and(Topology.continuousMap[text](f, X@Topology.ctxt.X, Y@Topology.ctxt.Y), Topology.openMap(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y)), Set.bijective(f))\r\n)"
+      "snl": "def(\r\n    Topology.homeomorphism(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y), ,\r\n    Logic.and(Logic.and(Topology.continuousMap[text](f, X@Topology.ctxt.X, Y@Topology.ctxt.Y), Topology.openMap(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y)), Set.bijective(f))\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

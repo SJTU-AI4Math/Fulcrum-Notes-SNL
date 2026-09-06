@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Set.codomain(f@Set.ctxt.f), A@Set.ctxt.AB)"
+      "snl": "def(Set.codomain(f@Set.ctxt.f), , A@Set.ctxt.AB)"
     },
     "contribution_info": null,
     "pointer": null

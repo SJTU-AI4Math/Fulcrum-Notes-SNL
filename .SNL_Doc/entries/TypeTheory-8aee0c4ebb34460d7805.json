@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Lambda.iota,Syntax.Expr-UTLC.lambda(@x,Syntax.apply-UTLC(x,Lambda.S,Lambda.K)))"
+      "snl": "def(Lambda.iota, ,Syntax.Expr-UTLC.lambda(@x,Syntax.apply-UTLC(x,Lambda.S,Lambda.K)))"
     },
     "contribution_info": null,
     "pointer": null

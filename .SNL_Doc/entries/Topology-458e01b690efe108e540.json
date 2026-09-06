@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@A,Set(T@Set.ctxt.T)),def[predicate](Topology.dense(A,S@Topology.ctxt.S),Eq(Topology.closure(A),S@Topology.ctxt.S)))"
+      "snl": "variable(Type.annotation(@A,Set(T@Set.ctxt.T)),def[predicate](Topology.dense(A,S@Topology.ctxt.S), ,Eq(Topology.closure(A),S@Topology.ctxt.S)))"
     },
     "contribution_info": null,
     "pointer": null,

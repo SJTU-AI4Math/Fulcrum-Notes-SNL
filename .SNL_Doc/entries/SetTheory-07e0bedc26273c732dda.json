@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "可数集合",
     "content": {
-      "snl": "def[predicate](\r\n    Set.countable(A@Set.ctxt.AB),\r\n    Logic.exists-typed(@f, Type.to(A@Set.ctxt.AB, Nat), Set.bijective(f))\r\n)"
+      "snl": "def[predicate](\r\n    Set.countable(A@Set.ctxt.AB), ,\r\n    Logic.exists-typed(@f, Type.to(A@Set.ctxt.AB, Nat), Set.bijective(f))\r\n)"
     },
     "contribution_info": null,
     "pointer": null

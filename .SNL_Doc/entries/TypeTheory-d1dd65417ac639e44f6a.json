@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Type.constructorTargets(@C,@I),%after removing the leading dependent-product binders from C, the head of its result is I%)",
+      "snl": "def(Type.constructorTargets(@C,@I), ,%after removing the leading dependent-product binders from C, the head of its result is I%)",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@n,Nat),def[declaration](Type[univ](n)))"
+      "snl": "variable(Type.annotation(@n,Nat),def(Type[univ](n), , ))"
     },
     "contribution_info": null,
     "pointer": null

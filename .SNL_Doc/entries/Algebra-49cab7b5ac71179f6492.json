@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Algebra.Trans, Logic.true)"
+      "snl": "def(Algebra.Trans, , Logic.true)"
     },
     "contribution_info": null,
     "pointer": null,
