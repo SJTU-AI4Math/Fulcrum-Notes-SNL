@@ -356,13 +356,6 @@
       "props": {
         "entryId": "Set.def.order.linear"
       }
-    },
-    {
-      "id": "n_31",
-      "label": "Entry",
-      "props": {
-        "entryId": "Set.example.Nat"
-      }
     }
   ],
   "relationships": [
@@ -554,11 +547,6 @@
     {
       "from": "n_13",
       "to": "n_14",
-      "label": "branch"
-    },
-    {
-      "from": "n_13",
-      "to": "n_31",
       "label": "branch"
     },
     {
