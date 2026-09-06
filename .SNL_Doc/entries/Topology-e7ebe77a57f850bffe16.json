@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(\r\n    Type.annotation(@X, Set(T@Set.ctxt.T)),def(\r\n    Topology.subspaceTopology(X),\r\n    Set.sep-typed(\r\n        @U,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.exists-typed(\r\n            @V,\r\n            Set(T@Set.ctxt.T),\r\n            Logic.and(Set.mem(V, τ@Topology.ctxt.tau), Eq(U, Set.inter(V, X)))\r\n        )\r\n    )\r\n))"
+      "snl": "variable(\r\n    Type.annotation(@X, Set(T@Set.ctxt.T)),def(\r\n    Topology.subspaceTopology(X), ,\r\n    Set.sep-typed(\r\n        @U,\r\n        Set(T@Set.ctxt.T),\r\n        Logic.exists-typed(\r\n            @V,\r\n            Set(T@Set.ctxt.T),\r\n            Logic.and(Set.mem(V, τ@Topology.ctxt.tau), Eq(U, Set.inter(V, X)))\r\n        )\r\n    )\r\n))"
     },
     "contribution_info": null,
     "pointer": null,

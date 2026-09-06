@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Set(T@Set.ctxt.T), Type.to(T@Set.ctxt.T, Proposition))"
+      "snl": "def(Set(T@Set.ctxt.T), , Type.to(T@Set.ctxt.T, Proposition))"
     },
     "contribution_info": null,
     "pointer": null,

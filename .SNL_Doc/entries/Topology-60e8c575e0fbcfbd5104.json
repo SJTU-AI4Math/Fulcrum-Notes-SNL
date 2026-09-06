@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@S,Type),def(Topology.orderTopology,Topology.topologicalSpace(S@Topology.ctxt.S,Topology.orderTopology)))"
+      "snl": "variable(Type.annotation(@S,Type),def(Topology.orderTopology, ,Topology.topologicalSpace(S@Topology.ctxt.S,Topology.orderTopology)))"
     },
     "contribution_info": null,
     "pointer": null,

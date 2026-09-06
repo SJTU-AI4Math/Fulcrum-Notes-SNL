@@ -47,7 +47,9 @@ Library 身份名使用大驼峰 `UpperCamelCase`，例如 `LinearAlgebra`、`Se
 
 - 使用 `variable(语境, 正文)` 表达“设……，……”。第一个子树保留变量声明及假设，第二个子树是处于该语境中的正文；多个声明可用 `__list__` 组织。
 - `def`、`theorem`、`inductive`、`structure` 只表达声明本体，不再为“附带语境”另造 `def-hyp`、`thm-hyp`、`def-inductive-hyp`、`def-struct-hyp` 等组合宏。
-- 例如 `def-hyp(H, A, B)` 改写为 `variable(H, def(A, B))`；命题型定义等差异由对应声明宏的 Style 表达，不删除假设或改变原有子树的次序、来源与绑定关系。
+- `def` 固定为三元宏：`def(被定义对象陈述, 类型, 内容)`。三个子树的位置和含义不因 Style 改变；语境仍放在外层 `variable` 中。第一个子树可以是结构化的对象陈述，不强制简化为一个名字。
+- 旧内容未写明类型时，先保留显式空槽，例如 `def(A, , B)`；连内容也未给出的声明使用 `def(A, , )`。空槽表示待补信息，不以猜测的 `Type`、`Prop` 或虚构定义体代替。
+- 例如旧 `def-hyp(H, A, B)` 迁移为 `variable(H, def(A, , B))`。谓词定义等差异仍由 Style 表达，但类型槽不能挪作记号槽；不删除假设或改变原有子树的次序、来源与绑定关系。
 - `variable` 是本笔记的显式语境容器；不能仅凭名称对齐就声称它等同于 Lean 命令对后续声明的自动参数收集。跨 Entry 的变量来源仍显式使用现有 Context 引用机制。
 
 ### 未直接对应 Lean 常量的概念

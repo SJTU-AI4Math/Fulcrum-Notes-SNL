@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "variable(Syntax.hasCategory(@Expr,Syntax.SyntacticCategory),def[declaration](Syntax.signatureFragment(Expr,ctors(Syntax.constructor(@c,Type.to(Expr,Expr))))))",
+      "snl": "variable(Syntax.hasCategory(@Expr,Syntax.SyntacticCategory),def(Syntax.signatureFragment(Expr,ctors(Syntax.constructor(@c,Type.to(Expr,Expr)))), , ))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

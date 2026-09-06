@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Set.domain(f@Set.ctxt.f), D@Set.ctxt.D)"
+      "snl": "def(Set.domain(f@Set.ctxt.f), , D@Set.ctxt.D)"
     },
     "contribution_info": null,
     "pointer": null

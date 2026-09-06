@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "有限集",
     "content": {
-      "snl": "variable(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),def[predicate](\r\n    Set.finite(A),\r\n    Logic.exists-typed(@N, Nat, Logic.exists-typed(@f, Type.to(A@Set.ctxt.AB, N), Set.bijective(f)))\r\n))"
+      "snl": "variable(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),def[predicate](\r\n    Set.finite(A), ,\r\n    Logic.exists-typed(@N, Nat, Logic.exists-typed(@f, Type.to(A@Set.ctxt.AB, N), Set.bijective(f)))\r\n))"
     },
     "contribution_info": null,
     "pointer": null

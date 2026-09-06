@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Measure.MeasureSpace(X,$\\Sigma$,$\\mu$),Logic.and(Measure.SigmaAlgebra($\\Sigma$),Measure.Measure($\\Sigma$,$\\mu$)))"
+      "snl": "def(Measure.MeasureSpace(X,$\\Sigma$,$\\mu$), ,Logic.and(Measure.SigmaAlgebra($\\Sigma$),Measure.Measure($\\Sigma$,$\\mu$)))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(Type.strictlyPositive(@I,@C),FulcrumNotes.OneOffI18N.TypeTheory.StrictPositivity.Condition(@I))",
+      "snl": "def(Type.strictlyPositive(@I,@C), ,FulcrumNotes.OneOffI18N.TypeTheory.StrictPositivity.Condition(@I))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

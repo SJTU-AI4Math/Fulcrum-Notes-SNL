@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@$\\nu$,Type.to(Measure.Borel(Real),ENNReal)),def(Measure.BorelMeasure($\\nu$),Logic.forall-typed[paren](__list__(@a,@b),Real,Eq(Measure.apply($\\nu$,Measure.interval(a,b)),Measure.length(a,b)))))"
+      "snl": "variable(Type.annotation(@$\\nu$,Type.to(Measure.Borel(Real),ENNReal)),def(Measure.BorelMeasure($\\nu$), ,Logic.forall-typed[paren](__list__(@a,@b),Real,Eq(Measure.apply($\\nu$,Measure.interval(a,b)),Measure.length(a,b)))))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Set.emptyset[slim],Set.sep-typed(@x,T@Set.ctxt.T,Logic.false))"
+      "snl": "def(Set.emptyset[slim], ,Set.sep-typed(@x,T@Set.ctxt.T,Logic.false))"
     },
     "contribution_info": null,
     "pointer": null,

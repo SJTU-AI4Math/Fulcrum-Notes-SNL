@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),def(\r\n    Topology.perfect(A),\r\n    Eq(Topology.derivedSet(A), A)\r\n))"
+      "snl": "variable(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),def(\r\n    Topology.perfect(A), ,\r\n    Eq(Topology.derivedSet(A), A)\r\n))"
     },
     "contribution_info": null,
     "pointer": null,

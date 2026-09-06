@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@P,Type.to(T,Proposition)),def(Set.sep-typed(@x,T,P(x)),P))"
+      "snl": "variable(Type.annotation(@P,Type.to(T,Proposition)),def(Set.sep-typed(@x,T,P(x)), ,P))"
     },
     "contribution_info": null,
     "pointer": null,

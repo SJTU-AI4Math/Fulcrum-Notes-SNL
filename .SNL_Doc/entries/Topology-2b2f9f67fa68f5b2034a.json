@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(\r\n    Topology.openMap(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y),\r\n    Logic.forall-typed(\r\n        @U,\r\n        Set(A@Topology.ctxt.AB),\r\n        Logic.implies(\r\n            Topology.openSet(U, τ_X),\r\n            Topology.openSet(\r\n                Set.fun(f, U),\r\n                τ_Y\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "def(\r\n    Topology.openMap(f, X@Topology.ctxt.X, Y@Topology.ctxt.Y), ,\r\n    Logic.forall-typed(\r\n        @U,\r\n        Set(A@Topology.ctxt.AB),\r\n        Logic.implies(\r\n            Topology.openSet(U, τ_X),\r\n            Topology.openSet(\r\n                Set.fun(f, U),\r\n                τ_Y\r\n            )\r\n        )\r\n    )\r\n)"
     },
     "contribution_info": null,
     "pointer": null,

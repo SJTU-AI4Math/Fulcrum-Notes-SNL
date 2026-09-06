@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Algebra.GrpKer,Set.sep-typed(@a,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,a),Algebra.e@Algebra.ctxt.G)))"
+      "snl": "def(Algebra.GrpKer, ,Set.sep-typed(@a,G@Algebra.ctxt.G,Eq(Type.apply[paren](f@Algebra.def.groupHom,a),Algebra.e@Algebra.ctxt.G)))"
     },
     "contribution_info": null,
     "pointer": null,

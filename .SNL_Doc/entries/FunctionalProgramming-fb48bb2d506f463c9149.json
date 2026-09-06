@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(FP.Identity(A),A)"
+      "snl": "def(FP.Identity(A), ,A)"
     },
     "contribution_info": null,
     "pointer": null,

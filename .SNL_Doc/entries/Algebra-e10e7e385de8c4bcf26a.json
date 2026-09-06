@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Algebra.Stab,Set.sep-typed(@g,G@Algebra.ctxt.G,Eq(Type.apply[paren](Type.apply[paren](alpha@Algebra.def.groupAction,g),x@Algebra.def.groupAction),x@Algebra.def.groupAction)))"
+      "snl": "def(Algebra.Stab, ,Set.sep-typed(@g,G@Algebra.ctxt.G,Eq(Type.apply[paren](Type.apply[paren](alpha@Algebra.def.groupAction,g),x@Algebra.def.groupAction),x@Algebra.def.groupAction)))"
     },
     "contribution_info": null,
     "pointer": null,

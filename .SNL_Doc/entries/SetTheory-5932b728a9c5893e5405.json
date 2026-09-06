@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB),Logic.forall(@x,Logic.implies(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
+      "snl": "def(Set.subset(A@Set.ctxt.AB,B@Set.ctxt.AB), ,Logic.forall(@x,Logic.implies(Set.mem(x,A@Set.ctxt.AB),Set.mem(x,B@Set.ctxt.AB))))"
     },
     "contribution_info": null,
     "pointer": null,

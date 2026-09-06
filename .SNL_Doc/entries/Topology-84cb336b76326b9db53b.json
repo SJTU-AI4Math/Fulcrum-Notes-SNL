@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@S,Type),def(Topology.sierpinski,Topology.topologicalSpace(S,Topology.sierpinski)))"
+      "snl": "variable(Type.annotation(@S,Type),def(Topology.sierpinski, ,Topology.topologicalSpace(S,Topology.sierpinski)))"
     },
     "contribution_info": null,
     "pointer": null,
