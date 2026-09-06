@@ -22,7 +22,7 @@ namespace BasicAlgebra
 
 def naturalUnit : Nat := 1
 
--- An alias has a function type but no matching outer value lambda.
+-- An alias has no outer lambda; its declaration view eta-applies the RHS.
 def successorAlias : Nat → Nat := Nat.succ
 
 def square {α : Type} [Mul α] (x : α) : α := x * x
@@ -140,13 +140,21 @@ private def checkEntry (declName : Name) (kind : String) (hypCount memberCount :
     for i in [:memberCount] do
       let member := members.children[i]!
       expectNode member memberKind 2
-      requireTree (member.children[0]!.macro_name == entry.members[i]!.name &&
-        member.children[1]! == entry.members[i]!.typeTree) "member identity/type mismatch"
+      requireTree (member.children[0]!.macro_name == entry.members[i]!.name)
+        "member identity mismatch"
+      if memberKind == "constructor" then
+        requireTree (member.children[1]! == entry.members[i]!.typeTree)
+          "constructor type mismatch"
+      else
+        -- The inline member has H in scope; the independently queried signature
+        -- remains closed and is checked separately below.
+        let raw ← delabExpr (← getConstInfo entry.members[i]!.name.toName).type
+        requireTree (raw == entry.members[i]!.typeTree) "standalone member signature changed"
   checkVocabulary root
   checkVocabulary hypotheses
   checkVocabulary entry.typeTree
   if let some value := entry.valueTree? then checkVocabulary value
-  checkBindings (declarationScopeNodes root)
+  checkBindings (if kind == "structure" || kind == "class" then nodes root else declarationScopeNodes root)
   for member in entry.members do
     checkVocabulary member.typeTree
     checkBindings (nodes member.typeTree)
@@ -162,7 +170,7 @@ def elabBasicAlgebraEntryGuard : CommandElab := fun stx => do
     checkEntry (← resolveGlobalConstNoOverload name) kind.getString hyp.getNat members.getNat
 
 #basic_algebra_entry naturalUnit => "definition" 0 0
-#basic_algebra_entry successorAlias => "definition" 0 0
+#basic_algebra_entry successorAlias => "definition" 1 0
 #basic_algebra_entry Semigroup => "class" 1 2
 #basic_algebra_entry square => "definition" 3 0
 #basic_algebra_entry naturalUnit_eq => "theorem" 0 0
@@ -197,10 +205,18 @@ run_elab do
   let semigroup ← declarationToSnlEntry ``Semigroup
   requireTree (semigroup.members.any (·.name == "Mul.mul")) "lost inherited multiplication"
   let aliasEntry ← declarationToSnlEntry ``successorAlias
-  requireTree (aliasEntry.typeTree.macro_name == "Type.forall") "alias lost its function type"
+  requireTree (aliasEntry.typeTree.macro_name == "Nat") "eta-applied alias result type"
   let aliasTree ← delabDefinition ``successorAlias
-  expectNode aliasTree "def" 3
-  requireTree (aliasTree.children[1]! == aliasEntry.typeTree) "public APIs disagree on alias type"
+  expectNode aliasTree "variable" 2
+  let aliasDef := aliasTree.children[1]!
+  expectNode aliasDef "def" 3
+  requireTree (aliasDef.children[1]! == aliasEntry.typeTree) "public APIs disagree on alias type"
+  let rhs := aliasDef.children[2]!
+  expectNode rhs "Nat.succ" 1
+  requireTree (rhs.children[0]!.kind == "bvar" &&
+    stringField? rhs.children[0]! "bindRef" ==
+      stringField? aliasTree.children[0]!.children[0]!.children[0]! "bindId")
+    "eta-applied alias must use the new binder on the RHS"
   let product ← declarationToSnlEntry ``square
   let some value := product.valueTree? | throwError "missing multiplication value"
   expectNode value "HMul.hMul" 6
@@ -224,6 +240,38 @@ run_elab do
     let macroDef ← getSnlMacro name
     requireTree (macroDef.dynamic_arity && macroDef.renderArity 3 == 3)
       s!"registered {name} must preserve a dynamic operand list"
+
+-- The enclosing structure supplies α only once; each projection keeps self.
+run_elab do
+  let pair ← declarationToSnlEntry ``FactorPair
+  let h := pair.hypothesesTree?.get!
+  let sharedId := stringField? h.children[0]!.children[0]! "bindId"
+  let root := pair.declarationTree?.get!
+  let members := root.children[1]!.children[1]!
+  for member in members.children do
+    let type := member.children[1]!
+    expectNode type "Type.forall" 3
+    let selfType := type.children[1]!
+    expectNode selfType "BasicAlgebra.FactorPair" 1
+    requireTree (stringField? selfType.children[0]! "bindRef" == sharedId)
+      "projection self type must use the enclosing α"
+    requireTree (type.children[2]!.kind == "bvar" &&
+      stringField? type.children[2]! "bindRef" == sharedId)
+      "projection result must use the enclosing α"
+    requireTree (((nodes type).filter (·.kind == "binder")).size == 1)
+      "inline projection repeats α or lost self"
+  let standalone ← declarationToSnlEntry ``FactorPair.left
+  let fullProjection ← delabExpr (← getConstInfo ``FactorPair.left).type
+  requireTree (standalone.hypothesesTree?.get!.children.size == 2 ||
+    standalone.typeTree == fullProjection)
+    "independent projection must retain α and self, even on value-alignment fallback"
+  for getTree in [delabDeclaration ``FactorPair, delabDeclSignature ``FactorPair] do
+    let tree ← getTree
+    requireTree ({ tree with mdata := .null } == root) "structure APIs disagree"
+  let signatureOnly ← collectExport2Snl #[``square, ``square_eq]
+    { includeBodies := false, dependencies := .none }
+  for entry in signatureOnly.entries do
+    expectNode entry.declarationTree?.get! "variable" 2
 
 end
 end BasicAlgebra
