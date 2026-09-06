@@ -261,10 +261,8 @@ run_elab do
     requireTree (((nodes type).filter (·.kind == "binder")).size == 1)
       "inline projection repeats α or lost self"
   let standalone ← declarationToSnlEntry ``FactorPair.left
-  let fullProjection ← delabExpr (← getConstInfo ``FactorPair.left).type
-  requireTree (standalone.hypothesesTree?.get!.children.size == 2 ||
-    standalone.typeTree == fullProjection)
-    "independent projection must retain α and self, even on value-alignment fallback"
+  requireTree (standalone.hypothesesTree?.get!.children.size == 2)
+    "independent projection must extract α and self despite differing value BinderInfo"
   for getTree in [delabDeclaration ``FactorPair, delabDeclSignature ``FactorPair] do
     let tree ← getTree
     requireTree ({ tree with mdata := .null } == root) "structure APIs disagree"
