@@ -26,6 +26,11 @@
       }
     },
     "contribution_info": null,
-    "pointer": null
+    "pointer": {
+      "file": "Lean4/Basic Algebra/BasicAlgebra.lean",
+      "mode": "lines",
+      "line": 144,
+      "endLine": 365
+    }
   }
 }

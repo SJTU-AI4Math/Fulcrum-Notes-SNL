@@ -21,12 +21,17 @@
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "$V$ 是 $\\mathbb{K}$ 上满足八条标准公理的线性空间；加法和数乘由各自的二元运算宏表示。",
-          "en": "$V$ is a vector space over $\\mathbb{K}$ satisfying the eight standard axioms; addition and scalar multiplication use dedicated binary operation macros."
+          "zh-CN": "$V$ 是 $\\mathbb{K}$ 上满足八条标准公理的线性空间；加法和数乘由各自的二元运算宏表示。\n\nLean 平行笔记将运算与八条公理平铺在 `Fulcrum.VectorSpace` class 中，不使用 `extends`。`toAddCommGroup K V` 和 `toModule K V` 在同一载体、同一运算上构造 Mathlib 实例；使用时依次 `letI` 局部安装。零标量及零向量的数乘性质先从原公理证明，而非作为额外假设。",
+          "en": "$V$ is a vector space over $\\mathbb{K}$ satisfying the eight standard axioms; addition and scalar multiplication use dedicated binary operation macros.\n\nThe Lean companion uses a flat `Fulcrum.VectorSpace` class with the operations and eight axioms, without `extends`. `toAddCommGroup K V` and `toModule K V` construct Mathlib instances on exactly the same carrier and operations; install them in order using local `letI` bindings. The zero-scalar and zero-vector laws are derived before these bridges, not assumed."
         }
       }
     },
     "contribution_info": null,
-    "pointer": null
+    "pointer": {
+      "file": "Lean4/Basic Algebra/BasicAlgebra.lean",
+      "mode": "regex",
+      "pattern": "^class VectorSpace\\b[\\s\\S]*?(?=\\n\\n)",
+      "flags": "m"
+    }
   }
 }

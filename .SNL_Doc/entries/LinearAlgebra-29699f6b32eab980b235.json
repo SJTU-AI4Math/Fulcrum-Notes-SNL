@@ -27,6 +27,11 @@
       }
     },
     "contribution_info": null,
-    "pointer": null
+    "pointer": {
+      "file": "Lean4/Basic Algebra/BasicAlgebra.lean",
+      "mode": "regex",
+      "pattern": "^theorem dependent_iff_representable_by_others\\b[\\s\\S]*?(?=\\n\\n)",
+      "flags": "m"
+    }
   }
 }
