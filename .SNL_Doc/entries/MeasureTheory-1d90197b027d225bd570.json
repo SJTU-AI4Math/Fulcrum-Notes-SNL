@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),Eq(Measure.apply(mu@Measure.ctxt.mu,Set.emptyset[slim]),Measure.zero))"
+      "snl": "variable(Measure.Measure(Sigma@Measure.ctxt.Sigma,mu@Measure.ctxt.mu),theorem(Eq(Measure.apply(mu@Measure.ctxt.mu,Set.emptyset[slim]),Measure.zero)))"
     },
     "contribution_info": null,
     "pointer": null,

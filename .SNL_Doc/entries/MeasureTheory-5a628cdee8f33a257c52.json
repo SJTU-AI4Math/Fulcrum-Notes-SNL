@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@C,Set(Set(X@Measure.ctxt.X))),Measure.generatedSigma(C),%the intersection of all sigma-algebras on X containing C%)"
+      "snl": "variable(Type.annotation(@C,Set(Set(X@Measure.ctxt.X))),def(Measure.generatedSigma(C),%the intersection of all sigma-algebras on X containing C%))"
     },
     "contribution_info": null,
     "pointer": null,

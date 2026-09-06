@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Eq(Set.inter(A,B),Set.emptyset[slim]),Measure.additive($\\mu$,A,B))"
+      "snl": "variable(Eq(Set.inter(A,B),Set.emptyset[slim]),theorem(Measure.additive($\\mu$,A,B)))"
     },
     "contribution_info": null,
     "pointer": null,

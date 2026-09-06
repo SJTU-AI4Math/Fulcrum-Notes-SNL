@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@F, Analysis.PFun), Analysis.diff(F), Analysis.mkPFun(Analysis.map(Analysis.diff(F)), Set.sep-typed(@x, Real, Analysis.derivable(F, x))))",
+      "snl": "variable(Type.annotation(@F, Analysis.PFun),def( Analysis.diff(F), Analysis.mkPFun(Analysis.map(Analysis.diff(F)), Set.sep-typed(@x, Real, Analysis.derivable(F, x)))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

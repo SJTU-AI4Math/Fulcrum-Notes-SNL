@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive-hyp(Type.annotation(@$\\alpha$,Type),List($\\alpha$),ctors(Type.declaration(List.nil,List($\\alpha$)),Type.declaration(List.cons,Type.to($\\alpha$,Type.to(List($\\alpha$),List($\\alpha$))))))"
+      "snl": "variable(Type.annotation(@$\\alpha$,Type),inductive(List($\\alpha$),ctors(Type.declaration(List.nil,List($\\alpha$)),Type.declaration(List.cons,Type.to($\\alpha$,Type.to(List($\\alpha$),List($\\alpha$)))))))"
     },
     "contribution_info": null,
     "pointer": null

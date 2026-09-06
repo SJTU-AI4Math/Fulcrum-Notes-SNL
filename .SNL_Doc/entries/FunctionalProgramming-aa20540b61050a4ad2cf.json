@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.annotation(@a,A),Eq(FP.lift(T,M,FP.pure(M,a)),FP.pure(Type.apply(T,M),a)))"
+      "snl": "variable(Type.annotation(@a,A),theorem(Eq(FP.lift(T,M,FP.pure(M,a)),FP.pure(Type.apply(T,M),a))))"
     },
     "contribution_info": null,
     "pointer": null,

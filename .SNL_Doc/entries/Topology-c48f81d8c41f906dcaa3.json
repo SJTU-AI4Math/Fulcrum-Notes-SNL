@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(\r\n    Logic.and(Type.annotation(@E, Set(A@Topology.ctxt.AB)), Set.subset(E, X@Topology.ctxt.X)),\r\n    Logic.iff(\r\n        Topology.continuousMap(f@Topology.ctxt.f, E, Y@Topology.ctxt.Y),\r\n        Logic.forall-typed(\r\n            @V,\r\n            Set(B@Topology.ctxt.AB),\r\n            Logic.implies(\r\n                Topology.openSet[text](V, τ_Y@Topology.ctxt.tauY),\r\n                Topology.openSet[text](Set.preim(f@Topology.ctxt.f, V), τ_X@Topology.ctxt.tauX)\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "variable(\r\n    Logic.and(Type.annotation(@E, Set(A@Topology.ctxt.AB)), Set.subset(E, X@Topology.ctxt.X)),theorem(\r\n    Logic.iff(\r\n        Topology.continuousMap(f@Topology.ctxt.f, E, Y@Topology.ctxt.Y),\r\n        Logic.forall-typed(\r\n            @V,\r\n            Set(B@Topology.ctxt.AB),\r\n            Logic.implies(\r\n                Topology.openSet[text](V, τ_Y@Topology.ctxt.tauY),\r\n                Topology.openSet[text](Set.preim(f@Topology.ctxt.f, V), τ_X@Topology.ctxt.tauX)\r\n            )\r\n        )\r\n    )\r\n))"
     },
     "contribution_info": null,
     "pointer": null,

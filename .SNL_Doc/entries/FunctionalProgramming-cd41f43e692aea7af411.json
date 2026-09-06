@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.annotation(@xs,FP.List(A)),Eq(FP.flatten(FP.List,xs),FP.bind(FP.List,xs,Syntax.Expr-UTLC.lambda(@a,a))))"
+      "snl": "variable(Type.annotation(@xs,FP.List(A)),theorem(Eq(FP.flatten(FP.List,xs),FP.bind(FP.List,xs,Syntax.Expr-UTLC.lambda(@a,a)))))"
     },
     "contribution_info": null,
     "pointer": null,

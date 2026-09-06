@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.nowhereDense(A),\r\n    Eq(Topology.interior(Topology.closure(A)), Set.emptyset)\r\n)"
+      "snl": "variable(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),def(\r\n    Topology.nowhereDense(A),\r\n    Eq(Topology.interior(Topology.closure(A)), Set.emptyset)\r\n))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(Type.annotation(@c,@T),Type.declaration(c,T))",
+      "snl": "variable(Type.annotation(@c,@T),def[declaration](Type.declaration(c,T)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

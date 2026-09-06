@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Logic.iff(Set.mem(A, τ), Eq(A, Topology.interior(A)))\r\n)"
+      "snl": "variable(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),theorem(\r\n    Logic.iff(Set.mem(A, τ), Eq(A, Topology.interior(A)))\r\n))"
     },
     "contribution_info": null,
     "pointer": null,

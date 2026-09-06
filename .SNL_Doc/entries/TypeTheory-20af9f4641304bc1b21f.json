@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(Syntax.hasCategory(@a,Syntax.OpenExpr-UTLC),Syntax.Expr-UTLC.lambda(@$ $,@a))"
+      "snl": "variable(Syntax.hasCategory(@a,Syntax.OpenExpr-UTLC),def[declaration](Syntax.Expr-UTLC.lambda(@$ $,@a)))"
     },
     "contribution_info": null,
     "pointer": null

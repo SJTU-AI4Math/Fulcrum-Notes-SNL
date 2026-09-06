@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive[prop](Logic.or(p,q),ctors(Type.declaration(%left%,p),Type.declaration(%right%,q)))"
+      "snl": "inductive[prop](Logic.or(p,q),ctors(Type.declaration(%left%,p),Type.declaration(%right%,q)))"
     },
     "contribution_info": null,
     "pointer": null,

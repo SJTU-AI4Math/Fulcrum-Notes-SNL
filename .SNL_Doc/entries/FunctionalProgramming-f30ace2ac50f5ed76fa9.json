@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(FP.le(@a,@b),FP.le(FP.pure(M,a),FP.pure(M,b)))"
+      "snl": "variable(FP.le(@a,@b),theorem(FP.le(FP.pure(M,a),FP.pure(M,b))))"
     },
     "contribution_info": null,
     "pointer": null,

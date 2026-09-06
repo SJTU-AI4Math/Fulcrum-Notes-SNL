@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive(Syntax.Expr-UTLC,ctors(Syntax.constructor(Syntax.Expr-UTLC.lambda[text],Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC)),Syntax.constructor(Syntax.Expr-UTLC.apply[text],Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC))),Syntax.constructor(Syntax.Expr-UTLC.bvar[text],Type.to(Nat,Syntax.Expr-UTLC))))"
+      "snl": "inductive(Syntax.Expr-UTLC,ctors(Syntax.constructor(Syntax.Expr-UTLC.lambda[text],Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC)),Syntax.constructor(Syntax.Expr-UTLC.apply[text],Type.to(Syntax.Expr-UTLC,Type.to(Syntax.Expr-UTLC,Syntax.Expr-UTLC))),Syntax.constructor(Syntax.Expr-UTLC.bvar[text],Type.to(Nat,Syntax.Expr-UTLC))))"
     },
     "contribution_info": null,
     "pointer": null

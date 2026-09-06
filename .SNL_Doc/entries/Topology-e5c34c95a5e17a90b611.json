@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@U,Set(T@Set.ctxt.T)),Topology.closedSet[text](U,τ@Topology.ctxt.tau,S@Topology.ctxt.S),Set.mem(Set.compl[sup](U,S@Topology.ctxt.S),τ))"
+      "snl": "variable(Type.annotation(@U,Set(T@Set.ctxt.T)),def(Topology.closedSet[text](U,τ@Topology.ctxt.tau,S@Topology.ctxt.S),Set.mem(Set.compl[sup](U,S@Topology.ctxt.S),τ)))"
     },
     "contribution_info": null,
     "pointer": null,

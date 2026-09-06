@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace), LA.Vector(@v, V@LinearAlgebra.ctxt.vectorSpace), Type.annotation(v, V@LinearAlgebra.ctxt.vectorSpace))",
+      "snl": "variable(LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, $\\mathbb{K}$@LinearAlgebra.ctxt.vectorSpace),def( LA.Vector(@v, V@LinearAlgebra.ctxt.vectorSpace), Type.annotation(v, V@LinearAlgebra.ctxt.vectorSpace)))",
       "markdown": {
         "type": "i18n",
         "default_language": "zh-CN",

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(__list__(Syntax.hasCategory(__list__[formula](@a,@b),Syntax.Expr-UTLC),Lambda.defeq(a,b)),Lambda.defeq(b,a))"
+      "snl": "variable(__list__(Syntax.hasCategory(__list__[formula](@a,@b),Syntax.Expr-UTLC),Lambda.defeq(a,b)),theorem(Lambda.defeq(b,a)))"
     },
     "contribution_info": null,
     "pointer": null

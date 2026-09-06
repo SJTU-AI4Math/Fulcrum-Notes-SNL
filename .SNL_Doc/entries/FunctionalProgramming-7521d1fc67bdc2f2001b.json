@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@x,Type.apply(M,A)),FP.lift(T,M,x),%the canonical embedding into the transformed monad%)"
+      "snl": "variable(Type.annotation(@x,Type.apply(M,A)),def(FP.lift(T,M,x),%the canonical embedding into the transformed monad%))"
     },
     "contribution_info": null,
     "pointer": null,

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(Type.annotation(@x,`string`),Syntax.Expr-UTLC.fvar(x))"
+      "snl": "variable(Type.annotation(@x,`string`),def[declaration](Syntax.Expr-UTLC.fvar(x)))"
     },
     "contribution_info": null,
     "pointer": null

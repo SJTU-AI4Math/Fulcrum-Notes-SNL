@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@A, Analysis.Seq), Analysis.seqLimVal(A), Analysis.seqLimVal(A))",
+      "snl": "variable(Type.annotation(@A, Analysis.Seq),def( Analysis.seqLimVal(A), Analysis.seqLimVal(A)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

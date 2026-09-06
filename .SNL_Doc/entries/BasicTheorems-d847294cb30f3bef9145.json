@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.annotation(@a,Real),Logic.iff(Lt(neg(a),0),Gt(a,0)))",
+      "snl": "variable(Type.annotation(@a,Real),theorem(Logic.iff(Lt(neg(a),0),Gt(a,0))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.annotation(@x,Type.apply(M,A)),Eq(FP.bindFromMapFlatten(M,x,@f),FP.flatten(M,FP.map(M,x,f))))"
+      "snl": "variable(Type.annotation(@x,Type.apply(M,A)),theorem(Eq(FP.bindFromMapFlatten(M,x,@f),FP.flatten(M,FP.map(M,x,f)))))"
     },
     "contribution_info": null,
     "pointer": null,

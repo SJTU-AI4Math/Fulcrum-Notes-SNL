@@ -4,16 +4,18 @@
   "schema_version": 1,
   "package": "FulcrumsMathNotes",
   "macro": {
-    "description": "",
+    "name": "variable",
+    "description": "Declare variables and assumptions in #0 for the explicitly scoped body #1; a syntax-level context wrapper, not a mathematical constant or Lean elaborator.",
     "source": {
       "entries": [],
       "urls": []
     },
     "kind": "rule",
     "dynamic_arity": false,
+    "tags": [],
     "styles": [
       {
-        "style_name": "localized_default",
+        "style_name": "default",
         "tags": [],
         "template": {
           "type": "i18n",
@@ -21,7 +23,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "Let #0, define “#1”.",
+              "body": "Let #0. #1",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -41,7 +43,7 @@
             },
             "zh-CN": {
               "mode": "text",
-              "body": "设 #0，定义【#1】。",
+              "body": "设 #0，#1",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -62,8 +64,6 @@
           }
         }
       }
-    ],
-    "tags": [],
-    "name": "def-hyp-opq"
+    ]
   }
 }

@@ -9,7 +9,7 @@
     "kind": "remark",
     "title": "环的乘法运算优先于加法运算",
     "content": {
-      "snl": "thm-hyp(\r\n    Algebra.Ring(\r\n        R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring\r\n    ),\r\n    Eq(\r\n        Bop.apply($+$@Algebra.ctxt.ring, Bop.apply($\\cdot$@Algebra.ctxt.ring, a, b), Bop.apply($\\cdot$@Algebra.ctxt.ring, a, c)),\r\n        Bop.apply($+$@Algebra.ctxt.ring, Bop.apply[paren]($\\cdot$@Algebra.ctxt.ring, a, b), Bop.apply[paren]($\\cdot$@Algebra.ctxt.ring, a, c)),\r\n    )\r\n)"
+      "snl": "variable(\r\n    Algebra.Ring(\r\n        R@Algebra.ctxt.ring, $+$@Algebra.ctxt.ring, $\\cdot$@Algebra.ctxt.ring\r\n    ),theorem(\r\n    Eq(\r\n        Bop.apply($+$@Algebra.ctxt.ring, Bop.apply($\\cdot$@Algebra.ctxt.ring, a, b), Bop.apply($\\cdot$@Algebra.ctxt.ring, a, c)),\r\n        Bop.apply($+$@Algebra.ctxt.ring, Bop.apply[paren]($\\cdot$@Algebra.ctxt.ring, a, b), Bop.apply[paren]($\\cdot$@Algebra.ctxt.ring, a, c)),\r\n    )\r\n))"
     },
     "contribution_info": null,
     "pointer": null

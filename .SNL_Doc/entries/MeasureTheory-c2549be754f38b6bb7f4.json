@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Set.subset(A@Measure.ctxt.AB,B@Measure.ctxt.AB),Measure.leq(Measure.apply(mu@Measure.ctxt.mu,A@Measure.ctxt.AB),Measure.apply(mu@Measure.ctxt.mu,B@Measure.ctxt.AB)))"
+      "snl": "variable(Set.subset(A@Measure.ctxt.AB,B@Measure.ctxt.AB),theorem(Measure.leq(Measure.apply(mu@Measure.ctxt.mu,A@Measure.ctxt.AB),Measure.apply(mu@Measure.ctxt.mu,B@Measure.ctxt.AB))))"
     },
     "contribution_info": null,
     "pointer": null,

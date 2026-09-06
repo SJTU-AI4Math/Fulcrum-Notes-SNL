@@ -37,6 +37,19 @@ Library 身份名使用大驼峰 `UpperCamelCase`，例如 `LinearAlgebra`、`Se
 
 例如：集合并的 Entry 和 Macro 均可名为 `Set.union`，其 Entry kind 为 `def`，Macro kind 为 `const`；并的结合律 Entry 使用 `Set.union_assoc`。类别从 `thm` 调整为 `ppt` 不应导致身份改名。
 
+### Lean 语法与常量的命名边界
+
+1. 若概念对应 Lean 的语法、命令或元编程提供的语法构造，而不是环境中的数学常量，优先使用该语法的关键字或保留词作为 Macro 名称，尽量避免与常量名冲突。
+2. 在本笔记中，`def`、`theorem`、`inductive`、`structure`、`variable` 等名称留给相应语法宏，不用于命名数学常量宏。语法宏仍与数学常量宏区分；名字相同不意味着已实现 Lean 的解析或 elaboration 语义。
+3. 复刻 Lean 语法时先区分语法构造与其声明出来的常量。例如 `def` 是声明语法，被声明对象另有自己的语义名称。具体对应关系须按固定版本 Lean 的语法与 elaborator 核对。
+
+### 语境与声明分离
+
+- 使用 `variable(语境, 正文)` 表达“设……，……”。第一个子树保留变量声明及假设，第二个子树是处于该语境中的正文；多个声明可用 `__list__` 组织。
+- `def`、`theorem`、`inductive`、`structure` 只表达声明本体，不再为“附带语境”另造 `def-hyp`、`thm-hyp`、`def-inductive-hyp`、`def-struct-hyp` 等组合宏。
+- 例如 `def-hyp(H, A, B)` 改写为 `variable(H, def(A, B))`；命题型定义等差异由对应声明宏的 Style 表达，不删除假设或改变原有子树的次序、来源与绑定关系。
+- `variable` 是本笔记的显式语境容器；不能仅凭名称对齐就声称它等同于 Lean 命令对后续声明的自动参数收集。跨 Entry 的变量来源仍显式使用现有 Context 引用机制。
+
 ### 未直接对应 Lean 常量的概念
 
 1. 先调研邻近概念在固定版本 Mathlib 中的命名，再采用相容的语义命名空间和名称。不要机械套用 `<学科缩写>.<类别>.<名称>`。

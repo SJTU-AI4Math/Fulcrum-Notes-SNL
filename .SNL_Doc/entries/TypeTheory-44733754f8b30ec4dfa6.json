@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-inductive(Nat,ctors(Type.declaration(%zero%,Nat),Type.declaration(%succ%,Type.to(Nat,Nat))))"
+      "snl": "inductive(Nat,ctors(Type.declaration(%zero%,Nat),Type.declaration(%succ%,Type.to(Nat,Nat))))"
     },
     "contribution_info": null,
     "pointer": null

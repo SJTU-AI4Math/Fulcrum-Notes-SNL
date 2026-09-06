@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Logic.and(Measure.BorelMeasure(@nu),Measure.BorelMeasure(@rho)),Eq(nu,rho))"
+      "snl": "variable(Logic.and(Measure.BorelMeasure(@nu),Measure.BorelMeasure(@rho)),theorem(Eq(nu,rho)))"
     },
     "contribution_info": null,
     "pointer": null,

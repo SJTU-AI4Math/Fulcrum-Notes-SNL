@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp-opq(Type.annotation(@n,Nat),Type[univ](n))"
+      "snl": "variable(Type.annotation(@n,Nat),def[declaration](Type[univ](n)))"
     },
     "contribution_info": null,
     "pointer": null

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Type.annotation(@A, Set(T@Set.ctxt.T)), Topology.derivedSet(A), Set.sep-typed(@x, T@Set.ctxt.T, Topology.limitPoint(x, A)))"
+      "snl": "variable(Type.annotation(@A, Set(T@Set.ctxt.T)),def( Topology.derivedSet(A), Set.sep-typed(@x, T@Set.ctxt.T, Topology.limitPoint(x, A))))"
     },
     "contribution_info": null,
     "pointer": null,

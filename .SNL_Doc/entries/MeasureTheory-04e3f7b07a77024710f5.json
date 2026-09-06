@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Logic.true,Measure.Complete($\\mathbb{R}$,Measure.LebesgueSets($\\mathbb{R}$),Measure.LebesgueMeasure($\\mathbb{R}$)))"
+      "snl": "variable(Logic.true,theorem(Measure.Complete($\\mathbb{R}$,Measure.LebesgueSets($\\mathbb{R}$),Measure.LebesgueMeasure($\\mathbb{R}$))))"
     },
     "contribution_info": null,
     "pointer": null,

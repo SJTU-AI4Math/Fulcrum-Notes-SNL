@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Measure.BorelMeasure(@nu),Logic.forall-typed(@x,$\\mathbb{R}$,Eq(Measure.apply(nu,Set.sep-typed(@y,$\\mathbb{R}$,Eq(y,x))),Measure.zero)))"
+      "snl": "variable(Measure.BorelMeasure(@nu),theorem(Logic.forall-typed(@x,$\\mathbb{R}$,Eq(Measure.apply(nu,Set.sep-typed(@y,$\\mathbb{R}$,Eq(y,x))),Measure.zero))))"
     },
     "contribution_info": null,
     "pointer": null,

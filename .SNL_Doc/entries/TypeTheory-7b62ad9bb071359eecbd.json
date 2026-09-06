@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(Syntax.hasCategory(@e,Syntax.Expr-UTLC),Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,Syntax.OneOffI18N.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,))))"
+      "snl": "variable(Syntax.hasCategory(@e,Syntax.Expr-UTLC),def(Syntax.LegalExpr-UTLC,Set.sep-typed(@e,Syntax.Expr-UTLC,Syntax.OneOffI18N.LegalExpression.BoundVariablesResolve(e,deBruijnIndex,Syntax.Expr-UTLC.lambda[text](,)))))"
     },
     "contribution_info": null,
     "pointer": null

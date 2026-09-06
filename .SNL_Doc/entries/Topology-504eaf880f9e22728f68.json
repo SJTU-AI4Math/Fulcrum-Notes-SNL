@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),\r\n    Topology.closure(A),\r\n    Set.sep-typed(\r\n        @x,\r\n        S@Topology.ctxt.S,\r\n        Logic.forall-typed(\r\n            @F,\r\n            Set(T@Set.ctxt.T),\r\n            Logic.implies(\r\n                Logic.and(Topology.closedSet(F, τ@Topology.ctxt.tau, S@Topology.ctxt.S), Set.subset(A, F)),\r\n                Set.mem(x, F)\r\n            )\r\n        )\r\n    )\r\n)"
+      "snl": "variable(\r\n    Type.annotation(@A, Set(T@Set.ctxt.T)),def(\r\n    Topology.closure(A),\r\n    Set.sep-typed(\r\n        @x,\r\n        S@Topology.ctxt.S,\r\n        Logic.forall-typed(\r\n            @F,\r\n            Set(T@Set.ctxt.T),\r\n            Logic.implies(\r\n                Logic.and(Topology.closedSet(F, τ@Topology.ctxt.tau, S@Topology.ctxt.S), Set.subset(A, F)),\r\n                Set.mem(x, F)\r\n            )\r\n        )\r\n    )\r\n))"
     },
     "contribution_info": null,
     "pointer": null,

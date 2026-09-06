@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def-hyp(__list__(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real), Type.annotation(@N, Nat)), Analysis.taylorPoly(F, x, N), Analysis.taylorPoly(F, x, N))",
+      "snl": "variable(__list__(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real), Type.annotation(@N, Nat)),def( Analysis.taylorPoly(F, x, N), Analysis.taylorPoly(F, x, N)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

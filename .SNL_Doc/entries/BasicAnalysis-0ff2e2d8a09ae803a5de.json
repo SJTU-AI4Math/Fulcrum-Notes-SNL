@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(__list__(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real), Analysis.derivable(F, x), Analysis.maxPoint(F, x)), Analysis.deriv(F, x, $0$))",
+      "snl": "variable(__list__(Type.annotation(@F, Analysis.PFun), Type.annotation(@x, Real), Analysis.derivable(F, x), Analysis.maxPoint(F, x)),theorem( Analysis.deriv(F, x, $0$)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

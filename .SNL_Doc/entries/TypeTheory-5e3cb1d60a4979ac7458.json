@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "thm-hyp(Type.judge(Type.emptyContext,@P,Proposition),Logic.or(P,Logic.neg(P)))",
+      "snl": "variable(Type.judge(Type.emptyContext,@P,Proposition),theorem(Logic.or(P,Logic.neg(P))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
