@@ -1,4 +1,4 @@
-import Mathlib
+import Mathlib.Algebra.Group.Defs
 import SNL4Lean
 
 /-! Semigroup defined in Mathlib -/
@@ -14,6 +14,9 @@ old/new SNL4Lean dependency respectively. No serialized display string is an ora
 namespace BasicAlgebra
 
 def naturalUnit : Nat := 1
+
+-- An alias has a function type but no matching outer value lambda.
+def successorAlias : Nat → Nat := Nat.succ
 
 def square {α : Type} [Mul α] (x : α) : α := x * x
 
@@ -86,7 +89,7 @@ private def checkEntry (declName : Name) (kind : String) (hypCount memberCount :
   let some hypotheses := entry.hypothesesTree? | throwError "missing hypothesis tree"
   expectNode hypotheses "__list__" hypCount
   for hypothesis in hypotheses.children do
-    expectNode hypothesis "Type.judge" 2
+    expectNode hypothesis "Type.annotation" 2
     requireTree (hypothesis.children[0]!.kind == "binder") "H must own its binders"
   if declName == ``square || declName == ``square_eq then
     let infos := hypotheses.children.map fun hypothesis =>
@@ -97,7 +100,7 @@ private def checkEntry (declName : Name) (kind : String) (hypCount memberCount :
     expectNode root "variable" 2
     requireTree (root.children[0]! == hypotheses) "variable slot 0 must be H"
     pure root.children[1]!
-  let head := if kind == "definition" then "def" else kind
+  let head := if kind == "definition" then "def" else if kind == "class" then "structure" else kind
   let arity := if kind == "definition" then 3 else if kind == "theorem" then 1 else 2
   expectNode declaration head arity
   requireTree (entry.members.size == memberCount) "wrong member count"
@@ -116,8 +119,7 @@ private def checkEntry (declName : Name) (kind : String) (hypCount memberCount :
     requireTree (declaration.children[1]! == entry.typeTree) "def slot 1 must be the type"
     let some value := entry.valueTree? | throwError "definition lost its body"
     let body := declaration.children[2]!
-    -- The presentation-only `body` shell may remain; the complete value must survive.
-    requireTree (body == value || (body.macro_name == "body" && body.children == #[value]))
+    requireTree (body == value)
       "def slot 2 must contain the complete value tree"
   else if kind == "theorem" then
     requireTree (declaration.children[0]! == entry.typeTree) "theorem slot 0 must be P"
@@ -127,7 +129,7 @@ private def checkEntry (declName : Name) (kind : String) (hypCount memberCount :
       "structure/inductive slot 0 must name the declared object"
     let members := declaration.children[1]!
     expectNode members "__enum__" memberCount
-    let memberKind := if kind == "structure" then "member" else "constructor"
+    let memberKind := if kind == "structure" || kind == "class" then "member" else "constructor"
     for i in [:memberCount] do
       let member := members.children[i]!
       expectNode member memberKind 2
@@ -153,6 +155,8 @@ def elabBasicAlgebraEntryGuard : CommandElab := fun stx => do
     checkEntry (← resolveGlobalConstNoOverload name) kind.getString hyp.getNat members.getNat
 
 #basic_algebra_entry naturalUnit => "definition" 0 0
+#basic_algebra_entry successorAlias => "definition" 0 0
+#basic_algebra_entry Semigroup => "class" 1 2
 #basic_algebra_entry square => "definition" 3 0
 #basic_algebra_entry naturalUnit_eq => "theorem" 0 0
 #basic_algebra_entry square_eq => "theorem" 3 0
@@ -180,6 +184,27 @@ run_elab do
       requireTree (typeArg.kind == "bvar" && (stringField? α "bindId").isSome &&
         stringField? typeArg "bindRef" == stringField? α "bindId")
         "Eq's implicit type must refer to the context's α binder"
+
+-- Inherited data and a function-valued alias must not be silently shortened.
+run_elab do
+  let semigroup ← declarationToSnlEntry ``Semigroup
+  requireTree (semigroup.members.any (·.name == "Mul.mul")) "lost inherited multiplication"
+  let aliasEntry ← declarationToSnlEntry ``successorAlias
+  requireTree (aliasEntry.typeTree.macro_name == "Type.forall") "alias lost its function type"
+  let aliasTree ← delabDefinition ``successorAlias
+  expectNode aliasTree "def" 3
+  requireTree (aliasTree.children[1]! == aliasEntry.typeTree) "public APIs disagree on alias type"
+  let product ← declarationToSnlEntry ``square
+  let some value := product.valueTree? | throwError "missing multiplication value"
+  expectNode value "HMul.hMul" 6
+  let some h := product.hypothesesTree? | throwError "missing multiplication context"
+  let ref := stringField? h.children[2]!.children[0]! "bindId"
+  for i in #[4, 5] do
+    requireTree (stringField? value.children[i]! "bindRef" == ref) "wrong multiplication operand"
+  let eqMacro ← getSnlMacro "Eq"
+  requireTree (eqMacro.styles[0]!.template == "#1 = #2") "Eq renders its implicit type as an operand"
+  let mulMacro ← getSnlMacro "HMul.hMul"
+  requireTree (mulMacro.styles[0]!.template == "#4 \\cdot #5") "multiplication slots are not full-tree indices"
 
 -- Query registered macro contracts without replacing the actual-tree tests.
 run_elab do
