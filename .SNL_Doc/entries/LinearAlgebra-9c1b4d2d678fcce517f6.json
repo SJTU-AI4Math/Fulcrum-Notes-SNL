@@ -30,7 +30,7 @@
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
-      "pattern": "^theorem independent_iff_unique_representation\\b[\\s\\S]*?(?=\\n\\n)",
+      "pattern": "^theorem independent_iff_unique_representation\\b[\\s\\S]*?(?=\\r?\\n\\r?\\n)",
       "flags": "m"
     }
   }

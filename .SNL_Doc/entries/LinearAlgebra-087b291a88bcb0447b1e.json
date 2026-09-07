@@ -30,7 +30,7 @@
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
-      "pattern": "^def IsLinearRelation\\b[\\s\\S]*?(?=\\n\\n)",
+      "pattern": "^def IsLinearRelation\\b[\\s\\S]*?(?=\\r?\\n\\r?\\n)",
       "flags": "m"
     }
   }

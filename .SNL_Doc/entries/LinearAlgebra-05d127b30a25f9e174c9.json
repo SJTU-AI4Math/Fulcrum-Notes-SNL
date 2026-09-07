@@ -30,7 +30,7 @@
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
-      "pattern": "^theorem superfamily_dependent\\b[\\s\\S]*?(?=\\n\\n)",
+      "pattern": "^theorem superfamily_dependent\\b[\\s\\S]*?(?=\\r?\\n\\r?\\n)",
       "flags": "m"
     }
   }

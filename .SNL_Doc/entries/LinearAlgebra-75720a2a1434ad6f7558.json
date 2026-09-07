@@ -30,7 +30,7 @@
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
-      "pattern": "^theorem smul_zero\\b[\\s\\S]*?(?=\\n\\n)",
+      "pattern": "^theorem smul_zero\\b[\\s\\S]*?(?=\\r?\\n\\r?\\n)",
       "flags": "m"
     }
   }

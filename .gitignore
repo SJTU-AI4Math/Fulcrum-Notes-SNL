@@ -3,3 +3,5 @@ __pycache__/
 .SNL_Doc-toolkit-repair-*/
 /.lake/
 test
+# Derived local source-to-Entry index; rebuilt by Pointer maintenance.
+/.SNL_Doc/syncSNL.json

@@ -30,7 +30,7 @@
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
-      "pattern": "^theorem dependent_of_repeated_vector\\b[\\s\\S]*?(?=\\n\\n)",
+      "pattern": "^theorem dependent_of_repeated_vector\\b[\\s\\S]*?(?=\\r?\\n\\r?\\n)",
       "flags": "m"
     }
   }
