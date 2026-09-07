@@ -42,8 +42,8 @@ The raw Finset.sum remains a five-argument constant application. Only a fully
 applied genuine lambda gets this view; filter remains an ordinary index set. -/
 open Lean Meta SNL4Lean
 
-snl_notation sum => $\sum_{#0\in #1} #2$
-snl_notation sum[univ] => $\sum_{#0} #2$
+snl_notation "sum" => $\sum_{#0\in #1} #2$
+snl_notation "sum"[univ] => $\sum_{#0} #2$
 
 namespace SNL4LeanConsumer
 
