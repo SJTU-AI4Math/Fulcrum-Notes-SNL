@@ -14,22 +14,22 @@ domain structure, codomain structure]. Prose deliberately hides those instances.
 No infix formulas are introduced, so no precedence metadata is needed.
 -/
 
-snl_notation Semigroup => %#0 has a semigroup structure%
-snl_notation CommSemigroup => %#0 has a commutative semigroup structure%
-snl_notation Monoid => %#0 has a monoid structure%
-snl_notation CommMonoid => %#0 has a commutative monoid structure%
-snl_notation Group => %#0 has a group structure%
-snl_notation CommGroup => %#0 has a commutative group structure%
-snl_notation AddSemigroup => %#0 has an additive semigroup structure%
-snl_notation AddCommSemigroup => %#0 has a commutative additive semigroup structure%
-snl_notation AddMonoid => %#0 has an additive monoid structure%
-snl_notation AddCommMonoid => %#0 has a commutative additive monoid structure%
-snl_notation AddGroup => %#0 has an additive group structure%
-snl_notation AddCommGroup => %#0 has a commutative additive group structure%
-snl_notation Semiring => %#0 has a semiring structure%
-snl_notation Ring => %#0 has a ring structure%
-snl_notation CommRing => %#0 has a commutative ring structure%
-snl_notation Field => %#0 has a field structure%
+snl_notation Semigroup => %#0 is a semigroup%
+snl_notation CommSemigroup => %#0 is a commutative semigroup%
+snl_notation Monoid => %#0 is a monoid%
+snl_notation CommMonoid => %#0 is a commutative monoid%
+snl_notation Group => %#0 is a group%
+snl_notation CommGroup => %#0 is a commutative group%
+snl_notation AddSemigroup => %#0 is an additive semigroup%
+snl_notation AddCommSemigroup => %#0 is a commutative additive semigroup%
+snl_notation AddMonoid => %#0 is an additive monoid%
+snl_notation AddCommMonoid => %#0 is a commutative additive monoid%
+snl_notation AddGroup => %#0 is an additive group%
+snl_notation AddCommGroup => %#0 is a commutative additive group%
+snl_notation Semiring => %#0 is a semiring%
+snl_notation Ring => %#0 is a ring%
+snl_notation CommRing => %#0 is a commutative ring%
+snl_notation Field => %#0 is a field%
 snl_notation Units => %units of #0%
-snl_notation MonoidHom => %multiplication- and identity-preserving maps from #0 to #1%
-snl_notation RingHom => %addition-, multiplication-, zero-, and identity-preserving maps from #0 to #1%
+snl_notation MonoidHom => $\Hom_{\mathsf{Monoid}}(#0, #1)$
+snl_notation RingHom => $\Hom_{\mathsf{Ring}}(#0, #1)$
