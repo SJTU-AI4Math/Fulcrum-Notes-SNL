@@ -36,12 +36,12 @@ Lean4/
 └── SNL4Lean/                  # pinned Git submodule, not authored notes
 ```
 
-- `Basics` holds elementary material not yet assigned a narrower subject: elementary types, integers, rationals and finite index types. Here `[n]` means `Fin n`, with zero-based indices and an empty type at `n = 0`.
+- `Basics` holds elementary material not yet assigned a narrower subject: law-free operation interfaces, primitive operations, elementary types, pairs and projections, numeric conversions and finite index types. Here `[n]` means `Fin n`, with zero-based indices and an empty type at `n = 0`.
 - `Logic` covers logical predicates, decidability, emptiness and uniqueness.
 - `Functions` covers function properties, inverses, equivalences, composition, identity and constant functions.
 - `Set Theory` covers finiteness, restricted maps, pairwise predicates, products and graphs.
 - `Basic Algebra` reuses native algebraic structures. `BasicAlgebra.lean` prints Mathlib's Semigroup rather than redefining it.
-- `Linear Algebra` contains the flat textbook `Fulcrum.VectorSpace`, its operation-preserving Mathlib bridges and the finite-family development.
+- `Linear Algebra` contains the textbook `Fulcrum.VectorSpace` (only `Add`, `Zero` and `SMul` parents, with all eight laws declared locally), its operation-preserving Mathlib bridges and the finite-family development. The scalar-field binder is written `𝕂` throughout these notes.
 
 All authored `snl_notation` commands belong in the corresponding folder's `term_macros.lean`. Display prose in these Lean macros is English; canonical `.SNL_Doc` prose keeps its existing languages. Existing upstream default styles remain intact; additional `english` styles are named alternatives. Formula templates preserve complete-argument indices, including hidden type/instance operands. Actual infix formulas carry local binding powers.
 

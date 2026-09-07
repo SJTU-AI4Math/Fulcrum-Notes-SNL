@@ -30,7 +30,7 @@
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
-      "pattern": "^  zero : V$",
+      "pattern": "^    extends Add V, Zero V, SMul 𝕂 V where$",
       "flags": "m"
     }
   }
