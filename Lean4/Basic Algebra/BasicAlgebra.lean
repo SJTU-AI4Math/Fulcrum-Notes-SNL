@@ -1,4 +1,4 @@
-import Lean4.«Basic Algebra».term_macros
+import Lean4.«Basic Algebra».term_macros_CN
 
 /-! # Semigroups
 The native Mathlib declaration is reused unchanged.

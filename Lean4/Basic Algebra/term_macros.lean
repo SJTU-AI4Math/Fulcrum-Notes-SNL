@@ -17,31 +17,66 @@ domain structure, codomain structure]. Prose deliberately hides those instances.
 No infix formulas are introduced, so no precedence metadata is needed.
 -/
 
-snl_notation Semigroup => %#0 is a semigroup%
-snl_notation CommSemigroup => %#0 is a commutative semigroup%
-snl_notation Monoid => %#0 is a monoid%
-snl_notation CommMonoid => %#0 is a commutative monoid%
-snl_notation Group => %#0 is a group%
-snl_notation CommGroup => %#0 is a commutative group%
-snl_notation AddSemigroup => %#0 is an additive semigroup%
-snl_notation AddCommSemigroup => %#0 is a commutative additive semigroup%
-snl_notation AddMonoid => %#0 is an additive monoid%
-snl_notation AddCommMonoid => %#0 is a commutative additive monoid%
-snl_notation AddGroup => %#0 is an additive group%
-snl_notation AddCommGroup => %#0 is a commutative additive group%
-snl_notation Semiring => %#0 is a semiring%
-snl_notation Ring => %#0 is a ring%
-snl_notation CommRing => %#0 is a commutative ring%
-snl_notation Field => %#0 is a field%
-snl_notation Units => %units of #0%
-snl_notation MonoidHom => $\Hom_{\mathsf{Monoid}}(#0, #1)$
-snl_notation RingHom => $\Hom_{\mathsf{Ring}}(#0, #1)$
-
 /-! Consumer-owned notation. SNL4Lean production has no Mathlib dependency.
 The raw Finset.sum remains a five-argument constant application. Only a fully
 applied genuine lambda gets this view; filter remains an ordinary index set. -/
 open Lean Meta SNL4Lean
 
+-- Mathlib/
+--   Algebra/
+--     Field/
+--       Defs.lean
+snl_notation Field => %#0 is a field%
+
+-- Mathlib/
+--   Algebra/
+--     Group/
+--       Defs.lean
+snl_notation Semigroup => %#0 is a semigroup%
+snl_notation AddSemigroup => %#0 is an additive semigroup%
+snl_notation CommSemigroup => %#0 is a commutative semigroup%
+snl_notation AddCommSemigroup => %#0 is a commutative additive semigroup%
+snl_notation AddMonoid => %#0 is an additive monoid%
+snl_notation Monoid => %#0 is a monoid%
+snl_notation AddCommMonoid => %#0 is a commutative additive monoid%
+snl_notation CommMonoid => %#0 is a commutative monoid%
+snl_notation Group => %#0 is a group%
+snl_notation AddGroup => %#0 is an additive group%
+snl_notation AddCommGroup => %#0 is a commutative additive group%
+snl_notation CommGroup => %#0 is a commutative group%
+
+-- Mathlib/
+--   Algebra/
+--     Group/
+--       Hom/
+--         Defs.lean
+snl_notation MonoidHom => $\Hom_{\mathsf{Monoid}}(#0, #1)$
+
+-- Mathlib/
+--   Algebra/
+--     Group/
+--       Units/
+--         Defs.lean
+snl_notation Units => %units of #0%
+
+-- Mathlib/
+--   Algebra/
+--     Ring/
+--       Defs.lean
+snl_notation Semiring => %#0 is a semiring%
+snl_notation Ring => %#0 is a ring%
+snl_notation CommRing => %#0 is a commutative ring%
+
+-- Mathlib/
+--   Algebra/
+--     Ring/
+--       Hom/
+--         Defs.lean
+snl_notation RingHom => $\Hom_{\mathsf{Ring}}(#0, #1)$
+
+-- Lean4/
+--   Basic Algebra/
+--     term_macros.lean
 snl_notation "sum" => $\sum_{#0\in #1} #2$
 snl_notation "sum"[univ] => $\sum_{#0} #2$
 

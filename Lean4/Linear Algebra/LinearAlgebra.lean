@@ -1,7 +1,7 @@
 import Mathlib.Algebra.Field.Defs
 import Mathlib.LinearAlgebra.LinearIndependent.Basic
 import Mathlib.Algebra.Module.Torsion.Field
-import Lean4.«Linear Algebra».term_macros
+import Lean4.«Linear Algebra».term_macros_CN
 
 /-! # 向量和线性空间 -/
 
