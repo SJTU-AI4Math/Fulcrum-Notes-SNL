@@ -49,7 +49,7 @@ The import chain is `Basics → Logic → Functions`, then `Basic Algebra` and `
 
 `snl_notation` registers a lexical constant name. This lets `Linear Algebra/term_macros.lean` register `Fulcrum.*` terminology before `LinearAlgebra.lean` declares those constants, without a circular import or a separate duplicate definition file. The consuming file imports its macros before the declarations, so the position-bound Widget environment sees them throughout the notes.
 
-Write and inspect in source order: put `#snl_const_widget Name` immediately after each declaration. After a class, inspect the class and each generated projection before continuing; do not collect these commands into a preview block at the end. These are authored reading aids, not test guards.
+Write and inspect in source order: put `#snl_print Name` immediately after each declaration. After a class, inspect the class and each generated projection before continuing; do not collect these commands into a preview block at the end. These are authored reading aids, not test guards.
 
 In the linear-algebra notes, `VectorSpace` marks `𝕂` as `outParam` and registers its two proved, operation-preserving bridges as instances. A single selected textbook structure supplies `AddCommGroup V` and `Module 𝕂 V` automatically. This removes repeated consumer `letI` bindings without inheriting extra axioms. It is an inference convention, not uniqueness of the scalar field: with competing scalar structures or unrelated existing operations on the same carrier, select the intended structure explicitly.
 

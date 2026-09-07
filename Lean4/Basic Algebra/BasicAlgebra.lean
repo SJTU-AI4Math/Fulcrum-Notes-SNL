@@ -5,4 +5,4 @@ The native Mathlib declaration is reused unchanged.
 Linear algebra is developed separately in `Lean4/Linear Algebra/LinearAlgebra.lean`. -/
 
 #print Semigroup
-#snl_const_widget Semigroup
+#snl_print Semigroup
