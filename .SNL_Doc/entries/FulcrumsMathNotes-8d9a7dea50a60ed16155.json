@@ -1,0 +1,36 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumsMathNotes",
+  "entry": {
+    "id": "Fulcrum.TermMacros.SetTheory",
+    "package": "FulcrumsMathNotes",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Set Theory terminology",
+        "zh-CN": "集合论术语"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Terminology for set theory. The Pointer opens the complete registration module. Native declaration names and full argument indices are preserved; named `english` styles extend, rather than replace, existing upstream defaults.\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `Set.Finite` | `default` | `#1 is finite` |\n| `Set.Infinite` | `default` | `#1 is infinite` |\n| `Set.InjOn` | `default` | `#2 is injective on #3` |\n| `Set.SurjOn` | `default` | `every element of #4 is the image under #2 of an element of #3` |\n| `Set.BijOn` | `default` | `#2 is a bijection from #3 onto #4` |\n| `Set.MapsTo` | `default` | `#2 maps #3 into #4` |\n| `Set.Pairwise` | `default` | `#2 holds for every ordered pair of distinct elements of #1` |\n| `Set.range` | `default` | `\\operatorname{range}(#2)` |\n| `Set.prod` | `default` | `#2 \\times #3` |\n| `SProd.sprod` | `default` | `#4 \\times #5` |\n| `Set.diagonal` | `default` | `\\Delta_{#0}` |\n| `Set.offDiag` | `default` | `\\operatorname{offDiag}(#1)` |\n| `Set.EqOn` | `default` | `#2 and #3 agree on #4` |\n| `Set.graphOn` | `default` | `\\operatorname{graph}_{#3}(#2)` |\n| `Set.LeftInvOn` | `default` | `#2 is a left inverse of #3 on #4` |\n| `Set.RightInvOn` | `default` | `#2 is a right inverse of #3 on #4` |\n| `Set.InvOn` | `default` | `#2 is a left inverse of #3 on #4 and a right inverse of #3 on #5` |\n| `Set.Subset` | `english` | `#1 is a subset of #2` |\n| `Set.Nonempty` | `english` | `#1 is nonempty` |\n\n`SurjOn` states target coverage, not the additional `MapsTo` condition. `BijOn` includes both. Surface product notation uses `SProd.sprod`; the direct `Set.prod` declaration also has a style.",
+          "zh-CN": "集合论的 Lean 术语宏。Pointer 指向完整的注册模块。沿用原生声明名称及完整参数索引；命名为 `english` 的 Style 是对已有默认 Style 的补充，而非替换。\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `Set.Finite` | `default` | `#1 is finite` |\n| `Set.Infinite` | `default` | `#1 is infinite` |\n| `Set.InjOn` | `default` | `#2 is injective on #3` |\n| `Set.SurjOn` | `default` | `every element of #4 is the image under #2 of an element of #3` |\n| `Set.BijOn` | `default` | `#2 is a bijection from #3 onto #4` |\n| `Set.MapsTo` | `default` | `#2 maps #3 into #4` |\n| `Set.Pairwise` | `default` | `#2 holds for every ordered pair of distinct elements of #1` |\n| `Set.range` | `default` | `\\operatorname{range}(#2)` |\n| `Set.prod` | `default` | `#2 \\times #3` |\n| `SProd.sprod` | `default` | `#4 \\times #5` |\n| `Set.diagonal` | `default` | `\\Delta_{#0}` |\n| `Set.offDiag` | `default` | `\\operatorname{offDiag}(#1)` |\n| `Set.EqOn` | `default` | `#2 and #3 agree on #4` |\n| `Set.graphOn` | `default` | `\\operatorname{graph}_{#3}(#2)` |\n| `Set.LeftInvOn` | `default` | `#2 is a left inverse of #3 on #4` |\n| `Set.RightInvOn` | `default` | `#2 is a right inverse of #3 on #4` |\n| `Set.InvOn` | `default` | `#2 is a left inverse of #3 on #4 and a right inverse of #3 on #5` |\n| `Set.Subset` | `english` | `#1 is a subset of #2` |\n| `Set.Nonempty` | `english` | `#1 is nonempty` |\n\n`SurjOn` 只表达目标集合被覆盖，不额外断言 `MapsTo`；`BijOn` 包含两者。源码中的集合积记号经由 `SProd.sprod`；直接使用的 `Set.prod` 也有对应 Style。"
+        }
+      }
+    },
+    "pointer": {
+      "file": "Lean4/Set Theory/term_macros.lean",
+      "mode": "lines",
+      "line": 1,
+      "endLine": 44
+    },
+    "contribution_info": null
+  }
+}

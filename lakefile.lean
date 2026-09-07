@@ -10,7 +10,17 @@ require Paperproof from git "https://github.com/Paper-Proof/paperproof.git" @ "6
 require SNL4Lean from "Lean4/SNL4Lean"
 
 @[default_target]
-lean_lib «FulcrumNotesSNL»
+lean_lib «FulcrumNotesSNL» where
+  roots := #[
+    `Lean4.Basics.term_macros,
+    `Lean4.Logic.term_macros,
+    `Lean4.Functions.term_macros,
+    `Lean4.«Set Theory».term_macros,
+    `Lean4.«Basic Algebra».term_macros,
+    `Lean4.«Basic Algebra».BasicAlgebra,
+    `Lean4.«Linear Algebra».term_macros,
+    `Lean4.«Linear Algebra».LinearAlgebra
+  ]
 
 -- Small standalone argument DSL; no Mathlib or SNL4Lean imports.
 lean_lib Convincer where

@@ -27,10 +27,10 @@
     },
     "contribution_info": null,
     "pointer": {
-      "file": "Lean4/Basic Algebra/BasicAlgebra.lean",
+      "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "lines",
-      "line": 144,
-      "endLine": 365
+      "line": 140,
+      "endLine": 368
     }
   }
 }

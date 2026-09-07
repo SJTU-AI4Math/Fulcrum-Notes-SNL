@@ -1,0 +1,36 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumsMathNotes",
+  "entry": {
+    "id": "Fulcrum.TermMacros.Logic",
+    "package": "FulcrumsMathNotes",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Logic terminology",
+        "zh-CN": "逻辑术语"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Terminology for logic. The Pointer opens the complete registration module. Native declaration names and full argument indices are preserved; named `english` styles extend, rather than replace, existing upstream defaults.\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `False` | `default` | `\\bot` |\n| `Ne` | `default` | `#1 \\ne #2` |\n| `ExistsUnique` | `default` | `\\exists! #1` |\n| `Decidable` | `default` | `#0 is decidable` |\n| `DecidableEq` | `default` | `Equality on #0 is decidable` |\n| `Subsingleton` | `default` | `#0 has at most one element` |\n| `Nontrivial` | `default` | `#0 has at least two distinct elements` |\n| `Unique` | `default` | `#0 has a unique element` |\n| `IsEmpty` | `default` | `#0 is empty` |\n| `Nonempty` | `english` | `#0 has an element` |",
+          "zh-CN": "逻辑的 Lean 术语宏。Pointer 指向完整的注册模块。沿用原生声明名称及完整参数索引；命名为 `english` 的 Style 是对已有默认 Style 的补充，而非替换。\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `False` | `default` | `\\bot` |\n| `Ne` | `default` | `#1 \\ne #2` |\n| `ExistsUnique` | `default` | `\\exists! #1` |\n| `Decidable` | `default` | `#0 is decidable` |\n| `DecidableEq` | `default` | `Equality on #0 is decidable` |\n| `Subsingleton` | `default` | `#0 has at most one element` |\n| `Nontrivial` | `default` | `#0 has at least two distinct elements` |\n| `Unique` | `default` | `#0 has a unique element` |\n| `IsEmpty` | `default` | `#0 is empty` |\n| `Nonempty` | `english` | `#0 has an element` |"
+        }
+      }
+    },
+    "pointer": {
+      "file": "Lean4/Logic/term_macros.lean",
+      "mode": "lines",
+      "line": 1,
+      "endLine": 18
+    },
+    "contribution_info": null
+  }
+}

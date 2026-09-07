@@ -1,0 +1,36 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumsMathNotes",
+  "entry": {
+    "id": "Fulcrum.TermMacros.Functions",
+    "package": "FulcrumsMathNotes",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Functions terminology",
+        "zh-CN": "函数术语"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Terminology for functions. The Pointer opens the complete registration module. Native declaration names and full argument indices are preserved; named `english` styles extend, rather than replace, existing upstream defaults.\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `Function.Injective` | `english` | `#2 is injective` |\n| `Function.Surjective` | `default` | `#2 is surjective` |\n| `Function.Bijective` | `default` | `#2 is bijective` |\n| `Function.LeftInverse` | `default` | `#2 is a left inverse of #3` |\n| `Function.RightInverse` | `default` | `#2 is a right inverse of #3` |\n| `Function.HasLeftInverse` | `default` | `#2 has a left inverse` |\n| `Function.HasRightInverse` | `default` | `#2 has a right inverse` |\n| `Function.Involutive` | `default` | `#1 is an involution` |\n| `Equiv` | `default` | `#0 \\simeq #1` |\n| `Function.comp` | `default` | `\\left(#3 : #1 \\to #2\\right) \\circ \\left(#4 : #0 \\to #1\\right)` |\n| `Function.comp` | `applied` | `\\left(\\left(#3 : #1 \\to #2\\right) \\circ \\left(#4 : #0 \\to #1\\right)\\right)(#5)` |\n| `id` | `default` | `\\mathrm{id}_{#0}` |\n| `id` | `applied` | `\\mathrm{id}_{#0}(#1)` |\n| `Function.const` | `default` | `\\operatorname{const}_{#1 \\to #0}(#2)` |\n| `Function.const` | `applied` | `\\operatorname{const}_{#1 \\to #0}(#2)(#3)` |\n\nComposition, identity and constant functions have separate function-valued and applied styles. Left and right inverses remain distinct.",
+          "zh-CN": "函数的 Lean 术语宏。Pointer 指向完整的注册模块。沿用原生声明名称及完整参数索引；命名为 `english` 的 Style 是对已有默认 Style 的补充，而非替换。\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `Function.Injective` | `english` | `#2 is injective` |\n| `Function.Surjective` | `default` | `#2 is surjective` |\n| `Function.Bijective` | `default` | `#2 is bijective` |\n| `Function.LeftInverse` | `default` | `#2 is a left inverse of #3` |\n| `Function.RightInverse` | `default` | `#2 is a right inverse of #3` |\n| `Function.HasLeftInverse` | `default` | `#2 has a left inverse` |\n| `Function.HasRightInverse` | `default` | `#2 has a right inverse` |\n| `Function.Involutive` | `default` | `#1 is an involution` |\n| `Equiv` | `default` | `#0 \\simeq #1` |\n| `Function.comp` | `default` | `\\left(#3 : #1 \\to #2\\right) \\circ \\left(#4 : #0 \\to #1\\right)` |\n| `Function.comp` | `applied` | `\\left(\\left(#3 : #1 \\to #2\\right) \\circ \\left(#4 : #0 \\to #1\\right)\\right)(#5)` |\n| `id` | `default` | `\\mathrm{id}_{#0}` |\n| `id` | `applied` | `\\mathrm{id}_{#0}(#1)` |\n| `Function.const` | `default` | `\\operatorname{const}_{#1 \\to #0}(#2)` |\n| `Function.const` | `applied` | `\\operatorname{const}_{#1 \\to #0}(#2)(#3)` |\n\n复合、恒等与常值函数分别提供函数本身和作用于参数后的 Style；左逆和右逆不混同。"
+        }
+      }
+    },
+    "pointer": {
+      "file": "Lean4/Functions/term_macros.lean",
+      "mode": "lines",
+      "line": 1,
+      "endLine": 24
+    },
+    "contribution_info": null
+  }
+}

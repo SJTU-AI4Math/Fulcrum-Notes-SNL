@@ -1,0 +1,36 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumsMathNotes",
+  "entry": {
+    "id": "Fulcrum.TermMacros.BasicAlgebra",
+    "package": "FulcrumsMathNotes",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Basic Algebra terminology",
+        "zh-CN": "基础代数术语"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Terminology for basic algebra. The Pointer opens the complete registration module. Native declaration names and full argument indices are preserved; named `english` styles extend, rather than replace, existing upstream defaults.\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `Semigroup` | `default` | `#0 has a semigroup structure` |\n| `CommSemigroup` | `default` | `#0 has a commutative semigroup structure` |\n| `Monoid` | `default` | `#0 has a monoid structure` |\n| `CommMonoid` | `default` | `#0 has a commutative monoid structure` |\n| `Group` | `default` | `#0 has a group structure` |\n| `CommGroup` | `default` | `#0 has a commutative group structure` |\n| `AddSemigroup` | `default` | `#0 has an additive semigroup structure` |\n| `AddCommSemigroup` | `default` | `#0 has a commutative additive semigroup structure` |\n| `AddMonoid` | `default` | `#0 has an additive monoid structure` |\n| `AddCommMonoid` | `default` | `#0 has a commutative additive monoid structure` |\n| `AddGroup` | `default` | `#0 has an additive group structure` |\n| `AddCommGroup` | `default` | `#0 has a commutative additive group structure` |\n| `Semiring` | `default` | `#0 has a semiring structure` |\n| `Ring` | `default` | `#0 has a ring structure` |\n| `CommRing` | `default` | `#0 has a commutative ring structure` |\n| `Field` | `default` | `#0 has a field structure` |\n| `Units` | `default` | `units of #0` |\n| `MonoidHom` | `default` | `multiplication- and identity-preserving maps from #0 to #1` |\n| `RingHom` | `default` | `addition-, multiplication-, zero-, and identity-preserving maps from #0 to #1` |",
+          "zh-CN": "基础代数的 Lean 术语宏。Pointer 指向完整的注册模块。沿用原生声明名称及完整参数索引；命名为 `english` 的 Style 是对已有默认 Style 的补充，而非替换。\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `Semigroup` | `default` | `#0 has a semigroup structure` |\n| `CommSemigroup` | `default` | `#0 has a commutative semigroup structure` |\n| `Monoid` | `default` | `#0 has a monoid structure` |\n| `CommMonoid` | `default` | `#0 has a commutative monoid structure` |\n| `Group` | `default` | `#0 has a group structure` |\n| `CommGroup` | `default` | `#0 has a commutative group structure` |\n| `AddSemigroup` | `default` | `#0 has an additive semigroup structure` |\n| `AddCommSemigroup` | `default` | `#0 has a commutative additive semigroup structure` |\n| `AddMonoid` | `default` | `#0 has an additive monoid structure` |\n| `AddCommMonoid` | `default` | `#0 has a commutative additive monoid structure` |\n| `AddGroup` | `default` | `#0 has an additive group structure` |\n| `AddCommGroup` | `default` | `#0 has a commutative additive group structure` |\n| `Semiring` | `default` | `#0 has a semiring structure` |\n| `Ring` | `default` | `#0 has a ring structure` |\n| `CommRing` | `default` | `#0 has a commutative ring structure` |\n| `Field` | `default` | `#0 has a field structure` |\n| `Units` | `default` | `units of #0` |\n| `MonoidHom` | `default` | `multiplication- and identity-preserving maps from #0 to #1` |\n| `RingHom` | `default` | `addition-, multiplication-, zero-, and identity-preserving maps from #0 to #1` |"
+        }
+      }
+    },
+    "pointer": {
+      "file": "Lean4/Basic Algebra/term_macros.lean",
+      "mode": "lines",
+      "line": 1,
+      "endLine": 35
+    },
+    "contribution_info": null
+  }
+}

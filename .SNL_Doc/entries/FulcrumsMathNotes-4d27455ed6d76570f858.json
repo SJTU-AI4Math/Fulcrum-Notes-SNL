@@ -1,0 +1,36 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumsMathNotes",
+  "entry": {
+    "id": "Fulcrum.TermMacros.LinearAlgebra",
+    "package": "FulcrumsMathNotes",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Linear Algebra terminology",
+        "zh-CN": "线性代数术语"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Terminology for linear algebra. The Pointer opens the complete registration module. Native declaration names and full argument indices are preserved; named `english` styles extend, rather than replace, existing upstream defaults.\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `Fulcrum.VectorSpace` | `default` | `#1 has a vector space structure over #0` |\n| `Fulcrum.VectorSpace.add` | `default` | `#4 + #5` |\n| `Fulcrum.VectorSpace.zero` | `default` | `\\mathbf{0}_{#1}` |\n| `Fulcrum.VectorSpace.smul` | `default` | `#4 \\cdot #5` |\n| `Fulcrum.IsAdditiveInverse` | `default` | `#4 is an additive inverse of #5` |\n| `Fulcrum.IsLinearRepresentation` | `default` | `#5 is a linear combination of the vector family #6` |\n| `Fulcrum.IsLinearRelation` | `default` | `\\sum_{i\\in [#4]} #5(i)\\,#6(i)=\\mathbf{0}_{#1}` |\n| `Fulcrum.NontrivialCoefficients` | `default` | `\\exists i\\in [#2],\\;#3(i)\\ne 0` |\n| `Fulcrum.LinearlyDependent` | `default` | `The vector family #5 is linearly dependent in #1` |\n| `Fulcrum.LinearlyIndependent` | `default` | `The vector family #5 is linearly independent in #1` |\n| `Fulcrum.RepresentableByOthers` | `default` | `#5(#6) is a linear combination of the remaining family after deleting the entry at index #6` |\n| `Fulcrum.UniqueRepresentation` | `default` | `The vector family #5 in #1 has unique coefficients for every representable vector` |\n| `Fulcrum.Subfamily` | `default` | `The family #3 (length #2) is a subfamily of #4 (length #1)` |\n| `Fulcrum.Contains` | `default` | `#3 occurs in the length-#1 family #2` |\n| `Fulcrum.HasRepeat` | `default` | `The length-#1 family #2 has equal vectors at distinct indices` |\n| `Fulcrum.VectorSpace.add_comm` | `default` | `Commutativity of addition` |\n| `Fulcrum.VectorSpace.add_assoc` | `default` | `Associativity of addition` |\n| `Fulcrum.VectorSpace.add_zero` | `default` | `Additive identity` |\n| `Fulcrum.VectorSpace.exists_add_inverse` | `default` | `Existence of additive inverses` |\n| `Fulcrum.VectorSpace.smul_smul` | `default` | `Associativity of scalar multiplication` |\n| `Fulcrum.VectorSpace.smul_add` | `default` | `Distributivity over vector addition` |\n| `Fulcrum.VectorSpace.add_smul` | `default` | `Distributivity over scalar addition` |\n| `Fulcrum.VectorSpace.one_smul` | `default` | `Identity scalar action` |",
+          "zh-CN": "线性代数的 Lean 术语宏。Pointer 指向完整的注册模块。沿用原生声明名称及完整参数索引；命名为 `english` 的 Style 是对已有默认 Style 的补充，而非替换。\n\n| Lean constant | Style | Display template |\n|---|---|---|\n| `Fulcrum.VectorSpace` | `default` | `#1 has a vector space structure over #0` |\n| `Fulcrum.VectorSpace.add` | `default` | `#4 + #5` |\n| `Fulcrum.VectorSpace.zero` | `default` | `\\mathbf{0}_{#1}` |\n| `Fulcrum.VectorSpace.smul` | `default` | `#4 \\cdot #5` |\n| `Fulcrum.IsAdditiveInverse` | `default` | `#4 is an additive inverse of #5` |\n| `Fulcrum.IsLinearRepresentation` | `default` | `#5 is a linear combination of the vector family #6` |\n| `Fulcrum.IsLinearRelation` | `default` | `\\sum_{i\\in [#4]} #5(i)\\,#6(i)=\\mathbf{0}_{#1}` |\n| `Fulcrum.NontrivialCoefficients` | `default` | `\\exists i\\in [#2],\\;#3(i)\\ne 0` |\n| `Fulcrum.LinearlyDependent` | `default` | `The vector family #5 is linearly dependent in #1` |\n| `Fulcrum.LinearlyIndependent` | `default` | `The vector family #5 is linearly independent in #1` |\n| `Fulcrum.RepresentableByOthers` | `default` | `#5(#6) is a linear combination of the remaining family after deleting the entry at index #6` |\n| `Fulcrum.UniqueRepresentation` | `default` | `The vector family #5 in #1 has unique coefficients for every representable vector` |\n| `Fulcrum.Subfamily` | `default` | `The family #3 (length #2) is a subfamily of #4 (length #1)` |\n| `Fulcrum.Contains` | `default` | `#3 occurs in the length-#1 family #2` |\n| `Fulcrum.HasRepeat` | `default` | `The length-#1 family #2 has equal vectors at distinct indices` |\n| `Fulcrum.VectorSpace.add_comm` | `default` | `Commutativity of addition` |\n| `Fulcrum.VectorSpace.add_assoc` | `default` | `Associativity of addition` |\n| `Fulcrum.VectorSpace.add_zero` | `default` | `Additive identity` |\n| `Fulcrum.VectorSpace.exists_add_inverse` | `default` | `Existence of additive inverses` |\n| `Fulcrum.VectorSpace.smul_smul` | `default` | `Associativity of scalar multiplication` |\n| `Fulcrum.VectorSpace.smul_add` | `default` | `Distributivity over vector addition` |\n| `Fulcrum.VectorSpace.add_smul` | `default` | `Distributivity over scalar addition` |\n| `Fulcrum.VectorSpace.one_smul` | `default` | `Identity scalar action` |"
+        }
+      }
+    },
+    "pointer": {
+      "file": "Lean4/Linear Algebra/term_macros.lean",
+      "mode": "lines",
+      "line": 1,
+      "endLine": 30
+    },
+    "contribution_info": null
+  }
+}

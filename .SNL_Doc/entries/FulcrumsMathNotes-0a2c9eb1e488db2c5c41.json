@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumsMathNotes",
+  "entry": {
+    "id": "Fulcrum.TermMacros",
+    "package": "FulcrumsMathNotes",
+    "kind": "section",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Lean terminology",
+        "zh-CN": "Lean 术语"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Terminology registrations are organized by subject in `Lean4/*/term_macros.lean`. The Lean-side display prose is English. These are presentation registrations for existing declarations, not new axioms or renamed mathematical objects. Full Lean argument trees retain implicit types and instances even when the default notation hides them. `Basics` contains elementary material not yet assigned a narrower subject.",
+          "zh-CN": "术语注册按学科组织在 `Lean4/*/term_macros.lean` 中，Lean 内的显示文案使用英文。这些注册为已有声明提供呈现，不引入新公理或重命名数学对象。默认记号即使隐藏隐式类型与实例，完整 Lean 参数树仍保留它们。`Basics` 收纳暂未归类的基础内容。"
+        }
+      }
+    },
+    "pointer": null,
+    "contribution_info": null
+  }
+}

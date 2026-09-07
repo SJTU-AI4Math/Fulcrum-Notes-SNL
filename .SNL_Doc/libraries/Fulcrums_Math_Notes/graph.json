@@ -13,7 +13,87 @@
       "props": {
         "entryId": "Fulcrum.thm"
       }
+    },
+    {
+      "id": "lean-terminology-0",
+      "label": "Entry",
+      "props": {
+        "entryId": "Fulcrum.TermMacros"
+      }
+    },
+    {
+      "id": "lean-terminology-1",
+      "label": "Entry",
+      "props": {
+        "entryId": "Fulcrum.TermMacros.Basics"
+      }
+    },
+    {
+      "id": "lean-terminology-2",
+      "label": "Entry",
+      "props": {
+        "entryId": "Fulcrum.TermMacros.Logic"
+      }
+    },
+    {
+      "id": "lean-terminology-3",
+      "label": "Entry",
+      "props": {
+        "entryId": "Fulcrum.TermMacros.Functions"
+      }
+    },
+    {
+      "id": "lean-terminology-4",
+      "label": "Entry",
+      "props": {
+        "entryId": "Fulcrum.TermMacros.SetTheory"
+      }
+    },
+    {
+      "id": "lean-terminology-5",
+      "label": "Entry",
+      "props": {
+        "entryId": "Fulcrum.TermMacros.BasicAlgebra"
+      }
+    },
+    {
+      "id": "lean-terminology-6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Fulcrum.TermMacros.LinearAlgebra"
+      }
     }
   ],
-  "relationships": []
+  "relationships": [
+    {
+      "from": "lean-terminology-0",
+      "to": "lean-terminology-1",
+      "label": "branch"
+    },
+    {
+      "from": "lean-terminology-0",
+      "to": "lean-terminology-2",
+      "label": "branch"
+    },
+    {
+      "from": "lean-terminology-0",
+      "to": "lean-terminology-3",
+      "label": "branch"
+    },
+    {
+      "from": "lean-terminology-0",
+      "to": "lean-terminology-4",
+      "label": "branch"
+    },
+    {
+      "from": "lean-terminology-0",
+      "to": "lean-terminology-5",
+      "label": "branch"
+    },
+    {
+      "from": "lean-terminology-0",
+      "to": "lean-terminology-6",
+      "label": "branch"
+    }
+  ]
 }

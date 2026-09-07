@@ -28,7 +28,7 @@
     },
     "contribution_info": null,
     "pointer": {
-      "file": "Lean4/Basic Algebra/BasicAlgebra.lean",
+      "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
       "pattern": "^variable \\(v : V\\)$",
       "flags": "m"

@@ -6,6 +6,13 @@
   "description": "",
   "schema_version": 2,
   "entry_ids": [
+    "Fulcrum.TermMacros",
+    "Fulcrum.TermMacros.BasicAlgebra",
+    "Fulcrum.TermMacros.Basics",
+    "Fulcrum.TermMacros.Functions",
+    "Fulcrum.TermMacros.LinearAlgebra",
+    "Fulcrum.TermMacros.Logic",
+    "Fulcrum.TermMacros.SetTheory",
     "Fulcrum.def",
     "Fulcrum.thm"
   ]
