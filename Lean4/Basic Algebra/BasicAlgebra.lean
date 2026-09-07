@@ -368,29 +368,29 @@ end Fulcrum
 模板索引对应完整 Lean 参数，包括隐式类型和实例；不重定义 Mathlib 术语宏。
 `explicit` Style 保留完整参数视图，默认 Style 只展示教材所需的参数。
 -/
-snl_notation Fulcrum.VectorSpace => %#1 上有 #0 上的向量空间结构%
+snl_notation Fulcrum.VectorSpace => %#1 has a vector space structure over #0%
 snl_notation Fulcrum.VectorSpace.add => $#4 + #5$ : [0, 0, 0, 0, 65, 66] -> 65
 snl_notation Fulcrum.VectorSpace.zero => $\mathbf{0}_{#1}$
 snl_notation Fulcrum.VectorSpace.smul => $#4 \cdot #5$ : [0, 0, 0, 0, 70, 71] -> 70
-snl_notation Fulcrum.IsAdditiveInverse => %#4 是 #5 的加法逆元%
-snl_notation Fulcrum.IsLinearRepresentation => %#5 可由向量族 #6 线性表示%
+snl_notation Fulcrum.IsAdditiveInverse => %#4 is an additive inverse of #5%
+snl_notation Fulcrum.IsLinearRepresentation => %#5 is a linear combination of the vector family #6%
 snl_notation Fulcrum.IsLinearRelation => $\sum_{i\in [#4]} #5(i)\,#6(i)=\mathbf{0}_{#1}$
 snl_notation Fulcrum.NontrivialCoefficients => $\exists i\in [#2],\;#3(i)\ne 0$
-snl_notation Fulcrum.LinearlyDependent => %向量族 #5 在 #1 中线性相关%
-snl_notation Fulcrum.LinearlyIndependent => %向量族 #5 在 #1 中线性无关%
-snl_notation Fulcrum.RepresentableByOthers => %#5(#6) 可由删去第 #6 项后的向量族线性表示%
-snl_notation Fulcrum.UniqueRepresentation => %向量族 #5 在 #1 中的线性表示系数唯一%
-snl_notation Fulcrum.Subfamily => %有限族 #3（长度 #2）是有限族 #4（长度 #1）的子族%
-snl_notation Fulcrum.Contains => %#3 出现在长度为 #1 的有限族 #2 中%
-snl_notation Fulcrum.HasRepeat => %长度为 #1 的有限族 #2 含有两个不同下标的相同向量%
-snl_notation Fulcrum.VectorSpace.add_comm => %加法交换律%
-snl_notation Fulcrum.VectorSpace.add_assoc => %加法结合律%
-snl_notation Fulcrum.VectorSpace.add_zero => %加法恒等元%
-snl_notation Fulcrum.VectorSpace.exists_add_inverse => %加法逆元存在性%
-snl_notation Fulcrum.VectorSpace.smul_smul => %数乘结合律%
-snl_notation Fulcrum.VectorSpace.smul_add => %数乘对向量加法的分配律%
-snl_notation Fulcrum.VectorSpace.add_smul => %数乘对标量加法的分配律%
-snl_notation Fulcrum.VectorSpace.one_smul => %数乘恒等元%
+snl_notation Fulcrum.LinearlyDependent => %The vector family #5 is linearly dependent in #1%
+snl_notation Fulcrum.LinearlyIndependent => %The vector family #5 is linearly independent in #1%
+snl_notation Fulcrum.RepresentableByOthers => %#5(#6) is a linear combination of the remaining family after deleting the entry at index #6%
+snl_notation Fulcrum.UniqueRepresentation => %The vector family #5 in #1 has unique coefficients for every representable vector%
+snl_notation Fulcrum.Subfamily => %The family #3 (length #2) is a subfamily of #4 (length #1)%
+snl_notation Fulcrum.Contains => %#3 occurs in the length-#1 family #2%
+snl_notation Fulcrum.HasRepeat => %The length-#1 family #2 has equal vectors at distinct indices%
+snl_notation Fulcrum.VectorSpace.add_comm => %Commutativity of addition%
+snl_notation Fulcrum.VectorSpace.add_assoc => %Associativity of addition%
+snl_notation Fulcrum.VectorSpace.add_zero => %Additive identity%
+snl_notation Fulcrum.VectorSpace.exists_add_inverse => %Existence of additive inverses%
+snl_notation Fulcrum.VectorSpace.smul_smul => %Associativity of scalar multiplication%
+snl_notation Fulcrum.VectorSpace.smul_add => %Distributivity over vector addition%
+snl_notation Fulcrum.VectorSpace.add_smul => %Distributivity over scalar addition%
+snl_notation Fulcrum.VectorSpace.one_smul => %Identity scalar action%
 snl_notation Fulcrum.VectorSpace[explicit] => %Fulcrum.VectorSpace(#0, #1, #2)%
 snl_notation Fulcrum.VectorSpace.zero[explicit] => %Fulcrum.VectorSpace.zero(#0, #1, #2, #3)%
 
