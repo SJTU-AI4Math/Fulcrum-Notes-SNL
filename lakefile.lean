@@ -13,12 +13,18 @@ require SNL4Lean from "Lean4/SNL4Lean"
 lean_lib «FulcrumNotesSNL» where
   roots := #[
     `Lean4.Basics.term_macros,
+    `Lean4.Basics.term_macros_CN,
     `Lean4.Logic.term_macros,
+    `Lean4.Logic.term_macros_CN,
     `Lean4.Functions.term_macros,
+    `Lean4.Functions.term_macros_CN,
     `Lean4.«Set Theory».term_macros,
+    `Lean4.«Set Theory».term_macros_CN,
     `Lean4.«Basic Algebra».term_macros,
+    `Lean4.«Basic Algebra».term_macros_CN,
     `Lean4.«Basic Algebra».BasicAlgebra,
     `Lean4.«Linear Algebra».term_macros,
+    `Lean4.«Linear Algebra».term_macros_CN,
     `Lean4.«Linear Algebra».LinearAlgebra
   ]
 
