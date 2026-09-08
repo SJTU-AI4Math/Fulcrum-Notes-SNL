@@ -39,52 +39,49 @@ namespace VectorSpace
 variable {𝕂 : Type u} {V : Type v} [Field 𝕂] [s : VectorSpace 𝕂 V]
 
 /-- Left zero follows from commutativity and the textbook right-zero axiom. -/
-theorem zero_add (a : V) : s.add s.zero a = a := by
-  exact (s.add_comm s.zero a).trans (s.add_zero a)
+theorem zero_add (a : V) : 0 + a = a := by
+  rw [s.add_comm, s.add_zero]
 
 #snl_print zero_add
 
-/-- Cancellation uses the existential inverse only inside a proposition;
-no choice operation or classical inverse is introduced. -/
-theorem add_left_cancel (a b c : V) (h : s.add a b = s.add a c) : b = c := by
+/-- Cancellation uses an existential inverse, without choosing an inverse operation. -/
+theorem add_left_cancel (a b c : V) (h : a + b = a + c) : b = c := by
   obtain ⟨d, hd⟩ := s.exists_add_inverse a
-  have hda : s.add d a = s.zero := (s.add_comm d a).trans hd
+  have hda : d + a = 0 := (s.add_comm d a).trans hd
   calc
-    b = s.add s.zero b := (zero_add b).symm
-    _ = s.add (s.add d a) b := by rw [hda]
-    _ = s.add d (s.add a b) := (s.add_assoc d a b).symm
-    _ = s.add d (s.add a c) := congrArg (s.add d) h
-    _ = s.add (s.add d a) c := s.add_assoc d a c
+    b = 0 + b := (zero_add b).symm
+    _ = (d + a) + b := by rw [hda]
+    _ = d + (a + b) := (s.add_assoc d a b).symm
+    _ = d + (a + c) := congrArg (d + ·) h
+    _ = (d + a) + c := s.add_assoc d a c
     _ = c := by rw [hda, zero_add]
 
 #snl_print add_left_cancel
 
-/-- Derived before any additive group or Module is installed. -/
-theorem zero_smul (a : V) : s.smul 0 a = s.zero := by
-  have h : s.smul 0 a = s.add (s.smul 0 a) (s.smul 0 a) := by
+/-- Derived from scalar distributivity before installing the Module bridge. -/
+theorem zero_smul (a : V) : (0 : 𝕂) • a = 0 := by
+  have h : (0 : 𝕂) • a = (0 : 𝕂) • a + (0 : 𝕂) • a := by
     simpa only [_root_.zero_add] using s.add_smul 0 0 a
-  apply (add_left_cancel (𝕂 := 𝕂) (s.smul 0 a) (s.smul 0 a) s.zero)
+  apply add_left_cancel ((0 : 𝕂) • a) ((0 : 𝕂) • a) 0
   exact h.symm.trans (s.add_zero _).symm
 
 #snl_print zero_smul
 
-/-- Derived before any additive group or Module is installed. -/
-theorem smul_zero (k : 𝕂) : s.smul k s.zero = s.zero := by
-  have h : s.smul k s.zero = s.add (s.smul k s.zero) (s.smul k s.zero) := by
-    exact (congrArg (s.smul k) (s.add_zero s.zero)).symm.trans
-      (s.smul_add k s.zero s.zero)
-  apply (add_left_cancel (𝕂 := 𝕂) (s.smul k s.zero) (s.smul k s.zero) s.zero)
+/-- Derived from vector distributivity before installing the Module bridge. -/
+theorem smul_zero (k : 𝕂) : k • (0 : V) = 0 := by
+  have h : k • (0 : V) = k • (0 : V) + k • (0 : V) := by
+    simpa only [s.add_zero] using s.smul_add k (0 : V) 0
+  apply add_left_cancel (k • (0 : V)) (k • (0 : V)) 0
   exact h.symm.trans (s.add_zero _).symm
 
 #snl_print smul_zero
 
-/-- The additive inverse is constructively the original scalar action of `-1`. -/
-theorem neg_one_smul_add (a : V) : s.add (s.smul (-1) a) a = s.zero := by
+/-- Multiplication by `-1` supplies the additive inverse constructively. -/
+theorem neg_one_smul_add (a : V) : (-1 : 𝕂) • a + a = 0 := by
   calc
-    s.add (s.smul (-1) a) a = s.add (s.smul (-1) a) (s.smul 1 a) := by
-      exact congrArg (s.add (s.smul (-1) a)) (s.one_smul a).symm
-    _ = s.smul (-1 + 1) a := (s.add_smul (-1) 1 a).symm
-    _ = s.zero := by rw [_root_.neg_add_cancel, zero_smul]
+    (-1 : 𝕂) • a + a = (-1 : 𝕂) • a + (1 : 𝕂) • a := by rw [s.one_smul]
+    _ = ((-1 : 𝕂) + 1) • a := (s.add_smul (-1) 1 a).symm
+    _ = 0 := by rw [_root_.neg_add_cancel, zero_smul]
 
 #snl_print neg_one_smul_add
 
@@ -101,17 +98,16 @@ variable (𝕂 V)
 Negation is `(-1)` acting by the original scalar multiplication. -/
 @[instance]
 abbrev toAddCommGroup : AddCommGroup V where
-  add := s.add
-  zero := s.zero
-  neg := s.smul (-1)
+  add := (· + ·)
+  zero := 0
+  neg := fun a => (-1 : 𝕂) • a
   add_assoc := fun a b c => (s.add_assoc a b c).symm
   add_comm := s.add_comm
   zero_add := zero_add
   add_zero := s.add_zero
   neg_add_cancel := neg_one_smul_add
-  nsmul := @nsmulRec V ⟨s.zero⟩ ⟨s.add⟩
-  zsmul := @zsmulRec V ⟨s.zero⟩ ⟨s.add⟩ ⟨s.smul (-1)⟩
-    (@nsmulRec V ⟨s.zero⟩ ⟨s.add⟩)
+  nsmul := nsmulRec
+  zsmul := @zsmulRec V _ _ ⟨fun a => (-1 : 𝕂) • a⟩ nsmulRec
 
 #snl_print toAddCommGroup
 
@@ -119,7 +115,7 @@ abbrev toAddCommGroup : AddCommGroup V where
 The scalar action and all proofs come from the same textbook instance. -/
 @[instance]
 abbrev toModule : Module 𝕂 V where
-  smul := s.smul
+  smul := (· • ·)
   one_smul := s.one_smul
   mul_smul := fun k l a => (s.smul_smul k l a).symm
   smul_add := s.smul_add
@@ -141,19 +137,19 @@ variable {𝕂 V : Type*} [Field 𝕂] [s : VectorSpace 𝕂 V]
 variable (v : V)
 
 /-- The textbook additive-inverse predicate. -/
-def IsAdditiveInverse (w v : V) : Prop := s.add v w = s.zero
+def IsAdditiveInverse (w v : V) : Prop := v + w = 0
 
 #snl_print IsAdditiveInverse
 
 /-- Literal statement of the existing SNL zero-uniqueness Entry. -/
-theorem zero_unique (z₁ z₂ : V) (h : z₁ = s.zero ∧ z₂ = s.zero) : z₁ = z₂ :=
+theorem zero_unique (z₁ z₂ : V) (h : z₁ = 0 ∧ z₂ = 0) : z₁ = z₂ :=
   h.1.trans h.2.symm
 
 #snl_print zero_unique
 
 theorem additive_inverse_unique (v w₁ w₂ : V)
-    (h : IsAdditiveInverse (𝕂 := 𝕂) w₁ v ∧ IsAdditiveInverse (𝕂 := 𝕂) w₂ v) : w₁ = w₂ :=
-  VectorSpace.add_left_cancel v w₁ w₂ (h.1.trans h.2.symm)
+    (h : IsAdditiveInverse w₁ v ∧ IsAdditiveInverse w₂ v) : w₁ = w₂ :=
+  _root_.add_left_cancel (h.1.trans h.2.symm)
 
 #snl_print additive_inverse_unique
 
@@ -200,7 +196,7 @@ def NontrivialCoefficients (c : Fin n → 𝕂) : Prop := ∃ i, c i ≠ 0
 #snl_print NontrivialCoefficients
 
 def LinearlyDependent (α : Fin n → V) : Prop :=
-  ∃ c : Fin n → 𝕂, IsLinearRelation c α ∧ ∃ i, c i ≠ 0
+  ∃ c : Fin n → 𝕂, IsLinearRelation c α ∧ NontrivialCoefficients c
 
 #snl_print LinearlyDependent
 
@@ -217,7 +213,7 @@ def RepresentableByOthers (α : Fin n → V) (i : Fin n) : Prop :=
 
 /-- Uniqueness is conditional on representability; it does not assert spanning. -/
 def UniqueRepresentation (α : Fin n → V) : Prop :=
-  ∀ β : V, IsLinearRepresentation (𝕂 := 𝕂) β α →
+  ∀ β : V, IsLinearRepresentation β α →
     ∃! c : Fin n → 𝕂, β = ∑ i, c i • α i
 
 #snl_print UniqueRepresentation
@@ -242,33 +238,33 @@ def HasRepeat (α : Fin n → V) : Prop :=
 variable (α : Fin n → V)
 
 theorem dependent_iff_nontrivial_relation :
-  LinearlyDependent (𝕂 := 𝕂) α ↔
+  LinearlyDependent α ↔
       ∃ c : Fin n → 𝕂, IsLinearRelation c α ∧ NontrivialCoefficients c := by
   exact Iff.rfl
 
 #snl_print dependent_iff_nontrivial_relation
 
 theorem linearly_independent_iff_mathlib :
-  LinearlyIndependent (𝕂 := 𝕂) α ↔ _root_.LinearIndependent 𝕂 α := by
+  LinearlyIndependent α ↔ _root_.LinearIndependent 𝕂 α := by
   exact Fintype.linearIndependent_iff.symm
 
 #snl_print linearly_independent_iff_mathlib
 
 theorem linearly_dependent_iff_not_mathlib :
-  LinearlyDependent (𝕂 := 𝕂) α ↔ ¬ _root_.LinearIndependent 𝕂 α := by
+  LinearlyDependent α ↔ ¬ _root_.LinearIndependent 𝕂 α := by
   exact Fintype.not_linearIndependent_iff.symm
 
 #snl_print linearly_dependent_iff_not_mathlib
 
 theorem linearly_dependent_iff_not_independent :
-  LinearlyDependent (𝕂 := 𝕂) α ↔ ¬ LinearlyIndependent (𝕂 := 𝕂) α := by
+  LinearlyDependent α ↔ ¬ LinearlyIndependent α := by
   rw [linearly_independent_iff_mathlib, linearly_dependent_iff_not_mathlib]
 
 #snl_print linearly_dependent_iff_not_independent
 
 theorem representable_by_others_of_relation {c : Fin n → 𝕂} {i : Fin n}
     (hc : IsLinearRelation c α) (hi : c i ≠ 0) :
-  RepresentableByOthers (𝕂 := 𝕂) α i := by
+  RepresentableByOthers α i := by
   have hsum : (∑ j ∈ Finset.univ.erase i, c j • α j) = -(c i • α i) := by
     apply eq_neg_iff_add_eq_zero.mpr
     rw [Finset.sum_erase_add _ _ (Finset.mem_univ i)]
@@ -285,8 +281,8 @@ theorem representable_by_others_of_relation {c : Fin n → 𝕂} {i : Fin n}
 #snl_print representable_by_others_of_relation
 
 theorem dependent_of_representable_by_others {i : Fin n}
-    (h : RepresentableByOthers (𝕂 := 𝕂) α i) :
-  LinearlyDependent (𝕂 := 𝕂) α := by
+    (h : RepresentableByOthers α i) :
+  LinearlyDependent α := by
   classical
   obtain ⟨c, hc⟩ := h
   let d : Fin n → 𝕂 := Function.update c i (-1)
@@ -305,8 +301,8 @@ theorem dependent_of_representable_by_others {i : Fin n}
 #snl_print dependent_of_representable_by_others
 
 theorem dependent_iff_representable_by_others :
-  LinearlyDependent (𝕂 := 𝕂) α ↔
-      ∃ i : Fin n, RepresentableByOthers (𝕂 := 𝕂) α i := by
+  LinearlyDependent α ↔
+      ∃ i : Fin n, RepresentableByOthers α i := by
   constructor
   · rintro ⟨c, hc, i, hi⟩
     exact ⟨i, representable_by_others_of_relation α hc hi⟩
@@ -316,7 +312,7 @@ theorem dependent_iff_representable_by_others :
 #snl_print dependent_iff_representable_by_others
 
 theorem independent_iff_unique_representation :
-  LinearlyIndependent (𝕂 := 𝕂) α ↔ UniqueRepresentation (𝕂 := 𝕂) α := by
+  LinearlyIndependent α ↔ UniqueRepresentation α := by
   constructor
   · intro h β hb
     obtain ⟨c, hc⟩ := hb
@@ -326,7 +322,7 @@ theorem independent_iff_unique_representation :
     exact ((linearly_independent_iff_mathlib α).mp h).eq_coords_of_eq
       (hd.symm.trans hc) i
   · intro h c hc i
-    have hz : IsLinearRepresentation (𝕂 := 𝕂) (0 : V) α :=
+    have hz : IsLinearRepresentation (0 : V) α :=
       ⟨fun _ => 0, by simp⟩
     obtain ⟨d, hd, hu⟩ := h 0 hz
     have hcd : c = d := hu c hc.symm
@@ -336,8 +332,8 @@ theorem independent_iff_unique_representation :
 #snl_print independent_iff_unique_representation
 
 theorem subfamily_independent {γ : Fin m → V}
-    (h : LinearlyIndependent (𝕂 := 𝕂) α) (hs : Subfamily γ α) :
-  LinearlyIndependent (𝕂 := 𝕂) γ := by
+    (h : LinearlyIndependent α) (hs : Subfamily γ α) :
+  LinearlyIndependent γ := by
   obtain ⟨f, hf, heq⟩ := hs
   have hg : γ = α ∘ f := funext heq
   rw [hg, linearly_independent_iff_mathlib]
@@ -346,8 +342,8 @@ theorem subfamily_independent {γ : Fin m → V}
 #snl_print subfamily_independent
 
 theorem superfamily_dependent {γ : Fin m → V}
-    (h : LinearlyDependent (𝕂 := 𝕂) α) (hs : Subfamily α γ) :
-  LinearlyDependent (𝕂 := 𝕂) γ := by
+    (h : LinearlyDependent α) (hs : Subfamily α γ) :
+  LinearlyDependent γ := by
   rw [linearly_dependent_iff_not_independent] at h ⊢
   intro hg
   exact h (subfamily_independent γ hg hs)
@@ -355,14 +351,14 @@ theorem superfamily_dependent {γ : Fin m → V}
 #snl_print superfamily_dependent
 
 theorem singleton_independent (v : V) :
-  LinearlyIndependent (𝕂 := 𝕂) (fun _ : Fin 1 => v) ↔ v ≠ 0 := by
+  LinearlyIndependent (fun _ : Fin 1 => v) ↔ v ≠ 0 := by
   rw [linearly_independent_iff_mathlib]
   exact linearIndependent_unique_iff
 
 #snl_print singleton_independent
 
-theorem dependent_of_contains_zero (h : Contains α s.zero) :
-  LinearlyDependent (𝕂 := 𝕂) α := by
+theorem dependent_of_contains_zero (h : Contains α 0) :
+  LinearlyDependent α := by
   obtain ⟨i, hi⟩ := h
   rw [linearly_dependent_iff_not_mathlib]
   intro hind
@@ -371,7 +367,7 @@ theorem dependent_of_contains_zero (h : Contains α s.zero) :
 #snl_print dependent_of_contains_zero
 
 theorem dependent_of_repeated_vector (h : HasRepeat α) :
-  LinearlyDependent (𝕂 := 𝕂) α := by
+  LinearlyDependent α := by
   obtain ⟨i, j, hij, heq⟩ := h
   rw [linearly_dependent_iff_not_mathlib]
   intro hind
