@@ -30,8 +30,10 @@
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
-      "pattern": "^    extends Add V, Zero V, SMul 𝕂 V where$",
-      "flags": "m"
+      "pattern": "^#snl_print VectorSpace\\.toZero(?=\\r?$)",
+      "flags": "m",
+      "beforeLines": 0,
+      "afterLines": 0
     }
   }
 }

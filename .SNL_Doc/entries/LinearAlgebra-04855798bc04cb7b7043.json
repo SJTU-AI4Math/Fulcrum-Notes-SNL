@@ -30,8 +30,10 @@
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
-      "pattern": "^variable \\(α : Fin n → V\\)$",
-      "flags": "m"
+      "pattern": "^variable \\(α : Fin n → V\\)(?=\\r?$)",
+      "flags": "m",
+      "beforeLines": 0,
+      "afterLines": 0
     }
   }
 }

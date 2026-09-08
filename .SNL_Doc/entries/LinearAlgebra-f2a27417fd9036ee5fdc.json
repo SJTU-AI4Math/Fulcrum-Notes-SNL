@@ -30,8 +30,10 @@
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
       "mode": "regex",
-      "pattern": "^class VectorSpace \\(𝕂 : outParam \\(Type u\\)\\) \\(V : Type v\\) \\[Field 𝕂\\]\\r?\\n    extends Add V, Zero V, SMul 𝕂 V where$",
-      "flags": "m"
+      "pattern": "^variable \\{𝕂 : Type u\\} \\{V : Type v\\} \\[Field 𝕂\\] \\[s : VectorSpace 𝕂 V\\](?=\\r?$)",
+      "flags": "m",
+      "beforeLines": 0,
+      "afterLines": 0
     }
   }
 }

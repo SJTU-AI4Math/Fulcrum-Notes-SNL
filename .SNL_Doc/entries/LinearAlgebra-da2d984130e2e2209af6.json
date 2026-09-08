@@ -28,9 +28,11 @@
     "contribution_info": null,
     "pointer": {
       "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
-      "mode": "lines",
-      "line": 6,
-      "endLine": 382
+      "mode": "regex",
+      "pattern": "^namespace Fulcrum(?=\\r?\\n\\r?\\n/--)",
+      "flags": "m",
+      "beforeLines": 0,
+      "afterLines": 0
     }
   }
 }
