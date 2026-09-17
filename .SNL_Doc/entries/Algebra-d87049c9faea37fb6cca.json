@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "MonoidHom.range",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Image",
+        "zh-CN": "像"
+      }
+    },
+    "content": {
+      "snl": "def(MonoidHom.range,,setOf[typedBuilder](@y,H@MonoidHom,Logic.exists-typed(@x,G@Algebra.ctxt.G,Eq(,Type.apply[paren](f@MonoidHom,x),y))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

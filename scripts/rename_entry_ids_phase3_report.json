@@ -1,0 +1,208 @@
+{
+  "summary": {
+    "total": 33,
+    "renamed": 33,
+    "skipped": 0,
+    "failed": 0
+  },
+  "results": [
+    {
+      "n": 1,
+      "old": "Algebra.def.semigroup",
+      "new": "Semigroup",
+      "status": "renamed"
+    },
+    {
+      "n": 2,
+      "old": "Algebra.def.monoid",
+      "new": "Monoid",
+      "status": "renamed"
+    },
+    {
+      "n": 3,
+      "old": "Algebra.def.monoid.commutative",
+      "new": "CommMonoid",
+      "status": "renamed"
+    },
+    {
+      "n": 4,
+      "old": "Algebra.def.group",
+      "new": "Group",
+      "status": "renamed"
+    },
+    {
+      "n": 5,
+      "old": "Algebra.def.abelian",
+      "new": "CommGroup",
+      "status": "renamed"
+    },
+    {
+      "n": 6,
+      "old": "Algebra.def.groupHom",
+      "new": "MonoidHom",
+      "status": "renamed"
+    },
+    {
+      "n": 7,
+      "old": "Algebra.def.groupMono",
+      "new": "GroupMono",
+      "status": "renamed"
+    },
+    {
+      "n": 8,
+      "old": "Algebra.def.groupEpi",
+      "new": "GroupEpi",
+      "status": "renamed"
+    },
+    {
+      "n": 9,
+      "old": "Algebra.def.groupIso",
+      "new": "MulEquiv",
+      "status": "renamed"
+    },
+    {
+      "n": 10,
+      "old": "Algebra.def.kernel",
+      "new": "MonoidHom.ker",
+      "status": "renamed"
+    },
+    {
+      "n": 11,
+      "old": "Algebra.def.image",
+      "new": "MonoidHom.range",
+      "status": "renamed"
+    },
+    {
+      "n": 12,
+      "old": "Algebra.def.ring",
+      "new": "NonUnitalRing",
+      "status": "renamed"
+    },
+    {
+      "n": 13,
+      "old": "Algebra.def.ring.unital",
+      "new": "UnitalRing",
+      "status": "renamed"
+    },
+    {
+      "n": 14,
+      "old": "Algebra.def.ring.commutative",
+      "new": "CommRing",
+      "status": "renamed"
+    },
+    {
+      "n": 15,
+      "old": "Algebra.def.integral",
+      "new": "IsDomain",
+      "status": "renamed"
+    },
+    {
+      "n": 16,
+      "old": "Algebra.def.ring.divisible",
+      "new": "DivisionRing",
+      "status": "renamed"
+    },
+    {
+      "n": 17,
+      "old": "Algebra.def.field",
+      "new": "Field",
+      "status": "renamed"
+    },
+    {
+      "n": 18,
+      "old": "Algebra.def.subgroup",
+      "new": "Subgroup",
+      "status": "renamed"
+    },
+    {
+      "n": 19,
+      "old": "Algebra.def.groupAction",
+      "new": "MulAction",
+      "status": "renamed"
+    },
+    {
+      "n": 20,
+      "old": "Algebra.def.orbit",
+      "new": "MulAction.orbit",
+      "status": "renamed"
+    },
+    {
+      "n": 21,
+      "old": "Algebra.def.stabilizer",
+      "new": "MulAction.stabilizer",
+      "status": "renamed"
+    },
+    {
+      "n": 22,
+      "old": "Algebra.def.symmetricGroup",
+      "new": "Symmetric",
+      "status": "renamed"
+    },
+    {
+      "n": 23,
+      "old": "Algebra.def.permutation",
+      "new": "Perm",
+      "status": "renamed"
+    },
+    {
+      "n": 24,
+      "old": "Algebra.def.cycle",
+      "new": "Cycle",
+      "status": "renamed"
+    },
+    {
+      "n": 25,
+      "old": "Algebra.def.transposition",
+      "new": "Trans",
+      "status": "renamed"
+    },
+    {
+      "n": 26,
+      "old": "Algebra.def.identity",
+      "new": "One",
+      "status": "renamed"
+    },
+    {
+      "n": 27,
+      "old": "Algebra.prop.identityUnique",
+      "new": "Monoid.prop.identityUnique",
+      "status": "renamed"
+    },
+    {
+      "n": 28,
+      "old": "Algebra.prop.inverseUnique",
+      "new": "Group.prop.inverseUnique",
+      "status": "renamed"
+    },
+    {
+      "n": 29,
+      "old": "Algebra.prop.int.abelian",
+      "new": "CommGroup.prop.int",
+      "status": "renamed"
+    },
+    {
+      "n": 30,
+      "old": "Algebra.prop.nat.monoid",
+      "new": "Monoid.prop.nat",
+      "status": "renamed"
+    },
+    {
+      "n": 31,
+      "old": "Algebra.example.nat.add",
+      "new": "Monoid.example.nat.add",
+      "status": "renamed"
+    },
+    {
+      "n": 32,
+      "old": "Algebra.remark.ring.mulPrioritized",
+      "new": "NonUnitalRing.remark.mulPrioritized",
+      "status": "renamed"
+    },
+    {
+      "n": 33,
+      "old": "Algebra.thm.grothendieckGroup",
+      "new": "CommMonoid.thm.grothendieckGroup",
+      "status": "renamed"
+    }
+  ]
+}

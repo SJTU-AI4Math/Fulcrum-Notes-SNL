@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "MulAction.stabilizer",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Stabilizer",
+        "zh-CN": "稳定子群"
+      }
+    },
+    "content": {
+      "snl": "def(MulAction.stabilizer,,setOf[typedBuilder](@g,G@Algebra.ctxt.G,Eq(,Type.apply[paren](Type.apply[paren](alpha@MulAction,g),x@MulAction),x@MulAction)))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

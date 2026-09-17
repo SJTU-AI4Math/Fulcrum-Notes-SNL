@@ -16,7 +16,7 @@
     },
     {
       "id": "ctx.Algebra.def.group.Algebra.ctxt.G",
-      "from": "Algebra.def.group",
+      "from": "Group",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -29,7 +29,7 @@
     },
     {
       "id": "ctx.Algebra.def.group.Algebra.ctxt.mul",
-      "from": "Algebra.def.group",
+      "from": "Group",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -42,7 +42,7 @@
     },
     {
       "id": "ctx.Algebra.def.groupAction.Algebra.ctxt.G",
-      "from": "Algebra.def.groupAction",
+      "from": "MulAction",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -55,7 +55,7 @@
     },
     {
       "id": "ctx.Algebra.def.groupEpi.Algebra.ctxt.G",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -68,7 +68,7 @@
     },
     {
       "id": "ctx.Algebra.def.groupHom.Algebra.ctxt.G",
-      "from": "Algebra.def.groupHom",
+      "from": "MonoidHom",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -81,7 +81,7 @@
     },
     {
       "id": "ctx.Algebra.def.groupIso.Algebra.ctxt.G",
-      "from": "Algebra.def.groupIso",
+      "from": "MulEquiv",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -94,7 +94,7 @@
     },
     {
       "id": "ctx.Algebra.def.groupMono.Algebra.ctxt.G",
-      "from": "Algebra.def.groupMono",
+      "from": "GroupMono",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -107,7 +107,7 @@
     },
     {
       "id": "ctx.Algebra.def.image.Algebra.ctxt.G",
-      "from": "Algebra.def.image",
+      "from": "MonoidHom.range",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -120,20 +120,20 @@
     },
     {
       "id": "ctx.Algebra.def.image.Algebra.def.groupHom",
-      "from": "Algebra.def.image",
-      "to": "Algebra.def.groupHom",
+      "from": "MonoidHom.range",
+      "to": "MonoidHom",
       "label": "uses_context",
       "metadata": {
         "generator": "macro-source-scan",
         "postfixes": [
-          "Algebra.def.groupHom"
+          "MonoidHom"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "ctx.Algebra.def.kernel.Algebra.ctxt.G",
-      "from": "Algebra.def.kernel",
+      "from": "MonoidHom.ker",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -146,20 +146,20 @@
     },
     {
       "id": "ctx.Algebra.def.kernel.Algebra.def.groupHom",
-      "from": "Algebra.def.kernel",
-      "to": "Algebra.def.groupHom",
+      "from": "MonoidHom.ker",
+      "to": "MonoidHom",
       "label": "uses_context",
       "metadata": {
         "generator": "macro-source-scan",
         "postfixes": [
-          "Algebra.def.groupHom"
+          "MonoidHom"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "ctx.Algebra.def.monoid.Algebra.ctxt.G",
-      "from": "Algebra.def.monoid",
+      "from": "Monoid",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -172,7 +172,7 @@
     },
     {
       "id": "ctx.Algebra.def.orbit.Algebra.ctxt.G",
-      "from": "Algebra.def.orbit",
+      "from": "MulAction.orbit",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -185,20 +185,20 @@
     },
     {
       "id": "ctx.Algebra.def.orbit.Algebra.def.groupAction",
-      "from": "Algebra.def.orbit",
-      "to": "Algebra.def.groupAction",
+      "from": "MulAction.orbit",
+      "to": "MulAction",
       "label": "uses_context",
       "metadata": {
         "generator": "macro-source-scan",
         "postfixes": [
-          "Algebra.def.groupAction"
+          "MulAction"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "ctx.Algebra.def.semigroup.Algebra.ctxt.G",
-      "from": "Algebra.def.semigroup",
+      "from": "Semigroup",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -211,7 +211,7 @@
     },
     {
       "id": "ctx.Algebra.def.stabilizer.Algebra.ctxt.G",
-      "from": "Algebra.def.stabilizer",
+      "from": "MulAction.stabilizer",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -224,20 +224,20 @@
     },
     {
       "id": "ctx.Algebra.def.stabilizer.Algebra.def.groupAction",
-      "from": "Algebra.def.stabilizer",
-      "to": "Algebra.def.groupAction",
+      "from": "MulAction.stabilizer",
+      "to": "MulAction",
       "label": "uses_context",
       "metadata": {
         "generator": "macro-source-scan",
         "postfixes": [
-          "Algebra.def.groupAction"
+          "MulAction"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "ctx.Algebra.def.subgroup.Algebra.ctxt.G",
-      "from": "Algebra.def.subgroup",
+      "from": "Subgroup",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -250,7 +250,7 @@
     },
     {
       "id": "ctx.Algebra.prop.identityUnique.Algebra.ctxt.G",
-      "from": "Algebra.prop.identityUnique",
+      "from": "Monoid.prop.identityUnique",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -666,20 +666,20 @@
     },
     {
       "id": "dep.Algebra.def.abelian.Algebra.def.group",
-      "from": "Algebra.def.abelian",
-      "to": "Algebra.def.group",
+      "from": "CommGroup",
+      "to": "Group",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Group"
+          "Group"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.abelian.Logic.def.eq",
-      "from": "Algebra.def.abelian",
+      "from": "CommGroup",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -692,7 +692,7 @@
     },
     {
       "id": "dep.Algebra.def.abelian.Logic.def.forall",
-      "from": "Algebra.def.abelian",
+      "from": "CommGroup",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -705,7 +705,7 @@
     },
     {
       "id": "dep.Algebra.def.abelian.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.abelian",
+      "from": "CommGroup",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -718,7 +718,7 @@
     },
     {
       "id": "dep.Algebra.def.cycle.Logic.def.true",
-      "from": "Algebra.def.cycle",
+      "from": "Cycle",
       "to": "True",
       "label": "depends",
       "metadata": {
@@ -731,34 +731,34 @@
     },
     {
       "id": "dep.Algebra.def.field.Algebra.def.abelian",
-      "from": "Algebra.def.field",
-      "to": "Algebra.def.abelian",
+      "from": "Field",
+      "to": "CommGroup",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Abelian"
+          "CommGroup"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Algebra.def.field.Algebra.def.ring",
-      "from": "Algebra.def.field",
-      "to": "Algebra.def.ring",
+      "from": "Field",
+      "to": "NonUnitalRing",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Field",
-          "Algebra.Ring"
+          "Field",
+          "NonUnitalRing"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.group.Fulcrum.def",
-      "from": "Algebra.def.group",
+      "from": "Group",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -771,7 +771,7 @@
     },
     {
       "id": "dep.Algebra.def.group.Logic.def.and",
-      "from": "Algebra.def.group",
+      "from": "Group",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -784,7 +784,7 @@
     },
     {
       "id": "dep.Algebra.def.group.Logic.def.eq",
-      "from": "Algebra.def.group",
+      "from": "Group",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -797,7 +797,7 @@
     },
     {
       "id": "dep.Algebra.def.group.Logic.def.exists",
-      "from": "Algebra.def.group",
+      "from": "Group",
       "to": "Exists",
       "label": "depends",
       "metadata": {
@@ -810,7 +810,7 @@
     },
     {
       "id": "dep.Algebra.def.group.Logic.def.forall",
-      "from": "Algebra.def.group",
+      "from": "Group",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -823,7 +823,7 @@
     },
     {
       "id": "dep.Algebra.def.group.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.group",
+      "from": "Group",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -836,7 +836,7 @@
     },
     {
       "id": "dep.Algebra.def.groupAction.Logic.def.and",
-      "from": "Algebra.def.groupAction",
+      "from": "MulAction",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -849,7 +849,7 @@
     },
     {
       "id": "dep.Algebra.def.groupAction.Logic.def.eq",
-      "from": "Algebra.def.groupAction",
+      "from": "MulAction",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -862,7 +862,7 @@
     },
     {
       "id": "dep.Algebra.def.groupAction.Logic.def.forall",
-      "from": "Algebra.def.groupAction",
+      "from": "MulAction",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -875,20 +875,20 @@
     },
     {
       "id": "dep.Algebra.def.groupEpi.Algebra.def.groupHom",
-      "from": "Algebra.def.groupEpi",
-      "to": "Algebra.def.groupHom",
+      "from": "GroupEpi",
+      "to": "MonoidHom",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.GrpHom"
+          "MonoidHom"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.groupEpi.Logic.def.and",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -901,7 +901,7 @@
     },
     {
       "id": "dep.Algebra.def.groupEpi.Logic.def.eq",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -914,7 +914,7 @@
     },
     {
       "id": "dep.Algebra.def.groupEpi.Logic.def.exists",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "Exists",
       "label": "depends",
       "metadata": {
@@ -927,7 +927,7 @@
     },
     {
       "id": "dep.Algebra.def.groupEpi.Logic.def.forall",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -940,7 +940,7 @@
     },
     {
       "id": "dep.Algebra.def.groupHom.Logic.def.and",
-      "from": "Algebra.def.groupHom",
+      "from": "MonoidHom",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -953,7 +953,7 @@
     },
     {
       "id": "dep.Algebra.def.groupHom.Logic.def.eq",
-      "from": "Algebra.def.groupHom",
+      "from": "MonoidHom",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -966,7 +966,7 @@
     },
     {
       "id": "dep.Algebra.def.groupHom.Logic.def.forall",
-      "from": "Algebra.def.groupHom",
+      "from": "MonoidHom",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -979,33 +979,33 @@
     },
     {
       "id": "dep.Algebra.def.groupIso.Algebra.def.groupEpi",
-      "from": "Algebra.def.groupIso",
-      "to": "Algebra.def.groupEpi",
+      "from": "MulEquiv",
+      "to": "GroupEpi",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.GrpEpi"
+          "GroupEpi"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.groupIso.Algebra.def.groupMono",
-      "from": "Algebra.def.groupIso",
-      "to": "Algebra.def.groupMono",
+      "from": "MulEquiv",
+      "to": "GroupMono",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.GrpMono"
+          "GroupMono"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.groupIso.Logic.def.and",
-      "from": "Algebra.def.groupIso",
+      "from": "MulEquiv",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -1018,20 +1018,20 @@
     },
     {
       "id": "dep.Algebra.def.groupMono.Algebra.def.groupHom",
-      "from": "Algebra.def.groupMono",
-      "to": "Algebra.def.groupHom",
+      "from": "GroupMono",
+      "to": "MonoidHom",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.GrpHom"
+          "MonoidHom"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.groupMono.Logic.def.and",
-      "from": "Algebra.def.groupMono",
+      "from": "GroupMono",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -1044,7 +1044,7 @@
     },
     {
       "id": "dep.Algebra.def.groupMono.Logic.def.eq",
-      "from": "Algebra.def.groupMono",
+      "from": "GroupMono",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1057,7 +1057,7 @@
     },
     {
       "id": "dep.Algebra.def.groupMono.Logic.def.forall",
-      "from": "Algebra.def.groupMono",
+      "from": "GroupMono",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1070,7 +1070,7 @@
     },
     {
       "id": "dep.Algebra.def.groupMono.Logic.def.implies",
-      "from": "Algebra.def.groupMono",
+      "from": "GroupMono",
       "to": "Logic.Implication",
       "label": "depends",
       "metadata": {
@@ -1083,34 +1083,34 @@
     },
     {
       "id": "dep.Algebra.def.identity.Algebra.def.monoid",
-      "from": "Algebra.def.identity",
-      "to": "Algebra.def.monoid",
+      "from": "One",
+      "to": "Monoid",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Id",
-          "Algebra.Monoid"
+          "One_Id",
+          "Monoid"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Algebra.def.identity.Algebra.def.ring.unital",
-      "from": "Algebra.def.identity",
-      "to": "Algebra.def.ring.unital",
+      "from": "One",
+      "to": "UnitalRing",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Id"
+          "One_Id"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.identity.Fulcrum.def",
-      "from": "Algebra.def.identity",
+      "from": "One",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -1123,7 +1123,7 @@
     },
     {
       "id": "dep.Algebra.def.identity.Logic.def.and",
-      "from": "Algebra.def.identity",
+      "from": "One",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -1136,7 +1136,7 @@
     },
     {
       "id": "dep.Algebra.def.identity.Logic.def.eq",
-      "from": "Algebra.def.identity",
+      "from": "One",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1149,7 +1149,7 @@
     },
     {
       "id": "dep.Algebra.def.identity.Logic.def.forall",
-      "from": "Algebra.def.identity",
+      "from": "One",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1162,7 +1162,7 @@
     },
     {
       "id": "dep.Algebra.def.identity.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.identity",
+      "from": "One",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -1175,7 +1175,7 @@
     },
     {
       "id": "dep.Algebra.def.identity.Type.def.annotation",
-      "from": "Algebra.def.identity",
+      "from": "One",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -1188,7 +1188,7 @@
     },
     {
       "id": "dep.Algebra.def.image.Logic.def.eq",
-      "from": "Algebra.def.image",
+      "from": "MonoidHom.range",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1201,7 +1201,7 @@
     },
     {
       "id": "dep.Algebra.def.image.Logic.def.exists",
-      "from": "Algebra.def.image",
+      "from": "MonoidHom.range",
       "to": "Exists",
       "label": "depends",
       "metadata": {
@@ -1214,7 +1214,7 @@
     },
     {
       "id": "dep.Algebra.def.image.Set.def.sep",
-      "from": "Algebra.def.image",
+      "from": "MonoidHom.range",
       "to": "setOf",
       "label": "depends",
       "metadata": {
@@ -1227,8 +1227,8 @@
     },
     {
       "id": "dep.Algebra.def.integral.Algebra.def.abelian",
-      "from": "Algebra.def.integral",
-      "to": "Algebra.def.abelian",
+      "from": "IsDomain",
+      "to": "CommGroup",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -1240,33 +1240,33 @@
     },
     {
       "id": "dep.Algebra.def.integral.Algebra.def.ring.commutative",
-      "from": "Algebra.def.integral",
-      "to": "Algebra.def.ring.commutative",
+      "from": "IsDomain",
+      "to": "CommRing",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.CommRing"
+          "CommRing"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.integral.Algebra.def.ring.unital",
-      "from": "Algebra.def.integral",
-      "to": "Algebra.def.ring.unital",
+      "from": "IsDomain",
+      "to": "UnitalRing",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.UnitalRing"
+          "UnitalRing"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.integral.Logic.def.and",
-      "from": "Algebra.def.integral",
+      "from": "IsDomain",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -1279,7 +1279,7 @@
     },
     {
       "id": "dep.Algebra.def.integral.Logic.def.eq",
-      "from": "Algebra.def.integral",
+      "from": "IsDomain",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1292,7 +1292,7 @@
     },
     {
       "id": "dep.Algebra.def.integral.Logic.def.forall",
-      "from": "Algebra.def.integral",
+      "from": "IsDomain",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1305,7 +1305,7 @@
     },
     {
       "id": "dep.Algebra.def.integral.Logic.def.implies",
-      "from": "Algebra.def.integral",
+      "from": "IsDomain",
       "to": "Logic.Implication",
       "label": "depends",
       "metadata": {
@@ -1318,7 +1318,7 @@
     },
     {
       "id": "dep.Algebra.def.integral.Logic.def.neg",
-      "from": "Algebra.def.integral",
+      "from": "IsDomain",
       "to": "Not",
       "label": "depends",
       "metadata": {
@@ -1331,7 +1331,7 @@
     },
     {
       "id": "dep.Algebra.def.integral.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.integral",
+      "from": "IsDomain",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -1344,7 +1344,7 @@
     },
     {
       "id": "dep.Algebra.def.kernel.Logic.def.eq",
-      "from": "Algebra.def.kernel",
+      "from": "MonoidHom.ker",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1357,7 +1357,7 @@
     },
     {
       "id": "dep.Algebra.def.kernel.Set.def.sep",
-      "from": "Algebra.def.kernel",
+      "from": "MonoidHom.ker",
       "to": "setOf",
       "label": "depends",
       "metadata": {
@@ -1370,7 +1370,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.Fulcrum.def",
-      "from": "Algebra.def.monoid",
+      "from": "Monoid",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -1383,7 +1383,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.Logic.def.and",
-      "from": "Algebra.def.monoid",
+      "from": "Monoid",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -1396,7 +1396,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.Logic.def.eq",
-      "from": "Algebra.def.monoid",
+      "from": "Monoid",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1409,7 +1409,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.Logic.def.exists",
-      "from": "Algebra.def.monoid",
+      "from": "Monoid",
       "to": "Exists",
       "label": "depends",
       "metadata": {
@@ -1422,7 +1422,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.Logic.def.forall",
-      "from": "Algebra.def.monoid",
+      "from": "Monoid",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1435,7 +1435,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.monoid",
+      "from": "Monoid",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -1448,20 +1448,20 @@
     },
     {
       "id": "dep.Algebra.def.monoid.commutative.Algebra.def.monoid",
-      "from": "Algebra.def.monoid.commutative",
-      "to": "Algebra.def.monoid",
+      "from": "CommMonoid",
+      "to": "Monoid",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Monoid"
+          "Monoid"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.monoid.commutative.Logic.def.eq",
-      "from": "Algebra.def.monoid.commutative",
+      "from": "CommMonoid",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1474,7 +1474,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.commutative.Logic.def.forall",
-      "from": "Algebra.def.monoid.commutative",
+      "from": "CommMonoid",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1487,7 +1487,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.commutative.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.monoid.commutative",
+      "from": "CommMonoid",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -1500,7 +1500,7 @@
     },
     {
       "id": "dep.Algebra.def.orbit.Logic.def.eq",
-      "from": "Algebra.def.orbit",
+      "from": "MulAction.orbit",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1513,7 +1513,7 @@
     },
     {
       "id": "dep.Algebra.def.orbit.Logic.def.exists",
-      "from": "Algebra.def.orbit",
+      "from": "MulAction.orbit",
       "to": "Exists",
       "label": "depends",
       "metadata": {
@@ -1526,7 +1526,7 @@
     },
     {
       "id": "dep.Algebra.def.orbit.Set.def.sep",
-      "from": "Algebra.def.orbit",
+      "from": "MulAction.orbit",
       "to": "setOf",
       "label": "depends",
       "metadata": {
@@ -1539,7 +1539,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Logic.def.and",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -1552,7 +1552,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Logic.def.eq",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1565,7 +1565,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Logic.def.exists",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "Exists",
       "label": "depends",
       "metadata": {
@@ -1578,7 +1578,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Logic.def.forall",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1591,7 +1591,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Logic.def.implies",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "Logic.Implication",
       "label": "depends",
       "metadata": {
@@ -1604,33 +1604,33 @@
     },
     {
       "id": "dep.Algebra.def.ring.Algebra.def.abelian",
-      "from": "Algebra.def.ring",
-      "to": "Algebra.def.abelian",
+      "from": "NonUnitalRing",
+      "to": "CommGroup",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Abelian"
+          "CommGroup"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.ring.Algebra.def.semigroup",
-      "from": "Algebra.def.ring",
-      "to": "Algebra.def.semigroup",
+      "from": "NonUnitalRing",
+      "to": "Semigroup",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Semigroup"
+          "Semigroup"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.ring.Logic.def.and",
-      "from": "Algebra.def.ring",
+      "from": "NonUnitalRing",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -1643,7 +1643,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.Logic.def.eq",
-      "from": "Algebra.def.ring",
+      "from": "NonUnitalRing",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1656,7 +1656,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.Logic.def.forall",
-      "from": "Algebra.def.ring",
+      "from": "NonUnitalRing",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1669,7 +1669,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.ring",
+      "from": "NonUnitalRing",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -1682,20 +1682,20 @@
     },
     {
       "id": "dep.Algebra.def.ring.commutative.Algebra.def.ring",
-      "from": "Algebra.def.ring.commutative",
-      "to": "Algebra.def.ring",
+      "from": "CommRing",
+      "to": "NonUnitalRing",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Ring"
+          "NonUnitalRing"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.ring.commutative.Logic.def.eq",
-      "from": "Algebra.def.ring.commutative",
+      "from": "CommRing",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1708,7 +1708,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.commutative.Logic.def.forall",
-      "from": "Algebra.def.ring.commutative",
+      "from": "CommRing",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1721,7 +1721,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.commutative.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.ring.commutative",
+      "from": "CommRing",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -1734,59 +1734,59 @@
     },
     {
       "id": "dep.Algebra.def.ring.divisible.Algebra.def.group",
-      "from": "Algebra.def.ring.divisible",
-      "to": "Algebra.def.group",
+      "from": "DivisionRing",
+      "to": "Group",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Group"
+          "Group"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Algebra.def.ring.divisible.Algebra.def.ring",
-      "from": "Algebra.def.ring.divisible",
-      "to": "Algebra.def.ring",
+      "from": "DivisionRing",
+      "to": "NonUnitalRing",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Ring"
+          "NonUnitalRing"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.ring.unital.Algebra.def.abelian",
-      "from": "Algebra.def.ring.unital",
-      "to": "Algebra.def.abelian",
+      "from": "UnitalRing",
+      "to": "CommGroup",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Abelian"
+          "CommGroup"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.ring.unital.Algebra.def.monoid",
-      "from": "Algebra.def.ring.unital",
-      "to": "Algebra.def.monoid",
+      "from": "UnitalRing",
+      "to": "Monoid",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Monoid"
+          "Monoid"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.ring.unital.Logic.def.and",
-      "from": "Algebra.def.ring.unital",
+      "from": "UnitalRing",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -1799,7 +1799,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.unital.Logic.def.eq",
-      "from": "Algebra.def.ring.unital",
+      "from": "UnitalRing",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1812,7 +1812,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.unital.Logic.def.forall",
-      "from": "Algebra.def.ring.unital",
+      "from": "UnitalRing",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1825,7 +1825,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.unital.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.ring.unital",
+      "from": "UnitalRing",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -1838,7 +1838,7 @@
     },
     {
       "id": "dep.Algebra.def.semigroup.Fulcrum.def",
-      "from": "Algebra.def.semigroup",
+      "from": "Semigroup",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -1851,7 +1851,7 @@
     },
     {
       "id": "dep.Algebra.def.semigroup.Logic.def.eq",
-      "from": "Algebra.def.semigroup",
+      "from": "Semigroup",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1864,7 +1864,7 @@
     },
     {
       "id": "dep.Algebra.def.semigroup.Logic.def.forall",
-      "from": "Algebra.def.semigroup",
+      "from": "Semigroup",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -1877,7 +1877,7 @@
     },
     {
       "id": "dep.Algebra.def.semigroup.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.semigroup",
+      "from": "Semigroup",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -1890,7 +1890,7 @@
     },
     {
       "id": "dep.Algebra.def.stabilizer.Logic.def.eq",
-      "from": "Algebra.def.stabilizer",
+      "from": "MulAction.stabilizer",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -1903,7 +1903,7 @@
     },
     {
       "id": "dep.Algebra.def.stabilizer.Set.def.sep",
-      "from": "Algebra.def.stabilizer",
+      "from": "MulAction.stabilizer",
       "to": "setOf",
       "label": "depends",
       "metadata": {
@@ -1916,20 +1916,20 @@
     },
     {
       "id": "dep.Algebra.def.subgroup.Algebra.def.group",
-      "from": "Algebra.def.subgroup",
-      "to": "Algebra.def.group",
+      "from": "Subgroup",
+      "to": "Group",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Group"
+          "Group"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.subgroup.Fulcrum.def",
-      "from": "Algebra.def.subgroup",
+      "from": "Subgroup",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -1942,7 +1942,7 @@
     },
     {
       "id": "dep.Algebra.def.subgroup.Set.def.set",
-      "from": "Algebra.def.subgroup",
+      "from": "Subgroup",
       "to": "Set",
       "label": "depends",
       "metadata": {
@@ -1955,7 +1955,7 @@
     },
     {
       "id": "dep.Algebra.def.subgroup.Type.def.annotation",
-      "from": "Algebra.def.subgroup",
+      "from": "Subgroup",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -1968,20 +1968,20 @@
     },
     {
       "id": "dep.Algebra.def.symmetricGroup.Algebra.def.group",
-      "from": "Algebra.def.symmetricGroup",
-      "to": "Algebra.def.group",
+      "from": "Symmetric",
+      "to": "Group",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Group"
+          "Group"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.def.transposition.Logic.def.true",
-      "from": "Algebra.def.transposition",
+      "from": "Trans",
       "to": "True",
       "label": "depends",
       "metadata": {
@@ -1994,7 +1994,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Fulcrum.def",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -2007,7 +2007,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Logic.def.eq",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -2020,7 +2020,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Logic.def.exists",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Exists",
       "label": "depends",
       "metadata": {
@@ -2033,7 +2033,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Set.example.nat",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "PSet.ofNat",
       "label": "depends",
       "metadata": {
@@ -2046,7 +2046,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -2059,7 +2059,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Type.def.annotation",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -2072,7 +2072,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Type.def.nat",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Type.def.nat",
       "label": "depends",
       "metadata": {
@@ -2085,7 +2085,7 @@
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Logic.def.and",
-      "from": "Algebra.prop.identityUnique",
+      "from": "Monoid.prop.identityUnique",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -2098,7 +2098,7 @@
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Logic.def.eq",
-      "from": "Algebra.prop.identityUnique",
+      "from": "Monoid.prop.identityUnique",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -2111,7 +2111,7 @@
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Logic.def.forall",
-      "from": "Algebra.prop.identityUnique",
+      "from": "Monoid.prop.identityUnique",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -2124,7 +2124,7 @@
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.prop.identityUnique",
+      "from": "Monoid.prop.identityUnique",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -2137,7 +2137,7 @@
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Type.def.annotation",
-      "from": "Algebra.prop.identityUnique",
+      "from": "Monoid.prop.identityUnique",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -2150,21 +2150,21 @@
     },
     {
       "id": "dep.Algebra.prop.int.abelian.Algebra.def.abelian",
-      "from": "Algebra.prop.int.abelian",
-      "to": "Algebra.def.abelian",
+      "from": "CommGroup.prop.int",
+      "to": "CommGroup",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Abelian"
+          "CommGroup"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.prop.int.abelian.Algebra.example.nat.add",
-      "from": "Algebra.prop.int.abelian",
-      "to": "Algebra.example.nat.add",
+      "from": "CommGroup.prop.int",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -2176,46 +2176,46 @@
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Algebra.def.identity",
-      "from": "Algebra.prop.inverseUnique",
-      "to": "Algebra.def.identity",
+      "from": "Group.prop.inverseUnique",
+      "to": "One",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Id"
+          "One_Id"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Algebra.def.monoid",
-      "from": "Algebra.prop.inverseUnique",
-      "to": "Algebra.def.monoid",
+      "from": "Group.prop.inverseUnique",
+      "to": "Monoid",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Id"
+          "One_Id"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Algebra.def.ring.unital",
-      "from": "Algebra.prop.inverseUnique",
-      "to": "Algebra.def.ring.unital",
+      "from": "Group.prop.inverseUnique",
+      "to": "UnitalRing",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Id"
+          "One_Id"
         ],
         "isAtomic": false
       }
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Logic.def.and",
-      "from": "Algebra.prop.inverseUnique",
+      "from": "Group.prop.inverseUnique",
       "to": "And",
       "label": "depends",
       "metadata": {
@@ -2228,7 +2228,7 @@
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Logic.def.eq",
-      "from": "Algebra.prop.inverseUnique",
+      "from": "Group.prop.inverseUnique",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -2241,7 +2241,7 @@
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Logic.def.exists",
-      "from": "Algebra.prop.inverseUnique",
+      "from": "Group.prop.inverseUnique",
       "to": "Exists",
       "label": "depends",
       "metadata": {
@@ -2254,7 +2254,7 @@
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Logic.def.forall",
-      "from": "Algebra.prop.inverseUnique",
+      "from": "Group.prop.inverseUnique",
       "to": "Logic.Forall",
       "label": "depends",
       "metadata": {
@@ -2267,7 +2267,7 @@
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Logic.def.implies",
-      "from": "Algebra.prop.inverseUnique",
+      "from": "Group.prop.inverseUnique",
       "to": "Logic.Implication",
       "label": "depends",
       "metadata": {
@@ -2280,7 +2280,7 @@
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.prop.inverseUnique",
+      "from": "Group.prop.inverseUnique",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -2293,21 +2293,21 @@
     },
     {
       "id": "dep.Algebra.prop.nat.monoid.Algebra.def.monoid.commutative",
-      "from": "Algebra.prop.nat.monoid",
-      "to": "Algebra.def.monoid.commutative",
+      "from": "Monoid.prop.nat",
+      "to": "CommMonoid",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.CommMonoid"
+          "CommMonoid"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.prop.nat.monoid.Algebra.example.nat.add",
-      "from": "Algebra.prop.nat.monoid",
-      "to": "Algebra.example.nat.add",
+      "from": "Monoid.prop.nat",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -2319,7 +2319,7 @@
     },
     {
       "id": "dep.Algebra.prop.nat.monoid.Set.example.nat",
-      "from": "Algebra.prop.nat.monoid",
+      "from": "Monoid.prop.nat",
       "to": "PSet.ofNat",
       "label": "depends",
       "metadata": {
@@ -2332,7 +2332,7 @@
     },
     {
       "id": "dep.Algebra.prop.nat.monoid.Type.def.nat",
-      "from": "Algebra.prop.nat.monoid",
+      "from": "Monoid.prop.nat",
       "to": "Type.def.nat",
       "label": "depends",
       "metadata": {
@@ -2345,20 +2345,20 @@
     },
     {
       "id": "dep.Algebra.remark.ring.mulPrioritized.Algebra.def.ring",
-      "from": "Algebra.remark.ring.mulPrioritized",
-      "to": "Algebra.def.ring",
+      "from": "NonUnitalRing.remark.mulPrioritized",
+      "to": "NonUnitalRing",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Ring"
+          "NonUnitalRing"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.remark.ring.mulPrioritized.Logic.def.eq",
-      "from": "Algebra.remark.ring.mulPrioritized",
+      "from": "NonUnitalRing.remark.mulPrioritized",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -2371,7 +2371,7 @@
     },
     {
       "id": "dep.Algebra.remark.ring.mulPrioritized.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.remark.ring.mulPrioritized",
+      "from": "NonUnitalRing.remark.mulPrioritized",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -2384,33 +2384,33 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Algebra.def.abelian",
-      "from": "Algebra.thm.grothendieckGroup",
-      "to": "Algebra.def.abelian",
+      "from": "CommMonoid.thm.grothendieckGroup",
+      "to": "CommGroup",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.Abelian"
+          "CommGroup"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Algebra.def.monoid.commutative",
-      "from": "Algebra.thm.grothendieckGroup",
-      "to": "Algebra.def.monoid.commutative",
+      "from": "CommMonoid.thm.grothendieckGroup",
+      "to": "CommMonoid",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "macros": [
-          "Algebra.CommMonoid"
+          "CommMonoid"
         ],
         "isAtomic": true
       }
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Fulcrum.def",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -2423,7 +2423,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Logic.def.eq",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Eq",
       "label": "depends",
       "metadata": {
@@ -2436,7 +2436,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Logic.def.exists",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Exists",
       "label": "depends",
       "metadata": {
@@ -2449,7 +2449,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Set.def.relation",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "SetRel",
       "label": "depends",
       "metadata": {
@@ -2462,7 +2462,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -2475,7 +2475,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Type.def.annotation",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -2488,7 +2488,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Type.def.prod",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Type.def.prod",
       "label": "depends",
       "metadata": {
@@ -2501,7 +2501,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Type.def.prod.ctor.pair",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Type.def.prod.ctor.pair",
       "label": "depends",
       "metadata": {
@@ -17851,7 +17851,7 @@
     },
     {
       "id": "ctx.Algebra.def.abelian.Algebra.ctxt.G",
-      "from": "Algebra.def.abelian",
+      "from": "CommGroup",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -17864,7 +17864,7 @@
     },
     {
       "id": "ctx.Algebra.def.abelian.Algebra.ctxt.mul",
-      "from": "Algebra.def.abelian",
+      "from": "CommGroup",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -17877,7 +17877,7 @@
     },
     {
       "id": "dep.Algebra.def.groupAction.Type.def.annotation",
-      "from": "Algebra.def.groupAction",
+      "from": "MulAction",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -17890,7 +17890,7 @@
     },
     {
       "id": "dep.Algebra.def.groupAction.Type.rl.univ",
-      "from": "Algebra.def.groupAction",
+      "from": "MulAction",
       "to": "Type.rl.univ",
       "label": "depends",
       "metadata": {
@@ -17903,7 +17903,7 @@
     },
     {
       "id": "dep.Algebra.def.groupAction.Type.rl.fun",
-      "from": "Algebra.def.groupAction",
+      "from": "MulAction",
       "to": "Type.rl.fun",
       "label": "depends",
       "metadata": {
@@ -17916,7 +17916,7 @@
     },
     {
       "id": "dep.Algebra.def.groupAction.Fulcrum.def",
-      "from": "Algebra.def.groupAction",
+      "from": "MulAction",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -17929,7 +17929,7 @@
     },
     {
       "id": "dep.Algebra.def.groupAction.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.groupAction",
+      "from": "MulAction",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -17942,7 +17942,7 @@
     },
     {
       "id": "dep.Algebra.def.groupEpi.Type.def.annotation",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -17955,7 +17955,7 @@
     },
     {
       "id": "dep.Algebra.def.groupEpi.Type.rl.univ",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "Type.rl.univ",
       "label": "depends",
       "metadata": {
@@ -17968,7 +17968,7 @@
     },
     {
       "id": "dep.Algebra.def.groupEpi.Type.rl.fun",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "Type.rl.fun",
       "label": "depends",
       "metadata": {
@@ -17981,7 +17981,7 @@
     },
     {
       "id": "dep.Algebra.def.groupEpi.Fulcrum.def",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -17994,7 +17994,7 @@
     },
     {
       "id": "dep.Algebra.def.groupEpi.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.groupEpi",
+      "from": "GroupEpi",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -18007,7 +18007,7 @@
     },
     {
       "id": "dep.Algebra.def.groupHom.Type.def.annotation",
-      "from": "Algebra.def.groupHom",
+      "from": "MonoidHom",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -18020,7 +18020,7 @@
     },
     {
       "id": "dep.Algebra.def.groupHom.Type.rl.univ",
-      "from": "Algebra.def.groupHom",
+      "from": "MonoidHom",
       "to": "Type.rl.univ",
       "label": "depends",
       "metadata": {
@@ -18033,7 +18033,7 @@
     },
     {
       "id": "dep.Algebra.def.groupHom.Type.rl.fun",
-      "from": "Algebra.def.groupHom",
+      "from": "MonoidHom",
       "to": "Type.rl.fun",
       "label": "depends",
       "metadata": {
@@ -18046,7 +18046,7 @@
     },
     {
       "id": "dep.Algebra.def.groupHom.Fulcrum.def",
-      "from": "Algebra.def.groupHom",
+      "from": "MonoidHom",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -18059,7 +18059,7 @@
     },
     {
       "id": "dep.Algebra.def.groupHom.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.groupHom",
+      "from": "MonoidHom",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -18072,7 +18072,7 @@
     },
     {
       "id": "dep.Algebra.def.groupMono.Type.def.annotation",
-      "from": "Algebra.def.groupMono",
+      "from": "GroupMono",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -18085,7 +18085,7 @@
     },
     {
       "id": "dep.Algebra.def.groupMono.Type.rl.fun",
-      "from": "Algebra.def.groupMono",
+      "from": "GroupMono",
       "to": "Type.rl.fun",
       "label": "depends",
       "metadata": {
@@ -18098,7 +18098,7 @@
     },
     {
       "id": "dep.Algebra.def.groupMono.Fulcrum.def",
-      "from": "Algebra.def.groupMono",
+      "from": "GroupMono",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -18111,7 +18111,7 @@
     },
     {
       "id": "dep.Algebra.def.groupMono.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.groupMono",
+      "from": "GroupMono",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -18124,7 +18124,7 @@
     },
     {
       "id": "ctx.Algebra.def.identity.Algebra.ctxt.G",
-      "from": "Algebra.def.identity",
+      "from": "One",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -18137,7 +18137,7 @@
     },
     {
       "id": "ctx.Algebra.def.identity.Algebra.ctxt.mul",
-      "from": "Algebra.def.identity",
+      "from": "One",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -18150,7 +18150,7 @@
     },
     {
       "id": "dep.Algebra.def.image.Fulcrum.def",
-      "from": "Algebra.def.image",
+      "from": "MonoidHom.range",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -18163,7 +18163,7 @@
     },
     {
       "id": "dep.Algebra.def.image.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.image",
+      "from": "MonoidHom.range",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -18176,7 +18176,7 @@
     },
     {
       "id": "ctx.Algebra.def.integral.Algebra.ctxt.ring",
-      "from": "Algebra.def.integral",
+      "from": "IsDomain",
       "to": "Algebra.ctxt.ring",
       "label": "uses_context",
       "metadata": {
@@ -18189,7 +18189,7 @@
     },
     {
       "id": "dep.Algebra.def.kernel.Fulcrum.def",
-      "from": "Algebra.def.kernel",
+      "from": "MonoidHom.ker",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -18202,7 +18202,7 @@
     },
     {
       "id": "dep.Algebra.def.kernel.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.kernel",
+      "from": "MonoidHom.ker",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -18215,7 +18215,7 @@
     },
     {
       "id": "ctx.Algebra.def.monoid.Algebra.ctxt.mul",
-      "from": "Algebra.def.monoid",
+      "from": "Monoid",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -18228,7 +18228,7 @@
     },
     {
       "id": "ctx.Algebra.def.monoid.commutative.Algebra.ctxt.G",
-      "from": "Algebra.def.monoid.commutative",
+      "from": "CommMonoid",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -18241,7 +18241,7 @@
     },
     {
       "id": "ctx.Algebra.def.monoid.commutative.Algebra.ctxt.mul",
-      "from": "Algebra.def.monoid.commutative",
+      "from": "CommMonoid",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -18254,7 +18254,7 @@
     },
     {
       "id": "dep.Algebra.def.orbit.Fulcrum.def",
-      "from": "Algebra.def.orbit",
+      "from": "MulAction.orbit",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -18267,7 +18267,7 @@
     },
     {
       "id": "dep.Algebra.def.orbit.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.orbit",
+      "from": "MulAction.orbit",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -18280,7 +18280,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Type.def.annotation",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -18293,7 +18293,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Type.rl.univ",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "Type.rl.univ",
       "label": "depends",
       "metadata": {
@@ -18306,7 +18306,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Type.rl.fun",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "Type.rl.fun",
       "label": "depends",
       "metadata": {
@@ -18319,7 +18319,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Fulcrum.def",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -18332,7 +18332,7 @@
     },
     {
       "id": "dep.Algebra.def.permutation.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.permutation",
+      "from": "Perm",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -18345,7 +18345,7 @@
     },
     {
       "id": "ctx.Algebra.def.ring.Algebra.ctxt.ring",
-      "from": "Algebra.def.ring",
+      "from": "NonUnitalRing",
       "to": "Algebra.ctxt.ring",
       "label": "uses_context",
       "metadata": {
@@ -18358,7 +18358,7 @@
     },
     {
       "id": "ctx.Algebra.def.ring.commutative.Algebra.ctxt.ring",
-      "from": "Algebra.def.ring.commutative",
+      "from": "CommRing",
       "to": "Algebra.ctxt.ring",
       "label": "uses_context",
       "metadata": {
@@ -18371,7 +18371,7 @@
     },
     {
       "id": "ctx.Algebra.def.ring.unital.Algebra.ctxt.ring",
-      "from": "Algebra.def.ring.unital",
+      "from": "UnitalRing",
       "to": "Algebra.ctxt.ring",
       "label": "uses_context",
       "metadata": {
@@ -18384,7 +18384,7 @@
     },
     {
       "id": "ctx.Algebra.def.semigroup.Algebra.ctxt.mul",
-      "from": "Algebra.def.semigroup",
+      "from": "Semigroup",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -18397,7 +18397,7 @@
     },
     {
       "id": "dep.Algebra.def.stabilizer.Fulcrum.def",
-      "from": "Algebra.def.stabilizer",
+      "from": "MulAction.stabilizer",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -18410,7 +18410,7 @@
     },
     {
       "id": "dep.Algebra.def.stabilizer.Syntax.def.expression-UTLC.ctor.application",
-      "from": "Algebra.def.stabilizer",
+      "from": "MulAction.stabilizer",
       "to": "Syntax.def.expression-UTLC.ctor.application",
       "label": "depends",
       "metadata": {
@@ -18423,7 +18423,7 @@
     },
     {
       "id": "ctx.Algebra.def.subgroup.Algebra.ctxt.mul",
-      "from": "Algebra.def.subgroup",
+      "from": "Subgroup",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -18436,7 +18436,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Nat.zero",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Nat.zero",
       "label": "depends",
       "metadata": {
@@ -18449,7 +18449,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Type.ppt.judge-lam",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Type.ppt.judge-lam",
       "label": "depends",
       "metadata": {
@@ -18462,7 +18462,7 @@
     },
     {
       "id": "ctx.Algebra.prop.identityUnique.Algebra.ctxt.mul",
-      "from": "Algebra.prop.identityUnique",
+      "from": "Monoid.prop.identityUnique",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -18475,7 +18475,7 @@
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Fulcrum.thm",
-      "from": "Algebra.prop.identityUnique",
+      "from": "Monoid.prop.identityUnique",
       "to": "Fulcrum.thm",
       "label": "depends",
       "metadata": {
@@ -18488,46 +18488,46 @@
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Algebra.def.identity",
-      "from": "Algebra.prop.identityUnique",
-      "to": "Algebra.def.identity",
+      "from": "Monoid.prop.identityUnique",
+      "to": "One",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "isAtomic": true,
         "macros": [
-          "Algebra.Id"
+          "One_Id"
         ]
       }
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Algebra.def.monoid",
-      "from": "Algebra.prop.identityUnique",
-      "to": "Algebra.def.monoid",
+      "from": "Monoid.prop.identityUnique",
+      "to": "Monoid",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "isAtomic": false,
         "macros": [
-          "Algebra.Id"
+          "One_Id"
         ]
       }
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Algebra.def.ring.unital",
-      "from": "Algebra.prop.identityUnique",
-      "to": "Algebra.def.ring.unital",
+      "from": "Monoid.prop.identityUnique",
+      "to": "UnitalRing",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
         "isAtomic": false,
         "macros": [
-          "Algebra.Id"
+          "One_Id"
         ]
       }
     },
     {
       "id": "ctx.Algebra.prop.inverseUnique.Algebra.ctxt.G",
-      "from": "Algebra.prop.inverseUnique",
+      "from": "Group.prop.inverseUnique",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -18540,7 +18540,7 @@
     },
     {
       "id": "ctx.Algebra.prop.inverseUnique.Algebra.ctxt.mul",
-      "from": "Algebra.prop.inverseUnique",
+      "from": "Group.prop.inverseUnique",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -18553,7 +18553,7 @@
     },
     {
       "id": "ctx.Algebra.remark.ring.mulPrioritized.Algebra.ctxt.ring",
-      "from": "Algebra.remark.ring.mulPrioritized",
+      "from": "NonUnitalRing.remark.mulPrioritized",
       "to": "Algebra.ctxt.ring",
       "label": "uses_context",
       "metadata": {
@@ -18566,7 +18566,7 @@
     },
     {
       "id": "dep.Algebra.remark.ring.mulPrioritized.Fulcrum.thm",
-      "from": "Algebra.remark.ring.mulPrioritized",
+      "from": "NonUnitalRing.remark.mulPrioritized",
       "to": "Fulcrum.thm",
       "label": "depends",
       "metadata": {
@@ -18579,7 +18579,7 @@
     },
     {
       "id": "ctx.Algebra.thm.grothendieckGroup.Algebra.ctxt.G",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Algebra.ctxt.G",
       "label": "uses_context",
       "metadata": {
@@ -18592,7 +18592,7 @@
     },
     {
       "id": "ctx.Algebra.thm.grothendieckGroup.Algebra.ctxt.mul",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Algebra.ctxt.mul",
       "label": "uses_context",
       "metadata": {
@@ -18605,7 +18605,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Set.Mem",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Set.Mem",
       "label": "depends",
       "metadata": {
@@ -18618,7 +18618,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Fulcrum.thm",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Fulcrum.thm",
       "label": "depends",
       "metadata": {
@@ -20592,7 +20592,7 @@
     {
       "id": "dep.BasicAnalysis.lem.ivtAverage.Algebra.example.nat.add",
       "from": "BasicAnalysis.lem.ivtAverage",
-      "to": "Algebra.example.nat.add",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -21755,7 +21755,7 @@
     {
       "id": "dep.BasicAnalysis.thm.taylorLagrange.Algebra.example.nat.add",
       "from": "BasicAnalysis.thm.taylorLagrange",
-      "to": "Algebra.example.nat.add",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -21911,7 +21911,7 @@
     {
       "id": "dep.BasicAnalysis.thm.taylorPeano.Algebra.example.nat.add",
       "from": "BasicAnalysis.thm.taylorPeano",
-      "to": "Algebra.example.nat.add",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -22483,7 +22483,7 @@
     {
       "id": "dep.ECNU.test.Algebra.example.nat.add",
       "from": "ECNU.test",
-      "to": "Algebra.example.nat.add",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -22626,7 +22626,7 @@
     {
       "id": "dep.ECNU.test.prf1.Algebra.example.nat.add",
       "from": "ECNU.test.prf1",
-      "to": "Algebra.example.nat.add",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -24085,7 +24085,7 @@
     {
       "id": "dep.LinearAlgebra.def.vectorSpace.Algebra.def.field",
       "from": "LinearAlgebra.def.vectorSpace",
-      "to": "Algebra.def.field",
+      "to": "Field",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -24189,7 +24189,7 @@
     {
       "id": "dep.LinearAlgebra.def.vectorSpace.Algebra.example.nat.add",
       "from": "LinearAlgebra.def.vectorSpace",
-      "to": "Algebra.example.nat.add",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -25706,7 +25706,7 @@
     {
       "id": "dep.real-analysis.def.measurable.Algebra.example.nat.add",
       "from": "real-analysis.def.measurable",
-      "to": "Algebra.example.nat.add",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -27600,7 +27600,7 @@
     {
       "id": "dep.Topology.def.metric.Algebra.example.nat.add",
       "from": "Topology.def.metric",
-      "to": "Algebra.example.nat.add",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -28977,7 +28977,7 @@
     },
     {
       "id": "ctx.Algebra.def.field.Algebra.ctxt.ring",
-      "from": "Algebra.def.field",
+      "from": "Field",
       "to": "Algebra.ctxt.ring",
       "label": "uses_context",
       "metadata": {
@@ -28990,7 +28990,7 @@
     },
     {
       "id": "ctx.Algebra.def.ring.divisible.Algebra.ctxt.ring",
-      "from": "Algebra.def.ring.divisible",
+      "from": "DivisionRing",
       "to": "Algebra.ctxt.ring",
       "label": "uses_context",
       "metadata": {
@@ -29432,7 +29432,7 @@
     },
     {
       "id": "dep.Algebra.def.abelian.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.abelian",
+      "from": "CommGroup",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29445,7 +29445,7 @@
     },
     {
       "id": "dep.Algebra.def.group.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.group",
+      "from": "Group",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29458,7 +29458,7 @@
     },
     {
       "id": "dep.Algebra.def.identity.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.identity",
+      "from": "One",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29471,7 +29471,7 @@
     },
     {
       "id": "dep.Algebra.def.integral.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.integral",
+      "from": "IsDomain",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29484,7 +29484,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.monoid",
+      "from": "Monoid",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29497,7 +29497,7 @@
     },
     {
       "id": "dep.Algebra.def.monoid.commutative.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.monoid.commutative",
+      "from": "CommMonoid",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29510,7 +29510,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.ring",
+      "from": "NonUnitalRing",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29523,7 +29523,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.commutative.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.ring.commutative",
+      "from": "CommRing",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29536,7 +29536,7 @@
     },
     {
       "id": "dep.Algebra.def.ring.unital.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.ring.unital",
+      "from": "UnitalRing",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29549,7 +29549,7 @@
     },
     {
       "id": "dep.Algebra.def.semigroup.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.def.semigroup",
+      "from": "Semigroup",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29562,7 +29562,7 @@
     },
     {
       "id": "dep.Algebra.prop.identityUnique.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.prop.identityUnique",
+      "from": "Monoid.prop.identityUnique",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29575,7 +29575,7 @@
     },
     {
       "id": "dep.Algebra.prop.inverseUnique.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.prop.inverseUnique",
+      "from": "Group.prop.inverseUnique",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29588,7 +29588,7 @@
     },
     {
       "id": "dep.Algebra.remark.ring.mulPrioritized.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.remark.ring.mulPrioritized",
+      "from": "NonUnitalRing.remark.mulPrioritized",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29601,7 +29601,7 @@
     },
     {
       "id": "dep.Algebra.thm.grothendieckGroup.Fulcrum.BinaryOperation.apply",
-      "from": "Algebra.thm.grothendieckGroup",
+      "from": "CommMonoid.thm.grothendieckGroup",
       "to": "Fulcrum.BinaryOperation.apply",
       "label": "depends",
       "metadata": {
@@ -29809,7 +29809,7 @@
     },
     {
       "id": "dep.Algebra.def.cycle.Type.def.annotation",
-      "from": "Algebra.def.cycle",
+      "from": "Cycle",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -29822,7 +29822,7 @@
     },
     {
       "id": "dep.Algebra.def.cycle.Type.rl.univ",
-      "from": "Algebra.def.cycle",
+      "from": "Cycle",
       "to": "Type.rl.univ",
       "label": "depends",
       "metadata": {
@@ -29835,7 +29835,7 @@
     },
     {
       "id": "dep.Algebra.def.cycle.Type.def.nat",
-      "from": "Algebra.def.cycle",
+      "from": "Cycle",
       "to": "Type.def.nat",
       "label": "depends",
       "metadata": {
@@ -29848,7 +29848,7 @@
     },
     {
       "id": "dep.Algebra.def.cycle.PSet.ofNat",
-      "from": "Algebra.def.cycle",
+      "from": "Cycle",
       "to": "PSet.ofNat",
       "label": "depends",
       "metadata": {
@@ -29861,7 +29861,7 @@
     },
     {
       "id": "dep.Algebra.def.cycle.Nat",
-      "from": "Algebra.def.cycle",
+      "from": "Cycle",
       "to": "Nat",
       "label": "depends",
       "metadata": {
@@ -29874,7 +29874,7 @@
     },
     {
       "id": "dep.Algebra.def.cycle.Fulcrum.def",
-      "from": "Algebra.def.cycle",
+      "from": "Cycle",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -29887,7 +29887,7 @@
     },
     {
       "id": "dep.Algebra.def.groupIso.Type.def.annotation",
-      "from": "Algebra.def.groupIso",
+      "from": "MulEquiv",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -29900,7 +29900,7 @@
     },
     {
       "id": "dep.Algebra.def.groupIso.Type.rl.univ",
-      "from": "Algebra.def.groupIso",
+      "from": "MulEquiv",
       "to": "Type.rl.univ",
       "label": "depends",
       "metadata": {
@@ -29913,7 +29913,7 @@
     },
     {
       "id": "dep.Algebra.def.groupIso.Type.rl.fun",
-      "from": "Algebra.def.groupIso",
+      "from": "MulEquiv",
       "to": "Type.rl.fun",
       "label": "depends",
       "metadata": {
@@ -29926,7 +29926,7 @@
     },
     {
       "id": "dep.Algebra.def.groupIso.Fulcrum.def",
-      "from": "Algebra.def.groupIso",
+      "from": "MulEquiv",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -29939,7 +29939,7 @@
     },
     {
       "id": "dep.Algebra.def.symmetricGroup.Type.def.annotation",
-      "from": "Algebra.def.symmetricGroup",
+      "from": "Symmetric",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -29952,7 +29952,7 @@
     },
     {
       "id": "dep.Algebra.def.symmetricGroup.Type.rl.univ",
-      "from": "Algebra.def.symmetricGroup",
+      "from": "Symmetric",
       "to": "Type.rl.univ",
       "label": "depends",
       "metadata": {
@@ -29965,7 +29965,7 @@
     },
     {
       "id": "dep.Algebra.def.symmetricGroup.Fulcrum.def",
-      "from": "Algebra.def.symmetricGroup",
+      "from": "Symmetric",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -29978,7 +29978,7 @@
     },
     {
       "id": "dep.Algebra.def.transposition.Fulcrum.def",
-      "from": "Algebra.def.transposition",
+      "from": "Trans",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -29991,7 +29991,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Nat",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Nat",
       "label": "depends",
       "metadata": {
@@ -30004,7 +30004,7 @@
     },
     {
       "id": "dep.Algebra.example.nat.add.Nat.succ",
-      "from": "Algebra.example.nat.add",
+      "from": "Monoid.example.nat.add",
       "to": "Nat.succ",
       "label": "depends",
       "metadata": {
@@ -30017,7 +30017,7 @@
     },
     {
       "id": "dep.Algebra.prop.nat.monoid.Nat",
-      "from": "Algebra.prop.nat.monoid",
+      "from": "Monoid.prop.nat",
       "to": "Nat",
       "label": "depends",
       "metadata": {
@@ -32725,7 +32725,7 @@
     {
       "id": "dep.LinearAlgebra.ctxt.vectorSpace.Algebra.def.field",
       "from": "LinearAlgebra.ctxt.vectorSpace",
-      "to": "Algebra.def.field",
+      "to": "Field",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",
@@ -36000,7 +36000,7 @@
     {
       "id": "dep.Syntax.def.shift-UTLC.Algebra.example.nat.add",
       "from": "Syntax.def.shift-UTLC",
-      "to": "Algebra.example.nat.add",
+      "to": "Monoid.example.nat.add",
       "label": "depends",
       "metadata": {
         "generator": "macro-source-scan",

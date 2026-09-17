@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "CommMonoid.thm.grothendieckGroup",
+    "kind": "theorem",
+    "title": "Grothendieck Group of Commutative Monoid",
+    "content": {
+      "snl": "variable(__list__(CommMonoid(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul),Type.annotation(@$\\sim$,SetRel[authored](Type.prod(G@Algebra.ctxt.G,G@Algebra.ctxt.G),Type.prod(G@Algebra.ctxt.G,G@Algebra.ctxt.G))),def[prop](Set.Mem(,$\\sim$,Prod.mk(,,Prod.mk[authored](,,@a,@b),Prod.mk[authored](,,@c,@d))),,Logic.exists-typed(@m,G@Algebra.ctxt.G,Eq(,Mul.mul[dot](Mul.mul[dot](a,b),m),Mul.mul[dot](Mul.mul[dot](c,d),m))))),theorem(CommGroup(quotient(Type.prod(G@Algebra.ctxt.G,G@Algebra.ctxt.G),$\\sim$),$\\cdot$@Algebra.ctxt.mul)))"
+    },
+    "package": "Algebra",
+    "contribution_info": null,
+    "pointer": null
+  }
+}

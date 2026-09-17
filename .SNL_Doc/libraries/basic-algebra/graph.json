@@ -39,28 +39,28 @@
       "id": "n_semigrp",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.semigroup"
+        "entryId": "Semigroup"
       }
     },
     {
       "id": "n_monoid",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.monoid"
+        "entryId": "Monoid"
       }
     },
     {
       "id": "n_idUnique",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.prop.identityUnique"
+        "entryId": "Monoid.prop.identityUnique"
       }
     },
     {
       "id": "n_group",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.group"
+        "entryId": "Group"
       }
     },
     {
@@ -74,42 +74,42 @@
       "id": "n_hom",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.groupHom"
+        "entryId": "MonoidHom"
       }
     },
     {
       "id": "n_mono",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.groupMono"
+        "entryId": "GroupMono"
       }
     },
     {
       "id": "n_epi",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.groupEpi"
+        "entryId": "GroupEpi"
       }
     },
     {
       "id": "n_iso",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.groupIso"
+        "entryId": "MulEquiv"
       }
     },
     {
       "id": "n_ker",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.kernel"
+        "entryId": "MonoidHom.ker"
       }
     },
     {
       "id": "n_im",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.image"
+        "entryId": "MonoidHom.range"
       }
     },
     {
@@ -123,7 +123,7 @@
       "id": "n_subg",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.subgroup"
+        "entryId": "Subgroup"
       }
     },
     {
@@ -137,28 +137,28 @@
       "id": "n_perm",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.permutation"
+        "entryId": "Perm"
       }
     },
     {
       "id": "n_sym",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.symmetricGroup"
+        "entryId": "Symmetric"
       }
     },
     {
       "id": "n_cycle",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.cycle"
+        "entryId": "Cycle"
       }
     },
     {
       "id": "n_trans",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.transposition"
+        "entryId": "Trans"
       }
     },
     {
@@ -172,21 +172,21 @@
       "id": "n_action",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.groupAction"
+        "entryId": "MulAction"
       }
     },
     {
       "id": "n_orbit",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.orbit"
+        "entryId": "MulAction.orbit"
       }
     },
     {
       "id": "n_stab",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.stabilizer"
+        "entryId": "MulAction.stabilizer"
       }
     },
     {
@@ -207,42 +207,42 @@
       "id": "n_3",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.ring"
+        "entryId": "NonUnitalRing"
       }
     },
     {
       "id": "n_4",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.ring.unital"
+        "entryId": "UnitalRing"
       }
     },
     {
       "id": "n_5",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.ring.commutative"
+        "entryId": "CommRing"
       }
     },
     {
       "id": "n_6",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.ring.divisible"
+        "entryId": "DivisionRing"
       }
     },
     {
       "id": "n_7",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.integral"
+        "entryId": "IsDomain"
       }
     },
     {
       "id": "n_8",
       "label": "Entry",
       "props": {
-        "entryId": "Algebra.def.field"
+        "entryId": "Field"
       }
     }
   ],

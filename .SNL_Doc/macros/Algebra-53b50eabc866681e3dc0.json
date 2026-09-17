@@ -4,22 +4,23 @@
   "schema_version": 1,
   "package": "Algebra",
   "macro": {
-    "description": "交换群的恒等元",
+    "description": "Symmetric group",
     "source": {
       "entries": [
-        "CommGroup"
+        "Symmetric"
       ],
       "urls": []
     },
     "kind": "const",
     "dynamic_arity": false,
+    "tags": [],
     "styles": [
       {
         "style_name": "default",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "0_{#0}",
+          "body": "\\operatorname{Sym}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -39,7 +40,6 @@
         }
       }
     ],
-    "tags": [],
-    "name": "Algebra.Zero"
+    "name": "Symmetric"
   }
 }

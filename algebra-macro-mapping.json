@@ -1,0 +1,1847 @@
+{
+  "format": "snl-algebra-macro-mapping",
+  "version": 1,
+  "meta": {
+    "title": "Algebra 宏包 Mathlib 对齐命名与渲染方案 / Algebra macro-package Mathlib-aligned naming and rendering plan",
+    "repository": "Fulcrum-Notes-SNL",
+    "target_package": "Algebra",
+    "mathlib_version": "v4.28.0",
+    "mathlib_revision": "8f9d9cff6bd728b17a24e163c9402775d9e6a365",
+    "lean_toolchain": "leanprover/lean4:v4.28.0",
+    "governing_documents": [
+      "FMNeco.md",
+      ".SNL_Doc/CONVENTIONS.md",
+      "SNL-CONVENTIONS.md"
+    ],
+    "source_of_truth": "本地 .lake/packages/mathlib @ rev 8f9d9cff6bd728b17a24e163c9402775d9e6a365 的源码声明，非在线文档",
+    "requested_output_path": "~/.dsh/worker-output/algebra-macro-mapping.json",
+    "actual_output_path": "algebra-macro-mapping.json (workspace root; ~/.dsh/worker-output is a read-only mount in this session)"
+  },
+  "core_decisions": [
+    {
+      "id": "D1",
+      "title": "精确对应者取 Mathlib 裸名",
+      "detail": "概念与 Mathlib 常量精确同一时，宏名逐字采用该常量的完整 Lean 名称（含命名空间与大小写），去掉旧的 `Algebra.` 前缀与领域缩写。例：`Algebra.Group` -> `Group`，`Algebra.GrpIso` -> `MulEquiv`。依据 FMNeco『Mathlib 兼容边界』第 1 条与 .SNL_Doc/CONVENTIONS.md §1『Mathlib-identical names』。"
+    },
+    {
+      "id": "D2",
+      "title": "Ring 语义校正（最重要）",
+      "detail": "Mathlib v4.28.0 的 `Ring` 含乘法单位元（`Ring extends Semiring, AddCommGroup, AddGroupWithOne`）。旧 `Algebra.Ring`（不含 1）精确对应 `NonUnitalRing`；旧 `Algebra.UnitalRing` 才是 `Ring`。必须交换映射，否则 `Algebra.Ring` 会冒用 `Ring` 之名指称非含幺环，违反 FMNeco 第 4 条。连带影响：本笔记中文『环』的默认含义变为含幺环。"
+    },
+    {
+      "id": "D3",
+      "title": "IntegralDomain 在 v4.28.0 已不存在",
+      "detail": "Mathlib 只有 Prop mixin `IsDomain`；整环在 Mathlib 中写作 `[CommRing R] [IsDomain R]`。旧 `Algebra.IntegralDomain` 不是单一 Mathlib 常量，故 `same_concept_as_mathlib=false`，需作者在 `IsDomain` 与自有名之间抉择。"
+    },
+    {
+      "id": "D4",
+      "title": "Abelian 不是 Mathlib 常量",
+      "detail": "Mathlib 用 `CommGroup`/`AddCommGroup`。旧 `Algebra.Abelian` 同时覆盖加法与乘法，改名后必须按运算拆成两个宏。"
+    },
+    {
+      "id": "D5",
+      "title": "GrpHom 在 Mathlib 中叫 MonoidHom",
+      "detail": "Mathlib 没有 `GrpHom`；群同态复用 `MonoidHom`（`→*`）。同理群同构是 `MulEquiv`（`≃*`），核/像分别是 `MonoidHom.ker` / `MonoidHom.range`（Mathlib 把『像』命名为 range）。"
+    },
+    {
+      "id": "D6",
+      "title": "Sym 指向 Equiv.Perm，不能取裸名 Sym",
+      "detail": "Mathlib 的 `Sym` 是 `Data/Sym` 的对称幂，与对称群无关。对称群/置换都是 `Equiv.Perm α`，故 `Algebra.Sym` 与 `Algebra.Perm` 合并为 `Equiv.Perm`。"
+    },
+    {
+      "id": "D7",
+      "title": "Mono/Epi 没有专门常量",
+      "detail": "Mathlib 用 `Function.Injective` / `Function.Surjective` 表达单/满同态。`Algebra.GrpMono`/`Algebra.GrpEpi` 若保留『群单同态』措辞就偏离 Mathlib，需用自有名。"
+    },
+    {
+      "id": "D8",
+      "title": "成员宏用类型类字段投影名，不用结构名",
+      "detail": "结构成员宏命名为 `Mul.mul` / `Add.add` / `One.one` / `Zero.zero` / `Inv.inv` / `Neg.neg`，而不是 `Group.mul` / `Ring.add`。理由：Mathlib 中 `Group` 不定义自己的乘法，它继承 `Mul`，真实常量是 `Mul.mul`；按结构命名会与 Mathlib 脱节，且同一运算会在 Group/Monoid/Semigroup 下重复定义。`Add.add`/`Mul.mul` 已由 `BasicOperators` 拥有，Algebra 包只复用不重定义。"
+    },
+    {
+      "id": "D9",
+      "title": "单参数谓词 + text 模式 i18n 渲染",
+      "detail": "类型类谓词统一用一元（作用对象）谓词渲染，模板模式为 `text`，用 i18n 模板给出 `en` 与 `zh-CN`，如 `Group` -> 『#0 是群』/『#0 is a group』。运算/成员宏用 `formula_inline`（语言无关），不参与 i18n。"
+    },
+    {
+      "id": "D10",
+      "title": "条目 ID 与宏名同步",
+      "detail": "按 FMNeco『条目 ID 与宏名同步』，概念类 Entry 的 id 必须与新宏名逐字相同。例：`Algebra.def.group` -> `Group`；`Algebra.def.ring` -> `NonUnitalRing`；`Algebra.def.ring.unital` -> `Ring`。结构性 Entry（sec/subsec/example/remark/context/proof 等）不受影响。"
+    },
+    {
+      "id": "D11",
+      "title": "加法对应一并补齐",
+      "detail": "Mathlib 以 `to_additive` 成对提供加法结构。为避免只做乘法半边，列出 AddSemigroup / AddMonoid / AddCommMonoid / AddGroup / AddCommGroup / AddAction / AddMonoidHom / AddEquiv / AddSubgroup 作为对偶宏。"
+    }
+  ],
+  "member_macro_design": {
+    "principle": "成员/投影宏的命名权属于定义该字段的类型类，而不属于继承它的结构。Mathlib 中 `Group`/`Monoid`/`Semigroup` 都通过 `extends` 复用 `Mul`、`One`、`Inv`；投影常量是 `Mul.mul`、`One.one`、`Inv.inv`。因此不要造 `Group.mul`、`Ring.add`、`Ring.zero`、`Ring.one`。",
+    "group_members": [
+      {
+        "need": "乘法",
+        "macro": "Mul.mul",
+        "render": "#0 · #1",
+        "owner": "BasicOperators（已存在，复用）"
+      },
+      {
+        "need": "单位元",
+        "macro": "One.one",
+        "render": "1 / e / 1_{#0}",
+        "owner": "BasicOperators（建议新增）"
+      },
+      {
+        "need": "逆元",
+        "macro": "Inv.inv",
+        "render": "#0⁻¹",
+        "owner": "BasicOperators（建议新增）"
+      }
+    ],
+    "ring_members": [
+      {
+        "need": "加法",
+        "macro": "Add.add",
+        "render": "#0 + #1",
+        "owner": "BasicOperators（已存在，复用）"
+      },
+      {
+        "need": "乘法",
+        "macro": "Mul.mul",
+        "render": "#0 · #1",
+        "owner": "BasicOperators（已存在，复用）"
+      },
+      {
+        "need": "零元",
+        "macro": "Zero.zero",
+        "render": "0 / 0_{#0}",
+        "owner": "BasicOperators（建议新增）"
+      },
+      {
+        "need": "幺元",
+        "macro": "One.one",
+        "render": "1 / 1_{#0}",
+        "owner": "BasicOperators（建议新增）"
+      },
+      {
+        "need": "加法逆元",
+        "macro": "Neg.neg",
+        "render": "-#0",
+        "owner": "BasicOperators（建议新增）"
+      }
+    ],
+    "hom_members": [
+      {
+        "need": "同态核",
+        "macro": "MonoidHom.ker",
+        "render": "Ker(#0)"
+      },
+      {
+        "need": "同态像",
+        "macro": "MonoidHom.range",
+        "render": "Im(#0)"
+      },
+      {
+        "need": "恒等同态",
+        "macro": "MonoidHom.id",
+        "render": "id_{#0}"
+      }
+    ],
+    "reuse_rule": "CONVENTIONS §1『未命名宏』第 2 类把 `Add.add`/`Sub.sub`/`Mul.mul`/`Div.div` 等初等记号划归 BasicOperators。`One.one`/`Zero.zero`/`Inv.inv`/`Neg.neg` 属同一性质，建议加入 BasicOperators，而不是放进 Algebra。"
+  },
+  "mappings": [
+    {
+      "concept": "Semigroup",
+      "new_macro_name": "Semigroup",
+      "old_macro_name": "Algebra.Semigroup",
+      "old_templates": [
+        "(#0, #1) is a semigroup"
+      ],
+      "mathlib_constant": "Semigroup",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:173",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a semigroup",
+        "zh-CN": "#0 是半群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a semigroup"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是半群"
+            }
+          }
+        }
+      },
+      "notes": "精确对应 Mathlib 根级类。去掉 `Algebra.` 命名空间；旧宏的第二个实参（乘法 `·`）不再是实参，改由成员宏 `Mul.mul` 承载。"
+    },
+    {
+      "concept": "Monoid",
+      "new_macro_name": "Monoid",
+      "old_macro_name": "Algebra.Monoid",
+      "old_templates": [
+        "(#0, #1) is a monoid"
+      ],
+      "mathlib_constant": "Monoid",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:618",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a monoid",
+        "zh-CN": "#0 是幺半群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a monoid"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是幺半群"
+            }
+          }
+        }
+      },
+      "notes": "精确对应。单位元作为成员由 `One.one` 表达。"
+    },
+    {
+      "concept": "CommMonoid",
+      "new_macro_name": "CommMonoid",
+      "old_macro_name": "Algebra.CommMonoid",
+      "old_templates": [
+        "(#0, #1) is a monoid"
+      ],
+      "mathlib_constant": "CommMonoid",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:759",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a commutative monoid",
+        "zh-CN": "#0 是交换幺半群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a commutative monoid"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是交换幺半群"
+            }
+          }
+        }
+      },
+      "notes": "精确对应。旧 description 误写为 'Monoid predicate'，应改为交换幺半群。加法版为 `AddCommMonoid`。"
+    },
+    {
+      "concept": "Group",
+      "new_macro_name": "Group",
+      "old_macro_name": "Algebra.Group",
+      "old_templates": [
+        "(#0, #1) is a group"
+      ],
+      "mathlib_constant": "Group",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:1162",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a group",
+        "zh-CN": "#0 是群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a group"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是群"
+            }
+          }
+        }
+      },
+      "notes": "精确对应；与 Lean 侧 `snl_notation Group => %#0 is a group%` 单参数契约一致。加法版为 `AddGroup`。"
+    },
+    {
+      "concept": "Abelian / Commutative Group",
+      "new_macro_name": "CommGroup",
+      "old_macro_name": "Algebra.Abelian",
+      "old_templates": [
+        "text: Abelian"
+      ],
+      "mathlib_constant": "CommGroup",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:1249",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": false,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a commutative group",
+        "zh-CN": "#0 是交换群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a commutative group"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是交换群"
+            }
+          }
+        }
+      },
+      "notes": "Mathlib 没有 `Abelian` 常量；交换群的常量名是 `CommGroup`（加法版 `AddCommGroup`）。旧宏 `Algebra.Abelian` 同时被用于加法与乘法两种运算，改名后应按运算分别指向 `AddCommGroup` / `CommGroup`，不能再由一个宏兼任。"
+    },
+    {
+      "concept": "Ring (unital)",
+      "new_macro_name": "Ring",
+      "old_macro_name": "Algebra.UnitalRing",
+      "old_templates": [
+        "text: UnitalRing"
+      ],
+      "mathlib_constant": "Ring",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Ring/Defs.lean:146",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a ring",
+        "zh-CN": "#0 是环（含幺）"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a ring"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是环（含幺）"
+            }
+          }
+        }
+      },
+      "notes": "★ 语义校正：Mathlib v4.28.0 的 `Ring` 是含幺环（`extends Semiring, AddCommGroup, AddGroupWithOne`），因此旧 `Algebra.UnitalRing` 才是 `Ring`。注意中文『环』的含义随之改变：改名为 `Ring` 后本笔记的『环』默认含幺。"
+    },
+    {
+      "concept": "Non-unital Ring",
+      "new_macro_name": "NonUnitalRing",
+      "old_macro_name": "Algebra.Ring",
+      "old_templates": [
+        "text: Ring"
+      ],
+      "mathlib_constant": "NonUnitalRing",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Ring/Defs.lean:134",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a non-unital ring",
+        "zh-CN": "#0 是不含幺环"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a non-unital ring"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是不含幺环"
+            }
+          }
+        }
+      },
+      "notes": "★ 语义校正：旧 `Algebra.Ring` 的定义（加法交换群 + 乘法半群 + 分配律）不含乘法单位元，精确对应 Mathlib 的 `NonUnitalRing`，而不是 `Ring`。若强行沿用 `Ring` 会冒充含幺环，违反 FMNeco『不允许语义不同的概念占用已有 Lean 常量的完整名称』。"
+    },
+    {
+      "concept": "Commutative Ring",
+      "new_macro_name": "CommRing",
+      "old_macro_name": "Algebra.CommRing",
+      "old_templates": [
+        "text: CommRing"
+      ],
+      "mathlib_constant": "CommRing",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Ring/Defs.lean:403",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a commutative ring",
+        "zh-CN": "#0 是交换环"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a commutative ring"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是交换环"
+            }
+          }
+        }
+      },
+      "notes": "精确对应（含幺）。加法版 `CommSemiring`。"
+    },
+    {
+      "concept": "Integral Domain",
+      "new_macro_name": "IsDomain",
+      "old_macro_name": "Algebra.IntegralDomain",
+      "old_templates": [
+        "text: IntegralDomain"
+      ],
+      "mathlib_constant": "IsDomain",
+      "mathlib_decl_kind": "class (Prop mixin)",
+      "mathlib_source": "Mathlib/Algebra/Ring/Defs.lean:427",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": false,
+      "action": "rename",
+      "render": {
+        "en": "#0 is an integral domain",
+        "zh-CN": "#0 是整环"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is an integral domain"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是整环"
+            }
+          }
+        }
+      },
+      "notes": "★ Mathlib v4.28.0 已不存在 `IntegralDomain` 类，只有 Prop mixin `IsDomain`（`[Semiring α]` 上要求 `IsCancelMulZero` + `Nontrivial`）。Mathlib 表达『整环』= `[CommRing R] [IsDomain R]`，没有单一常量。若本笔记坚持用一个宏指称『交换含幺无零因子环』，则应取自有名（如 `IntegralDomain`）并在备注中声明它不是 Mathlib 常量；若接受 Mathlib 的拆分，则用 `IsDomain` 并另行声明 `CommRing`/`Ring`。"
+    },
+    {
+      "concept": "Division Ring / Skew-field",
+      "new_macro_name": "DivisionRing",
+      "old_macro_name": "Algebra.DivRing",
+      "old_templates": [
+        "text: DivRing"
+      ],
+      "mathlib_constant": "DivisionRing",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Field/Defs.lean:116",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a division ring",
+        "zh-CN": "#0 是可除环（体）"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a division ring"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是可除环（体）"
+            }
+          }
+        }
+      },
+      "notes": "精确对应；Mathlib 名称为 `DivisionRing`，不存在 `DivRing`。加法版无（加法结构不构成除环）。"
+    },
+    {
+      "concept": "Field",
+      "new_macro_name": "Field",
+      "old_macro_name": "Algebra.Field",
+      "old_templates": [
+        "text: Field"
+      ],
+      "mathlib_constant": "Field",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Field/Defs.lean:180",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a field",
+        "zh-CN": "#0 是域"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a field"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是域"
+            }
+          }
+        }
+      },
+      "notes": "精确对应，且与 Lean 侧 `snl_notation Field => %#0 is a field%` 一致。注意旧宏 `Algebra.Field` 的 `source.entries` 误指 `Algebra.def.ring`，应为 `Algebra.def.field`。"
+    },
+    {
+      "concept": "Group Homomorphism",
+      "new_macro_name": "MonoidHom",
+      "old_macro_name": "Algebra.GrpHom",
+      "old_templates": [
+        "text: Hom"
+      ],
+      "mathlib_constant": "MonoidHom",
+      "mathlib_decl_kind": "structure",
+      "mathlib_source": "Mathlib/Algebra/Group/Hom/Defs.lean:366",
+      "role": "type",
+      "arity": 2,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 →* #1 (monoid homomorphism)",
+        "zh-CN": "#0 →* #1（幺半群同态）"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\to^* #1"
+        }
+      },
+      "alt_styles": [
+        {
+          "style_name": "predicate",
+          "template": {
+            "type": "i18n",
+            "default_language": "en",
+            "values": {
+              "en": {
+                "mode": "text",
+                "body": "#0 is a homomorphism from #1 to #2"
+              },
+              "zh-CN": {
+                "mode": "text",
+                "body": "#0 是 #1 到 #2 的同态"
+              }
+            }
+          }
+        }
+      ],
+      "notes": "Mathlib 没有 `GrpHom`：群同态复用 `MonoidHom`（`map_one` + `map_mul`，记号 `→*`）。旧条目 `Algebra.def.groupHom` 的定义（f(e)=e 且 f(ab)=f(a)f(b)）与 `MonoidHom` 精确一致。加法版 `AddMonoidHom`；环版 `RingHom`。"
+    },
+    {
+      "concept": "Group Monomorphism",
+      "new_macro_name": "Function.Injective",
+      "old_macro_name": "Algebra.GrpMono",
+      "old_templates": [
+        "text: Mono"
+      ],
+      "mathlib_constant": "Function.Injective",
+      "mathlib_decl_kind": "def (Prop)",
+      "mathlib_source": "Init/Data/Function.lean:50",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": false,
+      "action": "rename",
+      "render": {
+        "en": "#0 is injective",
+        "zh-CN": "#0 是单射"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is injective"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是单射"
+            }
+          }
+        }
+      },
+      "alternatives": [
+        "CategoryTheory.Mono (范畴论单态射，需 CategoryTheory 语境)",
+        "自有名 GrpMono（若要保持『群单同态』措辞，但不对齐 Mathlib）"
+      ],
+      "notes": "Mathlib 没有 `GrpMono` 常量。具体群同态的单性直接用 `Function.Injective`（函数类型 `G →* H` 已携带群同态信息）。若要保留『群单同态』这一本书术语，必须用自有名（不推荐，违反裸名对齐）。"
+    },
+    {
+      "concept": "Group Epimorphism",
+      "new_macro_name": "Function.Surjective",
+      "old_macro_name": "Algebra.GrpEpi",
+      "old_templates": [
+        "text: Epi"
+      ],
+      "mathlib_constant": "Function.Surjective",
+      "mathlib_decl_kind": "def (Prop)",
+      "mathlib_source": "Init/Data/Function.lean (与 Injective 同文件)",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": false,
+      "action": "rename",
+      "render": {
+        "en": "#0 is surjective",
+        "zh-CN": "#0 是满射"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is surjective"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是满射"
+            }
+          }
+        }
+      },
+      "alternatives": [
+        "CategoryTheory.Epi",
+        "自有名 GrpEpi"
+      ],
+      "notes": "同 `GrpMono`：Mathlib 用 `Function.Surjective` 表达满同态，没有 `GrpEpi`。"
+    },
+    {
+      "concept": "Group Isomorphism",
+      "new_macro_name": "MulEquiv",
+      "old_macro_name": "Algebra.GrpIso",
+      "old_templates": [
+        "text: Iso"
+      ],
+      "mathlib_constant": "MulEquiv",
+      "mathlib_decl_kind": "structure",
+      "mathlib_source": "Mathlib/Algebra/Group/Equiv/Defs.lean:75",
+      "role": "type",
+      "arity": 2,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 ≃* #1 (multiplicative equivalence)",
+        "zh-CN": "#0 ≃* #1（乘性等价）"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\simeq^* #1"
+        }
+      },
+      "notes": "精确对应；群同构即乘性等价 `MulEquiv`（记号 `≃*`）。加法版 `AddEquiv`（`≃+`），环版 `RingEquiv`（`≃+*`）。"
+    },
+    {
+      "concept": "Kernel of a Homomorphism",
+      "new_macro_name": "MonoidHom.ker",
+      "old_macro_name": "Algebra.GrpKer",
+      "old_templates": [
+        "formula: \\operatorname{Ker}"
+      ],
+      "mathlib_constant": "MonoidHom.ker",
+      "mathlib_decl_kind": "def",
+      "mathlib_source": "Mathlib/Algebra/Group/Subgroup/Ker.lean:218",
+      "role": "operation",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "the kernel of #0",
+        "zh-CN": "#0 的核"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Ker}(#0)"
+        }
+      },
+      "notes": "精确对应。环同态核为 `RingHom.ker`，加法为 `AddMonoidHom.ker`。"
+    },
+    {
+      "concept": "Image of a Homomorphism",
+      "new_macro_name": "MonoidHom.range",
+      "old_macro_name": "Algebra.GrpIm",
+      "old_templates": [
+        "formula: \\operatorname{Im}"
+      ],
+      "mathlib_constant": "MonoidHom.range",
+      "mathlib_decl_kind": "def",
+      "mathlib_source": "Mathlib/Algebra/Group/Subgroup/Ker.lean:65",
+      "role": "operation",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "the image (range) of #0",
+        "zh-CN": "#0 的像"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Im}(#0)"
+        }
+      },
+      "notes": "★ Mathlib 把同态的『像』命名为 `range`，不是 `image`；`Set.image` 是集合像。故用 `MonoidHom.range`。环同态像为 `RingHom.range`。"
+    },
+    {
+      "concept": "Subgroup",
+      "new_macro_name": "Subgroup",
+      "old_macro_name": "Algebra.Subgroup",
+      "old_templates": [
+        "formula: #0 \\leqslant #1",
+        "text: Subgroup"
+      ],
+      "mathlib_constant": "Subgroup",
+      "mathlib_decl_kind": "structure",
+      "mathlib_source": "Mathlib/Algebra/Group/Subgroup/Defs.lean:300",
+      "role": "type",
+      "arity": 1,
+      "same_concept_as_mathlib": false,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a subgroup of #1",
+        "zh-CN": "#0 是 #1 的子群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a subgroup of #1"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是 #1 的子群"
+            }
+          }
+        }
+      },
+      "alt_styles": [
+        {
+          "style_name": "type",
+          "template": {
+            "type": "i18n",
+            "default_language": "en",
+            "values": {
+              "en": {
+                "mode": "text",
+                "body": "subgroups of #0"
+              },
+              "zh-CN": {
+                "mode": "text",
+                "body": "#0 的子群"
+              }
+            }
+          }
+        }
+      ],
+      "notes": "★ 语义形态不同：Mathlib 的 `Subgroup G` 是『G 的子群』这一**捆绑结构类型**，`H : Subgroup G`；旧 `Algebra.Subgroup(H, G)` 是二元谓词。改名后默认样式保留二元谓词读法，另设 `type` 样式读作『G 的子群』。归属仍为代数理论，只是实参次序需在迁移时逐条核对。"
+    },
+    {
+      "concept": "Group Action",
+      "new_macro_name": "MulAction",
+      "old_macro_name": "Algebra.GrpAction",
+      "old_templates": [
+        "text: Action"
+      ],
+      "mathlib_constant": "MulAction",
+      "mathlib_decl_kind": "class",
+      "mathlib_source": "Mathlib/Algebra/Group/Action/Defs.lean:134",
+      "role": "predicate",
+      "arity": 2,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 acts on #1",
+        "zh-CN": "#0 作用在 #1 上"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 acts on #1"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 作用在 #1 上"
+            }
+          }
+        }
+      },
+      "notes": "精确对应（`MulAction G α`，底层 `SMul.smul` 记号 `g • x`）。旧宏在条目中是 0 元谓词、依赖语境中的 alpha；迁移时应显式给出作用群 G 与集合 α 两个实参。加法版 `AddAction`。"
+    },
+    {
+      "concept": "Orbit",
+      "new_macro_name": "MulAction.orbit",
+      "old_macro_name": "Algebra.Orb",
+      "old_templates": [
+        "formula: \\operatorname{Orb}"
+      ],
+      "mathlib_constant": "MulAction.orbit",
+      "mathlib_decl_kind": "def",
+      "mathlib_source": "Mathlib/GroupTheory/GroupAction/Defs.lean:49",
+      "role": "operation",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "the orbit of #0",
+        "zh-CN": "#0 的轨道"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Orb}(#0)"
+        }
+      },
+      "notes": "精确对应；作用群/集合由语境或 `MulAction` 提供。"
+    },
+    {
+      "concept": "Stabilizer",
+      "new_macro_name": "MulAction.stabilizer",
+      "old_macro_name": "Algebra.Stab",
+      "old_templates": [
+        "formula: \\operatorname{Stab}"
+      ],
+      "mathlib_constant": "MulAction.stabilizer",
+      "mathlib_decl_kind": "def",
+      "mathlib_source": "Mathlib/GroupTheory/GroupAction/Defs.lean:506",
+      "role": "operation",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "the stabilizer of #0",
+        "zh-CN": "#0 的稳定子群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Stab}(#0)"
+        }
+      },
+      "notes": "精确对应，返回 `Subgroup G`。"
+    },
+    {
+      "concept": "Symmetric Group / Permutation",
+      "new_macro_name": "Equiv.Perm",
+      "old_macro_name": [
+        "Algebra.Sym",
+        "Algebra.Perm"
+      ],
+      "old_templates": [
+        "formula: \\operatorname{Sym}",
+        "text: Perm"
+      ],
+      "mathlib_constant": "Equiv.Perm",
+      "mathlib_decl_kind": "abbrev",
+      "mathlib_source": "Mathlib/Logic/Equiv/Defs.lean:98",
+      "role": "type",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "merge",
+      "render": {
+        "en": "permutations of #0 (symmetric group)",
+        "zh-CN": "#0 上的置换群（对称群）"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "the symmetric group on #0"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 上的对称群"
+            }
+          }
+        }
+      },
+      "alt_styles": [
+        {
+          "style_name": "predicate",
+          "template": {
+            "type": "i18n",
+            "default_language": "en",
+            "values": {
+              "en": {
+                "mode": "text",
+                "body": "#0 is a permutation of #1"
+              },
+              "zh-CN": {
+                "mode": "text",
+                "body": "#0 是 #1 的置换"
+              }
+            }
+          }
+        },
+        {
+          "style_name": "notation",
+          "template": {
+            "mode": "formula_inline",
+            "body": "#0 \\simeq #0"
+          }
+        }
+      ],
+      "notes": "★ 合并：`Algebra.Sym`（对称群）与 `Algebra.Perm`（置换）是同一 Mathlib 常量 `Equiv.Perm α`（`α ≃ α`）。Mathlib 的 `Sym` 是 `Data/Sym` 的**对称幂**，语义不同，绝不能使用裸名 `Sym`。"
+    },
+    {
+      "concept": "Cycle",
+      "new_macro_name": "Equiv.Perm.IsCycle",
+      "old_macro_name": "Algebra.Cycle",
+      "old_templates": [
+        "text: Cycle"
+      ],
+      "mathlib_constant": "Equiv.Perm.IsCycle",
+      "mathlib_decl_kind": "def (Prop)",
+      "mathlib_source": "Mathlib/GroupTheory/Perm/Cycle/Basic.lean:232",
+      "role": "predicate",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0 is a cycle",
+        "zh-CN": "#0 是一个轮换"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a cycle"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是一个轮换"
+            }
+          }
+        }
+      },
+      "notes": "精确对应（`IsCycle (f : Perm α)`）。"
+    },
+    {
+      "concept": "Transposition",
+      "new_macro_name": "Equiv.swap",
+      "old_macro_name": "Algebra.Trans",
+      "old_templates": [
+        "text: Trans"
+      ],
+      "mathlib_constant": "Equiv.swap",
+      "mathlib_decl_kind": "def",
+      "mathlib_source": "Mathlib/Logic/Equiv/Basic.lean:631",
+      "role": "operation",
+      "arity": 2,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "the transposition swapping #0 and #1",
+        "zh-CN": "交换 #0 与 #1 的对换"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{swap}(#0,#1)"
+        }
+      },
+      "notes": "精确对应；Mathlib 的 `Equiv.swap a b` 即交换 a、b 的对换，需要 `[DecidableEq α]`。"
+    },
+    {
+      "concept": "Binary operation (multiplication)",
+      "new_macro_name": "Mul.mul",
+      "old_macro_name": "Algebra.mul",
+      "old_templates": [
+        "formula: #0 \\cdot #1",
+        "formula: #0#1"
+      ],
+      "mathlib_constant": "Mul.mul",
+      "mathlib_decl_kind": "class projection",
+      "mathlib_source": "Init/Prelude.lean:1496 (class Mul at :1494)",
+      "role": "member",
+      "arity": 2,
+      "same_concept_as_mathlib": true,
+      "action": "merge",
+      "render": {
+        "en": "#0 · #1",
+        "zh-CN": "#0 · #1"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\cdot #1"
+        }
+      },
+      "alt_styles": [
+        {
+          "style_name": "juxt",
+          "template": {
+            "mode": "formula_inline",
+            "body": "#0#1"
+          }
+        },
+        {
+          "style_name": "star",
+          "template": {
+            "mode": "formula_inline",
+            "body": "#0 * #1"
+          }
+        }
+      ],
+      "notes": "★ 合并进 `BasicOperators` 已有的 `Mul.mul`（CONVENTIONS §1 未命名宏第 2 类：初等记号），Algebra 包不得另建同义宏。乘法是 `Mul` 类字段，不是 `Group` 的成员，故不叫 `Group.mul`。"
+    },
+    {
+      "concept": "Identity element",
+      "new_macro_name": "One.one",
+      "old_macro_name": [
+        "Algebra.e",
+        "Algebra.Id"
+      ],
+      "old_templates": [
+        "formula: e",
+        "formula: 1_{#0}",
+        "formula: \\mathrm{id}_{#0}",
+        "formula: \\mathrm{Id}_{#0}"
+      ],
+      "mathlib_constant": "One.one",
+      "mathlib_decl_kind": "class projection",
+      "mathlib_source": "Init/Prelude.lean:1481 (class One at :1479)",
+      "role": "member",
+      "arity": 0,
+      "same_concept_as_mathlib": true,
+      "action": "merge",
+      "render": {
+        "en": "1 (the identity element)",
+        "zh-CN": "1（单位元）"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "1"
+        }
+      },
+      "alt_styles": [
+        {
+          "style_name": "letter",
+          "template": {
+            "mode": "formula_inline",
+            "body": "e"
+          }
+        },
+        {
+          "style_name": "typed",
+          "template": {
+            "mode": "formula_inline",
+            "body": "1_{#0}"
+          }
+        }
+      ],
+      "notes": "★ 合并：`Algebra.e`（书中的单位元记号 e）与 `Algebra.Id`（`1_{#0}`/`id_{#0}`）都是幺元，Mathlib 常量为 `One.one`，保留 `e` 与 `1_{#0}` 两个样式即可。注意 `Algebra.Id` 的 `\\mathrm{id}` 样式有歧义（可能被读作恒等映射 `MonoidHom.id`）；若确指恒等映射应改用 `MonoidHom.id`。"
+    },
+    {
+      "concept": "Zero / additive identity",
+      "new_macro_name": "Zero.zero",
+      "old_macro_name": "Algebra.Zero",
+      "old_templates": [
+        "formula: 0_{#0}"
+      ],
+      "mathlib_constant": "Zero.zero",
+      "mathlib_decl_kind": "class projection",
+      "mathlib_source": "Init/Prelude.lean:1476 (class Zero at :1474)",
+      "role": "member",
+      "arity": 0,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "0 (the additive identity)",
+        "zh-CN": "0（加法单位元）"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "0"
+        }
+      },
+      "alt_styles": [
+        {
+          "style_name": "typed",
+          "template": {
+            "mode": "formula_inline",
+            "body": "0_{#0}"
+          }
+        }
+      ],
+      "notes": "精确对应。旧 description『交换群的恒等元』措辞有误，应为『加法单位元/零元』。"
+    },
+    {
+      "concept": "Inverse element",
+      "new_macro_name": "Inv.inv",
+      "old_macro_name": "Algebra.inv",
+      "old_templates": [
+        "formula: {#0}^{-1}"
+      ],
+      "mathlib_constant": "Inv.inv",
+      "mathlib_decl_kind": "class projection",
+      "mathlib_source": "Init/Prelude.lean:1519 (class Inv at :1516)",
+      "role": "member",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "rename",
+      "render": {
+        "en": "#0⁻¹",
+        "zh-CN": "#0⁻¹"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "{#0}^{-1}"
+        }
+      },
+      "notes": "精确对应。加法逆元为 `Neg.neg`（`-#0`）。"
+    },
+    {
+      "concept": "Addition",
+      "new_macro_name": "Add.add",
+      "old_macro_name": null,
+      "old_templates": [],
+      "mathlib_constant": "Add.add",
+      "mathlib_decl_kind": "class projection",
+      "mathlib_source": "Init/Prelude.lean:1486 (class Add at :1484)",
+      "role": "member",
+      "arity": 2,
+      "same_concept_as_mathlib": true,
+      "action": "reuse",
+      "render": {
+        "en": "#0 + #1",
+        "zh-CN": "#0 + #1"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 + #1"
+        }
+      },
+      "notes": "`BasicOperators` 已拥有同名宏，直接复用，不要在 Algebra 包重定义。环的加法成员即此。"
+    },
+    {
+      "concept": "Negation",
+      "new_macro_name": "Neg.neg",
+      "old_macro_name": null,
+      "old_templates": [],
+      "mathlib_constant": "Neg.neg",
+      "mathlib_decl_kind": "class projection",
+      "mathlib_source": "Init/Prelude.lean (class Neg)",
+      "role": "member",
+      "arity": 1,
+      "same_concept_as_mathlib": true,
+      "action": "new",
+      "render": {
+        "en": "-#0",
+        "zh-CN": "-#0"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "-#0"
+        }
+      },
+      "notes": "环中加法逆元的成员宏；原 Algebra 包缺失。"
+    }
+  ],
+  "additional_mathlib_siblings": [
+    {
+      "concept": "Semiring",
+      "new_macro_name": "Semiring",
+      "mathlib_constant": "Semiring",
+      "mathlib_source": "Mathlib/Algebra/Ring/Defs.lean:143",
+      "role": "predicate",
+      "arity": 1,
+      "render": {
+        "en": "#0 is a semiring",
+        "zh-CN": "#0 是半环"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a semiring"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是半环"
+            }
+          }
+        }
+      },
+      "notes": "Lean 侧已注册 `snl_notation Semiring`；旧 SNL 宏包缺失，建议补上以覆盖 Ring 的父类。"
+    },
+    {
+      "concept": "Ring Homomorphism",
+      "new_macro_name": "RingHom",
+      "mathlib_constant": "RingHom",
+      "mathlib_source": "Mathlib/Algebra/Ring/Hom/Defs.lean:293",
+      "role": "type",
+      "arity": 2,
+      "render": {
+        "en": "#0 →+* #1",
+        "zh-CN": "#0 →+* #1"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\to^{+*} #1"
+        }
+      },
+      "notes": "环同态；与 `MonoidHom` 平行。"
+    },
+    {
+      "concept": "Ring Isomorphism",
+      "new_macro_name": "RingEquiv",
+      "mathlib_constant": "RingEquiv",
+      "mathlib_source": "Mathlib/Algebra/Ring/Equiv.lean:68",
+      "role": "type",
+      "arity": 2,
+      "render": {
+        "en": "#0 ≃+* #1",
+        "zh-CN": "#0 ≃+* #1"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\simeq^{+*} #1"
+        }
+      },
+      "notes": "环同构。"
+    },
+    {
+      "concept": "Multiplicative Hom (no 1)",
+      "new_macro_name": "MulHom",
+      "mathlib_constant": "MulHom",
+      "mathlib_source": "Mathlib/Algebra/Group/Hom/Defs.lean:294",
+      "role": "type",
+      "arity": 2,
+      "render": {
+        "en": "#0 →ₙ* #1",
+        "zh-CN": "#0 →ₙ* #1"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\to_{\\mathsf{n}}^* #1"
+        }
+      },
+      "notes": "仅保乘法的同态；若本笔记的『半群同态』需要，用它而非 MonoidHom。"
+    },
+    {
+      "concept": "Scalar action (smul)",
+      "new_macro_name": "SMul.smul",
+      "mathlib_constant": "SMul.smul",
+      "mathlib_source": "Init/Prelude.lean:1571 (class SMul at :1568)",
+      "role": "member",
+      "arity": 2,
+      "render": {
+        "en": "#0 • #1",
+        "zh-CN": "#0 • #1"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\cdot #1"
+        }
+      },
+      "alt_styles": [
+        {
+          "style_name": "bullet",
+          "template": {
+            "mode": "formula_inline",
+            "body": "#0 \\bullet #1"
+          }
+        }
+      ],
+      "notes": "群作用的底层成员（Mathlib 记号 `g • x`）。"
+    }
+  ],
+  "additive_counterparts": [
+    {
+      "concept": "AddSemigroup",
+      "new_macro_name": "AddSemigroup",
+      "mathlib_constant": "AddSemigroup",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:179",
+      "role": "predicate",
+      "arity": 1,
+      "render": {
+        "en": "#0 is an additive semigroup",
+        "zh-CN": "#0 是加法半群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is an additive semigroup"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是加法半群"
+            }
+          }
+        }
+      },
+      "notes": "Mathlib `to_additive` 生成的加法对应；Lean 侧已注册，SNL 宏包应补齐。"
+    },
+    {
+      "concept": "AddCommSemigroup",
+      "new_macro_name": "AddCommSemigroup",
+      "mathlib_constant": "AddCommSemigroup",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:215",
+      "role": "predicate",
+      "arity": 1,
+      "render": {
+        "en": "#0 is a commutative additive semigroup",
+        "zh-CN": "#0 是交换加法半群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a commutative additive semigroup"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是交换加法半群"
+            }
+          }
+        }
+      },
+      "notes": "Mathlib `to_additive` 生成的加法对应；Lean 侧已注册，SNL 宏包应补齐。"
+    },
+    {
+      "concept": "AddMonoid",
+      "new_macro_name": "AddMonoid",
+      "mathlib_constant": "AddMonoid",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:604",
+      "role": "predicate",
+      "arity": 1,
+      "render": {
+        "en": "#0 is an additive monoid",
+        "zh-CN": "#0 是加法幺半群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is an additive monoid"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是加法幺半群"
+            }
+          }
+        }
+      },
+      "notes": "Mathlib `to_additive` 生成的加法对应；Lean 侧已注册，SNL 宏包应补齐。"
+    },
+    {
+      "concept": "AddCommMonoid",
+      "new_macro_name": "AddCommMonoid",
+      "mathlib_constant": "AddCommMonoid",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:755",
+      "role": "predicate",
+      "arity": 1,
+      "render": {
+        "en": "#0 is a commutative additive monoid",
+        "zh-CN": "#0 是交换加法幺半群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a commutative additive monoid"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是交换加法幺半群"
+            }
+          }
+        }
+      },
+      "notes": "Mathlib `to_additive` 生成的加法对应；Lean 侧已注册，SNL 宏包应补齐。"
+    },
+    {
+      "concept": "AddGroup",
+      "new_macro_name": "AddGroup",
+      "mathlib_constant": "AddGroup",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:1173",
+      "role": "predicate",
+      "arity": 1,
+      "render": {
+        "en": "#0 is an additive group",
+        "zh-CN": "#0 是加法群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is an additive group"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是加法群"
+            }
+          }
+        }
+      },
+      "notes": "Mathlib `to_additive` 生成的加法对应；Lean 侧已注册，SNL 宏包应补齐。"
+    },
+    {
+      "concept": "AddCommGroup",
+      "new_macro_name": "AddCommGroup",
+      "mathlib_constant": "AddCommGroup",
+      "mathlib_source": "Mathlib/Algebra/Group/Defs.lean:1244",
+      "role": "predicate",
+      "arity": 1,
+      "render": {
+        "en": "#0 is a commutative additive group",
+        "zh-CN": "#0 是交换加法群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is a commutative additive group"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是交换加法群"
+            }
+          }
+        }
+      },
+      "notes": "Mathlib `to_additive` 生成的加法对应；Lean 侧已注册，SNL 宏包应补齐。"
+    },
+    {
+      "concept": "AddMonoidHom",
+      "new_macro_name": "AddMonoidHom",
+      "mathlib_constant": "AddMonoidHom",
+      "mathlib_source": "Mathlib/Algebra/Group/Hom/Defs.lean:144",
+      "role": "type",
+      "arity": 2,
+      "render": {
+        "en": "#0 →+ #1",
+        "zh-CN": "#0 →+ #1"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\to^+ #1"
+        }
+      },
+      "notes": "加法幺半群同态；加法版 `MonoidHom`。"
+    },
+    {
+      "concept": "AddEquiv",
+      "new_macro_name": "AddEquiv",
+      "mathlib_constant": "AddEquiv",
+      "mathlib_source": "Mathlib/Algebra/Group/Equiv/Defs.lean:58",
+      "role": "type",
+      "arity": 2,
+      "render": {
+        "en": "#0 ≃+ #1",
+        "zh-CN": "#0 ≃+ #1"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\simeq^+ #1"
+        }
+      },
+      "notes": "加法等价；加法版 `MulEquiv`。"
+    },
+    {
+      "concept": "AddAction",
+      "new_macro_name": "AddAction",
+      "mathlib_constant": "AddAction",
+      "mathlib_source": "Mathlib/Algebra/Group/Action/Defs.lean:118",
+      "role": "predicate",
+      "arity": 2,
+      "render": {
+        "en": "#0 acts additively on #1",
+        "zh-CN": "#0 加性作用在 #1 上"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 acts additively on #1"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 加性作用在 #1 上"
+            }
+          }
+        }
+      },
+      "notes": "加法群作用；加法版 `MulAction`。"
+    },
+    {
+      "concept": "AddSubgroup",
+      "new_macro_name": "AddSubgroup",
+      "mathlib_constant": "AddSubgroup",
+      "mathlib_source": "Mathlib/Algebra/Group/Subgroup/Defs.lean (to_additive)",
+      "role": "type",
+      "arity": 1,
+      "render": {
+        "en": "#0 is an additive subgroup of #1",
+        "zh-CN": "#0 是 #1 的加法子群"
+      },
+      "style": {
+        "style_name": "default",
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is an additive subgroup of #1"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 是 #1 的加法子群"
+            }
+          }
+        }
+      },
+      "notes": "加法子群；加法版 `Subgroup`。"
+    }
+  ],
+  "legacy_macro_inventory": [
+    {
+      "old_macro_name": "Algebra.Semigroup",
+      "new_macro_name": "Semigroup",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Monoid",
+      "new_macro_name": "Monoid",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.CommMonoid",
+      "new_macro_name": "CommMonoid",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Group",
+      "new_macro_name": "Group",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Abelian",
+      "new_macro_name": "CommGroup",
+      "action": "rename/split-to-additive"
+    },
+    {
+      "old_macro_name": "Algebra.GrpHom",
+      "new_macro_name": "MonoidHom",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.GrpMono",
+      "new_macro_name": "Function.Injective",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.GrpEpi",
+      "new_macro_name": "Function.Surjective",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.GrpIso",
+      "new_macro_name": "MulEquiv",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.GrpKer",
+      "new_macro_name": "MonoidHom.ker",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.GrpIm",
+      "new_macro_name": "MonoidHom.range",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Subgroup",
+      "new_macro_name": "Subgroup",
+      "action": "rename (predicate -> bundle)"
+    },
+    {
+      "old_macro_name": "Algebra.GrpAction",
+      "new_macro_name": "MulAction",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Orb",
+      "new_macro_name": "MulAction.orbit",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Stab",
+      "new_macro_name": "MulAction.stabilizer",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Sym",
+      "new_macro_name": "Equiv.Perm",
+      "action": "merge"
+    },
+    {
+      "old_macro_name": "Algebra.Perm",
+      "new_macro_name": "Equiv.Perm",
+      "action": "merge"
+    },
+    {
+      "old_macro_name": "Algebra.Cycle",
+      "new_macro_name": "Equiv.Perm.IsCycle",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Trans",
+      "new_macro_name": "Equiv.swap",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Ring",
+      "new_macro_name": "NonUnitalRing",
+      "action": "semantic correction"
+    },
+    {
+      "old_macro_name": "Algebra.UnitalRing",
+      "new_macro_name": "Ring",
+      "action": "semantic correction"
+    },
+    {
+      "old_macro_name": "Algebra.CommRing",
+      "new_macro_name": "CommRing",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.IntegralDomain",
+      "new_macro_name": "IsDomain",
+      "action": "semantic correction"
+    },
+    {
+      "old_macro_name": "Algebra.DivRing",
+      "new_macro_name": "DivisionRing",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.Field",
+      "new_macro_name": "Field",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.mul",
+      "new_macro_name": "Mul.mul",
+      "action": "merge into BasicOperators"
+    },
+    {
+      "old_macro_name": "Algebra.inv",
+      "new_macro_name": "Inv.inv",
+      "action": "rename"
+    },
+    {
+      "old_macro_name": "Algebra.e",
+      "new_macro_name": "One.one",
+      "action": "merge"
+    },
+    {
+      "old_macro_name": "Algebra.Id",
+      "new_macro_name": "One.one",
+      "action": "merge"
+    },
+    {
+      "old_macro_name": "Algebra.Zero",
+      "new_macro_name": "Zero.zero",
+      "action": "rename"
+    }
+  ],
+  "open_questions": [
+    "GrpMono/GrpEpi：采用 Mathlib 的 `Function.Injective`/`Function.Surjective`，还是保留自有名 `GrpMono`/`GrpEpi` 以维持『群单同态』措辞？（Mathlib 无对应常量，二者不能兼得。）",
+    "IntegralDomain：用 `IsDomain`（需同时声明 CommRing）还是保留自有名 `IntegralDomain` 指称『交换含幺无零因子环』？",
+    "『环』的中文默认含义：接受 Mathlib 约定（Ring 含幺、NonUnitalRing 不含幺），还是保留旧书约定（环不含幺）？本方案取前者。",
+    "Subgroup：默认渲染保留旧二元谓词『#0 是 #1 的子群』，还是切换到 Mathlib 的捆绑类型读法『#0 的子群』？",
+    "MulAction：旧条目把它当 0 元谓词（依赖语境），新方案要求 2 元（G, α）；迁移时需逐条补实参。",
+    "Algebra.Id 的第三种样式 `\\mathrm{id}_{#0}` 是否其实指恒等映射 `MonoidHom.id`？若如此应拆出。",
+    "新增的 `One.one`/`Zero.zero`/`Inv.inv`/`Neg.neg` 归属 BasicOperators 还是 Algebra 包，需作者确认。"
+  ],
+  "references": [
+    {
+      "what": "Mathlib v4.28.0 群/环/域定义",
+      "path": ".lake/packages/mathlib/Mathlib/Algebra/Group/Defs.lean, Mathlib/Algebra/Ring/Defs.lean:134-146, Mathlib/Algebra/Field/Defs.lean:116-180"
+    },
+    {
+      "what": "Mathlib 同态/等价",
+      "path": "Mathlib/Algebra/Group/Hom/Defs.lean:144,294,366; Mathlib/Algebra/Group/Equiv/Defs.lean:58,75; Mathlib/Algebra/Ring/Hom/Defs.lean:293; Mathlib/Algebra/Ring/Equiv.lean:68"
+    },
+    {
+      "what": "Mathlib 核与像",
+      "path": "Mathlib/Algebra/Group/Subgroup/Ker.lean:65 (range), :218 (ker); Mathlib/Algebra/Ring/Subring/Basic.lean:253 (RingHom.range)"
+    },
+    {
+      "what": "Mathlib 群作用/置换",
+      "path": "Mathlib/Algebra/Group/Action/Defs.lean:118,134; Mathlib/GroupTheory/GroupAction/Defs.lean:49,506; Mathlib/Logic/Equiv/Defs.lean:98; Mathlib/Logic/Equiv/Basic.lean:631; Mathlib/GroupTheory/Perm/Cycle/Basic.lean:232"
+    },
+    {
+      "what": "Lean 核心类字段",
+      "path": "Init/Prelude.lean:1474-1519 (Zero/One/Add/Mul/Inv), :1568 (SMul); Init/Data/Function.lean:50 (Injective)"
+    },
+    {
+      "what": "仓库规范",
+      "path": "FMNeco.md; .SNL_Doc/CONVENTIONS.md; SNL-CONVENTIONS.md"
+    },
+    {
+      "what": "既有先例（拓扑包同型迁移）",
+      "path": "git log: b939a3b, fd14596 等 `Topology.X -> X` 裸名重命名"
+    }
+  ]
+}

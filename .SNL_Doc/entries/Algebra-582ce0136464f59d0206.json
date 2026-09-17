@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "NonUnitalRing",
+    "package": "Algebra",
+    "kind": "definition",
+    "title": "环",
+    "content": {
+      "snl": "structure(NonUnitalRing(R@Algebra.ctxt.ring,$+$@Algebra.ctxt.ring,$\\cdot$@Algebra.ctxt.ring),__enum__(CommGroup(R@Algebra.ctxt.ring,$+$@Algebra.ctxt.ring),Semigroup(R@Algebra.ctxt.ring,$\\cdot$@Algebra.ctxt.ring),Logic.forall-typed(__list__(@a,@b,@c),R@Algebra.ctxt.ring,And[authored_Logic_and_infix](Eq(,Mul.mul[dot](a,parentheses(Add.add[infix](b,c))),Add.add[infix](Mul.mul[dot](a,b),Mul.mul[dot](a,c))),Eq(,Mul.mul[dot](parentheses(Add.add[infix](a,b)),c),Add.add[infix](Mul.mul[dot](a,c),Mul.mul[dot](b,c)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

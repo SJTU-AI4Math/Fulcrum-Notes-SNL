@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "MulAction.orbit",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Orbit",
+        "zh-CN": "轨道"
+      }
+    },
+    "content": {
+      "snl": "def(MulAction.orbit,,setOf[typedBuilder](@y,X@MulAction,Logic.exists-typed(@g,G@Algebra.ctxt.G,Eq(,Type.apply[paren](Type.apply[paren](alpha@MulAction,g),x@MulAction),y))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

@@ -2,13 +2,13 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "LinearAlgebra",
+  "package": "Algebra",
   "macro": {
-    "name": "LA.Field",
-    "description": "field predicate",
+    "name": "Subgroup",
+    "description": "Subgroup predicate",
     "source": {
       "entries": [
-        "Field"
+        "Subgroup"
       ],
       "urls": []
     },
@@ -20,12 +20,36 @@
         "style_name": "default",
         "tags": [],
         "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\leqslant #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
           "type": "i18n",
-          "default_language": "zh-CN",
+          "default_language": "en",
           "values": {
-            "zh-CN": {
+            "en": {
               "mode": "text",
-              "body": "#0 是域",
+              "body": "Subgroup",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -43,9 +67,9 @@
               "markdown": "",
               "text": ""
             },
-            "en": {
+            "zh-CN": {
               "mode": "text",
-              "body": "#0 is a field",
+              "body": "子群",
               "typst": {
                 "built_in": "",
                 "synthesis": {

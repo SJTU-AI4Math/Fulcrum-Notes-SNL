@@ -1,0 +1,474 @@
+{
+  "summary": {
+    "new_total": 33,
+    "new_get_ok": 33,
+    "new_latex_ok": 33,
+    "old_still_present": 0
+  },
+  "new_ids": [
+    {
+      "id": "Semigroup",
+      "get_ok": true,
+      "title": "Semigroup",
+      "latex_ok": true,
+      "latex_len": 175,
+      "latex_head": "Define “$G$ is a semigroup” if and only if __enum__(\\text{Associativity} : \\fora",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Monoid",
+      "get_ok": true,
+      "title": "Monoid",
+      "latex_ok": true,
+      "latex_len": 255,
+      "latex_head": "Define “$G$ is a monoid” if and only if __enum__(\\text{Associativity} : \\forall ",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "CommMonoid",
+      "get_ok": true,
+      "title": "交换幺半群",
+      "latex_ok": true,
+      "latex_len": 159,
+      "latex_head": "Define structure “$G$ is a commutative monoid” consisting of the following data:",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Group",
+      "get_ok": true,
+      "title": "Group",
+      "latex_ok": true,
+      "latex_len": 338,
+      "latex_head": "Define “$G$ is a group” if and only if __enum__(\\text{Associativity} : \\forall (",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "CommGroup",
+      "get_ok": true,
+      "title": "Abelian Group / Commutative Group",
+      "latex_ok": true,
+      "latex_len": 154,
+      "latex_head": "Define structure “$G$ is an Abelian group” consisting of the following data:\n__e",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "MonoidHom",
+      "get_ok": true,
+      "title": "Group Homomorphism",
+      "latex_ok": true,
+      "latex_len": 185,
+      "latex_head": "Let $H : \\mathrm{Type}$, $dotH : H \\to H \\to H$, $f : G \\to H$. Define “$f$ is a",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "GroupMono",
+      "get_ok": true,
+      "title": "Group Monomorphism",
+      "latex_ok": true,
+      "latex_len": 168,
+      "latex_head": "Let $f : G \\to H$. Define “$f$ is a group monomorphism” to be $\\text{$f$ is a gr",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "GroupEpi",
+      "get_ok": true,
+      "title": "Group Epimorphism",
+      "latex_ok": true,
+      "latex_len": 187,
+      "latex_head": "Let $H : \\mathrm{Type}$, $dotH : H \\to H \\to H$, $f : G \\to H$. Define “$f$ is a",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "MulEquiv",
+      "get_ok": true,
+      "title": "Group Isomorphism",
+      "latex_ok": true,
+      "latex_len": 182,
+      "latex_head": "Let $H : \\mathrm{Type}$, $dotH : H \\to H \\to H$, $f : G \\to H$. Define “$f$ is a",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "MonoidHom.ker",
+      "get_ok": true,
+      "title": "Kernel",
+      "latex_ok": true,
+      "latex_len": 69,
+      "latex_head": "Define “$\\operatorname{Ker}$” to be $\\left\\{a:G\\mid f(a) = e\\right\\}$",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "MonoidHom.range",
+      "get_ok": true,
+      "title": "Image",
+      "latex_ok": true,
+      "latex_len": 83,
+      "latex_head": "Define “$\\operatorname{Im}$” to be $\\left\\{y:H\\mid \\exists x : G, f(x) = y\\right",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "NonUnitalRing",
+      "get_ok": true,
+      "title": "环",
+      "latex_ok": true,
+      "latex_len": 285,
+      "latex_head": "Define structure “$R$ is a ring (possibly non-unital)” consisting of the followi",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "UnitalRing",
+      "get_ok": true,
+      "title": "Unital Ring",
+      "latex_ok": true,
+      "latex_len": 319,
+      "latex_head": "Define structure “$R$ is a unital ring” consisting of the following data:\n__enum",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "CommRing",
+      "get_ok": true,
+      "title": "Commutative Ring",
+      "latex_ok": true,
+      "latex_len": 177,
+      "latex_head": "Define structure “$R$ is a commutative ring” consisting of the following data:\n_",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "IsDomain",
+      "get_ok": true,
+      "title": "Integral Domain",
+      "latex_ok": true,
+      "latex_len": 236,
+      "latex_head": "Define structure “$R$ is an integral domain” consisting of the following data:\n_",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "DivisionRing",
+      "get_ok": true,
+      "title": "Divisible Ring / Skew-field",
+      "latex_ok": true,
+      "latex_len": 137,
+      "latex_head": "Define structure “$R$ is a division ring” consisting of the following data:\n__en",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Field",
+      "get_ok": true,
+      "title": "Field",
+      "latex_ok": true,
+      "latex_len": 138,
+      "latex_head": "Define structure “$R$ is a field” consisting of the following data:\n__enum__($R$",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Subgroup",
+      "get_ok": true,
+      "title": "Subgroup",
+      "latex_ok": true,
+      "latex_len": 85,
+      "latex_head": "Let $H : \\operatorname{Set}G$. Define “$H \\leqslant G$” if and only if $H$ is a ",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "MulAction",
+      "get_ok": true,
+      "title": "Group Action",
+      "latex_ok": true,
+      "latex_len": 208,
+      "latex_head": "Let $X : \\mathrm{Type}$, $alpha : G \\to X \\to X$. Define “$G$ acts on $X$” to be",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "MulAction.orbit",
+      "get_ok": true,
+      "title": "Orbit",
+      "latex_ok": true,
+      "latex_len": 91,
+      "latex_head": "Define “$\\operatorname{Orb}$” to be $\\left\\{y:X\\mid \\exists g : G, alpha(g)(x) =",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "MulAction.stabilizer",
+      "get_ok": true,
+      "title": "Stabilizer",
+      "latex_ok": true,
+      "latex_len": 77,
+      "latex_head": "Define “$\\operatorname{Stab}$” to be $\\left\\{g:G\\mid alpha(g)(x) = x\\right\\}$",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Symmetric",
+      "get_ok": true,
+      "title": "Symmetric Group",
+      "latex_ok": true,
+      "latex_len": 92,
+      "latex_head": "Let $X : \\mathrm{Type}$. Define “$\\operatorname{Sym}$” to be $\\operatorname{Sym}",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Perm",
+      "get_ok": true,
+      "title": "Permutation",
+      "latex_ok": true,
+      "latex_len": 213,
+      "latex_head": "Let $X : \\mathrm{Type}$, $sigma : X \\to X$. Define “$sigma$ is a permutation of ",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Cycle",
+      "get_ok": true,
+      "title": "Cycle",
+      "latex_ok": true,
+      "latex_len": 108,
+      "latex_head": "Let $X : \\mathrm{Type}$, $r : \\mathbb{N}$, $\\left(\\text{$a1$, $a2$} : X\\right)$.",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Trans",
+      "get_ok": true,
+      "title": "Transposition",
+      "latex_ok": true,
+      "latex_len": 27,
+      "latex_head": "Define “Trans” to be $\\top$",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "One",
+      "get_ok": true,
+      "title": "恒等元 / 单位元",
+      "latex_ok": true,
+      "latex_len": 131,
+      "latex_head": "Let $G$ is a monoid, $e : G$. Define “$e = 1_{G}$” if and only if $\\forall a : G",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Monoid.prop.identityUnique",
+      "get_ok": true,
+      "title": "Identity Uniqueness",
+      "latex_ok": true,
+      "latex_len": 92,
+      "latex_head": "Let $e : G$, $\\forall a : G, e \\cdot a = a \\land \\forall a : G, a \\cdot e = a$. ",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Group.prop.inverseUnique",
+      "get_ok": true,
+      "title": "逆元的唯一性",
+      "latex_ok": true,
+      "latex_len": 143,
+      "latex_head": "\\forall a : G, \\exists \\text{${b}_{1}$, ${b}_{2}$} : G, a \\cdot {b}_{1} = 1_{G} ",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "CommGroup.prop.int",
+      "get_ok": true,
+      "title": "整数及其加法是交换群",
+      "latex_ok": true,
+      "latex_len": 32,
+      "latex_head": "$\\mathbb{Z}$ is an Abelian group",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Monoid.prop.nat",
+      "get_ok": true,
+      "title": "自然数及其加法是幺半群",
+      "latex_ok": true,
+      "latex_len": 36,
+      "latex_head": "$\\mathbb{N}$ is a commutative monoid",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "Monoid.example.nat.add",
+      "get_ok": true,
+      "title": "自然数加法的递归定义",
+      "latex_ok": true,
+      "latex_len": 212,
+      "latex_head": "Let $a : \\mathbb{N}$, $b : \\mathbb{N}$. Define “$a + b$” to be by-cases(b, __enu",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "NonUnitalRing.remark.mulPrioritized",
+      "get_ok": true,
+      "title": "环的乘法运算优先于加法运算",
+      "latex_ok": true,
+      "latex_len": 115,
+      "latex_head": "Let $R$ is a ring (possibly non-unital). $a \\cdot b + a \\cdot c = \\left(a \\cdot ",
+      "get_err": null,
+      "latex_err": null
+    },
+    {
+      "id": "CommMonoid.thm.grothendieckGroup",
+      "get_ok": true,
+      "title": "Grothendieck Group of Commutative Monoid",
+      "latex_ok": true,
+      "latex_len": 263,
+      "latex_head": "Let $G$ is a commutative monoid, $\\sim : \\operatorname{Rl}(G\\times G, G\\times G)",
+      "get_err": null,
+      "latex_err": null
+    }
+  ],
+  "old_ids": [
+    {
+      "id": "Algebra.def.semigroup",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.monoid",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.monoid.commutative",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.group",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.abelian",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.groupHom",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.groupMono",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.groupEpi",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.groupIso",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.kernel",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.image",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.ring",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.ring.unital",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.ring.commutative",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.integral",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.ring.divisible",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.field",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.subgroup",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.groupAction",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.orbit",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.stabilizer",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.symmetricGroup",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.permutation",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.cycle",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.transposition",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.def.identity",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.prop.identityUnique",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.prop.inverseUnique",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.prop.int.abelian",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.prop.nat.monoid",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.example.nat.add",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.remark.ring.mulPrioritized",
+      "still_present": false
+    },
+    {
+      "id": "Algebra.thm.grothendieckGroup",
+      "still_present": false
+    }
+  ]
+}

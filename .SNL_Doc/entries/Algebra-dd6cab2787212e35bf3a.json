@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Monoid.example.nat.add",
+    "package": "Algebra",
+    "kind": "example",
+    "title": "自然数加法的递归定义",
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@a,Nat),Type.annotation(@b,Nat)),def(Add.add(a,b),,by-cases(b,__enum__(member[colon](Eq(,b,Nat.zero),Type.lambda-typed(a,Nat,a)),member[colon](Logic.exists-typed(@n,Nat,Eq(,b,Type.apply(Nat.succ[function],n))),Type.apply(Nat.succ[function],Add.add(a,n)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "CommRing",
+    "package": "Algebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "交换环",
+        "en": "Commutative Ring"
+      }
+    },
+    "content": {
+      "snl": "structure(CommRing(R@Algebra.ctxt.ring,$+$@Algebra.ctxt.ring,$\\cdot$@Algebra.ctxt.ring),__enum__(NonUnitalRing(R@Algebra.ctxt.ring,$+$@Algebra.ctxt.ring,$\\cdot$@Algebra.ctxt.ring),Logic.forall-typed(@x,R@Algebra.ctxt.ring,Logic.forall-typed(@y,R@Algebra.ctxt.ring,Eq(,Mul.mul[dot](a,b),Mul.mul[dot](b,a))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

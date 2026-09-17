@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "MulEquiv",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Group Isomorphism",
+        "zh-CN": "群同构"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@H,Type),Type.annotation(@dotH,Type.to(H,Type.to(H,H))),Type.annotation(@f,Type.to(G@Algebra.ctxt.G,H))),def(MulEquiv(f),,And[authored_Logic_and_infix](GroupMono(f),GroupEpi(f))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

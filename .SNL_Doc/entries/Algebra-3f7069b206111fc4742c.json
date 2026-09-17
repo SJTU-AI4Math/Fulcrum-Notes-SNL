@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Trans",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Transposition",
+        "zh-CN": "对换"
+      }
+    },
+    "content": {
+      "snl": "def(Trans,,True[authored_Logic_true_top])"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}

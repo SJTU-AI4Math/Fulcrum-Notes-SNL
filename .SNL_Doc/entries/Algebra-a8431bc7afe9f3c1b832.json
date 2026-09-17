@@ -1,0 +1,29 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Semigroup",
+    "kind": "definition",
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Semigroup",
+        "zh-CN": "半群"
+      }
+    },
+    "content": {
+      "snl": "def[prop](Semigroup(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul),,__enum__[enumerate](member[colon](%Associativity%,Logic.forall-typed[paren](__list__(@x,@y,@z),G@Algebra.ctxt.G,Eq(,Mul.mul[dot](parentheses(Mul.mul[dot](x,y)),z),Mul.mul[dot](x,parentheses(Mul.mul[dot](y,z))))))))"
+    },
+    "package": "Algebra",
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Algebra/Group/Defs.lean",
+      "flags": "m",
+      "mode": "regex",
+      "pattern": "^class Semigroup \\(G : Type u\\) extends Mul G where$"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "CommGroup",
+    "package": "Algebra",
+    "kind": "definition",
+    "title": "Abelian Group / Commutative Group",
+    "content": {
+      "snl": "structure(CommGroup(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul),__enum__(Group(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul),Logic.forall-typed(@a,G@Algebra.ctxt.G,Logic.forall-typed(@b,G@Algebra.ctxt.G,Eq(,Mul.mul[dot](a,b),Mul.mul[dot](b,a))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

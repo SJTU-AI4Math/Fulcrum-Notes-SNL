@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "One",
+    "kind": "definition",
+    "title": "恒等元 / 单位元",
+    "content": {
+      "snl": "variable(__list__(Monoid(G@Algebra.ctxt.G,$\\cdot$@Algebra.ctxt.mul),Type.annotation(@e,G@Algebra.ctxt.G)),def[prop](Eq(,e,One_Id(G)),,And[authored_Logic_and_infix](Logic.forall-typed(@a,G@Algebra.ctxt.G,Eq(,Mul.mul[dot](e,a),a)),Logic.forall-typed(@a,G@Algebra.ctxt.G,Eq(,Mul.mul[dot](a,e),a)))))"
+    },
+    "package": "Algebra",
+    "contribution_info": null,
+    "pointer": null
+  }
+}

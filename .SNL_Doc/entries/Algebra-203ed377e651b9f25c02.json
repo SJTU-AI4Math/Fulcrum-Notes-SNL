@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Algebra",
+  "entry": {
+    "id": "Monoid.prop.identityUnique",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Identity Uniqueness",
+        "zh-CN": "单位元的唯一性"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@e,G@Algebra.ctxt.G),And[authored_Logic_and_infix](Logic.forall-typed(@a,G@Algebra.ctxt.G,Eq(,Mul.mul[dot](e,a),a)),Logic.forall-typed(@a,G@Algebra.ctxt.G,Eq(,Mul.mul[dot](a,e),a)))),theorem(Eq(,e,One_Id(G))))"
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "package": "Algebra"
+  }
+}
