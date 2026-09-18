@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@a,Real),Type.annotation(@b,Real),Type.annotation(@$\\gamma$,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),def(DG.def.tangentVector($\\gamma$),,Analysis.deriv($\\gamma$)))",
+      "snl": "variable(__list__(Type.annotation(@a@DG.ctxt.abReal,Real),Type.annotation(@b@DG.ctxt.abReal,Real),Type.annotation(@$\\gamma$@DG.ctxt.gammaCurve,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),def(DG.def.tangentVector($\\gamma$),,Analysis.deriv($\\gamma$)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

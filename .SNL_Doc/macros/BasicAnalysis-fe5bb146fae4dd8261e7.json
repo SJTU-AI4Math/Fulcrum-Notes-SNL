@@ -4,8 +4,8 @@
   "schema_version": 1,
   "package": "BasicAnalysis",
   "macro": {
-    "name": "ContDiff",
-    "description": "Smoothness predicate: #1 is C^#0 (everywhere, i.e. on its whole domain). Mathlib: `ContDiff (n : WithTop ℕ∞) (f : E → F)`. Parameters numbered by explicit order: #0 = n, #1 = f. The scalar field 𝕜 is not displayed (same convention as `deriv`). For a domain or a point use `ContDiffOn` / `ContDiffAt`.",
+    "name": "ContDiffAt",
+    "description": "Smoothness at a point: #1 is C^#0 at #2. Mathlib: `ContDiffAt (n : WithTop ℕ∞) (f : E → F) (x : E)`. Parameters numbered by explicit order: #0 = n, #1 = f, #2 = x. The point is always parenthesised.",
     "source": {
       "entries": [],
       "urls": []
@@ -19,7 +19,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#1 \\in C^{#0}",
+          "body": "#1 \\in C^{#0}\\left(#2\\right)",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -47,11 +47,11 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "#1 #0 阶光滑"
+              "body": "#1 在 #2 处 #0 阶光滑"
             },
             "en": {
               "mode": "text",
-              "body": "#1 is C^#0"
+              "body": "#1 is C^#0 at #2"
             }
           }
         }
@@ -60,7 +60,7 @@
     "pointer": {
       "file": "Mathlib/Analysis/Calculus/ContDiff/Defs.lean",
       "mode": "lines",
-      "line": 1037
+      "line": 912
     }
   }
 }

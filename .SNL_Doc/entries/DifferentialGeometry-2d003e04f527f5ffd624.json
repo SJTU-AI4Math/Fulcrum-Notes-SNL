@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ctxt.abReal",
+    "kind": "context",
+    "package": "DifferentialGeometry",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "$a, b \\in \\mathbb{R}$",
+        "en": "$a, b \\in \\mathbb{R}$"
+      }
+    },
+    "content": {
+      "snl": "__list__(Type.annotation(@a,Real),Type.annotation(@b,Real))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}
