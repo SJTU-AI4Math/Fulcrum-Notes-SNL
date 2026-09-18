@@ -90,6 +90,20 @@
       "props": {
         "entryId": "DG.subsec.surfaces"
       }
+    },
+    {
+      "id": "n_ctxt_abReal",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ctxt.abReal"
+      }
+    },
+    {
+      "id": "n_ctxt_gammaCurve",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ctxt.gammaCurve"
+      }
     }
   ],
   "relationships": [
@@ -151,6 +165,16 @@
     {
       "from": "n_0",
       "to": "n_12",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_ctxt_abReal",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_ctxt_gammaCurve",
       "label": "branch"
     }
   ]
