@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@$p$,LA.def.realVecSpaceRn($3$)),Type.annotation(@$v$,LA.def.realVecSpaceRn($3$)),Eq(,norm(v),$1$)),theorem(Eq(,DG.def.curvature(Type.lambda(@s,Real,Add.add[infix](p,LA.Smul(s,v)))),Function.const(Real,Icc(a,b),$0$))))",
+      "snl": "variable(__list__(Type.annotation(@$p$,LA.def.realVecSpaceRn($3$)),Type.annotation(@$v$,LA.def.realVecSpaceRn($3$)),Eq(,norm(v),$1$)),theorem(Identical[default](DG.def.curvature(Type.lambda(@s,Real,Add.add[infix](p,LA.Smul(s,v)))),$0$)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@r,Real),DG.def.arcLengthParam($\\gamma$)),theorem(Eq(,DG.def.curvature($\\gamma$),Function.const(Real,Icc(a,b),Div.div($1$,r)))))",
+      "snl": "variable(__list__(Type.annotation(@r,Real),DG.def.arcLengthParam($\\gamma$)),theorem(Identical[default](DG.def.curvature($\\gamma$),Div.div($1$,r))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

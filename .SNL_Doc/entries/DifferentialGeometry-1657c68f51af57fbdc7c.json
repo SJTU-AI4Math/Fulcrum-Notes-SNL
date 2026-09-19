@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@$s_1$,Type.to(Real,Real)),Type.annotation(@$s_2$,Type.to(Real,Real)),DG.def.arcLengthParam($\\gamma$)),theorem(Logic.exists-typed(@c,Real,Or[authored_Logic_or_infix](Eq(,$s_2$,Add.add[infix]($s_1$,Function.const(Real,Real,c))),Eq(,$s_2$,Add.add[infix](neg($s_1$),Function.const(Real,Real,c)))))))",
+      "snl": "variable(__list__(Type.annotation(@$s_1$,Type.to(Real,Real)),Type.annotation(@$s_2$,Type.to(Real,Real)),DG.def.arcLengthParam($\\gamma$)),theorem(Logic.exists-typed(@c,Real,Or[authored_Logic_or_infix](Identical[default]($s_2$,Add.add[infix]($s_1$,c)),Identical[default]($s_2$,Add.add[infix](neg($s_1$),c))))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
