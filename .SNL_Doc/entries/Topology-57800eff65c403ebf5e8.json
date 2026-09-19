@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@A,Set[text](S@Topology.ctxt.S)),Type.annotation(@τ,Set[text](Set[text](S@Topology.ctxt.S)))),theorem(Eq(,Set.union[authored](,A,Topology.derivedSet(A)),Topology.closure(A))))"
+      "snl": "variable(__list__(Type.annotation(@A,Set[text](S@Topology.ctxt.S)),Type.annotation(@τ,Set[text](Set[text](S@Topology.ctxt.S)))),theorem(Eq(,Set.union[authored](,A,Topology.derivedSet(A)),closure(A))))"
     },
     "contribution_info": null,
     "pointer": null,

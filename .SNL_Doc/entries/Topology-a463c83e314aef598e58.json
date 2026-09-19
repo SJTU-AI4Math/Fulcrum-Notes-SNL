@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "T0Space",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "T0 Space / Kolmogorov Space",
+        "zh-CN": "T0 空间／柯尔莫哥洛夫空间"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@τ,Set[text](Set[text](S@Topology.ctxt.S)))),def[prop](T0Space(S@Topology.ctxt.S),,Logic.forall-typed(@x,S@Topology.ctxt.S,Logic.forall-typed(@y,S@Topology.ctxt.S,Logic.implies(Not[authored_Logic_neg_prefix](Eq(,x,y)),Or[authored_Logic_or_infix](Logic.exists-typed(@U,Set[text](S@Topology.ctxt.S),And[authored_Logic_and_infix](Fulcrum.isNhd(U,x),Not[authored_Logic_neg_prefix](Set.Mem[authored](,U,y)))),Logic.exists-typed(@V,Set[text](S@Topology.ctxt.S),And[authored_Logic_and_infix](Fulcrum.isNhd(V,y),Not[authored_Logic_neg_prefix](Set.Mem[authored](,V,x))))))))))"
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Separation/Basic.lean",
+      "mode": "lines",
+      "line": 77,
+      "endLine": 78,
+      "column": 1,
+      "endColumn": 24
+    },
+    "package": "Topology"
+  }
+}

@@ -5,7 +5,7 @@
   "package": "AlgebraicTopology",
   "entry": {
     "id": "FundamentalGroup.fundamentalGroupMulEquivOfPath",
-    "kind": "definition",
+    "kind": "theorem",
     "title": {
       "type": "i18n",
       "default_language": "en",
@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X),Type.annotation(@p,Path(x,y))),def(FundamentalGroup.fundamentalGroupMulEquivOfPath(p), , ))",
+      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X),Type.annotation(@p,Path(x,y))),theorem(FundamentalGroup.fundamentalGroupMulEquivOfPath(p), , ))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

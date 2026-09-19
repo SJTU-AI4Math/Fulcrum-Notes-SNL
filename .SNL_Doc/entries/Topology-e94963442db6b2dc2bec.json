@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@A,Set[text](T@Fulcrum.SetTheory.T)),theorem(Iff[authored_Logic_iff_long](Set.Mem[authored](,τ,A),Eq(,A,Topology.interior(A)))))"
+      "snl": "variable(Type.annotation(@A,Set[text](T@Fulcrum.SetTheory.T)),theorem(Iff[authored_Logic_iff_long](Set.Mem[authored](,τ,A),Eq(,A,interior(A)))))"
     },
     "contribution_info": null,
     "pointer": null,

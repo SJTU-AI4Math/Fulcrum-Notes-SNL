@@ -1,0 +1,95 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "macro": {
+    "name": "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive",
+    "description": "Constructive change-of-basepoint isomorphism of fundamental groups induced by a path",
+    "source": {
+      "entries": [
+        "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\beta_{#0}^{\\mathrm{con}}",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "constructive change-of-basepoint isomorphism along path #0",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": "constructive change-of-basepoint isomorphism along path #0"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "沿道路 #0 的构造性基点变换同构",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": "constructive change-of-basepoint isomorphism along path #0"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

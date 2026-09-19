@@ -1,0 +1,90 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "BasicAnalysis",
+  "macro": {
+    "name": "ContDiffOn",
+    "description": "Smoothness on a set: #1 is C^#0 on #2. Mathlib: `ContDiffOn (n : WithTop ℕ∞) (f : E → F) (s : Set E)`. Parameters numbered by explicit order: #0 = n, #1 = f, #2 = s.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#1 \\in C^{#0} #2",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "paren",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#1 \\in C^{#0}\\left(#2\\right)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "#1 在 #2 上 #0 阶光滑"
+            },
+            "en": {
+              "mode": "text",
+              "body": "#1 is C^#0 on #2"
+            }
+          }
+        }
+      }
+    ],
+    "pointer": {
+      "file": "Mathlib/Analysis/Calculus/ContDiff/Defs.lean",
+      "mode": "lines",
+      "line": 455
+    }
+  }
+}

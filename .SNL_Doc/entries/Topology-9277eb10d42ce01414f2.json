@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "MetricSpace",
+    "kind": "definition",
+    "title": "度量空间",
+    "content": {
+      "snl": "variable(Type.annotation(@d, Type.to(Type.prod(S@Topology.ctxt.S, S@Topology.ctxt.S), Real)),def[prop](MetricSpace(S@Topology.ctxt.S, d), , ))"
+    },
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": null
+  }
+}

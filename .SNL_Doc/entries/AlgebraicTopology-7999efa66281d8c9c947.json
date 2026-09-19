@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnectedConstructive",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Independence of the Basepoint (Constructive Definition)",
+        "zh-CN": "基本群与基点选取无关（构造性定义）"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X)),def(FundamentalGroup.fundamentalGroupMulEquivOfPathConnectedConstructive(x, y), , ))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "When $X$ is path-connected, this **constructs** the isomorphism $\\beta^{\\mathrm{con}}_{x_0,x_1}\\colon\\pi_1(X,x_0)\\to\\pi_1(X,x_1)$ between the fundamental groups at $x_0$ and $x_1$. It is the data-level counterpart of the theorem Entry `FundamentalGroup.fundamentalGroupMulEquivOfPathConnected`. Following Mathlib's `def fundamentalGroupMulEquivOfPathConnected`, it selects a path between the two points with `PathConnectedSpace.somePath`, i.e. `Nonempty.some`, and therefore **uses the axiom of choice** (`Classical.choice`), unlike the theorem Entry, which only asserts that an isomorphism exists.",
+          "zh-CN": "当 $X$ 道路连通时，本条目**构造**出 $x_0$ 与 $x_1$ 处基本群之间的同构 $\\beta^{\\mathrm{con}}_{x_0,x_1}\\colon\\pi_1(X,x_0)\\to\\pi_1(X,x_1)$。它是定理条目 `FundamentalGroup.fundamentalGroupMulEquivOfPathConnected` 的数据层对应物。对应 Mathlib 的 `def fundamentalGroupMulEquivOfPathConnected`，它用 `PathConnectedSpace.somePath`（即 `Nonempty.some`）选取两点间的道路，因而**使用选择公理**（`Classical.choice`）；这与只断言同构存在的定理条目不同。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/AlgebraicTopology/FundamentalGroupoid/FundamentalGroup.lean",
+      "mode": "lines",
+      "line": 54,
+      "endLine": 54,
+      "column": 1,
+      "endColumn": 69
+    },
+    "package": "AlgebraicTopology"
+  }
+}

@@ -9,7 +9,7 @@
     "kind": "property",
     "title": "闭包不改变直径",
     "content": {
-      "snl": "variable(__list__(Topology.ms(S@Topology.ctxt.S,d@Topology.def.metric),Type.annotation(@A,Set[text](S@Topology.ctxt.S))),theorem(Eq(,diam(A),diam(Topology.closure(A)))))"
+      "snl": "variable(__list__(MetricSpace(S@Topology.ctxt.S,d@MetricSpace),Type.annotation(@A,Set[text](S@Topology.ctxt.S))),theorem(Eq(,diam(A),diam(closure(A)))))"
     },
     "contribution_info": null,
     "pointer": null

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@A,Set[text](T@Fulcrum.SetTheory.T)),theorem(IsClosed[text](Topology.closure(A),τ@Topology.ctxt.tau,S@Topology.ctxt.S)))"
+      "snl": "variable(Type.annotation(@A,Set[text](T@Fulcrum.SetTheory.T)),theorem(IsClosed[text](closure(A),τ@Topology.ctxt.tau,S@Topology.ctxt.S)))"
     },
     "contribution_info": null,
     "pointer": null,

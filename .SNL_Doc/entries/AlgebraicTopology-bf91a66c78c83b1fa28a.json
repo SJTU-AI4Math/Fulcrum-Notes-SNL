@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Change of Basepoint (Constructive Definition)",
+        "zh-CN": "基点变换（构造性定义）"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X),Type.annotation(@p,Path(x,y))),def(FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive(p), , ))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Given a path $p$ from $x_0$ to $x_1$, this **constructs** the change-of-basepoint isomorphism $\\beta^{\\mathrm{con}}_p\\colon\\pi_1(X,x_0)\\to\\pi_1(X,x_1)$, $[f]\\mapsto[p\\cdot f\\cdot\\overline{p}]$, as an actual object rather than merely asserting that one exists. It is the data-level counterpart of the theorem Entry `FundamentalGroup.fundamentalGroupMulEquivOfPath` (Hatcher Proposition 1.5, p. 28), and mirrors Mathlib's `def fundamentalGroupMulEquivOfPath`, which lives in a `noncomputable section`.",
+          "zh-CN": "给定从 $x_0$ 到 $x_1$ 的道路 $p$，本条目**构造**基点变换同构 $\\beta^{\\mathrm{con}}_p\\colon\\pi_1(X,x_0)\\to\\pi_1(X,x_1)$，$[f]\\mapsto[p\\cdot f\\cdot\\overline{p}]$，给出的是对象本身而不只是断言其存在。它是定理条目 `FundamentalGroup.fundamentalGroupMulEquivOfPath` 的数据层对应物（Hatcher 命题 1.5，第 28 页），对应 Mathlib 的 `def fundamentalGroupMulEquivOfPath`，后者位于 `noncomputable section` 中。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/AlgebraicTopology/FundamentalGroupoid/FundamentalGroup.lean",
+      "mode": "lines",
+      "line": 47,
+      "endLine": 47,
+      "column": 1,
+      "endColumn": 54
+    },
+    "package": "AlgebraicTopology"
+  }
+}

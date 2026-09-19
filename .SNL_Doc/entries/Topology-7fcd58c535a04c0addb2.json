@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "IsNowhereDense",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Nowhere Dense Set",
+        "zh-CN": "无处稠密集/稀疏集/疏朗集"
+      }
+    },
+    "content": {
+      "snl": "variable(Type.annotation(@A,Set[text](T@Fulcrum.SetTheory.T)),def[prop](IsNowhereDense(A),,Eq(,interior(closure(A)),EmptyCollection.emptyCollection[round](,))))"
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/GDelta/Basic.lean",
+      "mode": "lines",
+      "line": 198,
+      "endLine": 198,
+      "column": 1,
+      "endColumn": 53
+    },
+    "package": "Topology"
+  }
+}

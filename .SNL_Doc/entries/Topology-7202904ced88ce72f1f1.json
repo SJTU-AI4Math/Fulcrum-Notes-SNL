@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "closure",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Closure",
+        "zh-CN": "闭包"
+      }
+    },
+    "content": {
+      "snl": "variable(Type.annotation(@A,Set[text](T@Fulcrum.SetTheory.T)),def(closure(A),,setOf[typedBuilder](@x,S@Topology.ctxt.S,Logic.forall-typed(@F,Set[text](T@Fulcrum.SetTheory.T),Logic.implies(And[authored_Logic_and_infix](IsClosed(F,τ@Topology.ctxt.tau,S@Topology.ctxt.S),Set.Subset[infix](,A,F)),Set.Mem[authored](,F,x))))))"
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Defs/Basic.lean",
+      "mode": "lines",
+      "line": 120,
+      "endLine": 121,
+      "column": 1,
+      "endColumn": 29
+    },
+    "package": "Topology"
+  }
+}

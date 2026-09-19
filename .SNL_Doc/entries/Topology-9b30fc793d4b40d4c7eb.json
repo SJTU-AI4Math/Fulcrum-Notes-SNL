@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "TopologicalSpace.IsTopologicalBasis",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Topological Basis (relative predicate; Mathlib `IsTopologicalBasis` is a self-contained structure)",
+        "zh-CN": "拓扑基（相对谓词；Mathlib 的 `IsTopologicalBasis` 是自足结构）"
+      }
+    },
+    "content": {
+      "snl": "variable(Type.annotation(@B,Set[text](Set[text](T@Fulcrum.SetTheory.T))),def[prop](TopologicalSpace.IsTopologicalBasis(B,τ@Topology.ctxt.tau),,And[authored_Logic_and_infix](Set.Subset[infix](,B,τ@Topology.ctxt.tau),Eq(,Topology.generatedTopology(B),τ@Topology.ctxt.tau))))"
+    },
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": null
+  }
+}

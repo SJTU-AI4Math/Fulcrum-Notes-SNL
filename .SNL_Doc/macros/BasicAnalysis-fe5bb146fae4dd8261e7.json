@@ -1,0 +1,66 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "BasicAnalysis",
+  "macro": {
+    "name": "ContDiffAt",
+    "description": "Smoothness at a point: #1 is C^#0 at #2. Mathlib: `ContDiffAt (n : WithTop ℕ∞) (f : E → F) (x : E)`. Parameters numbered by explicit order: #0 = n, #1 = f, #2 = x. The point is always parenthesised.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#1 \\in C^{#0}\\left(#2\\right)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "#1 在 #2 处 #0 阶光滑"
+            },
+            "en": {
+              "mode": "text",
+              "body": "#1 is C^#0 at #2"
+            }
+          }
+        }
+      }
+    ],
+    "pointer": {
+      "file": "Mathlib/Analysis/Calculus/ContDiff/Defs.lean",
+      "mode": "lines",
+      "line": 912
+    }
+  }
+}

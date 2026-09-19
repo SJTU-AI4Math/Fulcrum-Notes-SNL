@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "IsOpenMap",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Open Map",
+        "zh-CN": "开映射"
+      }
+    },
+    "content": {
+      "snl": "def[prop](IsOpenMap(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y),,Logic.forall-typed(@U,Set[text](A@Topology.ctxt.AB),Logic.implies(IsOpen(U,${τ}_{X}$@τₓ),IsOpen(Set.fun(f,U),${τ}_{Y}$@τᵧ))))"
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Defs/Basic.lean",
+      "mode": "lines",
+      "line": 156,
+      "endLine": 156,
+      "column": 1,
+      "endColumn": 52
+    },
+    "package": "Topology"
+  }
+}

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "Logic.implies(T2Space(S@Topology.ctxt.S), Topology.T1Space(S@Topology.ctxt.S))"
+      "snl": "Logic.implies(T2Space(S@Topology.ctxt.S), T1Space(S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null

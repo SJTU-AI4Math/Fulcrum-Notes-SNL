@@ -5,7 +5,7 @@
   "package": "BasicAnalysis",
   "macro": {
     "name": "ContDiff",
-    "description": "Smoothness predicate: #1 is C^#0. Mathlib: `ContDiff (n : WithTop ℕ∞) (f : E → F)`; the scalar field 𝕜 is not displayed (same convention as `deriv`).",
+    "description": "Smoothness predicate: #1 is C^#0 (everywhere, i.e. on its whole domain). Mathlib: `ContDiff (n : WithTop ℕ∞) (f : E → F)`. Parameters numbered by explicit order: #0 = n, #1 = f. The scalar field 𝕜 is not displayed (same convention as `deriv`). For a domain or a point use `ContDiffOn` / `ContDiffAt`.",
     "source": {
       "entries": [],
       "urls": []
@@ -15,61 +15,11 @@
     "tags": [],
     "styles": [
       {
-        "style_name": "text",
-        "tags": [],
-        "template": {
-          "type": "i18n",
-          "default_language": "en",
-          "values": {
-            "zh-CN": {
-              "mode": "text",
-              "body": "#1 是 C^#0 的",
-              "typst": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "latex": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "markdown": "",
-              "text": ""
-            },
-            "en": {
-              "mode": "text",
-              "body": "#1 is C^#0",
-              "typst": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "latex": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "markdown": "",
-              "text": ""
-            }
-          }
-        }
-      },
-      {
         "style_name": "default",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "C^{#0}(#1)",
+          "body": "#1 \\in C^{#0}",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -86,6 +36,24 @@
           },
           "markdown": "",
           "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "#1 #0 阶光滑"
+            },
+            "en": {
+              "mode": "text",
+              "body": "#1 is C^#0"
+            }
+          }
         }
       }
     ],

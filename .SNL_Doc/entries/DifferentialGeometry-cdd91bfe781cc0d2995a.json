@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@a,Real),Type.annotation(@b,Real),Type.annotation(@$\\gamma$,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),theorem(Logic.forall-typed(@t,Real,Logic.implies(Set.Mem[authored](,Icc(a,b),t),Logic.implies(Eq(,norm(Type.apply($\\gamma$,t)),$1$),Eq(,inner(Type.apply(Analysis.deriv($\\gamma$),t),Type.apply($\\gamma$,t)),$0$))))))",
+      "snl": "variable(__list__(Type.annotation(@a@DG.ctxt.abReal,Real),Type.annotation(@b@DG.ctxt.abReal,Real),Type.annotation(@$\\gamma$@DG.ctxt.gammaCurve,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),theorem(Logic.forall-typed(@t,Real,Logic.implies(Set.Mem[authored](,Icc(a,b),t),Logic.implies(Eq(,norm(Type.apply($\\gamma$,t)),$1$),Eq(,inner(Type.apply(Analysis.deriv($\\gamma$),t),Type.apply($\\gamma$,t)),$0$))))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

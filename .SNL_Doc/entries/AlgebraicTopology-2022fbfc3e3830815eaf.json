@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X)),def(FundamentalGroup(x), , ))",
+      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X)),def(FundamentalGroup(X, x), , ))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

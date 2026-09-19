@@ -5,7 +5,7 @@
   "package": "DifferentialGeometry",
   "macro": {
     "name": "DG.def.spaceCurve",
-    "description": "Space curve: a smooth map alpha from an interval into R^3. Regularity (alpha' != 0) is a separate predicate.",
+    "description": "Space curve: a smooth map gamma from an interval into R^3. Regularity (gamma' != 0) is a separate predicate.",
     "source": {
       "entries": [],
       "urls": []
@@ -23,43 +23,11 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "#0 是定义在 #1 上的空间曲线",
-              "typst": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "latex": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "markdown": "",
-              "text": ""
+              "body": "#0 是空间曲线"
             },
             "en": {
               "mode": "text",
-              "body": "#0 is a space curve defined on #1",
-              "typst": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "latex": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "markdown": "",
-              "text": ""
+              "body": "#0 is a space curve"
             }
           }
         }
@@ -69,23 +37,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "#0\\colon #1 \\to \\mathbb{R}^{3}",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
+          "body": "#0\\colon #1 \\to \\mathbb{R}^{3}"
         }
       }
     ]

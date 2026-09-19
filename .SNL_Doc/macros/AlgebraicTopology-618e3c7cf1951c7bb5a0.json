@@ -1,0 +1,95 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "macro": {
+    "name": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnected",
+    "description": "Basepoint-independence isomorphism of fundamental groups for path-connected spaces",
+    "source": {
+      "entries": [
+        "FundamentalGroup.fundamentalGroupMulEquivOfPathConnected"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\pi_1(\\cdot, #0)\\cong\\pi_1(\\cdot, #1)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "the fundamental groups at #0 and #1 are isomorphic",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": "the fundamental groups at #0 and #1 are isomorphic"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 与 #1 处的基本群同构",
+              "typst": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "latex": {
+                "built_in": "",
+                "synthesis": {
+                  "mode": "formula",
+                  "macro": ""
+                }
+              },
+              "markdown": "",
+              "text": "the fundamental groups at #0 and #1 are isomorphic"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

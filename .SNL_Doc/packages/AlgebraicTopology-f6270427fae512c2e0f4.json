@@ -15,6 +15,8 @@
     "FundamentalGroup",
     "FundamentalGroup.fundamentalGroupMulEquivOfPath",
     "FundamentalGroup.fundamentalGroupMulEquivOfPathConnected",
+    "FundamentalGroup.fundamentalGroupMulEquivOfPathConnectedConstructive",
+    "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive",
     "FundamentalGroup.map"
   ]
 }

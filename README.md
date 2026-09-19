@@ -1,6 +1,6 @@
 # Fulcrum Notes SNL
 
-This repository stores the canonical Fulcrum SNL workspace in `.SNL_Doc/` and provides Lean companions to the authored notes. The root [FMNeco.md](FMNeco.md) is the authoring convention.
+This repository stores the canonical Fulcrum SNL workspace in `.SNL_Doc/` and provides Lean companions to the authored notes. The root [CONVENTIONS.md](CONVENTIONS.md) is the single authoring, naming, and version-management convention.
 
 The experimental [Convincer](Convincer/README.md) implementation, examples and checks are contained in `Convincer/`.
 

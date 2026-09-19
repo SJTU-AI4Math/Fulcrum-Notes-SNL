@@ -9,7 +9,7 @@
     "kind": "property",
     "title": "度量空间总是 T4 空间",
     "content": {
-      "snl": "Logic.implies(\r\n    Topology.ms(S@Topology.ctxt.S, d@Topology.def.metric),\r\n    Topology.T4(S@Topology.ctxt.S)\r\n)"
+      "snl": "Logic.implies(\r\n    MetricSpace(S@Topology.ctxt.S, d@MetricSpace),\r\n    Topology.T4(S@Topology.ctxt.S)\r\n)"
     },
     "contribution_info": null,
     "pointer": null

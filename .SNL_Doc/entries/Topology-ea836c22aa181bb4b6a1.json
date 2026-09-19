@@ -9,7 +9,7 @@
     "kind": "theorem",
     "title": "林德洛夫定理",
     "content": {
-      "snl": "Logic.implies(And[authored_Logic_and_infix](Topology.SecondCountableTopology(S@Topology.ctxt.S),Topology.T3(S@Topology.ctxt.S)),Topology.T4(S@Topology.ctxt.S))"
+      "snl": "Logic.implies(And[authored_Logic_and_infix](SecondCountableTopology(S@Topology.ctxt.S),Topology.T3(S@Topology.ctxt.S)),Topology.T4(S@Topology.ctxt.S))"
     },
     "contribution_info": null,
     "pointer": null

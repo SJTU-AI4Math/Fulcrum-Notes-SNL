@@ -9,7 +9,7 @@
     "kind": "property",
     "title": "度量空间是拓扑空间",
     "content": {
-      "snl": "variable(Topology.ms(S@Topology.ctxt.S,d@Topology.def.metric),theorem(Topology.topology(setOf[typedBuilder](@U,Set[text](S@Topology.ctxt.S),Logic.forall-typed(@x,U,Logic.exists-typed(@r,PReal,Set.Subset[infix](,Topology.openBall(x,r),U)))),S@Topology.ctxt.S,)))"
+      "snl": "variable(MetricSpace(S@Topology.ctxt.S,d@MetricSpace),theorem(Topology.topology(setOf[typedBuilder](@U,Set[text](S@Topology.ctxt.S),Logic.forall-typed(@x,U,Logic.exists-typed(@r,PReal,Set.Subset[infix](,Topology.openBall(x,r),U)))),S@Topology.ctxt.S,)))"
     },
     "contribution_info": null,
     "pointer": null

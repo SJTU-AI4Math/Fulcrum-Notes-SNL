@@ -5,7 +5,7 @@
   "package": "DifferentialGeometry",
   "macro": {
     "name": "DG.def.arcLengthParam",
-    "description": "Arc-length parametrisation: the parameter #1 of the curve #0 satisfies |gamma'(s)| = 1.",
+    "description": "Arc-length parametrisation: the curve #0 has unit speed, |gamma'| = 1.",
     "source": {
       "entries": [],
       "urls": []
@@ -23,43 +23,11 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "#1 是 #0 的弧长参数",
-              "typst": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "latex": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "markdown": "",
-              "text": ""
+              "body": "#0 是弧长参数化的"
             },
             "en": {
               "mode": "text",
-              "body": "#1 is an arc-length parameter of #0",
-              "typst": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "latex": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "markdown": "",
-              "text": ""
+              "body": "#0 is parametrized by arc length"
             }
           }
         }
@@ -69,23 +37,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\left\\| #0'(#1) \\right\\| \\equiv 1",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
+          "body": "\\left\\| #0' \\right\\| \\equiv 1"
         }
       }
     ]

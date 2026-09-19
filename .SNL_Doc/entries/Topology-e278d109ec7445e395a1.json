@@ -9,7 +9,7 @@
     "kind": "definition",
     "title": "开球",
     "content": {
-      "snl": "variable(__list__(Topology.ms(S@Topology.ctxt.S,d@Topology.def.metric),Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@r,PReal)),def(Topology.openBall(x,r),,setOf[typedBuilder](@y,S@Topology.ctxt.S,Lt(Type.apply(d@Topology.def.metric,Prod.mk[authored](,,x,y)),r))))"
+      "snl": "variable(__list__(MetricSpace(S@Topology.ctxt.S,d@MetricSpace),Type.annotation(@x,S@Topology.ctxt.S),Type.annotation(@r,PReal)),def(Topology.openBall(x,r),,setOf[typedBuilder](@y,S@Topology.ctxt.S,Lt(Type.apply(d@MetricSpace,Prod.mk[authored](,,x,y)),r))))"
     },
     "contribution_info": null,
     "pointer": null

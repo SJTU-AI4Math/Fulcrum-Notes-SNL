@@ -125,6 +125,20 @@
       "props": {
         "entryId": "AlgebraicTopology.thm.fundamentalGroupCircle"
       }
+    },
+    {
+      "id": "n_18",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive"
+      }
+    },
+    {
+      "id": "n_19",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnectedConstructive"
+      }
     }
   ],
   "relationships": [
@@ -211,6 +225,16 @@
     {
       "from": "n_1",
       "to": "n_17",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_18",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_19",
       "label": "branch"
     }
   ]

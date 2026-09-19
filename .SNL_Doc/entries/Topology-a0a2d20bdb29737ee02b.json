@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "Iff[authored_Logic_iff_long](Topology.T1Space(S@Topology.ctxt.S),Logic.forall-typed(@x,T@Fulcrum.SetTheory.T,Logic.implies(Set.Mem[authored](,S,x),IsClosed[text](setOf[typedBuilder](@z,S@Topology.ctxt.S,Eq(,z,x)),τ@Topology.ctxt.tau,S@Topology.ctxt.S))))"
+      "snl": "Iff[authored_Logic_iff_long](T1Space(S@Topology.ctxt.S),Logic.forall-typed(@x,T@Fulcrum.SetTheory.T,Logic.implies(Set.Mem[authored](,S,x),IsClosed[text](setOf[typedBuilder](@z,S@Topology.ctxt.S,Eq(,z,x)),τ@Topology.ctxt.tau,S@Topology.ctxt.S))))"
     },
     "contribution_info": null,
     "pointer": null,

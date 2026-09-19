@@ -109,14 +109,14 @@
       "id": "n_15",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.interior"
+        "entryId": "interior"
       }
     },
     {
       "id": "n_16",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.closure"
+        "entryId": "closure"
       }
     },
     {
@@ -130,7 +130,7 @@
       "id": "n_18",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.frontier"
+        "entryId": "frontier"
       }
     },
     {
@@ -144,7 +144,7 @@
       "id": "n_20",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.topologicalBasis"
+        "entryId": "TopologicalSpace.IsTopologicalBasis"
       }
     },
     {
@@ -221,14 +221,14 @@
       "id": "n_31",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.Dense"
+        "entryId": "Dense"
       }
     },
     {
       "id": "n_32",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.IsNowhereDense"
+        "entryId": "IsNowhereDense"
       }
     },
     {
@@ -522,7 +522,7 @@
       "id": "n_75",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.IsOpenMap"
+        "entryId": "IsOpenMap"
       }
     },
     {
@@ -585,14 +585,14 @@
       "id": "n_93",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.T0Space"
+        "entryId": "T0Space"
       }
     },
     {
       "id": "n_94",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.T1Space"
+        "entryId": "T1Space"
       }
     },
     {
@@ -683,21 +683,21 @@
       "id": "n_97",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.FirstCountableTopology"
+        "entryId": "FirstCountableTopology"
       }
     },
     {
       "id": "n_98",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.SecondCountableTopology"
+        "entryId": "SecondCountableTopology"
       }
     },
     {
       "id": "n_99",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.separable"
+        "entryId": "TopologicalSpace.IsSeparable"
       }
     },
     {
@@ -729,17 +729,10 @@
       }
     },
     {
-      "id": "n_104",
-      "label": "Entry",
-      "props": {
-        "entryId": "Topology.def.metric"
-      }
-    },
-    {
       "id": "n_105",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.metricSpace"
+        "entryId": "MetricSpace"
       }
     },
     {
@@ -781,7 +774,7 @@
       "id": "n_111",
       "label": "Entry",
       "props": {
-        "entryId": "Topology.def.bounded"
+        "entryId": "Bornology.IsBounded"
       }
     },
     {
@@ -1396,11 +1389,6 @@
     {
       "from": "n_102",
       "to": "n_103",
-      "label": "branch"
-    },
-    {
-      "from": "n_103",
-      "to": "n_104",
       "label": "branch"
     },
     {

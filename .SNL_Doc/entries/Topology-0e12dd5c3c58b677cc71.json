@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@A,Set[text](S@Topology.ctxt.S)),Type.annotation(@τ,Set[text](Set[text](S@Topology.ctxt.S)))),theorem(Iff[authored_Logic_iff_long](Set.Mem[authored](,τ,Set.diff[relative_sup](,S@Topology.ctxt.S,A)),Eq(,A,Topology.closure(A)))))"
+      "snl": "variable(__list__(Type.annotation(@A,Set[text](S@Topology.ctxt.S)),Type.annotation(@τ,Set[text](Set[text](S@Topology.ctxt.S)))),theorem(Iff[authored_Logic_iff_long](Set.Mem[authored](,τ,Set.diff[relative_sup](,S@Topology.ctxt.S,A)),Eq(,A,closure(A)))))"
     },
     "contribution_info": null,
     "pointer": null,

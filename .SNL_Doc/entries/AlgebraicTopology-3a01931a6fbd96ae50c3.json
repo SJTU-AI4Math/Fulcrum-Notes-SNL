@@ -5,7 +5,7 @@
   "package": "AlgebraicTopology",
   "entry": {
     "id": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnected",
-    "kind": "definition",
+    "kind": "theorem",
     "title": {
       "type": "i18n",
       "default_language": "en",
@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X)),def(FundamentalGroup.fundamentalGroupMulEquivOfPathConnected, , ))",
+      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X)),theorem(FundamentalGroup.fundamentalGroupMulEquivOfPathConnected(x, y)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
@@ -25,15 +25,8 @@
         }
       }
     },
+    "package": "AlgebraicTopology",
     "contribution_info": null,
-    "pointer": {
-      "file": ".lake/packages/mathlib/Mathlib/AlgebraicTopology/FundamentalGroupoid/FundamentalGroup.lean",
-      "mode": "lines",
-      "line": 54,
-      "endLine": 54,
-      "column": 1,
-      "endColumn": 69
-    },
-    "package": "AlgebraicTopology"
+    "pointer": null
   }
 }

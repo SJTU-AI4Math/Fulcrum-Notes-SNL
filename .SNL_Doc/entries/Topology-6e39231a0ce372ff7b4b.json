@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y))),theorem(And[authored_Logic_and_infix](Topology.IsOpenMap(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y),Not(Continuous(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y)))))"
+      "snl": "variable(__list__(Type.annotation(@f,Type.to(X@Topology.ctxt.X,Y@Topology.ctxt.Y))),theorem(And[authored_Logic_and_infix](IsOpenMap(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y),Not(Continuous(f,X@Topology.ctxt.X,Y@Topology.ctxt.Y)))))"
     },
     "contribution_info": null,
     "pointer": null,

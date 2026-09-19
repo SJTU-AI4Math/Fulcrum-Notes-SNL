@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@A,Set[text](S@Fulcrum.SetTheory.T)),Type.annotation(@x,T@Fulcrum.SetTheory.T)),theorem(Iff[authored_Logic_iff_long](Set.Mem[authored](,Topology.interior(A),x),Fulcrum.isNhd(A,x))))"
+      "snl": "variable(__list__(Type.annotation(@A,Set[text](S@Fulcrum.SetTheory.T)),Type.annotation(@x,T@Fulcrum.SetTheory.T)),theorem(Iff[authored_Logic_iff_long](Set.Mem[authored](,interior(A),x),Fulcrum.isNhd(A,x))))"
     },
     "contribution_info": null,
     "pointer": null,
