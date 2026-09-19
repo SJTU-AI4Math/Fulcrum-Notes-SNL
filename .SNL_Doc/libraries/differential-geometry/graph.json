@@ -113,6 +113,21 @@
       "label": "branch"
     },
     {
+      "from": "n_0",
+      "to": "n_12",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_ctxt_abReal",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_ctxt_gammaCurve",
+      "label": "branch"
+    },
+    {
       "from": "n_1",
       "to": "n_2",
       "label": "branch"
@@ -160,21 +175,6 @@
     {
       "from": "n_1",
       "to": "n_11",
-      "label": "branch"
-    },
-    {
-      "from": "n_0",
-      "to": "n_12",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_ctxt_abReal",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_ctxt_gammaCurve",
       "label": "branch"
     }
   ]

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@a@DG.ctxt.abReal,Real),Type.annotation(@b@DG.ctxt.abReal,Real),Type.annotation(@$\\gamma$@DG.ctxt.gammaCurve,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),def(DG.def.arcLengthParam[text]($\\gamma$),,DG.def.arcLengthParam[math]($\\gamma$)))",
+      "snl": "def(DG.def.arcLengthParam[text]($\\gamma$),,DG.def.arcLengthParam[math]($\\gamma$))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

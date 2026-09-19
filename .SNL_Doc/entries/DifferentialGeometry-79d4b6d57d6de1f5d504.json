@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@a@DG.ctxt.abReal,Real),Type.annotation(@b@DG.ctxt.abReal,Real),Type.annotation(@$\\gamma$@DG.ctxt.gammaCurve,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),theorem(And[authored_Logic_and_infix](Eq(,Analysis.deriv(DG.def.tangentVector($\\gamma$)),LA.Smul(DG.def.curvature($\\gamma$),DG.def.principalNormal($\\gamma$))),And[authored_Logic_and_infix](Eq(,Analysis.deriv(DG.def.principalNormal($\\gamma$)),Sub.sub[infix](LA.Smul(DG.def.curvature($\\gamma$),DG.def.tangentVector($\\gamma$)),LA.Smul(DG.def.torsion($\\gamma$),DG.def.binormal($\\gamma$)))),Eq(,Analysis.deriv(DG.def.binormal($\\gamma$)),LA.Smul(DG.def.torsion($\\gamma$),DG.def.principalNormal($\\gamma$)))))))",
+      "snl": "theorem(And[authored_Logic_and_infix](Eq(,Analysis.deriv(DG.def.tangentVector($\\gamma$)),LA.Smul(DG.def.curvature($\\gamma$),DG.def.principalNormal($\\gamma$))),And[authored_Logic_and_infix](Eq(,Analysis.deriv(DG.def.principalNormal($\\gamma$)),Sub.sub[infix](LA.Smul(DG.def.curvature($\\gamma$),DG.def.tangentVector($\\gamma$)),LA.Smul(DG.def.torsion($\\gamma$),DG.def.binormal($\\gamma$)))),Eq(,Analysis.deriv(DG.def.binormal($\\gamma$)),LA.Smul(DG.def.torsion($\\gamma$),DG.def.principalNormal($\\gamma$))))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
