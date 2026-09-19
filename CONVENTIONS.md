@@ -636,6 +636,56 @@ assert stripped.count('γ') == 0
 - `variable` 是本笔记的显式语境容器；不能仅凭名称对齐就声称它等同于 Lean 命令对
   后续声明的自动参数收集。跨 Entry 的变量来源仍显式使用现有 Context 引用机制。
 
+#### 12.4.1 Context 条目分两层
+
+Context 条目内部**分两层**，两层各司其职：
+
+- **外层（大 Context）** —— 供人阅读。人不展开就能看到这条语境说的是什么，
+  标题与整体形态按语义命名（`DG.ctxt.gammaCurve`：一条空间曲线及其定义域）。
+- **内层（小声明）** —— 主要供引用。每个可引用的变量是内层的一条**具名声明**
+  （`a : Real`、`b : Real`、`$\gamma$ : …`），供其他 Entry 用 **`名@条目id`** 链到。
+
+**引用语法是 `名@条目id`**——名字在前，一个 `@`，随后是提供该声明的 Context 条目 id：
+
+```snl
+$\gamma$@DG.ctxt.gammaCurve
+a@DG.ctxt.abReal
+```
+
+因此引用方**不再重复声明**被 Context 覆盖的变量：那些声明已经在 Context 里。
+引用方删去重复的 `Type.annotation`，把变量直接链到提供它的 Context。
+
+```snl
+variable(
+  DG.ctxt.abReal,        ← 引用，不再本地声明 a、b
+  DG.ctxt.gammaCurve,    ← 引用，不再本地声明 γ
+  def(DG.def.curvature($\gamma$),, norm(Analysis.deriv2($\gamma$))))
+```
+
+反例（本地重声明，等于 Context 白抽）：
+
+```snl
+variable(__list__(
+    Type.annotation(@a, Real),                     ← 本地声明，只是注了出处
+    Type.annotation(@b, Real),
+    Type.annotation(@$\gamma$, …)),
+  def(…))
+```
+
+Context 的作用在于**免除**该声明；把变量写成带 `@条目id` 后缀的本地 binder
+**不构成引用**。
+
+- Context 条目本身要被 Library 图收录，否则阅读器看不到（见 §1.2 与 §12.10）。
+- 参考实例：`LinearAlgebra.def.vector` 的 `variable` 第一个子树直接是
+  `LA.VectorSpace(V@LinearAlgebra.ctxt.vectorSpace, …)`，而不是重新 `Type.annotation`。
+
+> **实现状态（2026-09-18）**：`名@条目id` 这条引用在 SNL-Basics 侧的**实现当前有问题**，
+> 实测渲染上尚不产生与本地声明不同的效果。规范条款先按此语法立；实现修复另案跟进，
+> 在此之前引用方可以照写（现状等同 fvar），不要为绕开它而退回本地重声明。
+
+**复核：** 对每个引用了 Context 的 Entry，确认其 `variable` 的第一子树是 Context
+条目的引用，而非同名变量的 `Type.annotation`；渲染应与引用前逐字相同。
+
 **复核：** grep 被禁的组合宏名；检查每个 `def` 恰好有三个实参节点。
 
 ### 12.5 结构用 `structure` 声明，不用 `And(...)`
