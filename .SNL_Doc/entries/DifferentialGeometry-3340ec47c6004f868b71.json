@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.torsion($\\gamma$),t),,Eq(,Type.apply(Analysis.deriv(DG.def.binormal($\\gamma$)),t),LA.Smul(Type.apply(DG.def.torsion($\\gamma$),t),Type.apply(DG.def.principalNormal($\\gamma$),t)))))",
+      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.torsion($\\gamma$),t),,inner(Type.apply(Analysis.deriv(DG.def.binormal($\\gamma$)),t),Type.apply(DG.def.principalNormal($\\gamma$),t))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

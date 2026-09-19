@@ -10,12 +10,12 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Arc-Length Parametrization",
-        "zh-CN": "弧长参数化"
+        "en": "Arc-Length Parameter",
+        "zh-CN": "弧长参数"
       }
     },
     "content": {
-      "snl": "def[prop](DG.def.arcLengthParam[text]($\\gamma$),,Set.EqOn(,,norm(Analysis.deriv($\\gamma$)),Function.const(Real,Icc(a,b),$1$),Icc(a,b)))",
+      "snl": "def[prop](DG.def.arcLengthParam[text]($\\gamma$),,Identical[default](norm(Analysis.deriv($\\gamma$)),$1$))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

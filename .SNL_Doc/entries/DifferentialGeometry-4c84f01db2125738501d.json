@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.frenetFrame($\\gamma$),t),,VecNotation[default](Type.apply(DG.def.tangentVector($\\gamma$),t),Type.apply(DG.def.principalNormal($\\gamma$),t),Type.apply(DG.def.binormal($\\gamma$),t))))",
+      "snl": "variable(Type.annotation(@t,Real),def(DG.def.frenetFrame[text]($\\gamma$,t),,VecNotation[default](Type.apply(DG.def.tangentVector($\\gamma$),t),Type.apply(DG.def.principalNormal($\\gamma$),t),Type.apply(DG.def.binormal($\\gamma$),t))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
