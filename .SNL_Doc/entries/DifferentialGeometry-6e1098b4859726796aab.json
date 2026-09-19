@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(DG.def.binormal($\\gamma$),,crossProduct[wedge](DG.def.tangentVector($\\gamma$),DG.def.principalNormal($\\gamma$)))",
+      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.binormal($\\gamma$),t),,crossProduct[wedge](Type.apply(DG.def.tangentVector($\\gamma$),t),Type.apply(DG.def.principalNormal($\\gamma$),t))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

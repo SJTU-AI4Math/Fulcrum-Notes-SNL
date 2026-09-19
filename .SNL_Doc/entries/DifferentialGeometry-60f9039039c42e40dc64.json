@@ -10,18 +10,18 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Arc-Length Parameter",
-        "zh-CN": "弧长参数"
+        "en": "Arc-Length Parametrization",
+        "zh-CN": "弧长参数化"
       }
     },
     "content": {
-      "snl": "def(DG.def.arcLengthParam[text]($\\gamma$),,DG.def.arcLengthParam[math]($\\gamma$))",
+      "snl": "def[prop](DG.def.arcLengthParam[text]($\\gamma$),,Set.EqOn(,,norm(Analysis.deriv($\\gamma$)),Function.const(Real,Icc(a,b),$1$),Icc(a,b)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
         "values": {
-          "en": "A parameter $s$ is called an **arc-length parameter** (or the curve is said to be **parametrized by arc length**) if the speed of $\\gamma$ with respect to $s$ is identically $1$, that is $\\lVert\\gamma'(s)\\rVert\\equiv 1$. Equivalently, $s$ measures the arc length along $\\gamma$ starting from a fixed base point.",
-          "zh-CN": "若参数 $s$ 使得 $\\gamma$ 关于 $s$ 的速率恒为 $1$，即 $\\lVert\\gamma'(s)\\rVert\\equiv 1$，则称 $s$ 为**弧长参数**（或说 $\\gamma$ 是**以弧长为参数**的）。等价地，$s$ 度量了从固定基点出发沿 $\\gamma$ 的弧长。"
+          "en": "A curve $\\gamma$ is **parametrized by arc length** when its speed is identically $1$ on the parameter interval, that is $\\lVert\\gamma'(s)\\rVert=1$ for every $s\\in[a,b]$. Equivalently, the parameter measures arc length along $\\gamma$ starting from a fixed base point.",
+          "zh-CN": "若曲线 $\\gamma$ 在参数区间上速率恒为 $1$，即对每个 $s\\in[a,b]$ 都有 $\\lVert\\gamma'(s)\\rVert=1$，则称 $\\gamma$ 是**以弧长为参数的**（**弧长参数化**）。等价地，该参数度量了从固定基点出发沿 $\\gamma$ 的弧长。"
         }
       }
     },

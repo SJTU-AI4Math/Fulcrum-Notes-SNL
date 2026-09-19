@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(DG.def.principalNormal($\\gamma$),,Div.div(Analysis.deriv2($\\gamma$),norm(Analysis.deriv2($\\gamma$))))",
+      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.principalNormal($\\gamma$),t),,Div.div(Type.apply(Analysis.deriv2($\\gamma$),t),norm(Type.apply(Analysis.deriv2($\\gamma$),t)))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

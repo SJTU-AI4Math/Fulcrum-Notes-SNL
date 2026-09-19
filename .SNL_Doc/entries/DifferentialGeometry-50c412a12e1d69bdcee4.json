@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(DG.def.curvature($\\gamma$@DG.ctxt.gammaCurve),,norm(Analysis.deriv2($\\gamma$@DG.ctxt.gammaCurve)))",
+      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.curvature($\\gamma$),t),,norm(Type.apply(Analysis.deriv2($\\gamma$),t))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

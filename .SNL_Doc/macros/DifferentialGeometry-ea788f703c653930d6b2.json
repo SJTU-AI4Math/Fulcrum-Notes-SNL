@@ -31,14 +31,6 @@
             }
           }
         }
-      },
-      {
-        "style_name": "math",
-        "tags": [],
-        "template": {
-          "mode": "formula_inline",
-          "body": "\\left\\| #0' \\right\\| \\equiv 1"
-        }
       }
     ]
   }

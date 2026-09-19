@@ -216,6 +216,17 @@ entryId := Domain "." kindAbbrev "." slug ("." facet)*
 
 （`kindAbbrev` 取 §7 词表中的 kind ID。）
 
+上表是最常见的一批，**不是 kind 的穷举**。任何结构性 Entry 的 `kindAbbrev` 都取 §7
+词表里该 kind 的 ID——包括表中未列出的 `ppt`、`lma`、`crl`、`cstr`、`axm` 等。
+仓库里既有的旧缩写（`DG.lem.*` 的 `lem`、`Measure.prop.*` 的 `prop`、`Type.rl.*`）
+属 §4.3 的兼容基线，**不得复制进新 id**。
+
+失败模式：同一 Library 里既有旧 `X.prop.foo`、又有规范要求的新 `X.ppt.foo`，id 的
+`kindAbbrev` 段不再指示 kind，检索与归类同时失效。
+
+**复核：** 对新 id，把 `kindAbbrev` 段与 §7 词表逐字比对；旧缩写只允许出现在 §4.3
+列出的兼容身份上。
+
 - `Domain` 是按语义归属的稳定拥有者（`BasicAnalysis`、`Type`、`Lambda`、`Set`、
   `Logic`、`Algebra` 等），与其存储或展示所在的 Entry Package、Library 无关。
 - `slug` 与每个额外 `facet` 都是 ASCII `lowerCamelCase`；缩写按单词归一
@@ -387,6 +398,30 @@ macroName := Namespace "." slug ("." qualifier)?
 
 具体模板、参数及 Style 格式另行补充；命名规范不替代运行时参数契约。
 
+### 5.9 立宏的判据：全局概念，不是局部组合
+
+一个 Macro 只能代表**在整部笔记里可独立命名、可被无关条目复用**的概念——理想情况是
+与某个 Lean 常量精确对应（§5.1）。**为某一个陈述临时拼出的组合命题不立宏。**
+
+```snl
+DG.def.arcLengthParam[math]($\gamma$)      ← 错：宏把 ‖γ'‖ ≡ 1 焊成一个常量
+Set.EqOn(norm(Analysis.deriv($\gamma$)), Function.const(…,$1$), Icc(a,b))
+                                            ← 对：三个概念三个节点
+```
+
+「范数」「恒等于」「1」各自是可复用的概念（`norm`、`Set.EqOn`、`Function.const`）；
+合起来的 `‖γ'‖ ≡ 1` 不是：它只在弧长参数这一处出现，焊成宏后全局命名空间被一个
+不再复用的常量污染。
+
+- **判据：** 去掉这个宏，别的条目还能不能引用它所指称的对象？不能，就拆成节点。
+- **自指的征兆：** 组合宏的定义体往往只能写回它自己（新宏 `<X>` 的 `content.snl` 里
+  出现 `<X>[math]`）。看到这种自指，就说明该宏不是概念，应连同它的 style 一并废弃。
+- **代价：** 组合宏以一个新的全局名字占用 §5.1 的命名归属与 §9 的包归属，收益却只是
+  一次性写法变短。
+
+**复核：** 对每个新宏，问「它对应哪个 Lean 常量」与「有哪些无关条目会引用它」；
+两问答不出，就改用已有概念节点组合。已存在的组合 style 随所属条目重写时废弃。
+
 ---
 
 ## 6. Library 命名规范
@@ -550,6 +585,35 @@ Package 有 manifest；其 `entry_ids` 为空，这明确表示没有 Entry 指�
 - 这些 Entry 与其归纳父项同 Package，并用 Library 的 `Subentry` 计数器挂在每一处
   预期的父项出现之下。其 `content` 保持 `{}`，直到相应定义被撰写。
 
+### 11.4 子条目的适用范围与计数器挂载
+
+**范围。** §11.3 只讲了归纳类型的构造子与递归子；同一机制适用于一切**围绕某个主条目
+派生、离开它就没有意义**的条目：主定义的性质、例子、反例、推论、注、证明。它们与
+主条目同 Package，并在 Library 图里 **`branch` 到主条目节点之下**。
+
+- 反例（**不**挂子条目）：有独立生命周期的条目——自己的定义、自己的定理——即使
+  引用某个主定义，也留在章节层级，不挂到它下面。
+- 子条目 id 仍按 §4.2 独立命名（`DG.ppt.arcLengthParamUniqueness`、
+  `DG.xmp.straightLineCurvature`），**不**把父 id 前缀拼进去。
+
+**计数器挂载。** `Subentry` 不是关系标签，而是一个 **Library 计数器**。要让
+「父项编号 + 子序号」这样的编号真正出现，三件事必须**在同一次 `library update`**
+里一起写入：
+
+1. `counters.counters` 里有一条 `Section > Subsection > Entry > Subentry` 的计数器树
+   （`counters` 是**对象** `{"counters":[…]}`，不是数组）；
+2. 主条目节点 `props.counterId` 指向 `Entry` 计数器的 id，子条目节点指向 `Subentry`
+   计数器的 id（两级 id 必须能在计数器树里按 id 找到）；
+3. 子条目节点已在池中，且有一条 `branch` 关系从主条目节点指向它。
+
+只加 `branch` 而不写计数器，条目会嵌在正确的父项下但**没有编号**（`point-set-topology`
+即如此）；只写计数器而没有 `branch`，编号存在但树位置不对。计数器树里每个 `name`
+必须唯一，否则整个 Library 载入失败。
+
+**复核：** `snl validate --json` 通过只说明图能载，编号要到阅读器确认——取
+`http://<reader>/__snl/api/snapshot?library=<slug>`，检查 `library.outline` 里子条目
+节点的 `counterLabel` 形如 `<父编号>.<n>`。
+
 ---
 
 ## 12. 书写规范（SNL 语法层）
@@ -692,6 +756,24 @@ Context 的作用在于**免除**该声明；把变量写成带 `@条目id` 后�
 
 **复核：** grep 被禁的组合宏名；检查每个 `def` 恰好有三个实参节点。
 
+#### 12.4.2 定义谓词用 `def[prop]`
+
+`def` 的 `[prop]` style 渲染「定义【X】**当且仅当** …」（与 §12.5 的
+`structure[prop]` 同源）。当被定义的对象是**命题**——一个谓词、性质、满足关系——用
+`def[prop]`；当它是对象或函数，用默认 `def`（「定义【X】**为** …」）。
+
+```snl
+def[prop](DG.def.arcLengthParam[text]($\gamma$),,
+    Set.EqOn(norm(Analysis.deriv($\gamma$)), Function.const(…,$1$), Icc(a,b)))
+def(DG.def.curvature($\gamma$),, norm(Analysis.deriv2($\gamma$)))
+```
+
+失败模式：谓词写成普通 `def`，渲染成「定义【γ 是以弧长为参数的】**为** ‖γ'‖ ≡ 1」——
+把命题塞进「为」的宾语槽，读者以为在命名一个对象，而不是在陈述一个条件。
+
+**复核：** 看 `snl entry latex <id>` 的措辞：命题应出现「当且仅当 / if and only if」，
+对象应出现「为 / to be」。
+
 ### 12.5 结构用 `structure` 声明，不用 `And(...)`
 
 多子句定义（「一个群是……」「一条空间曲线是……」）写成嵌套 `And(...)` 会渲染成一串
@@ -721,14 +803,31 @@ structure[prop](
 ### 12.6 点态 vs 函数级陈述
 
 DSL 语法是 `node := name ("(" args? ")")?`——**一个节点至多带一对实参括号**。
-因此像 `γ'(s)` 这样的点态表达式（先对函数求导，再在 `s` 取值）是两次应用，
-无法表达为一个节点。
+因此像 `γ'(s)` 这样的点态表达式（先对函数求导，再在 `s` 取值）必须写成**两层节点**，
+不能压进一个节点。
 
-- Entry 级陈述写在**函数级**：`κ_γ`、`t_γ`。点态公式放进 `content.markdown`。
+```snl
+Type.apply(Analysis.deriv($\gamma$), t)      ← 对：γ' 再作用于 t，渲染 γ'(t)
+Analysis.deriv($\gamma$)(t)                   ← 错：一个节点带了两对括号
+```
+
+- **默认**把 Entry 级陈述写在函数级：`κ_γ`、`t_γ`；纯点态公式放进 `content.markdown`。
+- **点态定义写进 `content.snl` 的条件**：点变量由
+  `variable(Type.annotation(@t, Real), 正文)` 语境引入，正文里的点态值写成
+  `Type.apply(F, t)`。此时渲染出「设 t : ℝ，定义【κ_γ(t)】为 ‖γ''(t)‖」——既保住点态，
+  又让 `‖·‖` 有明确的作用对象，不必依赖隐式类型推理。
 - 例外是 binder：当变量本身被绑定（`@γ`）时，首次应用 `Type.apply(γ, t)` 合法，
   因为 binder 就是绑定位置。
 - 粒度由**数学结构**决定，不由书的呈现顺序决定。点态事实通过 `Type.apply` 提供
   实参来恢复，而不是把定义压平。
+- 把 `(t)` 焊进概念宏模板、专为某一处点态陈述服务的 style 是 §5.9 禁止的组合宏；
+  点态一律由**调用处**的 `Type.apply` 表达，不由宏模板预置。
+
+失败模式：点态定义退成函数级（`def(κ_γ, , ‖γ''‖)`）时 `‖·‖` 的操作数类型含糊，
+渲染器只能靠隐式推理补齐——这正是加 `t : Real` 语境要消除的。
+
+**复核：** `snl entry latex <id>` 应显示 `设 t : ℝ…` 的语境行，且被定义的点态值带
+实参 `(t)`。
 
 ### 12.7 不把字符串写成树
 
@@ -773,8 +872,8 @@ s : Icc(a, b)                     ← 错误：Icc 不是类型构造子
 - Entry 的 `content.snl` 可以为空；空 Entry 合法，并被刻意用于尚未落定的构造子与
   递归子（§11.3）。
 - `content` 的方言是语言无关的 `snl`，外加可选的 `markdown` / `latex` / `typst` /
-  `text`。始终是散文的内容——动机、点态公式、阅读笔记——放进 `markdown`，不要硬塞
-  进 `snl`。
+  `text`。始终是散文的内容——动机、阅读笔记，以及无法用 §12.6 的 binder 语境结构化的
+  点态公式——放进 `markdown`，不要硬塞进 `snl`。
 
 ---
 

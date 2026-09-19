@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "def(DG.def.tangentVector($\\gamma$),,Analysis.deriv($\\gamma$))",
+      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.tangentVector($\\gamma$),t),,Type.apply(Analysis.deriv($\\gamma$),t)))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

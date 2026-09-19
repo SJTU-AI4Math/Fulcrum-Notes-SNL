@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.xmp.circleCurvature",
+    "kind": "example",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Curvature of a Circle of Radius r",
+        "zh-CN": "半径为 $r$ 的圆周的曲率"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@r,Real),DG.def.arcLengthParam($\\gamma$)),theorem(Eq(,DG.def.curvature($\\gamma$),Function.const(Real,Icc(a,b),Div.div($1$,r)))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A circle of radius $r$ has curvature identically $1/r$. The circle may be assumed to lie in the $x$-$y$ plane and be parametrized by arc length as $\\alpha(s)=(r\\cos(s/r),\\,r\\sin(s/r),\\,0)$; then $\\alpha''(s)=(-\\tfrac1r\\cos(s/r),\\,-\\tfrac1r\\sin(s/r),\\,0)$, so $\\kappa=|\\alpha''(s)|\\equiv 1/r$.",
+          "zh-CN": "半径为 $r$ 的圆周的曲率恒为 $1/r$。不妨设该圆周落在 $x$-$y$ 平面上，以弧长参数化为 $\\alpha(s)=(r\\cos(s/r),\\,r\\sin(s/r),\\,0)$；则 $\\alpha''(s)=(-\\tfrac1r\\cos(s/r),\\,-\\tfrac1r\\sin(s/r),\\,0)$，故 $\\kappa=|\\alpha''(s)|\\equiv 1/r$。"
+        }
+      }
+    },
+    "package": "DifferentialGeometry",
+    "contribution_info": null,
+    "pointer": null
+  }
+}
