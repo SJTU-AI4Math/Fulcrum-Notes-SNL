@@ -69,7 +69,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\operatorname{span}\\left\\{\\mathbf{t}_{#0}(#1), \\mathbf{n}_{#0}(#1)\\right\\}",
+          "body": "\\operatorname{span}\\left\\{\\boldsymbol{t}_{#0}(#1), \\boldsymbol{n}_{#0}(#1)\\right\\}",
           "typst": {
             "built_in": "",
             "synthesis": {

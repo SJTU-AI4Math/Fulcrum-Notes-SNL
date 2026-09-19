@@ -141,6 +141,22 @@
         "entryId": "DG.xmp.circleCurvature",
         "counterId": "dg-subentry"
       }
+    },
+    {
+      "id": "n_16",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.frenetFrameOrthonormal",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "n_17",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.frenetFrameRightHanded",
+        "counterId": "dg-subentry"
+      }
     }
   ],
   "relationships": [
@@ -227,6 +243,16 @@
     {
       "from": "n_4",
       "to": "n_15",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_16",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_17",
       "label": "branch"
     }
   ]

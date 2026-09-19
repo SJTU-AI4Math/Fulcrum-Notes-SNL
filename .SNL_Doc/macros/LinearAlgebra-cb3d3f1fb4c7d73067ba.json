@@ -2,10 +2,10 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "DifferentialGeometry",
+  "package": "LinearAlgebra",
   "macro": {
-    "name": "DG.def.frenetFrame",
-    "description": "Frenet frame (t, n, b) of a curve parametrised by arc length: the ordered triple of its tangent vector, principal normal and binormal along the curve. The triple is an orthonormal, right-handed frame; see DG.ppt.frenetFrameOrthonormal and DG.ppt.frenetFrameRightHanded.",
+    "name": "Orthonormal",
+    "description": "Orthonormality of an indexed family of vectors in a real inner product space: every vector has norm 1 and distinct vectors are orthogonal. Mathlib: `def Orthonormal (v : ι → E) : Prop` (root namespace, `Mathlib/Analysis/InnerProductSpace/Orthonormal.lean:49`). Specialised to real Euclidean space, as `norm`/`inner`/`crossProduct` are; the scalar field is not displayed. #0 = the indexed family of vectors.",
     "source": {
       "entries": [],
       "urls": []
@@ -19,7 +19,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\left(\\boldsymbol{t}_{#0}, \\boldsymbol{n}_{#0}, \\boldsymbol{b}_{#0}\\right)",
+          "body": "\\operatorname{Orthonormal}\\left( #0 \\right)",
           "typst": {
             "built_in": "",
             "synthesis": {
@@ -47,7 +47,7 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "#0 的 Frenet 标架",
+              "body": "#0 是规范正交的",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -67,7 +67,7 @@
             },
             "en": {
               "mode": "text",
-              "body": "the Frenet frame of #0",
+              "body": "#0 is orthonormal",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -88,6 +88,11 @@
           }
         }
       }
-    ]
+    ],
+    "pointer": {
+      "file": "Mathlib/Analysis/InnerProductSpace/Orthonormal.lean",
+      "mode": "lines",
+      "line": 49
+    }
   }
 }

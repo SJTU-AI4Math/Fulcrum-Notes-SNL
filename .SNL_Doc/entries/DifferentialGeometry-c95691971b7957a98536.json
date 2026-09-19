@@ -20,8 +20,8 @@
         "type": "i18n",
         "default_language": "en",
         "values": {
-          "en": "For an arc-length parametrized curve $\\gamma$, the **tangent vector** is $\\mathbf{t}:=\\gamma'$, i.e. $\\mathbf{t}(s)=\\gamma'(s)$. Since $s$ is an arc-length parameter, $\\lVert\\mathbf{t}(s)\\rVert=1$ for every $s$, so $\\mathbf{t}$ is the unit tangent field of $\\gamma$.",
-          "zh-CN": "对以弧长为参数的曲线 $\\gamma$，**切向量**定义为 $\\mathbf{t}:=\\gamma'$，即 $\\mathbf{t}(s)=\\gamma'(s)$。由于 $s$ 是弧长参数，对每个 $s$ 都有 $\\lVert\\mathbf{t}(s)\\rVert=1$，故 $\\mathbf{t}$ 是 $\\gamma$ 的单位切向量场。"
+          "en": "For an arc-length parametrized curve $\\gamma$, the **tangent vector** is $\\boldsymbol{t}:=\\gamma'$, i.e. $\\boldsymbol{t}(s)=\\gamma'(s)$. Since $s$ is an arc-length parameter, $\\lVert\\boldsymbol{t}(s)\\rVert=1$ for every $s$, so $\\boldsymbol{t}$ is the unit tangent field of $\\gamma$.",
+          "zh-CN": "对以弧长为参数的曲线 $\\gamma$，**切向量**定义为 $\\boldsymbol{t}:=\\gamma'$，即 $\\boldsymbol{t}(s)=\\gamma'(s)$。由于 $s$ 是弧长参数，对每个 $s$ 都有 $\\lVert\\boldsymbol{t}(s)\\rVert=1$，故 $\\boldsymbol{t}$ 是 $\\gamma$ 的单位切向量场。"
         }
       }
     },

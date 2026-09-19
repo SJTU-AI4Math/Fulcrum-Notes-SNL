@@ -19,7 +19,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathbf{b}_{#0}",
+          "body": "\\boldsymbol{b}_{#0}",
           "typst": {
             "built_in": "",
             "synthesis": {

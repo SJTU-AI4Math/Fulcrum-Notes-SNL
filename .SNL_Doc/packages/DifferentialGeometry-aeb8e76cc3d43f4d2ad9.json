@@ -18,6 +18,8 @@
     "DG.def.torsion",
     "DG.lem.unitVectorOrthogonalDeriv",
     "DG.ppt.arcLengthParamUniqueness",
+    "DG.ppt.frenetFrameOrthonormal",
+    "DG.ppt.frenetFrameRightHanded",
     "DG.sec.curveAndSurfaceLocalTheory",
     "DG.subsec.spaceCurveTheory",
     "DG.subsec.surfaces",

@@ -21,8 +21,8 @@
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "$0\\cdot v=\\mathbf{0}_V$。",
-          "en": "$0\\cdot v=\\mathbf{0}_V$."
+          "zh-CN": "$0\\cdot v=\\boldsymbol{0}_V$。",
+          "en": "$0\\cdot v=\\boldsymbol{0}_V$."
         }
       }
     },
