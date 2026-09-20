@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Module.finrank",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "维数（finrank）",
+        "en": "Dimension (finrank)"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$)),def(Module.finrank($\\mathbb{K}$,V),,$\\dim_{\\mathbb{K}} V = \\operatorname{card} b \\quad (\\text{any basis } b;\\ 0 \\text{ if infinite-rank})$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$\\dim_{\\mathbb{K}} V$ 是 $V$ 的有限维数，等于任意一组基的基数；无限秩时约定为 $0$。Lean 中 `Module.finrank 𝕂 V` 接受两个显式参数：标量域与模。",
+          "en": "$\\dim_{\\mathbb{K}} V$ is the finite dimension of $V$, the cardinality of any basis; it is $0$ by convention for infinite rank. In Lean `Module.finrank 𝕂 V` takes two explicit arguments, the scalar field and the module."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/Dimension/Finrank.lean",
+      "mode": "lines",
+      "line": 61,
+      "endLine": 63,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

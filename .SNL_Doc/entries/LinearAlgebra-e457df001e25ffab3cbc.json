@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Submodule.orthogonalProjection",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "正交投影",
+        "en": "Orthogonal projection"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@W,$\\mathrm{Submodule}\\ \\mathbb{K}\\ V$),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V)),Type.annotation(@hproj,$W.\\mathrm{HasOrthogonalProjection}$)),def(Submodule.orthogonalProjection(W),,$\\pi_W x \\in W,\\quad x - \\pi_W x \\in W^{\\perp};\\quad \\text{such a } w \\in W \\text{ is unique (and minimises } \\|x-w\\|)$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "对具有正交投影的子空间 $W$（需实例 `W.HasOrthogonalProjection`），`Submodule.orthogonalProjection W : V →L[𝕜] W` 是满足 $\\pi_W x\\in W$ 与 $x-\\pi_W x\\in W^\\perp$ 的连续线性映射；满足这两条且落在 $W$ 中的元素唯一，并且 $x-\\pi_W x\\in W^\\perp$、$\\pi_W x$ 是 $W$ 中离 $x$ 最近的点。显式参数只有子空间 $W$。",
+          "en": "For a subspace $W$ with an orthogonal projection (instance `W.HasOrthogonalProjection`), `Submodule.orthogonalProjection W : V →L[𝕜] W` is the continuous linear map with $\\pi_W x\\in W$ and $x-\\pi_W x\\in W^\\perp$; the element of $W$ satisfying these two conditions is unique, and $\\pi_W x$ is the closest point of $W$ to $x$. The only explicit argument is the subspace $W$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Projection/Basic.lean",
+      "mode": "lines",
+      "line": 130,
+      "endLine": 143,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

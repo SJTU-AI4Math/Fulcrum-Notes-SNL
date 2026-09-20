@@ -28,3 +28,5 @@ snl_notation Fulcrum.UniqueRepresentation => %#5 in #1 has unique coefficients f
 snl_notation Fulcrum.Subfamily => %The family #3 (length #2) is a subfamily of #4 (length #1)%
 snl_notation Fulcrum.Contains => %#3 occurs in the length-#1 family #2%
 snl_notation Fulcrum.HasRepeat => %The length-#1 family #2 has equal vectors at distinct indices%
+-- exterior algebra (binary wedge product wrapper)
+snl_notation Fulcrum.wedge => $#2 \wedge #3$

@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "exteriorPower.ιMulti",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "外幂的典范交错映射",
+        "en": "Canonical alternating map into the exterior power"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),LA.Field($\\mathbb{K}$),Type.annotation(@n,Nat),Type.annotation(@V,Type),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@v,Type.to(LA.Fin(n),V))),def(exteriorPower.ιMulti($\\mathbb{K}$,n,v),,$\\iota^{n}_{\\mathbb{K}}(v_1,\\dots,v_n) = v_1 \\wedge \\cdots \\wedge v_n$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$\\iota^{n}_{\\mathbb{K}}(v_1,\\dots,v_n)=v_1\\wedge\\cdots\\wedge v_n$ 是典范交错多重线性映射 $V^n\\to\\bigwedge^{n}_{\\mathbb{K}}V$（Mathlib 名 `exteriorPower.ιMulti R n`，小写命名空间，$M$ 为隐式参数）。",
+          "en": "$\\iota^{n}_{\\mathbb{K}}(v_1,\\dots,v_n)=v_1\\wedge\\cdots\\wedge v_n$ is the canonical alternating multilinear map $V^n\\to\\bigwedge^{n}_{\\mathbb{K}}V$ (Mathlib name `exteriorPower.ιMulti R n`, lowercase namespace, with $M$ implicit)."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/ExteriorPower/Basic.lean",
+      "mode": "lines",
+      "line": 47,
+      "endLine": 60,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

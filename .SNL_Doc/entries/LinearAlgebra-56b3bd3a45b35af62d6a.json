@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Module.Basis.sum_repr",
+    "package": "LinearAlgebra",
+    "kind": "theorem",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "基展开公式",
+        "en": "Basis expansion"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@hf,$\\mathrm{Fintype}\\ \\iota$),Type.annotation(@b,Module.Basis(ι,$\\mathbb{K}$,V)),Type.annotation(@x,V)),theorem($\\sum_{i} (b.\\mathrm{repr}\\ x)\\,i \\cdot b_i = x$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "对有限基 $b$，每个向量按坐标展开：$x=\\sum_i[x]_{b,i}\\,b_i$（Lean 中 `Module.Basis.sum_repr b x`，需 `[Fintype ι]`）。",
+          "en": "For a finite basis $b$ every vector expands in coordinates: $x=\\sum_i[x]_{b,i}\\,b_i$ (Lean `Module.Basis.sum_repr b x`, requiring `[Fintype ι]`)."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/Basis/Defs.lean",
+      "mode": "lines",
+      "line": 255,
+      "endLine": 258,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

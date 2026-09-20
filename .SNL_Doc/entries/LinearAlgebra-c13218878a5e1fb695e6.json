@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Module.Basis.exteriorPower",
+    "package": "LinearAlgebra",
+    "kind": "theorem",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "外幂的基刻画",
+        "en": "Basis characterization of the exterior power"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@n,Nat),Type.annotation(@hord,$\\mathrm{LinearOrder}\\ \\iota$),Type.annotation(@b,Module.Basis(ι,$\\mathbb{K}$,V))),theorem($\\mathrm{Basis}\\ (\\uparrow(\\mathrm{Set.powersetCard}\\ \\iota\\ n))\\ \\mathbb{K}\\ (\\bigwedge^{n}_{\\mathbb{K}} V) \\quad\\text{and}\\quad \\dim_{\\mathbb{K}} \\bigwedge^{n}_{\\mathbb{K}} V = \\binom{\\dim_{\\mathbb{K}} V}{n}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "若 $b$ 是 $V$ 的基，则 $\\{b_{i_1}\\wedge\\cdots\\wedge b_{i_n}\\mid i_1<\\cdots<i_n\\}$ 是 $\\bigwedge^{n}_{\\mathbb{K}}V$ 的基，指标类型为 $n$ 元子集 `Set.powersetCard ι n`；于是 $\\dim\\bigwedge^{n}V=\\binom{\\dim V}{n}$。Mathlib 的 `Basis.exteriorPower n b` 正是这组基，因此这是外幂的**基刻画**，而非仅双线性/交错性。",
+          "en": "If $b$ is a basis of $V$ then $\\{b_{i_1}\\wedge\\cdots\\wedge b_{i_n}\\mid i_1<\\cdots<i_n\\}$ is a basis of $\\bigwedge^{n}_{\\mathbb{K}}V$ indexed by the $n$-element subsets `Set.powersetCard ι n`; hence $\\dim\\bigwedge^{n}V=\\binom{\\dim V}{n}$. Mathlib's `Basis.exteriorPower n b` is exactly this basis, so this is the **basis characterisation** of the exterior power, not mere bilinearity/alternation."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/ExteriorPower/Basis.lean",
+      "mode": "lines",
+      "line": 100,
+      "endLine": 104,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

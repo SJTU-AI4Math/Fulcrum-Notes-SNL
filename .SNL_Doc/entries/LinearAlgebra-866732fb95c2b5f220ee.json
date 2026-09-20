@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearIndependent.Maximal",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "极大线性无关族",
+        "en": "Maximal linearly independent family"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@v,Type.to(ι,V)),Type.annotation(@hi,LA.LinearlyIndependent(v,V))),def[prop](LinearIndependent.Maximal(hi),,$\\forall s : \\mathrm{Set}\\,V,\\ \\mathrm{LinearIndependent}\\ \\mathbb{K}\\ ((\\uparrow) : s \\to V) \\to \\operatorname{range} v \\subseteq s \\to \\operatorname{range} v = s$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "设 $v:\\iota\\to V$ 线性无关，其独立性证明为 $i:\\mathrm{LinearIndependent}\\ \\mathbb{K}\\ v$。Lean 中 `LinearIndependent.Maximal i` 是**关于独立性证明的谓词**（`i.Maximal`），不是关于族本身的谓词：它断言不存在真包含 $\\operatorname{range} v$ 的线性无关集，即 $\\forall s,\\,\\mathrm{LinearIndependent}\\ \\mathbb{K}\\ (s\\to V)\\to \\operatorname{range} v\\subseteq s\\to \\operatorname{range} v=s$。因此宏 `LinearIndependent.Maximal` 只接受一个参数——那份独立性证明；族 $v$ 是其隐式参数。",
+          "en": "Let $v:\\iota\\to V$ be linearly independent with proof $i:\\mathrm{LinearIndependent}\\ \\mathbb{K}\\ v$. In Lean `LinearIndependent.Maximal i` is a **predicate on the independence proof** (`i.Maximal`), not a predicate on a family: it says no strictly larger linearly independent set contains $\\operatorname{range} v$, i.e. $\\forall s,\\,\\mathrm{LinearIndependent}\\ \\mathbb{K}\\ (s\\to V)\\to \\operatorname{range} v\\subseteq s\\to \\operatorname{range} v=s$. The macro therefore takes exactly one argument, the independence proof; the family $v$ is implicit."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/LinearIndependent/Defs.lean",
+      "mode": "lines",
+      "line": 536,
+      "endLine": 542,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

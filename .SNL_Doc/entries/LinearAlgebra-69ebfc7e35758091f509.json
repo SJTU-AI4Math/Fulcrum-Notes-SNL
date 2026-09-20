@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearAlgebra.prop.wedgeLinear",
+    "package": "LinearAlgebra",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "楔积的双线性",
+        "en": "Bilinearity of the wedge"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@u1,V),Type.annotation(@u2,V),Type.annotation(@v,V),Type.annotation(@k,$\\mathbb{K}$)),theorem($(u_1+u_2) \\wedge v = u_1 \\wedge v + u_2 \\wedge v \\quad\\text{and}\\quad (k\\,u) \\wedge v = k\\,(u \\wedge v)$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "楔积对每个变量分别可加、齐次：$(u_1+u_2)\\wedge v=u_1\\wedge v+u_2\\wedge v$，$(ku)\\wedge v=k(u\\wedge v)$；所有运算都在外幂 $\\bigwedge^{2}_{\\mathbb{K}}V$ 中进行。",
+          "en": "The wedge is additive and homogeneous in each variable: $(u_1+u_2)\\wedge v=u_1\\wedge v+u_2\\wedge v$ and $(ku)\\wedge v=k(u\\wedge v)$, all operations taken in the exterior power $\\bigwedge^{2}_{\\mathbb{K}}V$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/ExteriorPower/Basic.lean",
+      "mode": "lines",
+      "line": 47,
+      "endLine": 60,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

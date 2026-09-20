@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearMap.BilinForm",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "双线性型",
+        "en": "Bilinear form"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),LA.Field($\\mathbb{K}$),Type.annotation(@M,Type),LA.VectorSpace(M,$\\mathbb{K}$)),def(LinearMap.BilinForm($\\mathbb{K}$,M),,$\\mathrm{BilinForm}\\ \\mathbb{K}\\ M = \\mathrm{BilinMap}\\ \\mathbb{K}\\ M\\ \\mathbb{K}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$M$ 上的双线性型是取值于 $\\mathbb{K}$ 的同一源空间双线性映射，即 `LinearMap.BilinForm 𝕂 M = LinearMap.BilinMap 𝕂 M 𝕂`；对称、交错等性质作为附加谓词研究。显式参数为 $\\mathbb{K}\\ M$。",
+          "en": "A bilinear form on $M$ is a same-source bilinear map with values in $\\mathbb{K}$, i.e. `LinearMap.BilinForm 𝕂 M = LinearMap.BilinMap 𝕂 M 𝕂`; symmetry and alternation are extra predicates. Explicit parameters are $\\mathbb{K}\\ M$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/BilinearMap.lean",
+      "mode": "lines",
+      "line": 500,
+      "endLine": 502,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

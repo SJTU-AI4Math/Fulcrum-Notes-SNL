@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Orthonormal",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "规范正交族",
+        "en": "Orthonormal family"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@v,Type.to(ι,V)),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),def[prop](Orthonormal($\\mathbb{K}$,v),,$(\\forall i,\\ \\|v_i\\| = 1) \\wedge (\\forall i \\ne j,\\ \\langle v_i, v_j\\rangle = 0)$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "族 $v$ 规范正交，当且仅当每个 $v_i$ 是单位向量且不同指标对应的向量两两正交；规范正交族必线性无关。Lean 中 `Orthonormal 𝕜 v` 显式接受标量域与族 $v$ 两个参数。",
+          "en": "A family $v$ is orthonormal iff each $v_i$ is a unit vector and distinct vectors are pairwise orthogonal; an orthonormal family is automatically linearly independent. In Lean `Orthonormal 𝕜 v` takes exactly the scalar field and the family $v$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Orthonormal.lean",
+      "mode": "lines",
+      "line": 48,
+      "endLine": 51,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

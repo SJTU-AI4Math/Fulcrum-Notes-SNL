@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Submodule.span",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "张成（span）",
+        "en": "Span"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@s,$\\mathrm{Set}\\ V$)),def(Submodule.span($\\mathbb{K}$,s),,$\\operatorname{span}(s) = \\bigcap \\{ p : \\mathrm{Submodule}\\ \\mathbb{K}\\ V \\mid s \\subseteq p \\}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$\\operatorname{span}(s)$ 是包含 $s$ 的最小 $\\mathbb{K}$-子空间，即所有包含 $s$ 的子空间的交；等价地 $x\\in\\operatorname{span}(s)$ 当且仅当 $x$ 是 $s$ 中有限多个向量的线性组合。Lean 中 `Submodule.span 𝕂 s` 接受两个显式参数：标量域与集合 $s$。",
+          "en": "$\\operatorname{span}(s)$ is the smallest $\\mathbb{K}$-subspace containing $s$, the intersection of all subspaces containing $s$; equivalently $x\\in\\operatorname{span}(s)$ iff $x$ is a finite linear combination of vectors of $s$. In Lean `Submodule.span 𝕂 s` takes two explicit arguments, the scalar field and the set $s$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/Span/Defs.lean",
+      "mode": "lines",
+      "line": 46,
+      "endLine": 49,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

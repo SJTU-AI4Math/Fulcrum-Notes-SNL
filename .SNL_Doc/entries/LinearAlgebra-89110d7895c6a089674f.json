@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "gramSchmidtNormed",
+    "package": "LinearAlgebra",
+    "kind": "construction",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "规范正交化",
+        "en": "Orthonormalization"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@hord,$\\mathrm{LinearOrder}\\ \\iota$),Type.annotation(@f,Type.to(ι,V)),Type.annotation(@n,ι),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),def(gramSchmidtNormed($\\mathbb{K}$,f,n),,$\\widehat{g}_n = \\|g_n\\|^{-1} g_n;\\quad f \\text{ linearly independent} \\Rightarrow \\{\\widehat{g}_n\\} \\text{ is orthonormal}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "规范化：$\\widehat{g}_n=\\|g_n\\|^{-1}g_n$（$g_n=0$ 时约定为 $0$）。当 $f$ 线性无关时 $g_n\\ne 0$，该族规范正交且与 $f$ 张成相同的滤子。",
+          "en": "Normalisation: $\\widehat{g}_n=\\|g_n\\|^{-1}g_n$ (taken as $0$ when $g_n=0$). When $f$ is linearly independent the $g_n$ are nonzero, and the family is orthonormal with the same spans as $f$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.lean",
+      "mode": "lines",
+      "line": 236,
+      "endLine": 240,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

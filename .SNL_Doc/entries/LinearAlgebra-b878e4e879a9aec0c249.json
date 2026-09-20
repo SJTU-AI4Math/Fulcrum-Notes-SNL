@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "norm_inner_le_norm",
+    "package": "LinearAlgebra",
+    "kind": "theorem",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "Cauchy–Schwarz 不等式",
+        "en": "Cauchy–Schwarz inequality"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@x,V),Type.annotation(@y,V),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),theorem($|\\langle x,y\\rangle| \\le \\|x\\|\\,\\|y\\|$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$|\\langle x,y\\rangle|\\le\\|x\\|\\,\\|y\\|$：Cauchy–Schwarz 不等式；等号成立当且仅当 $x,y$ 线性相关。",
+          "en": "$|\\langle x,y\\rangle|\\le\\|x\\|\\,\\|y\\|$: the Cauchy–Schwarz inequality; equality holds iff $x,y$ are linearly dependent."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Basic.lean",
+      "mode": "lines",
+      "line": 453,
+      "endLine": 457,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

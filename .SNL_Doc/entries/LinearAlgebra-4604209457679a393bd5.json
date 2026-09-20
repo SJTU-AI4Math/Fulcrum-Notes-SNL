@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "InnerProductSpace.Core",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "内积空间（核心结构）",
+        "en": "Inner product space (core structure)"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),LA.Field($\\mathbb{K}$),Type.annotation(@F,Type),LA.VectorSpace(F,$\\mathbb{K}$)),structure(InnerProductSpace.Core($\\mathbb{K}$,F),__enum__(member[colon](%内积%,$\\langle\\cdot,\\cdot\\rangle : F \\times F \\to \\mathbb{K}$),member[colon](%共轭对称%,$\\langle y,x\\rangle = \\overline{\\langle x,y\\rangle}$),member[colon](%实部非负%,$0 \\le \\operatorname{Re}\\langle x,x\\rangle$),member[colon](%对第一变量加性%,$\\langle x+y,z\\rangle = \\langle x,z\\rangle + \\langle y,z\\rangle$),member[colon](%对第一变量共轭齐性%,$\\langle k\\,x,y\\rangle = \\overline{k}\\,\\langle x,y\\rangle$),member[colon](%正定%,$\\langle x,x\\rangle = 0 \\to x = 0$))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "`InnerProductSpace.Core 𝕜 F` 是**类型构造子**：$F$ 上正定内积的核心结构，含映射及其共轭对称、实部非负、对第一变量加性与共轭齐性、正定性。显式参数为 $\\mathbb{K}\\ F$。",
+          "en": "`InnerProductSpace.Core 𝕜 F` is a **type constructor**: the core structure of a positive-definite inner product on $F$, comprising the map together with conjugate symmetry, nonnegative real part, additivity and conjugate homogeneity in the first argument, and positive definiteness. Explicit parameters are $\\mathbb{K}\\ F$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Defs.lean",
+      "mode": "lines",
+      "line": 149,
+      "endLine": 159,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

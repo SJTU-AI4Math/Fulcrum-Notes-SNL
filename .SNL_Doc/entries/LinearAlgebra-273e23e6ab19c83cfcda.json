@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "OrthonormalBasis.sum_repr",
+    "package": "LinearAlgebra",
+    "kind": "theorem",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "规范正交基展开",
+        "en": "Expansion in an orthonormal basis"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@b,OrthonormalBasis(ι,$\\mathbb{K}$,V)),Type.annotation(@x,V),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),theorem($x = \\sum_{i} \\langle b_i, x\\rangle\\, b_i$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "在规范正交基下展开式的系数就是内积：$x=\\sum_i\\langle b_i,x\\rangle b_i$。",
+          "en": "In an orthonormal basis the expansion coefficients are the inner products: $x=\\sum_i\\langle b_i,x\\rangle b_i$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/PiL2.lean",
+      "mode": "lines",
+      "line": 462,
+      "endLine": 465,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

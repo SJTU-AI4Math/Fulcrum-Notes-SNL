@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Module.Basis",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "基（Basis）",
+        "en": "Basis"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type)),structure(Module.Basis(ι,$\\mathbb{K}$,V),__enum__(member[colon](%repr%,$V \\simeq_{\\mathbb{K}} ({\\iota} \\to_0 \\mathbb{K})$))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "`Module.Basis ι 𝕂 V` 是 $V$ 的 **$\\iota$-索引基的类型（结构）**，不是关于某个已有族的命题：其唯一字段是线性等价 $b.\\mathrm{repr}:V\\simeq_{\\mathbb{K}}(\\iota\\to_0\\mathbb{K})$，底层族由 $\\mathord{\\uparrow}b:\\iota\\to V$ 给出。写成三个显式参数 $\\iota\\ \\mathbb{K}\\ V$；族 $b$ 是结构元素，不是 `Module.Basis` 的第四个参数。（由“线性无关且张成”构造基请用 `Basis.mk`。）",
+          "en": "`Module.Basis ι 𝕂 V` is the **type (structure) of $\\iota$-indexed bases of $V$**, not a proposition about a pre-existing family: its single field is the linear equivalence $b.\\mathrm{repr}:V\\simeq_{\\mathbb{K}}(\\iota\\to_0\\mathbb{K})$, and its underlying family is $\\mathord{\\uparrow}b:\\iota\\to V$. It takes three explicit parameters $\\iota\\ \\mathbb{K}\\ V$; the family $b$ is an element of the structure, not a fourth argument. (Use `Basis.mk` to build a basis from a linearly independent spanning family.)"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/Basis/Defs.lean",
+      "mode": "lines",
+      "line": 80,
+      "endLine": 93,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

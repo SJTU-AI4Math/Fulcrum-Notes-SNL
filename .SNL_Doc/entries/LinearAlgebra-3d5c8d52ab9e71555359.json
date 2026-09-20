@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Fulcrum.wedge",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "楔积（二元）",
+        "en": "Wedge product (binary)"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@u,V),Type.annotation(@v,V)),def(Fulcrum.wedge($\\mathbb{K}$,V,u,v),,$u \\wedge v = \\iota^{2}_{\\mathbb{K}}([u,v]),\\quad u \\wedge v \\in \\bigwedge^{2}_{\\mathbb{K}} V$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$u\\wedge v$ 是二元**楔积**，定义为典范映射 `exteriorPower.ιMulti 𝕂 2` 作用于二元族 $[u,v]$，取值于 $\\bigwedge^{2}_{\\mathbb{K}} V$。它只是薄封装（$V$ 与 $\\mathbb{K}$ 为显式参数，$u,v$ 为向量），外幂由 Mathlib 提供；楔积**不是**叉积。",
+          "en": "$u\\wedge v$ is the binary **wedge product**, defined as the canonical map `exteriorPower.ιMulti 𝕂 2` applied to the two-element family $[u,v]$, with values in $\\bigwedge^{2}_{\\mathbb{K}} V$. It is a thin wrapper ($V$ and $\\mathbb{K}$ explicit, $u,v$ vectors); the exterior power is Mathlib's, and the wedge is **not** the cross product."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": "Lean4/Linear Algebra/LinearAlgebra.lean",
+      "mode": "lines",
+      "line": 386,
+      "endLine": 390,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

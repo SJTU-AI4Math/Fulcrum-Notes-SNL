@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Module.Basis.extendLe",
+    "package": "LinearAlgebra",
+    "kind": "construction",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "在张成集内扩充为基",
+        "en": "Extending inside a spanning set"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@s,$\\mathrm{Set}\\ V$),Type.annotation(@t,$\\mathrm{Set}\\ V$),Type.annotation(@hs,$\\mathrm{LinearIndepOn}\\ \\mathbb{K}\\ \\mathrm{id}\\ s$),Type.annotation(@hst,$s \\subseteq t$),Type.annotation(@ht,$\\top \\le \\mathrm{Submodule.span}\\ \\mathbb{K}\\ t$)),def(Module.Basis.extendLe(hs,hst,ht),,$\\mathrm{Basis}\\ (\\mathrm{hs}.\\mathrm{extend}\\ \\mathrm{hst})\\ \\mathbb{K}\\ V \\quad\\text{with}\\quad s \\subseteq \\operatorname{range} \\subseteq t$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "`Basis.extendLe hs hst ht` 在张成集 $t$ 内把线性无关集 $s$ 扩充为基：它接受三个显式参数——独立性证明 `hs`、包含关系 `hst : s ⊆ t`、张成条件 `ht : ⊤ ≤ span 𝕂 t`，返回基 `Basis (hs.extend hst) 𝕂 V`，且 $s\\subseteq$ 其底层族 $\\subseteq t$。",
+          "en": "`Basis.extendLe hs hst ht` extends the linearly independent set $s$ to a basis inside the spanning set $t$: three explicit arguments — the independence proof `hs`, the inclusion `hst : s ⊆ t`, and the spanning condition `ht : ⊤ ≤ span 𝕂 t` — yielding the basis `Basis (hs.extend hst) 𝕂 V` with underlying family between $s$ and $t$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/Basis/VectorSpace.lean",
+      "mode": "lines",
+      "line": 93,
+      "endLine": 94,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

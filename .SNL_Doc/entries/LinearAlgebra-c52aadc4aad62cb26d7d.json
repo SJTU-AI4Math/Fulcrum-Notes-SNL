@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "InnerProductSpace",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "内积空间",
+        "en": "Inner product space"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),LA.Field($\\mathbb{K}$),Type.annotation(@E,Type),LA.VectorSpace(E,$\\mathbb{K}$)),structure(InnerProductSpace($\\mathbb{K}$,E),__enum__(member[colon](%内积%,$\\langle\\cdot,\\cdot\\rangle : E \\times E \\to \\mathbb{K}$),member[colon](%范数由内积诱导%,$\\|x\\|^{2} = \\operatorname{Re}\\langle x,x\\rangle$))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "`InnerProductSpace 𝕜 E` 是**类型构造子**（类）：$E$ 配备内积，且其范数由内积按 $\\|x\\|^2=\\operatorname{Re}\\langle x,x\\rangle$ 诱导（该等式是结构字段）。显式参数为 $\\mathbb{K}\\ E$。",
+          "en": "`InnerProductSpace 𝕜 E` is a **type constructor** (class): $E$ carries an inner product and its norm is induced by it through $\\|x\\|^2=\\operatorname{Re}\\langle x,x\\rangle$ (that identity is a structure field). Explicit parameters are $\\mathbb{K}\\ E$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Defs.lean",
+      "mode": "lines",
+      "line": 106,
+      "endLine": 115,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

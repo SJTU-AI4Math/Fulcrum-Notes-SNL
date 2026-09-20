@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "gramSchmidt",
+    "package": "LinearAlgebra",
+    "kind": "construction",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "Gram–Schmidt 正交化",
+        "en": "Gram–Schmidt orthogonalization"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@hord,$\\mathrm{LinearOrder}\\ \\iota$),Type.annotation(@f,Type.to(ι,V)),Type.annotation(@n,ι),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),def(gramSchmidt($\\mathbb{K}$,f,n),,$g_n = f_n - \\sum_{i<n} (\\mathbb{K} \\bullet g_i).\\mathrm{starProjection}(f_n);\\quad g_i = 0 \\Rightarrow \\text{that term is } 0,\\quad g_n = 0 \\Leftrightarrow f_n \\in \\operatorname{span}\\{f_i\\}_{i<n}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "Gram–Schmidt 递推：$g_n=f_n-\\sum_{i<n}\\frac{\\langle f_n,g_i\\rangle}{\\langle g_i,g_i\\rangle}g_i$（Lean 用 `(𝕜 ∙ g_i).starProjection` 表述，等价于上式）。当某个 $g_i=0$ 时该项为 $0$；$g_n=0$ 当且仅当 $f_n$ 落在前面诸 $f_i$ 的张成内。其好处是 $\\operatorname{span}\\{g_i\\}_{i\\le n}=\\operatorname{span}\\{f_i\\}_{i\\le n}$ 且诸 $g_i$ 两两正交。",
+          "en": "The Gram–Schmidt recurrence: $g_n=f_n-\\sum_{i<n}\\frac{\\langle f_n,g_i\\rangle}{\\langle g_i,g_i\\rangle}g_i$ (Lean writes it with `(𝕜 ∙ g_i).starProjection`, equivalent to the displayed sum). If some $g_i=0$ that term is $0$; $g_n=0$ iff $f_n$ lies in the span of the preceding $f_i$. It enjoys $\\operatorname{span}\\{g_i\\}_{i\\le n}=\\operatorname{span}\\{f_i\\}_{i\\le n}$ with the $g_i$ pairwise orthogonal."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.lean",
+      "mode": "lines",
+      "line": 48,
+      "endLine": 55,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

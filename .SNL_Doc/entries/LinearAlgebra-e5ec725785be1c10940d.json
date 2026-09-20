@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "norm",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "范数",
+        "en": "Norm"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@x,V),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),def(norm(x),,$\\|x\\| = \\sqrt{\\operatorname{Re}\\langle x,x\\rangle}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$\\|x\\|$ 是 $x$ 的范数；在内积空间中由内积给出 $\\|x\\|=\\sqrt{\\operatorname{Re}\\langle x,x\\rangle}$。并非所有范数都来自内积，此式只在内积空间成立。",
+          "en": "$\\|x\\|$ is the norm of $x$; in an inner product space it is given by $\\|x\\|=\\sqrt{\\operatorname{Re}\\langle x,x\\rangle}$. Not every norm arises from an inner product, so this identity is only valid in an inner product space."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/Normed/Group/Defs.lean",
+      "mode": "lines",
+      "line": 54,
+      "endLine": 78,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

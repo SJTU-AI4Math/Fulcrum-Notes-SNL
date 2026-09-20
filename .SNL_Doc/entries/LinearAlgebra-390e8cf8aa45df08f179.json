@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Module.Basis.repr",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "坐标（repr）",
+        "en": "Coordinates (repr)"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@b,Module.Basis(ι,$\\mathbb{K}$,V))),def(Module.Basis.repr(b),,$b.\\mathrm{repr} \\in V \\simeq_{\\mathbb{K}} (\\iota \\to_0 \\mathbb{K}) \\quad\\text{and}\\quad b.\\mathrm{repr}\\,x\\,i = [x]_{b,i}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "`b.repr` 是基 $b$ 对应的线性等价 $V\\simeq_{\\mathbb{K}}(\\iota\\to_0\\mathbb{K})$，把 $x$ 送到其坐标（有限支撑函数）；坐标 $[x]_{b,i}$ 即满足 $x=\\sum_i[x]_{b,i}\\,b_i$ 的唯一系数。`Module.Basis.repr` 只接受一个显式参数：基 $b$。",
+          "en": "`b.repr` is the linear equivalence $V\\simeq_{\\mathbb{K}}(\\iota\\to_0\\mathbb{K})$ attached to the basis $b$, sending $x$ to its coordinates (a finitely supported function); the coordinate $[x]_{b,i}$ is the unique coefficient with $x=\\sum_i[x]_{b,i}\\,b_i$. `Module.Basis.repr` takes one explicit argument, the basis $b$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/Basis/Defs.lean",
+      "mode": "lines",
+      "line": 90,
+      "endLine": 93,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

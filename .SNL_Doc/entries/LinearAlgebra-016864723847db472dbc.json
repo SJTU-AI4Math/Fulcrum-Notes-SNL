@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "inner",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "内积",
+        "en": "Inner product"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@x,V),Type.annotation(@y,V),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),def(inner(x,y),,$\\langle x,y\\rangle : V \\times V \\to \\mathbb{K} \\quad \\text{(conjugate-symmetric, conjugate-linear in } x \\text{, positive definite)}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$\\langle x,y\\rangle$ 是 $x,y$ 的内积：映射 $V\\times V\\to\\mathbb{K}$，满足共轭对称、对第一变量共轭线性与正定性。Lean 中 `inner 𝕜 x y` 的标量域 $\\mathbb{K}$ 是显式参数。",
+          "en": "$\\langle x,y\\rangle$ is the inner product of $x,y$: a map $V\\times V\\to\\mathbb{K}$ that is conjugate-symmetric, conjugate-linear in the first argument, and positive definite. In Lean `inner 𝕜 x y` takes the scalar field $\\mathbb{K}$ explicitly."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Defs.lean",
+      "mode": "lines",
+      "line": 78,
+      "endLine": 86,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

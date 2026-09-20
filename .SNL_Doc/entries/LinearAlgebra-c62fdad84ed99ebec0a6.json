@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Module.Basis.extend",
+    "package": "LinearAlgebra",
+    "kind": "construction",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "线性无关族可扩成基",
+        "en": "Extending a linearly independent family to a basis"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@s,$\\mathrm{Set}\\ V$),Type.annotation(@hs,$\\mathrm{LinearIndepOn}\\ \\mathbb{K}\\ \\mathrm{id}\\ s$)),def(Module.Basis.extend(hs),,$\\mathrm{Basis}\\ (\\mathrm{hs}.\\mathrm{extend})\\ \\mathbb{K}\\ V \\quad\\text{with}\\quad s \\subseteq \\operatorname{range}(\\mathrm{hs}.\\mathrm{extend})\\ \\text{(root family)}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "`Basis.extend` 接受一个**线性无关性证明** `hs : LinearIndepOn 𝕂 id s`（DivisionRing 情形），返回 $V$ 的一组基，其底层族包含 $s$。它不是“输入族、输出存在基”的定理，而是构造。",
+          "en": "`Basis.extend` takes a **proof of linear independence** `hs : LinearIndepOn 𝕂 id s` (division-ring case) and returns a basis of $V$ whose underlying family contains $s$. It is a construction, not a “family in, existence of a basis out” theorem."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/Basis/VectorSpace.lean",
+      "mode": "lines",
+      "line": 52,
+      "endLine": 53,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

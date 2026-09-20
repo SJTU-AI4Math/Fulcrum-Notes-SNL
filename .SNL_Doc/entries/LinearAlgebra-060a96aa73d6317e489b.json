@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Submodule.orthogonal",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "正交补",
+        "en": "Orthogonal complement"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@W,$\\mathrm{Submodule}\\ \\mathbb{K}\\ V$),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),def(Submodule.orthogonal(W),,$W^{\\perp} = \\{ x \\in V \\mid \\forall u \\in W,\\ \\langle u,x\\rangle = 0 \\}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$W^\\perp=\\{x\\in V\\mid\\langle u,x\\rangle=0\\ \\forall u\\in W\\}$ 是 $W$ 的正交补，本身是子空间。Lean 中 `Submodule.orthogonal W`（记法 $Wᗮ$）只接受一个显式参数：子空间 $W$。",
+          "en": "$W^\\perp=\\{x\\in V\\mid\\langle u,x\\rangle=0\\ \\forall u\\in W\\}$ is the orthogonal complement of $W$, itself a subspace. In Lean `Submodule.orthogonal W` (notation $Wᗮ$) takes one explicit argument, the subspace $W$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Orthogonal.lean",
+      "mode": "lines",
+      "line": 41,
+      "endLine": 47,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

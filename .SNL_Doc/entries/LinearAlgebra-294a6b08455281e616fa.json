@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "gramSchmidtOrthonormalBasis",
+    "package": "LinearAlgebra",
+    "kind": "construction",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "Gram–Schmidt 规范正交基",
+        "en": "Gram–Schmidt orthonormal basis"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@hord,$\\mathrm{LinearOrder}\\ \\iota$),Type.annotation(@f,Type.to(ι,V)),Type.annotation(@h,$\\dim_{\\mathbb{K}} V = \\operatorname{card} \\iota$),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),def(gramSchmidtOrthonormalBasis(h,f),,$\\mathrm{GSB}(h,f) \\text{ is an orthonormal basis of } V \\text{ agreeing with } \\{\\widehat{g}_n\\} \\text{ wherever that is nonzero}$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "当 $\\dim_{\\mathbb{K}}V=|\\iota|$ 时，`gramSchmidtOrthonormalBasis h f` 给出 $V$ 的一组规范正交基，它在规范正交化族非零处与之相等。Lean 按 `gramSchmidtOrthonormalBasis h f` 的次序接受两个显式参数：维数等式 `h` 与族 `f`。",
+          "en": "When $\\dim_{\\mathbb{K}}V=|\\iota|$, `gramSchmidtOrthonormalBasis h f` yields an orthonormal basis of $V$ that agrees with the normalised Gram–Schmidt family wherever that family is nonzero. Lean takes the explicit arguments in the order `gramSchmidtOrthonormalBasis h f`: the dimension identity `h` and the family `f`."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.lean",
+      "mode": "lines",
+      "line": 309,
+      "endLine": 319,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

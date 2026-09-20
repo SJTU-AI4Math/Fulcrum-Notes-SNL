@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "LinearMap.BilinMap",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "双线性映射",
+        "en": "Bilinear map"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),LA.Field($\\mathbb{K}$),Type.annotation(@M,Type),Type.annotation(@N,Type),LA.VectorSpace(M,$\\mathbb{K}$),LA.VectorSpace(N,$\\mathbb{K}$)),def(LinearMap.BilinMap($\\mathbb{K}$,M,N),,$\\mathrm{BilinMap}\\ \\mathbb{K}\\ M\\ N = (M \\to_{\\mathrm{lin}} M \\to_{\\mathrm{lin}} N)$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "`LinearMap.BilinMap R M Nₗ` 是**同一源空间**的双线性映射类型，定义为 $M\\to_{\\mathrm{lin}}M\\to_{\\mathrm{lin}}N$：它对两个（同型的）输入分别线性。两个**不同**空间 $V,W$ 上的双线性映射没有这个同义名，应直接写成嵌套线性映射 $V\\to_{\\mathrm{lin}}W\\to_{\\mathrm{lin}}U$。显式参数为 $R\\ M\\ N$。",
+          "en": "`LinearMap.BilinMap R M Nₗ` is the type of bilinear maps with a **single source space**, defined as $M\\to_{\\mathrm{lin}}M\\to_{\\mathrm{lin}}N$: linear in each of its two (identically typed) arguments. A bilinear map on two **different** spaces $V,W$ has no such synonym and is written as the nested linear map $V\\to_{\\mathrm{lin}}W\\to_{\\mathrm{lin}}U$. Explicit parameters are $R\\ M\\ N$."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/BilinearMap.lean",
+      "mode": "lines",
+      "line": 496,
+      "endLine": 498,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

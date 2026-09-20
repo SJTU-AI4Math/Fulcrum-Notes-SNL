@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "Module.finrank_eq_card_basis",
+    "package": "LinearAlgebra",
+    "kind": "theorem",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "维数等于基的基数",
+        "en": "Dimension equals the cardinality of a basis"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type),Type.annotation(@hf,$\\mathrm{Fintype}\\ \\iota$),Type.annotation(@b,Module.Basis(ι,$\\mathbb{K}$,V))),theorem($\\dim_{\\mathbb{K}} V = \\operatorname{card} \\iota \\quad (b : \\mathrm{Basis}\\ \\iota\\ \\mathbb{K}\\ V)$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "若 $b$ 是以 $\\iota$ 为索引的基，则 $\\dim_{\\mathbb{K}} V=|\\iota|$；特别地任意两组有限基等势。",
+          "en": "If $b$ is an $\\iota$-indexed basis then $\\dim_{\\mathbb{K}} V=|\\iota|$; in particular any two finite bases have the same cardinality."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/Dimension/StrongRankCondition.lean",
+      "mode": "lines",
+      "line": 450,
+      "endLine": 453,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

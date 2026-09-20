@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "OrthonormalBasis",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "规范正交基",
+        "en": "Orthonormal basis"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@ι,Type)),structure(OrthonormalBasis(ι,$\\mathbb{K}$,V),__enum__(member[colon](%repr%,$V \\simeq_{\\mathrm{li}} \\mathbb{K}^{\\iota}$))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "`OrthonormalBasis ι 𝕜 E` 是**类型构造子**（结构），字段为线性等距 $E\\simeq_{\\mathrm{li}}\\mathbb{K}^{\\iota}$；显式参数为 $\\iota\\ \\mathbb{K}\\ E$，没有“第四个参数 $b$”的谓词形式。由基且规范正交的族构造它请用相应构造子。",
+          "en": "`OrthonormalBasis ι 𝕜 E` is a **type constructor** (structure) whose field is the linear isometry $E\\simeq_{\\mathrm{li}}\\mathbb{K}^{\\iota}$; explicit parameters are $\\iota\\ \\mathbb{K}\\ E$. There is no predicate-on-a-fourth-argument-$b$ form; build one from a basis that is orthonormal via the corresponding constructor."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/PiL2.lean",
+      "mode": "lines",
+      "line": 355,
+      "endLine": 362,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

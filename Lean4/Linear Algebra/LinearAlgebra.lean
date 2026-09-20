@@ -1,5 +1,6 @@
 import Mathlib.Algebra.Field.Defs
 import Mathlib.LinearAlgebra.LinearIndependent.Basic
+import Mathlib.LinearAlgebra.ExteriorPower.Basic
 import Mathlib.Algebra.Module.Torsion.Field
 import Lean4.«Linear Algebra».term_macros_CN
 
@@ -374,5 +375,18 @@ theorem dependent_of_repeated_vector (h : HasRepeat α) :
   exact hij (hind.injective heq)
 
 #snl_print dependent_of_repeated_vector
+
+end Fulcrum
+
+namespace Fulcrum
+
+/-- The binary exterior (wedge) product, as the canonical alternating map
+`exteriorPower.ιMulti K 2` applied to the two-element family `![u, v]`.
+It is a thin wrapper: the exterior power itself is Mathlib's `⋀[K]^2 V`. -/
+noncomputable def wedge (K V : Type*) [Field K] [AddCommGroup V] [Module K V]
+    (u v : V) : ↥(⋀[K]^2 V) :=
+  exteriorPower.ιMulti K 2 ![u, v]
+
+#snl_print wedge
 
 end Fulcrum

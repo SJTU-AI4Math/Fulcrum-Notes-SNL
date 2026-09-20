@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "AlternatingMap",
+    "package": "LinearAlgebra",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "交错多重线性映射",
+        "en": "Alternating multilinear map"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),LA.Field($\\mathbb{K}$),Type.annotation(@M,Type),Type.annotation(@N,Type),Type.annotation(@ι,Type),LA.VectorSpace(M,$\\mathbb{K}$),LA.VectorSpace(N,$\\mathbb{K}$)),structure(AlternatingMap($\\mathbb{K}$,M,N,ι),__enum__(member[colon](%多重线性%,$M^{\\iota} \\to_{\\mathrm{lin}} N$),member[colon](%交错%,$\\forall v\\ i\\ j,\\ v_i = v_j \\to i \\ne j \\to \\omega(v) = 0$))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "`AlternatingMap R M N ι` 是**类型构造子**（结构），记法 $M\\,[\\bigwedge^{\\iota}]\\to_{\\mathrm{lin}}[R]\\,N$：它把 $\\iota\\to M$ 映到 $N$，对每个变量线性，且任意两个变量取相同值时为零。显式参数依次为 $R\\ M\\ N\\ \\iota$——索引类型 $\\iota$ 是第四个类型参数，不是某个关于族的谓词参数。",
+          "en": "`AlternatingMap R M N ι` is a **type constructor** (structure), written $M\\,[\\bigwedge^{\\iota}]\\to_{\\mathrm{lin}}[R]\\,N$: it maps $\\iota\\to M$ to $N$, is linear in every variable, and vanishes when two arguments coincide. Explicit parameters are $R\\ M\\ N\\ \\iota$ — the index type is the fourth type parameter, not a predicate argument on a family."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/LinearAlgebra/Alternating/Basic.lean",
+      "mode": "lines",
+      "line": 62,
+      "endLine": 73,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

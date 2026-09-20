@@ -1,0 +1,39 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "LinearAlgebra",
+  "entry": {
+    "id": "inner_self_nonneg",
+    "package": "LinearAlgebra",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "自内积非负",
+        "en": "Self inner product is nonnegative"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$\\mathbb{K}$,Type),Type.annotation(@V,Type),LA.Field($\\mathbb{K}$),LA.VectorSpace(V,$\\mathbb{K}$),Type.annotation(@x,V),Type.annotation(@hIP,InnerProductSpace($\\mathbb{K}$,V))),theorem($0 \\le \\operatorname{Re}\\langle x,x\\rangle$))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "$0\\le\\operatorname{Re}\\langle x,x\\rangle$：内积的实部半正定，是 Cauchy–Schwarz 与范数三角不等式的基础。",
+          "en": "$0\\le\\operatorname{Re}\\langle x,x\\rangle$: the real part of the inner product is positive semidefinite, the basis for Cauchy–Schwarz and the triangle inequality."
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Analysis/InnerProductSpace/Basic.lean",
+      "mode": "lines",
+      "line": 202,
+      "endLine": 203,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}
