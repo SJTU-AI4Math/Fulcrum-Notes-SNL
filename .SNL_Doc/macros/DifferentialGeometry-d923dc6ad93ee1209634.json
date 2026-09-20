@@ -7,7 +7,9 @@
     "name": "DG.def.principalNormal",
     "description": "Principal normal vector field n = gamma'' / |gamma''|.",
     "source": {
-      "entries": [],
+      "entries": [
+        "DG.def.principalNormal"
+      ],
       "urls": []
     },
     "kind": "const",

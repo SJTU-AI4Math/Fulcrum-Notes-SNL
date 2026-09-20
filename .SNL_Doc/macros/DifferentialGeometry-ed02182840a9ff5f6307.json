@@ -7,7 +7,9 @@
     "name": "DG.def.binormal",
     "description": "Binormal vector field b = t cross n.",
     "source": {
-      "entries": [],
+      "entries": [
+        "DG.def.binormal"
+      ],
       "urls": []
     },
     "kind": "const",

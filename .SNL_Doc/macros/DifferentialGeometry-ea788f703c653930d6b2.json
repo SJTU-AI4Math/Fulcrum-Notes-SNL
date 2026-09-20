@@ -7,7 +7,9 @@
     "name": "DG.def.arcLengthParam",
     "description": "Arc-length parametrisation: the curve #0 has unit speed, |gamma'| = 1.",
     "source": {
-      "entries": [],
+      "entries": [
+        "DG.def.arcLengthParam"
+      ],
       "urls": []
     },
     "kind": "const",

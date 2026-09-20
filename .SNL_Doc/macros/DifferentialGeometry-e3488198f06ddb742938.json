@@ -7,7 +7,9 @@
     "name": "DG.def.tangentVector",
     "description": "Tangent vector field t = gamma' of a curve parametrised by arc length.",
     "source": {
-      "entries": [],
+      "entries": [
+        "DG.def.tangentVector"
+      ],
       "urls": []
     },
     "kind": "const",

@@ -7,7 +7,9 @@
     "name": "DG.def.torsion",
     "description": "Torsion tau of a space curve, defined by b'(s) = tau(s) n(s).",
     "source": {
-      "entries": [],
+      "entries": [
+        "DG.def.torsion"
+      ],
       "urls": []
     },
     "kind": "const",
