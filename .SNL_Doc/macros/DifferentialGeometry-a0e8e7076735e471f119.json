@@ -15,27 +15,21 @@
     "tags": [],
     "styles": [
       {
-        "style_name": "default",
+        "style_name": "name",
         "tags": [],
         "template": {
-          "mode": "formula_inline",
-          "body": "\\left(\\boldsymbol{t}_{#0}, \\boldsymbol{n}_{#0}, \\boldsymbol{b}_{#0}\\right)",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 的 Frenet 标架"
+            },
+            "en": {
+              "mode": "text",
+              "body": "the Frenet frame of #0"
             }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
+          }
         }
       },
       {

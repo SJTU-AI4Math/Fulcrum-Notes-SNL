@@ -5,7 +5,6 @@
   "package": "DifferentialGeometry",
   "entry": {
     "id": "DG.ppt.frenetFrameRightHanded",
-    "package": "DifferentialGeometry",
     "kind": "property",
     "title": {
       "type": "i18n",
@@ -26,6 +25,7 @@
         }
       }
     },
+    "package": "DifferentialGeometry",
     "contribution_info": null,
     "pointer": null
   }

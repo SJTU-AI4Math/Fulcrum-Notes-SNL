@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@t,Real),Set.Mem[authored](,Icc(a,b),t),DG.def.arcLengthParam($\\gamma$),Ne[authored_Neq_default](,Type.apply(Analysis.deriv2($\\gamma$),t),$0$)),theorem(Orthonormal(Type.apply(DG.def.frenetFrame($\\gamma$),t))))",
+      "snl": "variable(__list__(Type.annotation(@t,Real),Set.Mem[authored](,Icc(a,b),t),DG.def.arcLengthParam($\\gamma$),Ne[authored_Neq_default](,Type.apply(Analysis.deriv2($\\gamma$),t),$0$)),theorem(Orthonormal(VecNotation[default](Type.apply(DG.def.tangentVector($\\gamma$),t),Type.apply(DG.def.principalNormal($\\gamma$),t),Type.apply(DG.def.binormal($\\gamma$),t)))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
