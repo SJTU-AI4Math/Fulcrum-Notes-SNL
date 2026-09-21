@@ -1,0 +1,63 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "description": "A regular smooth parametrized surface: a smooth map from an open subset of R^2 to R^3 whose two partial derivatives are linearly independent.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "DG.def.regularParametrizedSurface",
+    "source": {
+      "entries": [
+        "DG.def.regularParametrizedSurface"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "#0 is a regular smooth parametrized surface",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "#0 是正则光滑参数曲面",
+              "mode": "text"
+            }
+          }
+        }
+      },
+      {
+        "style_name": "math",
+        "tags": [],
+        "template": {
+          "body": "#0\\colon #1 \\to \\mathbb{R}^{3}",
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          },
+          "markdown": "",
+          "mode": "formula_inline",
+          "text": "",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

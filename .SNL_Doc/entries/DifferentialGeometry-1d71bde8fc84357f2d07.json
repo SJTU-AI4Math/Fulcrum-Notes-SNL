@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For a regular smooth parametrized surface $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$, a base point $q\\in\\Omega$ and vectors $w,z\\in T_{q}X$ in the tangent plane at $q$, the **first fundamental form** is the inner product induced on the tangent plane: $\\mathrm{I}_{X}(q;w,z)=\\langle w,z\\rangle$ (also written $\\mathrm{I}_{q}(w,z)$). In the basis $\\partial_{1}X(q),\\partial_{2}X(q)$ its coefficients are $E=\\langle\\partial_{1}X,\\partial_{1}X\\rangle$, $F=\\langle\\partial_{1}X,\\partial_{2}X\\rangle$, $G=\\langle\\partial_{2}X,\\partial_{2}X\\rangle$, so that $\\mathrm{I}_{X}(q;a\\partial_{1}X(q)+b\\partial_{2}X(q),c\\partial_{1}X(q)+d\\partial_{2}X(q))=Eac+F(ad+bc)+Gbd$. The symmetric matrix $\\begin{pmatrix}E&F\\\\F&G\\end{pmatrix}$ is positive definite: $E>0$, $G>0$ and $EG-F^{2}>0$.",
+          "zh-CN": "对正则光滑参数曲面 $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$、基点 $q\\in\\Omega$ 及切平面中的向量 $w,z\\in T_{q}X$，**第一基本形式**是切平面上诱导的内积：$\\mathrm{I}_{X}(q;w,z)=\\langle w,z\\rangle$（也写作 $\\mathrm{I}_{q}(w,z)$）。在基 $\\partial_{1}X(q),\\partial_{2}X(q)$ 下其系数为 $E=\\langle\\partial_{1}X,\\partial_{1}X\\rangle$、$F=\\langle\\partial_{1}X,\\partial_{2}X\\rangle$、$G=\\langle\\partial_{2}X,\\partial_{2}X\\rangle$，从而 $\\mathrm{I}_{X}(q;a\\partial_{1}X(q)+b\\partial_{2}X(q),c\\partial_{1}X(q)+d\\partial_{2}X(q))=Eac+F(ad+bc)+Gbd$。对称矩阵 $\\begin{pmatrix}E&F\\\\F&G\\end{pmatrix}$ 正定：$E>0$、$G>0$ 且 $EG-F^{2}>0$。"
+        }
+      },
+      "snl": "variable(__list__(DG.def.regularParametrizedSurface(X@DG.ctxt.surfaceParametrization,$\\Omega$@DG.ctxt.surfaceParametrization),Type.annotation(@q,$\\Omega$@DG.ctxt.surfaceParametrization),Type.annotation(@w,LA.def.realVecSpaceRn($3$)),Type.annotation(@z,LA.def.realVecSpaceRn($3$)),Set.Mem[authored](,DG.def.tangentPlane[default](X@DG.ctxt.surfaceParametrization,q),w),Set.Mem[authored](,DG.def.tangentPlane[default](X@DG.ctxt.surfaceParametrization,q),z)),def(DG.def.firstFundamentalForm[default](X@DG.ctxt.surfaceParametrization,q,w,z),,inner(w,z)))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.firstFundamentalForm",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "First Fundamental Form",
+        "zh-CN": "第一基本形式"
+      }
+    }
+  }
+}

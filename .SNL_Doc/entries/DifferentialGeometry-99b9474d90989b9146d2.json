@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "Let $n$ be a natural number and $U\\subseteq\\mathbb{R}^{n}$ a subset. $U$ is **open in the Euclidean topology of $\\mathbb{R}^{n}$** if for every point $p\\in U$ there is a radius $r>0$ such that the open ball $\\{x\\in\\mathbb{R}^{n}:\\lVert x-p\\rVert<r\\}$ is contained in $U$. Here $\\lVert\\cdot\\rVert$ is the Euclidean norm on $\\mathbb{R}^{n}$. Equivalently, $U$ belongs to the topology induced by that norm (equivalently, by the Euclidean metric). This predicate is used to fix the topology of the parameter domains and of the ambient spaces in the surface theory, so that no arbitrary topology is introduced.",
+          "zh-CN": "设 $n$ 为自然数，$U\\subseteq\\mathbb{R}^{n}$ 是子集。若对每个点 $p\\in U$ 都存在半径 $r>0$，使开球 $\\{x\\in\\mathbb{R}^{n}:\\lVert x-p\\rVert<r\\}$ 包含于 $U$，则称 $U$ 在 **$\\mathbb{R}^{n}$ 的欧氏拓扑下开**。这里 $\\lVert\\cdot\\rVert$ 是 $\\mathbb{R}^{n}$ 上的欧氏范数。等价地，$U$ 属于该范数（等价地，欧氏度量）诱导的拓扑。该谓词用于固定曲面理论中参数定义域与外围空间的拓扑，从而不引入任意拓扑。"
+        }
+      },
+      "snl": "variable(__list__(Type.annotation(@n,Nat),Type.annotation(@U,Set(LA.def.realVecSpaceRn(n)))),def[prop](DG.IsEuclideanOpen[default](n,U),,Logic.forall-typed(@p,LA.def.realVecSpaceRn(n),Logic.implies(Set.Mem[authored](,U,p),Logic.exists-typed(@r,Real,And[authored_Logic_and_infix](Gt(r,$0$),Logic.forall-typed(@x,LA.def.realVecSpaceRn(n),Logic.implies(Lt(norm(Sub.sub(x,p)),r),Set.Mem[authored](,U,x)))))))))"
+    },
+    "contribution_info": null,
+    "id": "DG.IsEuclideanOpen",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Euclidean Open Set",
+        "zh-CN": "欧氏开集"
+      }
+    }
+  }
+}

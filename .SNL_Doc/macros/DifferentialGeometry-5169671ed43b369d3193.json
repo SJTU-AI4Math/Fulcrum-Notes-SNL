@@ -1,0 +1,63 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "description": "Positive (counter-clockwise) 90-degree rotation of the plane, J(x,y) = (-y,x).",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "DG.def.rotation90",
+    "source": {
+      "entries": [
+        "DG.def.rotation90"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "J",
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          },
+          "markdown": "",
+          "mode": "formula_inline",
+          "text": "",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          }
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "the positive 90-degree rotation of the plane",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "平面正向 90° 旋转",
+              "mode": "text"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

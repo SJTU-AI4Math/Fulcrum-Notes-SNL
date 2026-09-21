@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For a regular smooth parametrized surface $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$ and $q\\in\\Omega$, the **unit normal** is $\\boldsymbol{N}_{X}(q)=\\dfrac{\\partial_{1}X(q)\\times\\partial_{2}X(q)}{\\lVert\\partial_{1}X(q)\\times\\partial_{2}X(q)\\rVert}$. The denominator is nonzero precisely because $X$ is regular: $\\partial_{1}X(q),\\partial_{2}X(q)$ are linearly independent, so their cross product does not vanish and $\\boldsymbol{N}_{X}(q)$ is well defined and unit. It is orthogonal to $T_{q}X$, and it gives a **local** orientation: the sign is fixed by the chosen ordering $(\\partial_{1},\\partial_{2})$ of the parameters.",
+          "zh-CN": "对正则光滑参数曲面 $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$ 与 $q\\in\\Omega$，**单位法向量**为 $\\boldsymbol{N}_{X}(q)=\\dfrac{\\partial_{1}X(q)\\times\\partial_{2}X(q)}{\\lVert\\partial_{1}X(q)\\times\\partial_{2}X(q)\\rVert}$。分母非零正是由 $X$ 的正则性保证的：$\\partial_{1}X(q),\\partial_{2}X(q)$ 线性无关，故叉积不为零，$\\boldsymbol{N}_{X}(q)$ 有定义且为单位向量。它与 $T_{q}X$ 正交，并给出**局部**定向：符号由参数次序 $(\\partial_{1},\\partial_{2})$ 固定。"
+        }
+      },
+      "snl": "variable(__list__(DG.def.regularParametrizedSurface(X@DG.ctxt.surfaceParametrization,$\\Omega$@DG.ctxt.surfaceParametrization),Type.annotation(@q,$\\Omega$@DG.ctxt.surfaceParametrization)),def(DG.def.unitNormal[default](X@DG.ctxt.surfaceParametrization,q),,Div.div[fracInline](crossProduct[default](Type.apply(DG.def.partialDeriv[default](X@DG.ctxt.surfaceParametrization,$1$),q),Type.apply(DG.def.partialDeriv[default](X@DG.ctxt.surfaceParametrization,$2$),q)),norm(crossProduct[default](Type.apply(DG.def.partialDeriv[default](X@DG.ctxt.surfaceParametrization,$1$),q),Type.apply(DG.def.partialDeriv[default](X@DG.ctxt.surfaceParametrization,$2$),q))))))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.unitNormal",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Unit Normal Vector of a Parametrized Surface",
+        "zh-CN": "参数曲面的单位法向量"
+      }
+    }
+  }
+}

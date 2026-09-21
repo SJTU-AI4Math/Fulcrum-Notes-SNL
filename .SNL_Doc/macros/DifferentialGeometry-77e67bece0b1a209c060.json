@@ -1,0 +1,63 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "description": "Predicate: the set #1 is open in the Euclidean topology of R^#0, i.e. every point of #1 has a positive-radius Euclidean ball contained in #1.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "DG.IsEuclideanOpen",
+    "source": {
+      "entries": [
+        "DG.IsEuclideanOpen"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "\\operatorname{IsOpen}_{\\mathbb{R}^{#0}}\\left(#1\\right)",
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          },
+          "markdown": "",
+          "mode": "formula_inline",
+          "text": "",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          }
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "#1 is Euclidean-open (dimension #0)",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "#1 是 #0 维欧氏开集",
+              "mode": "text"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

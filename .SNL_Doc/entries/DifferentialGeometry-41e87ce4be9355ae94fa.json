@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "The unit normal $\\boldsymbol{N}=X_{u}\\times X_{v}/\\lVert X_{u}\\times X_{v}\\rVert$ depends on the ordering of the two parameters: swapping $u$ and $v$ replaces $\\boldsymbol{N}$ by $-\\boldsymbol{N}$. A single local parametrization therefore orients only its own sheet, and the sign is a choice, not an intrinsic feature of the surface. Consistency of these local choices over a whole surface is not automatic: a regular surface need not be globally orientable, the Möbius band being the standard example. Statements about a global normal field require orientability, while the local unit normal is always available on a local sheet.",
+          "zh-CN": "单位法向量 $\\boldsymbol{N}=X_{u}\\times X_{v}/\\lVert X_{u}\\times X_{v}\\rVert$ 依赖两个参数的次序：交换 $u$ 与 $v$ 会把 $\\boldsymbol{N}$ 换成 $-\\boldsymbol{N}$。因此单个局部参数化只对它自己的开片给出定向，符号是一种选择，而非曲面的内禀特征。这些局部选择能否在整个曲面上相容并不自动成立：正则曲面不必整体可定向，Möbius 带是标准例子。关于整体法向量场的陈述需要可定向性，而局部单位法向量在局部开片上总是存在的。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "DG.rmk.surfaceOrientation",
+    "kind": "remark",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Local Orientation and Non-Orientability",
+        "zh-CN": "局部定向与不可定向性"
+      }
+    }
+  }
+}

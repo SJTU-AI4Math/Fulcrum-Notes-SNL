@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For a regular smooth parametrized surface $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$ and $q\\in\\Omega$, the **affine tangent plane** at $q$ is the translate of the linear tangent plane by the surface point $X(q)$: $X(q)+T_{q}X=\\{X(q)+w\\mid w\\in T_{q}X\\}$. The translation is essential: $T_{q}X$ is a linear subspace through the origin, whereas the affine tangent plane is the plane through $X(q)$ tangent to the surface. Here $q=(u,v)$ is the parameter point and $X(q)\\in\\mathbb{R}^{3}$ is the surface point.",
+          "zh-CN": "对正则光滑参数曲面 $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$ 与 $q\\in\\Omega$，$q$ 处的**仿射切平面**是线性切平面经曲面点 $X(q)$ 平移所得：$X(q)+T_{q}X=\\{X(q)+w\\mid w\\in T_{q}X\\}$。平移不可省略：$T_{q}X$ 是过原点的线性子空间，仿射切平面才是过 $X(q)$ 且与曲面相切的平面。这里 $q=(u,v)$ 是参数点，$X(q)\\in\\mathbb{R}^{3}$ 是曲面点。"
+        }
+      },
+      "snl": "variable(__list__(DG.def.regularParametrizedSurface(X@DG.ctxt.surfaceParametrization,$\\Omega$@DG.ctxt.surfaceParametrization),Type.annotation(@q,$\\Omega$@DG.ctxt.surfaceParametrization)),def(DG.def.affineTangentPlane[default](X@DG.ctxt.surfaceParametrization,q),,Set.image[authored](LA.def.realVecSpaceRn($3$),LA.def.realVecSpaceRn($3$),parentheses[round](Type.lambda(@w,LA.def.realVecSpaceRn($3$),Add.add[infix](Type.apply(X@DG.ctxt.surfaceParametrization,q),w))),DG.def.tangentPlane[default](X@DG.ctxt.surfaceParametrization,q))))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.affineTangentPlane",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Affine Tangent Plane",
+        "zh-CN": "仿射切平面"
+      }
+    }
+  }
+}

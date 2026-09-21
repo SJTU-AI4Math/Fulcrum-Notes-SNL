@@ -1,0 +1,63 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "description": "Partial derivative of a parametrized surface with respect to one of its two coordinates.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "DG.def.partialDeriv",
+    "source": {
+      "entries": [
+        "DG.def.partialDeriv"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "\\partial_{#1} #0",
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          },
+          "markdown": "",
+          "mode": "formula_inline",
+          "text": "",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          }
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "the partial derivative of #0 in #1",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "#0 关于 #1 的偏导数",
+              "mode": "text"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

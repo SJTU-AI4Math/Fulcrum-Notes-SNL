@@ -1,0 +1,63 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "name": "DG.def.firstFundamentalForm",
+    "description": "First fundamental form of a parametrized surface: the inner product induced on the tangent plane.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "source": {
+      "entries": [
+        "DG.def.firstFundamentalForm"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "\\mathrm{I}_{#0}\\left(#1; #2, #3\\right)",
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          },
+          "markdown": "",
+          "mode": "formula_inline",
+          "text": "",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          }
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "the first fundamental form of #0 at #1",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "#0 在 #1 处的第一基本形式",
+              "mode": "text"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

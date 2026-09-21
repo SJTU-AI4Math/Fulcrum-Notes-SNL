@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "A subset $S\\subseteq\\mathbb{R}^{3}$ is a **regular smooth surface** if for every $p\\in S$ there are a set $\\Omega\\subseteq\\mathbb{R}^{2}$ open in the Euclidean topology, a set $V\\subseteq\\mathbb{R}^{3}$ open in the Euclidean topology, and a regular smooth parametrized surface $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$ such that $p\\in X(\\Omega)$, $X(\\Omega)=S\\cap V$, and the restriction $X|_{\\Omega}$ is a homeomorphism from $\\Omega$ onto its image $X(\\Omega)$ (a local sheet) **with respect to the subspace topologies induced by the Euclidean topologies of $\\mathbb{R}^{2}$ and $\\mathbb{R}^{3}$** (equivalently, the topologies induced by the Euclidean norm); no other topology is introduced. **The condition $X(\\Omega)=S\\cap V$ with $V$ open is part of the definition**: by the definition of the subspace topology on $S$ it makes $X(\\Omega)$ open in $S$, hence an open neighbourhood of $p$ in $S$; it is *not* a consequence of the other clauses. The map $X$ is then a **local parametrization** of $S$ at $p$. Being a homeomorphism onto the image is not automatic for an immersion: the self-intersecting immersion $X(u,v)=(\\sin u,\\sin 2u,v)$ has linearly independent partial derivatives everywhere but is not injective (hence not a homeomorphism onto its image), and near a double point its image is not a regular surface. Conversely, being an injective immersion is still weaker than being an embedding (an irrational line on a torus is the standard example).",
+          "zh-CN": "子集 $S\\subseteq\\mathbb{R}^{3}$ 称为**正则光滑曲面**，若对每个 $p\\in S$ 都存在欧氏拓扑下的开集 $\\Omega\\subseteq\\mathbb{R}^{2}$、欧氏拓扑下的开集 $V\\subseteq\\mathbb{R}^{3}$ 与正则光滑参数曲面 $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$，使 $p\\in X(\\Omega)$、$X(\\Omega)=S\\cap V$，且限制 $X|_{\\Omega}$ 是从 $\\Omega$ 到其像 $X(\\Omega)$（局部开片）的同胚，**所依据的是 $\\mathbb{R}^{2}$ 与 $\\mathbb{R}^{3}$ 的欧氏拓扑诱导的子空间拓扑**（等价地，欧氏范数诱导的拓扑）；不引入其他拓扑。**条件 $X(\\Omega)=S\\cap V$（$V$ 开）是定义的一部分**：由 $S$ 上子空间拓扑的定义，它使 $X(\\Omega)$ 在 $S$ 中开，从而是 $p$ 在 $S$ 中的开邻域；这**不是**其他条款的推论。此时 $X$ 称为 $S$ 在 $p$ 处的**局部参数化**。到像的同胚性对浸入并不自动成立：自交浸入 $X(u,v)=(\\sin u,\\sin 2u,v)$ 的偏导数处处线性无关，但它不是单射（因而不是到像的同胚），且在二重点附近其像不是正则曲面。反过来，单射浸入仍弱于嵌入（环面上的无理直线是标准例子）。"
+        }
+      },
+      "snl": "variable(Type.annotation(@S,Set(LA.def.realVecSpaceRn($3$))),def[prop](DG.def.regularSurface(S),,Logic.forall-typed(@p,LA.def.realVecSpaceRn($3$),Logic.implies(Set.Mem[authored](,S,p),Logic.exists-typed(@$\\Omega$,Set(LA.def.realVecSpaceRn($2$)),Logic.exists-typed(@X,Type.to(LA.def.realVecSpaceRn($2$),LA.def.realVecSpaceRn($3$)),Logic.exists-typed(@V,Set(LA.def.realVecSpaceRn($3$)),And[authored_Logic_and_infix](DG.IsEuclideanOpen[default]($2$,$\\Omega$),And[authored_Logic_and_infix](DG.IsEuclideanOpen[default]($3$,V),And[authored_Logic_and_infix](DG.def.regularParametrizedSurface(X,$\\Omega$),And[authored_Logic_and_infix](Eq(,Set.image[authored](LA.def.realVecSpaceRn($2$),LA.def.realVecSpaceRn($3$),X,$\\Omega$),Set.inter[authored](,S,V)),And[authored_Logic_and_infix](Topology.homeomorphism[math](X,$\\Omega$,Set.image[authored](LA.def.realVecSpaceRn($2$),LA.def.realVecSpaceRn($3$),X,$\\Omega$)),Set.Mem[authored](,Set.image[authored](LA.def.realVecSpaceRn($2$),LA.def.realVecSpaceRn($3$),X,$\\Omega$),p)))))))))))))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.regularSurface",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Regular Smooth Surface",
+        "zh-CN": "正则光滑曲面"
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb{R}^{2}$ be **open in the Euclidean topology**. A **regular smooth parametrized surface** is a map $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$, $(u,v)\\mapsto X(u,v)=(x(u,v),y(u,v),z(u,v))$, smooth on $\\Omega$ ($X\\in C^{\\infty}(\\Omega)$, the standard $\\mathrm{ContDiffOn}$ convention: only the restriction $X|_{\\Omega}$ is used), and whose two partial derivatives $X_{u},X_{v}$ are linearly independent at every point of $\\Omega$ (equivalently, the differential has rank $2$). The coordinate curves $u\\mapsto X(u,v_{0})$ and $v\\mapsto X(u_{0},v)$ are the images of the coordinate directions. A parametrized surface is an object with a chosen domain and parametrization, not yet a subset of $\\mathbb{R}^{3}$; passing to a surface subset requires the local-sheet condition of a regular surface.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb{R}^{2}$ 在**欧氏拓扑下开**。**正则光滑参数曲面**是映射 $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$，$(u,v)\\mapsto X(u,v)=(x(u,v),y(u,v),z(u,v))$，在 $\\Omega$ 上**光滑**（$X\\in C^{\\infty}(\\Omega)$，即标准 $\\mathrm{ContDiffOn}$ 约定：只使用限制 $X|_{\\Omega}$），且两个偏导数 $X_{u},X_{v}$ 在 $\\Omega$ 的每一点线性无关（等价地，微分秩为 $2$）。坐标曲线 $u\\mapsto X(u,v_{0})$ 与 $v\\mapsto X(u_{0},v)$ 是坐标方向的像。参数曲面是带有选定定义域与参数化的对象，还不是 $\\mathbb{R}^{3}$ 的子集；要得到曲面子集还需正则曲面的局部开片条件。"
+        }
+      },
+      "snl": "variable(__list__(Type.annotation(@$\\Omega$,Set(LA.def.realVecSpaceRn($2$))),DG.IsEuclideanOpen[default]($2$,$\\Omega$),Type.annotation(@X,Type.to(LA.def.realVecSpaceRn($2$),LA.def.realVecSpaceRn($3$)))),structure[prop](DG.def.regularParametrizedSurface[text](X,$\\Omega$),__enum__[enumerate](member[colon](DG.Surface.smoothness[text],ContDiffOn[default]($\\infty$,X,$\\Omega$)),member[colon](DG.Surface.regularity[text],Logic.forall-typed(@u,Real,Logic.forall-typed(@v,Real,Logic.implies(Set.Mem[authored](,$\\Omega$,Prod.pair(u,v)),Logic.forall-typed(@c,Real,Logic.forall-typed(@d,Real,Logic.implies(Eq(,Add.add[infix](LA.Smul(c,Type.apply(DG.def.partialDeriv[default](X,$1$),Prod.pair(u,v))),LA.Smul(d,Type.apply(DG.def.partialDeriv[default](X,$2$),Prod.pair(u,v)))),$0$),And[authored_Logic_and_infix](Eq(,c,$0$),Eq(,d,$0$))))))))))))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.regularParametrizedSurface",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Regular Smooth Parametrized Surface",
+        "zh-CN": "正则光滑参数曲面"
+      }
+    }
+  }
+}

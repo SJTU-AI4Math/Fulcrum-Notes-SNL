@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For a plane curve $\\gamma\\colon(a,b)\\to\\mathbb{R}^{2}$ parametrized by arc length ($\\lVert\\gamma'\\rVert\\equiv 1$), the **signed curvature** is $k_{\\gamma}=\\langle T',\\boldsymbol{n}_{\\gamma}\\rangle$ with $T:=\\gamma'$ and $\\boldsymbol{n}_{\\gamma}=JT$, i.e. $k_{\\gamma}(t)=\\langle\\gamma''(t),\\boldsymbol{n}_{\\gamma}(t)\\rangle$. Since $\\boldsymbol{n}_{\\gamma}$ is unit, $k_{\\gamma}$ is the (signed) coordinate of $T'$ in the normal direction, and $T'=\\gamma''=k_{\\gamma}\\boldsymbol{n}_{\\gamma}$. For a regular plane curve in a general parameter one has $k_{\\gamma}=\\det(\\gamma',\\gamma'')/\\lVert\\gamma'\\rVert^{3}$ (the denominator is nonzero by regularity); there $T=\\gamma'/\\lVert\\gamma'\\rVert$. Reversing the orientation changes the sign of $k_{\\gamma}$, and the non-negative curvature of the plane curve equals $|k_{\\gamma}|$.",
+          "zh-CN": "对以弧长参数化的平面曲线 $\\gamma\\colon(a,b)\\to\\mathbb{R}^{2}$（$\\lVert\\gamma'\\rVert\\equiv 1$），**带符号曲率**定义为 $k_{\\gamma}=\\langle T',\\boldsymbol{n}_{\\gamma}\\rangle$，其中 $T:=\\gamma'$、$\\boldsymbol{n}_{\\gamma}=JT$，即 $k_{\\gamma}(t)=\\langle\\gamma''(t),\\boldsymbol{n}_{\\gamma}(t)\\rangle$。由于 $\\boldsymbol{n}_{\\gamma}$ 是单位向量，$k_{\\gamma}$ 就是 $T'$ 在法向上的（带符号）坐标，且 $T'=\\gamma''=k_{\\gamma}\\boldsymbol{n}_{\\gamma}$。对一般参数下的正则平面曲线有 $k_{\\gamma}=\\det(\\gamma',\\gamma'')/\\lVert\\gamma'\\rVert^{3}$（分母由正则性非零）；此时 $T=\\gamma'/\\lVert\\gamma'\\rVert$。反转定向会改变 $k_{\\gamma}$ 的符号；平面曲线的非负曲率等于 $|k_{\\gamma}|$。"
+        }
+      },
+      "snl": "variable(__list__(Lt(a@DG.ctxt.abReal,b@DG.ctxt.abReal),DG.def.planeCurve($\\gamma$@DG.ctxt.planeCurve,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal)),Identical(norm(Analysis.deriv($\\gamma$@DG.ctxt.planeCurve)),$1$),Type.annotation(@t,Real),Set.Mem[authored](,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal),t)),def(Type.apply(DG.def.planarSignedCurvature[default]($\\gamma$@DG.ctxt.planeCurve),t),,inner(Type.apply(Analysis.deriv2($\\gamma$@DG.ctxt.planeCurve),t),Type.apply(DG.def.planeNormal[default]($\\gamma$@DG.ctxt.planeCurve),t))))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.planarSignedCurvature",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Signed Curvature of a Plane Curve",
+        "zh-CN": "平面曲线的带符号曲率"
+      }
+    }
+  }
+}

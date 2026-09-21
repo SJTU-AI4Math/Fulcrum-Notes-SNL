@@ -1,0 +1,63 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "description": "Plane curve: a smooth map gamma from an open interval into R^2. Regularity (gamma' != 0) is a separate predicate.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "DG.def.planeCurve",
+    "source": {
+      "entries": [
+        "DG.def.planeCurve"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "#0 is a plane curve",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "#0 是平面曲线",
+              "mode": "text"
+            }
+          }
+        }
+      },
+      {
+        "style_name": "math",
+        "tags": [],
+        "template": {
+          "body": "#0\\colon #1 \\to \\mathbb{R}^{2}",
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          },
+          "markdown": "",
+          "mode": "formula_inline",
+          "text": "",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "macro": "",
+              "mode": "formula"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

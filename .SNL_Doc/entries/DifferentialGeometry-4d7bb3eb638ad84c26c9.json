@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "snl": "__list__(Type.annotation(@$\\Omega$,Set(LA.def.realVecSpaceRn($2$))),DG.IsEuclideanOpen[default]($2$,$\\Omega$),Type.annotation(@X,Type.to(LA.def.realVecSpaceRn($2$),LA.def.realVecSpaceRn($3$))),ContDiffOn[default]($\\infty$,X,$\\Omega$))"
+    },
+    "contribution_info": null,
+    "id": "DG.ctxt.surfaceParametrization",
+    "kind": "context",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Parametrized surface $X$ on an open $\\Omega \\subseteq \\mathbb{R}^{2}$",
+        "zh-CN": "开集 $\\Omega \\subseteq \\mathbb{R}^{2}$ 上的参数曲面 $X$"
+      }
+    }
+  }
+}

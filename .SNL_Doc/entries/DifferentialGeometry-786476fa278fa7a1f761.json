@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For a regular smooth parametrized surface $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$ and a base point $q=(u,v)\\in\\Omega$, the **tangent plane** at $q$ is the linear subspace $T_{q}X=\\operatorname{span}_{\\mathbb{R}}\\{\\partial_{1}X(q),\\partial_{2}X(q)\\}\\subseteq\\mathbb{R}^{3}$, where $\\partial_{1}X,\\partial_{2}X$ are the two coordinate partial derivatives of $X$. Here $q$ lies in the parameter domain $\\Omega$, whereas the point of $\\mathbb{R}^{3}$ is $p=X(q)$: do not confuse the two. By regularity $\\partial_{1}X(q),\\partial_{2}X(q)$ are linearly independent, so $T_{q}X$ is two-dimensional, and its elements are exactly the vectors $a\\,\\partial_{1}X(q)+b\\,\\partial_{2}X(q)$ with $a,b\\in\\mathbb{R}$. (The notation $X_{u},X_{v}$ means the same as $\\partial_{1}X,\\partial_{2}X$.)",
+          "zh-CN": "对正则光滑参数曲面 $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$ 与基点 $q=(u,v)\\in\\Omega$，$q$ 处的**切平面**是线性子空间 $T_{q}X=\\operatorname{span}_{\\mathbb{R}}\\{\\partial_{1}X(q),\\partial_{2}X(q)\\}\\subseteq\\mathbb{R}^{3}$，其中 $\\partial_{1}X,\\partial_{2}X$ 是 $X$ 的两个坐标偏导数。注意 $q$ 位于参数定义域 $\\Omega$ 中，而 $\\mathbb{R}^{3}$ 中的点是 $p=X(q)$，两者不可混用。由正则性 $\\partial_{1}X(q),\\partial_{2}X(q)$ 线性无关，故 $T_{q}X$ 是二维的，其元素恰为向量 $a\\,\\partial_{1}X(q)+b\\,\\partial_{2}X(q)$（$a,b\\in\\mathbb{R}$）。（记号 $X_{u},X_{v}$ 与 $\\partial_{1}X,\\partial_{2}X$ 相同。）"
+        }
+      },
+      "snl": "variable(__list__(DG.def.regularParametrizedSurface(X@DG.ctxt.surfaceParametrization,$\\Omega$@DG.ctxt.surfaceParametrization),Type.annotation(@q,$\\Omega$@DG.ctxt.surfaceParametrization)),def(DG.def.tangentPlane[default](X@DG.ctxt.surfaceParametrization,q),,Submodule.span[default](Real,Set.insert[default](LA.def.realVecSpaceRn($3$),Type.apply(DG.def.partialDeriv[default](X@DG.ctxt.surfaceParametrization,$1$),q),Set.singleton[default](LA.def.realVecSpaceRn($3$),Type.apply(DG.def.partialDeriv[default](X@DG.ctxt.surfaceParametrization,$2$),q))))))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.tangentPlane",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Tangent Plane",
+        "zh-CN": "切平面"
+      }
+    }
+  }
+}

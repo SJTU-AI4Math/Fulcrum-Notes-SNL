@@ -1,0 +1,39 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "description": "Smoothness member of the plane-curve structure.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "DG.PlaneCurve.smoothness",
+    "source": {
+      "entries": [
+        "DG.def.planeCurve"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "Smoothness",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "光滑性",
+              "mode": "text"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

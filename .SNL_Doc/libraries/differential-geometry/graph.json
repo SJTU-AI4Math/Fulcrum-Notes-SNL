@@ -9,11 +9,83 @@
       }
     },
     {
+      "id": "n_18",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.subsec.planeCurveTheory",
+        "counterId": "dg-subsection"
+      }
+    },
+    {
+      "id": "n_19",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ctxt.planeCurve",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_20",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.def.planeCurve",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_21",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.def.rotation90",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_22",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.def.planeNormal",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_23",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.def.planarSignedCurvature",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_24",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.planarCurvatureSecondDerivative",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
       "id": "n_1",
       "label": "Entry",
       "props": {
         "entryId": "DG.subsec.spaceCurveTheory",
         "counterId": "dg-subsection"
+      }
+    },
+    {
+      "id": "n_ctxt_abReal",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ctxt.abReal",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_ctxt_gammaCurve",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ctxt.gammaCurve",
+        "counterId": "dg-entry"
       }
     },
     {
@@ -33,11 +105,59 @@
       }
     },
     {
+      "id": "n_13",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.arcLengthParamUniqueness",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
       "id": "n_4",
       "label": "Entry",
       "props": {
         "entryId": "DG.def.curvature",
         "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_14",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.xmp.straightLineCurvature",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "n_15",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.xmp.circleCurvature",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "n_25",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.def.vectorCurvature",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_26",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.vectorCurvatureNorm",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "n_27",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.vectorCurvaturePrincipalNormal",
+        "counterId": "dg-subentry"
       }
     },
     {
@@ -73,6 +193,22 @@
       }
     },
     {
+      "id": "n_16",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.frenetFrameOrthonormal",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "n_17",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.frenetFrameRightHanded",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
       "id": "n_9",
       "label": "Entry",
       "props": {
@@ -105,56 +241,98 @@
       }
     },
     {
-      "id": "n_ctxt_abReal",
+      "id": "n_39",
       "label": "Entry",
       "props": {
-        "entryId": "DG.ctxt.abReal"
+        "entryId": "DG.IsEuclideanOpen",
+        "counterId": "dg-entry"
       }
     },
     {
-      "id": "n_ctxt_gammaCurve",
+      "id": "n_28",
       "label": "Entry",
       "props": {
-        "entryId": "DG.ctxt.gammaCurve"
+        "entryId": "DG.ctxt.surfaceParametrization",
+        "counterId": "dg-entry"
       }
     },
     {
-      "id": "n_13",
+      "id": "n_29",
       "label": "Entry",
       "props": {
-        "entryId": "DG.ppt.arcLengthParamUniqueness",
+        "entryId": "DG.def.partialDeriv",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_30",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.def.regularParametrizedSurface",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_31",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.def.regularSurface",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_32",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.rmk.regularSurfaceVsImmersion",
         "counterId": "dg-subentry"
       }
     },
     {
-      "id": "n_14",
+      "id": "n_33",
       "label": "Entry",
       "props": {
-        "entryId": "DG.xmp.straightLineCurvature",
+        "entryId": "DG.def.tangentPlane",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_34",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.def.affineTangentPlane",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_35",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.def.unitNormal",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "n_36",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.rmk.surfaceOrientation",
         "counterId": "dg-subentry"
       }
     },
     {
-      "id": "n_15",
+      "id": "n_37",
       "label": "Entry",
       "props": {
-        "entryId": "DG.xmp.circleCurvature",
-        "counterId": "dg-subentry"
+        "entryId": "DG.def.firstFundamentalForm",
+        "counterId": "dg-entry"
       }
     },
     {
-      "id": "n_16",
+      "id": "n_38",
       "label": "Entry",
       "props": {
-        "entryId": "DG.ppt.frenetFrameOrthonormal",
-        "counterId": "dg-subentry"
-      }
-    },
-    {
-      "id": "n_17",
-      "label": "Entry",
-      "props": {
-        "entryId": "DG.ppt.frenetFrameRightHanded",
+        "entryId": "DG.ppt.firstFundamentalFormPositiveDefinite",
         "counterId": "dg-subentry"
       }
     }
@@ -162,12 +340,42 @@
   "relationships": [
     {
       "from": "n_0",
-      "to": "n_1",
+      "to": "n_18",
+      "label": "branch"
+    },
+    {
+      "from": "n_18",
+      "to": "n_19",
+      "label": "branch"
+    },
+    {
+      "from": "n_18",
+      "to": "n_20",
+      "label": "branch"
+    },
+    {
+      "from": "n_18",
+      "to": "n_21",
+      "label": "branch"
+    },
+    {
+      "from": "n_18",
+      "to": "n_22",
+      "label": "branch"
+    },
+    {
+      "from": "n_18",
+      "to": "n_23",
+      "label": "branch"
+    },
+    {
+      "from": "n_23",
+      "to": "n_24",
       "label": "branch"
     },
     {
       "from": "n_0",
-      "to": "n_12",
+      "to": "n_1",
       "label": "branch"
     },
     {
@@ -191,8 +399,38 @@
       "label": "branch"
     },
     {
+      "from": "n_3",
+      "to": "n_13",
+      "label": "branch"
+    },
+    {
       "from": "n_1",
       "to": "n_4",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_14",
+      "label": "branch"
+    },
+    {
+      "from": "n_4",
+      "to": "n_15",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_25",
+      "label": "branch"
+    },
+    {
+      "from": "n_25",
+      "to": "n_26",
+      "label": "branch"
+    },
+    {
+      "from": "n_25",
+      "to": "n_27",
       "label": "branch"
     },
     {
@@ -216,6 +454,16 @@
       "label": "branch"
     },
     {
+      "from": "n_8",
+      "to": "n_16",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_17",
+      "label": "branch"
+    },
+    {
       "from": "n_1",
       "to": "n_9",
       "label": "branch"
@@ -231,28 +479,68 @@
       "label": "branch"
     },
     {
-      "from": "n_3",
-      "to": "n_13",
+      "from": "n_0",
+      "to": "n_12",
       "label": "branch"
     },
     {
-      "from": "n_4",
-      "to": "n_14",
+      "from": "n_12",
+      "to": "n_39",
       "label": "branch"
     },
     {
-      "from": "n_4",
-      "to": "n_15",
+      "from": "n_12",
+      "to": "n_28",
       "label": "branch"
     },
     {
-      "from": "n_8",
-      "to": "n_16",
+      "from": "n_12",
+      "to": "n_29",
       "label": "branch"
     },
     {
-      "from": "n_8",
-      "to": "n_17",
+      "from": "n_12",
+      "to": "n_30",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_31",
+      "label": "branch"
+    },
+    {
+      "from": "n_31",
+      "to": "n_32",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_33",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_34",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_35",
+      "label": "branch"
+    },
+    {
+      "from": "n_35",
+      "to": "n_36",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_37",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "n_38",
       "label": "branch"
     }
   ]

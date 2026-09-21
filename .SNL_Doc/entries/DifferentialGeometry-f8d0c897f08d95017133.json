@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For a plane curve $\\gamma\\colon(a,b)\\to\\mathbb{R}^{2}$ parametrized by arc length ($\\lVert\\gamma'\\rVert\\equiv 1$), the **unit normal vector** is $\\boldsymbol{n}_{\\gamma}=J T$ with $T:=\\gamma'$, i.e. $\\boldsymbol{n}_{\\gamma}(t)=J(\\gamma'(t))$: the positive $90^{\\circ}$ rotation of the unit tangent. Here $T=\\gamma'$ is the unit tangent because the parameter is arc length; for a general regular parameter one first normalizes, $T=\\gamma'/\\lVert\\gamma'\\rVert$. It is a unit vector orthogonal to $T$, and $(T(t),\\boldsymbol{n}_{\\gamma}(t))$ is a positively oriented orthonormal basis of $\\mathbb{R}^{2}$.",
+          "zh-CN": "对以弧长参数化的平面曲线 $\\gamma\\colon(a,b)\\to\\mathbb{R}^{2}$（$\\lVert\\gamma'\\rVert\\equiv 1$），**单位法向量**定义为 $\\boldsymbol{n}_{\\gamma}=J T$，其中 $T:=\\gamma'$，即 $\\boldsymbol{n}_{\\gamma}(t)=J(\\gamma'(t))$：单位切向量的正向 $90^{\\circ}$ 旋转。这里 $T=\\gamma'$ 是单位切向量，因为参数是弧长；对一般正则参数需先归一化，$T=\\gamma'/\\lVert\\gamma'\\rVert$。它是与 $T$ 正交的单位向量，且 $(T(t),\\boldsymbol{n}_{\\gamma}(t))$ 是 $\\mathbb{R}^{2}$ 的一组正向规范正交基。"
+        }
+      },
+      "snl": "variable(__list__(Lt(a@DG.ctxt.abReal,b@DG.ctxt.abReal),DG.def.planeCurve($\\gamma$@DG.ctxt.planeCurve,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal)),Identical(norm(Analysis.deriv($\\gamma$@DG.ctxt.planeCurve)),$1$),Type.annotation(@t,Real),Set.Mem[authored](,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal),t)),def(Type.apply(DG.def.planeNormal[default]($\\gamma$@DG.ctxt.planeCurve),t),,Type.apply(DG.def.rotation90[default],Type.apply(Analysis.deriv($\\gamma$@DG.ctxt.planeCurve),t))))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.planeNormal",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Unit Normal Vector of a Plane Curve",
+        "zh-CN": "平面曲线的单位法向量"
+      }
+    }
+  }
+}

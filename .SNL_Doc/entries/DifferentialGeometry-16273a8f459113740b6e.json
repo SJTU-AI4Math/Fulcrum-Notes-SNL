@@ -1,0 +1,22 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {},
+    "contribution_info": null,
+    "id": "DG.subsec.planeCurveTheory",
+    "kind": "subsection",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Plane Curves",
+        "zh-CN": "平面曲线"
+      }
+    }
+  }
+}

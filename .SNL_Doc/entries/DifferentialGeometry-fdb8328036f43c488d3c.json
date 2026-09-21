@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For an arc-length parametrized space curve $\\gamma$, the norm of the vector curvature is the (non-negative) curvature: $\\lVert\\boldsymbol{\\kappa}_{\\gamma}(s)\\rVert=\\kappa_{\\gamma}(s)=\\lVert\\gamma''(s)\\rVert$. Thus the curvature is the length of the curvature vector, and it vanishes exactly where the curvature vector does.",
+          "zh-CN": "对以弧长为参数的空间曲线 $\\gamma$，向量曲率的范数就是（非负的）曲率：$\\lVert\\boldsymbol{\\kappa}_{\\gamma}(s)\\rVert=\\kappa_{\\gamma}(s)=\\lVert\\gamma''(s)\\rVert$。因此曲率是向量曲率的长度，且恰在向量曲率为零处为零。"
+        }
+      },
+      "snl": "variable(__list__(Lt(a@DG.ctxt.abReal,b@DG.ctxt.abReal),DG.def.spaceCurve[text]($\\gamma$@DG.ctxt.gammaCurve,Icc(a@DG.ctxt.abReal,b@DG.ctxt.abReal)),DG.def.arcLengthParam($\\gamma$@DG.ctxt.gammaCurve),Type.annotation(@t,Real),Set.Mem[authored](,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal),t)),theorem(Eq(,norm(Type.apply(DG.def.vectorCurvature[default]($\\gamma$@DG.ctxt.gammaCurve),t)),Type.apply(DG.def.curvature($\\gamma$@DG.ctxt.gammaCurve),t))))"
+    },
+    "contribution_info": null,
+    "id": "DG.ppt.vectorCurvatureNorm",
+    "kind": "property",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Norm of the Vector Curvature",
+        "zh-CN": "向量曲率的范数"
+      }
+    }
+  }
+}

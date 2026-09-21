@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "A regular smooth parametrized surface is an **immersion**: its differential is injective at every point, which is exactly the linear independence of $X_{u},X_{v}$. For a subset $S$ to be a regular smooth surface, injectivity of the differential is not enough; the local parametrization must be a **homeomorphism onto its image** (an embedding of the local sheet). An injective immersion can fail to be an embedding (its image need not be locally a sheet, as an irrational line on a torus shows), and an immersion that is not injective can self-intersect. Consequently one must not say that every regular parametrized surface is globally embedded in $\\mathbb{R}^{3}$; that statement is about the local-sheet condition, which a parametrized surface does not carry by itself.",
+          "zh-CN": "正则光滑参数曲面是一个**浸入**：其微分在每一点单射，这恰是 $X_{u},X_{v}$ 线性无关。但子集 $S$ 要成为正则光滑曲面，仅有微分单射还不够；局部参数化必须是**到其像的同胚**（局部开片的嵌入）。单射浸入未必是嵌入（其像未必局部是开片，环面上的无理直线即为例），而非单射浸入会自交。因此不能说每个正则参数曲面都整体嵌入 $\\mathbb{R}^{3}$；那句话属于局部开片条件，参数曲面本身并不携带该条件。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "DG.rmk.regularSurfaceVsImmersion",
+    "kind": "remark",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Local Parametrization: Homeomorphism Versus Immersion",
+        "zh-CN": "局部参数化：同胚与浸入之别"
+      }
+    }
+  }
+}

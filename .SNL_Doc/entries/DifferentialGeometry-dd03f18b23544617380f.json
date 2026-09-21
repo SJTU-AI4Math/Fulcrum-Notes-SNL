@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "The **positive 90-degree rotation of the plane** is the map $J\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{2}$, $J(x,y)=(-y,x)$: the counter-clockwise rotation by $90^{\\circ}$. It is linear and isometric, $\\langle Jv,Jw\\rangle=\\langle v,w\\rangle$, it satisfies $J^{2}=-\\mathrm{id}$, and $\\langle Jv,v\\rangle=0$ for every $v$, so $J$ sends each vector to its positive orthogonal direction.",
+          "zh-CN": "**平面正向 $90^\\circ$ 旋转**是映射 $J\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{2}$，$J(x,y)=(-y,x)$，即逆时针旋转 $90^{\\circ}$。它是线性等距映射，$\\langle Jv,Jw\\rangle=\\langle v,w\\rangle$，满足 $J^{2}=-\\mathrm{id}$，且对每个 $v$ 都有 $\\langle Jv,v\\rangle=0$，故 $J$ 把每个向量送到它的正向正交方向。"
+        }
+      },
+      "snl": "variable(__list__(Type.annotation(@x,Real),Type.annotation(@y,Real)),def(Type.apply(DG.def.rotation90[default],Prod.pair(x,y)),,VecNotation[default](neg(y),x)))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.rotation90",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Positive 90-Degree Rotation of the Plane",
+        "zh-CN": "平面正向 $90^\\circ$ 旋转"
+      }
+    }
+  }
+}

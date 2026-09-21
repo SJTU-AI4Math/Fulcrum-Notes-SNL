@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For a plane curve $\\gamma\\colon(a,b)\\to\\mathbb{R}^{2}$ parametrized by arc length one has $\\gamma''=k_{\\gamma}\\boldsymbol{n}_{\\gamma}$, i.e. $\\gamma''(t)=k_{\\gamma}(t)\\boldsymbol{n}_{\\gamma}(t)$. Indeed $\\lVert T\\rVert=1$ with $T=\\gamma'$ forces $T'\\perp T$, and in the plane the orthogonal complement of $T$ is spanned by $\\boldsymbol{n}_{\\gamma}=JT$; hence $T'=\\langle T',\\boldsymbol{n}_{\\gamma}\\rangle\\boldsymbol{n}_{\\gamma}=k_{\\gamma}\\boldsymbol{n}_{\\gamma}$. Since $T=\\gamma'$ on an arc-length parametrization, $T'=\\gamma''$.",
+          "zh-CN": "对以弧长参数化的平面曲线 $\\gamma\\colon(a,b)\\to\\mathbb{R}^{2}$ 有 $\\gamma''=k_{\\gamma}\\boldsymbol{n}_{\\gamma}$，即 $\\gamma''(t)=k_{\\gamma}(t)\\boldsymbol{n}_{\\gamma}(t)$。事实上 $T=\\gamma'$ 满足 $\\lVert T\\rVert=1$，迫使 $T'\\perp T$，而平面中 $T$ 的正交补由 $\\boldsymbol{n}_{\\gamma}=JT$ 张成；故 $T'=\\langle T',\\boldsymbol{n}_{\\gamma}\\rangle\\boldsymbol{n}_{\\gamma}=k_{\\gamma}\\boldsymbol{n}_{\\gamma}$。由于弧长参数下 $T=\\gamma'$，所以 $T'=\\gamma''$。"
+        }
+      },
+      "snl": "variable(__list__(Lt(a@DG.ctxt.abReal,b@DG.ctxt.abReal),DG.def.planeCurve($\\gamma$@DG.ctxt.planeCurve,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal)),Identical(norm(Analysis.deriv($\\gamma$@DG.ctxt.planeCurve)),$1$),Type.annotation(@t,Real),Set.Mem[authored](,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal),t)),theorem(Eq(,Type.apply(Analysis.deriv2($\\gamma$@DG.ctxt.planeCurve),t),LA.Smul(Type.apply(DG.def.planarSignedCurvature[default]($\\gamma$@DG.ctxt.planeCurve),t),Type.apply(DG.def.planeNormal[default]($\\gamma$@DG.ctxt.planeCurve),t)))))"
+    },
+    "contribution_info": null,
+    "id": "DG.ppt.planarCurvatureSecondDerivative",
+    "kind": "property",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Second Derivative in Terms of Signed Curvature",
+        "zh-CN": "二阶导数与带符号曲率"
+      }
+    }
+  }
+}

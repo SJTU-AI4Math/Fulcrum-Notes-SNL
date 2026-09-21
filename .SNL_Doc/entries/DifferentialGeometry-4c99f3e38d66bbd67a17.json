@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "A **plane curve** is a smooth (that is, $C^{\\infty}$) map $\\gamma\\colon (a,b)\\to\\mathbb{R}^{2}$. If in addition $\\gamma'(t)\\neq 0$ for every $t\\in(a,b)$, then $\\gamma$ is called **regular**, and a smooth map with this property is called a **regular smooth plane curve**. The derivative is taken on the open interval, so no one-sided endpoint derivative is required.",
+          "zh-CN": "**平面曲线**是光滑（即 $C^{\\infty}$）映射 $\\gamma\\colon (a,b)\\to\\mathbb{R}^{2}$。若进一步对每个 $t\\in(a,b)$ 都有 $\\gamma'(t)\\neq 0$，则称 $\\gamma$ 为**正则**的；具有该性质的光滑映射称为**正则光滑平面曲线**。导数在开区间上取，因而无需端点单侧导数。"
+        }
+      },
+      "snl": "variable(__list__(Lt(a@DG.ctxt.abReal,b@DG.ctxt.abReal)),structure[prop](DG.def.planeCurve[text]($\\gamma$@DG.ctxt.planeCurve,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal)),__enum__[enumerate](member[colon](DG.PlaneCurve.smoothness[text],ContDiffOn[default]($\\infty$,$\\gamma$@DG.ctxt.planeCurve,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal))),member[colon](DG.PlaneCurve.regularity[text],Logic.forall-typed(@t,Real,Logic.implies(Set.Mem[authored](,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal),t),Ne[authored_Neq_default](,Type.apply(Analysis.deriv($\\gamma$@DG.ctxt.planeCurve),t),$0$)))))))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.planeCurve",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Plane Curve",
+        "zh-CN": "平面曲线"
+      }
+    }
+  }
+}

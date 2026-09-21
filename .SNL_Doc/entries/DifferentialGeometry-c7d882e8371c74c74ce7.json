@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For an arc-length parametrized space curve $\\gamma$, the **vector curvature** (curvature vector) is $\\boldsymbol{\\kappa}_{\\gamma}:=\\frac{d\\boldsymbol{t}}{ds}$, i.e. $\\boldsymbol{\\kappa}_{\\gamma}(s)=\\boldsymbol{t}_{\\gamma}'(s)$; on an arc-length parametrization this is $\\gamma''(s)$. For a regular curve in a general parameter $t$ the same object is $\\boldsymbol{t}_{\\gamma}'(t)/\\lVert\\gamma'(t)\\rVert$. It is the arc-length derivative of the **unit** tangent, so it is not the acceleration: velocity $\\gamma'$ and acceleration $\\gamma''$ are different objects and coincide with the tangent and the curvature vector only for an arc-length parametrization. The principal normal $\\boldsymbol{n}_{\\gamma}$ is defined only where $\\boldsymbol{\\kappa}_{\\gamma}\\neq 0$.",
+          "zh-CN": "对以弧长为参数的空间曲线 $\\gamma$，**向量曲率**（曲率向量）定义为 $\\boldsymbol{\\kappa}_{\\gamma}:=\\frac{d\\boldsymbol{t}}{ds}$，即 $\\boldsymbol{\\kappa}_{\\gamma}(s)=\\boldsymbol{t}_{\\gamma}'(s)$；在弧长参数下它就是 $\\gamma''(s)$。对一般参数 $t$ 下的正则曲线，同一对象是 $\\boldsymbol{t}_{\\gamma}'(t)/\\lVert\\gamma'(t)\\rVert$。它是**单位**切向量对弧长的导数，因此不是加速度：速度 $\\gamma'$ 与加速度 $\\gamma''$ 是不同的对象，只有在弧长参数下才分别等于切向量与向量曲率。主法向量 $\\boldsymbol{n}_{\\gamma}$ 只在 $\\boldsymbol{\\kappa}_{\\gamma}\\neq 0$ 处定义。"
+        }
+      },
+      "snl": "variable(__list__(Lt(a@DG.ctxt.abReal,b@DG.ctxt.abReal),DG.def.spaceCurve[text]($\\gamma$@DG.ctxt.gammaCurve,Icc(a@DG.ctxt.abReal,b@DG.ctxt.abReal)),DG.def.arcLengthParam($\\gamma$@DG.ctxt.gammaCurve),Type.annotation(@t,Real),Set.Mem[authored](,Ioo(a@DG.ctxt.abReal,b@DG.ctxt.abReal),t)),def(Type.apply(DG.def.vectorCurvature[default]($\\gamma$@DG.ctxt.gammaCurve),t),,Type.apply(Analysis.deriv(DG.def.tangentVector($\\gamma$@DG.ctxt.gammaCurve)),t)))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.vectorCurvature",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Vector Curvature",
+        "zh-CN": "向量曲率"
+      }
+    }
+  }
+}

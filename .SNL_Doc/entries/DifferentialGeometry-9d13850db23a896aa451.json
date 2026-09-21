@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb{R}^{2}$ be open in the Euclidean topology and let $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$ be smooth on $\\Omega$ ($X\\in C^{\\infty}(\\Omega)$; only the restriction $X|_{\\Omega}$ is used). For $(u,v)\\in\\Omega$ the **partial derivatives** are $X_{u}(u,v)=\\frac{\\partial X}{\\partial u}(u,v)=\\left.\\frac{d}{dt}X(t,v)\\right|_{t=u}$ and, symmetrically, $X_{v}(u,v)=\\left.\\frac{d}{dt}X(u,t)\\right|_{t=v}$. Because $\\Omega$ is open and $(u,v)\\in\\Omega$, the coordinate line $t\\mapsto(t,v)$ stays in $\\Omega$ for $t$ near $u$, so the one-variable derivative is taken inside the domain; since $X$ is defined on all of $\\mathbb{R}^{2}$, the expressions $X(t,v)$ and $X(u,t)$ are defined for every $t$. In the surface theory below, regularity means precisely that $X_{u}$ and $X_{v}$ are linearly independent at every point of $\\Omega$.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb{R}^{2}$ 在欧氏拓扑下开，$X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$ 在 $\\Omega$ 上光滑（$X\\in C^{\\infty}(\\Omega)$；只使用限制 $X|_{\\Omega}$）。对 $(u,v)\\in\\Omega$，**偏导数**为 $X_{u}(u,v)=\\frac{\\partial X}{\\partial u}(u,v)=\\left.\\frac{d}{dt}X(t,v)\\right|_{t=u}$，对称地 $X_{v}(u,v)=\\left.\\frac{d}{dt}X(u,t)\\right|_{t=v}$。由于 $\\Omega$ 开且 $(u,v)\\in\\Omega$，坐标直线 $t\\mapsto(t,v)$ 在 $u$ 附近仍落在 $\\Omega$ 内，故一元导数在定义域内取；又因 $X$ 定义在整个 $\\mathbb{R}^{2}$ 上，$X(t,v)$ 与 $X(u,t)$ 对每个 $t$ 都有定义。在下文的曲面理论中，正则性正是指 $X_{u}$ 与 $X_{v}$ 在 $\\Omega$ 的每一点线性无关。"
+        }
+      },
+      "snl": "variable(__list__(Type.annotation(@$\\Omega$,Set(LA.def.realVecSpaceRn($2$))),DG.IsEuclideanOpen[default]($2$,$\\Omega$),Type.annotation(@X,Type.to(LA.def.realVecSpaceRn($2$),LA.def.realVecSpaceRn($3$))),ContDiffOn[default]($\\infty$,X,$\\Omega$),Type.annotation(@u,Real),Type.annotation(@v,Real),Set.Mem[authored](,$\\Omega$,Prod.pair(u,v))),def(Prod.pair(Type.apply(DG.def.partialDeriv[default](X,$1$),Prod.pair(u,v)),Type.apply(DG.def.partialDeriv[default](X,$2$),Prod.pair(u,v))),,Prod.pair(Type.apply(Analysis.deriv(parentheses[round](Type.lambda(@t,Real,Type.apply(X,Prod.pair(t,v))))),u),Type.apply(Analysis.deriv(parentheses[round](Type.lambda(@t,Real,Type.apply(X,Prod.pair(u,t))))),v))))"
+    },
+    "contribution_info": null,
+    "id": "DG.def.partialDeriv",
+    "kind": "definition",
+    "package": "DifferentialGeometry",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Partial Derivative of a Parametrized Surface",
+        "zh-CN": "参数曲面的偏导数"
+      }
+    }
+  }
+}

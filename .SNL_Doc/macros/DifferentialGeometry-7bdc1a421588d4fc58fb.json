@@ -1,0 +1,39 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "description": "Regularity member of the parametrized-surface structure.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "DG.Surface.regularity",
+    "source": {
+      "entries": [
+        "DG.def.regularParametrizedSurface"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "Regularity",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "正则性",
+              "mode": "text"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}
