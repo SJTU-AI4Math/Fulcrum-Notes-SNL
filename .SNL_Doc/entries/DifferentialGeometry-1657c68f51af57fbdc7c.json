@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.arcLengthParamUniqueness",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Uniqueness of the Arc-Length Parameter",
+        "zh-CN": "弧长参数的唯一性"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$s_1$,Type.to(Real,Real)),Type.annotation(@$s_2$,Type.to(Real,Real)),DG.def.arcLengthParam($\\gamma$)),theorem(Logic.exists-typed(@c,Real,Or[authored_Logic_or_infix](Identical[default]($s_2$,Add.add[infix]($s_1$,c)),Identical[default]($s_2$,Add.add[infix](neg($s_1$),c))))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "An arc-length parameter exists on every regular smooth curve and is unique up to an additive constant and orientation: if $s_1,s_2$ are two arc-length parameters, there is a constant $c$ with $s_2=\\pm s_1+c$. The $\\pm$ is the freedom of reversing orientation and $c$ is the choice of base point. If the range is normalized to $[0,l]$, where $l$ is the total length and $\\alpha(0),\\alpha(l)$ are the endpoints, the arc-length parameter is unique outright.",
+          "zh-CN": "任一正则光滑曲线上都存在弧长参数，且在相差一个常数与定向的意义下唯一：若 $s_1,s_2$ 是两个弧长参数，则存在常数 $c$ 使 $s_2=\\pm s_1+c$。$\\pm$ 是反向定向的自由度，$c$ 是基点的选择。若进一步把取值范围约定为 $[0,l]$（$l$ 为曲线总长，$\\alpha(0),\\alpha(l)$ 为端点），则弧长参数完全唯一。"
+        }
+      }
+    },
+    "package": "DifferentialGeometry",
+    "contribution_info": null,
+    "pointer": null
+  }
+}

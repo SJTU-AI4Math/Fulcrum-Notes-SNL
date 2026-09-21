@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.frenetFrameOrthonormal",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Orthonormality of the Frenet Frame",
+        "zh-CN": "Frenet 标架的规范正交性"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@t,Real),Set.Mem[authored](,Icc(a,b),t),DG.def.arcLengthParam($\\gamma$),Ne[authored_Neq_default](,Type.apply(Analysis.deriv2($\\gamma$),t),$0$)),theorem(Orthonormal(Real,VecNotation[default](Type.apply(DG.def.tangentVector($\\gamma$),t),Type.apply(DG.def.principalNormal($\\gamma$),t),Type.apply(DG.def.binormal($\\gamma$),t)))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "For an arc-length parametrized curve $\\gamma$ with $\\gamma''\\neq 0$, the Frenet frame is orthonormal: at every parameter value $t$ the three vectors $\\boldsymbol{t}_\\gamma(t)$, $\\boldsymbol{n}_\\gamma(t)$, $\\boldsymbol{b}_\\gamma(t)$ are pairwise orthogonal and each has norm $1$, so the ordered triple is a family of orthonormal vectors. At each point it is in fact an orthonormal basis of $\\mathbb{R}^{3}$. Formally, Mathlib's `Orthonormal` is a predicate on an indexed family `v : ι → E`; the ordered triple above is read as the corresponding family indexed by `Fin 3`. If a literal Lean-level correspondence is wanted, the frame should be written as a family of type `Fin 3 → \\mathbb{R}^{3}` rather than as a nested product.",
+          "zh-CN": "对满足 $\\gamma''\\neq 0$ 的以弧长为参数的曲线 $\\gamma$，Frenet 标架是规范正交的：在参数 $t$ 的每个取值处，三个向量 $\\boldsymbol{t}_\\gamma(t)$、$\\boldsymbol{n}_\\gamma(t)$、$\\boldsymbol{b}_\\gamma(t)$ 两两正交且范数均为 $1$，故该有序三元组是一族规范正交的向量。在每一点它实际上是 $\\mathbb{R}^{3}$ 的一组规范正交基。 形式地，Mathlib 的 `Orthonormal` 是定义在指标族 `v : ι → E` 上的谓词；上面的有序三元组按标准的 `Fin 3` 编号读作相应的向量族。若要求与 Lean 表达式逐字对应，则标架应写成 `Fin 3 → \\mathbb{R}^{3}` 的族，而不是嵌套积。"
+        }
+      }
+    },
+    "package": "DifferentialGeometry",
+    "contribution_info": null,
+    "pointer": null
+  }
+}

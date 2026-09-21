@@ -15,13 +15,13 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@a@DG.ctxt.abReal,Real),Type.annotation(@b@DG.ctxt.abReal,Real),Type.annotation(@$\\gamma$@DG.ctxt.gammaCurve,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),def(DG.def.binormal($\\gamma$),,crossProduct[wedge](DG.def.tangentVector($\\gamma$),DG.def.principalNormal($\\gamma$))))",
+      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.binormal($\\gamma$),t),,crossProduct[wedge](Type.apply(DG.def.tangentVector($\\gamma$),t),Type.apply(DG.def.principalNormal($\\gamma$),t))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
         "values": {
-          "en": "For an arc-length parametrized curve $\\gamma$ with $\\gamma''\\neq 0$, the **binormal vector** is $\\mathbf{b}:=\\mathbf{t}\\wedge\\mathbf{n}$, i.e. $\\mathbf{b}(s)=\\mathbf{t}(s)\\wedge\\mathbf{n}(s)$: the cross product of the unit tangent vector and the principal normal vector. As the cross product of two orthogonal unit vectors it is again a unit vector, and $\\mathbf{t},\\mathbf{n},\\mathbf{b}$ form a right-handed orthonormal frame along the curve. Geometrically $\\mathbf{b}$ is the unit normal of the osculating plane, the plane spanned by $\\mathbf{t}$ and $\\mathbf{n}$.",
-          "zh-CN": "对满足 $\\gamma''\\neq 0$ 的以弧长为参数的曲线 $\\gamma$，**副法向量**定义为 $\\mathbf{b}:=\\mathbf{t}\\wedge\\mathbf{n}$，即 $\\mathbf{b}(s)=\\mathbf{t}(s)\\wedge\\mathbf{n}(s)$，也就是单位切向量与主法向量的叉积。两个正交单位向量的叉积仍为单位向量，故 $\\mathbf{t},\\mathbf{n},\\mathbf{b}$ 沿曲线构成右手正交标架。几何上 $\\mathbf{b}$ 是由 $\\mathbf{t}$ 与 $\\mathbf{n}$ 张成的密切平面的单位法向量。"
+          "en": "For an arc-length parametrized curve $\\gamma$ with $\\gamma''\\neq 0$, the **binormal vector** is $\\boldsymbol{b}:=\\boldsymbol{t}\\wedge\\boldsymbol{n}$, i.e. $\\boldsymbol{b}(s)=\\boldsymbol{t}(s)\\wedge\\boldsymbol{n}(s)$: the cross product of the unit tangent vector and the principal normal vector. As the cross product of two orthogonal unit vectors it is again a unit vector, and $\\boldsymbol{t},\\boldsymbol{n},\\boldsymbol{b}$ form a right-handed orthonormal frame along the curve. Geometrically $\\boldsymbol{b}$ is the unit normal of the osculating plane, the plane spanned by $\\boldsymbol{t}$ and $\\boldsymbol{n}$.",
+          "zh-CN": "对满足 $\\gamma''\\neq 0$ 的以弧长为参数的曲线 $\\gamma$，**副法向量**定义为 $\\boldsymbol{b}:=\\boldsymbol{t}\\wedge\\boldsymbol{n}$，即 $\\boldsymbol{b}(s)=\\boldsymbol{t}(s)\\wedge\\boldsymbol{n}(s)$，也就是单位切向量与主法向量的叉积。两个正交单位向量的叉积仍为单位向量，故 $\\boldsymbol{t},\\boldsymbol{n},\\boldsymbol{b}$ 沿曲线构成右手正交标架。几何上 $\\boldsymbol{b}$ 是由 $\\boldsymbol{t}$ 与 $\\boldsymbol{n}$ 张成的密切平面的单位法向量。"
         }
       }
     },

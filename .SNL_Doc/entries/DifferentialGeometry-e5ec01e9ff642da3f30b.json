@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.frenetFrameRightHanded",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Right-Handedness of the Frenet Frame",
+        "zh-CN": "Frenet 标架的右手性"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@t,Real),Set.Mem[authored](,Icc(a,b),t),DG.def.arcLengthParam($\\gamma$),Ne[authored_Neq_default](,Type.apply(Analysis.deriv2($\\gamma$),t),$0$)),theorem(Eq(,Type.apply(DG.def.binormal($\\gamma$),t),crossProduct[wedge](Type.apply(DG.def.tangentVector($\\gamma$),t),Type.apply(DG.def.principalNormal($\\gamma$),t)))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "For an arc-length parametrized curve $\\gamma$ with $\\gamma''\\neq 0$, the Frenet frame is right-handed: the binormal is the cross product of the tangent vector and the principal normal, $$\\boldsymbol{b}_\\gamma(t)=\\boldsymbol{t}_\\gamma(t)\\wedge\\boldsymbol{n}_\\gamma(t).$$ Together with orthonormality this says that $(\\boldsymbol{t}_\\gamma(t),\\boldsymbol{n}_\\gamma(t),\\boldsymbol{b}_\\gamma(t))$ is a positively oriented orthonormal basis of $\\mathbb{R}^{3}$.",
+          "zh-CN": "对满足 $\\gamma''\\neq 0$ 的以弧长为参数的曲线 $\\gamma$，Frenet 标架是右手系：副法向量是切向量与主法向量的叉积，即 $$\\boldsymbol{b}_\\gamma(t)=\\boldsymbol{t}_\\gamma(t)\\wedge\\boldsymbol{n}_\\gamma(t).$$ 与规范正交性合起来，这表明 $(\\boldsymbol{t}_\\gamma(t),\\boldsymbol{n}_\\gamma(t),\\boldsymbol{b}_\\gamma(t))$ 是 $\\mathbb{R}^{3}$ 的一组正向规范正交基。"
+        }
+      }
+    },
+    "package": "DifferentialGeometry",
+    "contribution_info": null,
+    "pointer": null
+  }
+}

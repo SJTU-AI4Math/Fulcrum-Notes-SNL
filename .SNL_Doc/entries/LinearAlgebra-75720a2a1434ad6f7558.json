@@ -21,8 +21,8 @@
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "$k\\cdot\\mathbf{0}_V=\\mathbf{0}_V$。",
-          "en": "$k\\cdot\\mathbf{0}_V=\\mathbf{0}_V$."
+          "zh-CN": "$k\\cdot\\boldsymbol{0}_V=\\boldsymbol{0}_V$。",
+          "en": "$k\\cdot\\boldsymbol{0}_V=\\boldsymbol{0}_V$."
         }
       }
     },

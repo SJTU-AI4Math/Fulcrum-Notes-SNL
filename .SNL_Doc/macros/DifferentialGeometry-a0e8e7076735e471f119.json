@@ -5,9 +5,11 @@
   "package": "DifferentialGeometry",
   "macro": {
     "name": "DG.def.frenetFrame",
-    "description": "Frenet frame {t, n, b} of a curve parametrised by arc length; it is an orthonormal basis along the curve.",
+    "description": "Frenet frame (t, n, b) of a curve parametrised by arc length: the ordered triple of its tangent vector, principal normal and binormal along the curve. The triple is an orthonormal, right-handed frame; see DG.ppt.frenetFrameOrthonormal and DG.ppt.frenetFrameRightHanded.",
     "source": {
-      "entries": [],
+      "entries": [
+        "DG.def.frenetFrame"
+      ],
       "urls": []
     },
     "kind": "const",
@@ -15,27 +17,21 @@
     "tags": [],
     "styles": [
       {
-        "style_name": "default",
+        "style_name": "name",
         "tags": [],
         "template": {
-          "mode": "formula_inline",
-          "body": "\\left\\{\\mathbf{t}_{#0}, \\mathbf{n}_{#0}, \\mathbf{b}_{#0}\\right\\}",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 的 Frenet 标架"
+            },
+            "en": {
+              "mode": "text",
+              "body": "the Frenet frame of #0"
             }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
+          }
         }
       },
       {
@@ -47,43 +43,11 @@
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "#0 的 Frenet 标架",
-              "typst": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "latex": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "markdown": "",
-              "text": ""
+              "body": "#0 在 #1 处的 Frenet 标架"
             },
             "en": {
               "mode": "text",
-              "body": "the Frenet frame of #0",
-              "typst": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "latex": {
-                "built_in": "",
-                "synthesis": {
-                  "mode": "formula",
-                  "macro": ""
-                }
-              },
-              "markdown": "",
-              "text": ""
+              "body": "the Frenet frame of #0 at #1"
             }
           }
         }

@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@a@DG.ctxt.abReal,Real),Type.annotation(@b@DG.ctxt.abReal,Real),Type.annotation(@$\\gamma$@DG.ctxt.gammaCurve,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),structure[prop](DG.def.spaceCurve[text]($\\gamma$,Icc(a,b)),__enum__[enumerate](member[colon](DG.SpaceCurve.smoothness[text],ContDiffOn[default]($\\infty$,$\\gamma$,Icc(a,b))),member[colon](DG.SpaceCurve.regularity[text],Logic.forall-typed(@t,Real,Logic.implies(Set.Mem[authored](,Icc(a,b),t),Ne[authored_Neq_default](,Type.apply(Analysis.deriv($\\gamma$),t),$0$)))))))",
+      "snl": "structure[prop](DG.def.spaceCurve[text]($\\gamma$,Icc(a,b)),__enum__[enumerate](member[colon](DG.SpaceCurve.smoothness[text],ContDiffOn[default]($\\infty$,$\\gamma$,Icc(a,b))),member[colon](DG.SpaceCurve.regularity[text],Logic.forall-typed(@t,Real,Logic.implies(Set.Mem[authored](,Icc(a,b),t),Ne[authored_Neq_default](,Type.apply(Analysis.deriv($\\gamma$),t),$0$))))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

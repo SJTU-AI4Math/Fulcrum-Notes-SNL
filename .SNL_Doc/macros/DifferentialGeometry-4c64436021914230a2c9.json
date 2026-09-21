@@ -7,7 +7,9 @@
     "name": "DG.def.spaceCurve",
     "description": "Space curve: a smooth map gamma from an interval into R^3. Regularity (gamma' != 0) is a separate predicate.",
     "source": {
-      "entries": [],
+      "entries": [
+        "DG.def.spaceCurve"
+      ],
       "urls": []
     },
     "kind": "const",

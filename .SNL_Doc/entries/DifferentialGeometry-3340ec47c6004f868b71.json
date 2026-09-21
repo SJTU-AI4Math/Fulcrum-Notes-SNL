@@ -15,13 +15,13 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@a@DG.ctxt.abReal,Real),Type.annotation(@b@DG.ctxt.abReal,Real),Type.annotation(@$\\gamma$@DG.ctxt.gammaCurve,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),def(DG.def.torsion[text]($\\gamma$),,Eq(,Analysis.deriv(DG.def.binormal($\\gamma$)),LA.Smul(DG.def.torsion($\\gamma$),DG.def.principalNormal($\\gamma$)))))",
+      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.torsion($\\gamma$),t),,inner(Type.apply(Analysis.deriv(DG.def.binormal($\\gamma$)),t),Type.apply(DG.def.principalNormal($\\gamma$),t))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
         "values": {
-          "en": "For an arc-length parametrized curve $\\gamma$ with $\\gamma''\\neq 0$, the **torsion** of $\\gamma$ is the function $\\tau$ characterized by $\\mathbf{b}'(s)=\\tau(s)\\,\\mathbf{n}(s)$ for every value $s$ of the arc-length parameter, that is $\\mathbf{b}'=\\tau\\,\\mathbf{n}$. Since $\\mathbf{b}$ is a unit vector field, $\\mathbf{b}'\\perp\\mathbf{b}$; and since $\\mathbf{t},\\mathbf{n},\\mathbf{b}$ is an orthonormal frame, $\\mathbf{b}'$ must be a multiple of $\\mathbf{n}$. Hence such a $\\tau$ exists and is unique, and equivalently $\\tau=\\langle\\mathbf{b}',\\mathbf{n}\\rangle$. The torsion measures how fast the osculating plane rotates along the curve; $\\tau\\equiv 0$ exactly when $\\gamma$ is planar.",
-          "zh-CN": "对满足 $\\gamma''\\neq 0$ 的以弧长为参数的曲线 $\\gamma$，**挠率**是由 $\\mathbf{b}'(s)=\\tau(s)\\,\\mathbf{n}(s)$ 刻画的函数 $\\tau$，即在弧长参数 $s$ 的每个取值处成立，亦即 $\\mathbf{b}'=\\tau\\,\\mathbf{n}$。由于 $\\mathbf{b}$ 是单位向量场，$\\mathbf{b}'\\perp\\mathbf{b}$；又因 $\\mathbf{t},\\mathbf{n},\\mathbf{b}$ 是正交标架，$\\mathbf{b}'$ 必为 $\\mathbf{n}$ 的倍数。故这样的 $\\tau$ 存在且唯一，等价地 $\\tau=\\langle\\mathbf{b}',\\mathbf{n}\\rangle$。挠率度量密切平面沿曲线转动的快慢；$\\tau\\equiv 0$ 恰好对应于 $\\gamma$ 是平面曲线。"
+          "en": "For an arc-length parametrized curve $\\gamma$ with $\\gamma''\\neq 0$, the **torsion** of $\\gamma$ is the function $\\tau$ characterized by $\\boldsymbol{b}'(s)=\\tau(s)\\,\\boldsymbol{n}(s)$ for every value $s$ of the arc-length parameter, that is $\\boldsymbol{b}'=\\tau\\,\\boldsymbol{n}$. Since $\\boldsymbol{b}$ is a unit vector field, $\\boldsymbol{b}'\\perp\\boldsymbol{b}$; and since $\\boldsymbol{t},\\boldsymbol{n},\\boldsymbol{b}$ is an orthonormal frame, $\\boldsymbol{b}'$ must be a multiple of $\\boldsymbol{n}$. Hence such a $\\tau$ exists and is unique, and equivalently $\\tau=\\langle\\boldsymbol{b}',\\boldsymbol{n}\\rangle$. The torsion measures how fast the osculating plane rotates along the curve; $\\tau\\equiv 0$ exactly when $\\gamma$ is planar.",
+          "zh-CN": "对满足 $\\gamma''\\neq 0$ 的以弧长为参数的曲线 $\\gamma$，**挠率**是由 $\\boldsymbol{b}'(s)=\\tau(s)\\,\\boldsymbol{n}(s)$ 刻画的函数 $\\tau$，即在弧长参数 $s$ 的每个取值处成立，亦即 $\\boldsymbol{b}'=\\tau\\,\\boldsymbol{n}$。由于 $\\boldsymbol{b}$ 是单位向量场，$\\boldsymbol{b}'\\perp\\boldsymbol{b}$；又因 $\\boldsymbol{t},\\boldsymbol{n},\\boldsymbol{b}$ 是正交标架，$\\boldsymbol{b}'$ 必为 $\\boldsymbol{n}$ 的倍数。故这样的 $\\tau$ 存在且唯一，等价地 $\\tau=\\langle\\boldsymbol{b}',\\boldsymbol{n}\\rangle$。挠率度量密切平面沿曲线转动的快慢；$\\tau\\equiv 0$ 恰好对应于 $\\gamma$ 是平面曲线。"
         }
       }
     },

@@ -5,7 +5,7 @@
   "package": "LinearAlgebra",
   "macro": {
     "name": "Orthonormal",
-    "description": "Orthonormal family",
+    "description": "Orthonormality of an indexed family of vectors in an inner product space: every vector has norm 1 and distinct vectors are orthogonal. Mathlib: `def Orthonormal (v : ι → E) : Prop` (root namespace, `Mathlib/Analysis/InnerProductSpace/Orthonormal.lean:49`). #0 = the scalar field, #1 = the indexed family of vectors; the scalar field is carried by the contract but not displayed in the default style.",
     "source": {
       "entries": [
         "Orthonormal"
@@ -20,23 +20,47 @@
         "style_name": "default",
         "tags": [],
         "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Orthonormal}\\left( #1 \\right)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
           "type": "i18n",
-          "default_language": "zh-CN",
+          "default_language": "en",
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "#1 是 #0 上的规范正交族",
+              "body": "#1 是规范正交的",
               "typst": {
                 "built_in": "",
                 "synthesis": {
-                  "mode": "text",
+                  "mode": "formula",
                   "macro": ""
                 }
               },
               "latex": {
                 "built_in": "",
                 "synthesis": {
-                  "mode": "text",
+                  "mode": "formula",
                   "macro": ""
                 }
               },
@@ -45,18 +69,18 @@
             },
             "en": {
               "mode": "text",
-              "body": "#1 is an orthonormal family over #0",
+              "body": "#1 is orthonormal",
               "typst": {
                 "built_in": "",
                 "synthesis": {
-                  "mode": "text",
+                  "mode": "formula",
                   "macro": ""
                 }
               },
               "latex": {
                 "built_in": "",
                 "synthesis": {
-                  "mode": "text",
+                  "mode": "formula",
                   "macro": ""
                 }
               },
@@ -66,6 +90,11 @@
           }
         }
       }
-    ]
+    ],
+    "pointer": {
+      "file": "Mathlib/Analysis/InnerProductSpace/Orthonormal.lean",
+      "mode": "lines",
+      "line": 49
+    }
   }
 }

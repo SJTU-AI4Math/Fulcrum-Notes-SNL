@@ -21,7 +21,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathbf{0}_{#0}",
+          "body": "\\boldsymbol{0}_{#0}",
           "typst": {
             "built_in": "",
             "synthesis": {

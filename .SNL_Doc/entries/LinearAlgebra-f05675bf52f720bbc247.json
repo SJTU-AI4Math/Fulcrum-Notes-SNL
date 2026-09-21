@@ -21,8 +21,8 @@
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "$w$ 是 $v$ 的加法逆元，当且仅当 $v+w=\\mathbf{0}_V$。",
-          "en": "$w$ is an additive inverse of $v$ exactly when $v+w=\\mathbf{0}_V$."
+          "zh-CN": "$w$ 是 $v$ 的加法逆元，当且仅当 $v+w=\\boldsymbol{0}_V$。",
+          "en": "$w$ is an additive inverse of $v$ exactly when $v+w=\\boldsymbol{0}_V$."
         }
       }
     },

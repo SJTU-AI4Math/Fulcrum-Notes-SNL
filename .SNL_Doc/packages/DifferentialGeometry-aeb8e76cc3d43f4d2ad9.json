@@ -17,9 +17,14 @@
     "DG.def.tangentVector",
     "DG.def.torsion",
     "DG.lem.unitVectorOrthogonalDeriv",
+    "DG.ppt.arcLengthParamUniqueness",
+    "DG.ppt.frenetFrameOrthonormal",
+    "DG.ppt.frenetFrameRightHanded",
     "DG.sec.curveAndSurfaceLocalTheory",
     "DG.subsec.spaceCurveTheory",
     "DG.subsec.surfaces",
-    "DG.thm.frenetSerret"
+    "DG.thm.frenetSerret",
+    "DG.xmp.circleCurvature",
+    "DG.xmp.straightLineCurvature"
   ]
 }

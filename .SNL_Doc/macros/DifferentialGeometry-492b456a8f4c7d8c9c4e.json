@@ -8,7 +8,9 @@
     "kind": "const",
     "description": "Regularity of a space curve",
     "source": {
-      "entries": [],
+      "entries": [
+        "DG.def.spaceCurve"
+      ],
       "urls": []
     },
     "dynamic_arity": false,

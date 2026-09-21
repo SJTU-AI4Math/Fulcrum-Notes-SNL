@@ -4,91 +4,104 @@
       "id": "n_0",
       "label": "Entry",
       "props": {
-        "entryId": "DG.sec.curveAndSurfaceLocalTheory"
+        "entryId": "DG.sec.curveAndSurfaceLocalTheory",
+        "counterId": "dg-section"
       }
     },
     {
       "id": "n_1",
       "label": "Entry",
       "props": {
-        "entryId": "DG.subsec.spaceCurveTheory"
+        "entryId": "DG.subsec.spaceCurveTheory",
+        "counterId": "dg-subsection"
       }
     },
     {
       "id": "n_2",
       "label": "Entry",
       "props": {
-        "entryId": "DG.def.spaceCurve"
+        "entryId": "DG.def.spaceCurve",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_3",
       "label": "Entry",
       "props": {
-        "entryId": "DG.def.arcLengthParam"
+        "entryId": "DG.def.arcLengthParam",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_4",
       "label": "Entry",
       "props": {
-        "entryId": "DG.def.curvature"
+        "entryId": "DG.def.curvature",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_5",
       "label": "Entry",
       "props": {
-        "entryId": "DG.def.tangentVector"
+        "entryId": "DG.def.tangentVector",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_6",
       "label": "Entry",
       "props": {
-        "entryId": "DG.def.principalNormal"
+        "entryId": "DG.def.principalNormal",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_7",
       "label": "Entry",
       "props": {
-        "entryId": "DG.def.binormal"
+        "entryId": "DG.def.binormal",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_8",
       "label": "Entry",
       "props": {
-        "entryId": "DG.def.frenetFrame"
+        "entryId": "DG.def.frenetFrame",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_9",
       "label": "Entry",
       "props": {
-        "entryId": "DG.def.torsion"
+        "entryId": "DG.def.torsion",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_10",
       "label": "Entry",
       "props": {
-        "entryId": "DG.thm.frenetSerret"
+        "entryId": "DG.thm.frenetSerret",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_11",
       "label": "Entry",
       "props": {
-        "entryId": "DG.lem.unitVectorOrthogonalDeriv"
+        "entryId": "DG.lem.unitVectorOrthogonalDeriv",
+        "counterId": "dg-entry"
       }
     },
     {
       "id": "n_12",
       "label": "Entry",
       "props": {
-        "entryId": "DG.subsec.surfaces"
+        "entryId": "DG.subsec.surfaces",
+        "counterId": "dg-subsection"
       }
     },
     {
@@ -104,12 +117,67 @@
       "props": {
         "entryId": "DG.ctxt.gammaCurve"
       }
+    },
+    {
+      "id": "n_13",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.arcLengthParamUniqueness",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "n_14",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.xmp.straightLineCurvature",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "n_15",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.xmp.circleCurvature",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "n_16",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.frenetFrameOrthonormal",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "n_17",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.frenetFrameRightHanded",
+        "counterId": "dg-subentry"
+      }
     }
   ],
   "relationships": [
     {
       "from": "n_0",
       "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "n_12",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_ctxt_abReal",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_ctxt_gammaCurve",
       "label": "branch"
     },
     {
@@ -163,18 +231,28 @@
       "label": "branch"
     },
     {
-      "from": "n_0",
-      "to": "n_12",
+      "from": "n_3",
+      "to": "n_13",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_ctxt_abReal",
+      "from": "n_4",
+      "to": "n_14",
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_ctxt_gammaCurve",
+      "from": "n_4",
+      "to": "n_15",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_16",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "n_17",
       "label": "branch"
     }
   ]

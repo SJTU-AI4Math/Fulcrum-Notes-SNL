@@ -1,3 +1,31 @@
 {
-  "counters": []
+  "counters": [
+    {
+      "id": "dg-section",
+      "name": "Section",
+      "numbering": "1",
+      "children": [
+        {
+          "id": "dg-subsection",
+          "name": "Subsection",
+          "numbering": ".1",
+          "children": [
+            {
+              "id": "dg-entry",
+              "name": "Entry",
+              "numbering": ".1",
+              "children": [
+                {
+                  "id": "dg-subentry",
+                  "name": "Subentry",
+                  "numbering": ".1",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

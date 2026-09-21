@@ -1,0 +1,61 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "BasicOperators",
+  "macro": {
+    "name": "Identical",
+    "description": "Identically equal: `#1 ≡ #2`. A binary infix operator for two functions being equal everywhere on their common domain. Constants on either side are read as constant functions. There is no Mathlib constant for this symbol — `Set.EqOn` is the set-restricted form — so the name is local. The exact domain/type discipline is deferred.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\equiv #1",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 恒等于 #1"
+            },
+            "en": {
+              "mode": "text",
+              "body": "#0 is identically #1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

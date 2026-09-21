@@ -15,13 +15,13 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@a@DG.ctxt.abReal,Real),Type.annotation(@b@DG.ctxt.abReal,Real),Type.annotation(@$\\gamma$@DG.ctxt.gammaCurve,Type.to(Icc(a,b),LA.def.realVecSpaceRn($3$)))),def(DG.def.principalNormal($\\gamma$),,Div.div(Analysis.deriv2($\\gamma$),norm(Analysis.deriv2($\\gamma$)))))",
+      "snl": "variable(Type.annotation(@t,Real),def(Type.apply(DG.def.principalNormal($\\gamma$),t),,Div.div(Type.apply(Analysis.deriv2($\\gamma$),t),norm(Type.apply(Analysis.deriv2($\\gamma$),t)))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
         "values": {
-          "en": "For an arc-length parametrized curve $\\gamma$ with $\\gamma''\\neq 0$, the **principal normal vector** is $\\mathbf{n}:=\\dfrac{\\gamma''}{\\lVert\\gamma''\\rVert}$, i.e. $\\mathbf{n}(s)=\\gamma''(s)/\\lVert\\gamma''(s)\\rVert$. It is a unit vector orthogonal to the tangent vector $\\mathbf{t}$, and $\\mathbf{t},\\mathbf{n}$ span the osculating plane.",
-          "zh-CN": "对满足 $\\gamma''\\neq 0$ 的以弧长为参数的曲线 $\\gamma$，**主法向量**定义为 $\\mathbf{n}:=\\dfrac{\\gamma''}{\\lVert\\gamma''\\rVert}$，即 $\\mathbf{n}(s)=\\gamma''(s)/\\lVert\\gamma''(s)\\rVert$。它是与切向量 $\\mathbf{t}$ 正交的单位向量，且 $\\mathbf{t},\\mathbf{n}$ 张成密切平面。"
+          "en": "For an arc-length parametrized curve $\\gamma$ with $\\gamma''\\neq 0$, the **principal normal vector** is $\\boldsymbol{n}:=\\dfrac{\\gamma''}{\\lVert\\gamma''\\rVert}$, i.e. $\\boldsymbol{n}(s)=\\gamma''(s)/\\lVert\\gamma''(s)\\rVert$. It is a unit vector orthogonal to the tangent vector $\\boldsymbol{t}$, and $\\boldsymbol{t},\\boldsymbol{n}$ span the osculating plane.",
+          "zh-CN": "对满足 $\\gamma''\\neq 0$ 的以弧长为参数的曲线 $\\gamma$，**主法向量**定义为 $\\boldsymbol{n}:=\\dfrac{\\gamma''}{\\lVert\\gamma''\\rVert}$，即 $\\boldsymbol{n}(s)=\\gamma''(s)/\\lVert\\gamma''(s)\\rVert$。它是与切向量 $\\boldsymbol{t}$ 正交的单位向量，且 $\\boldsymbol{t},\\boldsymbol{n}$ 张成密切平面。"
         }
       }
     },

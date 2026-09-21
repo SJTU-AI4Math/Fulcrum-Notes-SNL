@@ -21,8 +21,8 @@
         "type": "i18n",
         "default_language": "zh-CN",
         "values": {
-          "zh-CN": "零向量是线性空间结构所指定的加法恒等元 $\\mathbf{0}_V$。",
-          "en": "The zero vector is the additive identity $\\mathbf{0}_V$ specified by the vector-space structure."
+          "zh-CN": "零向量是线性空间结构所指定的加法恒等元 $\\boldsymbol{0}_V$。",
+          "en": "The zero vector is the additive identity $\\boldsymbol{0}_V$ specified by the vector-space structure."
         }
       }
     },

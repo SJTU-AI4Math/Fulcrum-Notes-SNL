@@ -5,7 +5,7 @@
   "package": "LinearAlgebra",
   "macro": {
     "name": "OrthonormalBasis",
-    "description": "Orthonormal basis",
+    "description": "An orthonormal basis of an inner product space: an identification of the space with the matching Euclidean space, equivalently an orthonormal indexed family that spans it. Mathlib: `structure OrthonormalBasis` (root namespace, `Mathlib/Analysis/InnerProductSpace/PiL2.lean:360`). #0 = the index type, #1 = the scalar field, #2 = the space; the scalar field is carried by the contract but not displayed in the default style.",
     "source": {
       "entries": [
         "OrthonormalBasis"
@@ -20,23 +20,47 @@
         "style_name": "default",
         "tags": [],
         "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{OrthonormalBasis}_{#0}\\left( #2 \\right)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": ""
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
           "type": "i18n",
-          "default_language": "zh-CN",
+          "default_language": "en",
           "values": {
             "zh-CN": {
               "mode": "text",
-              "body": "以 #0 为索引的 #2 的规范正交基",
+              "body": "#2 的规范正交基",
               "typst": {
                 "built_in": "",
                 "synthesis": {
-                  "mode": "text",
+                  "mode": "formula",
                   "macro": ""
                 }
               },
               "latex": {
                 "built_in": "",
                 "synthesis": {
-                  "mode": "text",
+                  "mode": "formula",
                   "macro": ""
                 }
               },
@@ -45,18 +69,18 @@
             },
             "en": {
               "mode": "text",
-              "body": "an orthonormal basis of #2 indexed by #0",
+              "body": "an orthonormal basis of #2",
               "typst": {
                 "built_in": "",
                 "synthesis": {
-                  "mode": "text",
+                  "mode": "formula",
                   "macro": ""
                 }
               },
               "latex": {
                 "built_in": "",
                 "synthesis": {
-                  "mode": "text",
+                  "mode": "formula",
                   "macro": ""
                 }
               },
@@ -66,6 +90,11 @@
           }
         }
       }
-    ]
+    ],
+    "pointer": {
+      "file": "Mathlib/Analysis/InnerProductSpace/PiL2.lean",
+      "mode": "lines",
+      "line": 360
+    }
   }
 }

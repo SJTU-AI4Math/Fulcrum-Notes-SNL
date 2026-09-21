@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.xmp.straightLineCurvature",
+    "kind": "example",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Curvature of a Straight Line",
+        "zh-CN": "直线的曲率"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@$p$,LA.def.realVecSpaceRn($3$)),Type.annotation(@$v$,LA.def.realVecSpaceRn($3$)),Eq(,norm(v),$1$)),theorem(Identical[default](DG.def.curvature(Type.lambda(@s,Real,Add.add[infix](p,LA.Smul(s,v)))),$0$)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "A straight line has curvature identically zero. A line through $(x_0,y_0,z_0)$ with unit direction $(a_1,a_2,a_3)$ is parametrized by arc length as $\\alpha(s)=(x_0+a_1s,\\,y_0+a_2s,\\,z_0+a_3s)$; since $\\alpha$ is affine in $s$, $\\alpha''(s)\\equiv 0$, hence $\\kappa=|\\alpha''(s)|\\equiv 0$.",
+          "zh-CN": "直线的曲率恒为零。过 $(x_0,y_0,z_0)$、以单位向量 $(a_1,a_2,a_3)$ 为方向的直线，以弧长 $s$ 参数化为 $\\alpha(s)=(x_0+a_1s,\\,y_0+a_2s,\\,z_0+a_3s)$；由于 $\\alpha$ 关于 $s$ 是仿射的，$\\alpha''(s)\\equiv 0$，故 $\\kappa=|\\alpha''(s)|\\equiv 0$。"
+        }
+      }
+    },
+    "package": "DifferentialGeometry",
+    "contribution_info": null,
+    "pointer": null
+  }
+}

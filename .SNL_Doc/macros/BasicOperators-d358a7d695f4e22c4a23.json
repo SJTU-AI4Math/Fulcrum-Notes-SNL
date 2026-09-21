@@ -1,0 +1,94 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "BasicOperators",
+  "macro": {
+    "name": "VecNotation",
+    "description": "A finite sequence of vectors, written as a parenthesised comma-separated list: (a, b, c). Semantically a function Fin n → T, not a product type. Mathlib counterpart: the vector notation in Mathlib/Data/Fin/VecNotation.lean (`syntax \"![\" term,* \"]\"`, expanding to `vecCons`/`vecEmpty` over `Fin n → α`). This is a notation facility rather than a constant, so the macro takes the facility's file name. Placed in BasicOperators for now — it is notation crossing several theories; to be split out later.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "sub",
+    "dynamic_arity": true,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\left(#*\\right)",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "separator": ", "
+        }
+      },
+      {
+        "style_name": "bare",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#*",
+          "typst": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "latex": {
+            "built_in": "",
+            "synthesis": {
+              "mode": "formula",
+              "macro": ""
+            }
+          },
+          "markdown": "",
+          "text": "",
+          "separator": ", "
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "有限序列 #*",
+              "separator": "、"
+            },
+            "en": {
+              "mode": "text",
+              "body": "the finite sequence #*",
+              "separator": ", "
+            }
+          }
+        }
+      }
+    ],
+    "pointer": {
+      "file": "Mathlib/Data/Fin/VecNotation.lean",
+      "mode": "lines",
+      "line": 68
+    }
+  }
+}
