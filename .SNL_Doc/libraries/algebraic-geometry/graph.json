@@ -1,4 +1,144 @@
 {
-  "nodes": [],
-  "relationships": []
+  "nodes": [
+    {
+      "id": "n_sec",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.sec.planeConics",
+        "counterId": "ag-section"
+      }
+    },
+    {
+      "id": "n_subsec",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.subsec.projectivePlane",
+        "counterId": "ag-subsection"
+      }
+    },
+    {
+      "id": "n_pp",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.RealProjectivePlane.Proportional",
+        "counterId": "ag-entry"
+      }
+    },
+    {
+      "id": "n_pe",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ppt.proportionalityEquivalence",
+        "counterId": "ag-subentry"
+      }
+    },
+    {
+      "id": "n_rp",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.RealProjectivePlane",
+        "counterId": "ag-entry"
+      }
+    },
+    {
+      "id": "n_hc",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.RealProjectivePlane.homogeneousCoordinates",
+        "counterId": "ag-entry"
+      }
+    },
+    {
+      "id": "n_ri",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ppt.representativeInvariance",
+        "counterId": "ag-subentry"
+      }
+    },
+    {
+      "id": "n_ae",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.RealProjectivePlane.affineEmbedding",
+        "counterId": "ag-entry"
+      }
+    },
+    {
+      "id": "n_ai",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ppt.affineEmbeddingInjective",
+        "counterId": "ag-subentry"
+      }
+    },
+    {
+      "id": "n_rmbf",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.rmk.realProjectivePlaneAndProjectiveSpace",
+        "counterId": "ag-entry"
+      }
+    },
+    {
+      "id": "n_rmpic",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.rmk.affineEmbeddingPicture",
+        "counterId": "ag-entry"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "from": "n_sec",
+      "to": "n_subsec",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec",
+      "to": "n_pp",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec",
+      "to": "n_rp",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec",
+      "to": "n_hc",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec",
+      "to": "n_ae",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec",
+      "to": "n_rmbf",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec",
+      "to": "n_rmpic",
+      "label": "branch"
+    },
+    {
+      "from": "n_pp",
+      "to": "n_pe",
+      "label": "branch"
+    },
+    {
+      "from": "n_hc",
+      "to": "n_ri",
+      "label": "branch"
+    },
+    {
+      "from": "n_ae",
+      "to": "n_ai",
+      "label": "branch"
+    }
+  ]
 }

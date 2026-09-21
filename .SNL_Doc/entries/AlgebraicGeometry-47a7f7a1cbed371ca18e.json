@@ -1,0 +1,33 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.ppt.representativeInvariance",
+    "package": "AlgebraicGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Representative Invariance of Homogeneous Coordinates",
+        "zh-CN": "齐次坐标的代表元不变性"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@X,Real),Type.annotation(@Y,Real),Type.annotation(@Z,Real),Type.annotation(@$\\lambda$,Real),Ne[authored_Neq_default](,$\\lambda$,$0$),Ne[authored_Neq_default](,VecNotation[default](X,Y,Z),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),theorem(Eq(,AlgebraicGeometry.RealProjectivePlane.homogeneousCoordinates(X,Y,Z),AlgebraicGeometry.RealProjectivePlane.homogeneousCoordinates(LA.Smul[default]($\\lambda$,X),LA.Smul[default]($\\lambda$,Y),LA.Smul[default]($\\lambda$,Z)))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "If $\\lambda\\in\\mathbb{R}\\setminus\\{0\\}$ and $(X,Y,Z)$ is a nonzero triple, then the triples $(X,Y,Z)$ and $(\\lambda X,\\lambda Y,\\lambda Z)$ determine the same homogeneous coordinates, that is $X:Y:Z=\\lambda X:\\lambda Y:\\lambda Z$ in $\\mathbb{P}^2_{\\mathbb{R}}$. This is the invariance that makes homogeneous coordinates well defined on the projective point rather than on a chosen representative.",
+          "zh-CN": "若 $\\lambda\\in\\mathbb{R}\\setminus\\{0\\}$ 且 $(X,Y,Z)$ 为非零三元组，则 $(X,Y,Z)$ 与 $(\\lambda X,\\lambda Y,\\lambda Z)$ 确定同一齐次坐标，即在 $\\mathbb{P}^2_{\\mathbb{R}}$ 中有 $X:Y:Z=\\lambda X:\\lambda Y:\\lambda Z$。正是这一不变性使齐次坐标定义在射影点上，而非定义在某个取定的代表元上。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "__rev": "b3f14cdd70222b1f5777ff7c8300e9ba4b21263cd629600c718b4e40850a98ae"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.ppt.affineEmbeddingInjective",
+    "package": "AlgebraicGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Injectivity of the Affine Embedding",
+        "zh-CN": "仿射嵌入的单射性"
+      }
+    },
+    "content": {
+      "snl": "theorem(Function.Injective[default](Type.prod[default](Real,Real),AlgebraicGeometry.RealProjectivePlane,AlgebraicGeometry.RealProjectivePlane.affineEmbedding))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The affine embedding $\\iota\\colon\\mathbb{R}^2\\to\\mathbb{P}^2_{\\mathbb{R}}$, $\\iota(x,y)=[x:y:1]$, is injective. Its image is the set of projective points admitting a representative $(X,Y,Z)$ with $Z\\neq 0$, and on that image the inverse is $[X:Y:Z]\\mapsto(X/Z,Y/Z)$.",
+          "zh-CN": "仿射嵌入 $\\iota\\colon\\mathbb{R}^2\\to\\mathbb{P}^2_{\\mathbb{R}}$，$\\iota(x,y)=[x:y:1]$ 是单射。其像为具有 $Z\\neq 0$ 的代表三元组 $(X,Y,Z)$ 的射影点集合，在该像上逆映射为 $[X:Y:Z]\\mapsto(X/Z,Y/Z)$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

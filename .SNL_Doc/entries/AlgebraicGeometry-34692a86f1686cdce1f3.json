@@ -1,0 +1,22 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.subsec.projectivePlane",
+    "package": "AlgebraicGeometry",
+    "kind": "subsection",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Projective Plane",
+        "zh-CN": "射影平面"
+      }
+    },
+    "content": {},
+    "contribution_info": null,
+    "pointer": null
+  }
+}

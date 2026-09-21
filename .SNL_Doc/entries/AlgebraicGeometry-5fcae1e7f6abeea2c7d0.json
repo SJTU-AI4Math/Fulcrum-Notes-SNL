@@ -1,0 +1,33 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.RealProjectivePlane.affineEmbedding",
+    "package": "AlgebraicGeometry",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Affine Embedding",
+        "zh-CN": "仿射嵌入"
+      }
+    },
+    "content": {
+      "snl": "def(AlgebraicGeometry.RealProjectivePlane.affineEmbedding,Type.to[default](Type.prod[default](Real,Real),AlgebraicGeometry.RealProjectivePlane),Type.lambda-typed[mapsto](@p,Type.prod[default](Real,Real),AlgebraicGeometry.RealProjectivePlane.homogeneousCoordinates(Prod.fst[default](Real,Real,p),Prod.snd[default](Real,Real,p),$1$)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The **affine embedding** is the map $\\iota\\colon\\mathbb{R}^2\\to\\mathbb{P}^2_{\\mathbb{R}}$, $\\iota(x,y)=[x:y:1]$. Its image is the set of projective points admitting a representative with third coordinate $1$, that is the piece $Z\\neq 0$; for $Z\\neq 0$ the inverse coordinates are $x=X/Z$, $y=Y/Z$. The map $\\iota$ is injective.",
+          "zh-CN": "**仿射嵌入**是映射 $\\iota\\colon\\mathbb{R}^2\\to\\mathbb{P}^2_{\\mathbb{R}}$，$\\iota(x,y)=[x:y:1]$。其像由那些具有第三坐标为 $1$ 的代表三元组的射影点组成，即 $Z\\neq 0$ 的那一片；当 $Z\\neq 0$ 时逆坐标为 $x=X/Z$，$y=Y/Z$。映射 $\\iota$ 是单射。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "__rev": "c268c1b1d484bd37e3a54bceea938606e80ac1170793e24903464cdcdac66b9c"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "macro": {
+    "name": "AlgebraicGeometry.RealProjectivePlane.Proportional",
+    "kind": "const",
+    "description": "The proportionality relation on the nonzero triples of real numbers. Parameter/style contract: style `default` is the nullary relation symbol (the relation as a value, rendered `\\sim`); style `applied` is the binary predicate of arity 2 (rendered `#0 \\sim #1`). The relation is carried by the set of nonzero triples.",
+    "source": {
+      "entries": [
+        "AlgebraicGeometry.RealProjectivePlane.Proportional"
+      ],
+      "urls": []
+    },
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\sim"
+        }
+      },
+      {
+        "style_name": "applied",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 \\sim #1"
+        }
+      }
+    ]
+  }
+}

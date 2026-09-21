@@ -1,0 +1,47 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "macro": {
+    "name": "AlgebraicGeometry.RealProjectivePlane.homogeneousCoordinates",
+    "kind": "const",
+    "description": "Homogeneous coordinates X:Y:Z of a point of the projective plane.",
+    "source": {
+      "entries": [
+        "AlgebraicGeometry.RealProjectivePlane.homogeneousCoordinates"
+      ],
+      "urls": []
+    },
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0 : #1 : #2"
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "homogeneous coordinates #0 : #1 : #2"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "齐次坐标 #0 : #1 : #2"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

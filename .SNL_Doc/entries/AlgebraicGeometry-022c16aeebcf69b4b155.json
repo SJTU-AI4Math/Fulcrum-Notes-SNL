@@ -1,0 +1,33 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.ppt.proportionalityEquivalence",
+    "package": "AlgebraicGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Equivalence of the Proportionality Relation",
+        "zh-CN": "同比例关系的等价性"
+      }
+    },
+    "content": {
+      "snl": "theorem(And[authored_Logic_and_infix](And[authored_Logic_and_infix](parentheses[round](Logic.forall-typed(@u,LA.def.realVecSpaceRn($3$),Logic.implies(Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),u),AlgebraicGeometry.RealProjectivePlane.Proportional[applied](u,u)))),parentheses[round](Logic.forall-typed(@u,LA.def.realVecSpaceRn($3$),Logic.forall-typed(@v,LA.def.realVecSpaceRn($3$),Logic.implies(Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),u),Logic.implies(Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),v),Logic.implies(AlgebraicGeometry.RealProjectivePlane.Proportional[applied](u,v),AlgebraicGeometry.RealProjectivePlane.Proportional[applied](v,u)))))))),parentheses[round](Logic.forall-typed(@u,LA.def.realVecSpaceRn($3$),Logic.forall-typed(@v,LA.def.realVecSpaceRn($3$),Logic.forall-typed(@w,LA.def.realVecSpaceRn($3$),Logic.implies(Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),u),Logic.implies(Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),v),Logic.implies(Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),w),Logic.implies(AlgebraicGeometry.RealProjectivePlane.Proportional[applied](u,v),Logic.implies(AlgebraicGeometry.RealProjectivePlane.Proportional[applied](v,w),AlgebraicGeometry.RealProjectivePlane.Proportional[applied](u,w))))))))))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The proportionality relation $\\sim$ is an equivalence relation on the nonzero triples $\\mathbb{R}^3\\setminus\\{0\\}$: it is reflexive, symmetric, and transitive. Consequently the quotient in the definition of the projective plane is taken by an equivalence relation.",
+          "zh-CN": "同比例关系 $\\sim$ 是非零三元组 $\\mathbb{R}^3\\setminus\\{0\\}$ 上的等价关系：自反、对称、传递。因此射影平面定义中所取的商确为按等价关系作商。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "__rev": "6d87e53d30a90e21996f1610f39ca49632d039c3201d19e916edb43a8748d10a"
+  }
+}

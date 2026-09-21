@@ -394,6 +394,7 @@
   ],
   "active_macro_packages": [
     "Algebra",
+    "AlgebraicGeometry",
     "AlgebraicTopology",
     "BasicAnalysis",
     "BasicMacros",

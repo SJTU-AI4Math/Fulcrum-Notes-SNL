@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.rmk.realProjectivePlaneAndProjectiveSpace",
+    "package": "AlgebraicGeometry",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "The Real Projective Plane and Projective Space",
+        "zh-CN": "实射影平面与射影空间"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The projective plane constructed above is the **real** projective plane: it is built from the vector space $\\mathbb{R}^3$ over the field $\\mathbb{R}$. More generally, for a field $k$ one defines the projective space $\\mathbb{P}^n_k$ as the quotient of $k^{n+1}\\setminus\\{0\\}$ by the relation identifying two nonzero vectors when each is a nonzero scalar multiple of the other; the present section is the case $k=\\mathbb{R}$, $n=2$.",
+          "zh-CN": "以上构造是**实**射影平面：它取自域 $\\mathbb{R}$ 上的向量空间 $\\mathbb{R}^3$。更一般地，对任意域 $k$，把 $k^{n+1}\\setminus\\{0\\}$ 按「两个非零向量互为非零标量倍」的等价关系作商，即得射影空间 $\\mathbb{P}^n_k$；本节讨论的是 $k=\\mathbb{R}$、$n=2$ 的情形。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "__rev": "5533e1e9eb70ae110a6e5f9a59078bec01836907bd6d6f20a8373be2c6d10ce5"
+  }
+}

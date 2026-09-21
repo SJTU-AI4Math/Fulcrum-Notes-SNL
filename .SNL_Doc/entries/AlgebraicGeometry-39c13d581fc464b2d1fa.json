@@ -1,0 +1,33 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.RealProjectivePlane.homogeneousCoordinates",
+    "package": "AlgebraicGeometry",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Homogeneous Coordinates",
+        "zh-CN": "齐次坐标"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@X,Real),Type.annotation(@Y,Real),Type.annotation(@Z,Real),Ne[authored_Neq_default](,VecNotation[default](X,Y,Z),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),def(AlgebraicGeometry.RealProjectivePlane.homogeneousCoordinates(X,Y,Z),AlgebraicGeometry.RealProjectivePlane,Quotient.mk[default](Set.Elem[default](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$))))),AlgebraicGeometry.RealProjectivePlane.Proportional,VecNotation[default](X,Y,Z))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Every nonzero triple $(X,Y,Z)$ determines a point of $\\mathbb{P}^2_{\\mathbb{R}}$, namely its class $[X:Y:Z]$. The ratio $X:Y:Z$ is the **homogeneous coordinate** of that point, and $(X,Y,Z)$ is a representative triple of it. Homogeneous coordinates are thus defined up to multiplication by a nonzero scalar.",
+          "zh-CN": "每个非零三元组 $(X,Y,Z)$ 都确定 $\\mathbb{P}^2_{\\mathbb{R}}$ 的一个点，即其等价类 $[X:Y:Z]$。比 $X:Y:Z$ 就是该点的**齐次坐标**，$(X,Y,Z)$ 是它的一个代表三元组。因此齐次坐标在同乘非零标量下不变。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "__rev": "7818954e05ff310e2f2899cd969dac7d490def0eb35c7dd02dc08289f05489b0"
+  }
+}

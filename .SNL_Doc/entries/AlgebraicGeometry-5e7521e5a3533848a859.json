@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.rmk.affineEmbeddingPicture",
+    "package": "AlgebraicGeometry",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "The Affine Embedding and Points at Infinity",
+        "zh-CN": "仿射嵌入与无穷远点"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Geometric picture. The affine embedding $\\iota(x,y)=[x:y:1]$ has image the piece $Z\\neq 0$, with inverse $[X:Y:Z]\\mapsto(X/Z,Y/Z)$. A line in $\\mathbb{R}^3$ through the origin that is not contained in the plane $Z=0$ meets the plane $Z=1$ in exactly one point, which represents that class; the lines lying in $Z=0$ never meet $Z=1$ and correspond instead to points at infinity, one for every pencil of parallel lines of $\\mathbb{R}^2$. Thus $\\mathbb{P}^2_{\\mathbb{R}}$ may be read as $\\mathbb{R}^2$ together with one point at infinity for each pencil of parallel lines, which is the sense in which parallel lines meet at infinity.",
+          "zh-CN": "几何图景。仿射嵌入 $\\iota(x,y)=[x:y:1]$ 的像为 $Z\\neq 0$ 那一片，其逆为 $[X:Y:Z]\\mapsto(X/Z,Y/Z)$。$\\mathbb{R}^3$ 中过原点且不落在平面 $Z=0$ 内的直线与平面 $Z=1$ 恰交于一点，该点代表这个等价类；落在 $Z=0$ 内的直线则永不与 $Z=1$ 相交，它们对应无穷远点，$\\mathbb{R}^2$ 中每一束平行直线对应一个这样的点。于是 $\\mathbb{P}^2_{\\mathbb{R}}$ 可读作 $\\mathbb{R}^2$ 连同每条平行直线束的一个无穷远点，这正是「平行线交于无穷远」的含义。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "__rev": "60ebe8c95f4814bd7af55212a1d0c86d46b6e5caa063ecceb08f0362ea2dd1cd"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.RealProjectivePlane.Proportional",
+    "package": "AlgebraicGeometry",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Proportionality of Nonzero Triples",
+        "zh-CN": "非零三元组的同比例关系"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@u,LA.def.realVecSpaceRn($3$)),Type.annotation(@v,LA.def.realVecSpaceRn($3$)),Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),u),Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),v)),def[prop](AlgebraicGeometry.RealProjectivePlane.Proportional[applied](u,v),,Logic.exists-typed(@$\\lambda$,Set.Elem[default](Real,Set.diff[default](Real,Set.univ[typed](Real),Set.singleton[default](Real,$0$))),Eq(,v,LA.Smul[default]($\\lambda$,u)))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Two nonzero triples $(X_1,Y_1,Z_1)$ and $(X_2,Y_2,Z_2)$ of real numbers are **proportional**, written $(X_1,Y_1,Z_1)\\sim(X_2,Y_2,Z_2)$, if some $\\lambda\\in\\mathbb{R}\\setminus\\{0\\}$ satisfies $(X_2,Y_2,Z_2)=\\lambda\\,(X_1,Y_1,Z_1)$; equivalently, the two triples span the same line through the origin of $\\mathbb{R}^3$. The relation is carried by the set $\\mathbb{R}^3\\setminus\\{0\\}$ of nonzero triples.",
+          "zh-CN": "实数非零三元组 $(X_1,Y_1,Z_1)$ 与 $(X_2,Y_2,Z_2)$ **同比例**，记作 $(X_1,Y_1,Z_1)\\sim(X_2,Y_2,Z_2)$，是指存在 $\\lambda\\in\\mathbb{R}\\setminus\\{0\\}$ 使 $(X_2,Y_2,Z_2)=\\lambda\\,(X_1,Y_1,Z_1)$；等价地，这两个三元组张成 $\\mathbb{R}^3$ 中同一条过原点的直线。该关系定义在非零三元组集合 $\\mathbb{R}^3\\setminus\\{0\\}$ 上。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

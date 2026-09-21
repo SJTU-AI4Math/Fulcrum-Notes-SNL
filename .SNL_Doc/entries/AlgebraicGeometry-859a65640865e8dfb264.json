@@ -1,0 +1,33 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.RealProjectivePlane",
+    "package": "AlgebraicGeometry",
+    "kind": "definition",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Projective Plane",
+        "zh-CN": "射影平面"
+      }
+    },
+    "content": {
+      "snl": "def(AlgebraicGeometry.RealProjectivePlane,Type,Quotient[default](Set.Elem[default](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$))))),AlgebraicGeometry.RealProjectivePlane.Proportional))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The **real projective plane** is the quotient $\\mathbb{P}^2_{\\mathbb{R}}=(\\mathbb{R}^3\\setminus\\{0\\})/{\\sim}$ of the nonzero triples by the proportionality relation. Equivalently, its points are the lines of $\\mathbb{R}^3$ through the origin, and also the ratios $X:Y:Z$.",
+          "zh-CN": "**实射影平面**是非零三元组按同比例关系作商所得的商集 $\\mathbb{P}^2_{\\mathbb{R}}=(\\mathbb{R}^3\\setminus\\{0\\})/{\\sim}$。等价地，它的点是 $\\mathbb{R}^3$ 中过原点的直线，也是比 $X:Y:Z$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null,
+    "__rev": "5ebb29ebd476e9158bbe21cb3ebb8a8947f1cba866eb8b74e50177751ba71b9e"
+  }
+}

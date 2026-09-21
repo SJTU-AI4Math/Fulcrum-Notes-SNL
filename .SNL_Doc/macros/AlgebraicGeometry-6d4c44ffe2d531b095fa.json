@@ -1,0 +1,47 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "macro": {
+    "name": "AlgebraicGeometry.RealProjectivePlane.affineEmbedding",
+    "kind": "const",
+    "description": "Embedding of the affine chart into the projective plane, sending (x,y) to [x:y:1].",
+    "source": {
+      "entries": [
+        "AlgebraicGeometry.RealProjectivePlane.affineEmbedding"
+      ],
+      "urls": []
+    },
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\iota"
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "affine chart embedding"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "仿射坐标片嵌入"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

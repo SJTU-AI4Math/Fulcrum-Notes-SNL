@@ -1,0 +1,47 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "macro": {
+    "name": "AlgebraicGeometry.RealProjectivePlane",
+    "kind": "const",
+    "description": "The real projective plane, the quotient of the nonzero triples by proportionality.",
+    "source": {
+      "entries": [
+        "AlgebraicGeometry.RealProjectivePlane"
+      ],
+      "urls": []
+    },
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathbb{P}^{2}_{\\mathbb{R}}"
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "real projective plane"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "实射影平面"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
