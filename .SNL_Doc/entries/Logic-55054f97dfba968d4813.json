@@ -6,13 +6,13 @@
   "entry": {
     "id": "Or.rec",
     "package": "Logic",
-    "kind": "def",
+    "kind": "thm",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Disjunction Recursor",
-        "zh-CN": "析取递归子"
+        "en": "Disjunction Elimination",
+        "zh-CN": "析取消去"
       }
     },
     "content": {

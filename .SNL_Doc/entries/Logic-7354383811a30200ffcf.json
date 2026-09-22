@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "%Inductive type #0 has an enumerative constructor, so there is always a proof for #0, and #0 proves nothing.%(True[authored_Logic_true_top])"
+      "snl": "Logic.OneOffI18N.TrueRemark(True[authored_Logic_true_top])"
     },
     "contribution_info": null,
     "pointer": null,

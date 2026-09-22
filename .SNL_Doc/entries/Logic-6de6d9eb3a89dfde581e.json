@@ -6,17 +6,17 @@
   "entry": {
     "id": "False.rec",
     "package": "Logic",
-    "kind": "def",
+    "kind": "thm",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "False Recursor",
-        "zh-CN": "假命题递归子"
+        "en": "False Recursor and Explosion Principle",
+        "zh-CN": "假命题递归子与爆炸原理"
       }
     },
     "content": {
-      "snl": "Type.forall(@$\\mathsf{motive}$@motive,Type.forall[nameless](@$t$,False[default],Type.Sort(%u%)),Type.forall[nameless](@$t$,False[default],Type.app($\\mathsf{motive}$@#0,__list__[native_formula]($t$@#2.0))))"
+      "snl": "Logic.OneOffI18N.FalseElimination(Type.forall(@$\\mathsf{motive}$@motive,Type.forall[nameless](@$t$,False[default],Type.Sort(%u%)),Type.forall[nameless](@$t$,False[default],Type.app($\\mathsf{motive}$@#0.0,__list__[native_formula]($t$@#0.2.0)))),variable[native_default](__list__[native_default](Type.annotation[default](@$C$,Type.Sort(%u%)),Type.annotation[nameless](@$h$,False[default])),def(False.elim($C$@#1.0.0.0,$h$@#1.0.1.0),$C$@#1.0.0.0,False.rec(Type.lambda[nameless](@$x$,False[default],$C$@#1.0.0.0),$h$@#1.0.1.0))))"
     },
     "contribution_info": null,
     "pointer": {
@@ -258,6 +258,33 @@
           }
         ]
       }
-    }
+    },
+    "x_merged_entries": [
+      {
+        "id": "False.elim",
+        "package": "Logic",
+        "kind": "thm",
+        "title": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": "Explosion Principle (derived from False.rec)",
+            "zh-CN": "爆炸原理（由 False.rec 推出）"
+          }
+        },
+        "content": {
+          "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$C$,Type.Sort(%u%)),Type.annotation[nameless](@$h$,False[default])),def(False.elim($C$@#0.0.0,$h$@#0.1.0),$C$@#0.0.0,False.rec(Type.lambda[nameless](@$x$,False[default],$C$@#0.0.0),$h$@#0.1.0)))"
+        },
+        "contribution_info": null,
+        "pointer": {
+          "file": "Lean4/Logic/Logic.lean",
+          "mode": "lines",
+          "line": 39,
+          "endLine": 39,
+          "column": 1,
+          "endColumn": 18
+        }
+      }
+    ]
   }
 }

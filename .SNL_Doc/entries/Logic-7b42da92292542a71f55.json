@@ -6,8 +6,15 @@
   "entry": {
     "id": "And.rec",
     "package": "Logic",
-    "kind": "def",
-    "title": "Conjunction Elimination",
+    "kind": "thm",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Conjunction Elimination",
+        "zh-CN": "合取消去"
+      }
+    },
     "content": {
       "snl": "Type.forall(__list__[native_formula](@$a$,@$b$),Type.Sort[prop](%0%),Type.forall(@$\\mathsf{motive}$@motive,Type.forall[nameless](@$t$,And($a$@#0.0,$b$@#0.1),Type.Sort(%u%)),Type.forall[arrow](@$\\mathsf{intro}$@intro,parentheses[default](Type.forall[nameless](@$\\mathsf{left}$@left,$a$@#0.0,Type.forall[nameless](@$\\mathsf{right}$@right,$b$@#0.1,Type.app($\\mathsf{motive}$@#2.0,__list__[native_formula](And.intro($a$@#0.0,$b$@#0.1,$\\mathsf{left}$@#2.2.1.0.0,$\\mathsf{right}$@#2.2.1.0.2.0)))))),parentheses[default](Type.forall[nameless](@$t$,And($a$@#0.0,$b$@#0.1),Type.app($\\mathsf{motive}$@#2.0,__list__[native_formula]($t$@#2.2.2.0.0)))))))"
     },

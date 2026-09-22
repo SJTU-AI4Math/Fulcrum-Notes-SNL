@@ -1,0 +1,37 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Logic",
+  "macro": {
+    "name": "Logic.OneOffI18N.TrueRemark",
+    "description": "Bilingual authored explanation for the logic library.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "The inductive proposition #0 has the constructor True.intro, so #0 has a proof without assumptions. This alone does not prove an arbitrary proposition. Its recursor admits singleton elimination into Sort u."
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "归纳命题 #0 具有构造子 True.intro，因此无需假设即可证明 #0；仅凭此不能证明任意命题。它的递归子允许单构造子消去到 Sort u。"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

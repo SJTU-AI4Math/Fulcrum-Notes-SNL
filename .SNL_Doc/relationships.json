@@ -4536,7 +4536,7 @@
     },
     {
       "id": "dep.Logic.ppt.false-rec.Logic.def.false",
-      "from": "False.elim",
+      "from": "False.rec",
       "to": "False",
       "label": "depends",
       "metadata": {
@@ -31502,7 +31502,7 @@
     },
     {
       "id": "dep.False.elim.Type.def.annotation",
-      "from": "False.elim",
+      "from": "False.rec",
       "to": "Type.def.annotation",
       "label": "depends",
       "metadata": {
@@ -31515,7 +31515,7 @@
     },
     {
       "id": "dep.False.elim.Fulcrum.def",
-      "from": "False.elim",
+      "from": "False.rec",
       "to": "Fulcrum.def",
       "label": "depends",
       "metadata": {
@@ -31523,19 +31523,6 @@
         "isAtomic": false,
         "macros": [
           "def"
-        ]
-      }
-    },
-    {
-      "id": "dep.False.elim.False.rec",
-      "from": "False.elim",
-      "to": "False.rec",
-      "label": "depends",
-      "metadata": {
-        "generator": "macro-source-scan",
-        "isAtomic": true,
-        "macros": [
-          "False.rec"
         ]
       }
     },

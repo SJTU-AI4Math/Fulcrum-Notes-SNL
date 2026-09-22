@@ -10,12 +10,12 @@
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Proposition",
-        "zh-CN": "命题"
+        "en": "Proposition Type",
+        "zh-CN": "命题类型"
       }
     },
     "content": {
-      "snl": "def(Proposition,Type.Sort(%1%),$\\mathsf{Sort}\\,0$)",
+      "snl": "def(Proposition,Type.Sort(%1%),Type.Sort(%0%))",
       "md": "Lean’s proposition universe is `Prop`, which is kernel `Sort 0`. It is not a constant named `Proposition`, and Lean `Type 0` is `Sort 1`."
     },
     "contribution_info": null,

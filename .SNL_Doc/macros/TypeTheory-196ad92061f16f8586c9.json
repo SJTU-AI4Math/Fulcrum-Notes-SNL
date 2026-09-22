@@ -16,45 +16,19 @@
     "dynamic_arity": false,
     "styles": [
       {
-        "style_name": "text",
+        "style_name": "default",
         "tags": [],
         "template": {
-          "mode": "text",
-          "body": "Prop",
-          "typst": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "latex": {
-            "built_in": "",
-            "synthesis": {
-              "mode": "formula",
-              "macro": ""
-            }
-          },
-          "markdown": "",
-          "text": ""
+          "mode": "formula_inline",
+          "body": "\\mathsf{Prop}"
         }
       },
       {
-        "style_name": "authored_localized_text",
+        "style_name": "text",
         "tags": [],
         "template": {
-          "type": "i18n",
-          "default_language": "zh-CN",
-          "values": {
-            "en": {
-              "mode": "text",
-              "body": "Prop"
-            },
-            "zh-CN": {
-              "mode": "text",
-              "body": "命题"
-            }
-          }
+          "mode": "formula_inline",
+          "body": "\\mathsf{Prop}"
         }
       }
     ],

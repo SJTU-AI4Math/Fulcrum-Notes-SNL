@@ -133,14 +133,6 @@
       }
     },
     {
-      "id": "n_3",
-      "label": "Entry",
-      "props": {
-        "entryId": "False.elim",
-        "counterId": "661f6949-9c4d-4d92-a740-84a44d4904e6"
-      }
-    },
-    {
       "id": "n_4",
       "label": "Entry",
       "props": {
@@ -417,7 +409,7 @@
     },
     {
       "from": "n_1",
-      "to": "n_3",
+      "to": "n_sub_893a86eac31f",
       "label": "branch"
     },
     {
@@ -468,11 +460,6 @@
     {
       "from": "n_or",
       "to": "n_sub_ee289ce16738",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_sub_893a86eac31f",
       "label": "branch"
     },
     {

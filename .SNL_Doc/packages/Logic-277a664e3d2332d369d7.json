@@ -20,7 +20,6 @@
     "Exists.intro",
     "Exists.rec",
     "False",
-    "False.elim",
     "False.rec",
     "Iff",
     "Iff.intro",

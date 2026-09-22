@@ -6,8 +6,15 @@
   "entry": {
     "id": "Iff.rec",
     "package": "Logic",
-    "kind": "def",
-    "title": "Biconditional Elimination",
+    "kind": "thm",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Equivalence Elimination",
+        "zh-CN": "等价消去"
+      }
+    },
     "content": {
       "snl": "Type.forall(__list__[native_formula](@$a$,@$b$),Type.Sort[prop](%0%),Type.forall(@$\\mathsf{motive}$@motive,Type.forall[nameless](@$t$,Iff[default]($a$@#0.0,$b$@#0.1),Type.Sort(%u%)),Type.forall[arrow](@$\\mathsf{intro}$@intro,parentheses[default](Type.forall[nameless](@$\\mathsf{mp}$@mp,Type.forall[forallNameless](@${a}_{1}$@a₁,$a$@#0.0,$b$@#0.1),Type.forall[nameless](@$\\mathsf{mpr}$@mpr,Type.forall[forallNameless](@${a}_{1}$@a₁,$b$@#0.1,$a$@#0.0),Type.app($\\mathsf{motive}$@#2.0,__list__[native_formula](Iff.intro($a$@#0.0,$b$@#0.1,$\\mathsf{mp}$@#2.2.1.0.0,$\\mathsf{mpr}$@#2.2.1.0.2.0)))))),parentheses[default](Type.forall[nameless](@$t$,Iff[default]($a$@#0.0,$b$@#0.1),Type.app($\\mathsf{motive}$@#2.0,__list__[native_formula]($t$@#2.2.2.0.0)))))))"
     },

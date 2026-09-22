@@ -6,8 +6,15 @@
   "entry": {
     "id": "Exists.rec",
     "package": "Logic",
-    "kind": "def",
-    "title": "Existential Elimination",
+    "kind": "thm",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Existential Elimination",
+        "zh-CN": "存在消去"
+      }
+    },
     "content": {
       "snl": "Type.forall[forall](@$α$,Type.Sort(%u%),Type.forall[forall](@$p$,Type.forall[arrow](@$a$,$α$@#0,Type.Sort[prop](%0%)),Type.forall[forall](@$\\mathsf{motive}$@motive,Type.forall[nameless](@$t$,Exists($α$@#0,$p$@#2.0),Type.Sort[prop](%0%)),Type.forall[forallNameless](@$\\mathsf{intro}$@intro,Type.forall[forall](@$w$,$α$@#0,Type.forall[forallNameless](@$h$,Type.app($p$@#2.0,__list__[native_formula]($w$@#2.2.2.1.0)),Type.app($\\mathsf{motive}$@#2.2.0,__list__[native_formula](Exists.intro($α$@#0,$p$@#2.0,$w$@#2.2.2.1.0,$h$@#2.2.2.1.2.0))))),Type.forall[forallNameless](@$t$,Exists($α$@#0,$p$@#2.0),Type.app($\\mathsf{motive}$@#2.2.0,__list__[native_formula]($t$@#2.2.2.2.0)))))))"
     },

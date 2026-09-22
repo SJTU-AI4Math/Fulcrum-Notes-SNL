@@ -37,7 +37,7 @@
     "source": {
       "urls": [],
       "entries": [
-        "False.elim"
+        "False.rec"
       ]
     },
     "kind": "const",

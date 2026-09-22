@@ -7,7 +7,14 @@
     "id": "Iff.mpr",
     "package": "Logic",
     "kind": "thm",
-    "title": "Reverse Implication",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Reverse Implication",
+        "zh-CN": "反向蕴含"
+      }
+    },
     "content": {
       "snl": "variable[enumerated](__enum__[native_enumerate](Type.annotation[default](@$a$,Type.Sort[prop](%0%)),Type.annotation[default](@$b$,Type.Sort[prop](%0%)),Type.annotation[nameless](@$\\mathsf{self}$@self,Iff[default]($a$@#0.0.0,$b$@#0.1.0)),Type.annotation[nameless](@${a}_{1}$@a₁,$b$@#0.1.0)),theorem[native_default]($a$@#0.0.0))"
     },

@@ -136,7 +136,14 @@
     },
     {
       "id": "remark",
-      "name": "Remark",
+      "name": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Remark",
+          "zh-CN": "注记"
+        }
+      },
       "description": "",
       "coloring": {
         "light": {

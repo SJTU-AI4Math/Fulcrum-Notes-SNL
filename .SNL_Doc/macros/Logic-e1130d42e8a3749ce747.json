@@ -1,0 +1,37 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Logic",
+  "macro": {
+    "name": "Logic.OneOffI18N.FalseElimination",
+    "description": "Bilingual authored explanation for the logic library.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "Dependent empty elimination: #0. For a constant motive, the explosion principle is the derived operation #1. Both eliminate into any Sort u."
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "依赖的空消去：#0。取常值动机时，爆炸原理就是导出的运算 #1。两者均可消去到任意 Sort u。"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

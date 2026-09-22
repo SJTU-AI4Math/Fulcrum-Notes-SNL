@@ -5,12 +5,19 @@
   "package": "Logic",
   "entry": {
     "id": "Eq.ndrec",
-    "kind": "def",
-    "title": "Non-dependent Equality Transport",
+    "package": "Logic",
+    "kind": "thm",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Non-dependent Equality Transport",
+        "zh-CN": "非依赖等式迁移"
+      }
+    },
     "content": {
       "snl": "variable[enumerated](__enum__[native_enumerate](Type.annotation[default](@$α$,Type.Sort(%u2%)),Type.annotation[default](@$a$,$α$@#0.0.0),Type.annotation[default](@$\\mathsf{motive}$@motive,Type.forall[arrow](@${a}_{1}$@a₁,$α$@#0.0.0,Type.Sort(%u1%))),Type.annotation[default](@$m$,Type.app($\\mathsf{motive}$@#0.2.0,__list__[native_formula]($a$@#0.1.0))),Type.annotation[default](@$b$,$α$@#0.0.0),Type.annotation[nameless](@$h$,Eq($α$@#0.0.0,$a$@#0.1.0,$b$@#0.4.0))),def(Eq.ndrec($α$@#0.0.0,$a$@#0.1.0,$\\mathsf{motive}$@#0.2.0,$m$@#0.3.0,$b$@#0.4.0,$h$@#0.5.0),Type.app($\\mathsf{motive}$@#0.2.0,__list__[native_formula]($b$@#0.4.0)),Eq.rec($α$@#0.0.0,$a$@#0.1.0,Type.lambda[untyped](@$x$,$α$@#0.0.0,Type.lambda[nameless](@${x}_{1}$@x₁,Eq($α$@#0.0.0,$a$@#0.1.0,$x$@#1.2.2.0),Type.app($\\mathsf{motive}$@#0.2.0,__list__[native_formula]($x$@#1.2.2.0)))),$m$@#0.3.0,$b$@#0.4.0,$h$@#0.5.0)))"
     },
-    "package": "Logic",
     "contribution_info": null,
     "pointer": {
       "file": "Lean4/Logic/Logic.lean",

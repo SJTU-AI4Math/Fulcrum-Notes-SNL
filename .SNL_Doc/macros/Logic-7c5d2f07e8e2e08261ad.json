@@ -1,0 +1,37 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Logic",
+  "macro": {
+    "name": "Logic.OneOffI18N.FalseRemark",
+    "description": "Bilingual authored explanation for the logic library.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": false,
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "The inductive proposition #0 has no constructors. From a hypothetical proof of #0, empty elimination produces an inhabitant of any Sort u; the absence of constructors does not prevent stating this conditional rule."
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "归纳命题 #0 没有构造子。从假设的 #0 证明出发，空消去可以给出任意 Sort u 中的对象；没有构造子并不妨碍陈述这条条件规则。"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -6,8 +6,15 @@
   "entry": {
     "id": "Exists.intro",
     "package": "Logic",
-    "kind": "def",
-    "title": "Existential Introduction",
+    "kind": "thm",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Existential Introduction",
+        "zh-CN": "存在引入"
+      }
+    },
     "content": {
       "snl": "Type.forall[forall](@$α$,Type.Sort(%u%),Type.forall[forall](@$p$,Type.forall[arrow](@$a$,$α$@#0,Type.Sort[prop](%0%)),Type.forall[forall](@$w$,$α$@#0,Type.forall[forallNameless](@$h$,Type.app($p$@#2.0,__list__[native_formula]($w$@#2.2.0)),Exists($α$@#0,$p$@#2.0)))))"
     },

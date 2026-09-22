@@ -8,28 +8,30 @@
     "tags": [],
     "styles": [
       {
+        "style_name": "default",
+        "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathsf{Type}"
-        },
-        "tags": [],
-        "style_name": "default"
+          "body": "\\mathsf{Sort}_{#0}"
+        }
       },
       {
+        "style_name": "prop",
+        "tags": [],
         "template": {
           "mode": "formula_inline",
           "body": "\\mathsf{Prop}"
-        },
-        "tags": [],
-        "style_name": "prop"
+        }
       }
     ],
     "source": {
-      "urls": [],
-      "entries": []
+      "entries": [
+        "Type.rl.univ"
+      ],
+      "urls": []
     },
     "kind": "rule",
     "dynamic_arity": false,
-    "description": "registered by snl_macro"
+    "description": "Universe Sort: Sort u classifies types into universes. default style renders as Sort_u; prop style renders as Prop (Sort 0)."
   }
 }

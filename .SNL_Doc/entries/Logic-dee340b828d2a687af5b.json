@@ -6,8 +6,15 @@
   "entry": {
     "id": "And.intro",
     "package": "Logic",
-    "kind": "def",
-    "title": "Conjunction Introduction",
+    "kind": "thm",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Conjunction Introduction",
+        "zh-CN": "合取引入"
+      }
+    },
     "content": {
       "snl": "Type.forall[forall](__list__[native_formula](@$a$,@$b$),Type.Sort[prop](%0%),Type.forall[forallNameless](@$\\mathsf{left}$@left,$a$@#0.0,Type.forall[forallNameless](@$\\mathsf{right}$@right,$b$@#0.1,And($a$@#0.0,$b$@#0.1))))"
     },

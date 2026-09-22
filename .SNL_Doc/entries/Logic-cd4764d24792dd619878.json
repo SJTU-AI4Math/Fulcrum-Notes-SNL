@@ -7,7 +7,14 @@
     "id": "And.right",
     "package": "Logic",
     "kind": "thm",
-    "title": "Right Conjunct",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Right Conjunct",
+        "zh-CN": "右合取项"
+      }
+    },
     "content": {
       "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$a$,Type.Sort[prop](%0%)),Type.annotation[default](@$b$,Type.Sort[prop](%0%)),Type.annotation[nameless](@$\\mathsf{self}$@self,And($a$@#0.0.0,$b$@#0.1.0))),theorem[native_default]($b$@#0.1.0))"
     },

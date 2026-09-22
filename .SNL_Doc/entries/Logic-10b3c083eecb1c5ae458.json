@@ -6,13 +6,13 @@
   "entry": {
     "id": "Or.inl",
     "package": "Logic",
-    "kind": "def",
+    "kind": "thm",
     "title": {
       "type": "i18n",
       "default_language": "en",
       "values": {
-        "en": "Left Disjunction Constructor",
-        "zh-CN": "析取左构造子"
+        "en": "Left Disjunction Introduction",
+        "zh-CN": "左析取引入"
       }
     },
     "content": {
