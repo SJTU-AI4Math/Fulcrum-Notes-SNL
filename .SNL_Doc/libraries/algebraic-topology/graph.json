@@ -8,6 +8,160 @@
       }
     },
     {
+      "id": "path_22",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.ctxt.spaces"
+      }
+    },
+    {
+      "id": "path_23",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.ctxt.endpoints"
+      }
+    },
+    {
+      "id": "path_24",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.ctxt.paths"
+      }
+    },
+    {
+      "id": "path_25",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.ctxt.maps"
+      }
+    },
+    {
+      "id": "path_20",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicTopology.subsec.paths"
+      }
+    },
+    {
+      "id": "path_26",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap"
+      }
+    },
+    {
+      "id": "n_5",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path"
+      }
+    },
+    {
+      "id": "path_27",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.refl"
+      }
+    },
+    {
+      "id": "n_9",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.symm"
+      }
+    },
+    {
+      "id": "path_28",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.trans"
+      }
+    },
+    {
+      "id": "path_21",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicTopology.subsec.homotopies"
+      }
+    },
+    {
+      "id": "path_29",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopy"
+      }
+    },
+    {
+      "id": "path_30",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopic"
+      }
+    },
+    {
+      "id": "path_32",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopic.equivalence"
+      }
+    },
+    {
+      "id": "path_31",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.Homotopy"
+      }
+    },
+    {
+      "id": "n_6",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.Homotopic"
+      }
+    },
+    {
+      "id": "path_33",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.Homotopic.equivalence"
+      }
+    },
+    {
+      "id": "path_34",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.Homotopic.hcomp"
+      }
+    },
+    {
+      "id": "n_7",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.Homotopic.Quotient"
+      }
+    },
+    {
+      "id": "path_36",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.Homotopic.Quotient.eq"
+      }
+    },
+    {
+      "id": "path_35",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.Homotopic.Quotient.mk"
+      }
+    },
+    {
+      "id": "n_8",
+      "label": "Entry",
+      "props": {
+        "entryId": "Path.Homotopic.Quotient.trans"
+      }
+    },
+    {
       "id": "n_1",
       "label": "Entry",
       "props": {
@@ -33,41 +187,6 @@
       "label": "Entry",
       "props": {
         "entryId": "AlgebraicTopology.subsec.cohomology"
-      }
-    },
-    {
-      "id": "n_5",
-      "label": "Entry",
-      "props": {
-        "entryId": "Path"
-      }
-    },
-    {
-      "id": "n_6",
-      "label": "Entry",
-      "props": {
-        "entryId": "Path.Homotopic"
-      }
-    },
-    {
-      "id": "n_7",
-      "label": "Entry",
-      "props": {
-        "entryId": "Path.Homotopic.Quotient"
-      }
-    },
-    {
-      "id": "n_8",
-      "label": "Entry",
-      "props": {
-        "entryId": "Path.Homotopic.Quotient.trans"
-      }
-    },
-    {
-      "id": "n_9",
-      "label": "Entry",
-      "props": {
-        "entryId": "Path.symm"
       }
     },
     {
@@ -144,6 +263,116 @@
   "relationships": [
     {
       "from": "n_0",
+      "to": "path_22",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "path_20",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "path_21",
+      "label": "branch"
+    },
+    {
+      "from": "path_22",
+      "to": "path_23",
+      "label": "branch"
+    },
+    {
+      "from": "path_22",
+      "to": "path_24",
+      "label": "branch"
+    },
+    {
+      "from": "path_22",
+      "to": "path_25",
+      "label": "branch"
+    },
+    {
+      "from": "path_20",
+      "to": "path_26",
+      "label": "branch"
+    },
+    {
+      "from": "path_20",
+      "to": "n_5",
+      "label": "branch"
+    },
+    {
+      "from": "path_20",
+      "to": "path_27",
+      "label": "branch"
+    },
+    {
+      "from": "path_20",
+      "to": "n_9",
+      "label": "branch"
+    },
+    {
+      "from": "path_20",
+      "to": "path_28",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "path_29",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "path_30",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "path_31",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "n_6",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "n_7",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "path_35",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "n_8",
+      "label": "branch"
+    },
+    {
+      "from": "path_30",
+      "to": "path_32",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "path_33",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "path_34",
+      "label": "branch"
+    },
+    {
+      "from": "n_7",
+      "to": "path_36",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
       "to": "n_1",
       "label": "branch"
     },
@@ -160,31 +389,6 @@
     {
       "from": "n_0",
       "to": "n_4",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_5",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_6",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_7",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_8",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_9",
       "label": "branch"
     },
     {

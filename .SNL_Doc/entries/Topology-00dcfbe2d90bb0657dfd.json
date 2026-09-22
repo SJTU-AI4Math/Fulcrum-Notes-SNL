@@ -5,34 +5,19 @@
   "package": "Topology",
   "entry": {
     "id": "Path.Homotopic.Quotient",
-    "kind": "definition",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Homotopy Class of Paths",
-        "zh-CN": "道路同伦类"
-      }
-    },
+    "kind": "def",
+    "title": "道路同伦商",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X)),def(Path.Homotopic.Quotient(x,y), , ))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "The **homotopy class** $[f]$ of a path $f$ is its class under the homotopy relation with fixed endpoints; the set of these classes is the quotient of the paths from $x_0$ to $x_1$ by that relation (Hatcher Proposition 1.2, p. 26).",
-          "zh-CN": "道路 $f$ 的**同伦类** $[f]$ 是它在固定端点同伦关系下的等价类；这些类的集合是从 $x_0$ 到 $x_1$ 的道路对该关系的商（Hatcher 命题 1.2，第 26 页）。"
-        }
-      }
+      "snl": "def(Path.Homotopic.Quotient(a,b),Type,Quotient(Path(a,b),Type.lambda(@p,Path(a,b),Type.lambda(@q,Path(a,b),Path.Homotopic(p,q)))))"
     },
     "contribution_info": null,
     "pointer": {
       "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Path.lean",
       "mode": "lines",
       "line": 293,
-      "endLine": 293,
+      "endLine": 294,
       "column": 1,
-      "endColumn": 38
+      "endColumn": 1
     },
     "package": "Topology"
   }

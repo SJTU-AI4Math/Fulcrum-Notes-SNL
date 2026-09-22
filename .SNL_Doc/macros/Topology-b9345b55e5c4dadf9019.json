@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "Path.Homotopy",
+    "description": "Path.Homotopy p q：同端点道路间相对 {0,1} 的同伦类型；第一坐标为同伦参数。",
+    "source": {
+      "entries": [
+        "Path.Homotopy"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathrm{Homotopy}_{\\partial I}(#0,#1)"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

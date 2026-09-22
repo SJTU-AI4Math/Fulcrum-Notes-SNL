@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Path.trans",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Path.lean",
+      "mode": "lines",
+      "line": 277,
+      "endLine": 291,
+      "column": 1,
+      "endColumn": 1
+    },
+    "title": "道路拼接",
+    "kind": "def",
+    "content": {
+      "snl": "__list__(def(Path.trans(p0,q0),Path(a,c),Type.annotation(Type.lambda(@s,I,__enum__[cases](__list__[none](Type.apply[paren](p0,Mul.mul[implicit](2,s)),__list__[none]($&$,LE.le(Real,_,0,s),$\\le$,Div.div[fracInline](1,2))),__list__[none](Type.apply[paren](q0,Sub.sub(Mul.mul[implicit](2,s),1)),__list__[none]($&$,LT.lt(Real,_,Div.div[fracInline](1,2),s),$\\le$,1)))),Path(a,c))),%两段在中点同取 b，闭集粘合给出连续性；起点为 a，终点为 c。%)"
+    }
+  }
+}

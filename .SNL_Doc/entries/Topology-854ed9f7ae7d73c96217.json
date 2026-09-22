@@ -5,25 +5,10 @@
   "package": "Topology",
   "entry": {
     "id": "Path",
-    "kind": "definition",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Path",
-        "zh-CN": "道路"
-      }
-    },
+    "kind": "def",
+    "title": "道路",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X)),structure(Path(x,y),__enum__[enumerate](member[colon](%Source%,),member[colon](%Target%,),member[colon](%Continuity%,))))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "A **path** in a topological space $X$ is a continuous map $f\\colon I\\to X$, where $I=[0,1]$ is the unit interval. Its start point is $f(0)=x_0$ and its end point is $f(1)=x_1$; a path with $x_0=x_1$ is a **loop** based at $x_0$.",
-          "zh-CN": "拓扑空间 $X$ 中的**道路**是连续映射 $f\\colon I\\to X$，其中 $I=[0,1]$ 为单位区间。其起点为 $f(0)=x_0$，终点为 $f(1)=x_1$；起点与终点相同的道路称为以 $x_0$ 为**基点**的闭路。"
-        }
-      }
+      "snl": "structure(Path(a,b),__enum__[enumerate](member[colon](%连续映射%,Type.annotation(@p,ContinuousMap(I,X))),member[colon](%起点%,Eq(X,Type.apply[paren](p,$0$),a)),member[colon](%终点%,Eq(X,Type.apply[paren](p,$1$),b))))"
     },
     "contribution_info": null,
     "pointer": {
@@ -32,7 +17,7 @@
       "line": 58,
       "endLine": 62,
       "column": 1,
-      "endColumn": 47
+      "endColumn": 1
     },
     "package": "Topology"
   }

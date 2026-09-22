@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "ContinuousMap.Homotopy",
+    "description": "ContinuousMap.Homotopy f g：显式 f,g，隐式 X,Y 及拓扑来自映射类型；返回同伦类型。",
+    "source": {
+      "entries": [
+        "ContinuousMap.Homotopy"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathrm{Homotopy}(#0,#1)"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

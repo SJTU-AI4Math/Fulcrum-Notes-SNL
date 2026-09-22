@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.Homotopic",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Basic.lean",
+      "mode": "lines",
+      "line": 327,
+      "endLine": 328,
+      "column": 1,
+      "endColumn": 1
+    },
+    "title": "连续映射同伦关系",
+    "kind": "def",
+    "content": {
+      "snl": "def[prop](ContinuousMap.Homotopic(f0,f1),Type.Sort[prop](%0%),Nonempty(ContinuousMap.Homotopy(f0,f1)))"
+    }
+  }
+}

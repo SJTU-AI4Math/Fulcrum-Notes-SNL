@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "Path",
+    "description": "Path x y：显式端点 x,y；隐式 X 及其拓扑由语境给定；返回道路类型。",
+    "source": {
+      "entries": [
+        "Path"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathrm{Path}(#0,#1)"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

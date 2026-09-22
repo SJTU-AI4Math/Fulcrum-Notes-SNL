@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "ContinuousMap",
+    "description": "ContinuousMap X Y：显式参数 X,Y；两端拓扑由语境给定；返回携带连续性证明的映射类型。",
+    "source": {
+      "entries": [
+        "ContinuousMap"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathrm{C}(#0,#1)"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

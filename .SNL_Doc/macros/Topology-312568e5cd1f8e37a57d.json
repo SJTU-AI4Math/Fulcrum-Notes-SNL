@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "Path.Homotopic.Quotient.mk",
+    "description": "Path.Homotopic.Quotient.mk p：道路的固定端点同伦类。",
+    "source": {
+      "entries": [
+        "Path.Homotopic.Quotient.mk"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "[#0]"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

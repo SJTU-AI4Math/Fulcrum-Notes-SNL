@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Path.Homotopic.Quotient.eq",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Path.lean",
+      "mode": "lines",
+      "line": 318,
+      "endLine": 319,
+      "column": 1,
+      "endColumn": 1
+    },
+    "title": "同伦类相等的判据",
+    "kind": "property",
+    "content": {
+      "snl": "theorem(Iff(Eq(Path.Homotopic.Quotient(a,b),Path.Homotopic.Quotient.mk(p0),Path.Homotopic.Quotient.mk(p1)),Path.Homotopic(p0,p1)))"
+    }
+  }
+}

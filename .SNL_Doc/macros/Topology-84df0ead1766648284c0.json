@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "Path.Homotopic.Quotient",
+    "description": "Path.Homotopic.Quotient x y：显式端点 x,y；道路的固定端点同伦商类型。",
+    "source": {
+      "entries": [
+        "Path.Homotopic.Quotient"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathrm{Path}(#0,#1)/{\\simeq_{\\partial I}}"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

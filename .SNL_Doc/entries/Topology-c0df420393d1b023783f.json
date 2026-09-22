@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.Homotopic.equivalence",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Basic.lean",
+      "mode": "lines",
+      "line": 348,
+      "endLine": 349,
+      "column": 1,
+      "endColumn": 1
+    },
+    "title": "同伦关系的等价性",
+    "kind": "property",
+    "content": {
+      "snl": "__list__(theorem(__enum__[enumerate](member[colon](%自反性%,ContinuousMap.Homotopic(f0,f0)),member[colon](%对称性%,Logic.implies(ContinuousMap.Homotopic(f0,f1),ContinuousMap.Homotopic(f1,f0))),member[colon](%传递性%,Logic.implies(parentheses(And(ContinuousMap.Homotopic(f0,f1),ContinuousMap.Homotopic(f1,f2))),ContinuousMap.Homotopic(f0,f2))))),%自反性由不随时间变化的同伦给出；对称性将时间 u 换成 1−u；传递性在时间前半段取 H(2u,x)，后半段取 K(2u−1,x)。中点相等，闭集粘合保证连续；道路情形各构造保持两个端点。%)"
+    }
+  }
+}

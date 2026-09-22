@@ -5,3 +5,6 @@ __pycache__/
 test
 # Derived local source-to-Entry index; rebuilt by Pointer maintenance.
 /.SNL_Doc/syncSNL.json
+# Local Path/Homotopy authoring evidence; never publish.
+/.local-path-report.md
+/.local-path/

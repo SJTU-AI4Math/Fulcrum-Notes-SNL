@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Path.Homotopic.Quotient.mk",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Path.lean",
+      "mode": "lines",
+      "line": 304,
+      "endLine": 305,
+      "column": 1,
+      "endColumn": 1
+    },
+    "title": "道路的同伦类",
+    "kind": "def",
+    "content": {
+      "snl": "def(Path.Homotopic.Quotient.mk(p0),Path.Homotopic.Quotient(a,b),__list__(%p0 的等价类，即所有满足下述条件的道路 q 所代表的类：%,variable(Type.annotation(@q,Path(a,b)),Path.Homotopic(p0,q))))"
+    }
+  }
+}

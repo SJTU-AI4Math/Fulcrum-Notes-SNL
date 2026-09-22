@@ -1,0 +1,15 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "AlgebraicTopology.subsec.paths",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "道路",
+    "kind": "subsection",
+    "content": {}
+  }
+}

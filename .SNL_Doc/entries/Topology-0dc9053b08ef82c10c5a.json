@@ -4,21 +4,21 @@
   "schema_version": 1,
   "package": "Topology",
   "entry": {
-    "id": "Path.symm",
-    "kind": "def",
-    "title": "反向道路",
-    "content": {
-      "snl": "def(Path.symm(p0),Path(b,a),Type.annotation(Type.lambda(@s,I,Type.apply[paren](p0,Sub.sub(1,s))),Path(b,a)))"
-    },
+    "id": "Path.refl",
+    "package": "Topology",
     "contribution_info": null,
     "pointer": {
       "file": ".lake/packages/mathlib/Mathlib/Topology/Path.lean",
       "mode": "lines",
-      "line": 150,
-      "endLine": 154,
+      "line": 140,
+      "endLine": 143,
       "column": 1,
       "endColumn": 1
     },
-    "package": "Topology"
+    "title": "常值道路",
+    "kind": "def",
+    "content": {
+      "snl": "def(Path.refl(a),Path(a,a),Type.annotation(Function.const(X,I,a),Path(a,a)))"
+    }
   }
 }

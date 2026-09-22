@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Path.ctxt.maps",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "同源同靶的连续映射",
+    "kind": "context",
+    "content": {
+      "snl": "__list__(Type.annotation(@f0,ContinuousMap(X,Y)),Type.annotation(@f1,ContinuousMap(X,Y)),Type.annotation(@f2,ContinuousMap(X,Y)))"
+    }
+  }
+}

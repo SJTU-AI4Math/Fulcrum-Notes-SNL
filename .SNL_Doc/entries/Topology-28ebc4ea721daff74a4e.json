@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/ContinuousMap/Defs.lean",
+      "mode": "lines",
+      "line": 33,
+      "endLine": 37,
+      "column": 1,
+      "endColumn": 1
+    },
+    "title": "连续映射",
+    "kind": "def",
+    "content": {
+      "snl": "structure(ContinuousMap(X,Y),__enum__[enumerate](member[colon](%底层映射%,Type.annotation(@f,Type.forall[arrow](@v,X,Y))),member[colon](%连续性%,Continuous[text](f,X,Y))))"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Path.ctxt.endpoints",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "道路端点与参数",
+    "kind": "context",
+    "content": {
+      "snl": "__list__(Type.annotation(@a,X),Type.annotation(@b,X),Type.annotation(@c,X),%所有区间参数均取标准区间子类型 I。1−s、2s、2s−1 在相应分支内视为 I 的元素。%)"
+    }
+  }
+}

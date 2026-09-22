@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "Path.trans",
+    "description": "Path.trans p q：先 p 后 q；端点匹配；空间与端点由参数推断。",
+    "source": {
+      "entries": [
+        "Path.trans"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "(#0\\star #1)"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

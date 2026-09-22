@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "ContinuousMap.Homotopic",
+    "description": "ContinuousMap.Homotopic f g：一般同伦存在命题，不要求固定子集。",
+    "source": {
+      "entries": [
+        "ContinuousMap.Homotopic"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0\\simeq #1"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

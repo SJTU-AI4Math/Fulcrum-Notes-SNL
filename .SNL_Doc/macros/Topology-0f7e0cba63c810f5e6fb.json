@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "Path.Homotopic",
+    "description": "Path.Homotopic p q：固定端点同伦存在命题。",
+    "source": {
+      "entries": [
+        "Path.Homotopic"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0\\simeq_{\\partial I}#1"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

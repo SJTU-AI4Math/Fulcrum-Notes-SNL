@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "Path.Homotopic.Quotient.trans",
+    "description": "Path.Homotopic.Quotient.trans P Q：端点匹配的同伦类拼接；先 P 后 Q。",
+    "source": {
+      "entries": [
+        "Path.Homotopic.Quotient.trans"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "(#0\\star #1)"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

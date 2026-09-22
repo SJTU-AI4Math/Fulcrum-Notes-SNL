@@ -5,34 +5,19 @@
   "package": "Topology",
   "entry": {
     "id": "Path.Homotopic",
-    "kind": "definition",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Homotopy of Paths",
-        "zh-CN": "道路同伦"
-      }
-    },
+    "kind": "def",
+    "title": "道路同伦关系",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X),Type.annotation(@f,Path(x,y)),Type.annotation(@g,Path(x,y))),def(Path.Homotopic(f,g), , ))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "A **homotopy of paths** in $X$ is a family $f_t\\colon I\\to X$ ($0\\le t\\le 1$) such that $f_t(0)=x_0$ and $f_t(1)=x_1$ are independent of $t$ and the associated map $F(s,t)=f_t(s)$ is continuous. Two paths connected in this way are **homotopic**, written $f_0\\simeq f_1$; the relation is an equivalence relation (Hatcher Proposition 1.2, p. 26).",
-          "zh-CN": "$X$ 中的**道路同伦**是一族映射 $f_t\\colon I\\to X$（$0\\le t\\le 1$），满足端点 $f_t(0)=x_0$、$f_t(1)=x_1$ 与 $t$ 无关，且 $F(s,t)=f_t(s)$ 连续。能以这种方式连接的两条道路称为**同伦**的，记作 $f_0\\simeq f_1$；该关系是等价关系（Hatcher 命题 1.2，第 26 页）。"
-        }
-      }
+      "snl": "def[prop](Path.Homotopic(p0,p1),Type.Sort[prop](%0%),Nonempty(Path.Homotopy(p0,p1)))"
     },
     "contribution_info": null,
     "pointer": {
       "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Path.lean",
       "mode": "lines",
       "line": 241,
-      "endLine": 241,
+      "endLine": 242,
       "column": 1,
-      "endColumn": 45
+      "endColumn": 1
     },
     "package": "Topology"
   }

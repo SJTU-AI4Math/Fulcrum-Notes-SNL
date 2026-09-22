@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Path.ctxt.paths",
+    "package": "Topology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "端点匹配的道路",
+    "kind": "context",
+    "content": {
+      "snl": "__list__(Type.annotation(@p0,Path(a,b)),Type.annotation(@p1,Path(a,b)),Type.annotation(@p2,Path(a,b)),Type.annotation(@q0,Path(b,c)),Type.annotation(@q1,Path(b,c)))"
+    }
+  }
+}

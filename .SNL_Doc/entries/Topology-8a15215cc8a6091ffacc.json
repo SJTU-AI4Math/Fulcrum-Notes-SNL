@@ -5,34 +5,19 @@
   "package": "Topology",
   "entry": {
     "id": "Path.Homotopic.Quotient.trans",
-    "kind": "definition",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Product of Path Homotopy Classes",
-        "zh-CN": "道路同伦类的乘法"
-      }
-    },
+    "kind": "def",
+    "title": "道路同伦类的拼接",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X),Type.annotation(@z,X),Type.annotation(@P,Path.Homotopic.Quotient(x,y)),Type.annotation(@Q,Path.Homotopic.Quotient(y,z))),def(Path.Homotopic.Quotient.trans(P,Q), , ))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "Given paths $f,g\\colon I\\to X$ with $f(1)=g(0)$, their **product** $f\\cdot g$ traverses first $f$ and then $g$ at twice the speed. The product respects homotopy classes, so $[f][g]=[f\\cdot g]$ is well defined (Hatcher p. 26).",
-          "zh-CN": "设道路 $f,g\\colon I\\to X$ 满足 $f(1)=g(0)$，它们的**乘积** $f\\cdot g$ 以二倍速度先走完 $f$、再走完 $g$。乘积与同伦类相容，故 $[f][g]=[f\\cdot g]$ 有定义（Hatcher 第 26 页）。"
-        }
-      }
+      "snl": "variable(__list__(Type.annotation(@P,Path.Homotopic.Quotient(a,b)),Type.annotation(@Q,Path.Homotopic.Quotient(b,c))),def(Path.Homotopic.Quotient.trans(P,Q),Path.Homotopic.Quotient(a,c),variable(__list__(Type.annotation(@p,Path(a,b)),Eq(Path.Homotopic.Quotient(a,b),Path.Homotopic.Quotient.mk(p),P),Type.annotation(@q,Path(b,c)),Eq(Path.Homotopic.Quotient(b,c),Path.Homotopic.Quotient.mk(q),Q)),__list__(Path.Homotopic.Quotient.mk(Path.trans(p,q)),%每个同伦类都有代表；拼接与同伦相容保证此值与代表选择无关。%))))"
     },
     "contribution_info": null,
     "pointer": {
       "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Path.lean",
       "mode": "lines",
       "line": 382,
-      "endLine": 382,
+      "endLine": 384,
       "column": 1,
-      "endColumn": 86
+      "endColumn": 1
     },
     "package": "Topology"
   }

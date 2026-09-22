@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "Path.refl",
+    "description": "Path.refl x：常值道路，返回 Path x x。",
+    "source": {
+      "entries": [
+        "Path.refl"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathrm{refl}(#0)"
+        }
+      }
+    ],
+    "tags": []
+  }
+}
