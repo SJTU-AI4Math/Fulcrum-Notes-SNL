@@ -8,7 +8,7 @@
     "kind": "def",
     "title": "道路",
     "content": {
-      "snl": "structure(Path(a,b),__enum__[enumerate](member[colon](%连续映射%,Type.annotation(@p,ContinuousMap(I,X))),member[colon](%起点%,Eq(X,Type.apply[paren](p,$0$),a)),member[colon](%终点%,Eq(X,Type.apply[paren](p,$1$),b))))"
+      "snl": "structure(Path(a,b),__enum__[enumerate](member[colon](%连续映射%,Type.annotation(@p,ContinuousMap(Set.Elem[coerce](Real,unitInterval),X))),member[colon](%起点%,Eq(X,Type.apply[paren](p,$0$),a)),member[colon](%终点%,Eq(X,Type.apply[paren](p,$1$),b))))"
     },
     "contribution_info": null,
     "pointer": {

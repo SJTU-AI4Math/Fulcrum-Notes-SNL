@@ -158,6 +158,7 @@
     "diam",
     "frontier",
     "interior",
-    "pathComponent"
+    "pathComponent",
+    "unitInterval"
   ]
 }

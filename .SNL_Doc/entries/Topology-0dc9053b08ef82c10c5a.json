@@ -18,7 +18,7 @@
     "title": "常值道路",
     "kind": "def",
     "content": {
-      "snl": "def(Path.refl(a),Path(a,a),Type.annotation(Function.const(X,I,a),Path(a,a)))"
+      "snl": "def(Path.refl(a),Path(a,a),Type.annotation(Function.const(X,Set.Elem[coerce](Real,unitInterval),a),Path(a,a)))"
     }
   }
 }

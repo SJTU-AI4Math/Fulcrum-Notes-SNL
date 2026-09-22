@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "unitInterval",
+    "description": "unitInterval : Set ℝ := Set.Icc 0 1. No arguments; the set displays I. Type positions use Set.Elem(Real,unitInterval), with the standard real subspace topology specified in its definition Entry.",
+    "source": {
+      "entries": [
+        "unitInterval"
+      ],
+      "urls": []
+    },
+    "kind": "const",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "I"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

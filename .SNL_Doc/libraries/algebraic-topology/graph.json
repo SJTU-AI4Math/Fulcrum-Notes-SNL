@@ -8,6 +8,13 @@
       }
     },
     {
+      "id": "path_unitInterval",
+      "label": "Entry",
+      "props": {
+        "entryId": "unitInterval"
+      }
+    },
+    {
       "id": "path_22",
       "label": "Entry",
       "props": {
@@ -261,6 +268,11 @@
     }
   ],
   "relationships": [
+    {
+      "from": "n_0",
+      "to": "path_unitInterval",
+      "label": "branch"
+    },
     {
       "from": "n_0",
       "to": "path_22",
