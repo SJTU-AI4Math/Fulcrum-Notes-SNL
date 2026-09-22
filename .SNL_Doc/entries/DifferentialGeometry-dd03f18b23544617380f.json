@@ -13,7 +13,7 @@
           "zh-CN": "**平面正向 $90^\\circ$ 旋转**是映射 $J\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{2}$，$J(x,y)=(-y,x)$，即逆时针旋转 $90^{\\circ}$。它是线性等距映射，$\\langle Jv,Jw\\rangle=\\langle v,w\\rangle$，满足 $J^{2}=-\\mathrm{id}$，且对每个 $v$ 都有 $\\langle Jv,v\\rangle=0$，故 $J$ 把每个向量送到它的正向正交方向。"
         }
       },
-      "snl": "variable(__list__(Type.annotation(@x,Real),Type.annotation(@y,Real)),def(Type.apply(DG.def.rotation90[default],Prod.pair(x,y)),,VecNotation[default](neg(y),x)))"
+      "snl": "variable(__list__(Type.annotation(@x,Real),Type.annotation(@y,Real)),def(Type.apply[none](DG.def.rotation90[default],Prod.pair(x,y)),,VecNotation[default](neg(y),x)))"
     },
     "contribution_info": null,
     "id": "DG.def.rotation90",
