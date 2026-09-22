@@ -20,7 +20,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "\\mathrm{Path}(#0,#1)"
+          "body": "#0 \\leadsto #1"
         }
       }
     ],
