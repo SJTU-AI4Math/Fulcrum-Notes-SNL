@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.rmk.pathTransContinuity",
+    "package": "Topology",
+    "kind": "remark",
+    "title": "道路拼接的连续性",
+    "content": {
+      "markdown": "**论证。** 两段在中点同取 $b$，闭集粘合给出连续性；起点为 $a$，终点为 $c$。"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

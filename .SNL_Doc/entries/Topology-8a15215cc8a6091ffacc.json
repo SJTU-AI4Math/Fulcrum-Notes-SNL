@@ -8,7 +8,7 @@
     "kind": "def",
     "title": "道路同伦类的拼接",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@P,Path.Homotopic.Quotient(a,b)),Type.annotation(@Q,Path.Homotopic.Quotient(b,c))),def(Path.Homotopic.Quotient.trans(P,Q),Path.Homotopic.Quotient(a,c),variable(__list__(Type.annotation(@p,Path(a,b)),Eq(Path.Homotopic.Quotient(a,b),Path.Homotopic.Quotient.mk(p),P),Type.annotation(@q,Path(b,c)),Eq(Path.Homotopic.Quotient(b,c),Path.Homotopic.Quotient.mk(q),Q)),__list__(Path.Homotopic.Quotient.mk(Path.trans(p,q)),%每个同伦类都有代表；拼接与同伦相容保证此值与代表选择无关。%))))"
+      "snl": "variable(__list__(Type.annotation(@P,Path.Homotopic.Quotient(a,b)),Type.annotation(@Q,Path.Homotopic.Quotient(b,c))),def(Path.Homotopic.Quotient.trans(P,Q),Path.Homotopic.Quotient(a,c),variable(__list__(Type.annotation(@p,Path(a,b)),Eq(Path.Homotopic.Quotient(a,b),Path.Homotopic.Quotient.mk(p),P),Type.annotation(@q,Path(b,c)),Eq(Path.Homotopic.Quotient(b,c),Path.Homotopic.Quotient.mk(q),Q)),Path.Homotopic.Quotient.mk(Path.trans(p,q)))))"
     },
     "contribution_info": null,
     "pointer": {

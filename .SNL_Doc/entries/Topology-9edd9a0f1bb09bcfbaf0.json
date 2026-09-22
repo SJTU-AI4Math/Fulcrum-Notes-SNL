@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.rmk.pathQuotientTransWellDefined",
+    "package": "Topology",
+    "kind": "remark",
+    "title": "同伦类拼接的良定义性",
+    "content": {
+      "markdown": "**良定义性论证。** 每个同伦类都有代表；拼接与同伦相容保证此值与代表选择无关。"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.rmk.mapHomotopicEquivalenceProof",
+    "package": "Topology",
+    "kind": "remark",
+    "title": "映射同伦等价关系的论证",
+    "content": {
+      "markdown": "**论证。** 自反性由不随时间变化的同伦给出；对称性将时间 $u$ 换成 $1−u$；传递性在时间前半段取 $H(2u,x)$，后半段取 $K(2u−1,x)$。中点相等，闭集粘合保证连续；道路情形各构造保持两个端点。"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.rmk.pathHomotopicHcompProof",
+    "package": "Topology",
+    "kind": "remark",
+    "title": "道路拼接与同伦相容的论证",
+    "content": {
+      "markdown": "**论证。** 这里 $z=(z_1,z_2)$，第一坐标为同伦时间。在 $z_2=1/2$ 两侧均为 $b$，故闭集粘合保证联合连续；时间为 0、1 时分别得到两条拼接道路，且道路端点始终固定为 $a$、$c$。"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -18,7 +18,7 @@
     "title": "同伦类相等的判据",
     "kind": "property",
     "content": {
-      "snl": "theorem(Iff(Eq(Path.Homotopic.Quotient(a,b),Path.Homotopic.Quotient.mk(p0),Path.Homotopic.Quotient.mk(p1)),Path.Homotopic(p0,p1)))"
+      "snl": "theorem(Iff(Eq(Path.Homotopic.Quotient(a,b),Path.Homotopic.Quotient.mk($p_0$),Path.Homotopic.Quotient.mk($p_1$)),Path.Homotopic($p_0$,$p_1$)))"
     }
   }
 }

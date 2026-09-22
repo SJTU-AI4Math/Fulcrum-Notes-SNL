@@ -1,3 +1,31 @@
 {
-  "counters": []
+  "counters": [
+    {
+      "id": "topology-section",
+      "name": "Section",
+      "numbering": "1",
+      "children": [
+        {
+          "id": "topology-subsection",
+          "name": "Subsection",
+          "numbering": ".1",
+          "children": [
+            {
+              "id": "topology-entry",
+              "name": "Entry",
+              "numbering": ".1",
+              "children": [
+                {
+                  "id": "topology-subentry",
+                  "name": "Subentry",
+                  "numbering": ".1",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

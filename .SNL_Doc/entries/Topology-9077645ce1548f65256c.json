@@ -18,7 +18,7 @@
     "title": "道路拼接",
     "kind": "def",
     "content": {
-      "snl": "__list__(def(Path.trans(p0,q0),Path(a,c),Type.annotation(Type.lambda(@s,Set.Elem[coerce](Real,unitInterval),__enum__[cases](__list__[none](Type.apply[paren](p0,Mul.mul[implicit](2,s)),__list__[none]($&$,LE.le(Real,_,0,s),$\\le$,Div.div[fracInline](1,2))),__list__[none](Type.apply[paren](q0,Sub.sub(Mul.mul[implicit](2,s),1)),__list__[none]($&$,LT.lt(Real,_,Div.div[fracInline](1,2),s),$\\le$,1)))),Path(a,c))),%两段在中点同取 b，闭集粘合给出连续性；起点为 a，终点为 c。%)"
+      "snl": "def(Path.trans($p_0$,$q_0$),Path(a,c),Type.annotation(Type.lambda(@s,Set.Elem[coerce](Real,unitInterval),__enum__[cases](__list__[none](Type.apply[paren]($p_0$,Mul.mul[implicit](2,s)),__list__[none]($&$,LE.le(Real,_,0,s),$\\le$,Div.div[fracInline](1,2))),__list__[none](Type.apply[paren]($q_0$,Sub.sub(Mul.mul[implicit](2,s),1)),__list__[none]($&$,LT.lt(Real,_,Div.div[fracInline](1,2),s),$\\le$,1)))),Path(a,c)))"
     }
   }
 }

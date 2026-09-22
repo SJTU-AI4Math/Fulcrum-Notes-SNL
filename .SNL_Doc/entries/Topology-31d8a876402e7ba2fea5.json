@@ -11,7 +11,7 @@
     "title": "道路端点与参数",
     "kind": "context",
     "content": {
-      "snl": "__list__(Type.annotation(@a,X),Type.annotation(@b,X),Type.annotation(@c,X),__list__[none](%所有区间参数均取标准区间子类型 %,Set.Elem[coerce](Real,unitInterval),%。1−s、2s、2s−1 在相应分支内视为该子类型的元素。%))"
+      "snl": "Type.annotation(__list__[formula](@a,@b,@c),X)"
     }
   }
 }

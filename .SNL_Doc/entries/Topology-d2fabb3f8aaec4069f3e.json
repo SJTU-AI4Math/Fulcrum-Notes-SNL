@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.rmk.pathTopologyConventions",
+    "package": "Topology",
+    "kind": "remark",
+    "title": "道路与同伦的拓扑及求值约定",
+    "content": {
+      "markdown": "所有积取积拓扑。连续映射及道路按其底层映射求值。同伦的第一坐标是时间参数，第二坐标是定义域参数。区间采用标准区间条目及其子注所固定的子空间拓扑。"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -11,7 +11,7 @@
     "title": "端点匹配的道路",
     "kind": "context",
     "content": {
-      "snl": "__list__(Type.annotation(@p0,Path(a,b)),Type.annotation(@p1,Path(a,b)),Type.annotation(@p2,Path(a,b)),Type.annotation(@q0,Path(b,c)),Type.annotation(@q1,Path(b,c)))"
+      "snl": "__list__(Type.annotation(__list__[formula](@$p_0$,@$p_1$,@$p_2$),Path(a,b)),Type.annotation(__list__[formula](@$q_0$,@$q_1$),Path(b,c)))"
     }
   }
 }

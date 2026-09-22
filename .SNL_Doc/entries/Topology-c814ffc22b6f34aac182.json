@@ -16,15 +16,7 @@
       }
     },
     "content": {
-      "snl": "__list__(def(unitInterval,Set(Real),Icc($0$,$1$)),%实数取标准拓扑；将标准区间用作类型时，取其对应子类型，并赋予诱导的子空间拓扑。%)",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "The unit interval is the subset $I=[0,1]$ of $\\mathbb{R}$. When used as a type, $I$ denotes the subtype $\\{t:\\mathbb{R}\\mid t\\in I\\}$, equipped with the subspace topology induced by the standard topology on $\\mathbb{R}$.",
-          "zh-CN": "标准区间是实数集 $\\mathbb{R}$ 的子集 $I=[0,1]$。用于类型位置时，$I$ 表示子类型 $\\{t:\\mathbb{R}\\mid t\\in I\\}$，赋予由实数标准拓扑诱导的子空间拓扑。"
-        }
-      }
+      "snl": "def(unitInterval,Set(Real),Icc($0$,$1$))"
     },
     "contribution_info": null,
     "pointer": {

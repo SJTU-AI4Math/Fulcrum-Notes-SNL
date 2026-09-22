@@ -4,168 +4,256 @@
       "id": "n_0",
       "label": "Entry",
       "props": {
-        "entryId": "AlgebraicTopology.sec.algebraicTopology"
+        "entryId": "AlgebraicTopology.sec.algebraicTopology",
+        "counterId": "topology-section"
       }
     },
     {
       "id": "path_unitInterval",
       "label": "Entry",
       "props": {
-        "entryId": "unitInterval"
+        "entryId": "unitInterval",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "editorial_unitIntervalTopology",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.unitIntervalTopology",
+        "counterId": "topology-subentry"
       }
     },
     {
       "id": "path_22",
       "label": "Entry",
       "props": {
-        "entryId": "Path.ctxt.spaces"
+        "entryId": "Path.ctxt.spaces",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "editorial_pathTopologyConventions",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.pathTopologyConventions",
+        "counterId": "topology-subentry"
       }
     },
     {
       "id": "path_23",
       "label": "Entry",
       "props": {
-        "entryId": "Path.ctxt.endpoints"
+        "entryId": "Path.ctxt.endpoints",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "editorial_intervalParameters",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.intervalParameters",
+        "counterId": "topology-subentry"
       }
     },
     {
       "id": "path_24",
       "label": "Entry",
       "props": {
-        "entryId": "Path.ctxt.paths"
+        "entryId": "Path.ctxt.paths",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "path_25",
       "label": "Entry",
       "props": {
-        "entryId": "Path.ctxt.maps"
+        "entryId": "Path.ctxt.maps",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "path_20",
       "label": "Entry",
       "props": {
-        "entryId": "AlgebraicTopology.subsec.paths"
+        "entryId": "AlgebraicTopology.subsec.paths",
+        "counterId": "topology-subsection"
       }
     },
     {
       "id": "path_26",
       "label": "Entry",
       "props": {
-        "entryId": "ContinuousMap"
+        "entryId": "ContinuousMap",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_5",
       "label": "Entry",
       "props": {
-        "entryId": "Path"
+        "entryId": "Path",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "path_27",
       "label": "Entry",
       "props": {
-        "entryId": "Path.refl"
+        "entryId": "Path.refl",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_9",
       "label": "Entry",
       "props": {
-        "entryId": "Path.symm"
+        "entryId": "Path.symm",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "path_28",
       "label": "Entry",
       "props": {
-        "entryId": "Path.trans"
+        "entryId": "Path.trans",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "editorial_pathTransContinuity",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.pathTransContinuity",
+        "counterId": "topology-subentry"
       }
     },
     {
       "id": "path_21",
       "label": "Entry",
       "props": {
-        "entryId": "AlgebraicTopology.subsec.homotopies"
+        "entryId": "AlgebraicTopology.subsec.homotopies",
+        "counterId": "topology-subsection"
       }
     },
     {
       "id": "path_29",
       "label": "Entry",
       "props": {
-        "entryId": "ContinuousMap.Homotopy"
+        "entryId": "ContinuousMap.Homotopy",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "path_30",
       "label": "Entry",
       "props": {
-        "entryId": "ContinuousMap.Homotopic"
+        "entryId": "ContinuousMap.Homotopic",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "path_32",
       "label": "Entry",
       "props": {
-        "entryId": "ContinuousMap.Homotopic.equivalence"
+        "entryId": "ContinuousMap.Homotopic.equivalence",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "editorial_mapHomotopicEquivalenceProof",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.mapHomotopicEquivalenceProof",
+        "counterId": "topology-subentry"
       }
     },
     {
       "id": "path_31",
       "label": "Entry",
       "props": {
-        "entryId": "Path.Homotopy"
+        "entryId": "Path.Homotopy",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_6",
       "label": "Entry",
       "props": {
-        "entryId": "Path.Homotopic"
+        "entryId": "Path.Homotopic",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "path_33",
       "label": "Entry",
       "props": {
-        "entryId": "Path.Homotopic.equivalence"
+        "entryId": "Path.Homotopic.equivalence",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "editorial_pathHomotopicEquivalenceProof",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.pathHomotopicEquivalenceProof",
+        "counterId": "topology-subentry"
       }
     },
     {
       "id": "path_34",
       "label": "Entry",
       "props": {
-        "entryId": "Path.Homotopic.hcomp"
+        "entryId": "Path.Homotopic.hcomp",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "editorial_pathHomotopicHcompProof",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.pathHomotopicHcompProof",
+        "counterId": "topology-subentry"
       }
     },
     {
       "id": "n_7",
       "label": "Entry",
       "props": {
-        "entryId": "Path.Homotopic.Quotient"
+        "entryId": "Path.Homotopic.Quotient",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "path_36",
       "label": "Entry",
       "props": {
-        "entryId": "Path.Homotopic.Quotient.eq"
+        "entryId": "Path.Homotopic.Quotient.eq",
+        "counterId": "topology-subentry"
       }
     },
     {
       "id": "path_35",
       "label": "Entry",
       "props": {
-        "entryId": "Path.Homotopic.Quotient.mk"
+        "entryId": "Path.Homotopic.Quotient.mk",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_8",
       "label": "Entry",
       "props": {
-        "entryId": "Path.Homotopic.Quotient.trans"
+        "entryId": "Path.Homotopic.Quotient.trans",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "editorial_pathQuotientTransWellDefined",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.pathQuotientTransWellDefined",
+        "counterId": "topology-subentry"
       }
     },
     {
@@ -289,6 +377,36 @@
       "label": "branch"
     },
     {
+      "from": "n_0",
+      "to": "n_1",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "n_2",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "n_3",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "n_4",
+      "label": "branch"
+    },
+    {
+      "from": "path_unitInterval",
+      "to": "editorial_unitIntervalTopology",
+      "label": "branch"
+    },
+    {
+      "from": "path_22",
+      "to": "editorial_pathTopologyConventions",
+      "label": "branch"
+    },
+    {
       "from": "path_22",
       "to": "path_23",
       "label": "branch"
@@ -301,6 +419,11 @@
     {
       "from": "path_22",
       "to": "path_25",
+      "label": "branch"
+    },
+    {
+      "from": "path_23",
+      "to": "editorial_intervalParameters",
       "label": "branch"
     },
     {
@@ -329,6 +452,11 @@
       "label": "branch"
     },
     {
+      "from": "path_28",
+      "to": "editorial_pathTransContinuity",
+      "label": "branch"
+    },
+    {
       "from": "path_21",
       "to": "path_29",
       "label": "branch"
@@ -340,12 +468,27 @@
     },
     {
       "from": "path_21",
+      "to": "path_32",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
       "to": "path_31",
       "label": "branch"
     },
     {
       "from": "path_21",
       "to": "n_6",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "path_33",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "path_34",
       "label": "branch"
     },
     {
@@ -364,18 +507,18 @@
       "label": "branch"
     },
     {
-      "from": "path_30",
-      "to": "path_32",
+      "from": "path_32",
+      "to": "editorial_mapHomotopicEquivalenceProof",
       "label": "branch"
     },
     {
-      "from": "n_6",
-      "to": "path_33",
+      "from": "path_33",
+      "to": "editorial_pathHomotopicEquivalenceProof",
       "label": "branch"
     },
     {
-      "from": "n_6",
-      "to": "path_34",
+      "from": "path_34",
+      "to": "editorial_pathHomotopicHcompProof",
       "label": "branch"
     },
     {
@@ -384,23 +527,8 @@
       "label": "branch"
     },
     {
-      "from": "n_0",
-      "to": "n_1",
-      "label": "branch"
-    },
-    {
-      "from": "n_0",
-      "to": "n_2",
-      "label": "branch"
-    },
-    {
-      "from": "n_0",
-      "to": "n_3",
-      "label": "branch"
-    },
-    {
-      "from": "n_0",
-      "to": "n_4",
+      "from": "n_8",
+      "to": "editorial_pathQuotientTransWellDefined",
       "label": "branch"
     },
     {

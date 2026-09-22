@@ -8,7 +8,7 @@
     "kind": "def",
     "title": "反向道路",
     "content": {
-      "snl": "def(Path.symm(p0),Path(b,a),Type.annotation(Type.lambda(@s,Set.Elem[coerce](Real,unitInterval),Type.apply[paren](p0,Sub.sub(1,s))),Path(b,a)))"
+      "snl": "def(Path.symm($p_0$),Path(b,a),Type.annotation(Type.lambda(@s,Set.Elem[coerce](Real,unitInterval),Type.apply[paren]($p_0$,Sub.sub(1,s))),Path(b,a)))"
     },
     "contribution_info": null,
     "pointer": {

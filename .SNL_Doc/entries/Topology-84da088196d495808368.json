@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "Topology.rmk.intervalParameters",
+    "package": "Topology",
+    "kind": "remark",
+    "title": "区间参数约定",
+    "content": {
+      "markdown": "所有区间参数均取标准区间子类型 $I=\\{t:\\mathbb{R}\\mid t\\in[0,1]\\}$，沿用标准区间的子空间拓扑约定。$1-s$、$2s$、$2s-1$ 在相应分支内视为该子类型的元素。"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

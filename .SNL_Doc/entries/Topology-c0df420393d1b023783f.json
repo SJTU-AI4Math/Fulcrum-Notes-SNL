@@ -18,7 +18,7 @@
     "title": "同伦关系的等价性",
     "kind": "property",
     "content": {
-      "snl": "__list__(theorem(__enum__[enumerate](member[colon](%自反性%,ContinuousMap.Homotopic(f0,f0)),member[colon](%对称性%,Logic.implies(ContinuousMap.Homotopic(f0,f1),ContinuousMap.Homotopic(f1,f0))),member[colon](%传递性%,Logic.implies(parentheses(And(ContinuousMap.Homotopic(f0,f1),ContinuousMap.Homotopic(f1,f2))),ContinuousMap.Homotopic(f0,f2))))),%自反性由不随时间变化的同伦给出；对称性将时间 u 换成 1−u；传递性在时间前半段取 H(2u,x)，后半段取 K(2u−1,x)。中点相等，闭集粘合保证连续；道路情形各构造保持两个端点。%)"
+      "snl": "theorem(__enum__[enumerate](member[colon](%自反性%,ContinuousMap.Homotopic($f_0$,$f_0$)),member[colon](%对称性%,Logic.implies(ContinuousMap.Homotopic($f_0$,$f_1$),ContinuousMap.Homotopic($f_1$,$f_0$))),member[colon](%传递性%,Logic.implies(parentheses(And(ContinuousMap.Homotopic($f_0$,$f_1$),ContinuousMap.Homotopic($f_1$,$f_2$))),ContinuousMap.Homotopic($f_0$,$f_2$)))))"
     }
   }
 }

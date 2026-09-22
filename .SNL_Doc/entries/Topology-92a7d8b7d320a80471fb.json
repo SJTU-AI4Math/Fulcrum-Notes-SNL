@@ -18,7 +18,7 @@
     "title": "连续映射同伦关系",
     "kind": "def",
     "content": {
-      "snl": "def[prop](ContinuousMap.Homotopic(f0,f1),Type.Sort[prop](%0%),Nonempty(ContinuousMap.Homotopy(f0,f1)))"
+      "snl": "def[prop](ContinuousMap.Homotopic($f_0$,$f_1$),Type.Sort[prop](%0%),Nonempty(ContinuousMap.Homotopy($f_0$,$f_1$)))"
     }
   }
 }

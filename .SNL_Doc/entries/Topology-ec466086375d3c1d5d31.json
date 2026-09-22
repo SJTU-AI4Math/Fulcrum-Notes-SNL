@@ -11,7 +11,7 @@
     "title": "拓扑空间与标准区间",
     "kind": "context",
     "content": {
-      "snl": "__list__(Type.annotation(@X,Type),TopologicalSpace(X),Type.annotation(@Y,Type),TopologicalSpace(Y),%所有积取积拓扑。连续映射及道路按其底层映射求值。同伦的第一坐标是时间参数，第二坐标是定义域参数。%)"
+      "snl": "__list__(Type.annotation(__list__[formula](@X,@Y),Type),TopologicalSpace(X),TopologicalSpace(Y))"
     }
   }
 }
