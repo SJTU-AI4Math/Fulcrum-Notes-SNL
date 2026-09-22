@@ -8,7 +8,7 @@
     "kind": "def",
     "title": "道路同伦关系",
     "content": {
-      "snl": "def[prop](Path.Homotopic($p_0$,$p_1$),Type.Sort[prop](%0%),Nonempty(Path.Homotopy($p_0$,$p_1$)))"
+      "snl": "def[prop](Path.Homotopic($p_0$,$p_1$),Type.Sort[prop](%0%),Nonempty[text](Path.Homotopy($p_0$,$p_1$)))"
     },
     "contribution_info": null,
     "pointer": {

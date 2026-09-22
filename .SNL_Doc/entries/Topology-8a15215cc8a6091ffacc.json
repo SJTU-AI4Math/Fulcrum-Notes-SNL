@@ -8,7 +8,7 @@
     "kind": "def",
     "title": "道路同伦类的拼接",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@P,Path.Homotopic.Quotient(a,b)),Type.annotation(@Q,Path.Homotopic.Quotient(b,c))),def(Path.Homotopic.Quotient.trans(P,Q),Path.Homotopic.Quotient(a,c),variable(__list__(Type.annotation(@p,Path(a,b)),Eq(Path.Homotopic.Quotient(a,b),Path.Homotopic.Quotient.mk(p),P),Type.annotation(@q,Path(b,c)),Eq(Path.Homotopic.Quotient(b,c),Path.Homotopic.Quotient.mk(q),Q)),Path.Homotopic.Quotient.mk(Path.trans(p,q)))))"
+      "snl": "variable(__list__(Type.annotation(@p,Path(a,b)),Type.annotation(@q,Path(b,c))),Eq(Path.Homotopic.Quotient(a,c),Path.Homotopic.Quotient.trans[infix](Path.Homotopic.Quotient.mk(p),Path.Homotopic.Quotient.mk(q)),Path.Homotopic.Quotient.mk(Path.trans[infix](p,q))))"
     },
     "contribution_info": null,
     "pointer": {

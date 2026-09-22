@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.ppt.quotientDescent",
+    "package": "TypeTheory",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Maps defined on a quotient",
+        "zh-CN": "商上的映射"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let S : Setoid A and f : A → B. There is a unique map g : Quotient S → B satisfying g([x]ₛ) = f(x) for every x : A if and only if S.r x y implies f(x) = f(y) for every x,y : A.",
+          "zh-CN": "设 S : Setoid A，f : A → B。存在唯一映射 g : Quotient S → B，使每个 x : A 均满足 g([x]ₛ)=f(x)，当且仅当对任意 x,y : A，S.r x y 蕴含 f(x)=f(y)。"
+        }
+      },
+      "snl": "variable(__list__(Type.annotation(__list__[formula](@A,@B),Type),Type.annotation(@S,Setoid(A)),Type.annotation(@f,Type.to(A,B))),theorem(Iff(parentheses(ExistsUnique[binder](@g,Type.to(Quotient[native](A,S),B),Type.forall[forall](@x,A,Eq(B,Type.apply[paren](g,Quotient.mk(A,S,x)),Type.apply[paren](f,x))))),parentheses(Type.forall[forall](__list__[formula](@y,@z),A,Logic.implies(Type.apply[paren](Type.apply[paren](Setoid.r(A,S),y),z),Eq(B,Type.apply[paren](f,y),Type.apply[paren](f,z))))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

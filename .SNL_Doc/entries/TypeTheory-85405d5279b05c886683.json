@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Equivalence",
+    "package": "TypeTheory",
+    "kind": "def",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Equivalence relation",
+        "zh-CN": "等价关系"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@A,Type),Type.annotation(@R,Type.to(A,Type.to(A,Type.Sort[prop](%0%))))),def[prop](Equivalence(A,R),Type.Sort[prop](%0%),__enum__[enumerate](member[colon](%Reflexivity%,Type.forall[forall](@x,A,Type.apply[paren](Type.apply[paren](R,x),x))),member[colon](%Symmetry%,Type.forall[forall](__list__[formula](@x,@y),A,Logic.implies(Type.apply[paren](Type.apply[paren](R,x),y),Type.apply[paren](Type.apply[paren](R,y),x)))),member[colon](%Transitivity%,Type.forall[forall](__list__[formula](@x,@y,@z),A,Logic.implies(parentheses(And(Type.apply[paren](Type.apply[paren](R,x),y),Type.apply[paren](Type.apply[paren](R,y),z))),Type.apply[paren](Type.apply[paren](R,x),z)))))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

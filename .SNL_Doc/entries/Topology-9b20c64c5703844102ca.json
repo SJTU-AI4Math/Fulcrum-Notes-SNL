@@ -18,7 +18,7 @@
     "title": "道路同伦关系的等价性",
     "kind": "property",
     "content": {
-      "snl": "theorem(__enum__[enumerate](member[colon](%自反性%,Path.Homotopic($p_0$,$p_0$)),member[colon](%对称性%,Logic.implies(Path.Homotopic($p_0$,$p_1$),Path.Homotopic($p_1$,$p_0$))),member[colon](%传递性%,Logic.implies(parentheses(And(Path.Homotopic($p_0$,$p_1$),Path.Homotopic($p_1$,$p_2$))),Path.Homotopic($p_0$,$p_2$)))))"
+      "snl": "theorem(Equivalence(Path(a,b),Path.Homotopic[relation]))"
     }
   }
 }

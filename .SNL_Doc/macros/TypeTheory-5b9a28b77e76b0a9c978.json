@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "macro": {
+    "name": "Setoid.r",
+    "kind": "const",
+    "dynamic_arity": false,
+    "description": "Underlying relation; retained parameters A,S.",
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#1.\\mathrm{r}"
+        }
+      }
+    ],
+    "source": {
+      "entries": [
+        "Setoid"
+      ],
+      "urls": []
+    }
+  }
+}

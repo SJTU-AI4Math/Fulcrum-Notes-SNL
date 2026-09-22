@@ -18,7 +18,7 @@
     "title": "道路的同伦类",
     "kind": "def",
     "content": {
-      "snl": "def(Path.Homotopic.Quotient.mk($p_0$),Path.Homotopic.Quotient(a,b),__list__(__list__[none]($p_0$,% 的等价类，即所有满足下述条件的道路 %,q,% 所代表的类：%),variable(Type.annotation(@q,Path(a,b)),Path.Homotopic($p_0$,q))))"
+      "snl": "def(Path.Homotopic.Quotient.mk($p_0$),Path.Homotopic.Quotient(a,b),Quotient.mk[authored](Path(a,b),Path.Homotopic[relation],$p_0$))"
     }
   }
 }

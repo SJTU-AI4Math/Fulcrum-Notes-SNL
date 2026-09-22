@@ -1,68 +1,86 @@
 {
- "format": "snl-macro",
- "version": 1,
- "schema_version": 1,
- "package": "FulcrumsMathNotes",
- "macro": {
-  "name": "def",
-  "description": "Definition syntax with three operands: #0 defined-object statement, #1 type (retained for contract stability, not rendered), #2 content. Styles: untyped (default), prop (if-and-only-if). Trailing punctuation is provided by the __period__ sub-macro at the call site.",
-  "source": {
-   "entries": [
-    "Fulcrum.def"
-   ],
-   "urls": []
-  },
-  "kind": "rule",
-  "dynamic_arity": false,
-  "styles": [
-   {
-    "style_name": "untyped",
-    "tags": [],
-    "template": {
-     "values": {
-      "zh-CN": {
-       "mode": "text",
-       "body": "定义【#0】为 #2"
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "FulcrumsMathNotes",
+  "macro": {
+    "name": "def",
+    "description": "Definition syntax with three operands: #0 defined-object statement, #1 type (retained for contract stability, not rendered), #2 content. Styles: untyped (default), prop (if-and-only-if). Trailing punctuation is provided by the __period__ sub-macro at the call site.",
+    "source": {
+      "entries": [
+        "Fulcrum.def"
+      ],
+      "urls": []
+    },
+    "kind": "rule",
+    "dynamic_arity": false,
+    "styles": [
+      {
+        "style_name": "untyped",
+        "tags": [],
+        "template": {
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "定义【#0】为 #2"
+            },
+            "en": {
+              "mode": "text",
+              "body": "Define “#0” to be #2"
+            }
+          },
+          "type": "i18n",
+          "default_language": "en"
+        }
       },
-      "en": {
-       "mode": "text",
-       "body": "Define “#0” to be #2"
-      }
-     },
-     "type": "i18n",
-     "default_language": "en"
-    }
-   },
-   {
-    "style_name": "prop",
-    "tags": [],
-    "template": {
-     "values": {
-      "zh-CN": {
-       "mode": "text",
-       "body": "定义【#0】当且仅当 #2"
+      {
+        "style_name": "prop",
+        "tags": [],
+        "template": {
+          "values": {
+            "zh-CN": {
+              "mode": "text",
+              "body": "定义【#0】当且仅当 #2"
+            },
+            "en": {
+              "mode": "text",
+              "body": "Define “#0” if and only if #2"
+            }
+          },
+          "type": "i18n",
+          "default_language": "en"
+        }
       },
-      "en": {
-       "mode": "text",
-       "body": "Define “#0” if and only if #2"
+      {
+        "style_name": "axiomaticType",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "Introduce the type #0 : #1 by the following generating and elimination rules:\n#2"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "由以下生成与消去规则引入类型 #0 : #1：\n#2"
+            }
+          }
+        }
       }
-     },
-     "type": "i18n",
-     "default_language": "en"
+    ],
+    "tags": [],
+    "x_fulcrum_typst": {
+      "binding": "snl_macro_FulcrumsMathNotes_def_6ab4e1d4c6",
+      "declaration": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "#let snl_macro_FulcrumsMathNotes_def_6ab4e1d4c6 = (children, style: none) => optionLink(\"def\", snl-render-macro-template(\"FulcrumsMathNotes\", \"def\", children, style: style))",
+          "en": "#let snl_macro_FulcrumsMathNotes_def_6ab4e1d4c6 = (children, style: none) => optionLink(\"def\", snl-render-macro-template(\"FulcrumsMathNotes\", \"def\", children, style: style))"
+        }
+      }
     }
-   }
-  ],
-  "tags": [],
-  "x_fulcrum_typst": {
-   "binding": "snl_macro_FulcrumsMathNotes_def_6ab4e1d4c6",
-   "declaration": {
-    "type": "i18n",
-    "default_language": "zh-CN",
-    "values": {
-     "zh-CN": "#let snl_macro_FulcrumsMathNotes_def_6ab4e1d4c6 = (children, style: none) => optionLink(\"def\", snl-render-macro-template(\"FulcrumsMathNotes\", \"def\", children, style: style))",
-     "en": "#let snl_macro_FulcrumsMathNotes_def_6ab4e1d4c6 = (children, style: none) => optionLink(\"def\", snl-render-macro-template(\"FulcrumsMathNotes\", \"def\", children, style: style))"
-    }
-   }
   }
- }
 }

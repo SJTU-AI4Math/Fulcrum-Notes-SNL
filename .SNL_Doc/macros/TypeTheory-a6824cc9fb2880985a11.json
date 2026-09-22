@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "macro": {
+    "name": "Setoid.mk",
+    "kind": "const",
+    "dynamic_arity": false,
+    "description": "Setoid.mk {A} R h; retained parameters A,R,h.",
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\langle #1,#2\\rangle"
+        }
+      }
+    ],
+    "source": {
+      "entries": [
+        "Setoid"
+      ],
+      "urls": []
+    }
+  }
+}

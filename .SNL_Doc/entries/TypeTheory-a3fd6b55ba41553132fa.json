@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Setoid",
+    "package": "TypeTheory",
+    "kind": "def",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Setoid",
+        "zh-CN": "带等价关系的类型结构"
+      }
+    },
+    "content": {
+      "snl": "variable(Type.annotation(@A,Type),structure(Setoid(A),__enum__[enumerate](member[nameless](,Type.annotation(@R,Type.to(A,Type.to(A,Type.Sort[prop](%0%))))),member[colon](%iseqv%,Equivalence(A,R)))))"
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1421,6 +1421,102 @@
         "entryId": "Logic.axm.em",
         "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
       }
+    },
+    {
+      "id": "quotient_Type_subsec_quotients",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.subsec.quotients",
+        "counterId": "66f80795-b5fa-4066-9443-103d88cc646b"
+      }
+    },
+    {
+      "id": "quotient_Equivalence",
+      "label": "Entry",
+      "props": {
+        "entryId": "Equivalence",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "quotient_Setoid",
+      "label": "Entry",
+      "props": {
+        "entryId": "Setoid",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "quotient_Type_rmk_setoidPredicate",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.setoidPredicate",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "quotient_Quotient",
+      "label": "Entry",
+      "props": {
+        "entryId": "Quotient",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "quotient_Type_rmk_quotientContract",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.quotientContract",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "quotient_Quotient_mk",
+      "label": "Entry",
+      "props": {
+        "entryId": "Quotient.mk",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "quotient_Type_ppt_quotientEquality",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.ppt.quotientEquality",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "quotient_Type_ppt_quotientRepresentative",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.ppt.quotientRepresentative",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "quotient_Type_ppt_quotientDescent",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.ppt.quotientDescent",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
+    },
+    {
+      "id": "quotient_Type_rmk_quotientDescent",
+      "label": "Entry",
+      "props": {
+        "entryId": "Type.rmk.quotientDescent",
+        "counterId": "7bbb54ea-f0d5-4c3e-9fd9-b7f18be337f6"
+      }
+    },
+    {
+      "id": "quotient_Nonempty",
+      "label": "Entry",
+      "props": {
+        "entryId": "Nonempty",
+        "counterId": "b50a2867-c72f-4e33-8732-487d12db20a4"
+      }
     }
   ],
   "relationships": [
@@ -2292,6 +2388,66 @@
     {
       "from": "n_93",
       "to": "n_sub_46f14a0f6ad4",
+      "label": "branch"
+    },
+    {
+      "from": "n_8",
+      "to": "quotient_Type_subsec_quotients",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Type_subsec_quotients",
+      "to": "quotient_Equivalence",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Type_subsec_quotients",
+      "to": "quotient_Setoid",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Setoid",
+      "to": "quotient_Type_rmk_setoidPredicate",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Type_subsec_quotients",
+      "to": "quotient_Quotient",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Quotient",
+      "to": "quotient_Type_rmk_quotientContract",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Type_subsec_quotients",
+      "to": "quotient_Quotient_mk",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Quotient",
+      "to": "quotient_Type_ppt_quotientEquality",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Quotient",
+      "to": "quotient_Type_ppt_quotientRepresentative",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Type_subsec_quotients",
+      "to": "quotient_Type_ppt_quotientDescent",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Type_ppt_quotientDescent",
+      "to": "quotient_Type_rmk_quotientDescent",
+      "label": "branch"
+    },
+    {
+      "from": "quotient_Type_subsec_quotients",
+      "to": "quotient_Nonempty",
       "label": "branch"
     }
   ]

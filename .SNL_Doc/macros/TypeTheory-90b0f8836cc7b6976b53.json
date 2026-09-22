@@ -1,0 +1,47 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "macro": {
+    "name": "Equivalence",
+    "kind": "const",
+    "dynamic_arity": false,
+    "description": "Equivalence {A : Sort u} (R : A → A → Prop) : Prop; SNL retains A,R.",
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#1 is an equivalence relation"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#1 是等价关系"
+            }
+          }
+        }
+      },
+      {
+        "style_name": "math",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Equivalence}(#1)"
+        }
+      }
+    ],
+    "source": {
+      "entries": [
+        "Equivalence"
+      ],
+      "urls": []
+    }
+  }
+}

@@ -5,7 +5,7 @@
   "package": "Topology",
   "macro": {
     "name": "Path.Homotopic",
-    "description": "Path.Homotopic p q：固定端点同伦存在命题。",
+    "description": "Path.Homotopic p q：固定端点同伦存在命题。 relation style denotes the unapplied binary relation, with ambient types and endpoints fixed by context.",
     "source": {
       "entries": [
         "Path.Homotopic"
@@ -21,6 +21,14 @@
         "template": {
           "mode": "formula_inline",
           "body": "#0\\simeq_{\\partial I}#1"
+        }
+      },
+      {
+        "style_name": "relation",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\left(\\simeq_{\\partial I}\\right)"
         }
       }
     ],

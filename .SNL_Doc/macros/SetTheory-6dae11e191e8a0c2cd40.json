@@ -50,11 +50,31 @@
         },
         "tags": [],
         "style_name": "native_english"
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "type": "i18n",
+          "default_language": "en",
+          "values": {
+            "en": {
+              "mode": "text",
+              "body": "#0 is nonempty"
+            },
+            "zh-CN": {
+              "mode": "text",
+              "body": "#0 非空"
+            }
+          }
+        }
       }
     ],
     "source": {
       "urls": [],
-      "entries": []
+      "entries": [
+        "Nonempty"
+      ]
     },
     "kind": "const",
     "dynamic_arity": false,

@@ -18,7 +18,7 @@
     "title": "同伦关系的等价性",
     "kind": "property",
     "content": {
-      "snl": "theorem(__enum__[enumerate](member[colon](%自反性%,ContinuousMap.Homotopic($f_0$,$f_0$)),member[colon](%对称性%,Logic.implies(ContinuousMap.Homotopic($f_0$,$f_1$),ContinuousMap.Homotopic($f_1$,$f_0$))),member[colon](%传递性%,Logic.implies(parentheses(And(ContinuousMap.Homotopic($f_0$,$f_1$),ContinuousMap.Homotopic($f_1$,$f_2$))),ContinuousMap.Homotopic($f_0$,$f_2$)))))"
+      "snl": "theorem(Equivalence(ContinuousMap(X,Y),ContinuousMap.Homotopic[relation]))"
     }
   }
 }

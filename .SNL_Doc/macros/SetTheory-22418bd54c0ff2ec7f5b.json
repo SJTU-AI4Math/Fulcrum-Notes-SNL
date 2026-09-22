@@ -22,14 +22,24 @@
         },
         "tags": [],
         "style_name": "function"
+      },
+      {
+        "style_name": "native",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Quotient}(#1)"
+        }
       }
     ],
     "source": {
       "urls": [],
-      "entries": []
+      "entries": [
+        "Quotient"
+      ]
     },
     "kind": "const",
     "dynamic_arity": false,
-    "description": "registered by snl_macro"
+    "description": "Native Quotient {A} S requires S : Setoid A. Default authored (A,R) displays A/R and abbreviates Quotient (Setoid.mk R h) with an available implicit h : Equivalence R. Existing relation-call users retain their contract."
   }
 }

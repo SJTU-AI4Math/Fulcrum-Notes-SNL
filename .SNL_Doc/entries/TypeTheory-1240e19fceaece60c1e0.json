@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rmk.quotientDescent",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Representative independence",
+        "zh-CN": "代表无关性"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Argument. Necessity follows from equality of related classes. For sufficiency define g([x]ₛ)=f(x); compatibility makes the value independent of the representative. Since every quotient element has a representative, this also proves uniqueness.",
+          "zh-CN": "论证。必要性来自相关代表的商类相等；充分性按 g([x]ₛ)=f(x) 定义，相容条件保证取值不依赖代表。每个商元素都有代表，故这样的映射唯一。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

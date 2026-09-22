@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rmk.quotientContract",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Quotient notation contract",
+        "zh-CN": "商类型记号契约"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Lean Quotient takes S : Setoid A, not a bare relation. The rules above specify the quotient type, its class constructor, exact identification, representatives and elimination; they do not assert that it is an ordinary inductive type or a type of Setoid structures. Lean implements it as Quot S.r: Quot is primitive, with Quot.sound and compatible elimination. The historical display Quotient(A,S) = A/S also accepts an already bundled Setoid S unchanged. In particular Cardinal.isEquivalent : Setoid (Type u) is the native structure argument in the existing cardinal calls; it is not a bare relation and must not be packaged again. For relation-style authored calls Quotient(A,R), such as the projective-plane and homotopy calls, an available h : Equivalence R supplies Setoid.mk(A,R,h). Quotient[native](A,S) makes the Setoid contract explicit. Quotient.mk(A,S,x) remains native; Quotient.mk[authored](A,R,x) uses the same implicit equivalence proof as A/R. Quotient elements are not asserted to be literally subsets of A.",
+          "zh-CN": "Lean 的 Quotient 接收 S : Setoid A，而非裸关系。上述规则公理式地指定商类型、取类构造子、精确识别、代表与消去；并不把商类型称为普通归纳类型或 Setoid 结构组成的类型。Lean 将其实现为 Quot S.r；Quot 是带有 Quot.sound 与相容消去的原语。历史显示 Quotient(A,S)=A/S 同样兼容参数已经是 Setoid 的调用，并原样传入 S。特别地，Cardinal.isEquivalent : Setoid (Type u) 是既有基数调用的原生结构参数，不是裸关系，不能再次打包。对于射影平面、同伦等按裸关系 R 书写的 Quotient(A,R)，已知 h : Equivalence R 时以 Setoid.mk(A,R,h) 打包。Quotient[native](A,S) 显式标明 Setoid 契约。Quotient.mk(A,S,x) 保持原生契约；Quotient.mk[authored](A,R,x) 使用与 A/R 相同的隐含等价性证明。商元素并不在定义上就是 A 的子集。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

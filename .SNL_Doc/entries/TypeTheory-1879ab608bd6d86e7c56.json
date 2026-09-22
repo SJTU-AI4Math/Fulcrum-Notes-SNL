@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Type.rmk.setoidPredicate",
+    "package": "TypeTheory",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Relation and structure",
+        "zh-CN": "关系与结构的区别"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Equivalence R is a proposition about a fixed relation R. A Setoid on A instead packages a relation R together with a proof h : Equivalence R. We write Setoid.mk(A,R,h) for this package; its underlying relation is Setoid.r(A,S). The type A is an explicit retained implicit parameter in these SNL calls.",
+          "zh-CN": "Equivalence R 是关于给定关系 R 的命题；Setoid A 则打包关系 R 及证明 h : Equivalence R。记 Setoid.mk(A,R,h) 为这份结构，Setoid.r(A,S) 为其底层关系。这些 SNL 调用显式保留隐式类型参数 A。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

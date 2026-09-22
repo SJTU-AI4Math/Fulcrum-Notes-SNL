@@ -4,6 +4,7 @@
   "schema_version": 1,
   "package": "Logic",
   "macro": {
+    "name": "ExistsUnique",
     "tags": [],
     "styles": [
       {
@@ -13,15 +14,22 @@
         },
         "tags": [],
         "style_name": "default"
+      },
+      {
+        "style_name": "binder",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\exists! (#0 : #1),\\; #2"
+        }
       }
     ],
     "source": {
       "urls": [],
       "entries": []
     },
-    "name": "ExistsUnique",
     "kind": "const",
     "dynamic_arity": false,
-    "description": "registered by snl_notation"
+    "description": "registered by snl_notation binder style is the typed syntax view (bound variable, domain, proposition), denoting ExistsUnique of the corresponding predicate; native default slots remain unchanged."
   }
 }

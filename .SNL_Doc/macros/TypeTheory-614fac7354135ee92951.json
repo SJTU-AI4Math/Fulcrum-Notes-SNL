@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "macro": {
+    "name": "Setoid",
+    "kind": "const",
+    "dynamic_arity": false,
+    "description": "Setoid A bundles r : A → A → Prop and iseqv : Equivalence r.",
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Setoid}(#0)"
+        }
+      }
+    ],
+    "source": {
+      "entries": [
+        "Setoid"
+      ],
+      "urls": []
+    }
+  }
+}

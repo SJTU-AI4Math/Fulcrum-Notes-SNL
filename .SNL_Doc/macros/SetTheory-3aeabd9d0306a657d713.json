@@ -22,14 +22,24 @@
         },
         "tags": [],
         "style_name": "function"
+      },
+      {
+        "style_name": "authored",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\left[#2\\right]_{#1}"
+        }
       }
     ],
     "source": {
       "urls": [],
-      "entries": []
+      "entries": [
+        "Quotient.mk"
+      ]
     },
     "kind": "const",
     "dynamic_arity": false,
-    "description": "registered by snl_macro"
+    "description": "Native retained slots (A,S,x), S : Setoid A. authored slots (A,R,x) abbreviate mk (Setoid.mk R h) x with the same available h : Equivalence R as authored Quotient(A,R)."
   }
 }

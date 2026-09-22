@@ -22,6 +22,14 @@
           "mode": "formula_inline",
           "body": "(#0\\star #1)"
         }
+      },
+      {
+        "style_name": "infix",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "#0\\star #1"
+        }
       }
     ],
     "tags": []

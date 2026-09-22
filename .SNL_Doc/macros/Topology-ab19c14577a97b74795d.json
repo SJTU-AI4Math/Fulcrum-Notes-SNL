@@ -5,7 +5,7 @@
   "package": "Topology",
   "macro": {
     "name": "ContinuousMap.Homotopic",
-    "description": "ContinuousMap.Homotopic f g：一般同伦存在命题，不要求固定子集。",
+    "description": "ContinuousMap.Homotopic f g：一般同伦存在命题，不要求固定子集。 relation style denotes the unapplied binary relation, with ambient types and endpoints fixed by context.",
     "source": {
       "entries": [
         "ContinuousMap.Homotopic"
@@ -21,6 +21,14 @@
         "template": {
           "mode": "formula_inline",
           "body": "#0\\simeq #1"
+        }
+      },
+      {
+        "style_name": "relation",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\left(\\simeq\\right)"
         }
       }
     ],

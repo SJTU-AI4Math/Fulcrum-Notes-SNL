@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "entry": {
+    "id": "Quotient.mk",
+    "package": "TypeTheory",
+    "kind": "def",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Taking a quotient class",
+        "zh-CN": "取商类"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@A,Type),Type.annotation(@S,Setoid(A)),Type.annotation(@x,A)),Type.annotation(Quotient.mk(A,S,x),Quotient[native](A,S)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The canonical quotient constructor sends a representative x : A to its class [x]ₛ in Quotient S.",
+          "zh-CN": "商的典范构造子将代表 x : A 送到 Quotient S 中的类 [x]ₛ。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

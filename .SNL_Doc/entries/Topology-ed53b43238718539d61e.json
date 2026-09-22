@@ -9,7 +9,14 @@
     "kind": "remark",
     "title": "道路拼接与同伦相容的论证",
     "content": {
-      "markdown": "**论证。** 这里 $z=(z_1,z_2)$，第一坐标为同伦时间。在 $z_2=1/2$ 两侧均为 $b$，故闭集粘合保证联合连续；时间为 0、1 时分别得到两条拼接道路，且道路端点始终固定为 $a$、$c$。"
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Argument. In (t,s), t is homotopy time and s is the path parameter. Both branches equal b at s=1/2; the closed-set pasting lemma gives joint continuity. At t=0,1 the formula gives the two concatenated paths, and the endpoints stay a,c. The product pattern binds t and s without currying the continuous map; scaled interval arguments are taken in the indicated branches.",
+          "zh-CN": "论证。在 (t,s) 中，t 是同伦时间，s 是道路参数。两段在 s=1/2 同取 b，闭集粘合保证联合连续；t=0、1 时分别得到两条拼接道路，且端点保持 a、c。积模式同时绑定 t、s，不将连续映射改为普通柯里化函数；缩放后的区间参数按所在分支取值。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null

@@ -8,7 +8,7 @@
     "kind": "def",
     "title": "道路同伦商",
     "content": {
-      "snl": "def(Path.Homotopic.Quotient(a,b),Type,Quotient(Path(a,b),Type.lambda(@p,Path(a,b),Type.lambda(@q,Path(a,b),Path.Homotopic(p,q)))))"
+      "snl": "def(Path.Homotopic.Quotient(a,b),Type,Quotient(parentheses(Path(a,b)),Path.Homotopic[relation]))"
     },
     "contribution_info": null,
     "pointer": {
