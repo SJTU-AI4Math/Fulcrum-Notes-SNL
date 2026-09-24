@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(Type.annotation(__list__[formula](@X,@Y),Type),TopologicalSpace(X),TopologicalSpace(Y)),def[prop](Topology.HomotopyEquivalent[text](X,Y),Type.Sort[prop](%0%),Nonempty[text](ContinuousMap.HomotopyEquiv(X,Y))))"
+    },
+    "contribution_info": null,
+    "id": "Topology.HomotopyEquivalent",
+    "kind": "def",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Homotopy equivalent spaces",
+        "zh-CN": "同伦等价的空间"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(Type.annotation(__list__[formula](@X,@Y),Type),TopologicalSpace(X),TopologicalSpace(Y)),structure[default](ContinuousMap.HomotopyEquiv(X,Y),__enum__[enumerate](Type.annotation(@f,ContinuousMap(X,Y)),Type.annotation(@g,ContinuousMap(Y,X)),Type.annotation(@$h_L$,ContinuousMap.Homotopic(ContinuousMap.comp(g,f),id(X))),Type.annotation(@$h_R$,ContinuousMap.Homotopic(ContinuousMap.comp(f,g),id(Y))))))"
+    },
+    "contribution_info": null,
+    "id": "ContinuousMap.HomotopyEquiv",
+    "kind": "def",
+    "package": "Topology",
+    "pointer": {
+      "column": 1,
+      "endColumn": 1,
+      "endLine": 53,
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Equiv.lean",
+      "line": 43,
+      "mode": "lines"
+    },
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Homotopy equivalence witness",
+        "zh-CN": "同伦等价见证"
+      }
+    }
+  }
+}

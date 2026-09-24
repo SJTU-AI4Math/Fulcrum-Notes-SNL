@@ -1,0 +1,39 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "Authored predicate (f,g), with f:C(X,Y), g:C(Y,X) and ambient spaces implicit; g is a two-sided homotopy inverse of f. No same-named Mathlib declaration is asserted.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "ContinuousMap.IsHomotopyInverse",
+    "source": {
+      "entries": [
+        "ContinuousMap.IsHomotopyInverse"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "#1 is a homotopy inverse of #0",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "#1 是 #0 的同伦逆",
+              "mode": "text"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

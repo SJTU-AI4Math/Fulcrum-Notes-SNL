@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "Eliminate the existence assumption into the proposition to be proved. For a witness $(f,g)$, interchange $f$ and $g$ and interchange the two homotopy laws. This gives a witness from $Y$ to $X$.",
+          "zh-CN": "在命题目标中取出存在假设的见证 $(f,g)$。交换 $f,g$，同时交换两条同伦律，即得 $Y$ 到 $X$ 的见证。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.prf.homotopyEquivalent.symm",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Symmetry proof",
+        "zh-CN": "对称性的证明"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "Take witnesses $f:X\\to Y$, $g:Y\\to X$ and $u:Y\\to Z$, $v:Z\\to Y$. Use $u\\circ f$ and $g\\circ v$. Composition preserves homotopy: pre- and postcomposition act on a homotopy by continuous composition. Hence $(g\\circ v)\\circ(u\\circ f)\\simeq g\\circ\\mathrm{id}_Y\\circ f\\simeq\\mathrm{id}_X$, using $v\\circ u\\simeq\\mathrm{id}_Y$ and $g\\circ f\\simeq\\mathrm{id}_X$. Likewise $(u\\circ f)\\circ(g\\circ v)\\simeq u\\circ\\mathrm{id}_Y\\circ v\\simeq\\mathrm{id}_Z$. Associativity and the identity laws identify the intermediate maps; transitivity of map homotopy joins the homotopies. Both composite maps are continuous.",
+          "zh-CN": "取见证 $f:X\\to Y$、$g:Y\\to X$ 及 $u:Y\\to Z$、$v:Z\\to Y$，令正向映射为 $u\\circ f$，反向映射为 $g\\circ v$。同伦可与连续映射前后复合，且仍联合连续。因此由 $v\\circ u\\simeq\\mathrm{id}_Y$ 及 $g\\circ f\\simeq\\mathrm{id}_X$ 得 $(g\\circ v)\\circ(u\\circ f)\\simeq g\\circ\\mathrm{id}_Y\\circ f\\simeq\\mathrm{id}_X$。同理由另两条同伦律得 $(u\\circ f)\\circ(g\\circ v)\\simeq u\\circ\\mathrm{id}_Y\\circ v\\simeq\\mathrm{id}_Z$。复合结合律和恒等律识别中间映射，映射同伦的传递性拼合各段同伦。两个复合映射都连续。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.prf.homotopyEquivalent.trans",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Transitivity proof",
+        "zh-CN": "传递性的证明"
+      }
+    }
+  }
+}

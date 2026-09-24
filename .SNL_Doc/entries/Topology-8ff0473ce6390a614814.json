@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@A,Type),Type.annotation(@S,Type.to(A,Type)),Type.forall[forall](@i,A,TopologicalSpace(Type.apply(S,i)))),theorem(Equivalence(A,Type.lambda(@a,A,Type.lambda(@b,A,Topology.HomotopyEquivalent(Type.apply(S,a),Type.apply(S,b)))))))"
+    },
+    "contribution_info": null,
+    "id": "Topology.ppt.homotopyEquivalent.equivalence",
+    "kind": "property",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Equivalence relation on an indexed family of spaces",
+        "zh-CN": "空间族上的同伦等价关系"
+      }
+    }
+  }
+}

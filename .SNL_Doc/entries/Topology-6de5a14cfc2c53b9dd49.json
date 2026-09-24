@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "Take $f=g=\\mathrm{id}_X$. Both composites equal $\\mathrm{id}_X$; the constant homotopy $H(t,x)=x$ supplies both laws. Thus a witness exists.",
+          "zh-CN": "取 $f=g=\\mathrm{id}_X$。两个复合均等于 $\\mathrm{id}_X$；常值同伦 $H(t,x)=x$ 给出两条同伦律，故见证存在。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.prf.homotopyEquivalent.refl",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Reflexivity proof",
+        "zh-CN": "自反性的证明"
+      }
+    }
+  }
+}
