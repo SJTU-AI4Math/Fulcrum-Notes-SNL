@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.homotopicComp",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "comp for the homotopy relation",
+        "zh-CN": "同伦关系性质的证明：comp"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Choose witnesses $G$ and $H$ from the hypotheses and use their simultaneous composition $(t,x)\\mapsto G(t,H(t,x))$.",
+          "zh-CN": "取假设中的见证 $G,H$，使用同时复合 $(t,x)\\mapsto G(t,H(t,x))$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.homotopicPostcomp",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Postcomposition proof",
+        "zh-CN": "后复合相容性的证明"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "If $H$ witnesses $f_0\\simeq f_1$, then $(t,x)\\mapsto g(H(t,x))$ is continuous as a composite, and has endpoints $g\\circ f_0,g\\circ f_1$. It is also Homotopy.comp of the constant homotopy of $g$ with $H$.",
+          "zh-CN": "若 $H$ 见证 $f_0\\simeq f_1$，则 $(t,x)\\mapsto g(H(t,x))$ 由复合连续性知联合连续，端点是 $g\\circ f_0,g\\circ f_1$。这也等于 $g$ 的恒等同伦与 $H$ 的 Homotopy.comp。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

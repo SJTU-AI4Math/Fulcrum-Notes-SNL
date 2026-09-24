@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.homotopicTrans",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "trans for the homotopy relation",
+        "zh-CN": "同伦关系性质的证明：trans"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Choose witnesses $H$ and $K$ from the two nonemptiness hypotheses. Their time concatenation witnesses $f_0\\simeq f_2$.",
+          "zh-CN": "从两个非空假设分别取见证 $H,K$，时间拼接即为 $f_0\\simeq f_2$ 的见证。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

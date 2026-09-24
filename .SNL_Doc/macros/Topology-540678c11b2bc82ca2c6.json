@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "ContinuousMap.Homotopy.refl",
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "description": "Explicit f; constant homotopy, implicit spaces inferred from f; Mathlib/Topology/Homotopy/Basic.lean:(196, 199)",
+    "source": {
+      "entries": [
+        "ContinuousMap.Homotopy.refl"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{refl}(#0)"
+        }
+      }
+    ]
+  }
+}

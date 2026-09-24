@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.homotopicRefl",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "refl for the homotopy relation",
+        "zh-CN": "同伦关系性质的证明：refl"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The constant homotopy supplies an element of Homotopy$(f_0,f_0)$, hence its Nonempty proposition.",
+          "zh-CN": "恒等同伦给出 Homotopy$(f_0,f_0)$ 的一个元素，因而其非空命题成立。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

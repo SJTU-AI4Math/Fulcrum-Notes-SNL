@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.Homotopic.comp",
+    "package": "Topology",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Compatibility with composition",
+        "zh-CN": "同伦与复合相容"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@Z,Type),TopologicalSpace(Z),Type.annotation(__list__[formula](@$g_0$,@$g_1$),ContinuousMap(Y,Z))),theorem(Logic.implies(parentheses(And(ContinuousMap.Homotopic($g_0$,$g_1$),ContinuousMap.Homotopic($f_0$,$f_1$))),ContinuousMap.Homotopic(ContinuousMap.comp($g_0$,$f_0$),ContinuousMap.comp($g_1$,$f_1$)))))"
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Basic.lean",
+      "mode": "lines",
+      "line": 344,
+      "endLine": 346,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

@@ -7,9 +7,23 @@
     "id": "Topology.rmk.mapHomotopicEquivalenceProof",
     "package": "Topology",
     "kind": "remark",
-    "title": "映射同伦等价关系的论证",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Proof of equivalence for map homotopy",
+        "zh-CN": "映射同伦等价关系的论证"
+      }
+    },
     "content": {
-      "markdown": "**论证。** 自反性由不随时间变化的同伦给出；对称性将时间 $u$ 换成 $1−u$；传递性在时间前半段取 $H(2u,x)$，后半段取 $K(2u−1,x)$。中点相等，闭集粘合保证连续；道路情形各构造保持两个端点。"
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The constant, reversed and concatenated homotopies prove reflexivity, symmetry and transitivity respectively, as stated in ContinuousMap.Homotopic.refl, .symm and .trans. These are exactly the three fields of the existing Equivalence predicate on C(X,Y). This concerns a relation between maps, not an equivalence between spaces.",
+          "zh-CN": "恒等、反向、时间拼接同伦分别证明自反性、对称性与传递性，见 ContinuousMap.Homotopic.refl、.symm、.trans。它们恰为既有 Equivalence 谓词在 C(X,Y) 上所要求的三条性质。这里是映射间关系的等价性，不是空间之间的同伦等价。"
+        }
+      }
     },
     "contribution_info": null,
     "pointer": null

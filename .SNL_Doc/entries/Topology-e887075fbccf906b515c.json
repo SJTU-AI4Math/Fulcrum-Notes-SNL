@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.Homotopy.trans",
+    "package": "Topology",
+    "kind": "def",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Time concatenation",
+        "zh-CN": "时间拼接同伦"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@H,ContinuousMap.Homotopy($f_0$,$f_1$)),Type.annotation(@K,ContinuousMap.Homotopy($f_1$,$f_2$))),def(Type.annotation(ContinuousMap.Homotopy.trans(H,K),ContinuousMap.Homotopy($f_0$,$f_2$)),ContinuousMap.Homotopy($f_0$,$f_2$),Type.lambda(Prod.mk(Set.Elem[coerce](Real,unitInterval),X,@t,@x),Prod(Set.Elem[coerce](Real,unitInterval),X),__enum__[cases](__list__[none](Type.apply[none](H,Prod.mk(Set.Elem[coerce](Real,unitInterval),X,Mul.mul[implicit](2,t),x)),$&$,LE.le(Real,_,t,Div.div[fracInline](1,2))),__list__[none](Type.apply[none](K,Prod.mk(Set.Elem[coerce](Real,unitInterval),X,Sub.sub(Mul.mul[implicit](2,t),1),x)),$&$,LT.lt(Real,_,Div.div[fracInline](1,2),t))))))"
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Basic.lean",
+      "mode": "lines",
+      "line": 225,
+      "endLine": 232,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

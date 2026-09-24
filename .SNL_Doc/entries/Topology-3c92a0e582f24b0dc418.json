@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.transHomotopy",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "trans homotopy: verification",
+        "zh-CN": "同伦构造的验证：trans"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "On the closed sets $[0,1/2]\\times X$ and $[1/2,1]\\times X$, the two formulas are jointly continuous by composition. At the seam they agree: $H(1,x)=f_1(x)=K(0,x)$. The finite closed-cover pasting lemma gives continuity on $I\\times X$, with no separation assumption on $X$ or $Y$. At time 0 and 1 the values are $f_0(x)$ and $f_2(x)$.",
+          "zh-CN": "在闭集 $[0,1/2]\\times X$ 与 $[1/2,1]\\times X$ 上，两式分别由复合得到联合连续性。接缝处 $H(1,x)=f_1(x)=K(0,x)$，故有限闭覆盖粘合引理给出整个 $I\\times X$ 上的连续性，无需对 $X,Y$ 添加分离性假设。时间 0、1 处的值分别为 $f_0(x),f_2(x)$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

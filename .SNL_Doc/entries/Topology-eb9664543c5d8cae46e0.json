@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.symmHomotopy",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "symm homotopy: verification",
+        "zh-CN": "同伦构造的验证：symm"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The map $(t,x)\\mapsto(1-t,x)$ is continuous and exchanges time 0 and 1. Composing it with $H$ proves joint continuity and the reversed boundary equations.",
+          "zh-CN": "$(t,x)\\mapsto(1-t,x)$ 连续且交换时间端点 0 与 1。与 $H$ 复合即得到联合连续性及反向的边界等式。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

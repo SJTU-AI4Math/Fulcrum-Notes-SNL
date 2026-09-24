@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "ContinuousMap.Homotopy.trans",
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "description": "Explicit H,K in traversal order; matching middle map; Mathlib/Topology/Homotopy/Basic.lean:(225, 232)",
+    "source": {
+      "entries": [
+        "ContinuousMap.Homotopy.trans"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "(#0\\star #1)"
+        }
+      }
+    ]
+  }
+}

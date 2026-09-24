@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.rmk.homotopyCoordinates",
+    "package": "Topology",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Time, topology and witnesses",
+        "zh-CN": "时间、拓扑与同伦见证"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The ambient spaces and maps are those of Path.ctxt.spaces and Path.ctxt.maps. Here $I$ in type positions is the subtype of unitInterval, with its standard real subspace topology; products have the product topology. In $H(t,x)$, the first coordinate is time. Membership in $C(I\\times X,Y)$ requires joint continuity, not only continuity of slices. A Homotopy is a witness type; Homotopic is its nonemptiness proposition. Bundled maps are evaluated through their underlying functions. The constant (identity) homotopy is time-independent for an arbitrary continuous map f; it does not require f to be an identity map. In the time-reversal formula, 1−t denotes the interval subtype element obtained from the underlying real value; 0≤t≤1 implies 0≤1−t≤1. The same suppressed subtype-reconstruction convention for the rescaled concatenation parameters is specified in ContinuousMap.rmk.timeParameters.",
+          "zh-CN": "沿用 Path.ctxt.spaces 与 Path.ctxt.maps 的空间及映射语境。类型位置的 $I$ 是 unitInterval 的子类型，采用实数标准拓扑诱导的子空间拓扑；积采用积拓扑。$H(t,x)$ 的第一坐标是时间。$C(I\\times X,Y)$ 要求联合连续，不能只要求各切片连续。Homotopy 是见证类型，Homotopic 是该类型非空的命题。打包的连续映射按底层函数求值。 恒等同伦是任意连续映射 f 的时间恒定同伦，并不要求 f 本身是恒等映射。反向公式中的 1−t 表示由底层实数值重构的区间子类型元素；0≤t≤1 保证 0≤1−t≤1。拼接的缩放参数也采用这一省略子类型重构的记号约定，详见 ContinuousMap.rmk.timeParameters。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

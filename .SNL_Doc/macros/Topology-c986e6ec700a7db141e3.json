@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "ContinuousMap.Homotopy.comp",
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "description": "Explicit G,H in this order; simultaneous composition; Mathlib/Topology/Homotopy/Basic.lean:(277, 281)",
+    "source": {
+      "entries": [
+        "ContinuousMap.Homotopy.comp"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{comp}(#0,#1)"
+        }
+      }
+    ]
+  }
+}

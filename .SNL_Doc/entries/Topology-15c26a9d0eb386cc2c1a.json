@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.Homotopy.symm",
+    "package": "Topology",
+    "kind": "def",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Time reversal",
+        "zh-CN": "反向同伦"
+      }
+    },
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@H,ContinuousMap.Homotopy($f_0$,$f_1$))),def(Type.annotation(ContinuousMap.Homotopy.symm(H),ContinuousMap.Homotopy($f_1$,$f_0$)),ContinuousMap.Homotopy($f_1$,$f_0$),Type.lambda(Prod.mk(Set.Elem[coerce](Real,unitInterval),X,@t,@x),Prod(Set.Elem[coerce](Real,unitInterval),X),Type.apply[none](H,Prod.mk(Set.Elem[coerce](Real,unitInterval),X,Sub.sub(1,t),x)))))"
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Basic.lean",
+      "mode": "lines",
+      "line": 207,
+      "endLine": 210,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

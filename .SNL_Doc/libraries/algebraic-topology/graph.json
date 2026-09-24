@@ -516,6 +516,198 @@
         "entryId": "FundamentalGroup.basepoint.choice",
         "counterId": "topology-subentry"
       }
+    },
+    {
+      "id": "maps_ContinuousMap_Homotopy_refl",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopy.refl",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_Homotopy_symm",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopy.symm",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_Homotopy_trans",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopy.trans",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_Homotopy_comp",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopy.comp",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_Homotopy_compContinuousMap",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopy.compContinuousMap",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_Homotopic_refl",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopic.refl",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_Homotopic_symm",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopic.symm",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_Homotopic_trans",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopic.trans",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_Homotopic_comp",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.Homotopic.comp",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_ppt_homotopicPrecomp",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.ppt.homotopicPrecomp",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_ppt_homotopicPostcomp",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.ppt.homotopicPostcomp",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_rmk_homotopyCoordinates",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.rmk.homotopyCoordinates",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_rmk_timeParameters",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.rmk.timeParameters",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_reflHomotopy",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.reflHomotopy",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_symmHomotopy",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.symmHomotopy",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_transHomotopy",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.transHomotopy",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_compHomotopy",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.compHomotopy",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_compContinuousMapHomotopy",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.compContinuousMapHomotopy",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_homotopicRefl",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.homotopicRefl",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_homotopicSymm",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.homotopicSymm",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_homotopicTrans",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.homotopicTrans",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_homotopicComp",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.homotopicComp",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_homotopicPrecomp",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.homotopicPrecomp",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "maps_ContinuousMap_prf_homotopicPostcomp",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.prf.homotopicPostcomp",
+        "counterId": "topology-subentry"
+      }
     }
   ],
   "relationships": [
@@ -627,6 +819,61 @@
     {
       "from": "path_21",
       "to": "path_30",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_Homotopy_refl",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_Homotopy_symm",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_Homotopy_trans",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_Homotopy_comp",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_Homotopy_compContinuousMap",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_Homotopic_refl",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_Homotopic_symm",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_Homotopic_trans",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_Homotopic_comp",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_ppt_homotopicPrecomp",
+      "label": "branch"
+    },
+    {
+      "from": "path_21",
+      "to": "maps_ContinuousMap_ppt_homotopicPostcomp",
       "label": "branch"
     },
     {
@@ -837,6 +1084,71 @@
     {
       "from": "n_12",
       "to": "fg_FundamentalGroup_basepoint_choice",
+      "label": "branch"
+    },
+    {
+      "from": "path_29",
+      "to": "maps_ContinuousMap_rmk_homotopyCoordinates",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopy_trans",
+      "to": "maps_ContinuousMap_rmk_timeParameters",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopy_refl",
+      "to": "maps_ContinuousMap_prf_reflHomotopy",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopy_symm",
+      "to": "maps_ContinuousMap_prf_symmHomotopy",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopy_trans",
+      "to": "maps_ContinuousMap_prf_transHomotopy",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopy_comp",
+      "to": "maps_ContinuousMap_prf_compHomotopy",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopy_compContinuousMap",
+      "to": "maps_ContinuousMap_prf_compContinuousMapHomotopy",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopic_refl",
+      "to": "maps_ContinuousMap_prf_homotopicRefl",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopic_symm",
+      "to": "maps_ContinuousMap_prf_homotopicSymm",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopic_trans",
+      "to": "maps_ContinuousMap_prf_homotopicTrans",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_Homotopic_comp",
+      "to": "maps_ContinuousMap_prf_homotopicComp",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_ppt_homotopicPrecomp",
+      "to": "maps_ContinuousMap_prf_homotopicPrecomp",
+      "label": "branch"
+    },
+    {
+      "from": "maps_ContinuousMap_ppt_homotopicPostcomp",
+      "to": "maps_ContinuousMap_prf_homotopicPostcomp",
       "label": "branch"
     }
   ]

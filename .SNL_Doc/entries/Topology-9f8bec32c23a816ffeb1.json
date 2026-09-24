@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.Homotopic.symm",
+    "package": "Topology",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Symmetry of homotopy",
+        "zh-CN": "同伦关系的对称性"
+      }
+    },
+    "content": {
+      "snl": "theorem(Logic.implies(parentheses(ContinuousMap.Homotopic($f_0$,$f_1$)),ContinuousMap.Homotopic($f_1$,$f_0$)))"
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Basic.lean",
+      "mode": "lines",
+      "line": 337,
+      "endLine": 338,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

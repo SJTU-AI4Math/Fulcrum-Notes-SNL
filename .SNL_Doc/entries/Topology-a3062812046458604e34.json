@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.compContinuousMapHomotopy",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "compContinuousMap homotopy: verification",
+        "zh-CN": "同伦构造的验证：compContinuousMap"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The map $(t,x)\\mapsto(t,f_0(x))$ is continuous. Its composite with $G$ has endpoints $g_0\\circ f_0$ and $g_1\\circ f_0$; equivalently it is the composition of $G$ with the constant homotopy of $f_0$.",
+          "zh-CN": "$(t,x)\\mapsto(t,f_0(x))$ 连续，与 $G$ 复合后的端点为 $g_0\\circ f_0$ 与 $g_1\\circ f_0$；等价地，这是 $G$ 与 $f_0$ 的恒等同伦的复合。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

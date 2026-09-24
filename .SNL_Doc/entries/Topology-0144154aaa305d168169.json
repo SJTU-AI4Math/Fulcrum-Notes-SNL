@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.Homotopy.refl",
+    "package": "Topology",
+    "kind": "def",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Constant homotopy",
+        "zh-CN": "恒等同伦"
+      }
+    },
+    "content": {
+      "snl": "def(Type.annotation(ContinuousMap.Homotopy.refl($f_0$),ContinuousMap.Homotopy($f_0$,$f_0$)),ContinuousMap.Homotopy($f_0$,$f_0$),Type.lambda(Prod.mk(Set.Elem[coerce](Real,unitInterval),X,@t,@x),Prod(Set.Elem[coerce](Real,unitInterval),X),Type.apply[paren]($f_0$,x)))"
+    },
+    "contribution_info": null,
+    "pointer": {
+      "file": ".lake/packages/mathlib/Mathlib/Topology/Homotopy/Basic.lean",
+      "mode": "lines",
+      "line": 196,
+      "endLine": 199,
+      "column": 1,
+      "endColumn": 1
+    }
+  }
+}

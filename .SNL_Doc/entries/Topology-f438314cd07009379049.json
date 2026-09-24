@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.reflHomotopy",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "refl homotopy: verification",
+        "zh-CN": "同伦构造的验证：refl"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The map $(t,x)\\mapsto f_0(x)$ is continuous as the composite of the second projection with $f_0$. Both time endpoints equal $f_0$.",
+          "zh-CN": "映射 $(t,x)\\mapsto f_0(x)$ 是第二投影与 $f_0$ 的复合，因而联合连续；两个时间端点均为 $f_0$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

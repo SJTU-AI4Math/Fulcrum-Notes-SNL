@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.rmk.timeParameters",
+    "package": "Topology",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Interval parameters in time operations",
+        "zh-CN": "时间运算的区间参数"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "In arithmetic, $t:I$ is coerced to a real number. An argument such as $1-t$, $2t$ or $2t-1$ denotes the corresponding interval subtype element, with the membership proof suppressed: $1-t\\in I$ for every $t\\in I$; $2t\\in I$ on $0\\le t\\le 1/2$; $2t-1\\in I$ on $1/2\\le t\\le1$. The two pieces agree at $t=1/2$, so either branch can include the seam. The defining lambda has product domain $I\\times X$, not a curried domain.",
+          "zh-CN": "算术中的 $t:I$ 按实数强制转换。$1-t$、$2t$、$2t-1$ 作区间实参时表示对应的子类型元素，省略其隶属证明：任意 $t\\in I$ 有 $1-t\\in I$；$0\\le t\\le1/2$ 时 $2t\\in I$；$1/2\\le t\\le1$ 时 $2t-1\\in I$。两段在 $t=1/2$ 相等，因此中点可归入任一分支。定义中的 lambda 的定义域是 $I\\times X$，不是柯里化的定义域。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

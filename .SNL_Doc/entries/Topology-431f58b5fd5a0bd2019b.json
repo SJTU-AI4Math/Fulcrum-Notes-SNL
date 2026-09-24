@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.compHomotopy",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "comp homotopy: verification",
+        "zh-CN": "同伦构造的验证：comp"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The map $(t,x)\\mapsto(t,H(t,x))$ is continuous, so its composite with $G$ is jointly continuous. At time $i=0,1$ its value is $g_i(f_i(x))$. The argument order is $G,H$, with the outer homotopy first.",
+          "zh-CN": "$(t,x)\\mapsto(t,H(t,x))$ 连续，与 $G$ 复合即得联合连续性。时间 $i=0,1$ 的值为 $g_i(f_i(x))$。实参次序为 $G,H$，外层同伦在前。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

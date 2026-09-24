@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "id": "ContinuousMap.prf.homotopicPrecomp",
+    "package": "Topology",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Precomposition proof",
+        "zh-CN": "前复合相容性的证明"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Use a witness $G$ and the homotopy $(t,x)\\mapsto G(t,f_0(x))$ constructed above.",
+          "zh-CN": "取见证 $G$，使用上述前复合同伦 $(t,x)\\mapsto G(t,f_0(x))$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

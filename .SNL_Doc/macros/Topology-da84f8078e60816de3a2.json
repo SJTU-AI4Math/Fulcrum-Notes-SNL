@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "ContinuousMap.Homotopy.symm",
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "description": "Explicit H; reverse time; implicit endpoints inferred from H; Mathlib/Topology/Homotopy/Basic.lean:(207, 210)",
+    "source": {
+      "entries": [
+        "ContinuousMap.Homotopy.symm"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{symm}(#0)"
+        }
+      }
+    ]
+  }
+}
