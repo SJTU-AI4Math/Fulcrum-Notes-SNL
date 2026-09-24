@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "Choose a homeomorphism $f:X\\to Y$ in the stated sense: a continuous open bijection. Its bijectivity gives an inverse $g:Y\\to X$. For every open $U\\subseteq X$, the inverse image $g^{-1}(U)=f(U)$ is open because $f$ is open; hence $g$ is continuous. The composites $g\\circ f$ and $f\\circ g$ equal the respective identity maps. Constant homotopies therefore prove both homotopy-inverse laws, yielding a homotopy-equivalence witness.",
+          "zh-CN": "取所定义意义下的同胚 $f:X\\to Y$，即连续、开且双射的映射。由双射性得到逆映射 $g:Y\\to X$。对任意开集 $U\\subseteq X$，有 $g^{-1}(U)=f(U)$；因 $f$ 是开映射，该集合在 $Y$ 中开，故 $g$ 连续。两个复合 $g\\circ f$、$f\\circ g$ 严格等于相应恒等映射。因此常值同伦给出两条同伦逆律，得到同伦等价见证。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.prf.homotopyEquivalent.ofHomeomorphic",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Homeomorphic spaces are homotopy equivalent proof",
+        "zh-CN": "同胚空间同伦等价的证明"
+      }
+    }
+  }
+}

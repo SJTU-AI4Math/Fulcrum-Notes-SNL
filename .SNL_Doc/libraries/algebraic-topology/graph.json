@@ -708,6 +708,126 @@
         "entryId": "ContinuousMap.prf.homotopicPostcomp",
         "counterId": "topology-subentry"
       }
+    },
+    {
+      "id": "he_AlgebraicTopology_subsec_homotopyEquivalences",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicTopology.subsec.homotopyEquivalences",
+        "counterId": "topology-subsection"
+      }
+    },
+    {
+      "id": "he_ContinuousMap_IsHomotopyInverse",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.IsHomotopyInverse",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "he_ContinuousMap_HomotopyEquiv",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.HomotopyEquiv",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "he_Topology_rmk_homotopyEquivalenceWitness",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.homotopyEquivalenceWitness",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "he_Topology_HomotopyEquivalent",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.HomotopyEquivalent",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "he_Topology_ppt_homotopyEquivalent_refl",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.homotopyEquivalent.refl",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "he_Topology_prf_homotopyEquivalent_refl",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prf.homotopyEquivalent.refl",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "he_Topology_ppt_homotopyEquivalent_symm",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.homotopyEquivalent.symm",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "he_Topology_prf_homotopyEquivalent_symm",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prf.homotopyEquivalent.symm",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "he_Topology_ppt_homotopyEquivalent_trans",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.homotopyEquivalent.trans",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "he_Topology_prf_homotopyEquivalent_trans",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prf.homotopyEquivalent.trans",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "he_Topology_ppt_homotopyEquivalent_ofHomeomorphic",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.homotopyEquivalent.ofHomeomorphic",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "he_Topology_prf_homotopyEquivalent_ofHomeomorphic",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prf.homotopyEquivalent.ofHomeomorphic",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "he_Topology_ppt_homotopyEquivalent_equivalence",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.homotopyEquivalent.equivalence",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "he_Topology_prf_homotopyEquivalent_equivalence",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.prf.homotopyEquivalent.equivalence",
+        "counterId": "topology-subentry"
+      }
     }
   ],
   "relationships": [
@@ -729,6 +849,11 @@
     {
       "from": "n_0",
       "to": "path_21",
+      "label": "branch"
+    },
+    {
+      "from": "n_0",
+      "to": "he_AlgebraicTopology_subsec_homotopyEquivalences",
       "label": "branch"
     },
     {
@@ -1149,6 +1274,76 @@
     {
       "from": "maps_ContinuousMap_ppt_homotopicPostcomp",
       "to": "maps_ContinuousMap_prf_homotopicPostcomp",
+      "label": "branch"
+    },
+    {
+      "from": "he_AlgebraicTopology_subsec_homotopyEquivalences",
+      "to": "he_ContinuousMap_IsHomotopyInverse",
+      "label": "branch"
+    },
+    {
+      "from": "he_AlgebraicTopology_subsec_homotopyEquivalences",
+      "to": "he_ContinuousMap_HomotopyEquiv",
+      "label": "branch"
+    },
+    {
+      "from": "he_ContinuousMap_HomotopyEquiv",
+      "to": "he_Topology_rmk_homotopyEquivalenceWitness",
+      "label": "branch"
+    },
+    {
+      "from": "he_AlgebraicTopology_subsec_homotopyEquivalences",
+      "to": "he_Topology_HomotopyEquivalent",
+      "label": "branch"
+    },
+    {
+      "from": "he_AlgebraicTopology_subsec_homotopyEquivalences",
+      "to": "he_Topology_ppt_homotopyEquivalent_refl",
+      "label": "branch"
+    },
+    {
+      "from": "he_Topology_ppt_homotopyEquivalent_refl",
+      "to": "he_Topology_prf_homotopyEquivalent_refl",
+      "label": "branch"
+    },
+    {
+      "from": "he_AlgebraicTopology_subsec_homotopyEquivalences",
+      "to": "he_Topology_ppt_homotopyEquivalent_symm",
+      "label": "branch"
+    },
+    {
+      "from": "he_Topology_ppt_homotopyEquivalent_symm",
+      "to": "he_Topology_prf_homotopyEquivalent_symm",
+      "label": "branch"
+    },
+    {
+      "from": "he_AlgebraicTopology_subsec_homotopyEquivalences",
+      "to": "he_Topology_ppt_homotopyEquivalent_trans",
+      "label": "branch"
+    },
+    {
+      "from": "he_Topology_ppt_homotopyEquivalent_trans",
+      "to": "he_Topology_prf_homotopyEquivalent_trans",
+      "label": "branch"
+    },
+    {
+      "from": "he_AlgebraicTopology_subsec_homotopyEquivalences",
+      "to": "he_Topology_ppt_homotopyEquivalent_ofHomeomorphic",
+      "label": "branch"
+    },
+    {
+      "from": "he_Topology_ppt_homotopyEquivalent_ofHomeomorphic",
+      "to": "he_Topology_prf_homotopyEquivalent_ofHomeomorphic",
+      "label": "branch"
+    },
+    {
+      "from": "he_AlgebraicTopology_subsec_homotopyEquivalences",
+      "to": "he_Topology_ppt_homotopyEquivalent_equivalence",
+      "label": "branch"
+    },
+    {
+      "from": "he_Topology_ppt_homotopyEquivalent_equivalence",
+      "to": "he_Topology_prf_homotopyEquivalent_equivalence",
       "label": "branch"
     }
   ]

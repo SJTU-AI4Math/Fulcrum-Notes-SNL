@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "$X\\simeq_h Y$ denotes a type of witnesses, not a proposition. Its fields are $f,g$ and proofs of the two homotopy-existence statements; it does not choose homotopies. For example, $g\\circ f\\simeq\\mathrm{id}_X$ means that $\\mathrm{Homotopy}(g\\circ f,\\mathrm{id}_X)$ is nonempty. Here $\\mathrm{id}_X$ is the continuous identity map, written with the existing identity notation. No basepoint or fixed subset is imposed. A homotopy inverse need not be a strict inverse: the composites are required only to be homotopic to the identities, not equal to them. Neither map is required to be bijective.",
+          "zh-CN": "$X\\simeq_h Y$ 表示见证类型，而非命题。其字段为 $f,g$ 及两条同伦存在命题的证明，并不选取具体同伦。例如 $g\\circ f\\simeq\\mathrm{id}_X$ 表示 $\\mathrm{Homotopy}(g\\circ f,\\mathrm{id}_X)$ 非空。这里 $\\mathrm{id}_X$ 是连续恒等映射，沿用既有恒等记号；不要求基点或固定子集。 同伦逆不必是严格逆：两个复合仅要求与恒等映射同伦，不要求相等；两个映射也都不要求是双射。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.rmk.homotopyEquivalenceWitness",
+    "kind": "remark",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Witness type and existence",
+        "zh-CN": "见证类型与存在命题"
+      }
+    }
+  }
+}

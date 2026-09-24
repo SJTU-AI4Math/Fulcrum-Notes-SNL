@@ -1,0 +1,22 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {},
+    "contribution_info": null,
+    "id": "AlgebraicTopology.subsec.homotopyEquivalences",
+    "kind": "subsection",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Homotopy equivalences of spaces",
+        "zh-CN": "空间的同伦等价"
+      }
+    }
+  }
+}

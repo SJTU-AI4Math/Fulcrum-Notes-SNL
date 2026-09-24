@@ -1,0 +1,47 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "Authored existence predicate (X,Y) := Nonempty (ContinuousMap.HomotopyEquiv X Y). Not a claimed Mathlib declaration. Both topologies are fixed by context.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "Topology.HomotopyEquivalent",
+    "source": {
+      "entries": [
+        "Topology.HomotopyEquivalent"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "#0 \\simeq #1",
+          "mode": "formula_inline"
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "#0 and #1 are homotopy equivalent",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "#0 与 #1 同伦等价",
+              "mode": "text"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

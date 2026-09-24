@@ -1,0 +1,49 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "ContinuousMap.HomotopyEquiv",
+    "description": "Mathlib ContinuousMap.HomotopyEquiv (X,Y): witness TYPE, not a proposition. Topologies are implicit. Data: forward/backward continuous maps; laws are Homotopic propositions, not selected Homotopy objects.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "source": {
+      "entries": [
+        "ContinuousMap.HomotopyEquiv"
+      ],
+      "urls": [
+        "https://github.com/leanprover-community/mathlib4/blob/8f9d9cff6bd728b17a24e163c9402775d9e6a365/Mathlib/Topology/Homotopy/Equiv.lean#L43-L53"
+      ]
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "#0 \\simeq_{h} #1",
+          "mode": "formula_inline"
+        }
+      },
+      {
+        "style_name": "text",
+        "tags": [],
+        "template": {
+          "default_language": "en",
+          "type": "i18n",
+          "values": {
+            "en": {
+              "body": "homotopy equivalences from #0 to #1",
+              "mode": "text"
+            },
+            "zh-CN": {
+              "body": "#0 到 #1 的同伦等价",
+              "mode": "text"
+            }
+          }
+        }
+      }
+    ],
+    "tags": []
+  }
+}

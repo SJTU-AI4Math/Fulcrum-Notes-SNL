@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(Type.annotation(__list__[formula](@X,@Y,@Z),Type),TopologicalSpace(X),TopologicalSpace(Y),TopologicalSpace(Z)),theorem(Logic.implies(parentheses(And(Topology.HomotopyEquivalent(X,Y),Topology.HomotopyEquivalent(Y,Z))),Topology.HomotopyEquivalent(X,Z))))"
+    },
+    "contribution_info": null,
+    "id": "Topology.ppt.homotopyEquivalent.trans",
+    "kind": "property",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Transitivity",
+        "zh-CN": "传递性"
+      }
+    }
+  }
+}

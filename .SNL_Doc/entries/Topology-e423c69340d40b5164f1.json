@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(Type.annotation(__list__[formula](@X,@Y),Type),TopologicalSpace(X),TopologicalSpace(Y)),theorem(Logic.implies(Topology.homeomorphic(X,Y),Topology.HomotopyEquivalent(X,Y))))"
+    },
+    "contribution_info": null,
+    "id": "Topology.ppt.homotopyEquivalent.ofHomeomorphic",
+    "kind": "property",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Homeomorphic spaces are homotopy equivalent",
+        "zh-CN": "同胚空间同伦等价"
+      }
+    }
+  }
+}

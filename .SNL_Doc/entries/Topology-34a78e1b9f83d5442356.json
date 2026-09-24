@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "en",
+        "type": "i18n",
+        "values": {
+          "en": "For indices $a,b$, put $a\\sim b$ when $S(a)$ and $S(b)$ are homotopy equivalent. Reflexivity, symmetry and transitivity just proved apply to these spaces, giving the three fields of Equivalence. Topologies on all $S(a)$ are fixed.",
+          "zh-CN": "对指标 $a,b$，以 $S(a)$ 与 $S(b)$ 同伦等价定义 $a\\sim b$。上述自反性、对称性和传递性应用于这些空间，给出 Equivalence 的三条性质；各 $S(a)$ 的拓扑始终固定。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.prf.homotopyEquivalent.equivalence",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "en",
+      "type": "i18n",
+      "values": {
+        "en": "Equivalence relation proof",
+        "zh-CN": "等价关系的证明"
+      }
+    }
+  }
+}
