@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "(X,S): open-set collection of the least topology containing S; topology records are represented by open-set collections in these notes. Lean canonical name; X retained explicit.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "TopologicalSpace.generateFrom",
+    "source": {
+      "entries": [
+        "TopologicalSpace.generateFrom"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "\\operatorname{generateFrom}_{#0}(#1)",
+          "mode": "formula_inline"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

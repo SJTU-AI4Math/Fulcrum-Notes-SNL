@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "__list__(Type.annotation(__list__[formula](@X,@Y,@Z),Type),Type.annotation(@tX,Set(Set(X))),Type.annotation(@tY,Set(Set(Y))),Type.annotation(@tZ,Set(Set(Z))),Topology.topology(tX,X),Topology.topology(tY,Y),Topology.topology(tZ,Z))"
+    },
+    "contribution_info": null,
+    "id": "Topology.ctxt.compactOpenSpaces",
+    "kind": "context",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Topological spaces",
+        "zh-CN": "拓扑空间语境"
+      }
+    }
+  }
+}

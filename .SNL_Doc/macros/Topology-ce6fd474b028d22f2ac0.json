@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "(X,Y): compact-open topology on ContinuousMap X Y, given as an open-set collection; both ambient topologies implicit. No separation or local compactness assumptions.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "ContinuousMap.compactOpen",
+    "source": {
+      "entries": [
+        "ContinuousMap.compactOpen"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "\\tau_{\\mathrm{{co}}}(#0,#1)",
+          "mode": "formula_inline"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

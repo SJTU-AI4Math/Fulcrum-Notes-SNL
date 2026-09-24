@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(Type.annotation(@x,X@Topology.ctxt.compactOpenSpaces),theorem(Continuous[text](parentheses(Type.lambda(@f,ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces),Type.apply(f,x))),ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces),Y@Topology.ctxt.compactOpenSpaces)))"
+    },
+    "contribution_info": null,
+    "id": "Topology.ppt.compactOpenPointEvaluation",
+    "kind": "property",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Continuity of point evaluation",
+        "zh-CN": "固定点求值连续"
+      }
+    }
+  }
+}

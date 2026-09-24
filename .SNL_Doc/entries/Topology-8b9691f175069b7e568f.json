@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(LocallyCompactSpace(X@Topology.ctxt.compactOpenSpaces),T2Space(X@Topology.ctxt.compactOpenSpaces)),theorem(Continuous[text](parentheses(Type.lambda(@p,Prod(ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces),X@Topology.ctxt.compactOpenSpaces),Type.apply(Prod.fst(ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces),X@Topology.ctxt.compactOpenSpaces,p),Prod.snd(ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces),X@Topology.ctxt.compactOpenSpaces,p)))),Prod(ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces),X@Topology.ctxt.compactOpenSpaces),Y@Topology.ctxt.compactOpenSpaces)))"
+    },
+    "contribution_info": null,
+    "id": "Topology.ppt.compactOpenEvaluation",
+    "kind": "property",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Continuity of joint evaluation",
+        "zh-CN": "联合求值连续"
+      }
+    }
+  }
+}

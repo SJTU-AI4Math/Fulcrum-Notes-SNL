@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "**柯里化。** 性质中的 h 已取值于 C(X,Y)，因而每个切片连续，反柯里化 F(z,x)=h(z)(x) 是良类型的。若 F 连续，对 F({z}×K)⊆U，逐点取乘积开邻域，再用 K 的有限子覆盖，得到 z 的开邻域 W 使 F(W×K)⊆U。因此 h⁻¹([K,U]) 开；此方向不使用局部紧性。反向由 F=ev∘(h×id) 及联合求值连续得到。对原始 F:Z×X→Y，只在各切片连续后，才将已有 Type.Curry(F) 看作取值于 C(X,Y) 的映射。这里不宣称两层函数空间之间的同胚。",
+          "en": "For currying, h already takes values in C(X,Y), so all slices are continuous. If its uncurrying F is continuous, a finite product-neighborhood cover of {z} times K supplies a neighborhood W of z with F(W times K) contained in U. Thus h is continuous without local compactness. Conversely use joint evaluation and h times the identity. A raw F can only be regarded as a C(X,Y)-valued curry after its slices are known continuous; no mapping-space homeomorphism is asserted."
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.proof.compactOpenCurrying",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "证明",
+        "en": "Proof"
+      }
+    }
+  }
+}

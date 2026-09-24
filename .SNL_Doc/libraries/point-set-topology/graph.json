@@ -888,6 +888,190 @@
       "props": {
         "entryId": "Topology.sec.pointSet"
       }
+    },
+    {
+      "id": "compactOpen_Topology_sec_functionSpaces",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.sec.functionSpaces",
+        "counterId": "coSection"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_subsec_compactOpen",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.subsec.compactOpen",
+        "counterId": "coSubsection"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_ctxt_compactOpenSpaces",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ctxt.compactOpenSpaces",
+        "counterId": "coEntry"
+      }
+    },
+    {
+      "id": "compactOpen_TopologicalSpace_generateFrom",
+      "label": "Entry",
+      "props": {
+        "entryId": "TopologicalSpace.generateFrom",
+        "counterId": "coEntry"
+      }
+    },
+    {
+      "id": "compactOpen_LocallyCompactSpace",
+      "label": "Entry",
+      "props": {
+        "entryId": "LocallyCompactSpace",
+        "counterId": "coEntry"
+      }
+    },
+    {
+      "id": "compactOpen_ContinuousMap",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap",
+        "counterId": "coEntry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_compactOpenSubbasic",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.compactOpenSubbasic",
+        "counterId": "coEntry"
+      }
+    },
+    {
+      "id": "compactOpen_ContinuousMap_compactOpen",
+      "label": "Entry",
+      "props": {
+        "entryId": "ContinuousMap.compactOpen",
+        "counterId": "coEntry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_rmk_compactOpenConventions",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.compactOpenConventions",
+        "counterId": "coSubentry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_rmk_compactOpenMetric",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.rmk.compactOpenMetric",
+        "counterId": "coProof"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_ppt_compactOpenPointEvaluation",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.compactOpenPointEvaluation",
+        "counterId": "coSubentry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_ppt_compactOpenHausdorff",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.compactOpenHausdorff",
+        "counterId": "coSubentry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_ppt_compactOpenEvaluation",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.compactOpenEvaluation",
+        "counterId": "coSubentry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_ppt_compactOpenComposition",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.compactOpenComposition",
+        "counterId": "coSubentry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_ppt_compactOpenCurrying",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.compactOpenCurrying",
+        "counterId": "coSubentry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_ppt_compactOpenHomotopyPath",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.compactOpenHomotopyPath",
+        "counterId": "coSubentry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_ppt_compactOpenMetric",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.ppt.compactOpenMetric",
+        "counterId": "coSubentry"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_proof_compactOpenPointEvaluation",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.proof.compactOpenPointEvaluation",
+        "counterId": "coProof"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_proof_compactOpenHausdorff",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.proof.compactOpenHausdorff",
+        "counterId": "coProof"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_proof_compactOpenEvaluation",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.proof.compactOpenEvaluation",
+        "counterId": "coProof"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_proof_compactOpenComposition",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.proof.compactOpenComposition",
+        "counterId": "coProof"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_proof_compactOpenCurrying",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.proof.compactOpenCurrying",
+        "counterId": "coProof"
+      }
+    },
+    {
+      "id": "compactOpen_Topology_proof_compactOpenHomotopyPath",
+      "label": "Entry",
+      "props": {
+        "entryId": "Topology.proof.compactOpenHomotopyPath",
+        "counterId": "coProof"
+      }
     }
   ],
   "relationships": [
@@ -1519,6 +1703,116 @@
     {
       "from": "n_127",
       "to": "n_102",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_sec_functionSpaces",
+      "to": "compactOpen_Topology_subsec_compactOpen",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_subsec_compactOpen",
+      "to": "compactOpen_Topology_ctxt_compactOpenSpaces",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_subsec_compactOpen",
+      "to": "compactOpen_TopologicalSpace_generateFrom",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_subsec_compactOpen",
+      "to": "compactOpen_LocallyCompactSpace",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_subsec_compactOpen",
+      "to": "compactOpen_ContinuousMap",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_subsec_compactOpen",
+      "to": "compactOpen_Topology_compactOpenSubbasic",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_subsec_compactOpen",
+      "to": "compactOpen_ContinuousMap_compactOpen",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_ContinuousMap_compactOpen",
+      "to": "compactOpen_Topology_rmk_compactOpenConventions",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_ppt_compactOpenMetric",
+      "to": "compactOpen_Topology_rmk_compactOpenMetric",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_ContinuousMap_compactOpen",
+      "to": "compactOpen_Topology_ppt_compactOpenPointEvaluation",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_ContinuousMap_compactOpen",
+      "to": "compactOpen_Topology_ppt_compactOpenHausdorff",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_ContinuousMap_compactOpen",
+      "to": "compactOpen_Topology_ppt_compactOpenEvaluation",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_ContinuousMap_compactOpen",
+      "to": "compactOpen_Topology_ppt_compactOpenComposition",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_ContinuousMap_compactOpen",
+      "to": "compactOpen_Topology_ppt_compactOpenCurrying",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_ContinuousMap_compactOpen",
+      "to": "compactOpen_Topology_ppt_compactOpenHomotopyPath",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_ContinuousMap_compactOpen",
+      "to": "compactOpen_Topology_ppt_compactOpenMetric",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_ppt_compactOpenPointEvaluation",
+      "to": "compactOpen_Topology_proof_compactOpenPointEvaluation",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_ppt_compactOpenHausdorff",
+      "to": "compactOpen_Topology_proof_compactOpenHausdorff",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_ppt_compactOpenEvaluation",
+      "to": "compactOpen_Topology_proof_compactOpenEvaluation",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_ppt_compactOpenComposition",
+      "to": "compactOpen_Topology_proof_compactOpenComposition",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_ppt_compactOpenCurrying",
+      "to": "compactOpen_Topology_proof_compactOpenCurrying",
+      "label": "branch"
+    },
+    {
+      "from": "compactOpen_Topology_ppt_compactOpenHomotopyPath",
+      "to": "compactOpen_Topology_proof_compactOpenHomotopyPath",
       "label": "branch"
     }
   ]

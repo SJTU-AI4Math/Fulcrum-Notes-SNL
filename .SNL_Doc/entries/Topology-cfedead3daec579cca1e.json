@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(LocallyCompactSpace(X@Topology.ctxt.compactOpenSpaces),T2Space(X@Topology.ctxt.compactOpenSpaces),Type.annotation(@h,Type.to(Z@Topology.ctxt.compactOpenSpaces,ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces)))),theorem(Iff(parentheses(Continuous[text](parentheses(Type.lambda(@p,Prod(Z@Topology.ctxt.compactOpenSpaces,X@Topology.ctxt.compactOpenSpaces),Type.apply(Type.apply(h,Prod.fst(Z@Topology.ctxt.compactOpenSpaces,X@Topology.ctxt.compactOpenSpaces,p)),Prod.snd(Z@Topology.ctxt.compactOpenSpaces,X@Topology.ctxt.compactOpenSpaces,p)))),Prod(Z@Topology.ctxt.compactOpenSpaces,X@Topology.ctxt.compactOpenSpaces),Y@Topology.ctxt.compactOpenSpaces)),parentheses(Continuous[text](h,Z@Topology.ctxt.compactOpenSpaces,ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces))))))"
+    },
+    "contribution_info": null,
+    "id": "Topology.ppt.compactOpenCurrying",
+    "kind": "property",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Continuity equivalence for currying",
+        "zh-CN": "柯里化的连续性等价"
+      }
+    }
+  }
+}

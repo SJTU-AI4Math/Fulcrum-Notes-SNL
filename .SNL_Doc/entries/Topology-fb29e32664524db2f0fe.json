@@ -1,0 +1,22 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {},
+    "contribution_info": null,
+    "id": "Topology.subsec.compactOpen",
+    "kind": "subsection",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Compact-open topology",
+        "zh-CN": "紧开拓扑"
+      }
+    }
+  }
+}

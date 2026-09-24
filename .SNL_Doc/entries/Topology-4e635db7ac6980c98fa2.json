@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "**复合。** 若 g(f(K))⊆U，f(K) 在 Y 中紧。利用 Y 的紧邻域缩小性质并取有限并，得到开 V、紧 L，使 f(K)⊆V⊆L⊆g⁻¹(U)。于是 [L,U]×[K,V] 中每对映射的复合都属于 [K,U]；这里只需要中间空间 Y 局部紧 Hausdorff。",
+          "en": "For composition, the compact set f(K) in the locally compact Hausdorff middle space Y has an open neighborhood V contained in a compact L contained in g^{-1}(U). The product [L,U] times [K,V] maps into [K,U]."
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.proof.compactOpenComposition",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "证明",
+        "en": "Proof"
+      }
+    }
+  }
+}

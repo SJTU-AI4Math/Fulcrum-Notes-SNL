@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "**同伦与道路。** 使用已有单位区间 I 的标准实数子空间拓扑。对 H:I×X→Y，取 p(t)(x)=H(t,x)；柯里化等价保证连续性，H 的两端条件正是 p 的端点条件。反向令 H(t,x)=p(t)(x)。两个构造逐点互逆，因此同伦存在当且仅当函数空间中连接两映射的道路存在。",
+          "en": "A homotopy H corresponds to the path p(t)(x)=H(t,x), using the standard subspace topology on the existing unit interval. Currying gives continuity and the endpoint conditions coincide. Uncurrying is the inverse construction."
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.proof.compactOpenHomotopyPath",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "证明",
+        "en": "Proof"
+      }
+    }
+  }
+}

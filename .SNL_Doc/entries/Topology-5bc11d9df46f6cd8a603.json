@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "**联合求值。** 若 f(x)∈U 且 U 开，局部紧 Hausdorff 性给出开集 V 与紧集 L，使 x∈V⊆L⊆f⁻¹(U)。于是 [L,U]×V 映入 U。",
+          "en": "For joint evaluation, choose x in an open V contained in a compact L contained in f^{-1}(U); then [L,U] times V maps into U."
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.proof.compactOpenEvaluation",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "证明",
+        "en": "Proof"
+      }
+    }
+  }
+}

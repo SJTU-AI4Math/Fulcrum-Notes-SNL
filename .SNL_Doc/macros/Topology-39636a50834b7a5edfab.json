@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "(X): every neighborhood contains a compact neighborhood, the strong mathlib convention; topology implicit. No Hausdorff included.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "LocallyCompactSpace",
+    "source": {
+      "entries": [
+        "LocallyCompactSpace"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "\\operatorname{LocallyCompactSpace}(#0)",
+          "mode": "formula_inline"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

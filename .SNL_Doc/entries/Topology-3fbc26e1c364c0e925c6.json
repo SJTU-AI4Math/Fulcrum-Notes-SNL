@@ -1,0 +1,22 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {},
+    "contribution_info": null,
+    "id": "Topology.sec.functionSpaces",
+    "kind": "section",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Function spaces",
+        "zh-CN": "函数空间"
+      }
+    }
+  }
+}

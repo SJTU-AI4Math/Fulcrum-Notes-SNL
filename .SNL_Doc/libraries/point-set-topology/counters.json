@@ -1,3 +1,38 @@
 {
-  "counters": []
+  "counters": [
+    {
+      "id": "coSection",
+      "name": "Section",
+      "numbering": "1",
+      "children": [
+        {
+          "id": "coSubsection",
+          "name": "Subsection",
+          "numbering": ".1",
+          "children": [
+            {
+              "id": "coEntry",
+              "name": "Entry",
+              "numbering": ".1",
+              "children": [
+                {
+                  "id": "coSubentry",
+                  "name": "Subentry",
+                  "numbering": ".1",
+                  "children": [
+                    {
+                      "id": "coProof",
+                      "name": "Proof",
+                      "numbering": ".1",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

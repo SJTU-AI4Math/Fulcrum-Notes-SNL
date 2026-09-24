@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "default_language": "zh-CN",
+        "type": "i18n",
+        "values": {
+          "en": "Every continuous-map type C(A,B) in this section carries the compact-open topology just defined; products carry the product topology. X, Y and Z carry the contextual topologies. Continuous maps are coerced to their underlying functions for application and images. Compactness is the finite-subcover property, without Hausdorffness. Local compactness means that every neighborhood contains a compact neighborhood; for Hausdorff spaces this is equivalent to having one compact neighborhood at each point.",
+          "zh-CN": "本节每个连续映射类型 C(A,B) 均赋予刚定义的紧开拓扑，积类型赋予相应积拓扑；X、Y、Z 分别携带语境中的拓扑。连续映射视作其底层函数以便应用及取像。紧性指任意开覆盖有有限子覆盖，不包含 Hausdorff 条件。局部紧采用每个邻域包含紧邻域的定义；在 Hausdorff 空间中它等价于每点有一个紧邻域。所有紧开定义对任意拓扑空间成立。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.rmk.compactOpenConventions",
+    "kind": "remark",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Function-space topology conventions",
+        "zh-CN": "函数空间的拓扑约定"
+      }
+    }
+  }
+}

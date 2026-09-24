@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(LocallyCompactSpace(X@Topology.ctxt.compactOpenSpaces),T2Space(X@Topology.ctxt.compactOpenSpaces),Type.annotation(__list__[formula](@$f_0$,@$f_1$),ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces))),theorem(Iff(ContinuousMap.Homotopic($f_0$,$f_1$),Nonempty(Path($f_0$,$f_1$)))))"
+    },
+    "contribution_info": null,
+    "id": "Topology.ppt.compactOpenHomotopyPath",
+    "kind": "property",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Homotopies and paths in the mapping space",
+        "zh-CN": "同伦与函数空间道路"
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "论证：若 f(K)⊆U 且 U 开，紧集 f(K) 有某个正半径的邻域包含于 U，故相应 ρ_K 球包含于 [K,U]。反向，给定 ε>0，令 δ=ε/4，取有限个半径 δ 的开球覆盖 f(K)，中心记为 y_i。令 K_i=K∩f⁻¹(闭球(y_i,δ))；这些是 K 的相对闭紧子集并覆盖 K，不要求 X 为 Hausdorff。则 f 属于所有 [K_i,B(y_i,2δ)] 的交；交中任意 g 在 K 上与 f 的距离上确界至多 3δ<ε。",
+          "en": "A compact image f(K) inside an open U has a positive-radius neighborhood inside U, giving a rho_K ball inside [K,U]. Conversely, put delta=epsilon/4 and cover f(K) by finitely many open delta-balls centered at y_i. The compact sets K_i=K intersect f^{-1}(closedBall(y_i,delta)) cover K. The intersection of [K_i,ball(y_i,2delta)] contains f and forces rho_K(f,g) at most 3delta, strictly less than epsilon. No Hausdorff assumption on X is used."
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.rmk.compactOpenMetric",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "一致收敛比较的证明",
+        "en": "Proof of the uniform-convergence comparison"
+      }
+    }
+  }
+}

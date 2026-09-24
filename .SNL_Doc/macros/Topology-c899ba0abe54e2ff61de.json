@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "description": "(X,Y,K,U): subset of ContinuousMap X Y consisting of maps with image K contained in U. Authored notation, not a claimed Lean declaration.",
+    "dynamic_arity": false,
+    "kind": "const",
+    "name": "Topology.compactOpenSubbasic",
+    "source": {
+      "entries": [
+        "Topology.compactOpenSubbasic"
+      ],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "body": "[#2,#3]_{#0,#1}",
+          "mode": "formula_inline"
+        }
+      }
+    ],
+    "tags": []
+  }
+}

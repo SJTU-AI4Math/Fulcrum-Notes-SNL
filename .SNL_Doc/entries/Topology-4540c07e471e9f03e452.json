@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "zh-CN",
+        "values": {
+          "zh-CN": "**固定点求值与分离性。** 对开集 U，固定 x 的求值逆像为 [{x},U]；单点集在任意空间中紧。不同连续映射在某点的值不同，若 Y 是 Hausdorff，取这两个值的不交开邻域，便得到不交的单点子基本开邻域。",
+          "en": "Point evaluation has inverse image [{x},U]. Singletons are compact, and disjoint neighborhoods of two distinct values separate maps when Y is Hausdorff."
+        }
+      }
+    },
+    "contribution_info": null,
+    "id": "Topology.proof.compactOpenHausdorff",
+    "kind": "proof",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "type": "i18n",
+      "default_language": "zh-CN",
+      "values": {
+        "zh-CN": "证明",
+        "en": "Proof"
+      }
+    }
+  }
+}

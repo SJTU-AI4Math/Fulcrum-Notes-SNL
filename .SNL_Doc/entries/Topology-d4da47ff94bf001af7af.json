@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(LocallyCompactSpace(Y@Topology.ctxt.compactOpenSpaces),T2Space(Y@Topology.ctxt.compactOpenSpaces)),theorem(Continuous[text](parentheses(Type.lambda(@p,Prod(ContinuousMap(Y@Topology.ctxt.compactOpenSpaces,Z@Topology.ctxt.compactOpenSpaces),ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces)),ContinuousMap.comp(Prod.fst(ContinuousMap(Y@Topology.ctxt.compactOpenSpaces,Z@Topology.ctxt.compactOpenSpaces),ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces),p),Prod.snd(ContinuousMap(Y@Topology.ctxt.compactOpenSpaces,Z@Topology.ctxt.compactOpenSpaces),ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces),p)))),Prod(ContinuousMap(Y@Topology.ctxt.compactOpenSpaces,Z@Topology.ctxt.compactOpenSpaces),ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces)),ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Z@Topology.ctxt.compactOpenSpaces))))"
+    },
+    "contribution_info": null,
+    "id": "Topology.ppt.compactOpenComposition",
+    "kind": "property",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Continuity of composition",
+        "zh-CN": "复合映射连续"
+      }
+    }
+  }
+}

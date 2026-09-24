@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "entry": {
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@K,Set(X@Topology.ctxt.compactOpenSpaces)),Type.annotation(@U,Set(Y@Topology.ctxt.compactOpenSpaces)),Topology.compact(K),IsOpen(U,tY@Topology.ctxt.compactOpenSpaces)),def(Topology.compactOpenSubbasic(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces,K,U),Set(ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces)),setOf[typedBuilder](@f,ContinuousMap(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces),Set.Subset(Y@Topology.ctxt.compactOpenSpaces,Set.image(X@Topology.ctxt.compactOpenSpaces,Y@Topology.ctxt.compactOpenSpaces,f,K),U))))"
+    },
+    "contribution_info": null,
+    "id": "Topology.compactOpenSubbasic",
+    "kind": "def",
+    "package": "Topology",
+    "pointer": null,
+    "title": {
+      "default_language": "zh-CN",
+      "type": "i18n",
+      "values": {
+        "en": "Compact-open subbasic set",
+        "zh-CN": "紧开子基集合"
+      }
+    }
+  }
+}
