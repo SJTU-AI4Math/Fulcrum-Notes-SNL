@@ -6,24 +6,9 @@
   "entry": {
     "id": "PathConnectedSpace",
     "kind": "definition",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Path-Connected Space",
-        "zh-CN": "道路连通空间"
-      }
-    },
+    "title": "道路连通空间",
     "content": {
-      "snl": "variable(Type.annotation(@X,Type),def(PathConnectedSpace(X), , ))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "A space $X$ is **path-connected** if every pair of its points can be joined by a path (Hatcher p. 28).",
-          "zh-CN": "若空间中任意两点都可由道路相连，则称该空间**道路连通**（Hatcher 第 28 页）。"
-        }
-      }
+      "snl": "def[prop](PathConnectedSpace(X),,And(Nonempty[text](X),Type.forall[forall](__list__[formula](@x,@y),X,Joined(x,y))))"
     },
     "contribution_info": null,
     "pointer": {

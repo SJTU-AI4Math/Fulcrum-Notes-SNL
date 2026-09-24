@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.inv_mul",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "逆律",
+    "kind": "theorem",
+    "content": {
+      "snl": "variable(Type.annotation(@A,FundamentalGroup(X,x)),theorem(__list__(Eq(FundamentalGroup(X,x),Mul.mul[dot](FundamentalGroup.inv(A),A),FundamentalGroup.one(x)),Eq(FundamentalGroup(X,x),Mul.mul[dot](A,FundamentalGroup.inv(A)),FundamentalGroup.one(x)))))"
+    }
+  }
+}

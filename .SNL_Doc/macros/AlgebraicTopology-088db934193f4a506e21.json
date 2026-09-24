@@ -4,24 +4,24 @@
   "schema_version": 1,
   "package": "AlgebraicTopology",
   "macro": {
-    "name": "FundamentalGroup.map",
-    "description": "Mathlib FundamentalGroup.map (f : C(X,Y)) (x : X), FundamentalGroup.lean:78–79. Type stated separately.",
-    "source": {
-      "entries": [
-        "FundamentalGroup.map"
-      ],
-      "urls": []
-    },
+    "name": "FundamentalGroup.inv",
     "kind": "const",
     "dynamic_arity": false,
     "tags": [],
+    "description": "Inverse of a loop class; derived from Path.Homotopic.Quotient.symm, not a claimed Mathlib declaration of this name.",
+    "source": {
+      "entries": [
+        "FundamentalGroup.inv"
+      ],
+      "urls": []
+    },
     "styles": [
       {
         "style_name": "default",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "{#0}_{\\ast,#1}"
+          "body": "(#0)^{-1}"
         }
       }
     ]

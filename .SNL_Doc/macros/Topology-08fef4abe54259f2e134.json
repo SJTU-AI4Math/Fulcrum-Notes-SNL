@@ -2,13 +2,13 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "AlgebraicTopology",
+  "package": "Topology",
   "macro": {
-    "name": "FundamentalGroup.map",
-    "description": "Mathlib FundamentalGroup.map (f : C(X,Y)) (x : X), FundamentalGroup.lean:78–79. Type stated separately.",
+    "name": "pathComponent",
+    "description": "Mathlib pathComponent (x : X) : Set X, PathConnected.lean:234–235.",
     "source": {
       "entries": [
-        "FundamentalGroup.map"
+        "pathComponent"
       ],
       "urls": []
     },
@@ -21,7 +21,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "{#0}_{\\ast,#1}"
+          "body": "\\operatorname{pathComponent}(#0)"
         }
       }
     ]

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.ctxt",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "本节约定",
+    "kind": "context",
+    "content": {
+      "snl": "__list__(__list__(Type.annotation(@X,Type),TopologicalSpace(X)),Type.annotation(@x,X))"
+    }
+  }
+}

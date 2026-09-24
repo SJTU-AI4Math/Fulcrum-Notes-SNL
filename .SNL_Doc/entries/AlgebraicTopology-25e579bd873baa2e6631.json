@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.mul",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "类的乘法",
+    "kind": "definition",
+    "content": {
+      "snl": "variable(Type.annotation(__list__[formula](@p,@q),Path(x,x)),Eq(FundamentalGroup(X,x),Mul.mul[dot](Path.Homotopic.Quotient.mk(p),Path.Homotopic.Quotient.mk(q)),Path.Homotopic.Quotient.mk(Path.trans(p,q))))"
+    }
+  }
+}

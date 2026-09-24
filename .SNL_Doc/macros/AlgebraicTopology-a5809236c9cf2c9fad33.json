@@ -5,7 +5,7 @@
   "package": "AlgebraicTopology",
   "macro": {
     "name": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnectedConstructive",
-    "description": "Constructive basepoint-independence isomorphism of fundamental groups for path-connected spaces",
+    "description": "Chosen basepoint isomorphism after noncomputably selecting a joining path via PathConnectedSpace.somePath; historical Constructive suffix does not assert computational constructivity or a same-named Lean constant.",
     "source": {
       "entries": [
         "FundamentalGroup.fundamentalGroupMulEquivOfPathConnectedConstructive"
@@ -49,7 +49,7 @@
           "values": {
             "en": {
               "mode": "text",
-              "body": "constructive isomorphism between the fundamental groups at #0 and #1",
+              "body": "chosen isomorphism between the fundamental groups at #0 and #1",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -65,11 +65,11 @@
                 }
               },
               "markdown": "",
-              "text": "constructive isomorphism between the fundamental groups at #0 and #1"
+              "text": "chosen isomorphism between the fundamental groups at #0 and #1"
             },
             "zh-CN": {
               "mode": "text",
-              "body": "#0 与 #1 处基本群的构造性基点无关同构",
+              "body": "选取连接道路后 #0 与 #1 处基本群的同构",
               "typst": {
                 "built_in": "",
                 "synthesis": {
@@ -85,7 +85,7 @@
                 }
               },
               "markdown": "",
-              "text": "constructive isomorphism between the fundamental groups at #0 and #1"
+              "text": "选取连接道路后 #0 与 #1 处基本群的同构"
             }
           }
         }

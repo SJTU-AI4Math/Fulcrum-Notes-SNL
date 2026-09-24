@@ -1,0 +1,27 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "Path.map",
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "description": "Readable image path p under f; Lean Path.map additionally receives f.continuous. Display slots p,f, not a claim about Lean explicit proof arguments.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "(#1\\circ #0)"
+        }
+      }
+    ]
+  }
+}

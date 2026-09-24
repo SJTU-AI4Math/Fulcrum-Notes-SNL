@@ -50,24 +50,6 @@
           "type": "i18n",
           "default_language": "en"
         }
-      },
-      {
-        "style_name": "axiomaticType",
-        "tags": [],
-        "template": {
-          "type": "i18n",
-          "default_language": "en",
-          "values": {
-            "en": {
-              "mode": "text",
-              "body": "Introduce the type #0 : #1 by the following generating and elimination rules:\n#2"
-            },
-            "zh-CN": {
-              "mode": "text",
-              "body": "由以下生成与消去规则引入类型 #0 : #1：\n#2"
-            }
-          }
-        }
       }
     ],
     "tags": [],

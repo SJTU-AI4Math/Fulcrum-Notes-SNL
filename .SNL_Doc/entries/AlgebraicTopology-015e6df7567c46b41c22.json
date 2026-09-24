@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.one_mul",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "单位律",
+    "kind": "theorem",
+    "content": {
+      "snl": "variable(Type.annotation(@A,FundamentalGroup(X,x)),theorem(__list__(Eq(FundamentalGroup(X,x),Mul.mul[dot](FundamentalGroup.one(x),A),A),Eq(FundamentalGroup(X,x),Mul.mul[dot](A,FundamentalGroup.one(x)),A))))"
+    }
+  }
+}

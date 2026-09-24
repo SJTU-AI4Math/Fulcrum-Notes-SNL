@@ -1,0 +1,27 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "PathConnectedSpace.somePath",
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "description": "Mathlib PathConnectedSpace.somePath x y; noncomputable choice of a joining path in a path-connected space.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{somePath}(#0,#1)"
+        }
+      }
+    ]
+  }
+}

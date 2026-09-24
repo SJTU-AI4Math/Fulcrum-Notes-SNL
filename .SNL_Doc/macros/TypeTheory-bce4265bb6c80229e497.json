@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "TypeTheory",
+  "macro": {
+    "name": "Quot",
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "description": "Lean primitive Quot {α : Sort u} (r : α → α → Prop), introduced by init_quot in Init/Prelude.lean:382–418; #0 carrier, #1 relation. Init/Core.lean:1919–1920 instead defines Quotient s := Quot s.r, not Quot itself.",
+    "source": {
+      "entries": [],
+      "urls": [
+        "https://github.com/leanprover/lean4/blob/v4.28.0/src/Init/Prelude.lean#L382-L418"
+      ]
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\operatorname{Quot}(#1)"
+        }
+      }
+    ]
+  }
+}

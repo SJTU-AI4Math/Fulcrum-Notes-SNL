@@ -6,33 +6,17 @@
   "entry": {
     "id": "FundamentalGroup.map",
     "kind": "definition",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Induced Homomorphism",
-        "zh-CN": "诱导同态"
-      }
-    },
+    "title": "连续映射诱导的同态",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@Y,Type),Type.annotation(@f,Type.to(X,Y)),Type.annotation(@x,X)),def(FundamentalGroup.map(f,x), , ))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "A based continuous map $\\varphi\\colon(X,x_0)\\to(Y,y_0)$ induces the **induced homomorphism** $\\varphi_*\\colon\\pi_1(X,x_0)\\to\\pi_1(Y,y_0)$ by $\\varphi_*[f]=[\\varphi f]$. It satisfies $(\\varphi\\psi)_*=\\varphi_*\\psi_*$ and $\\mathbb{1}_*=\\mathbb{1}$, which makes $\\pi_1$ a functor (Hatcher p. 34).",
-          "zh-CN": "保持基点的连续映射 $\\varphi\\colon(X,x_0)\\to(Y,y_0)$ 由 $\\varphi_*[f]=[\\varphi f]$ 诱导**诱导同态** $\\varphi_*\\colon\\pi_1(X,x_0)\\to\\pi_1(Y,y_0)$。它满足 $(\\varphi\\psi)_*=\\varphi_*\\psi_*$ 与 $\\mathbb{1}_*=\\mathbb{1}$，这使 $\\pi_1$ 成为函子（Hatcher 第 34 页）。"
-        }
-      }
+      "snl": "variable(__list__(Type.annotation(@Y,Type),TopologicalSpace(Y),Type.annotation(@f,ContinuousMap(X,Y))),__list__(def(FundamentalGroup.map(f,x),Type.to(FundamentalGroup(X,x),FundamentalGroup(Y,Type.apply[paren](f,x))),Type.lambda(@A,FundamentalGroup(X,x),Path.Homotopic.Quotient.map(A,f))),MonoidHom(FundamentalGroup.map(f,x)),variable(Type.annotation(@p,Path(x,x)),Eq(FundamentalGroup(Y,Type.apply[paren](f,x)),Type.apply[paren](FundamentalGroup.map(f,x),Path.Homotopic.Quotient.mk(p)),Path.Homotopic.Quotient.mk(Path.map(p,f))))))"
     },
     "contribution_info": null,
     "pointer": {
       "file": ".lake/packages/mathlib/Mathlib/AlgebraicTopology/FundamentalGroupoid/FundamentalGroup.lean",
       "mode": "lines",
       "line": 78,
-      "endLine": 78,
-      "column": 1,
-      "endColumn": 94
+      "endLine": 79,
+      "column": 1
     },
     "package": "AlgebraicTopology"
   }

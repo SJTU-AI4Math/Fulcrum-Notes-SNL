@@ -6,17 +6,10 @@
   "entry": {
     "id": "Topology.rmk.pathHomotopicHcompProof",
     "package": "Topology",
-    "kind": "remark",
-    "title": "道路拼接与同伦相容的论证",
+    "kind": "proof",
+    "title": "拼接同伦的构造与连续性",
     "content": {
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "Argument. In (t,s), t is homotopy time and s is the path parameter. Both branches equal b at s=1/2; the closed-set pasting lemma gives joint continuity. At t=0,1 the formula gives the two concatenated paths, and the endpoints stay a,c. The product pattern binds t and s without currying the continuous map; scaled interval arguments are taken in the indicated branches.",
-          "zh-CN": "论证。在 (t,s) 中，t 是同伦时间，s 是道路参数。两段在 s=1/2 同取 b，闭集粘合保证联合连续；t=0、1 时分别得到两条拼接道路，且端点保持 a、c。积模式同时绑定 t、s，不将连续映射改为普通柯里化函数；缩放后的区间参数按所在分支取值。"
-        }
-      }
+      "snl": "proof(variable(__list__(Type.annotation(@H,Path.Homotopy($p_0$,$p_1$)),Type.annotation(@K,Path.Homotopy($q_0$,$q_1$))),Type.annotation(Type.lambda[pattern](Prod.mk(Set.Elem[coerce](Real,unitInterval),Set.Elem[coerce](Real,unitInterval),@t,@s),Prod(Set.Elem[coerce](Real,unitInterval),Set.Elem[coerce](Real,unitInterval)),__enum__[cases](__list__[none](Type.apply[none](H,Prod.mk(Set.Elem[coerce](Real,unitInterval),Set.Elem[coerce](Real,unitInterval),t,Mul.mul[implicit](2,s))),__list__[none]($&$,LE.le(Real,_,0,s),$\\le$,Div.div[fracInline](1,2))),__list__[none](Type.apply[none](K,Prod.mk(Set.Elem[coerce](Real,unitInterval),Set.Elem[coerce](Real,unitInterval),t,Sub.sub(Mul.mul[implicit](2,s),1))),__list__[none]($&$,LT.lt(Real,_,Div.div[fracInline](1,2),s),$\\le$,1)))),Path.Homotopy(Path.trans($p_0$,$q_0$),Path.trans($p_1$,$q_1$)))),%第一坐标 t 是同伦时间，第二坐标 s 是道路参数。两段在 s=1/2 都等于 b；在两个闭矩形上分别连续，故由闭集粘合得到联合连续性。t=0、1 时得到两条拼接道路；s=0、1 时恒为 a、c，因而端点固定。缩放后的区间参数在各自分支内取值。%)"
     },
     "contribution_info": null,
     "pointer": null

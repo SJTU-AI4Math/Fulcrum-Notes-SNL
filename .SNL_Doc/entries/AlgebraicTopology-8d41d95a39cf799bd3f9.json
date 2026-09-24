@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.rmk.classes",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "类相等而非道路相等",
+    "kind": "remark",
+    "content": {
+      "snl": "variable(Type.annotation(__list__[formula](@p,@q),Path(x,x)),__list__(Eq(FundamentalGroup(X,x),Path.Homotopic.Quotient.mk(p),Path.Homotopic.Quotient.mk(q)),%当且仅当%,Path.Homotopic(p,q),%这里始终固定基点；自由环路同伦不是本节采用的等价关系。%))"
+    }
+  }
+}

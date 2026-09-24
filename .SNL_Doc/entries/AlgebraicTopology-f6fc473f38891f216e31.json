@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.map_comp.proof",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "函子性",
+    "kind": "proof",
+    "content": {
+      "snl": "proof(%在道路代表上，恒等映射不改变道路；先后复合 f、g 与一次复合 g∘f 得到同一条道路。每个类都有代表，故这两个等式在所有同伦类上成立。%)"
+    }
+  }
+}

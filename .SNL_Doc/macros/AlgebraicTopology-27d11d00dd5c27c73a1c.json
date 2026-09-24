@@ -5,11 +5,9 @@
   "package": "AlgebraicTopology",
   "macro": {
     "name": "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive",
-    "description": "Constructive change-of-basepoint isomorphism of fundamental groups induced by a path",
+    "description": "Historical βₚ^con notation, retained for compatibility only; the old Constructive Entry now defines βₚ, not this macro. Not a separate definition or a Lean declaration, and no choice of an additional path is required once p is given.",
     "source": {
-      "entries": [
-        "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive"
-      ],
+      "entries": [],
       "urls": []
     },
     "kind": "const",

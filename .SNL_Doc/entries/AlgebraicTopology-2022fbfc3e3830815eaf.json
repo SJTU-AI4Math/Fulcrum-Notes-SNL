@@ -6,33 +6,17 @@
   "entry": {
     "id": "FundamentalGroup",
     "kind": "definition",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Fundamental Group",
-        "zh-CN": "基本群"
-      }
-    },
+    "title": "基本群的底层类型",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X)),def(FundamentalGroup(X, x), , ))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "The **fundamental group** $\\pi_1(X,x_0)$ is the set of homotopy classes of loops in $X$ based at $x_0$, with the product $[f][g]=[f\\cdot g]$. It is a group (Hatcher Proposition 1.3, p. 26).",
-          "zh-CN": "**基本群** $\\pi_1(X,x_0)$ 是以 $x_0$ 为基点的 $X$ 中闭路的同伦类集合，乘法为 $[f][g]=[f\\cdot g]$。它是一个群（Hatcher 命题 1.3，第 26 页）。"
-        }
-      }
+      "snl": "def(FundamentalGroup(X,x),Type,Path.Homotopic.Quotient(x,x))"
     },
     "contribution_info": null,
     "pointer": {
       "file": ".lake/packages/mathlib/Mathlib/AlgebraicTopology/FundamentalGroupoid/FundamentalGroup.lean",
       "mode": "lines",
       "line": 35,
-      "endLine": 35,
-      "column": 1,
-      "endColumn": 32
+      "endLine": 36,
+      "column": 1
     },
     "package": "AlgebraicTopology"
   }

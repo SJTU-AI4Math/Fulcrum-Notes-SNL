@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.rmk.conventions",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "道路顺序与 Mathlib 的乘法约定",
+    "kind": "remark",
+    "content": {
+      "snl": "__list__(%道路拼接本身一般不严格结合：两种括号的行进速度不同；上列群律只在定端同伦类上严格成立。本节乘法先走左因子、后走右因子。Mathlib 的 FundamentalGroup 定义为 CategoryTheory.End，End.mul 的参数顺序与范畴复合相反，因此其默认乘法先走右因子、后走左因子。本节可读乘法是该乘法的相反乘法；不能把本文的乘法等式冒充 Mathlib 默认实例的定义等式。底层类型由 FundamentalGroup.toPath/fromPath 与道路同伦商对应。%,%已有 Group 宏是单参数的“是群”谓词，不是 Lean 的 Group 类型类构造器。本节只在运算、单位与逆均已明确后用它断言群性质。未改动代数章的既有契约。Quot 是 Lean Init/Prelude.lean 中 init_quot 引入的基础商类型原语，Quotient 的定义借用它，而不是反过来定义 Quot；本节以已建立的定端同伦等价关系作商。对于任意端点 a、b，Path.Homotopic.Quotient.symm 把 [p]:Q(a,b) 送到 [p.symm]:Q(b,a)；Path.Homotopic.Quotient.map 把 [p]:Q(a,b) 经连续映射 f:X→Y 送到 [p.map f.continuous]:Q(f(a),f(b))。前者由道路反向保持定端同伦、后者由连续映射保持定端同伦而良定义；二者均为已导入的通用操作，不是环路逆或 FundamentalGroup.map 条目新定义的操作。Path.map(p,f) 是 p.map f.continuous 的显示包装；ContinuousMap.comp(g,f) 先施 f 再施 g，均是已导入的通用操作，不能把诱导映射或复合定理当作它们的定义。PathConnectedSpace.somePath(a,b):Path(a,b) 是从道路连通性非计算性地选取连接道路的已导入操作，不由基点同构定义。%)"
+    }
+  }
+}

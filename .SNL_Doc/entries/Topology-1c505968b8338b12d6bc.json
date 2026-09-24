@@ -6,24 +6,9 @@
   "entry": {
     "id": "pathComponent",
     "kind": "definition",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Path Component",
-        "zh-CN": "道路连通分支"
-      }
-    },
+    "title": "道路连通分支",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X)),def(pathComponent(x), , ))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "The **path component** of $x\\in X$ is the set of points of $X$ that can be joined to $x$ by a path; $\\pi_1(X,x_0)$ only involves the path component of $x_0$ (Hatcher p. 28).",
-          "zh-CN": "点 $x\\in X$ 的**道路连通分支**是 $X$ 中所有与 $x$ 可由道路相连的点构成的集合；$\\pi_1(X,x_0)$ 只涉及 $x_0$ 所在的道路连通分支（Hatcher 第 28 页）。"
-        }
-      }
+      "snl": "variable(Type.annotation(@x,X),def(pathComponent(x),Set(X),setOf[typedBuilder](@y,X,Joined(x,y))))"
     },
     "contribution_info": null,
     "pointer": {

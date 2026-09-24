@@ -2,13 +2,13 @@
   "format": "snl-macro",
   "version": 1,
   "schema_version": 1,
-  "package": "AlgebraicTopology",
+  "package": "Topology",
   "macro": {
-    "name": "FundamentalGroup.map",
-    "description": "Mathlib FundamentalGroup.map (f : C(X,Y)) (x : X), FundamentalGroup.lean:78–79. Type stated separately.",
+    "name": "PathConnectedSpace",
+    "description": "Mathlib PathConnectedSpace (X : Type*) [TopologicalSpace X] : Prop, PathConnected.lean:478–482.",
     "source": {
       "entries": [
-        "FundamentalGroup.map"
+        "PathConnectedSpace"
       ],
       "urls": []
     },
@@ -21,7 +21,7 @@
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "{#0}_{\\ast,#1}"
+          "body": "#0\\text{ 是道路连通空间}"
         }
       }
     ]

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.one",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "单位元",
+    "kind": "definition",
+    "content": {
+      "snl": "def(FundamentalGroup.one(x),FundamentalGroup(X,x),Path.Homotopic.Quotient.mk(Path.refl(x)))"
+    }
+  }
+}

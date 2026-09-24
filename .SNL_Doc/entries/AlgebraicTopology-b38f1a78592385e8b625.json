@@ -6,14 +6,7 @@
   "entry": {
     "id": "AlgebraicTopology.subsec.fundamentalGroup",
     "kind": "subsection",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "The Fundamental Group",
-        "zh-CN": "基本群"
-      }
-    },
+    "title": "基本群",
     "content": {},
     "contribution_info": null,
     "pointer": null,

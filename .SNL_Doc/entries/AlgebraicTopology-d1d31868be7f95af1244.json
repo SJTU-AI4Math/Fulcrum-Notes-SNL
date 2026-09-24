@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.basepoint.proof",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "方向、公式与逆映射",
+    "kind": "proof",
+    "content": {
+      "snl": "variable(__list__(Type.annotation(@y,X),Type.annotation(@p,Path(x,y))),proof(variable(Type.annotation(@q,Path(x,x)),Eq(FundamentalGroup(X,y),Type.apply[paren](FundamentalGroup.fundamentalGroupMulEquivOfPath(p),Path.Homotopic.Quotient.mk(q)),Path.Homotopic.Quotient.mk(Path.trans(Path.trans(Path.symm(p),q),p)))),%p 从 x 到 y；新环路从 y 出发，先沿 p 的反向回到 x，再走旧环路，最后沿 p 回到 y。拼接与反向的相容性保证良定义。乘两个像时，中间的 p 接反向 p 可定端收缩；结合律给出保持乘法。沿反向 p 的变换是其逆，同样由往返道路可收缩得到。%))"
+    }
+  }
+}

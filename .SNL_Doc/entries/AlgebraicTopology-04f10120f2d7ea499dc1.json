@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.inv",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "逆元",
+    "kind": "definition",
+    "content": {
+      "snl": "variable(Type.annotation(@p,Path(x,x)),Eq(FundamentalGroup(X,x),FundamentalGroup.inv(Path.Homotopic.Quotient.mk(p)),Path.Homotopic.Quotient.mk(Path.symm(p))))"
+    }
+  }
+}

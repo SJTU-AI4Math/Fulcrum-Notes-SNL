@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.inv.proof",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "反向道路的相容性",
+    "kind": "proof",
+    "content": {
+      "snl": "proof(%把定端同伦的道路参数 s 替换成 1−s，得到反向道路之间的定端同伦；连续性与边界条件都保留。因此取逆与代表的选择无关。%)"
+    }
+  }
+}

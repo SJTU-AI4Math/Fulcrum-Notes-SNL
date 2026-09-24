@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.group",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "基本群的群结构",
+    "kind": "theorem",
+    "content": {
+      "snl": "theorem(Group(FundamentalGroup(X,x)))"
+    }
+  }
+}

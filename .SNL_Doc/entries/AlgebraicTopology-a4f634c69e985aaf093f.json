@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.basepoint.choice",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "不是天然的基点无关性",
+    "kind": "remark",
+    "content": {
+      "snl": "__list__(%指定连接道路后才得到上述同构。沿另一条连接道路一般得到不同的同构，二者相差目标基本群中的内自同构，故不能声称天然基点无关。道路连通只保证某条道路存在。Mathlib 的 fundamentalGroupMulEquivOfPathConnected 用 PathConnectedSpace.somePath 选取道路；此选择非计算性。给定一条道路的共轭构造则不需要另选连接道路。%,%保留的两个 Constructive 条目 ID 是笔记原有的对象层编号，并非 Mathlib 中带 Constructive 后缀的声明名。这里“选择后的构造”不表示无选择公理的构造性证明。%)"
+    }
+  }
+}

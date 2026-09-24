@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.map_id",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "恒等映射",
+    "kind": "theorem",
+    "content": {
+      "snl": "variable(Type.annotation(@A,FundamentalGroup(X,x)),theorem(Eq(FundamentalGroup(X,x),Type.apply[paren](FundamentalGroup.map(id(X),x),A),A)))"
+    }
+  }
+}

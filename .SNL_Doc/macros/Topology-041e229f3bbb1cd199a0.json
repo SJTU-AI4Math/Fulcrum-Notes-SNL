@@ -1,0 +1,27 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "Topology",
+  "macro": {
+    "name": "ContinuousMap.comp",
+    "kind": "const",
+    "dynamic_arity": false,
+    "tags": [],
+    "description": "ContinuousMap.comp g f, first f then g. Mathlib/Topology/ContinuousMap/Basic.lean.",
+    "source": {
+      "entries": [],
+      "urls": []
+    },
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "(#0\\circ #1)"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.map.proof",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "诱导同态的良定义",
+    "kind": "proof",
+    "content": {
+      "snl": "proof(%将道路同伦后复合连续映射 f，得到像道路之间的定端同伦，故商上的映射良定义。后复合与道路拼接、常值道路及反向道路相容，因此诱导映射保持乘法、单位及逆。其目标基点是 f(x)，并非任意指定的点。%)"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.map_comp",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "复合映射",
+    "kind": "theorem",
+    "content": {
+      "snl": "variable(__list__(__list__(Type.annotation(@Y,Type),TopologicalSpace(Y),Type.annotation(@f,ContinuousMap(X,Y))),Type.annotation(@Z,Type),TopologicalSpace(Z),Type.annotation(@g,ContinuousMap(Y,Z)),Type.annotation(@A,FundamentalGroup(X,x))),theorem(Eq(FundamentalGroup(Z,Type.apply[paren](g,Type.apply[paren](f,x))),Type.apply[paren](FundamentalGroup.map(ContinuousMap.comp(g,f),x),A),Type.apply[paren](FundamentalGroup.map(g,Type.apply[paren](f,x)),Type.apply[paren](FundamentalGroup.map(f,x),A)))))"
+    }
+  }
+}

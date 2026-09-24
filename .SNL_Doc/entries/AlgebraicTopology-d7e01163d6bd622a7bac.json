@@ -6,33 +6,17 @@
   "entry": {
     "id": "FundamentalGroup.fundamentalGroupMulEquivOfPath",
     "kind": "theorem",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Change of Basepoint",
-        "zh-CN": "基点变换"
-      }
-    },
+    "title": "基点变换是群同构",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X),Type.annotation(@p,Path(x,y))),theorem(FundamentalGroup.fundamentalGroupMulEquivOfPath(p), , ))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "A path $h$ from $x_0$ to $x_1$ induces the **change-of-basepoint map** $\\beta_h\\colon\\pi_1(X,x_1)\\to\\pi_1(X,x_0)$, $\\beta_h[f]=[h\\cdot f\\cdot\\overline{h}]$, which is a group isomorphism (Hatcher Proposition 1.5, p. 28).",
-          "zh-CN": "从 $x_0$ 到 $x_1$ 的道路 $h$ 诱导**基点变换映射** $\\beta_h\\colon\\pi_1(X,x_1)\\to\\pi_1(X,x_0)$，$\\beta_h[f]=[h\\cdot f\\cdot\\overline{h}]$，它是群同构（Hatcher 命题 1.5，第 28 页）。"
-        }
-      }
+      "snl": "variable(__list__(Type.annotation(@y,X),Type.annotation(@p,Path(x,y))),theorem(MulEquiv(FundamentalGroup.fundamentalGroupMulEquivOfPath(p))))"
     },
     "contribution_info": null,
     "pointer": {
       "file": ".lake/packages/mathlib/Mathlib/AlgebraicTopology/FundamentalGroupoid/FundamentalGroup.lean",
       "mode": "lines",
       "line": 47,
-      "endLine": 47,
-      "column": 1,
-      "endColumn": 54
+      "endLine": 49,
+      "column": 1
     },
     "package": "AlgebraicTopology"
   }

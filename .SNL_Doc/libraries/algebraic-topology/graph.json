@@ -260,7 +260,8 @@
       "id": "n_1",
       "label": "Entry",
       "props": {
-        "entryId": "AlgebraicTopology.subsec.fundamentalGroup"
+        "entryId": "AlgebraicTopology.subsec.fundamentalGroup",
+        "counterId": "topology-subsection"
       }
     },
     {
@@ -288,70 +289,232 @@
       "id": "n_10",
       "label": "Entry",
       "props": {
-        "entryId": "FundamentalGroup"
+        "entryId": "FundamentalGroup",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_11",
       "label": "Entry",
       "props": {
-        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPath"
+        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPath",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_12",
       "label": "Entry",
       "props": {
-        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnected"
+        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnected",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_13",
       "label": "Entry",
       "props": {
-        "entryId": "FundamentalGroup.map"
+        "entryId": "FundamentalGroup.map",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_14",
       "label": "Entry",
       "props": {
-        "entryId": "Joined"
+        "entryId": "Joined",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_15",
       "label": "Entry",
       "props": {
-        "entryId": "pathComponent"
+        "entryId": "pathComponent",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_16",
       "label": "Entry",
       "props": {
-        "entryId": "PathConnectedSpace"
-      }
-    },
-    {
-      "id": "n_17",
-      "label": "Entry",
-      "props": {
-        "entryId": "AlgebraicTopology.thm.fundamentalGroupCircle"
+        "entryId": "PathConnectedSpace",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_18",
       "label": "Entry",
       "props": {
-        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive"
+        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive",
+        "counterId": "topology-entry"
       }
     },
     {
       "id": "n_19",
       "label": "Entry",
       "props": {
-        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnectedConstructive"
+        "entryId": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnectedConstructive",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_ctxt",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.ctxt",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_loop",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.loop",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_rmk_classes",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.rmk.classes",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_mul",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.mul",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_mul_proof",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.mul.proof",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_one",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.one",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_inv",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.inv",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_inv_proof",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.inv.proof",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_mul_assoc",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.mul_assoc",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_one_mul",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.one_mul",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_inv_mul",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.inv_mul",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_group",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.group",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_group_proof",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.group.proof",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_rmk_conventions",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.rmk.conventions",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_map_proof",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.map.proof",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_map_id",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.map_id",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_map_comp",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.map_comp",
+        "counterId": "topology-entry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_map_comp_proof",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.map_comp.proof",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_basepoint_proof",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.basepoint.proof",
+        "counterId": "topology-subentry"
+      }
+    },
+    {
+      "id": "fg_FundamentalGroup_basepoint_choice",
+      "label": "Entry",
+      "props": {
+        "entryId": "FundamentalGroup.basepoint.choice",
+        "counterId": "topology-subentry"
       }
     }
   ],
@@ -533,7 +696,107 @@
     },
     {
       "from": "n_1",
+      "to": "fg_FundamentalGroup_ctxt",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_loop",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
       "to": "n_10",
+      "label": "branch"
+    },
+    {
+      "from": "n_10",
+      "to": "fg_FundamentalGroup_rmk_classes",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_mul",
+      "label": "branch"
+    },
+    {
+      "from": "fg_FundamentalGroup_mul",
+      "to": "fg_FundamentalGroup_mul_proof",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_one",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_inv",
+      "label": "branch"
+    },
+    {
+      "from": "fg_FundamentalGroup_inv",
+      "to": "fg_FundamentalGroup_inv_proof",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_mul_assoc",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_one_mul",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_inv_mul",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_group",
+      "label": "branch"
+    },
+    {
+      "from": "fg_FundamentalGroup_group",
+      "to": "fg_FundamentalGroup_group_proof",
+      "label": "branch"
+    },
+    {
+      "from": "fg_FundamentalGroup_group",
+      "to": "fg_FundamentalGroup_rmk_conventions",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_13",
+      "label": "branch"
+    },
+    {
+      "from": "n_13",
+      "to": "fg_FundamentalGroup_map_proof",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_map_id",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "fg_FundamentalGroup_map_comp",
+      "label": "branch"
+    },
+    {
+      "from": "fg_FundamentalGroup_map_comp",
+      "to": "fg_FundamentalGroup_map_comp_proof",
+      "label": "branch"
+    },
+    {
+      "from": "n_1",
+      "to": "n_18",
       "label": "branch"
     },
     {
@@ -542,13 +805,8 @@
       "label": "branch"
     },
     {
-      "from": "n_1",
-      "to": "n_12",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_13",
+      "from": "n_11",
+      "to": "fg_FundamentalGroup_basepoint_proof",
       "label": "branch"
     },
     {
@@ -568,17 +826,17 @@
     },
     {
       "from": "n_1",
-      "to": "n_17",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_18",
+      "to": "n_12",
       "label": "branch"
     },
     {
       "from": "n_1",
       "to": "n_19",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "fg_FundamentalGroup_basepoint_choice",
       "label": "branch"
     }
   ]

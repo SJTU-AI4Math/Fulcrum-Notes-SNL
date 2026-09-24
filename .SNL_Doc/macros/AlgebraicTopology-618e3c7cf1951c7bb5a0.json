@@ -5,7 +5,7 @@
   "package": "AlgebraicTopology",
   "macro": {
     "name": "FundamentalGroup.fundamentalGroupMulEquivOfPathConnected",
-    "description": "Basepoint-independence isomorphism of fundamental groups for path-connected spaces",
+    "description": "Propositional existence of an isomorphism π₁(X,x) ≃* π₁(X,y) for path-connected X; this editorial macro denotes the theorem, not Mathlib’s same-named chosen MulEquiv. For a selected map use the distinct choice-after-path macro.",
     "source": {
       "entries": [
         "FundamentalGroup.fundamentalGroupMulEquivOfPathConnected"

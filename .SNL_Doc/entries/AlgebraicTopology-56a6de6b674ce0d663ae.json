@@ -1,0 +1,17 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicTopology",
+  "entry": {
+    "id": "FundamentalGroup.mul.proof",
+    "package": "AlgebraicTopology",
+    "contribution_info": null,
+    "pointer": null,
+    "title": "乘法的良定义",
+    "kind": "proof",
+    "content": {
+      "snl": "proof(%改变两个代表而不改变其定端同伦类时，拼接相容性给出拼接道路仍定端同伦。由商类相等的判别式，所得乘积与代表的选择无关。%)"
+    }
+  }
+}

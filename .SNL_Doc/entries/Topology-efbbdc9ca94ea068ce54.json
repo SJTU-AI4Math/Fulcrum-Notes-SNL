@@ -6,24 +6,9 @@
   "entry": {
     "id": "Joined",
     "kind": "definition",
-    "title": {
-      "type": "i18n",
-      "default_language": "en",
-      "values": {
-        "en": "Joined by a Path",
-        "zh-CN": "道路连通（两点相连）"
-      }
-    },
+    "title": "可由道路相连",
     "content": {
-      "snl": "variable(__list__(Type.annotation(@X,Type),Type.annotation(@x,X),Type.annotation(@y,X)),def(Joined(x,y), , ))",
-      "markdown": {
-        "type": "i18n",
-        "default_language": "en",
-        "values": {
-          "en": "Two points $x,y\\in X$ are **joined by a path** if there exists a path $f\\colon I\\to X$ with $f(0)=x$ and $f(1)=y$; this relation is an equivalence relation.",
-          "zh-CN": "若存在道路 $f\\colon I\\to X$ 使 $f(0)=x$ 且 $f(1)=y$，则称 $x,y\\in X$ 可由道路相连；该关系是等价关系。"
-        }
-      }
+      "snl": "variable(Type.annotation(__list__[formula](@x,@y),X),def[prop](Joined(x,y),,Nonempty[text](Path(x,y))))"
     },
     "contribution_info": null,
     "pointer": {

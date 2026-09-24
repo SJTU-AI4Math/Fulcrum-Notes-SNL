@@ -5,10 +5,10 @@
   "package": "AlgebraicTopology",
   "macro": {
     "name": "FundamentalGroup.fundamentalGroupMulEquivOfPath",
-    "description": "Change-of-basepoint isomorphism of fundamental groups induced by a path",
+    "description": "Given p : Path x y, the explicitly specified change-of-basepoint map βₚ : π₁(X,x) → π₁(X,y), proved a MulEquiv in the adjacent theorem; the defining Entry retains its historical Constructive ID.",
     "source": {
       "entries": [
-        "FundamentalGroup.fundamentalGroupMulEquivOfPath"
+        "FundamentalGroup.fundamentalGroupMulEquivOfPathConstructive"
       ],
       "urls": []
     },

@@ -4,24 +4,24 @@
   "schema_version": 1,
   "package": "AlgebraicTopology",
   "macro": {
-    "name": "FundamentalGroup.map",
-    "description": "Mathlib FundamentalGroup.map (f : C(X,Y)) (x : X), FundamentalGroup.lean:78–79. Type stated separately.",
-    "source": {
-      "entries": [
-        "FundamentalGroup.map"
-      ],
-      "urls": []
-    },
+    "name": "FundamentalGroup.one",
     "kind": "const",
     "dynamic_arity": false,
     "tags": [],
+    "description": "Identity loop class at the displayed basepoint; editorial notation.",
+    "source": {
+      "entries": [
+        "FundamentalGroup.one"
+      ],
+      "urls": []
+    },
     "styles": [
       {
         "style_name": "default",
         "tags": [],
         "template": {
           "mode": "formula_inline",
-          "body": "{#0}_{\\ast,#1}"
+          "body": "1_{#0}"
         }
       }
     ]
