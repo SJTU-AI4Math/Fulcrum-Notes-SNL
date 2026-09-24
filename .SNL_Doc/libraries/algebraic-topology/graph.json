@@ -318,30 +318,6 @@
       }
     },
     {
-      "id": "n_14",
-      "label": "Entry",
-      "props": {
-        "entryId": "Joined",
-        "counterId": "topology-entry"
-      }
-    },
-    {
-      "id": "n_15",
-      "label": "Entry",
-      "props": {
-        "entryId": "pathComponent",
-        "counterId": "topology-entry"
-      }
-    },
-    {
-      "id": "n_16",
-      "label": "Entry",
-      "props": {
-        "entryId": "PathConnectedSpace",
-        "counterId": "topology-entry"
-      }
-    },
-    {
       "id": "n_18",
       "label": "Entry",
       "props": {
@@ -1179,21 +1155,6 @@
     {
       "from": "n_11",
       "to": "fg_FundamentalGroup_basepoint_proof",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_14",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_15",
-      "label": "branch"
-    },
-    {
-      "from": "n_1",
-      "to": "n_16",
       "label": "branch"
     },
     {

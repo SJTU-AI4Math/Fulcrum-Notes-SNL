@@ -1072,6 +1072,30 @@
         "entryId": "Topology.proof.compactOpenHomotopyPath",
         "counterId": "coProof"
       }
+    },
+    {
+      "id": "ownership_Joined",
+      "label": "Entry",
+      "props": {
+        "entryId": "Joined",
+        "counterId": "coEntry"
+      }
+    },
+    {
+      "id": "ownership_pathComponent",
+      "label": "Entry",
+      "props": {
+        "entryId": "pathComponent",
+        "counterId": "coEntry"
+      }
+    },
+    {
+      "id": "ownership_PathConnectedSpace",
+      "label": "Entry",
+      "props": {
+        "entryId": "PathConnectedSpace",
+        "counterId": "coEntry"
+      }
     }
   ],
   "relationships": [
@@ -1813,6 +1837,21 @@
     {
       "from": "compactOpen_Topology_ppt_compactOpenHomotopyPath",
       "to": "compactOpen_Topology_proof_compactOpenHomotopyPath",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "ownership_Joined",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "ownership_pathComponent",
+      "label": "branch"
+    },
+    {
+      "from": "n_6",
+      "to": "ownership_PathConnectedSpace",
       "label": "branch"
     }
   ]
