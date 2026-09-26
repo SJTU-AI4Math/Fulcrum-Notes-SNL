@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.prf.secondFundamentalSymmetric",
+    "package": "DifferentialGeometry",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Proof of Symmetric Bilinearity",
+        "zh-CN": "对称双线性性的证明"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The coordinate maps $w\\mapsto(a,b)$ and $z\\mapsto(c,d)$ are linear because $U,V$ are a basis. The polynomial $eac+f(ad+bc)+gbd$ is linear in each pair and invariant under exchanging them. Componentwise equality of mixed partials on the open $C^2$ domain gives $\\langle X_{uv},\\boldsymbol N\\rangle=\\langle X_{vu},\\boldsymbol N\\rangle$, so this symmetric coefficient matrix is the matrix of all second partial normal components.",
+          "zh-CN": "由于 $U,V$ 是基，坐标映射 $w\\mapsto(a,b)$、$z\\mapsto(c,d)$ 线性。多项式 $eac+f(ad+bc)+gbd$ 对每一对坐标分别线性，交换两对坐标不变。开集上 $C^2$ 映射逐分量满足混合偏导相等，故 $\\langle X_{uv},\\boldsymbol N\\rangle=\\langle X_{vu},\\boldsymbol N\\rangle$，这个对称系数矩阵确为全部二阶偏导法分量的矩阵。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

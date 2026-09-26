@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.prf.secondFundamentalNormalDerivative",
+    "package": "DifferentialGeometry",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Proof of the Normal Differential Formula",
+        "zh-CN": "法向微分公式的证明"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Differentiate $\\langle\\boldsymbol N,X_j\\rangle=0$ in coordinate $i$: $-\\langle\\partial_i\\boldsymbol N,X_j\\rangle=\\langle\\boldsymbol N,\\partial_iX_j\\rangle$. For $i,j=1,2$ these four entries are $e,f,f,g$, using equality of mixed partials. Since $d\\boldsymbol N_q(a,b)=a\\boldsymbol N_u(q)+b\\boldsymbol N_v(q)$, bilinear expansion gives $eac+f(ad+bc)+gbd$.",
+          "zh-CN": "对 $\\langle\\boldsymbol N,X_j\\rangle=0$ 沿第 $i$ 坐标求导：$-\\langle\\partial_i\\boldsymbol N,X_j\\rangle=\\langle\\boldsymbol N,\\partial_iX_j\\rangle$。对 $i,j=1,2$，利用混合偏导相等，这四个值依次为 $e,f,f,g$。又 $d\\boldsymbol N_q(a,b)=a\\boldsymbol N_u(q)+b\\boldsymbol N_v(q)$，双线性展开即得 $eac+f(ad+bc)+gbd$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

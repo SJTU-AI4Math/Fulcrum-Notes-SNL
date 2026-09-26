@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.secondFundamentalSymmetric",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Symmetric Bilinearity of the Second Fundamental Form",
+        "zh-CN": "第二基本形式的对称双线性性"
+      }
+    },
+    "content": {
+      "snl": "variable[default](__list__[default]($\\mathcal C_X$@DG.ctxt.surfaceParametrization,DG.def.regularParametrizedSurface[text](X,$\\Omega$),$\\mathcal C_{\\boldsymbol N}$@DG.ctxt.surfaceUnitNormal,Type.annotation[colon](@q,LA.def.realVecSpaceRn[default]($2$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($2$),$\\Omega$,q),Type.annotation[colon](__list__[formula](@w,@z),LA.def.realVecSpaceRn[default]($3$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($3$),DG.def.tangentPlane[default](X,q),w),Set.Mem[default](LA.def.realVecSpaceRn[default]($3$),DG.def.tangentPlane[default](X,q),z)),Eq[default](Real[default],DG.secondFundamentalForm[default](X,$\\boldsymbol{N}$,q,w,z),DG.secondFundamentalForm[default](X,$\\boldsymbol{N}$,q,z,w)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Choose a smooth unit normal field $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$ on $\\Omega$ as in the normal context. The second fundamental form is a symmetric real bilinear form on $T_qX$. The Hessian interpretation uses $X_{uv}=X_{vu}$, valid because $X$ is $C^2$ on the open set $\\Omega$ (smoothness is more than sufficient). No positivity is asserted.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。选定法向语境中的光滑单位法向场 $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$（条件只在 $\\Omega$ 上要求）。第二基本形式是 $T_qX$ 上的对称实双线性型。其二阶导数解释使用 $X_{uv}=X_{vu}$；这由 $X$ 在开集 $\\Omega$ 上为 $C^2$ 保证，光滑性已足够。不声称它正定。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

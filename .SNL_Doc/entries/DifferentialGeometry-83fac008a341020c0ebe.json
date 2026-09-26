@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.rmk.secondCoefficientNotation",
+    "package": "DifferentialGeometry",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "The Notations e,f,g and L,M,N",
+        "zh-CN": "e,f,g 与 L,M,N 记号"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The three coefficients $e,f,g$ are also commonly written $L,M,N$. This text uses lowercase $e,f,g$ to avoid confusing the last coefficient with the chosen vector field $\\boldsymbol N$. All three depend on the normal choice.",
+          "zh-CN": "三个系数 $e,f,g$ 常写作 $L,M,N$。本文采用小写 $e,f,g$，避免第三个标量系数与选定的向量场 $\\boldsymbol N$ 混淆。三个系数均依赖法向的选择。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

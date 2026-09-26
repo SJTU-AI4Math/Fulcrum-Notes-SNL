@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.fundamentalReparametrization",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Invariance under Reparametrization with the Same Normal",
+        "zh-CN": "同法向重参数化下的不变性"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Choose a smooth unit normal field $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$ on $\\Omega$ as in the normal context. Let $\\widetilde\\Omega\\subseteq\\mathbb R^2$ be open and $\\phi:\\widetilde\\Omega\\to\\Omega$ be a smooth diffeomorphism onto an open subset (the transformation formulas themselves require only $C^2$). Set $Y=X\\circ\\phi$ and $\\widetilde{\\boldsymbol N}=\\boldsymbol N\\circ\\phi$ on $\\widetilde\\Omega$ (arbitrary total extensions outside suffice). For $r\\in\\widetilde\\Omega$, $q=\\phi(r)$, identify $T_rY=T_qX$ as ambient vector subspaces. For every $w,z$ in this plane, $\\mathrm I_Y(r;w,z)=\\mathrm I_X(q;w,z)$ and $\\mathrm{II}_{Y,\\widetilde{\\boldsymbol N}}(r;w,z)=\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)$. If $J=D\\phi_r$, the coefficient matrices obey $A_Y=J^TA_XJ$ and $B_{Y,\\widetilde{\\boldsymbol N}}=J^TB_{X,\\boldsymbol N}J$. By contrast, if each chart independently uses its ordered-cross-product normal, then $\\boldsymbol N_Y(r)=\\operatorname{sgn}(\\det J)\\boldsymbol N_X(q)$. A negative determinant negates the second form relative to the transported normal, but never the first. The sign is locally constant and constant on each connected component.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。选定法向语境中的光滑单位法向场 $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$（条件只在 $\\Omega$ 上要求）。设 $\\widetilde\\Omega\\subseteq\\mathbb R^2$ 开，$\\phi:\\widetilde\\Omega\\to\\Omega$ 是到某开子集的光滑微分同胚（变换公式本身只需 $C^2$）。在 $\\widetilde\\Omega$ 上令 $Y=X\\circ\\phi$、$\\widetilde{\\boldsymbol N}=\\boldsymbol N\\circ\\phi$（域外任意作全空间延拓）。对 $r\\in\\widetilde\\Omega$、$q=\\phi(r)$，把 $T_rY=T_qX$ 识别为同一环境向量子空间。对其中任意 $w,z$，$\\mathrm I_Y(r;w,z)=\\mathrm I_X(q;w,z)$ 且 $\\mathrm{II}_{Y,\\widetilde{\\boldsymbol N}}(r;w,z)=\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)$。令 $J=D\\phi_r$，系数矩阵满足 $A_Y=J^TA_XJ$、$B_{Y,\\widetilde{\\boldsymbol N}}=J^TB_{X,\\boldsymbol N}J$。若两个参数化各自独立选用有序叉积法向，则 $\\boldsymbol N_Y(r)=\\operatorname{sgn}(\\det J)\\boldsymbol N_X(q)$。负行列式使第二形式相对输运法向变号，但第一形式不变。符号局部常值，在各连通分支上为常数。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

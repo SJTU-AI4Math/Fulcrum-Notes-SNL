@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.secondFundamentalForm",
+    "package": "DifferentialGeometry",
+    "kind": "def",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Second Fundamental Form",
+        "zh-CN": "第二基本形式"
+      }
+    },
+    "content": {
+      "snl": "variable[default](__list__[default]($\\mathcal C_X$@DG.ctxt.surfaceParametrization,DG.def.regularParametrizedSurface[text](X,$\\Omega$),$\\mathcal C_{\\boldsymbol N}$@DG.ctxt.surfaceUnitNormal,Type.annotation[colon](@q,LA.def.realVecSpaceRn[default]($2$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($2$),$\\Omega$,q),Type.annotation[colon](__list__[formula](@a,@b,@c,@d),Real[default]),Type.annotation[colon](__list__[formula](@w,@z),LA.def.realVecSpaceRn[default]($3$)),Eq[default](LA.def.realVecSpaceRn[default]($3$),w,Add.add[infix](LA.Smul[default](a,Type.apply[paren](DG.def.partialDeriv[default](X,$1$),q)),LA.Smul[default](b,Type.apply[paren](DG.def.partialDeriv[default](X,$2$),q)))),Eq[default](LA.def.realVecSpaceRn[default]($3$),z,Add.add[infix](LA.Smul[default](c,Type.apply[paren](DG.def.partialDeriv[default](X,$1$),q)),LA.Smul[default](d,Type.apply[paren](DG.def.partialDeriv[default](X,$2$),q))))),def[untyped](DG.secondFundamentalForm[default](X,$\\boldsymbol{N}$,q,w,z),Real[default],Add.add[infix](Add.add[infix](Mul.mul[implicit](Mul.mul[implicit](Type.apply[paren](DG.secondFundamentale[default](X,$\\boldsymbol{N}$),q),a),c),Mul.mul[implicit](Type.apply[paren](DG.secondFundamentalf[default](X,$\\boldsymbol{N}$),q),parentheses[round](Add.add[infix](Mul.mul[implicit](a,d),Mul.mul[implicit](b,c))))),Mul.mul[implicit](Mul.mul[implicit](Type.apply[paren](DG.secondFundamentalg[default](X,$\\boldsymbol{N}$),q),b),d))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Choose a smooth unit normal field $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$ on $\\Omega$ as in the normal context. For each $w,z\\in T_qX$, let $a,b,c,d\\in\\mathbb R$ be their unique basis coordinates $w=aU+bV$, $z=cU+dV$. Define the real-valued form $\\mathrm{II}_{X,\\boldsymbol N}(q;w,z):=eac+f(ad+bc)+gbd$, where $(e,f,g)=(e_{X,\\boldsymbol N}(q),f_{X,\\boldsymbol N}(q),g_{X,\\boldsymbol N}(q))$. This is an explicit definition from the unique coordinates, not an implicit equation for the form.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。选定法向语境中的光滑单位法向场 $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$（条件只在 $\\Omega$ 上要求）。对每个 $w,z\\in T_qX$，取唯一实系数 $a,b,c,d$ 使 $w=aU+bV$、$z=cU+dV$。定义实值形式 $\\mathrm{II}_{X,\\boldsymbol N}(q;w,z):=eac+f(ad+bc)+gbd$，其中 $(e,f,g)=(e_{X,\\boldsymbol N}(q),f_{X,\\boldsymbol N}(q),g_{X,\\boldsymbol N}(q))$。这是从唯一坐标给出的显式定义，而不是用含待定义形式的方程作隐式定义。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

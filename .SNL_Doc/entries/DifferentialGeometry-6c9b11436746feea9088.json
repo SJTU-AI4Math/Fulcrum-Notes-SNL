@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.secondFundamentalAcceleration",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Normal Component of Curve Acceleration",
+        "zh-CN": "曲线加速度的法分量"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Choose a smooth unit normal field $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$ on $\\Omega$ as in the normal context. Let $J\\subseteq\\mathbb R$ be an open interval, $\\alpha=(u,v):J\\to\\Omega$ be $C^2$, and $\\gamma=X\\circ\\alpha$. For every $t\\in J$, $\\langle\\ddot\\gamma(t),\\boldsymbol N(\\alpha(t))\\rangle=\\mathrm{II}_{X,\\boldsymbol N}(\\alpha(t);\\dot\\gamma(t),\\dot\\gamma(t))$. Thus the vector normal projection is this scalar times $\\boldsymbol N(\\alpha(t))$. This holds for arbitrary speed, even at zero velocity; neither regularity of the curve nor arc-length parametrization is assumed.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。选定法向语境中的光滑单位法向场 $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$（条件只在 $\\Omega$ 上要求）。设 $J\\subseteq\\mathbb R$ 为开区间，$\\alpha=(u,v):J\\to\\Omega$ 为 $C^2$ 曲线，$\\gamma=X\\circ\\alpha$。对每个 $t\\in J$，$\\langle\\ddot\\gamma(t),\\boldsymbol N(\\alpha(t))\\rangle=\\mathrm{II}_{X,\\boldsymbol N}(\\alpha(t);\\dot\\gamma(t),\\dot\\gamma(t))$。向量法投影等于该标量乘 $\\boldsymbol N(\\alpha(t))$。任意速乃至速度为零处均成立，不要求曲线正则，也不假定弧长参数。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

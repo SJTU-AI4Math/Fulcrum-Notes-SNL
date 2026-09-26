@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.firstFundamentalBilinear",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Symmetric Bilinearity of the First Fundamental Form",
+        "zh-CN": "第一基本形式的对称双线性性"
+      }
+    },
+    "content": {
+      "snl": "variable[default](__list__[default]($\\mathcal C_X$@DG.ctxt.surfaceParametrization,DG.def.regularParametrizedSurface[text](X,$\\Omega$),Type.annotation[colon](@q,LA.def.realVecSpaceRn[default]($2$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($2$),$\\Omega$,q),Type.annotation[colon](__list__[formula](@w,@z),LA.def.realVecSpaceRn[default]($3$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($3$),DG.def.tangentPlane[default](X,q),w),Set.Mem[default](LA.def.realVecSpaceRn[default]($3$),DG.def.tangentPlane[default](X,q),z)),Eq[default](Real[default],DG.def.firstFundamentalForm[default](X,q,w,z),DG.def.firstFundamentalForm[default](X,q,z,w)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. The restriction of the Euclidean inner product is a symmetric real bilinear form on $T_qX$; in particular $\\mathrm I_X(q;w,z)=\\mathrm I_X(q;z,w)$ for all $w,z\\in T_qX$.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。欧氏内积的限制是 $T_qX$ 上的对称实双线性型；特别地，对任意 $w,z\\in T_qX$ 有 $\\mathrm I_X(q;w,z)=\\mathrm I_X(q;z,w)$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

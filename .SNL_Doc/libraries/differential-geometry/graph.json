@@ -335,6 +335,238 @@
         "entryId": "DG.ppt.firstFundamentalFormPositiveDefinite",
         "counterId": "dg-subentry"
       }
+    },
+    {
+      "id": "ff_DG_rmk_dsSquared",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.rmk.dsSquared",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_firstFundamentalE",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.firstFundamentalE",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "ff_DG_firstFundamentalF",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.firstFundamentalF",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "ff_DG_firstFundamentalG",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.firstFundamentalG",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_firstFundamentalCoordinates",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.firstFundamentalCoordinates",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_firstFundamentalQuadratic",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.firstFundamentalQuadratic",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_firstFundamentalBilinear",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.firstFundamentalBilinear",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_prf_firstFundamentalGram",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.prf.firstFundamentalGram",
+        "counterId": "dg-proof"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_firstFundamentalMetric",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.firstFundamentalMetric",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_ctxt_surfaceUnitNormal",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ctxt.surfaceUnitNormal",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "ff_DG_surfaceSecondPartial",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.surfaceSecondPartial",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "ff_DG_secondFundamentale",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.secondFundamentale",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "ff_DG_secondFundamentalf",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.secondFundamentalf",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "ff_DG_secondFundamentalg",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.secondFundamentalg",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "ff_DG_rmk_secondCoefficientNotation",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.rmk.secondCoefficientNotation",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_secondFundamentalForm",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.secondFundamentalForm",
+        "counterId": "dg-entry"
+      }
+    },
+    {
+      "id": "ff_DG_rmk_secondFundamentalSign",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.rmk.secondFundamentalSign",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_secondFundamentalQuadratic",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.secondFundamentalQuadratic",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_secondFundamentalSymmetric",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.secondFundamentalSymmetric",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_prf_secondFundamentalSymmetric",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.prf.secondFundamentalSymmetric",
+        "counterId": "dg-proof"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_secondFundamentalNormalDerivative",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.secondFundamentalNormalDerivative",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_prf_secondFundamentalNormalDerivative",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.prf.secondFundamentalNormalDerivative",
+        "counterId": "dg-proof"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_fundamentalNormalReversal",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.fundamentalNormalReversal",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_secondFundamentalAcceleration",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.secondFundamentalAcceleration",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_prf_secondFundamentalAcceleration",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.prf.secondFundamentalAcceleration",
+        "counterId": "dg-proof"
+      }
+    },
+    {
+      "id": "ff_DG_ppt_fundamentalReparametrization",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.ppt.fundamentalReparametrization",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_prf_fundamentalReparametrization",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.prf.fundamentalReparametrization",
+        "counterId": "dg-proof"
+      }
+    },
+    {
+      "id": "ff_DG_xmp_fundamentalPlane",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.xmp.fundamentalPlane",
+        "counterId": "dg-subentry"
+      }
+    },
+    {
+      "id": "ff_DG_xmp_fundamentalSphere",
+      "label": "Entry",
+      "props": {
+        "entryId": "DG.xmp.fundamentalSphere",
+        "counterId": "dg-subentry"
+      }
     }
   ],
   "relationships": [
@@ -534,13 +766,158 @@
       "label": "branch"
     },
     {
-      "from": "n_12",
-      "to": "n_37",
+      "from": "n_37",
+      "to": "ff_DG_rmk_dsSquared",
       "label": "branch"
     },
     {
       "from": "n_37",
       "to": "n_38",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "ff_DG_ppt_firstFundamentalCoordinates",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "ff_DG_ppt_firstFundamentalQuadratic",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "ff_DG_ppt_firstFundamentalBilinear",
+      "label": "branch"
+    },
+    {
+      "from": "n_37",
+      "to": "ff_DG_ppt_firstFundamentalMetric",
+      "label": "branch"
+    },
+    {
+      "from": "n_38",
+      "to": "ff_DG_prf_firstFundamentalGram",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentale",
+      "to": "ff_DG_rmk_secondCoefficientNotation",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentalForm",
+      "to": "ff_DG_rmk_secondFundamentalSign",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentalForm",
+      "to": "ff_DG_ppt_secondFundamentalQuadratic",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentalForm",
+      "to": "ff_DG_ppt_secondFundamentalSymmetric",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentalForm",
+      "to": "ff_DG_ppt_secondFundamentalNormalDerivative",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentalForm",
+      "to": "ff_DG_ppt_fundamentalNormalReversal",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentalForm",
+      "to": "ff_DG_ppt_secondFundamentalAcceleration",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentalForm",
+      "to": "ff_DG_ppt_fundamentalReparametrization",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentalForm",
+      "to": "ff_DG_xmp_fundamentalPlane",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_secondFundamentalForm",
+      "to": "ff_DG_xmp_fundamentalSphere",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_ppt_secondFundamentalSymmetric",
+      "to": "ff_DG_prf_secondFundamentalSymmetric",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_ppt_secondFundamentalNormalDerivative",
+      "to": "ff_DG_prf_secondFundamentalNormalDerivative",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_ppt_secondFundamentalAcceleration",
+      "to": "ff_DG_prf_secondFundamentalAcceleration",
+      "label": "branch"
+    },
+    {
+      "from": "ff_DG_ppt_fundamentalReparametrization",
+      "to": "ff_DG_prf_fundamentalReparametrization",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "ff_DG_ctxt_surfaceUnitNormal",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "ff_DG_surfaceSecondPartial",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "ff_DG_firstFundamentalE",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "ff_DG_firstFundamentalF",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "ff_DG_firstFundamentalG",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "n_37",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "ff_DG_secondFundamentale",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "ff_DG_secondFundamentalf",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "ff_DG_secondFundamentalg",
+      "label": "branch"
+    },
+    {
+      "from": "n_12",
+      "to": "ff_DG_secondFundamentalForm",
       "label": "branch"
     }
   ]

@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.secondFundamentalQuadratic",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Quadratic Expression of the Second Fundamental Form",
+        "zh-CN": "第二基本形式的二次式"
+      }
+    },
+    "content": {
+      "snl": "variable[default](__list__[default]($\\mathcal C_X$@DG.ctxt.surfaceParametrization,DG.def.regularParametrizedSurface[text](X,$\\Omega$),$\\mathcal C_{\\boldsymbol N}$@DG.ctxt.surfaceUnitNormal,Type.annotation[colon](@q,LA.def.realVecSpaceRn[default]($2$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($2$),$\\Omega$,q),Type.annotation[colon](__list__[formula](@a,@b),Real[default])),Eq[default](Real[default],DG.secondFundamentalForm[default](X,$\\boldsymbol{N}$,q,Add.add[infix](LA.Smul[default](a,Type.apply[paren](DG.def.partialDeriv[default](X,$1$),q)),LA.Smul[default](b,Type.apply[paren](DG.def.partialDeriv[default](X,$2$),q))),Add.add[infix](LA.Smul[default](a,Type.apply[paren](DG.def.partialDeriv[default](X,$1$),q)),LA.Smul[default](b,Type.apply[paren](DG.def.partialDeriv[default](X,$2$),q)))),Add.add[infix](Add.add[infix](Mul.mul[implicit](Type.apply[paren](DG.secondFundamentale[default](X,$\\boldsymbol{N}$),q),Power[sup](a,$2$)),Mul.mul[implicit](Mul.mul[implicit](Mul.mul[implicit]($2$,Type.apply[paren](DG.secondFundamentalf[default](X,$\\boldsymbol{N}$),q)),a),b)),Mul.mul[implicit](Type.apply[paren](DG.secondFundamentalg[default](X,$\\boldsymbol{N}$),q),Power[sup](b,$2$)))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Choose a smooth unit normal field $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$ on $\\Omega$ as in the normal context. For $w=aU+bV$, $\\mathrm{II}_{X,\\boldsymbol N}(q;w,w)=ea^2+2fab+gb^2$, with $e,f,g$ at $q$.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。选定法向语境中的光滑单位法向场 $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$（条件只在 $\\Omega$ 上要求）。若 $w=aU+bV$，则 $\\mathrm{II}_{X,\\boldsymbol N}(q;w,w)=ea^2+2fab+gb^2$，其中 $e,f,g$ 在 $q$ 处取值。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

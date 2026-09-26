@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.surfaceSecondPartial",
+    "package": "DifferentialGeometry",
+    "kind": "def",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Second Partial Derivatives of a Surface",
+        "zh-CN": "曲面的二阶偏导"
+      }
+    },
+    "content": {
+      "snl": "variable[default](__list__[default]($\\mathcal C_X$@DG.ctxt.surfaceParametrization,DG.def.regularParametrizedSurface[text](X,$\\Omega$),Type.annotation[colon](@q,LA.def.realVecSpaceRn[default]($2$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($2$),$\\Omega$,q),Type.annotation[colon](__list__[formula](@i,@j),Nat[default]),Set.Mem[default](Nat[default],$\\{1,2\\}$,i),Set.Mem[default](Nat[default],$\\{1,2\\}$,j)),def[untyped](Type.apply[paren](DG.surfaceSecondPartial[default](X,i,j),q),LA.def.realVecSpaceRn[default]($3$),Type.apply[paren](DG.def.partialDeriv[default](parentheses[round](DG.def.partialDeriv[default](X,i)),j),q)))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. For $i,j\\in\\{1,2\\}$, define $X_{ij}(q)=\\partial_j(\\partial_i X)(q)$. Here indices 1 and 2 denote $u$ and $v$. The derivative is taken on coordinate lines in an open neighbourhood of $q$ contained in $\\Omega$; values or derivatives outside $\\Omega$ do not enter. Thus $X_{11}=X_{uu}$, $X_{12}=X_{uv}$ and $X_{22}=X_{vv}$.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。对 $i,j\\in\\{1,2\\}$，定义 $X_{ij}(q)=\\partial_j(\\partial_i X)(q)$，指标 1、2 分别表示 $u,v$。在 $q$ 的开邻域内沿坐标直线求导，该邻域包含于 $\\Omega$；不使用 $\\Omega$ 外的导数或取值。因此 $X_{11}=X_{uu}$、$X_{12}=X_{uv}$、$X_{22}=X_{vv}$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

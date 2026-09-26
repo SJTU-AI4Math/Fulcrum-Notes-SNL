@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "name": "DG.firstFundamentalG",
+    "kind": "const",
+    "dynamic_arity": false,
+    "description": "First fundamental coefficient G; argument X, a scalar function on the parameter domain.",
+    "source": {
+      "entries": [
+        "DG.firstFundamentalG"
+      ],
+      "urls": []
+    },
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "G_{#0}"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ctxt.surfaceUnitNormal",
+    "package": "DifferentialGeometry",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "A Chosen Local Unit Normal Field",
+        "zh-CN": "选定的局部单位法向场"
+      }
+    },
+    "content": {
+      "snl": "variable[default](__list__[default]($\\mathcal C_X$@DG.ctxt.surfaceParametrization,DG.def.regularParametrizedSurface[text](X,$\\Omega$)),__list__[default](Type.annotation[colon](@$\\boldsymbol{N}$,Type.to[default](LA.def.realVecSpaceRn[default]($2$),LA.def.realVecSpaceRn[default]($3$))),ContDiffOn[default]($\\infty$,$\\boldsymbol{N}$,$\\Omega$),Logic.forall-typed[default](@r,LA.def.realVecSpaceRn[default]($2$),Logic.implies[longdouble](Set.Mem[default](LA.def.realVecSpaceRn[default]($2$),$\\Omega$,r),parentheses[round](And[authored_Logic_and_infix](Eq[default](Real[default],norm[default](Type.apply[paren]($\\boldsymbol{N}$,r)),$1$),And[authored_Logic_and_infix](Eq[default](Real[default],inner[default](Type.apply[paren]($\\boldsymbol{N}$,r),Type.apply[paren](DG.def.partialDeriv[default](X,$1$),r)),$0$),Eq[default](Real[default],inner[default](Type.apply[paren]($\\boldsymbol{N}$,r),Type.apply[paren](DG.def.partialDeriv[default](X,$2$),r)),$0$))))))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Fix a smooth map $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$ on $\\Omega$ such that, for every $r\\in\\Omega$, $\\|\\boldsymbol N(r)\\|=1$ and $\\boldsymbol N(r)\\perp X_u(r),X_v(r)$. Only restrictions to $\\Omega$ matter. The normal $\\boldsymbol N_X(r)=(X_u(r)\\times X_v(r))/\\|X_u(r)\\times X_v(r)\\|$ from the existing unit-normal definition is a permitted choice; the opposite is also permitted. Outside $\\Omega$ values may be assigned arbitrarily.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。固定在 $\\Omega$ 上光滑的映射 $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$，对每个 $r\\in\\Omega$ 满足 $\\|\\boldsymbol N(r)\\|=1$ 且 $\\boldsymbol N(r)\\perp X_u(r),X_v(r)$。只使用在 $\\Omega$ 上的限制。已有单位法向定义给出的 $\\boldsymbol N_X(r)=(X_u(r)\\times X_v(r))/\\|X_u(r)\\times X_v(r)\\|$ 是可选法向，其反向也允许；$\\Omega$ 外任意赋值。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "name": "DG.secondFundamentalForm",
+    "kind": "const",
+    "dynamic_arity": false,
+    "description": "Second fundamental form value; arguments (X,N,q,w,z), with sign convention II=-<dN(w),z>.",
+    "source": {
+      "entries": [
+        "DG.secondFundamentalForm"
+      ],
+      "urls": []
+    },
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\mathrm{II}_{#0,#1}\\left(#2;#3,#4\\right)"
+        }
+      }
+    ]
+  }
+}

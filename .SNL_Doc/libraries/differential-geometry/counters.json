@@ -19,7 +19,14 @@
                   "id": "dg-subentry",
                   "name": "Subentry",
                   "numbering": ".1",
-                  "children": []
+                  "children": [
+                    {
+                      "id": "dg-proof",
+                      "name": "SubentryProof",
+                      "numbering": ".1",
+                      "children": []
+                    }
+                  ]
                 }
               ]
             }

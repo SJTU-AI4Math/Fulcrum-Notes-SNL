@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.rmk.dsSquared",
+    "package": "DifferentialGeometry",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "The Notation ds²",
+        "zh-CN": "ds² 记号"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The notation $ds^2=E\\,du^2+2F\\,du\\,dv+G\\,dv^2$ denotes the quadratic form associated with $\\mathrm I$, not a numerical square of an infinitesimal. On a parameter velocity $(a,b)$ it takes the value $Ea^2+2Fab+Gb^2$. Here $du,dv$ are coordinate covectors; the mixed term denotes the symmetric product. All coefficients are evaluated at the same parameter point.",
+          "zh-CN": "记号 $ds^2=E\\,du^2+2F\\,du\\,dv+G\\,dv^2$ 表示 $\\mathrm I$ 对应的二次型，不是某个无穷小数的平方。作用于参数速度 $(a,b)$ 时，值为 $Ea^2+2Fab+Gb^2$。这里 $du,dv$ 是坐标余向量，交叉项采用对称乘积记法，所有系数均在同一参数点取值。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.rmk.secondFundamentalSign",
+    "package": "DifferentialGeometry",
+    "kind": "remark",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Sign Convention for the Second Fundamental Form",
+        "zh-CN": "第二基本形式的符号约定"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "We use $\\mathrm{II}(w,z)=-\\langle d\\boldsymbol N(w),z\\rangle$, not its negative. In parameter notation $w=dX_q(\\xi)$, the symbol $d\\boldsymbol N(w)$ means $d(\\boldsymbol N|_\\Omega)_q(\\xi)$; it does not apply the differential of a map on $\\mathbb R^2$ directly to an ambient vector in $\\mathbb R^3$. The equivalence with the coordinate definition is the normal-derivative property below. No shape operator is required.",
+          "zh-CN": "本文采用 $\\mathrm{II}(w,z)=-\\langle d\\boldsymbol N(w),z\\rangle$ 而非相反号。参数记号中若 $w=dX_q(\\xi)$，则 $d\\boldsymbol N(w)$ 是 $d(\\boldsymbol N|_\\Omega)_q(\\xi)$ 的简记，绝不是把定义域为 $\\mathbb R^2$ 的映射的微分直接作用于 $\\mathbb R^3$ 中的向量。与坐标定义的等价性由下述法向微分性质说明；无需引入形算子。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

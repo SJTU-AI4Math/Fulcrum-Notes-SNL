@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.xmp.fundamentalPlane",
+    "package": "DifferentialGeometry",
+    "kind": "example",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Fundamental Forms of a Plane",
+        "zh-CN": "平面的基本形式"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "On $\\Omega=\\mathbb R^2$, let $X(u,v)=(u,v,0)$. Then $X_u=(1,0,0)$, $X_v=(0,1,0)$ and the ordered-cross-product unit normal is $\\boldsymbol N=(0,0,1)$. Thus $E=G=1$, $F=0$, all second partials vanish, and $e=f=g=0$. At every $q$, for $w=aX_u+bX_v$ and $z=cX_u+dX_v$, $\\mathrm I_X(q;w,z)=ac+bd$ and $\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)=0$. The opposite normal still gives the zero second form.",
+          "zh-CN": "在 $\\Omega=\\mathbb R^2$ 上取 $X(u,v)=(u,v,0)$。则 $X_u=(1,0,0)$、$X_v=(0,1,0)$，有序叉积单位法向为 $\\boldsymbol N=(0,0,1)$。因此 $E=G=1$、$F=0$，所有二阶偏导为零，$e=f=g=0$。每个 $q$ 处，若 $w=aX_u+bX_v$、$z=cX_u+dX_v$，则 $\\mathrm I_X(q;w,z)=ac+bd$，$\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)=0$。反法向下第二形式仍为零。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

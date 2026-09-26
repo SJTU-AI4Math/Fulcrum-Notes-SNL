@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.firstFundamentalCoordinates",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Bilinear Coordinate Expression of the First Fundamental Form",
+        "zh-CN": "第一基本形式的双线性坐标表达"
+      }
+    },
+    "content": {
+      "snl": "variable[default](__list__[default]($\\mathcal C_X$@DG.ctxt.surfaceParametrization,DG.def.regularParametrizedSurface[text](X,$\\Omega$),Type.annotation[colon](@q,LA.def.realVecSpaceRn[default]($2$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($2$),$\\Omega$,q),Type.annotation[colon](__list__[formula](@a,@b,@c,@d),Real[default])),Eq[default](Real[default],DG.def.firstFundamentalForm[default](X,q,Add.add[infix](LA.Smul[default](a,Type.apply[paren](DG.def.partialDeriv[default](X,$1$),q)),LA.Smul[default](b,Type.apply[paren](DG.def.partialDeriv[default](X,$2$),q))),Add.add[infix](LA.Smul[default](c,Type.apply[paren](DG.def.partialDeriv[default](X,$1$),q)),LA.Smul[default](d,Type.apply[paren](DG.def.partialDeriv[default](X,$2$),q)))),Add.add[infix](Add.add[infix](Mul.mul[implicit](Mul.mul[implicit](Type.apply[paren](DG.firstFundamentalE[default](X),q),a),c),Mul.mul[implicit](Type.apply[paren](DG.firstFundamentalF[default](X),q),parentheses[round](Add.add[infix](Mul.mul[implicit](a,d),Mul.mul[implicit](b,c))))),Mul.mul[implicit](Mul.mul[implicit](Type.apply[paren](DG.firstFundamentalG[default](X),q),b),d))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. For all $a,b,c,d\\in\\mathbb R$, the vectors $w=aU+bV$ and $z=cU+dV$ satisfy $\\mathrm I_X(q;w,z)=Eac+F(ad+bc)+Gbd$. Here $E=E_X(q),F=F_X(q),G=G_X(q)$.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。任意 $a,b,c,d\\in\\mathbb R$ 给出 $w=aU+bV$、$z=cU+dV$，有 $\\mathrm I_X(q;w,z)=Eac+F(ad+bc)+Gbd$。其中 $E=E_X(q),F=F_X(q),G=G_X(q)$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.secondFundamentalNormalDerivative",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Normal Differential Formula",
+        "zh-CN": "法向微分公式"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Choose a smooth unit normal field $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$ on $\\Omega$ as in the normal context. For $w=aX_u(q)+bX_v(q)$ and $z=cX_u(q)+dX_v(q)$, put $\\xi=(a,b)$. Then $\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)=-\\langle d\\boldsymbol N_q(\\xi),z\\rangle$, where $d\\boldsymbol N_q:\\mathbb R^2\\to\\mathbb R^3$ differentiates the parameter-domain map on $\\Omega$ and $dX_q(\\xi)=w$. Equivalently, on the local sheet this is $-\\langle d\\boldsymbol N(w),z\\rangle$.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。选定法向语境中的光滑单位法向场 $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$（条件只在 $\\Omega$ 上要求）。设 $w=aX_u(q)+bX_v(q)$、$z=cX_u(q)+dX_v(q)$，令 $\\xi=(a,b)$。则 $\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)=-\\langle d\\boldsymbol N_q(\\xi),z\\rangle$，其中 $d\\boldsymbol N_q:\\mathbb R^2\\to\\mathbb R^3$ 是在 $\\Omega$ 上对参数域映射求微分，且 $dX_q(\\xi)=w$。在局部曲面片上，这正是 $-\\langle d\\boldsymbol N(w),z\\rangle$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

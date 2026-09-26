@@ -4,29 +4,29 @@
   "schema_version": 1,
   "package": "DifferentialGeometry",
   "entry": {
+    "id": "DG.ppt.firstFundamentalFormPositiveDefinite",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Positive Definiteness and the Gram Determinant",
+        "zh-CN": "正定性与 Gram 行列式"
+      }
+    },
     "content": {
+      "snl": "variable[default](__list__[default]($\\mathcal C_X$@DG.ctxt.surfaceParametrization,DG.def.regularParametrizedSurface[text](X,$\\Omega$),Type.annotation[colon](@q,LA.def.realVecSpaceRn[default]($2$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($2$),$\\Omega$,q)),__list__[default](Lt[default]($0$,Type.apply[paren](DG.firstFundamentalE[default](X),q)),Lt[default]($0$,Type.apply[paren](DG.firstFundamentalG[default](X),q)),Eq[default](Real[default],Sub.sub[infix](Mul.mul[implicit](Type.apply[paren](DG.firstFundamentalE[default](X),q),Type.apply[paren](DG.firstFundamentalG[default](X),q)),Power[sup](Type.apply[paren](DG.firstFundamentalF[default](X),q),$2$)),Power[sup](norm[default](crossProduct[default](Type.apply[paren](DG.def.partialDeriv[default](X,$1$),q),Type.apply[paren](DG.def.partialDeriv[default](X,$2$),q))),$2$)),Lt[default]($0$,Sub.sub[infix](Mul.mul[implicit](Type.apply[paren](DG.firstFundamentalE[default](X),q),Type.apply[paren](DG.firstFundamentalG[default](X),q)),Power[sup](Type.apply[paren](DG.firstFundamentalF[default](X),q),$2$)))))",
       "markdown": {
-        "default_language": "en",
         "type": "i18n",
+        "default_language": "en",
         "values": {
-          "en": "For a regular smooth parametrized surface $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$, the first fundamental form is positive definite: if $q\\in\\Omega$, $w\\in T_{q}X$ and $w\\neq 0$, then $\\mathrm{I}_{X}(q;w,w)=\\lVert w\\rVert^{2}>0$. Equivalently, the coefficient matrix $\\begin{pmatrix}E&F\\\\F&G\\end{pmatrix}$ is positive definite, which is exactly $E>0$, $G>0$, $EG-F^{2}>0$. This is what makes the induced form an inner product and lets it measure lengths and angles on the surface.",
-          "zh-CN": "对正则光滑参数曲面 $X\\colon\\mathbb{R}^{2}\\to\\mathbb{R}^{3}$，第一基本形式正定：若 $q\\in\\Omega$、$w\\in T_{q}X$ 且 $w\\neq 0$，则 $\\mathrm{I}_{X}(q;w,w)=\\lVert w\\rVert^{2}>0$。等价地，系数矩阵 $\\begin{pmatrix}E&F\\\\F&G\\end{pmatrix}$ 正定，即 $E>0$、$G>0$、$EG-F^{2}>0$。正定性使诱导形式成为内积，从而能在曲面上度量长度与角度。"
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. With $E=E_X(q),F=F_X(q),G=G_X(q)$, $E>0$, $G>0$ and $EG-F^2=\\|U\\times V\\|^2>0$. Moreover $\\mathrm I_X(q;w,w)=\\|w\\|^2>0$ for every nonzero $w\\in T_qX$.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。记 $E=E_X(q),F=F_X(q),G=G_X(q)$，则 $E>0$、$G>0$，且 $EG-F^2=\\|U\\times V\\|^2>0$。此外对每个非零 $w\\in T_qX$，$\\mathrm I_X(q;w,w)=\\|w\\|^2>0$。"
         }
-      },
-      "snl": "variable(__list__(DG.def.regularParametrizedSurface(X@DG.ctxt.surfaceParametrization,$\\Omega$@DG.ctxt.surfaceParametrization),Type.annotation(@q,$\\Omega$@DG.ctxt.surfaceParametrization),Type.annotation(@w,LA.def.realVecSpaceRn($3$)),Set.Mem[authored](,DG.def.tangentPlane[default](X@DG.ctxt.surfaceParametrization,q),w),Ne[authored_Neq_default](,w,$0$)),theorem(Gt(DG.def.firstFundamentalForm[default](X@DG.ctxt.surfaceParametrization,q,w,w),$0$)))"
+      }
     },
     "contribution_info": null,
-    "id": "DG.ppt.firstFundamentalFormPositiveDefinite",
-    "kind": "property",
-    "package": "DifferentialGeometry",
-    "pointer": null,
-    "title": {
-      "default_language": "en",
-      "type": "i18n",
-      "values": {
-        "en": "Positive Definiteness of the First Fundamental Form",
-        "zh-CN": "第一基本形式的正定性"
-      }
-    }
+    "pointer": null
   }
 }

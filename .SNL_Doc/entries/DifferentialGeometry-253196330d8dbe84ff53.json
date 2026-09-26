@@ -1,0 +1,32 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.secondFundamentale",
+    "package": "DifferentialGeometry",
+    "kind": "def",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Second Fundamental Coefficient e",
+        "zh-CN": "第二基本形式系数 e"
+      }
+    },
+    "content": {
+      "snl": "variable[default](__list__[default]($\\mathcal C_X$@DG.ctxt.surfaceParametrization,DG.def.regularParametrizedSurface[text](X,$\\Omega$),$\\mathcal C_{\\boldsymbol N}$@DG.ctxt.surfaceUnitNormal,Type.annotation[colon](@q,LA.def.realVecSpaceRn[default]($2$)),Set.Mem[default](LA.def.realVecSpaceRn[default]($2$),$\\Omega$,q)),def[untyped](Type.apply[paren](DG.secondFundamentale[default](X,$\\boldsymbol{N}$),q),Real[default],inner[default](Type.apply[paren](DG.surfaceSecondPartial[default](X,$1$,$1$),q),Type.apply[paren]($\\boldsymbol{N}$,q))))",
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Choose a smooth unit normal field $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$ on $\\Omega$ as in the normal context. Define $e_{X,\\boldsymbol N}(q)=\\langle X_{11}(q),\\boldsymbol N(q)\\rangle$.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。选定法向语境中的光滑单位法向场 $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$（条件只在 $\\Omega$ 上要求）。定义 $e_{X,\\boldsymbol N}(q)=\\langle X_{11}(q),\\boldsymbol N(q)\\rangle$。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

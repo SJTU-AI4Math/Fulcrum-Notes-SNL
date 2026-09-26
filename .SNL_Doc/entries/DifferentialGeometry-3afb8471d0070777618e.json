@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.fundamentalNormalReversal",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Normal Reversal",
+        "zh-CN": "法向反转"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Choose a smooth unit normal field $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$ on $\\Omega$ as in the normal context. Replacing the field $\\boldsymbol N$ by $-\\boldsymbol N$ negates $e,f,g$ and hence $\\mathrm{II}_{X,-\\boldsymbol N}(q;w,z)=-\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)$ for every $w,z\\in T_qX$. The first fundamental form is unchanged, since its definition does not use a normal.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。选定法向语境中的光滑单位法向场 $\\boldsymbol N:\\mathbb R^2\\to\\mathbb R^3$（条件只在 $\\Omega$ 上要求）。把法向场 $\\boldsymbol N$ 换成 $-\\boldsymbol N$ 时，$e,f,g$ 同时变号，所以对所有 $w,z\\in T_qX$，$\\mathrm{II}_{X,-\\boldsymbol N}(q;w,z)=-\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)$。第一基本形式的定义不使用法向，因此保持不变。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

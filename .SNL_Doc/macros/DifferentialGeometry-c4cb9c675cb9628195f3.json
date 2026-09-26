@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "name": "DG.secondFundamentalf",
+    "kind": "const",
+    "dynamic_arity": false,
+    "description": "Second fundamental coefficient f; arguments (X,N), a scalar function on the parameter domain with chosen unit normal field.",
+    "source": {
+      "entries": [
+        "DG.secondFundamentalf"
+      ],
+      "urls": []
+    },
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "f_{#0,#1}"
+        }
+      }
+    ]
+  }
+}

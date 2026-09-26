@@ -1,0 +1,29 @@
+{
+  "format": "snl-macro",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "macro": {
+    "name": "DG.surfaceSecondPartial",
+    "kind": "const",
+    "dynamic_arity": false,
+    "description": "Second surface partial derivative function (X,i,j): differentiate partial_i X in coordinate j; only its restriction to the open smooth domain is used.",
+    "source": {
+      "entries": [
+        "DG.surfaceSecondPartial"
+      ],
+      "urls": []
+    },
+    "tags": [],
+    "styles": [
+      {
+        "style_name": "default",
+        "tags": [],
+        "template": {
+          "mode": "formula_inline",
+          "body": "\\partial_{#2}\\partial_{#1}#0"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.xmp.fundamentalSphere",
+    "package": "DifferentialGeometry",
+    "kind": "example",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Fundamental Forms of a Sphere with Outward Normal",
+        "zh-CN": "球面外法向下的基本形式"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $R>0$ and $\\Omega=(0,\\pi)\\times(0,2\\pi)$. The total smooth map $X(u,v)=R(\\sin u\\cos v,\\sin u\\sin v,\\cos u)$ is regular on $\\Omega$. There $X_u\\times X_v=R\\sin u\\,X$, so its ordered-cross-product normal is outward: $\\boldsymbol N=X/R$. Direct differentiation gives $E=R^2$, $F=0$, $G=R^2\\sin^2u$ and $e=-R$, $f=0$, $g=-R\\sin^2u$. Consequently $\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)=-(1/R)\\mathrm I_X(q;w,z)$ for all $q\\in\\Omega$ and $w,z\\in T_qX$. Equivalently, $d\\boldsymbol N(w)=w/R$ in the surface notation, confirming the negative sign. The poles are excluded by the chart domain, not singular points of the sphere.",
+          "zh-CN": "取 $R>0$、$\\Omega=(0,\\pi)\\times(0,2\\pi)$。全空间光滑映射 $X(u,v)=R(\\sin u\\cos v,\\sin u\\sin v,\\cos u)$ 在 $\\Omega$ 上正则。其上 $X_u\\times X_v=R\\sin u\\,X$，故有序叉积法向正是外法向 $\\boldsymbol N=X/R$。直接求导得 $E=R^2$、$F=0$、$G=R^2\\sin^2u$，以及 $e=-R$、$f=0$、$g=-R\\sin^2u$。因此对所有 $q\\in\\Omega$ 及 $w,z\\in T_qX$，$\\mathrm{II}_{X,\\boldsymbol N}(q;w,z)=-(1/R)\\mathrm I_X(q;w,z)$。等价地，在曲面记号下 $d\\boldsymbol N(w)=w/R$，再次确认负号。两极被参数域排除，并非球面的奇点。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

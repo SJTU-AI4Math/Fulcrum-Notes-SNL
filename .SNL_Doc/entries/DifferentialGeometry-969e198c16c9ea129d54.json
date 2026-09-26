@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.prf.fundamentalReparametrization",
+    "package": "DifferentialGeometry",
+    "kind": "proof",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Proof of Reparametrization Invariance",
+        "zh-CN": "重参数化不变性的证明"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "The chain rule gives $dY_r=dX_qD\\phi_r$, hence the same tangent plane. The first form is the ambient inner product. For the second, the normal component of $\\partial_i\\partial_jY$ equals $\\sum_{k,l}\\langle\\partial_k\\partial_lX,\\boldsymbol N\\rangle\\partial_i\\phi^k\\partial_j\\phi^l$: the extra terms $\\sum_kX_k\\partial_i\\partial_j\\phi^k$ are tangent and pair to zero with $\\boldsymbol N$. This gives the matrix congruence and equality on ambient tangent vectors. Finally $Y_1\\times Y_2=(\\det D\\phi)(X_1\\times X_2)$; normalization gives the sign formula.",
+          "zh-CN": "链式法则给出 $dY_r=dX_qD\\phi_r$，因此切平面相同。第一形式是环境内积。对第二形式，$\\partial_i\\partial_jY$ 的法分量为 $\\sum_{k,l}\\langle\\partial_k\\partial_lX,\\boldsymbol N\\rangle\\partial_i\\phi^k\\partial_j\\phi^l$：多出的项 $\\sum_kX_k\\partial_i\\partial_j\\phi^k$ 是切向量，与法向内积为零。这给出矩阵合同变换及环境切向量上的形式相等。最后 $Y_1\\times Y_2=(\\det D\\phi)(X_1\\times X_2)$，归一化即得符号公式。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "DifferentialGeometry",
+  "entry": {
+    "id": "DG.ppt.firstFundamentalMetric",
+    "package": "DifferentialGeometry",
+    "kind": "property",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Speed, Length and Angle",
+        "zh-CN": "速度、长度与夹角"
+      }
+    },
+    "content": {
+      "markdown": {
+        "type": "i18n",
+        "default_language": "en",
+        "values": {
+          "en": "Let $\\Omega\\subseteq\\mathbb R^2$ be Euclidean open and $X:\\mathbb R^2\\to\\mathbb R^3$ be smooth and regular on $\\Omega$. At $q\\in\\Omega$, put $U=X_u(q)$ and $V=X_v(q)$; these form a basis of $T_qX$. Let $J\\subseteq\\mathbb R$ be an open interval, $\\alpha=(u,v):J\\to\\Omega$ be $C^1$, and $\\gamma=X\\circ\\alpha$. Then $\\|\\dot\\gamma(t)\\|^2=\\mathrm I_X(\\alpha(t);\\dot\\gamma(t),\\dot\\gamma(t))=E\\dot u^2+2F\\dot u\\dot v+G\\dot v^2$, with coefficients at $\\alpha(t)$. For $[t_0,t_1]\\subset J$, its length is $\\int_{t_0}^{t_1}\\sqrt{E\\dot u^2+2F\\dot u\\dot v+G\\dot v^2}\\,dt$. For nonzero $w,z\\in T_qX$, their angle $\\theta\\in[0,\\pi]$ satisfies $\\cos\\theta=\\mathrm I_X(q;w,z)/\\sqrt{\\mathrm I_X(q;w,w)\\mathrm I_X(q;z,z)}$. No unit-speed assumption is used.",
+          "zh-CN": "设 $\\Omega\\subseteq\\mathbb R^2$ 为欧氏开集，$X:\\mathbb R^2\\to\\mathbb R^3$ 在 $\\Omega$ 上光滑且正则。取 $q\\in\\Omega$，记 $U=X_u(q)$、$V=X_v(q)$，它们构成 $T_qX$ 的一组基。设开区间 $J\\subseteq\\mathbb R$ 上有 $C^1$ 曲线 $\\alpha=(u,v):J\\to\\Omega$，令 $\\gamma=X\\circ\\alpha$。则 $\\|\\dot\\gamma(t)\\|^2=\\mathrm I_X(\\alpha(t);\\dot\\gamma(t),\\dot\\gamma(t))=E\\dot u^2+2F\\dot u\\dot v+G\\dot v^2$，系数在 $\\alpha(t)$ 处取值。对 $[t_0,t_1]\\subset J$，曲线长度是 $\\int_{t_0}^{t_1}\\sqrt{E\\dot u^2+2F\\dot u\\dot v+G\\dot v^2}\\,dt$。对非零 $w,z\\in T_qX$，夹角 $\\theta\\in[0,\\pi]$ 满足 $\\cos\\theta=\\mathrm I_X(q;w,z)/\\sqrt{\\mathrm I_X(q;w,w)\\mathrm I_X(q;z,z)}$。不要求单位速。"
+        }
+      }
+    },
+    "contribution_info": null,
+    "pointer": null
+  }
+}
