@@ -18,7 +18,7 @@
     "title": "固定端点的道路同伦",
     "kind": "def",
     "content": {
-      "snl": "structure(Path.Homotopy($p_0$,$p_1$),__enum__[enumerate](member[nameless](,Type.annotation(@H,ContinuousMap.Homotopy($p_0$,$p_1$))),member[nameless](,Type.forall[forall](@t,Set.Elem[coerce](Real,unitInterval),And(Eq(X,Type.apply[none](H,Prod.mk(Set.Elem[coerce](Real,unitInterval),Set.Elem[coerce](Real,unitInterval),t,0)),a),Eq(X,Type.apply[none](H,Prod.mk(Set.Elem[coerce](Real,unitInterval),Set.Elem[coerce](Real,unitInterval),t,1)),b))))))"
+      "snl": "structure(Path.Homotopy($p_0$,$p_1$),__enum__[enumerate](member[nameless](,Type.annotation(@H,ContinuousMap.Homotopy($p_0$,$p_1$))),member[nameless](,Type.forall[forall](@t,unitInterval,And(Eq(X,Type.apply[none](H,Prod.mk(unitInterval,unitInterval,t,0)),a),Eq(X,Type.apply[none](H,Prod.mk(unitInterval,unitInterval,t,1)),b))))))"
     }
   }
 }

@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@Z,Type),TopologicalSpace(Z),Type.annotation(__list__[formula](@$g_0$,@$g_1$),ContinuousMap(Y,Z)),Type.annotation(@G,ContinuousMap.Homotopy($g_0$,$g_1$)),Type.annotation(@H,ContinuousMap.Homotopy($f_0$,$f_1$))),def(Type.annotation(ContinuousMap.Homotopy.comp(G,H),ContinuousMap.Homotopy(ContinuousMap.comp($g_0$,$f_0$),ContinuousMap.comp($g_1$,$f_1$))),ContinuousMap.Homotopy(ContinuousMap.comp($g_0$,$f_0$),ContinuousMap.comp($g_1$,$f_1$)),Type.lambda(Prod.mk(Set.Elem[coerce](Real,unitInterval),X,@t,@x),Prod(Set.Elem[coerce](Real,unitInterval),X),Type.apply[none](G,Prod.mk(Set.Elem[coerce](Real,unitInterval),Y,t,Type.apply[none](H,Prod.mk(Set.Elem[coerce](Real,unitInterval),X,t,x)))))))"
+      "snl": "variable(__list__(Type.annotation(@Z,Type),TopologicalSpace(Z),Type.annotation(__list__[formula](@$g_0$,@$g_1$),ContinuousMap(Y,Z)),Type.annotation(@G,ContinuousMap.Homotopy($g_0$,$g_1$)),Type.annotation(@H,ContinuousMap.Homotopy($f_0$,$f_1$))),def(Type.annotation(ContinuousMap.Homotopy.comp(G,H),ContinuousMap.Homotopy(ContinuousMap.comp($g_0$,$f_0$),ContinuousMap.comp($g_1$,$f_1$))),ContinuousMap.Homotopy(ContinuousMap.comp($g_0$,$f_0$),ContinuousMap.comp($g_1$,$f_1$)),Type.lambda(Prod.mk(unitInterval,X,@t,@x),Prod(unitInterval,X),Type.apply[none](G,Prod.mk(unitInterval,Y,t,Type.apply[none](H,Prod.mk(unitInterval,X,t,x)))))))"
     },
     "contribution_info": null,
     "pointer": {
