@@ -5,7 +5,7 @@
   "package": "Topology",
   "macro": {
     "name": "unitInterval",
-    "description": "unitInterval : Set ℝ := Set.Icc 0 1. No arguments; the set displays I. Type positions use Set.Elem(Real,unitInterval), with the standard real subspace topology specified in its definition Entry.",
+    "description": "unitInterval : Set ℝ := Set.Icc 0 1. No arguments; displays I. The standard real subspace topology is specified in its definition Entry.",
     "source": {
       "entries": [
         "unitInterval"
