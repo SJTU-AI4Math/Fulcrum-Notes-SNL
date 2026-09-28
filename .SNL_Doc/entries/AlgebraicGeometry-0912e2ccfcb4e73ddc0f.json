@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "__enum__(Type.annotation(X@AlgebraicGeometry.ctxt.projectivePlane.X,Real), Type.annotation(Y@AlgebraicGeometry.ctxt.projectivePlane.Y,Real), Type.annotation(Z@AlgebraicGeometry.ctxt.projectivePlane.Z,Real), Type.annotation(λ@AlgebraicGeometry.ctxt.projectivePlane.lambda,Real), Type.annotation(u@AlgebraicGeometry.ctxt.projectivePlane.u,LA.def.realVecSpaceRn($3$)), Type.annotation(v@AlgebraicGeometry.ctxt.projectivePlane.v,LA.def.realVecSpaceRn($3$)))"
+      "snl": "__enum__(Type.annotation(X@AlgebraicGeometry.ctxt.projectivePlane.X,Real), Type.annotation(Y@AlgebraicGeometry.ctxt.projectivePlane.Y,Real), Type.annotation(Z@AlgebraicGeometry.ctxt.projectivePlane.Z,Real), Type.annotation(λ@AlgebraicGeometry.ctxt.projectivePlane.lambda,Real), Type.annotation(__list__[formula](u@AlgebraicGeometry.ctxt.projectivePlane.u,v@AlgebraicGeometry.ctxt.projectivePlane.v),LA.def.realVecSpaceRn($3$)))"
     },
     "package": "AlgebraicGeometry",
     "contribution_info": null,
