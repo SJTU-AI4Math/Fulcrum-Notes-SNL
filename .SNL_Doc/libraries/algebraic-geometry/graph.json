@@ -87,6 +87,62 @@
         "entryId": "AlgebraicGeometry.rmk.affineEmbeddingPicture",
         "counterId": "ag-entry"
       }
+    },
+    {
+      "id": "n_ctx_pp",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ctxt.projectivePlane",
+        "counterId": "ag-entry"
+      }
+    },
+    {
+      "id": "n_pp_X",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ctxt.projectivePlane.X",
+        "counterId": "ag-subentry"
+      }
+    },
+    {
+      "id": "n_pp_Y",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ctxt.projectivePlane.Y",
+        "counterId": "ag-subentry"
+      }
+    },
+    {
+      "id": "n_pp_Z",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ctxt.projectivePlane.Z",
+        "counterId": "ag-subentry"
+      }
+    },
+    {
+      "id": "n_pp_lambda",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ctxt.projectivePlane.lambda",
+        "counterId": "ag-subentry"
+      }
+    },
+    {
+      "id": "n_pp_u",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ctxt.projectivePlane.u",
+        "counterId": "ag-subentry"
+      }
+    },
+    {
+      "id": "n_pp_v",
+      "label": "Entry",
+      "props": {
+        "entryId": "AlgebraicGeometry.ctxt.projectivePlane.v",
+        "counterId": "ag-subentry"
+      }
     }
   ],
   "relationships": [
@@ -138,6 +194,41 @@
     {
       "from": "n_ae",
       "to": "n_ai",
+      "label": "branch"
+    },
+    {
+      "from": "n_subsec",
+      "to": "n_ctx_pp",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx_pp",
+      "to": "n_pp_X",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx_pp",
+      "to": "n_pp_Y",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx_pp",
+      "to": "n_pp_Z",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx_pp",
+      "to": "n_pp_lambda",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx_pp",
+      "to": "n_pp_u",
+      "label": "branch"
+    },
+    {
+      "from": "n_ctx_pp",
+      "to": "n_pp_v",
       "label": "branch"
     }
   ]

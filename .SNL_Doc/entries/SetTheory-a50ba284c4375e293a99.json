@@ -15,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable[enumerated](__enum__[native_enumerate](Type.annotation[default](@$S$,Type.Sort(%u+1%)),Type.annotation[default](@$T$,Type.Sort(%v+1%)),Type.annotation[default](@$D$,Set($S$@#0.0.0)),Type.annotation[default](@$A$,Set($T$@#0.1.0)),Type.annotation[default](@$\\_f$@_f,Type.forall[arrow](@$a$,Set.Elem[default]($S$@#0.0.0,$D$@#0.2.0),Set.Elem[default]($T$@#0.1.0,$A$@#0.3.0)))),def(Fulcrum.SetFunction.codomain($S$@#0.0.0,$T$@#0.1.0,$D$@#0.2.0,$A$@#0.3.0,$\\_f$@#0.4.0),Set($T$@#0.1.0),$A$@#0.3.0))"
+      "snl": "variable[enumerated](__enum__[native_enumerate](Type.annotation[default](@$S$,Type.Sort(%u+1%)),Type.annotation[default](@$T$,Type.Sort(%v+1%)),Type.annotation[default](@$D$,Set($S$@#0.0.0)),Type.annotation[default](@$A$,Set($T$@#0.1.0)),Type.annotation[default](@$\\_f$@_f,Type.forall[arrow](@$a$,$D$@#0.2.0,$A$@#0.3.0))),def(Fulcrum.SetFunction.codomain($S$@#0.0.0,$T$@#0.1.0,$D$@#0.2.0,$A$@#0.3.0,$\\_f$@#0.4.0),Set($T$@#0.1.0),$A$@#0.3.0))"
     },
     "package": "SetTheory",
     "contribution_info": null,

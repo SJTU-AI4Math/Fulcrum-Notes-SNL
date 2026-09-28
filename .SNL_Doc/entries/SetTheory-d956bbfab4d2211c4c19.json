@@ -9,7 +9,7 @@
     "title": "Cardinal.mk_powerset",
     "kind": "thm",
     "content": {
-      "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$α$,Type.Sort(%u+1%)),Type.annotation[default](@$s$,Set($α$@#0.0.0))),theorem[native_default](Eq(Cardinal,Cardinal.mk(Set.Elem[default](Set($α$@#0.0.0),Set.powerset($α$@#0.0.0,$s$@#0.1.0))),HPow.hPow(Cardinal,Cardinal,Cardinal,instHPow[native_default](Cardinal,Cardinal,Cardinal.instPowCardinal[native_default]),OfNat.ofNat(Cardinal,%2%,instOfNatAtLeastTwo[native_default](Cardinal,%2%,Cardinal.instNatCast[native_default],Nat.instAtLeastTwoHAddOfNat[native_default](OfNat.ofNat(Nat[native_default],%1%,instOfNatNat[native_default](%1%)),Nat.instNeZeroSucc[native_default](OfNat.ofNat(Nat[native_default],%0%,instOfNatNat[native_default](%0%)))))),Cardinal.mk(Set.Elem[default]($α$@#0.0.0,$s$@#0.1.0))))))"
+      "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$α$,Type.Sort(%u+1%)),Type.annotation[default](@$s$,Set($α$@#0.0.0))),theorem[native_default](Eq(Cardinal,Cardinal.mk(Set.powerset($α$@#0.0.0,$s$@#0.1.0)),HPow.hPow(Cardinal,Cardinal,Cardinal,instHPow[native_default](Cardinal,Cardinal,Cardinal.instPowCardinal[native_default]),OfNat.ofNat(Cardinal,%2%,instOfNatAtLeastTwo[native_default](Cardinal,%2%,Cardinal.instNatCast[native_default],Nat.instAtLeastTwoHAddOfNat[native_default](OfNat.ofNat(Nat[native_default],%1%,instOfNatNat[native_default](%1%)),Nat.instNeZeroSucc[native_default](OfNat.ofNat(Nat[native_default],%0%,instOfNatNat[native_default](%0%)))))),Cardinal.mk($s$@#0.1.0)))))"
     },
     "contribution_info": null,
     "pointer": {

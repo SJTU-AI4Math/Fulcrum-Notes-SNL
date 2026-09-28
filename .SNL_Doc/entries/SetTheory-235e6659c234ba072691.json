@@ -9,7 +9,7 @@
     "kind": "def",
     "title": "有限集",
     "content": {
-      "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$α$,Type.Sort(%u+1%)),Type.annotation[default](@$s$,Set($α$@#0.0.0))),def[prop](Set.Finite($α$@#0.0.0,$s$@#0.1.0),Type.Sort[prop](%0%),Finite(Set.Elem[default]($α$@#0.0.0,$s$@#0.1.0))))"
+      "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$α$,Type.Sort(%u+1%)),Type.annotation[default](@$s$,Set($α$@#0.0.0))),def[prop](Set.Finite($α$@#0.0.0,$s$@#0.1.0),Type.Sort[prop](%0%),Finite($s$@#0.1.0)))"
     },
     "contribution_info": null,
     "pointer": {

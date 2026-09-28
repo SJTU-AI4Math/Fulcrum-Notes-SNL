@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.ctxt.projectivePlane",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Real Projective Plane Context",
+        "zh-CN": "实射影平面语境"
+      }
+    },
+    "content": {
+      "snl": "__enum__(Type.annotation(X@AlgebraicGeometry.ctxt.projectivePlane.X,Real), Type.annotation(Y@AlgebraicGeometry.ctxt.projectivePlane.Y,Real), Type.annotation(Z@AlgebraicGeometry.ctxt.projectivePlane.Z,Real), Type.annotation(λ@AlgebraicGeometry.ctxt.projectivePlane.lambda,Real), Type.annotation(u@AlgebraicGeometry.ctxt.projectivePlane.u,LA.def.realVecSpaceRn($3$)), Type.annotation(v@AlgebraicGeometry.ctxt.projectivePlane.v,LA.def.realVecSpaceRn($3$)))"
+    },
+    "package": "AlgebraicGeometry",
+    "contribution_info": null,
+    "pointer": null
+  }
+}

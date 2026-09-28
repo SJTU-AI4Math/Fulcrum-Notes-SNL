@@ -16,7 +16,7 @@
       }
     },
     "content": {
-      "snl": "def(AlgebraicGeometry.RealProjectivePlane,Type,Quotient[default](Set.Elem[default](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$))))),AlgebraicGeometry.RealProjectivePlane.Proportional))",
+      "snl": "def(AlgebraicGeometry.RealProjectivePlane,Type,Quotient[default](Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),AlgebraicGeometry.RealProjectivePlane.Proportional))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",

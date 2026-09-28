@@ -9,7 +9,7 @@
     "kind": "def",
     "title": "可数集合",
     "content": {
-      "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$α$,Type.Sort(%u+1%)),Type.annotation[default](@$s$,Set($α$@#0.0.0))),def[prop](Set.Countable[native_default]($α$@#0.0.0,$s$@#0.1.0),Type.Sort[prop](%0%),Countable[native_default](Set.Elem[default]($α$@#0.0.0,$s$@#0.1.0))))",
+      "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$α$,Type.Sort(%u+1%)),Type.annotation[default](@$s$,Set($α$@#0.0.0))),def[prop](Set.Countable[native_default]($α$@#0.0.0,$s$@#0.1.0),Type.Sort[prop](%0%),Countable[native_default]($s$@#0.1.0)))",
       "markdown": "`Set.Countable s` means at most countable, including finite sets. Countable infinitude is instead captured by existence of `Denumerable ↥s`."
     },
     "contribution_info": null,

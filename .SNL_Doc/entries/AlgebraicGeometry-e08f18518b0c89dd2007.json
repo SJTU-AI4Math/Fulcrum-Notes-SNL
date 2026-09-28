@@ -5,7 +5,6 @@
   "package": "AlgebraicGeometry",
   "entry": {
     "id": "AlgebraicGeometry.RealProjectivePlane.Proportional",
-    "package": "AlgebraicGeometry",
     "kind": "definition",
     "title": {
       "type": "i18n",
@@ -16,7 +15,7 @@
       }
     },
     "content": {
-      "snl": "variable(__list__(Type.annotation(@u,LA.def.realVecSpaceRn($3$)),Type.annotation(@v,LA.def.realVecSpaceRn($3$)),Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),u),Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),v)),def[prop](AlgebraicGeometry.RealProjectivePlane.Proportional[applied](u,v),,Logic.exists-typed(@$\\lambda$,Set.Elem[default](Real,Set.diff[default](Real,Set.univ[typed](Real),Set.singleton[default](Real,$0$))),Eq(,v,LA.Smul[default]($\\lambda$,u)))))",
+      "snl": "variable(__list__(Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),u@AlgebraicGeometry.ctxt.projectivePlane.u),Set.Mem[authored](LA.def.realVecSpaceRn($3$),Set.diff[default](LA.def.realVecSpaceRn($3$),Set.univ[typed](LA.def.realVecSpaceRn($3$)),Set.singleton[default](LA.def.realVecSpaceRn($3$),LA.Zero[default](LA.def.realVecSpaceRn($3$)))),v@AlgebraicGeometry.ctxt.projectivePlane.v)),def[prop](AlgebraicGeometry.RealProjectivePlane.Proportional[applied](u@AlgebraicGeometry.ctxt.projectivePlane.u,v@AlgebraicGeometry.ctxt.projectivePlane.v),,Logic.exists-typed(@λ,Set.diff[default](Real,Set.univ[typed](Real),Set.singleton[default](Real,$0$)),Eq(,v@AlgebraicGeometry.ctxt.projectivePlane.v,LA.Smul[default](λ,u@AlgebraicGeometry.ctxt.projectivePlane.u)))))",
       "markdown": {
         "type": "i18n",
         "default_language": "en",
@@ -26,6 +25,7 @@
         }
       }
     },
+    "package": "AlgebraicGeometry",
     "contribution_info": null,
     "pointer": null
   }

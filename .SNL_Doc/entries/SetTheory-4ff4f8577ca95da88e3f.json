@@ -9,7 +9,7 @@
     "title": "Set.countable_iff_exists_injective",
     "kind": "thm",
     "content": {
-      "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$α$,Type.Sort(%u+1%)),Type.annotation[default](@$s$,Set($α$@#0.0.0))),theorem[native_default](Iff[default](Set.Countable[native_default]($α$@#0.0.0,$s$@#0.1.0),parentheses[default](Exists[binder](@$f$,Type.forall[arrow](@$a$,Set.Elem[default]($α$@#0.0.0,$s$@#0.1.0),Nat[native_default]),Function.Injective(Set.Elem[default]($α$@#0.0.0,$s$@#0.1.0),Nat[native_default],$f$@#1.0.1.0.0))))))"
+      "snl": "variable[native_default](__list__[native_default](Type.annotation[default](@$α$,Type.Sort(%u+1%)),Type.annotation[default](@$s$,Set($α$@#0.0.0))),theorem[native_default](Iff[default](Set.Countable[native_default]($α$@#0.0.0,$s$@#0.1.0),parentheses[default](Exists[binder](@$f$,Type.forall[arrow](@$a$,$s$@#0.1.0,Nat[native_default]),Function.Injective($s$@#0.1.0,Nat[native_default],$f$@#1.0.1.0.0))))))"
     },
     "contribution_info": null,
     "pointer": {

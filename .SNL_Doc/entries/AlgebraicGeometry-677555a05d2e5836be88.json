@@ -1,0 +1,24 @@
+{
+  "format": "snl-entry",
+  "version": 1,
+  "schema_version": 1,
+  "package": "AlgebraicGeometry",
+  "entry": {
+    "id": "AlgebraicGeometry.ctxt.projectivePlane.Y",
+    "kind": "context",
+    "title": {
+      "type": "i18n",
+      "default_language": "en",
+      "values": {
+        "en": "Homogeneous coordinate Y",
+        "zh-CN": "齐次坐标 Y"
+      }
+    },
+    "content": {
+      "snl": "Type.annotation(@Y,Real)"
+    },
+    "package": "AlgebraicGeometry",
+    "contribution_info": null,
+    "pointer": null
+  }
+}
