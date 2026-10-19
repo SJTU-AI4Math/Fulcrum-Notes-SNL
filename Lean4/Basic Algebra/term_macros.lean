@@ -82,8 +82,10 @@ snl_notation "sum"[univ] => $\sum_{#0} #2$
 
 namespace SNL4LeanConsumer
 
-@[snl_app_delab Finset.sum]
-meta def delabFinsetSum : SnlAppDelab := fun expr tree => do
+@[snl_delab app Finset.sum]
+meta def delabFinsetSum : SnlDelab := fun request => do
+  let .expr expr := request.input | return none
+  let tree := request.defaultTree
   let expr := expr.consumeMData
   unless expr.getAppFn.isConstOf ``Finset.sum do return none
   let args := expr.getAppArgs

@@ -162,27 +162,28 @@ snl_notation Or.inr[function] => $\mathsf{Or.inr}$
 snl_notation Or.rec[function] => $\mathsf{Or.rec}$
 snl_notation True.rec[function] => $\mathsf{True.rec}$
 
-@[ snl_app_delab And.intro,
-   snl_app_delab And.left,
-   snl_app_delab And.rec,
-   snl_app_delab And.right,
-   snl_app_delab Eq.ndrec,
-   snl_app_delab Eq.rec,
-   snl_app_delab Eq.refl,
-   snl_app_delab Eq.subst,
-   snl_app_delab Exists.intro,
-   snl_app_delab Exists.rec,
-   snl_app_delab False.elim,
-   snl_app_delab False.rec,
-   snl_app_delab Iff.intro,
-   snl_app_delab Iff.mp,
-   snl_app_delab Iff.mpr,
-   snl_app_delab Iff.rec,
-   snl_app_delab Or.inl,
-   snl_app_delab Or.inr,
-   snl_app_delab Or.rec,
-   snl_app_delab True.rec ]
-meta def viewLogicalOperations : SnlAppDelab := fun _e tree =>
+@[ snl_delab app And.intro,
+   snl_delab app And.left,
+   snl_delab app And.rec,
+   snl_delab app And.right,
+   snl_delab app Eq.ndrec,
+   snl_delab app Eq.rec,
+   snl_delab app Eq.refl,
+   snl_delab app Eq.subst,
+   snl_delab app Exists.intro,
+   snl_delab app Exists.rec,
+   snl_delab app False.elim,
+   snl_delab app False.rec,
+   snl_delab app Iff.intro,
+   snl_delab app Iff.mp,
+   snl_delab app Iff.mpr,
+   snl_delab app Iff.rec,
+   snl_delab app Or.inl,
+   snl_delab app Or.inr,
+   snl_delab app Or.rec,
+   snl_delab app True.rec ]
+meta def viewLogicalOperations : SnlDelab := fun request =>
+  let tree := request.defaultTree;
   match tree.macro_name with
   | "And.intro" => termOperationView tree 4 0
   | "And.left" => termOperationView tree 3 0

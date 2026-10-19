@@ -202,8 +202,10 @@ snl_macro { name := "Set.singleton", style := "enumInner", kind := "const", mode
 
 /-- A set builder is a presentation view of `setOf`, not a new logical constant.
 The original expression and lambda's binding evidence remain on the raw tree. -/
-@[snl_app_delab setOf]
-meta def delabSetBuilder : SnlAppDelab := fun expr tree => do
+@[snl_delab app setOf]
+meta def delabSetBuilder : SnlDelab := fun request => do
+  let .expr expr := request.input | return none
+  let tree := request.defaultTree
   let args := expr.consumeMData.getAppArgs
   unless args.size == 2 && tree.children.size == 2 do return none
   let .lam .. := args[1]!.consumeMData | return none
@@ -429,8 +431,10 @@ snl_macro { name := "PSet.instInsert", kind := "const", mode := "text", template
  This is a presentation view only: the original name, Expr, and all operands
  remain in the raw tree. No prime-containing identifier is renamed. -/
 snl_macro { name := "Quotient.mk", kind := "const", mode := "formula_inline", template := "\\left[#2\\right]_{#1}" }
-@[snl_app_delab Quotient.mk']
-meta def delabImplicitQuotientConstructor : SnlAppDelab := fun expr tree => do
+@[snl_delab app Quotient.mk']
+meta def delabImplicitQuotientConstructor : SnlDelab := fun request => do
+  let .expr expr := request.input | return none
+  let tree := request.defaultTree
   unless expr.consumeMData.getAppArgs.size == 3 && tree.children.size == 3 do return none
   return some {
     macro_name := "Quotient.mk", kind := "const"
@@ -496,63 +500,64 @@ snl_notation instOfNatAtLeastTwo[function] => $\mathsf{instOfNatAtLeastTwo}$
 snl_notation instOfNatNat[function] => $\mathsf{instOfNatNat}$
 snl_notation partialOrderOfSO[function] => $\mathsf{partialOrderOfSO}$
 
-@[ snl_app_delab DFunLike.coe,
-   snl_app_delab DecidableLE,
-   snl_app_delab DecidableLT,
-   snl_app_delab Denumerable.toEncodable,
-   snl_app_delab EmptyCollection,
-   snl_app_delab EmptyCollection.mk,
-   snl_app_delab Encodable,
-   snl_app_delab Encodable.decode,
-   snl_app_delab Encodable.encode,
-   snl_app_delab Equiv.instEquivLike,
-   snl_app_delab Equiv.ofInjective,
-   snl_app_delab Equiv.ofLeftInverse,
-   snl_app_delab EquivLike.toFunLike,
-   snl_app_delab Function.invFun,
-   snl_app_delab Function.leftInverse_invFun,
-   snl_app_delab HasSubset,
-   snl_app_delab Infinite,
-   snl_app_delab LE.mk,
-   snl_app_delab LT.mk,
-   snl_app_delab LinearOrder.mk,
-   snl_app_delab Max,
-   snl_app_delab Max.max,
-   snl_app_delab Nat.below,
-   snl_app_delab Nat.brecOn,
-   snl_app_delab Nat.decLe,
-   snl_app_delab Nat.decLt,
-   snl_app_delab Nat.instAtLeastTwoHAddOfNat,
-   snl_app_delab Nat.instNeZeroSucc,
-   snl_app_delab Nat.le,
-   snl_app_delab Nat.le_antisymm,
-   snl_app_delab Nat.le_refl,
-   snl_app_delab Nat.le_total,
-   snl_app_delab Nat.le_trans,
-   snl_app_delab Nat.lt,
-   snl_app_delab Nat.lt_iff_le_not_le,
-   snl_app_delab Option.instMembership,
-   snl_app_delab Option.some,
-   snl_app_delab PartialOrder.mk,
-   snl_app_delab PartialOrder.toPreorder,
-   snl_app_delab Preorder.mk,
-   snl_app_delab Preorder.toLT,
-   snl_app_delab Quotient,
-   snl_app_delab Quotient.mk,
-   snl_app_delab RelIso.toEquiv,
-   snl_app_delab SDiff,
-   snl_app_delab Set.instEmptyCollection,
-   snl_app_delab Set.instHasSubset,
-   snl_app_delab Set.instMembership,
-   snl_app_delab Std.Antisymm,
-   snl_app_delab Std.Refl,
-   snl_app_delab Std.Trichotomous,
-   snl_app_delab inferInstance,
-   snl_app_delab instHPow,
-   snl_app_delab instOfNatAtLeastTwo,
-   snl_app_delab instOfNatNat,
-   snl_app_delab partialOrderOfSO ]
-meta def viewSetOperations : SnlAppDelab := fun _e tree =>
+@[ snl_delab app DFunLike.coe,
+   snl_delab app DecidableLE,
+   snl_delab app DecidableLT,
+   snl_delab app Denumerable.toEncodable,
+   snl_delab app EmptyCollection,
+   snl_delab app EmptyCollection.mk,
+   snl_delab app Encodable,
+   snl_delab app Encodable.decode,
+   snl_delab app Encodable.encode,
+   snl_delab app Equiv.instEquivLike,
+   snl_delab app Equiv.ofInjective,
+   snl_delab app Equiv.ofLeftInverse,
+   snl_delab app EquivLike.toFunLike,
+   snl_delab app Function.invFun,
+   snl_delab app Function.leftInverse_invFun,
+   snl_delab app HasSubset,
+   snl_delab app Infinite,
+   snl_delab app LE.mk,
+   snl_delab app LT.mk,
+   snl_delab app LinearOrder.mk,
+   snl_delab app Max,
+   snl_delab app Max.max,
+   snl_delab app Nat.below,
+   snl_delab app Nat.brecOn,
+   snl_delab app Nat.decLe,
+   snl_delab app Nat.decLt,
+   snl_delab app Nat.instAtLeastTwoHAddOfNat,
+   snl_delab app Nat.instNeZeroSucc,
+   snl_delab app Nat.le,
+   snl_delab app Nat.le_antisymm,
+   snl_delab app Nat.le_refl,
+   snl_delab app Nat.le_total,
+   snl_delab app Nat.le_trans,
+   snl_delab app Nat.lt,
+   snl_delab app Nat.lt_iff_le_not_le,
+   snl_delab app Option.instMembership,
+   snl_delab app Option.some,
+   snl_delab app PartialOrder.mk,
+   snl_delab app PartialOrder.toPreorder,
+   snl_delab app Preorder.mk,
+   snl_delab app Preorder.toLT,
+   snl_delab app Quotient,
+   snl_delab app Quotient.mk,
+   snl_delab app RelIso.toEquiv,
+   snl_delab app SDiff,
+   snl_delab app Set.instEmptyCollection,
+   snl_delab app Set.instHasSubset,
+   snl_delab app Set.instMembership,
+   snl_delab app Std.Antisymm,
+   snl_delab app Std.Refl,
+   snl_delab app Std.Trichotomous,
+   snl_delab app inferInstance,
+   snl_delab app instHPow,
+   snl_delab app instOfNatAtLeastTwo,
+   snl_delab app instOfNatNat,
+   snl_delab app partialOrderOfSO ]
+meta def viewSetOperations : SnlDelab := fun request =>
+  let tree := request.defaultTree;
   match tree.macro_name with
   | "DFunLike.coe" => termOperationView tree 5 6
   | "DecidableLE" => termOperationView tree 1 0
