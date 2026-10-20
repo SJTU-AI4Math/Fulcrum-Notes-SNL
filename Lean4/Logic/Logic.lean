@@ -15,6 +15,8 @@ The chapter's UTLC open-term non-definitional-equality example is metatheory, no
 an Eq theorem about all pairs of Lean naturals; it is not assigned a fake constant.
 -/
 
+#snl_toc Init.Prelude
+
 namespace Fulcrum.Logic
 
 section PropositionalLogic
